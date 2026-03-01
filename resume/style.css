@@ -1,0 +1,273 @@
+/* =========================================
+   Resume Stylesheet
+   Replicates a traditional Word Doc Resume
+   with Web and perfectly formatted PDF output
+   ========================================= */
+
+:root {
+    /* Dimensions of a standard US Letter page (in points/pixels for web scale) */
+    --page-width: 816px;
+    /* 8.5in at 96dpi */
+
+    /* Resume Theme Colors matching the image */
+    --color-primary: #1e4b8b;
+    /* The navy blue used for name and headers */
+    --color-text: #212121;
+    /* Deep gray/black for readability */
+    --color-link: #1e4b8b;
+
+    /* Fonts */
+    /* Merriweather approximates the classic serif (Cambria/Times) look of the headers */
+    --font-serif: 'Merriweather', Georgia, serif;
+    /* Open Sans approximates the clean sans-serif (Calibri) of the body text */
+    --font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
+
+    --spacing-base: 1rem;
+}
+
+/* ---------- BASE (Web View Setup) ---------- */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    line-height: 1.4;
+    font-size: 13.5px;
+    /* Base size that fits 1 page well */
+}
+
+/* The physical "Paper" container for web view */
+.page {
+    width: var(--page-width);
+    min-height: 1056px;
+    /* 11in at 96dpi */
+    margin: 2rem auto;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.5in 0.75in;
+    /* Standard margins */
+    box-sizing: border-box;
+}
+
+/* Links */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- FLIGHT CONTROLS (Web only) ---------- */
+.controls {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.print-btn,
+.back-btn {
+    background: #1e4b8b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.print-btn:hover,
+.back-btn:hover {
+    background: #153565;
+}
+
+.back-btn {
+    background: #555;
+}
+
+.back-btn:hover {
+    background: #444;
+}
+
+/* ---------- RESUME TYPOGRAPHY & LAYOUT ---------- */
+
+/* Header (Name & Contact) */
+.resume-header {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.name {
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+}
+
+.contact-info {
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 2px;
+}
+
+.contact-info a {
+    color: #444;
+}
+
+/* Sections */
+section {
+    margin-bottom: 14px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    font-size: 13.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px 0;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid var(--color-primary);
+}
+
+/* Summary */
+.summary-text {
+    margin: 4px 0 0 0;
+    text-align: justify;
+}
+
+/* Technical Skills */
+.skill-row {
+    margin-bottom: 3px;
+    line-height: 1.45;
+}
+
+.skill-category {
+    font-weight: 700;
+    color: #000;
+}
+
+/* Education & Certifications */
+.degree-row,
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.school-row {
+    margin-bottom: 6px;
+}
+
+.certifications-block {
+    margin-top: 6px;
+}
+
+.date {
+    font-weight: 600;
+}
+
+/* Projects */
+.project-block {
+    margin-bottom: 8px;
+}
+
+.project-header {
+    margin-bottom: 2px;
+}
+
+ol,
+ul {
+    padding-left: 18px;
+    margin: 2px 0 0 0;
+}
+
+li {
+    margin-bottom: 2px;
+    text-align: justify;
+}
+
+/* Experience */
+.experience-block {
+    margin-bottom: 10px;
+}
+
+.job-context {
+    margin: 2px 0 4px 0;
+}
+
+/* ---------- PRINT STYLES (The Magic) ---------- */
+@media print {
+    /* 
+    This hides everything except the resume itself when printing.
+    It forces the browser to treat the `.page` div as the literal physical page.
+  */
+
+    @page {
+        size: letter;
+        margin: 0.5in 0.75in;
+        /* Give control of margins to the print dialog, but set defaults */
+    }
+
+    body {
+        background: none;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .page {
+        margin: 0;
+        padding: 0;
+        /* Let @page handle physical margins */
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+    }
+
+    /* Ensure links are printed normally and not expanded */
+    a {
+        color: var(--color-primary) !important;
+        text-decoration: none !important;
+    }
+
+    /* Optional tweaking to cram everything onto 1 page precisely */
+    body {
+        font-size: 10pt;
+    }
+
+    .name {
+        font-size: 22pt;
+    }
+
+    .section-title {
+        font-size: 11pt;
+    }
+}
