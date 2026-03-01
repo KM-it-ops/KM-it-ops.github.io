@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Kurdi - Resume</title>
+
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- FLIGHT CONTROLS (Only visible on screen, hidden on print) -->
+    <div class="controls no-print">
+        <button onclick="window.print()" class="print-btn">
+            <i class="fas fa-print"></i> Print / Save as PDF
+        </button>
+        <a href="../" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </div>
+
+    <!-- THE RESUME -->
+    <div class="page" id="resume-page">
+
+        <!-- HEADER -->
+        <header class="resume-header">
+            <h1 class="name">MICHAEL KURdi</h1>
+            <div class="contact-info">
+                <span>Charlotte, NC</span> &middot;
+                <span>(704) 456-8322</span> &middot;
+                <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a> &middot;
+                <a href="https://linkedin.com/in/michael-kurdi" target="_blank">linkedin.com/in/michael-kurdi</a>
+                &middot;
+                <a href="https://github.com/KM-it-ops" target="_blank">github.com/KM-it-ops</a> &middot;
+                <a href="https://km-it-ops.github.io" target="_blank">km-it-ops.github.io</a>
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <section>
+            <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+            <p class="summary-text">
+                CompTIA Security+ certified professional with 8+ years in federally regulated, security-cleared
+                environments enforcing FAA, OSHA, IATA, and CBP compliance. Holds a B.S. in Information Technology
+                (Cybersecurity, Summa Cum Laude). Experienced in incident response, access control, vulnerability
+                assessment, and building Python-based security detection tools. Targeting SOC Analyst and Cybersecurity
+                Analyst roles.
+            </p>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section>
+            <h2 class="section-title">TECHNICAL SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-row">
+                    <span class="skill-category">Security & Analysis:</span>
+                    <span class="skill-list">Threat Detection &middot; Incident Response &middot; Log Analysis &middot;
+                        Vulnerability Management &middot; SIEM &middot; IDS/IPS &middot; Malware Analysis &middot; Risk
+                        Assessment &middot; RBAC &middot; Endpoint Security &middot; Network Security &middot; Firewall
+                        Configuration</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Tools & Tech:</span>
+                    <span class="skill-list">Python &middot; scikit-learn &middot; pandas &middot; NumPy &middot;
+                        Wireshark &middot; Cisco Packet Tracer &middot; Active Directory &middot; React &middot; Flask
+                        &middot; SQLite &middot; Machine Learning &middot; Prompt Engineering</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Cloud & Compliance:</span>
+                    <span class="skill-list">Cloud Security Fundamentals &middot; FAA &middot; OSHA &middot; IATA
+                        &middot; CBP Protocols &middot; Security Clearance Procedures &middot; Audit
+                        Documentation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <section>
+            <h2 class="section-title">EDUCATION & CERTIFICATIONS</h2>
+
+            <div class="education-block">
+                <div class="degree-row">
+                    <span class="degree"><strong>B.S., Information Technology — Cybersecurity
+                            Concentration</strong></span>
+                    <span class="date"><em>December 2025</em></span>
+                </div>
+                <div class="school-row">
+                    <span class="school">Southern New Hampshire University</span> &middot;
+                    <span class="honors">Summa Cum Laude &middot; 3.96 GPA &middot; President's List (8 terms) &middot;
+                        Alpha Sigma Lambda Honor Society</span>
+                </div>
+            </div>
+
+            <div class="certifications-block">
+                <span class="cert-category"><strong>Certifications:</strong></span>
+                <span>CompTIA Security+ ce (2025) &middot; Security Clearance & CBP Badge Endorsement (2015–2023)</span>
+            </div>
+        </section>
+
+        <!-- TECHNICAL PROJECTS -->
+        <section>
+            <h2 class="section-title">TECHNICAL PROJECTS</h2>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <strong>Phishing Email ML Classifier</strong> &middot; <em>Python &middot; scikit-learn &middot;
+                        Random Forest</em> &middot; <a
+                        href="https://github.com/KM-it-ops/phishing-email-classifier">github.com/KM-it-ops/phishing-email-classifier</a>
+                </div>
+                <ul class="project-bullets">
+                    <li>Engineered 207 features via TF-IDF vectorization and custom regex pattern matching; achieved
+                        99.68% F1 score validated with 5-fold cross-validation.</li>
+                    <li>Implemented feature importance analysis to surface highest-signal phishing indicators with
+                        real-time classification demo.</li>
+                </ul>
+            </div>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <strong>Security Log Anomaly Detection System</strong> &middot; <em>Python &middot; pandas &middot;
+                        NumPy</em> &middot; <a
+                        href="https://github.com/KM-it-ops/security-log-anomaly-detection">github.com/KM-it-ops/security-log-anomaly-detection</a>
+                </div>
+                <ul class="project-bullets">
+                    <li>Built rule-based + statistical detection engine flagging 6 SOC threat categories: brute force,
+                        port scans, off-hours access, unknown IPs, privilege escalation, and volume spikes (Z-score).
+                    </li>
+                    <li>Achieved 100% detection rate across all injected threat scenarios; alert output structured for
+                        SOC triage workflows.</li>
+                </ul>
+            </div>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <strong>StockPath Navigator — AI System</strong> &middot; <em>Python &middot; React &middot; Prompt
+                        Engineering</em> &middot; <a
+                        href="https://github.com/KM-it-ops/StockPath-Navigator">github.com/KM-it-ops/StockPath-Navigator</a>
+                </div>
+                <ul class="project-bullets">
+                    <li>Deployed 17 prompt engineering techniques (Chain-of-Thought, ReAct) with React dashboard for
+                        real-time data processing and behavioral adaptation protocols.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section>
+            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+            <div class="experience-block">
+                <div class="experience-header">
+                    <span class="job-role"><strong>Aviation Security Operations Crew Chief</strong> &middot; American
+                        Airlines &middot; Charlotte, NC</span>
+                    <span class="date"><em>2015 – 2023</em></span>
+                </div>
+                <p class="job-context">Held security clearance and CBP badge endorsement managing daily security
+                    operations for international wide-body aircraft under FAA, OSHA, IATA, and CBP compliance.</p>
+                <ul class="job-bullets">
+                    <li>Led incident response and recurrent security training — reduced critical response times by 30%
+                        via improved communication procedures.</li>
+                    <li>Developed training programs that cut operational errors and safety incidents by 15%; maintained
+                        federal aviation compliance across all operations.</li>
+                    <li>Supervised crew operations and security system access controls, driving a 20% improvement in
+                        operational efficiency.</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <div class="experience-header">
+                    <span class="job-role"><strong>Courier & Logistics Specialist</strong> &middot; USPS &middot;
+                        Kannapolis, NC</span>
+                    <span class="date"><em>2024 – 2025</em></span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Conducted systematic 26-point safety and security inspections; maintained detailed compliance
+                        documentation for operational audits.</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <div class="experience-header">
+                    <span class="job-role"><strong>Delivery Associate</strong> &middot; Fossa Logistics LLC (Amazon DSP)
+                        &middot; Charlotte, NC</span>
+                    <span class="date"><em>2025 – Present</em></span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Monitored real-time tracking systems to resolve service issues proactively; maintained
+                        compliance records for operational reporting.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
