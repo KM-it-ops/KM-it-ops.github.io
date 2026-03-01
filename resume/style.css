@@ -220,19 +220,14 @@ li {
 
 /* ---------- PRINT STYLES (The Magic) ---------- */
 @media print {
-    /* 
-    This hides everything except the resume itself when printing.
-    It forces the browser to treat the `.page` div as the literal physical page.
-  */
-
     @page {
         size: letter;
-        margin: 0.5in 0.75in;
-        /* Give control of margins to the print dialog, but set defaults */
+        margin: 0;
+        /* Removing @page margin turns off browser headers/footers */
     }
 
     body {
-        background: none;
+        background: transparent !important;
         margin: 0;
         padding: 0;
         -webkit-print-color-adjust: exact !important;
@@ -244,12 +239,24 @@ li {
     }
 
     .page {
-        margin: 0;
-        padding: 0;
-        /* Let @page handle physical margins */
-        box-shadow: none;
-        width: 100%;
-        min-height: auto;
+        /* Force the margins to happen INSIDE the HTML page div */
+        margin: 0 !important;
+        padding: 0.45in 0.6in !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* Prevent awkward element breaking across pages */
+    .page,
+    section,
+    .experience-block,
+    .project-block,
+    .education-block,
+    .skills-grid {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     /* Ensure links are printed normally and not expanded */
@@ -258,16 +265,28 @@ li {
         text-decoration: none !important;
     }
 
-    /* Optional tweaking to cram everything onto 1 page precisely */
+    /* Sizing tweaks to guarantee all the new text fits on 1 page */
     body {
-        font-size: 10pt;
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
     }
 
     .name {
-        font-size: 22pt;
+        font-size: 20pt !important;
+        margin-bottom: 2px !important;
     }
 
     .section-title {
-        font-size: 11pt;
+        font-size: 10.5pt !important;
+        margin-bottom: 4px !important;
+        padding-bottom: 0px !important;
+    }
+
+    section {
+        margin-bottom: 10px !important;
+    }
+
+    .experience-block {
+        margin-bottom: 8px !important;
     }
 }
