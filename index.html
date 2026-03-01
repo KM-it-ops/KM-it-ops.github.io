@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Michael Kurdi — AI Systems Architect & Prompt Engineer. Building expert systems with language models using 15+ advanced prompt engineering techniques." />
+  <meta name="author" content="Michael Kurdi" />
+  <title>Michael Kurdi | AI Systems Architect & Prompt Engineer</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Go to top"><span>M</span>ICHAEL</a>
+
+      <div class="nav-links" role="menubar">
+        <a href="#about" role="menuitem">About</a>
+        <a href="#projects" role="menuitem">Projects</a>
+        <a href="#techniques" role="menuitem">Toolkit</a>
+        <a href="#philosophy" role="menuitem">Philosophy</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu" role="menu">
+    <a href="#about" role="menuitem">About</a>
+    <a href="#projects" role="menuitem">Projects</a>
+    <a href="#techniques" role="menuitem">Toolkit</a>
+    <a href="#philosophy" role="menuitem">Philosophy</a>
+    <a href="#contact" role="menuitem">Contact</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" aria-label="Hero introduction">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <h1 class="hero-name">MICHAEL</h1>
+
+      <div class="hero-typing-wrapper" aria-live="polite">
+        <span class="hero-typed" id="heroTyped"></span>
+        <span class="hero-cursor" aria-hidden="true"></span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary" id="cta-projects">View My Work</a>
+        <a href="https://github.com/KM-it-ops" class="btn btn-secondary" id="cta-github" target="_blank"
+          rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" aria-label="About me">
+    <div class="container">
+      <div class="reveal">
+        <div class="accent-line"></div>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Turning general-purpose AI into domain-specific powerhouses</p>
+      </div>
+
+      <div class="reveal">
+        <p class="about-intro">
+          I'm an <span class="highlight">AI Systems Architect</span> and <strong>Prompt Engineer</strong> who
+          transforms general-purpose language models into <span class="highlight">specialized expert systems</span>.
+          Using <strong>15+ advanced prompt engineering techniques</strong> — from chain-of-thought reasoning to
+          self-reflection protocols — I design AI solutions that are structured, safe, and ready for production.
+          My work sits at the intersection of <strong>technical architecture</strong> and
+          <strong>human-centered design</strong>, ensuring that every system I build isn't just powerful,
+          but genuinely useful for real people.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Card 1 -->
+        <div class="about-card reveal">
+          <div class="about-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8" />
+              <path d="M12 17v4" />
+              <path d="M7 8l3 3-3 3" />
+              <line x1="13" y1="14" x2="17" y2="14" />
+            </svg>
+          </div>
+          <h3>Expert System Design</h3>
+          <p>I architect AI systems that replace entire workflows with structured, safe, deployable solutions — not just
+            chatbots, but production-grade intelligent tools.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="about-card reveal">
+          <div class="about-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>Advanced Prompt Engineering</h3>
+          <p>Role priming, XML structuring, chain-of-thought, ReAct workflows, self-reflection protocols, and
+            hallucination guardrails — techniques that make AI reliable and precise.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="about-card reveal">
+          <div class="about-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+              <path d="M8 7h8" />
+              <path d="M8 11h6" />
+            </svg>
+          </div>
+          <h3>Full-Stack AI Packaging</h3>
+          <p>Complete GitHub-ready repositories with documentation, web interfaces, safety mechanisms, and
+            beginner-friendly setup guides that anyone can deploy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" aria-label="Featured projects">
+    <div class="container">
+      <div class="reveal">
+        <div class="accent-line"></div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Production-grade AI systems, open source and ready to deploy</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: StockPath Navigator -->
+        <article class="project-card reveal">
+          <div class="project-visual">
+            <span class="version-badge">v3.0</span>
+            <div class="terminal-mockup">
+              <div class="terminal-header">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <span class="terminal-title">stockpath-navigator</span>
+              </div>
+              <div class="terminal-body">
+                <div><span class="comment">// AI Trading Assistant</span></div>
+                <div><span class="prompt">user &gt;</span> Analyze AAPL trend</div>
+                <div><span class="output">◆ Reasoning:</span> Bullish pattern</div>
+                <div><span class="output">◆ Risk Level:</span> Moderate</div>
+                <div><span class="output">◆ Confidence:</span> 87%</div>
+                <div><span class="prompt">⚡</span> <span class="comment">Safety guardrails active</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <p class="project-subtitle">AI-Powered Trading Expert System</p>
+            <h3>StockPath Navigator</h3>
+            <p>A meticulously engineered system prompt that transforms any reasoning-capable LLM (Claude, GPT-4, Gemini)
+              into a disciplined stock market analyst and trading coach. Features real-time analysis, trade journaling,
+              emotional state management, and an interactive React dashboard. Built with 17 advanced prompt engineering
+              techniques including ReAct workflows, chain-of-thought reasoning, and self-reflection protocols.</p>
+            <div class="tech-badges">
+              <span class="tech-badge">Prompt Engineering</span>
+              <span class="tech-badge">ReAct</span>
+              <span class="tech-badge">Chain-of-Thought</span>
+              <span class="tech-badge">Real-Time Data</span>
+              <span class="tech-badge">React UI</span>
+              <span class="tech-badge">Safety Guardrails</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/KM-it-ops/StockPath-Navigator" class="btn btn-primary" target="_blank"
+                rel="noopener noreferrer">View on GitHub</a>
+              <a href="https://github.com/KM-it-ops/StockPath-Navigator#readme" class="btn btn-secondary"
+                target="_blank" rel="noopener noreferrer">Read Documentation</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: VulnTrack Dashboard -->
+        <article class="project-card reveal">
+          <div class="project-visual">
+            <span class="version-badge">v1.0</span>
+            <div class="terminal-mockup">
+              <div class="terminal-header">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <span class="terminal-title">vulntrack-dashboard</span>
+              </div>
+              <div class="terminal-body">
+                <div><span class="comment">// Vulnerability Dashboard</span></div>
+                <div><span class="prompt">GET</span> /api/vulnerabilities</div>
+                <div><span class="output">🔴 Critical:</span> 3 findings</div>
+                <div><span class="output">🟠 High:</span> 5 findings</div>
+                <div><span class="output">� Resolved:</span> 4 patched</div>
+                <div><span class="prompt">✓</span> <span class="comment">12 records loaded</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <p class="project-subtitle">Vulnerability Management Dashboard</p>
+            <h3>VulnTrack</h3>
+            <p>A full-stack vulnerability management dashboard with KPI tracking, color-coded severity levels, full CRUD
+              operations, live search and filtering, and toast notifications. Pre-seeded with 12 sample records for
+              immediate use. Built with dark-mode cybersecurity branding and a REST API backend.</p>
+            <div class="tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Flask</span>
+              <span class="tech-badge">SQLite</span>
+              <span class="tech-badge">REST API</span>
+              <span class="tech-badge">Dark Mode UI</span>
+              <span class="tech-badge">CRUD</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" class="btn btn-primary"
+                target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program#readme"
+                class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Read Documentation</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TECHNIQUES ========== -->
+  <section id="techniques" aria-label="Prompt engineering techniques">
+    <div class="container">
+      <div class="reveal">
+        <div class="accent-line"></div>
+        <h2 class="section-title">My Toolkit: 15+ Advanced Techniques</h2>
+        <p class="section-subtitle">The prompt engineering arsenal behind every system I build</p>
+      </div>
+
+      <div class="reveal">
+        <div class="techniques-counter" aria-label="15 techniques mastered">
+          <span>⚡</span> <strong>15 Techniques Mastered</strong>
+        </div>
+      </div>
+
+      <div class="techniques-grid">
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">01</div>
+          <div class="technique-name">Role Priming</div>
+          <div class="technique-desc">Establishing expert personas with domain-specific knowledge and behavioral
+            frameworks to ground the AI's responses in professional context.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">02</div>
+          <div class="technique-name">XML Tag Structuring</div>
+          <div class="technique-desc">Organizing complex prompts with hierarchical XML tags for precise instruction
+            routing and clear separation of concerns.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">03</div>
+          <div class="technique-name">Chain-of-Thought Reasoning</div>
+          <div class="technique-desc">Guiding step-by-step logical deduction for complex multi-variable decisions,
+            making the AI's reasoning transparent and verifiable.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">04</div>
+          <div class="technique-name">Self-Reflection Protocols</div>
+          <div class="technique-desc">Building in verification loops where the AI evaluates and improves its own outputs
+            before presenting them to the user.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">05</div>
+          <div class="technique-name">Hallucination Guardrails</div>
+          <div class="technique-desc">Implementing confidence scoring and source verification to prevent fabricated
+            information from reaching end users.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">06</div>
+          <div class="technique-name">ReAct Workflows</div>
+          <div class="technique-desc">Combining reasoning and action in iterative loops for dynamic problem-solving that
+            adapts to real-time information.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">07</div>
+          <div class="technique-name">Adaptive Tone Shifting</div>
+          <div class="technique-desc">Context-aware communication that adjusts formality, empathy, and technical depth
+            based on the user's needs and situation.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">08</div>
+          <div class="technique-name">Few-Shot Prompting</div>
+          <div class="technique-desc">Strategic use of input-output examples to establish response patterns, ensuring
+            consistent and predictable AI behavior.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">09</div>
+          <div class="technique-name">Emotional Intelligence</div>
+          <div class="technique-desc">Detecting and responding to user emotional states for sensitive domains like
+            financial planning and personal journaling.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">10</div>
+          <div class="technique-name">Multi-Turn Memory</div>
+          <div class="technique-desc">Maintaining context coherence across extended interactions so the AI remembers and
+            builds upon previous conversation turns.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">11</div>
+          <div class="technique-name">Output Format Control</div>
+          <div class="technique-desc">Enforcing structured outputs (JSON, YAML, Markdown) for downstream processing,
+            ensuring data integrity and parseability.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">12</div>
+          <div class="technique-name">Safety & Ethics Protocols</div>
+          <div class="technique-desc">Building responsible AI boundaries directly into system architecture to prevent
+            misuse and ensure ethical operation.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">13</div>
+          <div class="technique-name">Temperature Tuning</div>
+          <div class="technique-desc">Strategic configuration of temperature and sampling parameters for balancing
+            creativity and precision in different contexts.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">14</div>
+          <div class="technique-name">Iterative Refinement</div>
+          <div class="technique-desc">Progressive output improvement through structured self-critique cycles that
+            systematically enhance quality and accuracy.</div>
+        </div>
+
+        <div class="technique-card reveal" tabindex="0" role="button" aria-expanded="false">
+          <div class="technique-number">15</div>
+          <div class="technique-name">Multi-Model Routing</div>
+          <div class="technique-desc">Directing tasks to optimal LLMs based on capability matching and cost efficiency,
+            maximizing performance per dollar spent.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PHILOSOPHY ========== -->
+  <section id="philosophy" aria-label="My philosophy">
+    <div class="container">
+      <div class="reveal">
+        <blockquote class="philosophy-quote">
+          I don't just write prompts — I <em>architect intelligent systems</em>. Every technique serves a purpose:
+          making AI <em>safer</em>, <em>smarter</em>, and more useful for real people.
+        </blockquote>
+      </div>
+
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <div class="stat-number" data-target="4" data-suffix="">0</div>
+          <div class="stat-label">Production Systems Deployed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="17" data-suffix="+">0</div>
+          <div class="stat-label">Techniques Mastered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Open Source</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" aria-label="Contact information">
+    <div class="container">
+      <div class="reveal">
+        <div class="accent-line" style="margin-left:auto;margin-right:auto;"></div>
+        <h2 class="section-title">Let's Build Something Together</h2>
+        <p class="section-subtitle">Open to collaboration, consulting, and new opportunities</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <a href="https://github.com/KM-it-ops" class="contact-card" id="contact-github" target="_blank"
+          rel="noopener noreferrer" aria-label="GitHub profile">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">View Repositories</div>
+        </a>
+
+        <a href="https://linkedin.com/in/michael-kurdi" class="contact-card" id="contact-linkedin" target="_blank"
+          rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">Connect with Me</div>
+        </a>
+
+        <a href="mailto:kurdi.michael.it@gmail.com" class="contact-card" id="contact-email" aria-label="Send email">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M22 7l-10 7L2 7" />
+            </svg>
+          </div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">Get in Touch</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <p>
+      Built with <span class="footer-highlight">Google Antigravity</span> + Advanced Prompt Engineering
+      &nbsp;|&nbsp; &copy; 2026 Michael Kurdi
+    </p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
