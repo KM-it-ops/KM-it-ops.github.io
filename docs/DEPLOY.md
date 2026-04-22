@@ -6,4 +6,4 @@ This site is **static HTML, CSS, and JavaScript** with no build step.
 2. In the repository **Settings → Pages**, set **Source** to **Deploy from a branch** and choose **`/ (root)`** on **`main`**.
 3. Wait for the Pages build; the site is served at `https://km-it-ops.github.io/`.
 
-The print-ready resume lives at `/resume/index.html` (use **Print / Save as PDF** in the browser).
+The canonical **PDF résumé** is at `/assets/Michael_Kurdi_Resume_2026.pdf` (linked from the home page and profile README). The print-friendly **HTML résumé** is at `/resume/index.html` (use **Print / Save as PDF** in the browser if you need an alternate export).
