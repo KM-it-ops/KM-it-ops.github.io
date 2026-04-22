@@ -35,7 +35,8 @@ Try `neofetch`, `matrix`, or `theme` in the in-page shell.
 | [`assets/favicon.svg`](assets/favicon.svg)                            | Favicon                                    |
 | [`resume/`](resume/)                                                  | Print-friendly web r&eacute;sum&eacute;    |
 | `robots.txt`, `sitemap.xml`, `site.webmanifest`                       | SEO / PWA                                  |
-| [`PROFILE_README.md`](PROFILE_README.md)                              | GitHub profile README                      |
+| [`PROFILE_README.md`](PROFILE_README.md)                              | Ready-to-paste GitHub profile README       |
+| [`docs/PUBLIC_POLISH.md`](docs/PUBLIC_POLISH.md)                      | One-page checklist: profile, repo metadata, pins, cleanup |
 
 ## Updating the r&eacute;sum&eacute;
 
