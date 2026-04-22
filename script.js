@@ -17,7 +17,6 @@
     initNavbar();
     initMobileMenu();
     initTechniqueCards();
-    initCountUp();
   }
 
   /* ==============================================
@@ -67,7 +66,7 @@
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 229, 255, ${0.08 * (1 - dist / CONNECT_DIST)})`;
+            ctx.strokeStyle = `rgba(94, 234, 212, ${0.09 * (1 - dist / CONNECT_DIST)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -101,7 +100,7 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 229, 255, ${p.alpha})`;
+        ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha * 0.85})`;
         ctx.fill();
       }
 
@@ -136,10 +135,10 @@
     if (!el) return;
 
     const phrases = [
-      'AI Systems Architect',
-      'Prompt Engineer',
-      'Building Expert Systems with Language Models',
-      'Turning LLMs into Domain Specialists',
+      'Cybersecurity + AI Systems Architect',
+      'SOC-ready analytics, ML, and log intelligence',
+      'Production expert systems with 17+ prompt techniques',
+      'From regulated ops to shipped GitHub repos',
     ];
 
     let phraseIdx = 0;
@@ -309,54 +308,4 @@
     });
   }
 
-  /* ==============================================
-     7. COUNT-UP ANIMATION
-     ============================================== */
-  function initCountUp() {
-    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-    if (!statNumbers.length) return;
-
-    let animated = false;
-
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            statNumbers.forEach(function (el) {
-              animateNumber(el);
-            });
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    // Observe the stats row container
-    const statsRow = document.querySelector('.stats-row');
-    if (statsRow) observer.observe(statsRow);
-
-    function animateNumber(el) {
-      const target = parseInt(el.getAttribute('data-target'), 10);
-      const suffix = el.getAttribute('data-suffix') || '';
-      const duration = 1500;
-      const start = performance.now();
-
-      function step(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease-out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(eased * target);
-        el.textContent = current + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      }
-
-      requestAnimationFrame(step);
-    }
-  }
 })();
