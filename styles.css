@@ -1,6 +1,5 @@
 /* =========================================
-   Michael Kurdi — styles.css
-   Developer-focused dark portfolio
+   Mahmoud (Michael) Al Kurdi — styles.css
    ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -342,7 +341,7 @@ strong { color: var(--text-0); font-weight: 600; }
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 9vw, 6rem);
+  font-size: clamp(2.6rem, 9vw, 5.8rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -350,12 +349,63 @@ strong { color: var(--text-0); font-weight: 600; }
   color: var(--text-0);
   opacity: 0; transform: translateY(20px);
   animation: fadeUp 0.7s ease 0.05s forwards;
+  display: inline-block;
 }
-.hero-name-part { display: inline-block; }
+.hero-name-part { display: inline-block; position: relative; }
+.hero-name-part + .hero-name-part { margin-left: 0.5em; }
 .hero-name-accent {
   background: linear-gradient(120deg, var(--accent), var(--blue) 60%, var(--violet));
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
+  position: relative;
+}
+/* Glitch: layered RGB split copies of the accent name, revealed on hover */
+.hero-name-accent[data-glitch]::before,
+.hero-name-accent[data-glitch]::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  -webkit-text-fill-color: currentColor;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.hero-name-accent[data-glitch]::before {
+  color: #ff7ac6;
+  transform: translate(2px, 0);
+  clip-path: polygon(0 0, 100% 0, 100% 42%, 0 42%);
+}
+.hero-name-accent[data-glitch]::after {
+  color: #7aa2ff;
+  transform: translate(-2px, 0);
+  clip-path: polygon(0 58%, 100% 58%, 100% 100%, 0 100%);
+}
+.hero-name:hover .hero-name-accent[data-glitch]::before,
+.hero-name:hover .hero-name-accent[data-glitch]::after {
+  opacity: 0.9;
+  animation: glitch 0.55s steps(2, end) 1;
+}
+@keyframes glitch {
+  0%   { transform: translate(0,0); }
+  20%  { transform: translate(3px,-1px); }
+  40%  { transform: translate(-3px,1px); }
+  60%  { transform: translate(2px,2px); }
+  80%  { transform: translate(-2px,-1px); }
+  100% { transform: translate(0,0); }
+}
+
+/* Kicker */
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-2);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+.kicker-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .hero-tag {
@@ -1249,6 +1299,60 @@ strong { color: var(--text-0); font-weight: 600; }
   .container { max-width: 1320px; }
 }
 
+/* =============================================
+   CURSOR SPOTLIGHT
+   ============================================= */
+.cursor-spot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 420px; height: 420px;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(closest-side, rgba(124, 240, 193, 0.10), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+.cursor-spot.on { opacity: 1; }
+
+/* =============================================
+   3D TILT cards (driven by JS, css lives here)
+   ============================================= */
+.tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow var(--t-base), border-color var(--t-base);
+  will-change: transform;
+}
+.tilt:hover {
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(124, 240, 193, 0.08);
+}
+.tilt > * {
+  transform: translateZ(0);
+  transition: transform 0.25s ease;
+}
+.tilt:hover .project-title,
+.tilt:hover .terminal-mockup {
+  transform: translateZ(22px);
+}
+
+/* =============================================
+   TERMINAL CLOCK
+   ============================================= */
+.iterm-clock {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after {
@@ -1258,4 +1362,14 @@ strong { color: var(--text-0); font-weight: 600; }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   .hero-canvas { display: none; }
+  .cursor-spot { display: none; }
+  .tilt { transform: none !important; }
 }
+@media (hover: none) {
+  .cursor-spot { display: none; }
+}
+
+/* Small helper: hero content layer needs to sit above the spotlight */
+#hero .hero-content,
+.navbar { position: relative; z-index: 1001; }
+.hero-content { position: relative; z-index: 2; }

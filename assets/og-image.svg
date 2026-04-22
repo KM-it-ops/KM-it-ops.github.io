@@ -45,30 +45,29 @@
   </g>
 
   <!-- name -->
-  <text x="110" y="290" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="100" letter-spacing="-3" fill="#f5f7fb">Michael</text>
-  <text x="110" y="390" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="100" letter-spacing="-3" fill="url(#accent)">Kurdi</text>
+  <text x="110" y="290" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="90" letter-spacing="-3" fill="#f5f7fb">Mahmoud</text>
+  <text x="110" y="385" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="90" letter-spacing="-3" fill="url(#accent)">Al Kurdi</text>
 
   <!-- tagline -->
-  <text x="110" y="455" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" fill="#8d93a8">
-    SOC &#183; detection engineer &#183; Python &#183; ML &#183; LLM expert systems
+  <text x="110" y="455" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" fill="#8d93a8">
+    a.k.a. Michael &#183; security engineer &#183; python &#183; ml &#183; llm expert systems
   </text>
 
   <!-- badges -->
-  <g transform="translate(110, 490)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16">
+  <g transform="translate(110, 495)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14">
     <g>
-      <rect width="150" height="34" rx="8" fill="#7cf0c1" fill-opacity="0.14" stroke="#7cf0c1" stroke-opacity="0.3"/>
-      <text x="75" y="22" text-anchor="middle" fill="#7cf0c1">Security+</text>
+      <rect width="130" height="30" rx="8" fill="#7cf0c1" fill-opacity="0.14" stroke="#7cf0c1" stroke-opacity="0.3"/>
+      <text x="65" y="20" text-anchor="middle" fill="#7cf0c1">Security+</text>
     </g>
-    <g transform="translate(165,0)">
-      <rect width="220" height="34" rx="8" fill="#7aa2ff" fill-opacity="0.14" stroke="#7aa2ff" stroke-opacity="0.3"/>
-      <text x="110" y="22" text-anchor="middle" fill="#7aa2ff">B.S. IT Cybersecurity</text>
+    <g transform="translate(145,0)">
+      <rect width="210" height="30" rx="8" fill="#7aa2ff" fill-opacity="0.14" stroke="#7aa2ff" stroke-opacity="0.3"/>
+      <text x="105" y="20" text-anchor="middle" fill="#7aa2ff">B.S. IT Cybersecurity</text>
     </g>
-    <g transform="translate(400,0)">
-      <rect width="230" height="34" rx="8" fill="#b07cff" fill-opacity="0.18" stroke="#b07cff" stroke-opacity="0.3"/>
-      <text x="115" y="22" text-anchor="middle" fill="#b07cff">8+ yrs cleared ops</text>
+    <g transform="translate(370,0)">
+      <rect width="140" height="30" rx="8" fill="#b07cff" fill-opacity="0.18" stroke="#b07cff" stroke-opacity="0.3"/>
+      <text x="70" y="20" text-anchor="middle" fill="#b07cff">Charlotte, NC</text>
     </g>
   </g>
 
-  <!-- url -->
   <text x="1090" y="595" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" fill="#606878">km-it-ops.github.io</text>
 </svg>

@@ -1,8 +1,5 @@
 /* =========================================
-   Michael Kurdi — script.js
-   Hero canvas, typing, scroll progress,
-   nav, mobile menu, command palette,
-   interactive terminal, easter eggs.
+   Mahmoud (Michael) Al Kurdi — script.js
    ========================================= */
 
 (function () {
@@ -11,11 +8,12 @@
   const prefersReducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches;
+  const isTouch = window.matchMedia('(hover: none)').matches;
 
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
-    consoleEasterEgg();
+    consoleBanner();
     initHeroCanvas();
     initTypingEffect();
     initScrollReveal();
@@ -26,49 +24,38 @@
     initCommandPalette();
     initTerminal();
     initKonami();
+    initCursorSpotlight();
+    initMagnetic();
+    initTilt();
   }
 
   /* ==============================================
-     CONSOLE EASTER EGG
+     CONSOLE BANNER
      ============================================== */
-  function consoleEasterEgg() {
+  function consoleBanner() {
     try {
       const art = [
         '',
-        '  __  __ _      _                _  _   __              _ _ ',
-        ' |  \\/  (_)__ _| |_  __ _ ___| |/ / / /  _ _ _ __| (_)',
-        " | |\\/| | / _` | ' \\/ _` / -_)\\   \\  /  | '_| '  \\_ |",
-        ' |_|  |_|_\\__,_|_||_\\__,_\\___| \\_\\/   |_| |_|_|_(_)',
+        '  mahmoud ("michael") al kurdi',
+        '  github.com/KM-it-ops',
         '',
-        '  SOC & security engineer · Python · ML · LLM expert systems',
-        '  → github.com/KM-it-ops',
-        '  → kurdi.michael.it@gmail.com',
-        '',
-        '  psst — press ⌘K (or Ctrl+K) for the command palette.',
-        '         try the interactive terminal in #terminal.',
-        '         konami code still works.',
+        '  ⌘K · /  — command palette',
+        '  ↓      — interactive shell at #shell',
         '',
       ].join('\n');
-
       const style = [
         'color:#7cf0c1',
         'font-family:"JetBrains Mono",monospace',
         'font-size:12px',
-        'line-height:1.3',
+        'line-height:1.4',
       ].join(';');
       // eslint-disable-next-line no-console
       console.log('%c' + art, style);
-      // eslint-disable-next-line no-console
-      console.log(
-        '%cHiring? %cEmail kurdi.michael.it@gmail.com',
-        'color:#7cf0c1;font-weight:bold',
-        'color:#cfd3e1'
-      );
     } catch (_) { /* no-op */ }
   }
 
   /* ==============================================
-     HERO CANVAS — constellation / stars
+     HERO CANVAS — constellation
      ============================================== */
   function initHeroCanvas() {
     const canvas = document.getElementById('heroCanvas');
@@ -180,13 +167,9 @@
     let rt;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
-      rt = setTimeout(() => {
-        resize();
-        create();
-      }, 120);
+      rt = setTimeout(() => { resize(); create(); }, 120);
     });
 
-    // Pause when off-screen
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -207,18 +190,17 @@
   }
 
   /* ==============================================
-     TYPING EFFECT
+     TYPING EFFECT (short, understated)
      ============================================== */
   function initTypingEffect() {
     const el = document.getElementById('heroTyped');
     if (!el) return;
 
     const phrases = [
-      'SOC & Cybersecurity Analyst · detection engineer',
-      'Python detection: logs, phishing, anomaly engines',
-      '8+ yrs cleared ops · FAA / OSHA / IATA / CBP',
-      'Ships LLM expert systems with real guardrails',
-      'Charlotte, NC · remote · open to interviews',
+      'Mahmoud Al Kurdi. a.k.a. Michael.',
+      'security engineer · python · ml',
+      'ships detection tooling & llm expert systems',
+      'Charlotte, NC · remote',
     ];
 
     if (prefersReducedMotion) {
@@ -281,7 +263,7 @@
   }
 
   /* ==============================================
-     NAV (active section + shadow)
+     NAV
      ============================================== */
   function initNavbar() {
     const nav = document.getElementById('navbar');
@@ -306,10 +288,7 @@
       });
     }
     window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     update();
   }
@@ -329,10 +308,7 @@
       bar.style.transform = `scaleX(${pct.toFixed(4)})`;
     }
     window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     update();
   }
@@ -368,7 +344,6 @@
       hamburger.setAttribute('aria-expanded', String(!open));
       document.body.style.overflow = open ? '' : 'hidden';
     }
-
     function close() {
       menu.classList.remove('open');
       overlay.classList.remove('open');
@@ -386,47 +361,44 @@
   }
 
   /* ==============================================
-     COMMAND PALETTE (⌘K / Ctrl+K)
+     COMMAND PALETTE
      ============================================== */
   const COMMANDS = [
-    { id: 'nav-about',     title: 'Go to About',        hint: '#about',     icon: '→', section: 'navigate', run: () => scrollTo('about') },
-    { id: 'nav-projects',  title: 'Go to Projects',     hint: '#projects',  icon: '→', section: 'navigate', run: () => scrollTo('projects') },
-    { id: 'nav-stack',     title: 'Go to Stack',        hint: '#stack',     icon: '→', section: 'navigate', run: () => scrollTo('stack') },
-    { id: 'nav-timeline',  title: 'Go to Timeline',     hint: '#timeline',  icon: '→', section: 'navigate', run: () => scrollTo('timeline') },
-    { id: 'nav-terminal',  title: 'Go to Terminal',     hint: '#terminal',  icon: '→', section: 'navigate', run: () => scrollTo('terminal') },
-    { id: 'nav-contact',   title: 'Go to Contact',      hint: '#contact',   icon: '→', section: 'navigate', run: () => scrollTo('contact') },
-    { id: 'top',           title: 'Scroll to top',      hint: 'home',       icon: '↑', section: 'navigate', run: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+    { id: 'nav-about',     title: 'Go to About',       hint: '#about',    icon: '→', section: 'navigate', run: () => scrollTo('about') },
+    { id: 'nav-work',      title: 'Go to Work',        hint: '#work',     icon: '→', section: 'navigate', run: () => scrollTo('work') },
+    { id: 'nav-stack',     title: 'Go to Stack',       hint: '#stack',    icon: '→', section: 'navigate', run: () => scrollTo('stack') },
+    { id: 'nav-log',       title: 'Go to Log',         hint: '#log',      icon: '→', section: 'navigate', run: () => scrollTo('log') },
+    { id: 'nav-shell',     title: 'Go to Shell',       hint: '#shell',    icon: '→', section: 'navigate', run: () => scrollTo('shell') },
+    { id: 'nav-contact',   title: 'Go to Contact',     hint: '#contact',  icon: '→', section: 'navigate', run: () => scrollTo('contact') },
+    { id: 'top',           title: 'Scroll to top',     hint: 'home',      icon: '↑', section: 'navigate', run: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
 
-    { id: 'email',         title: 'Send email',                           hint: 'kurdi.michael.it@gmail.com', icon: '@', section: 'contact', run: () => window.location.href = 'mailto:kurdi.michael.it@gmail.com?subject=Opportunity' },
-    { id: 'github',        title: 'Open GitHub',                          hint: 'github.com/KM-it-ops',        icon: 'gh', section: 'contact', run: () => openExt('https://github.com/KM-it-ops') },
-    { id: 'linkedin',      title: 'Open LinkedIn',                        hint: 'linkedin.com/in/michael-kurdi', icon: 'in', section: 'contact', run: () => openExt('https://linkedin.com/in/michael-kurdi') },
-    { id: 'resume-pdf',    title: 'Download resume.pdf',                  hint: 'PDF',                         icon: '↓', section: 'links',   run: () => openExt('assets/Michael_Kurdi_Resume_2026.pdf') },
-    { id: 'resume-web',    title: 'Open web resume',                      hint: '/resume',                     icon: '»', section: 'links',   run: () => { window.location.href = 'resume/index.html'; } },
+    { id: 'email',         title: 'Send email',                       hint: 'kurdi.michael.it@gmail.com',    icon: '@',   section: 'contact', run: () => window.location.href = 'mailto:kurdi.michael.it@gmail.com' },
+    { id: 'github',        title: 'Open GitHub',                      hint: 'github.com/KM-it-ops',          icon: 'gh',  section: 'contact', run: () => openExt('https://github.com/KM-it-ops') },
+    { id: 'linkedin',      title: 'Open LinkedIn',                    hint: 'linkedin.com/in/michael-kurdi', icon: 'in',  section: 'contact', run: () => openExt('https://linkedin.com/in/michael-kurdi') },
+    { id: 'resume-pdf',    title: 'Download resume.pdf',              hint: 'PDF',                           icon: '↓',   section: 'links',   run: () => openExt('assets/Mahmoud_Al_Kurdi_Resume_2026.pdf') },
+    { id: 'resume-web',    title: 'Open web resume',                  hint: '/resume',                       icon: '»',   section: 'links',   run: () => { window.location.href = 'resume/index.html'; } },
 
-    { id: 'proj-stockpath', title: 'View StockPath Navigator',            hint: 'AI trading expert',           icon: '◈', section: 'projects', run: () => openExt('https://github.com/KM-it-ops/StockPath-Navigator') },
-    { id: 'proj-vulntrack', title: 'View VulnTrack',                       hint: 'Vulnerability dashboard',     icon: '◈', section: 'projects', run: () => openExt('https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program') },
-    { id: 'proj-phishing',  title: 'View Phishing Classifier',             hint: 'ML · TF-IDF · Random Forest', icon: '◈', section: 'projects', run: () => openExt('https://github.com/KM-it-ops/phishing-email-classifier') },
-    { id: 'proj-log',       title: 'View Log Anomaly Engine',              hint: 'SOC rules + statistics',      icon: '◈', section: 'projects', run: () => openExt('https://github.com/KM-it-ops/security-log-anomaly-detection') },
+    { id: 'proj-stockpath', title: 'StockPath Navigator',             hint: 'trading expert system',         icon: '◈',   section: 'work',    run: () => openExt('https://github.com/KM-it-ops/StockPath-Navigator') },
+    { id: 'proj-vulntrack', title: 'VulnTrack',                       hint: 'vuln management dashboard',     icon: '◈',   section: 'work',    run: () => openExt('https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program') },
+    { id: 'proj-phishing',  title: 'Phishing Classifier',             hint: 'tf-idf + random forest',        icon: '◈',   section: 'work',    run: () => openExt('https://github.com/KM-it-ops/phishing-email-classifier') },
+    { id: 'proj-log',       title: 'Log Anomaly Engine',              hint: 'rules + statistics',            icon: '◈',   section: 'work',    run: () => openExt('https://github.com/KM-it-ops/security-log-anomaly-detection') },
 
-    { id: 'copy-email',    title: 'Copy email address',                   hint: 'kurdi.michael.it@gmail.com',  icon: '⧉', section: 'utility', run: () => copyText('kurdi.michael.it@gmail.com', 'Email copied!') },
-    { id: 'copy-link',     title: 'Copy link to this page',               hint: window.location.href,          icon: '⧉', section: 'utility', run: () => copyText(window.location.href, 'Link copied!') },
-    { id: 'view-source',   title: 'View source on GitHub',                hint: 'KM-it-ops/KM-it-ops.github.io', icon: '</>', section: 'utility', run: () => openExt('https://github.com/KM-it-ops/KM-it-ops.github.io') },
+    { id: 'copy-email',    title: 'Copy email',                       hint: 'kurdi.michael.it@gmail.com',    icon: '⧉',   section: 'utility', run: () => copyText('kurdi.michael.it@gmail.com', 'email copied') },
+    { id: 'copy-link',     title: 'Copy link',                        hint: window.location.href,            icon: '⧉',   section: 'utility', run: () => copyText(window.location.href, 'link copied') },
+    { id: 'view-source',   title: 'View source',                      hint: 'KM-it-ops/KM-it-ops.github.io', icon: '</>', section: 'utility', run: () => openExt('https://github.com/KM-it-ops/KM-it-ops.github.io') },
   ];
 
   function scrollTo(id) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
   }
-  function openExt(url) {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
+  function openExt(url) { window.open(url, '_blank', 'noopener,noreferrer'); }
   function copyText(text, msg) {
     try {
       navigator.clipboard.writeText(text).then(() => toast(msg));
-    } catch (_) {
-      toast('Copy failed — select manually.');
-    }
+    } catch (_) { toast('copy failed'); }
   }
+
   let toastTimer;
   function toast(msg) {
     let el = document.getElementById('kToast');
@@ -435,19 +407,13 @@
       el.id = 'kToast';
       el.setAttribute('role', 'status');
       el.style.cssText = [
-        'position:fixed',
-        'bottom:24px',
-        'left:50%',
+        'position:fixed','bottom:24px','left:50%',
         'transform:translateX(-50%) translateY(20px)',
-        'background:#0f1220',
-        'color:#f5f7fb',
-        'padding:10px 16px',
-        'border-radius:8px',
+        'background:#0f1220','color:#f5f7fb',
+        'padding:10px 16px','border-radius:8px',
         'border:1px solid rgba(124,240,193,0.3)',
         'font-family:"JetBrains Mono",monospace',
-        'font-size:0.85rem',
-        'z-index:1200',
-        'opacity:0',
+        'font-size:0.85rem','z-index:1200','opacity:0',
         'transition:opacity .2s ease, transform .25s ease',
         'pointer-events:none',
         'box-shadow:0 20px 60px rgba(0,0,0,0.45)',
@@ -473,7 +439,6 @@
     const backdrop = document.getElementById('cmdkBackdrop');
     const trigger = document.getElementById('cmdkTrigger');
     const heroTrigger = document.getElementById('ctaCmdk');
-
     if (!root || !input || !list) return;
 
     let filtered = COMMANDS.slice();
@@ -492,10 +457,8 @@
       root.hidden = true;
       document.body.style.overflow = '';
     }
-
     function score(q, s) {
-      q = q.toLowerCase();
-      s = s.toLowerCase();
+      q = q.toLowerCase(); s = s.toLowerCase();
       if (!q) return 1;
       if (s.includes(q)) return 2 - (s.indexOf(q) / s.length);
       let qi = 0;
@@ -504,7 +467,6 @@
       }
       return qi === q.length ? 0.5 : 0;
     }
-
     function filter(q) {
       if (!q) { filtered = COMMANDS.slice(); return; }
       filtered = COMMANDS
@@ -513,13 +475,12 @@
         .sort((a, b) => b.s - a.s)
         .map((x) => x.c);
     }
-
     function render() {
       list.innerHTML = '';
       if (!filtered.length) {
         const empty = document.createElement('li');
         empty.className = 'cmdk-empty';
-        empty.textContent = 'No matches — try "projects" or "email"';
+        empty.textContent = 'no matches — try "work" or "email"';
         list.appendChild(empty);
         return;
       }
@@ -540,7 +501,6 @@
         list.appendChild(li);
       });
     }
-
     function updateSelection() {
       list.querySelectorAll('.cmdk-item').forEach((el, i) => {
         const on = i === selected;
@@ -548,7 +508,6 @@
         if (on) el.scrollIntoView({ block: 'nearest' });
       });
     }
-
     function run(i) {
       const c = filtered[i];
       if (!c) return;
@@ -561,7 +520,6 @@
       selected = 0;
       render();
     });
-
     input.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
@@ -581,11 +539,9 @@
     });
 
     backdrop.addEventListener('click', close);
-
     if (trigger) trigger.addEventListener('click', open);
     if (heroTrigger) heroTrigger.addEventListener('click', open);
 
-    // Global shortcut
     document.addEventListener('keydown', (e) => {
       const isMeta = e.metaKey || e.ctrlKey;
       if (isMeta && (e.key === 'k' || e.key === 'K')) {
@@ -601,27 +557,46 @@
       }
     });
 
-    // Expose for the interactive terminal
     window.__cmdk = { open, close };
   }
 
   /* ==============================================
      INTERACTIVE TERMINAL
      ============================================== */
+  const TERMINAL_COMMANDS = [
+    'help', 'about', 'work', 'projects', 'skills', 'stack', 'resume',
+    'contact', 'social', 'open', 'github', 'linkedin', 'goto', 'cmdk',
+    'palette', 'whoami', 'uname', 'date', 'pwd', 'ls', 'cat', 'echo',
+    'theme', 'matrix', 'neofetch', 'clear', 'cls', 'exit',
+  ];
+
   function initTerminal() {
     const body = document.getElementById('itermBody');
     const out = document.getElementById('itermOut');
     const form = document.getElementById('itermForm');
     const input = document.getElementById('itermInput');
+    const clockEl = document.getElementById('itermClock');
     if (!body || !out || !form || !input) return;
 
     const history = [];
     let hIdx = -1;
 
+    if (clockEl) {
+      function tickClock() {
+        const d = new Date();
+        const hh = String(d.getHours()).padStart(2, '0');
+        const mm = String(d.getMinutes()).padStart(2, '0');
+        const ss = String(d.getSeconds()).padStart(2, '0');
+        clockEl.textContent = `${hh}:${mm}:${ss}`;
+      }
+      tickClock();
+      setInterval(tickClock, 1000);
+    }
+
     const BANNER = [
       '',
-      'Welcome to michael@kurdi — portfolio shell (bash-ish).',
-      'Type `help` to see available commands. ↑/↓ for history. Ctrl+L to clear.',
+      'portfolio shell — bash-ish, sandboxed.',
+      'type `help` for commands. ↑/↓ history. Tab autocompletes. Ctrl+L clears.',
       '',
     ];
 
@@ -634,7 +609,7 @@
     }
 
     function writeCmd(cmd) {
-      const html =
+      write(
         '<span class="iterm-line">' +
           '<span class="term-user">michael</span>' +
           '<span class="term-at">@</span>' +
@@ -642,61 +617,56 @@
           '<span class="term-path">:~</span>' +
           '<span class="term-sym">$</span>' +
           '<span class="iterm-cmd">' + escapeHtml(cmd) + '</span>' +
-        '</span>';
-      write(html);
-    }
-
-    function help() {
-      write(
-        '<div><span class="iterm-ok">Available commands:</span></div>' +
-        row('help',         'show this help') +
-        row('about',        'who I am and what I focus on') +
-        row('projects',     'list featured projects') +
-        row('skills',       'tech stack summary') +
-        row('resume',       'download the PDF resume') +
-        row('contact',      'email, github, linkedin') +
-        row('social',       'alias of contact') +
-        row('open [url]',   'open a URL in a new tab') +
-        row('github',       'open my GitHub profile') +
-        row('goto [id]',    'scroll to a section (about, projects, stack, timeline, contact)') +
-        row('cmdk',         'open the command palette (⌘K)') +
-        row('whoami',       'identify the current user') +
-        row('date',         'current date/time') +
-        row('echo [text]',  'print text') +
-        row('theme',        'toggle accent color') +
-        row('matrix',       'trigger matrix rain for 10s') +
-        row('clear / cls',  'clear the screen') +
-        row('sudo hire-me', 'submit a hire request') +
-        ''
+        '</span>'
       );
     }
 
     function row(cmd, desc) {
-      return (
-        '<div><span class="iterm-ok" style="display:inline-block;min-width:10rem">' +
-        escapeHtml(cmd) + '</span><span class="iterm-muted">' +
-        escapeHtml(desc) + '</span></div>'
+      return '<div><span class="iterm-ok" style="display:inline-block;min-width:10rem">' +
+             escapeHtml(cmd) + '</span><span class="iterm-muted">' +
+             escapeHtml(desc) + '</span></div>';
+    }
+
+    function help() {
+      write(
+        '<div><span class="iterm-ok">commands:</span></div>' +
+        row('help',         'show this help') +
+        row('about',        'short bio') +
+        row('work',         'featured projects') +
+        row('stack',        'tech stack summary') +
+        row('resume',       'download the PDF resume') +
+        row('contact',      'email, github, linkedin') +
+        row('neofetch',     'system info, terminal-style') +
+        row('open <url>',   'open a URL in a new tab') +
+        row('goto <id>',    'scroll to a section') +
+        row('cmdk',         'open the command palette (⌘K)') +
+        row('whoami',       'identify the current user') +
+        row('date',         'current date/time') +
+        row('echo <text>',  'print text') +
+        row('theme',        'cycle accent color') +
+        row('matrix',       'matrix rain for 10s') +
+        row('clear / cls',  'clear the screen')
       );
     }
 
     function about() {
       write(
-        '<div><span class="iterm-ok">Mahmoud "Michael" Kurdi</span> — SOC / Cybersecurity Analyst (targeting).</div>' +
-        '<div class="iterm-muted">CompTIA Security+ · B.S. IT Cybersecurity (SNHU, summa cum laude, 3.96 GPA).</div>' +
-        '<div class="iterm-muted">8+ years in cleared, regulated ops (FAA, OSHA, IATA, CBP).</div>' +
-        '<div class="iterm-muted">Ships detection code, ML pipelines, and LLM expert systems with real docs.</div>' +
+        '<div><span class="iterm-ok">Mahmoud ("Michael") Al Kurdi</span> — security engineer.</div>' +
+        '<div class="iterm-muted">CompTIA Security+ · B.S. IT Cybersecurity (SNHU, summa cum laude, 3.96).</div>' +
+        '<div class="iterm-muted">8+ yrs cleared, regulated ops (FAA, OSHA, IATA, CBP).</div>' +
+        '<div class="iterm-muted">Ships detection code, ML pipelines, and LLM expert systems.</div>' +
         '<div>Location: <span class="iterm-info">Charlotte, NC</span> · Remote: <span class="iterm-ok">yes</span></div>'
       );
     }
 
-    function projects() {
+    function work() {
       const items = [
-        { n: 'StockPath Navigator',     d: 'AI trading expert system · 17 prompt-eng techniques',  u: 'https://github.com/KM-it-ops/StockPath-Navigator' },
-        { n: 'VulnTrack Dashboard',     d: 'Flask + SQLite vulnerability management',              u: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program' },
-        { n: 'Phishing Email Classifier', d: 'TF-IDF + Random Forest · 99.68% F1 (5-fold CV)',     u: 'https://github.com/KM-it-ops/phishing-email-classifier' },
-        { n: 'Log Anomaly Engine',      d: 'Rules + statistics for SOC triage',                    u: 'https://github.com/KM-it-ops/security-log-anomaly-detection' },
+        { n: 'StockPath Navigator',     d: 'trading expert system · 17 prompt-eng techniques',  u: 'https://github.com/KM-it-ops/StockPath-Navigator' },
+        { n: 'VulnTrack Dashboard',     d: 'Flask + SQLite vulnerability management',           u: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program' },
+        { n: 'Phishing Email Classifier', d: 'TF-IDF + Random Forest · 5-fold CV',               u: 'https://github.com/KM-it-ops/phishing-email-classifier' },
+        { n: 'Log Anomaly Engine',      d: 'rules + statistics for SOC triage',                 u: 'https://github.com/KM-it-ops/security-log-anomaly-detection' },
       ];
-      let html = '<div><span class="iterm-ok">Featured projects:</span></div>';
+      let html = '<div><span class="iterm-ok">featured:</span></div>';
       items.forEach((it, i) => {
         html += '<div>' +
           '<span class="iterm-info">[' + (i + 1) + ']</span> ' +
@@ -709,7 +679,7 @@
 
     function skills() {
       write(
-        '<div><span class="iterm-ok">Stack:</span></div>' +
+        '<div><span class="iterm-ok">stack:</span></div>' +
         '<div class="iterm-muted">  languages : python · javascript/ts · bash · sql</div>' +
         '<div class="iterm-muted">  security  : detection eng · incident response · vuln mgmt · access control</div>' +
         '<div class="iterm-muted">  data/ml   : pandas · numpy · scikit-learn · tf-idf · random forest</div>' +
@@ -721,11 +691,61 @@
 
     function contact() {
       write(
-        '<div><span class="iterm-ok">Reach me:</span></div>' +
+        '<div><span class="iterm-ok">reach:</span></div>' +
         '<div>email    : <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a></div>' +
         '<div>github   : <a href="https://github.com/KM-it-ops" target="_blank" rel="noopener noreferrer">github.com/KM-it-ops</a></div>' +
         '<div>linkedin : <a href="https://linkedin.com/in/michael-kurdi" target="_blank" rel="noopener noreferrer">linkedin.com/in/michael-kurdi</a></div>'
       );
+    }
+
+    function neofetch() {
+      const logo = [
+        '        ▄▄▄▄▄▄▄▄▄        ',
+        '     ▄██▀       ▀██▄     ',
+        '   ▄██   ▄▄▄▄▄▄▄   ██▄   ',
+        '  ██   ▄██▀   ▀██▄   ██  ',
+        '  ██  ██    *    ██  ██  ',
+        '  ██   ▀██▄   ▄██▀   ██  ',
+        '   ▀██   ▀▀▀▀▀▀▀   ██▀   ',
+        '     ▀██▄       ▄██▀     ',
+        '        ▀▀▀▀▀▀▀▀▀        ',
+      ].join('\n');
+
+      const info = [
+        ['user',   'michael@kurdi'],
+        ['os',     'portfolio 1.0.0 (static)'],
+        ['shell',  'zsh (sandboxed)'],
+        ['wm',     'css grid'],
+        ['theme',  'mint/violet/blue on #06070c'],
+        ['cpu',    'a few js interpreters'],
+        ['memory', 'whatever your browser allots'],
+        ['uptime', fmtUptime(performance.now())],
+        ['loc',    'Charlotte, NC'],
+      ];
+
+      const left = '<pre class="iterm-ascii">' + escapeHtml(logo) + '</pre>';
+      let right = '<div style="font-family:var(--font-mono);line-height:1.6">';
+      right += '<div><span class="iterm-ok">michael</span><span class="iterm-muted">@</span><span class="iterm-info">kurdi</span></div>';
+      right += '<div class="iterm-muted">────────────────────</div>';
+      info.forEach(([k, v]) => {
+        right += '<div><span class="iterm-ok" style="display:inline-block;min-width:6rem">' +
+                 escapeHtml(k) + '</span><span>' + escapeHtml(v) + '</span></div>';
+      });
+      right += '<div class="iterm-muted" style="margin-top:6px">● ● ●</div>';
+      right += '</div>';
+
+      write(
+        '<div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start">' +
+          '<div style="flex:0 0 auto">' + left + '</div>' +
+          '<div style="flex:1 1 240px;min-width:240px">' + right + '</div>' +
+        '</div>'
+      );
+    }
+
+    function fmtUptime(ms) {
+      const s = Math.floor(ms / 1000);
+      const m = Math.floor(s / 60);
+      return (m > 0 ? m + 'm ' : '') + (s % 60) + 's on this tab';
     }
 
     function openUrl(args) {
@@ -736,9 +756,9 @@
       openExt(full);
     }
 
-    function goto(args) {
+    function gotoSection(args) {
       const id = (args[0] || '').toLowerCase();
-      const valid = ['about', 'projects', 'stack', 'timeline', 'terminal', 'contact'];
+      const valid = ['about', 'work', 'stack', 'log', 'shell', 'contact'];
       if (!valid.includes(id)) {
         write('<div class="iterm-err">unknown section: ' + escapeHtml(id) + '</div>' +
               '<div class="iterm-muted">try: ' + valid.join(', ') + '</div>');
@@ -748,25 +768,10 @@
       write('<div class="iterm-muted">→ #' + id + '</div>');
     }
 
-    function sudoHire() {
-      write(
-        '<div class="iterm-muted">[sudo] password for michael: ' +
-        '<span style="color:var(--accent)">************</span></div>' +
-        '<div>Verifying credentials… ' +
-        '<span class="iterm-ok">OK</span></div>' +
-        '<div>Checking recruiter intent… ' +
-        '<span class="iterm-ok">verified</span></div>' +
-        '<div>Opening mail client…</div>'
-      );
-      setTimeout(() => {
-        window.location.href = 'mailto:kurdi.michael.it@gmail.com?subject=We%20want%20to%20hire%20you&body=Hi%20Michael%2C%0A%0AWe%27d%20love%20to%20talk%20about%20an%20opening%20at%20our%20company.%0A%0A';
-      }, 600);
-    }
-
     let matrixTimer;
     function matrixRain() {
       if (matrixTimer) { write('<div class="iterm-muted">matrix already running…</div>'); return; }
-      write('<div class="iterm-info">engaging matrix rain for 10s — press any key to stop.</div>');
+      write('<div class="iterm-info">matrix rain for 10s — any key to stop.</div>');
       const cv = document.createElement('canvas');
       cv.style.cssText = 'position:fixed;inset:0;z-index:1050;pointer-events:none;background:transparent';
       document.body.appendChild(cv);
@@ -789,11 +794,9 @@
         }
       }, 50);
       function stop() {
-        clearInterval(iv);
-        cv.remove();
-        matrixTimer = null;
+        clearInterval(iv); cv.remove(); matrixTimer = null;
         document.removeEventListener('keydown', stop);
-        write('<div class="iterm-muted">matrix disengaged.</div>');
+        write('<div class="iterm-muted">matrix off.</div>');
       }
       matrixTimer = setTimeout(stop, 10000);
       document.addEventListener('keydown', stop, { once: true });
@@ -819,7 +822,6 @@
       const trimmed = raw.trim();
       writeCmd(trimmed);
       if (!trimmed) return;
-
       history.push(trimmed);
       hIdx = history.length;
 
@@ -830,47 +832,46 @@
       switch (cmd) {
         case 'help':     help(); break;
         case 'about':    about(); break;
-        case 'projects': projects(); break;
+        case 'work':
+        case 'projects': work(); break;
         case 'skills':
         case 'stack':    skills(); break;
         case 'contact':
         case 'social':   contact(); break;
+        case 'neofetch': neofetch(); break;
         case 'resume':
           write('<div class="iterm-muted">downloading resume.pdf…</div>');
-          openExt('assets/Michael_Kurdi_Resume_2026.pdf');
+          openExt('assets/Mahmoud_Al_Kurdi_Resume_2026.pdf');
           break;
         case 'open':     openUrl(args); break;
         case 'github':   openExt('https://github.com/KM-it-ops'); write('<div class="iterm-muted">opening github…</div>'); break;
         case 'linkedin': openExt('https://linkedin.com/in/michael-kurdi'); write('<div class="iterm-muted">opening linkedin…</div>'); break;
-        case 'goto':     goto(args); break;
+        case 'goto':     gotoSection(args); break;
         case 'cmdk':
         case 'palette':  if (window.__cmdk) window.__cmdk.open(); break;
         case 'whoami':   write('<div class="iterm-ok">michael</div>'); break;
         case 'uname':    write('<div class="iterm-muted">Portfolio 1.0.0 michael@kurdi static-html #1 ' + new Date().toUTCString() + '</div>'); break;
         case 'date':     write('<div>' + new Date().toString() + '</div>'); break;
         case 'pwd':      write('<div>/home/michael</div>'); break;
-        case 'ls':
-          write('<div>about.md  projects/  skills.json  resume.pdf  contact.vcf</div>'); break;
+        case 'ls':       write('<div>about.md  work/  skills.json  resume.pdf  contact.vcf</div>'); break;
+        case 'cat':
+          if (args[0] === 'about.md') about();
+          else if (args[0] === 'skills.json') skills();
+          else if (args[0] === 'contact.vcf') contact();
+          else write('<div class="iterm-err">cat: ' + escapeHtml(args.join(' ') || '-') + ': no such file</div>');
+          break;
         case 'echo':     write('<div>' + escapeHtml(args.join(' ')) + '</div>'); break;
         case 'theme':    toggleTheme(); break;
         case 'matrix':   matrixRain(); break;
         case 'clear':
         case 'cls':      out.innerHTML = ''; break;
-        case 'sudo':
-          if (args.join(' ').toLowerCase() === 'hire-me' || args[0] === 'hire-me') {
-            sudoHire();
-          } else {
-            write('<div class="iterm-err">sudo: try `sudo hire-me`</div>');
-          }
-          break;
-        case 'exit':     write('<div class="iterm-muted">nice try — you\'re still here.</div>'); break;
+        case 'exit':     write('<div class="iterm-muted">nice try — you are still here.</div>'); break;
         default:
           write('<div class="iterm-err">command not found: ' + escapeHtml(cmd) + '</div>' +
                 '<div class="iterm-muted">type `help` for the command list.</div>');
       }
     }
 
-    // Banner
     BANNER.forEach((l) => write('<div class="iterm-muted">' + escapeHtml(l) + '</div>'));
 
     form.addEventListener('submit', (e) => {
@@ -894,15 +895,30 @@
       } else if (e.key === 'l' && e.ctrlKey) {
         e.preventDefault();
         out.innerHTML = '';
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        const val = input.value;
+        const parts = val.split(/\s+/);
+        const first = parts[0];
+        if (!first) return;
+        const matches = TERMINAL_COMMANDS.filter((c) => c.startsWith(first.toLowerCase()));
+        if (matches.length === 1) {
+          input.value = matches[0] + (parts.length > 1 ? ' ' + parts.slice(1).join(' ') : ' ');
+        } else if (matches.length > 1) {
+          writeCmd(val);
+          write('<div class="iterm-muted">' + escapeHtml(matches.join('   ')) + '</div>');
+        }
       }
     });
 
-    // Focus input when clicking anywhere in the body
-    body.addEventListener('click', () => input.focus());
+    body.addEventListener('click', (e) => {
+      if (e.target && (e.target.tagName === 'A')) return;
+      input.focus();
+    });
   }
 
   /* ==============================================
-     KONAMI CODE — easter egg
+     KONAMI
      ============================================== */
   function initKonami() {
     const seq = [
@@ -916,12 +932,11 @@
       if (buf.length > seq.length) buf.shift();
       if (buf.length === seq.length && buf.every((k, i) => k.toLowerCase() === seq[i].toLowerCase())) {
         buf = [];
-        toast('🕹  Konami unlocked — confetti mode');
+        toast('🕹 konami');
         confettiBurst();
       }
     });
   }
-
   function confettiBurst() {
     const cv = document.createElement('canvas');
     cv.style.cssText = 'position:fixed;inset:0;z-index:1200;pointer-events:none';
@@ -931,8 +946,7 @@
     let h = cv.height = window.innerHeight;
     const colors = ['#7cf0c1', '#7aa2ff', '#b07cff', '#ff7ac6', '#ffb547', '#f5d67a'];
     const parts = Array.from({ length: 180 }, () => ({
-      x: w / 2,
-      y: h / 3,
+      x: w / 2, y: h / 3,
       vx: (Math.random() - 0.5) * 12,
       vy: Math.random() * -10 - 4,
       r: Math.random() * 4 + 2,
@@ -945,8 +959,7 @@
       t++;
       parts.forEach((p) => {
         p.vy += 0.25;
-        p.x += p.vx;
-        p.y += p.vy;
+        p.x += p.vx; p.y += p.vy;
         p.life--;
         ctx.fillStyle = p.c;
         ctx.globalAlpha = Math.max(0, p.life / 180);
@@ -962,6 +975,77 @@
   }
 
   /* ==============================================
+     CURSOR SPOTLIGHT
+     ============================================== */
+  function initCursorSpotlight() {
+    if (prefersReducedMotion || isTouch) return;
+    const spot = document.getElementById('cursorSpot');
+    if (!spot) return;
+    let x = -9999, y = -9999, tx = -9999, ty = -9999;
+    let raf = 0;
+    function update() {
+      x += (tx - x) * 0.18;
+      y += (ty - y) * 0.18;
+      spot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      raf = requestAnimationFrame(update);
+    }
+    window.addEventListener('pointermove', (e) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!spot.classList.contains('on')) spot.classList.add('on');
+      if (!raf) raf = requestAnimationFrame(update);
+    }, { passive: true });
+    window.addEventListener('pointerleave', () => {
+      spot.classList.remove('on');
+    });
+  }
+
+  /* ==============================================
+     MAGNETIC BUTTONS
+     ============================================== */
+  function initMagnetic() {
+    if (prefersReducedMotion || isTouch) return;
+    const els = document.querySelectorAll('[data-magnetic]');
+    els.forEach((el) => {
+      el.addEventListener('pointermove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const strength = 0.25;
+        el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+      });
+      el.addEventListener('pointerleave', () => {
+        el.style.transform = '';
+      });
+    });
+  }
+
+  /* ==============================================
+     3D TILT (project cards)
+     ============================================== */
+  function initTilt() {
+    if (prefersReducedMotion || isTouch) return;
+    const cards = document.querySelectorAll('.tilt');
+    const MAX = 6; // deg
+    cards.forEach((card) => {
+      let raf = 0;
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const nx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const ny = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          card.style.transform =
+            `perspective(900px) rotateY(${nx * MAX}deg) rotateX(${-ny * MAX}deg) translateY(-4px)`;
+        });
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* ==============================================
      HELPERS
      ============================================== */
   function escapeHtml(s) {
@@ -973,7 +1057,6 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
   }
-
   function hexToRgba(hex, alpha) {
     const h = hex.replace('#', '');
     const r = parseInt(h.substring(0, 2), 16);
