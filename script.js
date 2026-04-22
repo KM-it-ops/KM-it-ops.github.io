@@ -135,10 +135,10 @@
     if (!el) return;
 
     const phrases = [
-      'Cybersecurity + AI Systems Architect',
-      'SOC-ready analytics, ML, and log intelligence',
-      'Production expert systems with 17+ prompt techniques',
-      'From regulated ops to shipped GitHub repos',
+      'SOC & Cybersecurity Analyst (targeting)',
+      'Python detection: logs, phishing, anomaly engines',
+      '8+ years FAA / OSHA / IATA / CBP cleared operations',
+      'Also: prompt-engineered expert systems when it fits',
     ];
 
     let phraseIdx = 0;
