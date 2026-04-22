@@ -1,10 +1,12 @@
 {
-  "name": "Michael Kurdi — SOC & Security Engineering",
-  "short_name": "M. Kurdi",
-  "description": "SOC-oriented security analyst and detection engineer. Ships Python tooling, ML pipelines, and LLM expert systems.",
+  "name": "Mahmoud (\"Michael\") Al Kurdi",
+  "short_name": "M. Al Kurdi",
+  "description": "Security engineer. Python tooling, ML pipelines, and LLM expert systems.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#05070c",
   "theme_color": "#05070c",
-  "icons": []
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
 }
