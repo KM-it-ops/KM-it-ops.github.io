@@ -72,6 +72,7 @@ a:hover {
     z-index: 100;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -112,6 +113,12 @@ a:hover {
 .resume-header {
     text-align: center;
     margin-bottom: 8px;
+}
+
+.name .name-nickname {
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .name {

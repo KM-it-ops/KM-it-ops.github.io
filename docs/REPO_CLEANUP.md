@@ -17,14 +17,14 @@ Generated from `gh repo list KM-it-ops` on 2026-04-22. Use this as the approval 
 
 ## Recommended pinned set (6)
 
-Matches the portfolio and resume story:
+Matches the **2026 PDF résumé** and portfolio (PDF-first: ML + logs + StockPath; add VulnTrack for UI):
 
 1. KM-it-ops.github.io  
 2. phishing-email-classifier  
 3. security-log-anomaly-detection  
 4. StockPath-Navigator  
 5. Vulnerability-Management-Mini-Program  
-6. *(optional sixth)* Automations — only if it showcases work you want visible; otherwise pin another repo or leave a slot open.
+6. *(optional sixth)* Automations — only if it showcases work you want visible; otherwise leave a slot open.
 
 ## Archive (after you confirm)
 
