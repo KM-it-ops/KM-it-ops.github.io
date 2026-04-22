@@ -1,50 +1,31 @@
-# Michael Kurdi — AI Systems Architect Portfolio
+# Michael Kurdi — portfolio (GitHub Pages)
 
-A premium, dark-themed portfolio website showcasing AI prompt engineering expertise and production-grade expert systems.
+Cybersecurity-focused portfolio and print-ready resume: **static HTML, CSS, and vanilla JavaScript** — no build step.
 
-## 🚀 Live Demo
+## Live site
 
-Open `index.html` in any modern browser — no build tools or dependencies required.
+[https://km-it-ops.github.io/](https://km-it-ops.github.io/) · Resume: [https://km-it-ops.github.io/resume/](https://km-it-ops.github.io/resume/) (use **Print / Save as PDF** for a PDF export).
 
-## 📁 Structure
+## Structure
 
+| Path | Purpose |
+|------|---------|
+| [index.html](index.html) | Landing page: hero, about, projects, toolkit, credentials, contact |
+| [styles.css](styles.css) | Design tokens, layout, responsive rules |
+| [script.js](script.js) | Hero canvas, typing effect, scroll reveal, nav, technique cards |
+| [resume/](resume/) | ATS-oriented resume layout + print CSS |
+| [PROFILE_README.md](PROFILE_README.md) | Copy for GitHub profile README (`KM-it-ops/KM-it-ops` repo) |
+| [docs/REPO_CLEANUP.md](docs/REPO_CLEANUP.md) | Repo inventory and archive/pin guidance |
+| [docs/DEPLOY.md](docs/DEPLOY.md) | GitHub Pages deployment notes |
+
+## Local preview
+
+Open `index.html` in a browser, or from this directory:
+
+```bash
+npx --yes serve -p 5173
 ```
-ai-portfolio/
-├── index.html    — Complete semantic HTML (6 sections)
-├── styles.css    — Design system & responsive styles
-├── script.js     — Particles, typing, scroll reveals, interactions
-├── assets/       — Placeholder for images
-└── README.md     — This file
-```
 
-## ✨ Features
-
-- **Dark cinematic design** — charcoal backgrounds, cyan/amber accents, glassmorphism
-- **Interactive particle canvas** — lightweight constellation animation with mouse interaction
-- **Typing effect** — rotating titles with blinking cursor
-- **Scroll reveal animations** — elements fade in via Intersection Observer
-- **Expandable technique cards** — 15 prompt engineering techniques with click-to-expand
-- **Count-up stats** — numbers animate when scrolled into view
-- **Fully responsive** — mobile-first with hamburger menu
-- **Accessible** — ARIA labels, keyboard navigation, reduced-motion support
-- **Zero dependencies** — pure HTML, CSS, and vanilla JavaScript
-
-## 🛠 Tech Stack
-
-| Layer  | Technology |
-|--------|-----------|
-| Markup | Semantic HTML5 |
-| Styles | Vanilla CSS with custom properties |
-| Logic  | Vanilla JavaScript (ES6+) |
-| Fonts  | Google Fonts (Sora, IBM Plex Sans, JetBrains Mono) |
-| Hosting | GitHub Pages |
-
-## 📝 Customization
-
-- **Links**: Search for `href="#"` in `index.html` to fill in GitHub, LinkedIn, and email URLs
-- **Images**: Add files to the `assets/` folder and reference them in the HTML
-- **Colors**: Edit CSS custom properties in `:root` at the top of `styles.css`
-
-## 📄 License
+## License
 
 © 2026 Michael Kurdi. All rights reserved.
