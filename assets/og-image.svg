@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05070c"/>
+      <stop offset="100%" stop-color="#0a0c14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#7cf0c1" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7cf0c1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7cf0c1"/>
+      <stop offset="60%" stop-color="#7aa2ff"/>
+      <stop offset="100%" stop-color="#b07cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- grid -->
+  <g stroke="#7cf0c1" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 80 H1200 M0 160 H1200 M0 240 H1200 M0 320 H1200 M0 400 H1200 M0 480 H1200 M0 560 H1200"/>
+    <path d="M80 0 V630 M160 0 V630 M240 0 V630 M320 0 V630 M400 0 V630 M480 0 V630 M560 0 V630 M640 0 V630 M720 0 V630 M800 0 V630 M880 0 V630 M960 0 V630 M1040 0 V630 M1120 0 V630"/>
+  </g>
+
+  <!-- terminal window -->
+  <g transform="translate(70,70)">
+    <rect width="1060" height="490" rx="16" fill="#0a0c14" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect width="1060" height="48" rx="16" fill="#0f1220"/>
+    <rect width="1060" height="48" y="24" fill="#0f1220"/>
+    <circle cx="28" cy="24" r="7" fill="#ff5f57"/>
+    <circle cx="50" cy="24" r="7" fill="#febc2e"/>
+    <circle cx="72" cy="24" r="7" fill="#28c840"/>
+    <text x="530" y="30" text-anchor="middle" fill="#8d93a8" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14">michael@kurdi: ~</text>
+  </g>
+
+  <!-- prompt -->
+  <g font-family="JetBrains Mono, ui-monospace, monospace" fill="#cfd3e1">
+    <text x="110" y="180" font-size="22">
+      <tspan fill="#7cf0c1">michael</tspan><tspan fill="#606878">@</tspan><tspan fill="#7aa2ff">kurdi</tspan><tspan fill="#b07cff">:~</tspan><tspan fill="#f5f7fb">$</tspan>
+      <tspan fill="#f5f7fb" dx="8">whoami</tspan>
+    </text>
+  </g>
+
+  <!-- name -->
+  <text x="110" y="290" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="100" letter-spacing="-3" fill="#f5f7fb">Michael</text>
+  <text x="110" y="390" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="100" letter-spacing="-3" fill="url(#accent)">Kurdi</text>
+
+  <!-- tagline -->
+  <text x="110" y="455" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" fill="#8d93a8">
+    SOC &#183; detection engineer &#183; Python &#183; ML &#183; LLM expert systems
+  </text>
+
+  <!-- badges -->
+  <g transform="translate(110, 490)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16">
+    <g>
+      <rect width="150" height="34" rx="8" fill="#7cf0c1" fill-opacity="0.14" stroke="#7cf0c1" stroke-opacity="0.3"/>
+      <text x="75" y="22" text-anchor="middle" fill="#7cf0c1">Security+</text>
+    </g>
+    <g transform="translate(165,0)">
+      <rect width="220" height="34" rx="8" fill="#7aa2ff" fill-opacity="0.14" stroke="#7aa2ff" stroke-opacity="0.3"/>
+      <text x="110" y="22" text-anchor="middle" fill="#7aa2ff">B.S. IT Cybersecurity</text>
+    </g>
+    <g transform="translate(400,0)">
+      <rect width="230" height="34" rx="8" fill="#b07cff" fill-opacity="0.18" stroke="#b07cff" stroke-opacity="0.3"/>
+      <text x="115" y="22" text-anchor="middle" fill="#b07cff">8+ yrs cleared ops</text>
+    </g>
+  </g>
+
+  <!-- url -->
+  <text x="1090" y="595" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" fill="#606878">km-it-ops.github.io</text>
+</svg>
