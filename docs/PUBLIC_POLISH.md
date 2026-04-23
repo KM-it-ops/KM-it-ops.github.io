@@ -17,6 +17,53 @@ If not: `gh auth login` and pick **github.com → HTTPS → authenticate via bro
 
 ---
 
+## 1.5 · `git push` fails with 403: `Permission … denied to cursor[bot]`
+
+`gh auth login` is correct, but **Git** may still be using a different credential (e.g. the automation user `cursor[bot]`) for HTTPS. Fix it so pushes use the same account as `gh`.
+
+1. **Confirm the active account** (should be `KM-it-ops`, not `cursor`):
+
+   ```bash
+   gh auth status
+   ```
+
+2. **Tell Git to use `gh` for github.com** (run once per machine):
+
+   ```bash
+   gh auth setup-git
+   ```
+
+3. **Push again** from your repo:
+
+   ```bash
+   git push -u origin main
+   ```
+
+4. **If it still shows `cursor[bot]`** — check the remote has **no** embedded token:
+
+   ```bash
+   git remote -v
+   ```
+
+   It should be exactly `https://github.com/KM-it-ops/<repo>.git` with no `x-access-token` in the URL. If not, reset:
+
+   ```bash
+   git remote set-url origin https://github.com/KM-it-ops/KM-it-ops.git
+   ```
+
+   Then run `gh auth setup-git` again and push.
+
+5. **Alternative: SSH** (if you use SSH keys on your GitHub account):
+
+   ```bash
+   git remote set-url origin git@github.com:KM-it-ops/KM-it-ops.git
+   git push -u origin main
+   ```
+
+6. **Cursor cloud agents / restricted sandboxes** sometimes only have a bot token; they may be unable to push to repos other than the one the task is bound to. In that case: push from your **own computer** (after steps 1–2) or add `README.md` via the **GitHub web UI**.
+
+---
+
 ## 2 · Profile README (the bio at the top of your GitHub page)
 
 GitHub shows the README of a repo that matches your username exactly (`KM-it-ops` / `KM-it-ops`).
