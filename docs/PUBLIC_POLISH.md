@@ -40,6 +40,47 @@ git push -u origin main
 
 Visit `https://github.com/KM-it-ops` and your new bio renders.
 
+### Windows PowerShell (use this if `&&`, `curl`, or `sed` failed)
+
+PowerShell 5.x does not support `&&` (use `;` or separate lines). It has no `sed`/`tail` by default. **Do not** paste `cd` and `curl` on the same line.
+
+**If you already ran** `gh repo create KM-it-ops ... --clone` **and the `KM-it-ops` folder exists**, skip the `mkdir` / `gh repo create` lines and only `cd` into that folder.
+
+```powershell
+# 1) Go to the repo folder (adjust path if yours differs)
+cd $HOME\tmp\km-profile\KM-it-ops
+# If you never made tmp\km-profile, create and clone instead:
+# New-Item -ItemType Directory -Force -Path "$HOME\tmp\km-profile" | Out-Null
+# Set-Location "$HOME\tmp\km-profile"
+# gh repo clone KM-it-ops/KM-it-ops
+
+# 2) Download PROFILE_README.md (PowerShell 6+ has curl as alias for Invoke-WebRequest)
+$uri = "https://raw.githubusercontent.com/KM-it-ops/KM-it-ops.github.io/main/PROFILE_README.md"
+Invoke-WebRequest -Uri $uri -OutFile "PROFILE_README.full" -UseBasicParsing
+
+# 3) Same as: sed -n '/^---$/,$p' | tail -n +2  (from first --- to EOF, then drop 2 lines)
+$lines = (Get-Content "PROFILE_README.full")
+$start = -1
+for ($i = 0; $i -lt $lines.Count; $i++) {
+  if ($lines[$i] -match '^\s*---\s*$') { $start = $i; break }
+}
+if ($start -lt 0) { throw "No --- line found in PROFILE_README" }
+$segment = $lines[$start..($lines.Count - 1)]
+# tail -n +2 => skip first 2 lines of that segment
+$outLines = if ($segment.Count -gt 2) { $segment[2..($segment.Count - 1)] } else { @() }
+$outLines -join "`n" | Set-Content -Path "README.md" -Encoding utf8
+Remove-Item "PROFILE_README.full"
+
+# 4) Commit and push
+git add README.md
+git commit -m "init profile README"
+git push -u origin main
+```
+
+**If `git` says the remote is empty or branch is wrong:** run `git status` and `git branch`. First push: `git push -u origin main`.
+
+**PowerShell 7+** supports `&&`. You can also use **Git Bash** (installed with Git for Windows) and run the original **bash** block from §2 unchanged.
+
 ---
 
 ## 3 · Repo descriptions, homepages, topics
@@ -100,12 +141,12 @@ Pins have no CLI — do this in the UI once:
 1. Go to `https://github.com/KM-it-ops`
 2. Under your avatar, click **Customize your pins**
 3. Pin these six, in this order:
-   1. `KM-it-ops.github.io`
-   2. `phishing-email-classifier`
-   3. `security-log-anomaly-detection`
-   4. `StockPath-Navigator`
-   5. `Vulnerability-Management-Mini-Program`
-   6. *(optional)* `cursor-starter` — only if it still represents current work
+  1. `KM-it-ops.github.io`
+  2. `phishing-email-classifier`
+  3. `security-log-anomaly-detection`
+  4. `StockPath-Navigator`
+  5. `Vulnerability-Management-Mini-Program`
+  6. *(optional)* `cursor-starter` — only if it still represents current work
 
 ---
 
