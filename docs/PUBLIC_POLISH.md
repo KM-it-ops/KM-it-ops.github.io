@@ -19,10 +19,27 @@ If not: `gh auth login` and pick **github.com → HTTPS → authenticate via bro
 
 ## 2 · Profile README (the bio at the top of your GitHub page)
 
-GitHub shows the README of a repo that matches your username exactly. Create it once:
+GitHub shows the README of a repo that matches your username exactly (`KM-it-ops` / `KM-it-ops`).
+
+**If you see** `GraphQL: Name already exists on this account` **— skip create.** The repo is already there. Only clone, add `README.md`, push:
 
 ```bash
-# From anywhere on your machine
+mkdir -p ~/tmp/km-profile && cd ~/tmp/km-profile
+gh repo clone KM-it-ops/KM-it-ops
+cd KM-it-ops
+
+curl -fsSL "https://raw.githubusercontent.com/KM-it-ops/KM-it-ops.github.io/main/PROFILE_README.md" -o PROFILE_README.full
+sed -n '/^---$/,$p' PROFILE_README.full | tail -n +2 > README.md
+rm PROFILE_README.full
+
+git add README.md
+git commit -m "add profile README"   # or "init" if the repo is empty
+git push -u origin main
+```
+
+**If the repo does not exist yet**, create and clone in one go:
+
+```bash
 mkdir -p ~/tmp/km-profile && cd ~/tmp/km-profile
 gh repo create KM-it-ops --public --description "Profile README" --clone
 cd KM-it-ops
