@@ -15,7 +15,7 @@ Personal portfolio for **Mahmoud ("Michael") Al Kurdi** — AI Systems Architect
 
 ## Features
 
-- **Developer-first UI** — terminal prompt hero, JetBrains Mono + Space Grotesk typography, grid background, violet/mint gradients.
+- **Signal Atlas UI** — security signal map hero, JetBrains Mono + Space Grotesk typography, dark analyst palette, cyan/violet data surfaces.
 - **Command palette** (`⌘K` / `Ctrl+K` / `/`) — fuzzy search every section, project, and contact link.
 - **Interactive terminal** — real REPL with `help`, `about`, `projects`, `skills`, `contact`, `open`, `goto`, `theme`, `matrix`, `sudo hire-me`, arrow-key history, and `Ctrl+L` clear.
 - **Live typing + particle constellation** on the hero, paused when off-screen for battery friendliness.
