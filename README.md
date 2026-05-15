@@ -5,7 +5,7 @@
 [![0 deps](https://img.shields.io/badge/dependencies-0-b07cff?style=flat-square&labelColor=05070c)](https://km-it-ops.github.io/)
 [![Resume](https://img.shields.io/badge/resume-.pdf-ffb547?style=flat-square&labelColor=05070c)](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
 
-Personal portfolio for **Mahmoud (Michael) Kurdi** — SOC / cybersecurity analyst and detection engineer. Static HTML, CSS, and vanilla JavaScript. **Zero build step, zero runtime dependencies.**
+Personal portfolio for **Mahmoud ("Michael") Al Kurdi** — AI Systems Architect building ML-driven security automation. Static HTML, CSS, and vanilla JavaScript. **Zero build step, zero runtime dependencies.**
 
 ## Live
 
@@ -66,4 +66,4 @@ npx --yes serve -p 5173 .
 
 ## License
 
-© 2026 Mahmoud (Michael) Kurdi. All rights reserved.
+© 2026 Mahmoud ("Michael") Al Kurdi. All rights reserved.
