@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Masked Signal emblem</title>
+  <desc id="desc">Original masked signal emblem with theatrical anonymous-mask cues, angular sunglasses, cigar, goatee, and red signal marks.</desc>
+  <defs>
+    <radialGradient id="face" cx="50%" cy="28%" r="74%">
+      <stop offset="0" stop-color="#fff8ea"/>
+      <stop offset="0.55" stop-color="#eadfca"/>
+      <stop offset="1" stop-color="#b8a88b"/>
+    </radialGradient>
+    <linearGradient id="lens" x1="0" x2="1">
+      <stop offset="0" stop-color="#030202"/>
+      <stop offset="0.54" stop-color="#171011"/>
+      <stop offset="1" stop-color="#030202"/>
+    </linearGradient>
+    <linearGradient id="redline" x1="0" x2="1">
+      <stop offset="0" stop-color="#7f0d1c"/>
+      <stop offset="0.5" stop-color="#d0182f"/>
+      <stop offset="1" stop-color="#7f0d1c"/>
+    </linearGradient>
+    <linearGradient id="ember" x1="0" x2="1">
+      <stop offset="0" stop-color="#3b1f15"/>
+      <stop offset="0.7" stop-color="#b86f39"/>
+      <stop offset="1" stop-color="#ffefb0"/>
+    </linearGradient>
+    <filter id="signalGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.82  0 0 0 0 0.09  0 0 0 0 0.18  0 0 0 .55 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="smokeBlur" x="-60%" y="-80%" width="220%" height="260%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="72" fill="#080607"/>
+  <path d="M68 82h376M68 430h376" stroke="url(#redline)" stroke-width="7" stroke-dasharray="22 16" opacity=".72"/>
+
+  <!-- Original theatrical anonymous-mask silhouette: not a trace of the commercial mask. -->
+  <path d="M108 116c10-48 68-78 148-78s138 30 148 78c16 75-7 184-58 257-30 43-64 77-90 96-26-19-60-53-90-96-51-73-74-182-58-257Z" fill="url(#face)" filter="url(#signalGlow)"/>
+  <path d="M128 164c21 21 47 31 76 29-42 25-68 57-82 97-15-38-18-84 6-126Zm256 0c-21 21-47 31-76 29 42 25 68 57 82 97 15-38 18-84-6-126Z" fill="#d5c8b3" opacity=".45"/>
+  <path d="M256 58c-32 41-47 86-46 134h92c1-48-14-93-46-134Z" fill="#fffaf0" opacity=".28"/>
+
+  <!-- Angular sunglasses: this is the customization layer that makes the emblem distinct. -->
+  <path d="M133 187c38-21 83-27 124-14l-16 62c-31 13-68 12-103-7-9-14-11-27-5-41Z" fill="url(#lens)"/>
+  <path d="M379 187c-38-21-83-27-124-14l16 62c31 13 68 12 103-7 9-14 11-27 5-41Z" fill="url(#lens)"/>
+  <path d="M241 196c10-7 20-7 30 0" fill="none" stroke="#080607" stroke-width="12" stroke-linecap="round"/>
+  <path d="M150 193c30-16 62-20 95-11M362 193c-30-16-62-20-95-11" fill="none" stroke="#f2eadc" stroke-width="4" stroke-linecap="round" opacity=".18"/>
+  <path d="M160 216c24 8 50 9 78 3M352 216c-24 8-50 9-78 3" fill="none" stroke="#d0182f" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+
+  <!-- Cheeks and nose -->
+  <circle cx="154" cy="292" r="18" fill="#d0182f" opacity=".30"/>
+  <circle cx="358" cy="292" r="18" fill="#d0182f" opacity=".30"/>
+  <path d="M256 210c-12 35-23 69-22 94 0 22 12 35 22 35s22-13 22-35c1-25-10-59-22-94Z" fill="#080607"/>
+  <path d="M246 303c7 6 13 6 20 0" fill="none" stroke="#eadfca" stroke-width="5" stroke-linecap="round" opacity=".4"/>
+
+  <!-- Custom moustache / mouth, intentionally obscured by cigar. -->
+  <path d="M250 338c-41 3-79-6-106-31 11 39 56 62 103 45 8-3 10-14 3-14Zm12 0c41 3 79-6 106-31-11 39-56 62-103 45-8-3-10-14-3-14Z" fill="#080607"/>
+  <path d="M187 375c40 33 98 33 138 0" fill="none" stroke="#080607" stroke-width="13" stroke-linecap="round"/>
+
+  <!-- Cigar: strong differentiator from the reference mask. -->
+  <g transform="rotate(-10 305 355)">
+    <rect x="244" y="344" width="128" height="22" rx="11" fill="url(#ember)" stroke="#080607" stroke-width="6"/>
+    <path d="M259 344v22M278 344v22M297 344v22" stroke="#5b321d" stroke-width="4" opacity=".75"/>
+    <circle cx="372" cy="355" r="13" fill="#ffefb0" stroke="#d0182f" stroke-width="6"/>
+    <circle cx="372" cy="355" r="5" fill="#fff7da"/>
+  </g>
+  <g filter="url(#smokeBlur)" opacity=".44">
+    <path d="M394 330c28-20 2-38 26-57 21-17 47-7 37-47" fill="none" stroke="#f2eadc" stroke-width="8" stroke-linecap="round"/>
+    <path d="M414 311c21-15 5-29 20-43" fill="none" stroke="#d0182f" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+  </g>
+
+  <!-- Goatee -->
+  <path d="M230 413h52l-26 68-26-68Z" fill="#080607"/>
+  <path d="M256 418v56" stroke="#eadfca" stroke-width="4" opacity=".16"/>
+
+  <!-- Red signal cuts -->
+  <path d="M114 126l49 19M398 126l-49 19M116 392l46-16M396 392l-46-16" stroke="#d0182f" stroke-width="6" stroke-linecap="round" opacity=".78"/>
+</svg>

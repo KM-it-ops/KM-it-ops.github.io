@@ -4,34 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#05070c" />
+  <meta name="theme-color" content="#080607" />
 
   <!-- Primary meta -->
   <meta name="description"
-    content="Mahmoud (Michael) Al Kurdi — AI Systems Architect building ML-driven security automation. CompTIA Security+, SNHU B.S. IT Cybersecurity (Summa Cum Laude, 3.96 GPA). Ships phishing classifiers, anomaly detection engines, and AI workflow tooling on GitHub. Charlotte, NC." />
+    content="Michael Al Kurdi is an AI security builder focused on detection engineering, phishing classification, anomaly detection, security automation, and framework-aligned incident response playbooks. Charlotte, NC / remote." />
   <meta name="author" content="Mahmoud (Michael) Al Kurdi" />
   <meta name="keywords"
-    content="AI Systems Architect, security automation, machine learning security, detection engineering, threat intelligence, incident response, Python, Security+, OSCP candidate, MITRE ATT&CK, Charlotte NC, portfolio" />
+    content="AI Security, Detection Engineering, Security Automation, Machine Learning Security, Cybersecurity Portfolio, phishing classifier, anomaly detection, incident response, Python, Security+, OSCP candidate, MITRE ATT&CK, Charlotte NC" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Michael Al Kurdi — AI Systems Architect &amp; Security Automation Portfolio" />
+  <meta property="og:title" content="Michael Al Kurdi — AI Security &amp; Detection Engineering Portfolio" />
   <meta property="og:description"
-    content="ML-driven security automation, phishing classifiers, anomaly detection engines, and AI workflow tooling. Building intelligent security systems at the AI + cybersecurity intersection." />
+    content="AI security portfolio: phishing classifiers, anomaly detection engines, security automation, and framework-aligned incident response playbooks." />
   <meta property="og:url" content="https://km-it-ops.github.io/" />
   <meta property="og:image" content="https://km-it-ops.github.io/assets/og-image.svg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Michael Al Kurdi — AI Systems Architect" />
+  <meta name="twitter:title" content="Michael Al Kurdi — AI Security Portfolio" />
   <meta name="twitter:description"
-    content="ML-driven security automation. Phishing classifiers, anomaly detection engines, AI workflow tooling." />
+    content="Detection engineering, phishing classification, anomaly detection, and security automation portfolio." />
   <meta name="twitter:image" content="https://km-it-ops.github.io/assets/og-image.svg" />
 
   <link rel="canonical" href="https://km-it-ops.github.io/" />
   <link rel="icon" type="image/svg+xml" href="assets/cursor-mask.svg" />
 
-  <title>km-it-ops :: AI Systems Architect</title>
+  <title>Michael Al Kurdi — AI Security & Detection Engineering Portfolio</title>
 
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,44 +77,18 @@
   <!-- Skip link (a11y) -->
   <a href="#main" class="skip-link">Skip to content</a>
 
+  <!-- Scroll-reactive ambient background: a quiet signal ribbon to reduce HUD noise -->
+  <div class="scroll-signal-bg" id="scrollSignalBg" aria-hidden="true"></div>
+
   <!-- Scan-line + grid overlays (HUD chrome) -->
   <div class="hud-scanlines" aria-hidden="true"></div>
   <div class="hud-grid" aria-hidden="true"></div>
   <div class="hud-vignette" aria-hidden="true"></div>
 
-  <!-- Cursor companion: pixelated Guy Fawkes shadow -->
+  <!-- Cursor companion: floating mask; transforms into an original signal blade on clickable targets -->
   <div class="cursor-mask" id="cursorMask" aria-hidden="true">
-    <svg viewBox="0 0 14 14" shape-rendering="crispEdges" width="20" height="20">
-      <rect x="3" y="0" width="8" height="1" fill="#e8dec8"/>
-      <rect x="2" y="1" width="10" height="1" fill="#e8dec8"/>
-      <rect x="1" y="2" width="12" height="1" fill="#e8dec8"/>
-      <rect x="1" y="3" width="12" height="1" fill="#e8dec8"/>
-      <rect x="0" y="4" width="14" height="1" fill="#e8dec8"/>
-      <rect x="0" y="5" width="14" height="1" fill="#e8dec8"/>
-      <rect x="0" y="6" width="14" height="1" fill="#e8dec8"/>
-      <rect x="0" y="7" width="14" height="1" fill="#e8dec8"/>
-      <rect x="1" y="8" width="12" height="1" fill="#e8dec8"/>
-      <rect x="1" y="9" width="12" height="1" fill="#e8dec8"/>
-      <rect x="2" y="10" width="10" height="1" fill="#e8dec8"/>
-      <rect x="3" y="11" width="8" height="1" fill="#e8dec8"/>
-      <rect x="2" y="3" width="2" height="1" fill="#0a0a10"/>
-      <rect x="10" y="3" width="2" height="1" fill="#0a0a10"/>
-      <rect x="1" y="4" width="2" height="1" fill="#0a0a10"/>
-      <rect x="11" y="4" width="2" height="1" fill="#0a0a10"/>
-      <rect x="3" y="5" width="2" height="2" fill="#0a0a10"/>
-      <rect x="9" y="5" width="2" height="2" fill="#0a0a10"/>
-      <rect x="1" y="7" width="1" height="1" fill="#c8425c"/>
-      <rect x="12" y="7" width="1" height="1" fill="#c8425c"/>
-      <rect x="2" y="8" width="1" height="1" fill="#0a0a10"/>
-      <rect x="11" y="8" width="1" height="1" fill="#0a0a10"/>
-      <rect x="3" y="9" width="2" height="1" fill="#0a0a10"/>
-      <rect x="9" y="9" width="2" height="1" fill="#0a0a10"/>
-      <rect x="5" y="9" width="4" height="1" fill="#0a0a10"/>
-      <rect x="5" y="10" width="4" height="1" fill="#0a0a10"/>
-      <rect x="6" y="11" width="2" height="1" fill="#0a0a10"/>
-      <rect x="6" y="12" width="2" height="1" fill="#0a0a10"/>
-      <rect x="6" y="13" width="2" height="1" fill="#0a0a10"/>
-    </svg>
+    <img src="assets/masked-signal-cursor.png" alt="" decoding="async" />
+    <span class="cursor-sword" aria-hidden="true"></span>
   </div>
 
   <!-- ========== TOP HUD BAR ========== -->
@@ -124,11 +98,12 @@
         <span class="hud-id-bracket">[</span>
         <span class="hud-id-host">km-it-ops</span>
         <span class="hud-id-sep">::</span>
-        <span class="hud-id-role">ai-systems-architect</span>
+        <span class="hud-id-role">masked-signal</span>
         <span class="hud-id-bracket">]</span>
       </div>
       <nav class="hud-nav" aria-label="Primary">
         <a href="#metrics">metrics</a>
+        <a href="#manifesto">manifesto</a>
         <a href="#about">about</a>
         <a href="#projects">builds</a>
         <a href="#playbooks">playbooks</a>
@@ -139,7 +114,7 @@
       </nav>
       <div class="hud-status-bar">
         <span class="hud-status-dot"></span>
-        <span class="hud-status-text">SYSTEM ONLINE</span>
+        <span class="hud-status-text">SIGNAL ONLINE</span>
         <span class="hud-status-time" id="hudClock">--:--:-- UTC</span>
       </div>
     </div>
@@ -159,21 +134,30 @@
         <!-- LEFT: Identity console -->
         <div class="hud-panel hud-identity">
           <div class="hud-panel-header">
-            <span class="hud-panel-tag">// OPERATOR_PROFILE</span>
+            <span class="hud-panel-tag">// MASKED_SIGNAL · OPERATOR_PROFILE</span>
             <span class="hud-panel-status hud-flicker">ACTIVE</span>
           </div>
           <div class="hud-panel-body">
-            <p class="hud-callsign">CALLSIGN</p>
+            <p class="hud-callsign">CALLSIGN · SIGNAL BEHIND THE MASK</p>
             <h1 class="hud-name">
               <span class="hud-name-line">MAHMOUD <span class="hud-name-alt">("MICHAEL")</span></span>
               <span class="hud-name-line hud-name-accent">AL KURDI</span>
             </h1>
             <p class="hud-role">
-              <span class="hud-role-prefix">&gt;</span> AI SYSTEMS ARCHITECT &nbsp;//&nbsp; SECURITY AUTOMATION
+              <span class="hud-role-prefix">&gt;</span> AI SECURITY BUILDER &nbsp;//&nbsp; DETECTION ENGINEERING
+            </p>
+            <p class="hud-bio hud-bio-lead">
+              I ship detection systems, not slide decks.
             </p>
             <p class="hud-bio">
-              I ship detection systems, not slide decks. Builder at the intersection of machine learning and cybersecurity — phishing classifiers, anomaly detection engines, AI workflow tooling, and cross-framework incident-response playbooks. Eight years inside federally regulated, security-cleared operations &lt;FAA · OSHA · IATA · CBP&gt;.
+              AI/security builder focused on phishing classification, anomaly detection, security automation, and incident-response workflows that surface the signal early.
             </p>
+            <ul class="hud-proof-list" aria-label="Portfolio proof points">
+              <li><strong>99.68% F1</strong><span>phishing classifier, 5-fold CV</span></li>
+              <li><strong>100% detection</strong><span>SIEM-ready anomaly engine scenarios</span></li>
+              <li><strong>2 playbook libraries</strong><span>ISO 27035 · NIST 800-61 · CISA AIS</span></li>
+              <li><strong>8 yrs regulated ops</strong><span>FAA · OSHA · IATA · CBP</span></li>
+            </ul>
 
             <div class="hud-tags">
               <span class="hud-tag hud-tag-cert">CompTIA Security+ ce</span>
@@ -193,39 +177,50 @@
                 <span class="hud-btn-glyph">◇</span> LINKEDIN
               </a>
               <a class="hud-btn" href="#contact">
-                <span class="hud-btn-glyph">◇</span> SECURE CHANNEL
+                <span class="hud-btn-glyph">◇</span> INITIATE CONTACT
               </a>
             </div>
+            <p class="hud-open-line">Open to AI Security, Detection Engineering, Security Automation, and Cybersecurity Analyst/Engineer roles — Charlotte or remote.</p>
           </div>
         </div>
 
-        <!-- RIGHT: Threat feed + ATT&CK matrix -->
+        <!-- RIGHT: Signal feed + ATT&CK matrix -->
         <div class="hud-side">
-          <div class="hud-panel hud-feed" aria-label="Threat intelligence feed">
+          <div class="hud-panel hud-mask-card" aria-label="Masked signal identity">
+            <div class="hud-mask-sigil" aria-hidden="true">
+              <img src="assets/masked-signal-photo.png" alt="" decoding="async" />
+            </div>
+            <div class="hud-mask-copy">
+              <span>// MASKED_SIGNAL</span>
+              <strong>Signal acquired. Operator verified.</strong>
+              <em>Proof ships louder than theater.</em>
+            </div>
+          </div>
+          <div class="hud-panel hud-feed" aria-label="Signal feed">
             <div class="hud-panel-header">
-              <span class="hud-panel-tag">// THREAT_INTEL_FEED &middot; CISA_AIS</span>
+              <span class="hud-panel-tag">// SIGNAL_FEED &middot; PROOF_OF_WORK</span>
               <span class="hud-panel-status hud-status-live">LIVE</span>
             </div>
             <ul class="hud-feed-list" id="threatFeed">
               <li class="hud-feed-item">
                 <span class="hud-feed-sev hud-sev-info">INFO</span>
-                <span class="hud-feed-msg">YARA rules synced · 247 active signatures</span>
+                <span class="hud-feed-msg">Security+ verified · OSCP target Q3 2026</span>
               </li>
               <li class="hud-feed-item">
                 <span class="hud-feed-sev hud-sev-warn">WARN</span>
-                <span class="hud-feed-msg">Phishing classifier F1: 0.9968 (5-fold CV)</span>
+                <span class="hud-feed-msg">Phishing classifier regression passed · F1 0.9968</span>
               </li>
               <li class="hud-feed-item">
                 <span class="hud-feed-sev hud-sev-crit">CRIT</span>
-                <span class="hud-feed-msg">Anomaly engine: 100% detection / 0 FN</span>
+                <span class="hud-feed-msg">Anomaly engine mapped to 6 SOC threat categories</span>
               </li>
               <li class="hud-feed-item">
                 <span class="hud-feed-sev hud-sev-info">INFO</span>
-                <span class="hud-feed-msg">MITRE ATT&amp;CK mapping refreshed · TA0001–TA0011</span>
+                <span class="hud-feed-msg">IR playbooks aligned to ISO 27035 + NIST 800-61</span>
               </li>
               <li class="hud-feed-item">
                 <span class="hud-feed-sev hud-sev-ok">OK</span>
-                <span class="hud-feed-msg">IR Playbook Library deployed · ISO/NIST aligned</span>
+                <span class="hud-feed-msg">OPEN: AI Security / Detection Engineering roles</span>
               </li>
             </ul>
           </div>
@@ -268,25 +263,25 @@
       <div class="hud-metric-grid">
         <article class="hud-metric">
           <span class="hud-metric-label">PHISHING F1</span>
-          <div class="hud-metric-value" data-counter="99.68" data-suffix="%">0.00%</div>
+          <div class="hud-metric-value" data-counter="99.68" data-suffix="%">99.68%</div>
           <div class="hud-metric-bar"><span style="--pct:99.68%;"></span></div>
           <span class="hud-metric-sub">5-fold cross-validation</span>
         </article>
         <article class="hud-metric">
           <span class="hud-metric-label">DETECTION RATE</span>
-          <div class="hud-metric-value" data-counter="100" data-suffix="%">0%</div>
+          <div class="hud-metric-value" data-counter="100" data-suffix="%">100%</div>
           <div class="hud-metric-bar"><span style="--pct:100%;"></span></div>
           <span class="hud-metric-sub">6 SOC threat categories</span>
         </article>
         <article class="hud-metric">
           <span class="hud-metric-label">PROMPT TECHNIQUES</span>
-          <div class="hud-metric-value" data-counter="17" data-suffix="">0</div>
+          <div class="hud-metric-value" data-counter="17" data-suffix="">17</div>
           <div class="hud-metric-bar"><span style="--pct:85%;"></span></div>
           <span class="hud-metric-sub">CoT · ReAct · ToT · Self-consistency</span>
         </article>
         <article class="hud-metric">
           <span class="hud-metric-label">CLEARED OPS</span>
-          <div class="hud-metric-value" data-counter="8" data-suffix=" yrs">0 yrs</div>
+          <div class="hud-metric-value" data-counter="8" data-suffix=" yrs">8 yrs</div>
           <div class="hud-metric-bar"><span style="--pct:80%;"></span></div>
           <span class="hud-metric-sub">FAA / OSHA / IATA / CBP</span>
         </article>
@@ -298,29 +293,44 @@
         </article>
         <article class="hud-metric">
           <span class="hud-metric-label">GPA</span>
-          <div class="hud-metric-value" data-counter="3.96" data-suffix="">0.00</div>
+          <div class="hud-metric-value" data-counter="3.96" data-suffix="">3.96</div>
           <div class="hud-metric-bar"><span style="--pct:99%;"></span></div>
           <span class="hud-metric-sub">SNHU · Summa Cum Laude</span>
         </article>
         <article class="hud-metric">
           <span class="hud-metric-label">PORTFOLIO REPOS</span>
-          <div class="hud-metric-value" data-counter="6" data-suffix="">0</div>
+          <div class="hud-metric-value" data-counter="6" data-suffix="">6</div>
           <div class="hud-metric-bar"><span style="--pct:60%;"></span></div>
-          <span class="hud-metric-sub">5 builds · 1 playbook library</span>
+          <span class="hud-metric-sub">4 tools · 2 playbook libraries</span>
         </article>
         <article class="hud-metric">
           <span class="hud-metric-label">DEAN'S LIST</span>
-          <div class="hud-metric-value" data-counter="8" data-suffix=" / 8">0 / 8</div>
+          <div class="hud-metric-value" data-counter="8" data-suffix=" / 8">8 / 8</div>
           <div class="hud-metric-bar"><span style="--pct:100%;"></span></div>
           <span class="hud-metric-sub">Alpha Sigma Lambda</span>
         </article>
       </div>
     </section>
 
+    <!-- ========== MANIFESTO ========== -->
+    <section id="manifesto" class="hud-section hud-manifesto" aria-label="Manifesto">
+      <div class="hud-section-head">
+        <span class="hud-section-num">02</span>
+        <h2 class="hud-section-title">// MANIFESTO</h2>
+        <span class="hud-section-rule"></span>
+      </div>
+      <div class="hud-manifesto-panel">
+        <p>Behind every alert is a pattern. Behind every pattern is a system. Behind every system is someone responsible for defending it.</p>
+        <p>I build for that person: classifiers, anomaly detectors, playbooks, and AI workflows that turn uncertainty into action.</p>
+        <p class="hud-manifesto-kicker">No theater. No slideware. Proof ships.</p>
+      </div>
+    </section>
+
+
     <!-- ========== ABOUT ========== -->
     <section id="about" class="hud-section" aria-label="About">
       <div class="hud-section-head">
-        <span class="hud-section-num">02</span>
+        <span class="hud-section-num">03</span>
         <h2 class="hud-section-title">// OPERATOR_BRIEFING</h2>
         <span class="hud-section-rule"></span>
       </div>
@@ -399,11 +409,11 @@
     <!-- ========== PROJECTS ========== -->
     <section id="projects" class="hud-section" aria-label="Shipped builds">
       <div class="hud-section-head">
-        <span class="hud-section-num">03</span>
-        <h2 class="hud-section-title">// SHIPPED_BUILDS</h2>
+        <span class="hud-section-num">04</span>
+        <h2 class="hud-section-title">// CASE_FILES: SHIPPED BUILDS</h2>
         <span class="hud-section-rule"></span>
       </div>
-      <p class="hud-section-lede">Open source, documented, deployable. Every repo has a README and runnable code.</p>
+      <p class="hud-section-lede">Open source, documented, deployable. Each case file links to code and README evidence.</p>
 
       <div class="hud-build-grid">
 
@@ -412,6 +422,7 @@
             <span class="hud-build-id">BUILD_01</span>
             <span class="hud-build-tag hud-tag-ml">ML CLASSIFIER</span>
           </header>
+          <div class="hud-proof-pill">STATUS: SHIPPED · F1 99.68%</div>
           <h3 class="hud-build-title">
             <a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">
               Phishing Email Classifier <span class="hud-arrow">↗</span>
@@ -432,8 +443,8 @@
             <li>scikit-learn</li><li>TF-IDF</li><li>Random Forest</li><li>5-fold CV</li>
           </ul>
           <footer class="hud-build-foot">
-            <a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">CODE →</a>
-            <a href="https://github.com/KM-it-ops/phishing-email-classifier#readme" target="_blank" rel="noopener noreferrer">README →</a>
+            <a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>
+            <a href="https://github.com/KM-it-ops/phishing-email-classifier#readme" target="_blank" rel="noopener noreferrer">README ↗</a>
           </footer>
         </article>
 
@@ -442,6 +453,7 @@
             <span class="hud-build-id">BUILD_02</span>
             <span class="hud-build-tag hud-tag-detect">DETECTION ENG</span>
           </header>
+          <div class="hud-proof-pill">STATUS: SHIPPED · 100% DETECTION</div>
           <h3 class="hud-build-title">
             <a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">
               Log Anomaly Detection <span class="hud-arrow">↗</span>
@@ -460,8 +472,8 @@
             <li>pandas</li><li>NumPy</li><li>SIEM-ready</li><li>Z-score</li>
           </ul>
           <footer class="hud-build-foot">
-            <a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">CODE →</a>
-            <a href="https://github.com/KM-it-ops/security-log-anomaly-detection#readme" target="_blank" rel="noopener noreferrer">README →</a>
+            <a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>
+            <a href="https://github.com/KM-it-ops/security-log-anomaly-detection#readme" target="_blank" rel="noopener noreferrer">README ↗</a>
           </footer>
         </article>
 
@@ -470,6 +482,7 @@
             <span class="hud-build-id">BUILD_03</span>
             <span class="hud-build-tag hud-tag-ai">AI SYSTEM</span>
           </header>
+          <div class="hud-proof-pill">STATUS: SHIPPED · 17 PROMPT PATTERNS</div>
           <h3 class="hud-build-title">
             <a href="https://github.com/KM-it-ops/StockPath-Navigator" target="_blank" rel="noopener noreferrer">
               StockPath Navigator <span class="hud-arrow">↗</span>
@@ -488,8 +501,8 @@
             <li>Prompt Engineering</li><li>ReAct</li><li>CoT</li><li>React</li>
           </ul>
           <footer class="hud-build-foot">
-            <a href="https://github.com/KM-it-ops/StockPath-Navigator" target="_blank" rel="noopener noreferrer">CODE →</a>
-            <a href="https://github.com/KM-it-ops/StockPath-Navigator#readme" target="_blank" rel="noopener noreferrer">README →</a>
+            <a href="https://github.com/KM-it-ops/StockPath-Navigator" target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>
+            <a href="https://github.com/KM-it-ops/StockPath-Navigator#readme" target="_blank" rel="noopener noreferrer">README ↗</a>
           </footer>
         </article>
 
@@ -498,6 +511,7 @@
             <span class="hud-build-id">BUILD_04</span>
             <span class="hud-build-tag hud-tag-app">FULL STACK</span>
           </header>
+          <div class="hud-proof-pill">STATUS: SHIPPED · REST / CRUD</div>
           <h3 class="hud-build-title">
             <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">
               VulnTrack Dashboard <span class="hud-arrow">↗</span>
@@ -516,8 +530,8 @@
             <li>Flask</li><li>SQLite</li><li>REST</li><li>CRUD</li>
           </ul>
           <footer class="hud-build-foot">
-            <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">CODE →</a>
-            <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program#readme" target="_blank" rel="noopener noreferrer">README →</a>
+            <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>
+            <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program#readme" target="_blank" rel="noopener noreferrer">README ↗</a>
           </footer>
         </article>
 
@@ -527,7 +541,7 @@
     <!-- ========== PLAYBOOKS / RESEARCH ========== -->
     <section id="playbooks" class="hud-section" aria-label="Playbooks and research">
       <div class="hud-section-head">
-        <span class="hud-section-num">04</span>
+        <span class="hud-section-num">05</span>
         <h2 class="hud-section-title">// PLAYBOOKS_LIBRARY</h2>
         <span class="hud-section-rule"></span>
       </div>
@@ -559,9 +573,9 @@
           <p class="hud-playbook-desc">Two complete playbooks aligned to industry-standard frameworks. Phase-alignment table makes the same operational pattern portable across ISO and NIST audit regimes — finance, healthcare, federal contractors.</p>
 
           <footer class="hud-playbook-foot">
-            <a href="https://github.com/KM-it-ops/incident-response-playbooks" target="_blank" rel="noopener noreferrer">REPO →</a>
-            <a href="https://github.com/KM-it-ops/incident-response-playbooks/blob/main/iso-27035-playbook.md" target="_blank" rel="noopener noreferrer">ISO PLAYBOOK →</a>
-            <a href="https://github.com/KM-it-ops/incident-response-playbooks/blob/main/nist-800-61-playbook.md" target="_blank" rel="noopener noreferrer">NIST PLAYBOOK →</a>
+            <a href="https://github.com/KM-it-ops/incident-response-playbooks" target="_blank" rel="noopener noreferrer">REPO ↗</a>
+            <a href="https://github.com/KM-it-ops/incident-response-playbooks/blob/main/iso-27035-playbook.md" target="_blank" rel="noopener noreferrer">ISO PLAYBOOK ↗</a>
+            <a href="https://github.com/KM-it-ops/incident-response-playbooks/blob/main/nist-800-61-playbook.md" target="_blank" rel="noopener noreferrer">NIST PLAYBOOK ↗</a>
           </footer>
         </article>
 
@@ -587,8 +601,8 @@
           <p class="hud-playbook-desc">Threat-intelligence and defense-in-depth framework with explicit MITRE ATT&amp;CK tactic mapping. Atomic indicators, computed indicators (YARA), and TTPs operationalized for a real-world IoT manufacturing scenario.</p>
 
           <footer class="hud-playbook-foot">
-            <a href="https://github.com/KM-it-ops/cyber-defense-playbook" target="_blank" rel="noopener noreferrer">REPO →</a>
-            <a href="https://github.com/KM-it-ops/cyber-defense-playbook#readme" target="_blank" rel="noopener noreferrer">README →</a>
+            <a href="https://github.com/KM-it-ops/cyber-defense-playbook" target="_blank" rel="noopener noreferrer">REPO ↗</a>
+            <a href="https://github.com/KM-it-ops/cyber-defense-playbook#readme" target="_blank" rel="noopener noreferrer">README ↗</a>
           </footer>
         </article>
 
@@ -598,7 +612,7 @@
     <!-- ========== STACK / ARMORY ========== -->
     <section id="stack" class="hud-section" aria-label="Tech armory">
       <div class="hud-section-head">
-        <span class="hud-section-num">05</span>
+        <span class="hud-section-num">06</span>
         <h2 class="hud-section-title">// ARMORY</h2>
         <span class="hud-section-rule"></span>
       </div>
@@ -658,7 +672,7 @@
     <!-- ========== TIMELINE ========== -->
     <section id="timeline" class="hud-section" aria-label="Career timeline">
       <div class="hud-section-head">
-        <span class="hud-section-num">06</span>
+        <span class="hud-section-num">07</span>
         <h2 class="hud-section-title">// git log --career --oneline</h2>
         <span class="hud-section-rule"></span>
       </div>
@@ -724,11 +738,11 @@
     <!-- ========== TERMINAL ========== -->
     <section id="terminal" class="hud-section" aria-label="Interactive terminal">
       <div class="hud-section-head">
-        <span class="hud-section-num">07</span>
+        <span class="hud-section-num">08</span>
         <h2 class="hud-section-title">// SHELL_ACCESS</h2>
         <span class="hud-section-rule"></span>
       </div>
-      <p class="hud-section-lede">A real sandboxed shell. Try <code>help</code>, <code>builds</code>, <code>playbooks</code>, <code>about</code>, <code>contact</code>, <code>sudo hire-me</code>.</p>
+      <p class="hud-section-lede">A real sandboxed shell. Try <code>help</code>, <code>manifesto</code>, <code>signal</code>, <code>casefiles</code>, <code>contact</code>, <code>sudo hire-me</code>.</p>
 
       <div class="hud-iterm" id="iterm">
         <div class="hud-iterm-header">
@@ -753,11 +767,11 @@
     <!-- ========== CONTACT ========== -->
     <section id="contact" class="hud-section hud-contact" aria-label="Contact">
       <div class="hud-section-head">
-        <span class="hud-section-num">08</span>
-        <h2 class="hud-section-title">// SECURE_CHANNEL</h2>
+        <span class="hud-section-num">09</span>
+        <h2 class="hud-section-title">// INITIATE_CONTACT</h2>
         <span class="hud-section-rule"></span>
       </div>
-      <p class="hud-section-lede">Open to AI Security &amp; Automation roles · Detection Engineering · remote or Charlotte, NC.</p>
+      <p class="hud-section-lede">Dead-drop open: AI Security · Detection Engineering · Security Automation · Cybersecurity Analyst/Engineer roles · remote or Charlotte, NC.</p>
 
       <div class="hud-contact-grid">
         <a class="hud-contact-card" href="mailto:kurdi.michael.it@gmail.com?subject=Opportunity%20%E2%80%94%20Mahmoud%20(Michael)%20Al%20Kurdi">
@@ -787,7 +801,7 @@
 
   <footer class="hud-footer" role="contentinfo">
     <div class="hud-footer-inner">
-      <span class="hud-footer-id">[ km-it-ops :: 2026 ]</span>
+      <span class="hud-footer-id">[ km-it-ops :: masked-signal :: 2026 ]</span>
       <span class="hud-footer-meta">© 2026 Mahmoud ("Michael") Al Kurdi · all rights reserved</span>
       <span class="hud-footer-build">build · <span id="footerHash">b1d4a02</span></span>
     </div>
