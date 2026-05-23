@@ -17,9 +17,17 @@
     let mx = -100, my = -100;
     let active = false;
 
+    const clickableSelector = [
+      'a', 'button', 'input', 'textarea', 'select', 'summary',
+      '[role="button"]', '[role="link"]', '[onclick]',
+      '[tabindex]:not([tabindex="-1"])', '.hud-btn'
+    ].join(',');
+
     const onMove = (e) => {
       mx = e.clientX;
       my = e.clientY;
+      const clickable = Boolean(e.target.closest(clickableSelector));
+      el.classList.toggle('is-clickable', clickable);
       if (!active) {
         active = true;
         el.classList.add('active');
@@ -27,7 +35,7 @@
     };
     const onLeave = () => {
       active = false;
-      el.classList.remove('active');
+      el.classList.remove('active', 'is-clickable');
     };
 
     document.addEventListener('mousemove', onMove, { passive: true });
@@ -47,6 +55,42 @@
     requestAnimationFrame(loop);
   })();
 
+  /* ------------- Scroll-reactive background signal ------------- */
+  (function initScrollSignalBg() {
+    const bg = document.getElementById('scrollSignalBg');
+    if (!bg) return;
+
+    const root = document.documentElement;
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    let ticking = false;
+    let lastUpdate = 0;
+    const UPDATE_EVERY_MS = 80;
+
+    const update = () => {
+      const max = Math.max(1, document.body.scrollHeight - innerHeight);
+      const progress = Math.min(1, Math.max(0, scrollY / max));
+      root.style.setProperty('--scroll-progress', progress.toFixed(4));
+      root.style.setProperty('--scroll-shift', `${Math.round(scrollY * 0.14)}px`);
+      root.style.setProperty('--scroll-tilt', `${((progress - 0.5) * 2.2).toFixed(2)}deg`);
+      lastUpdate = performance.now();
+      ticking = false;
+    };
+
+    const requestUpdate = () => {
+      const now = performance.now();
+      if (now - lastUpdate < UPDATE_EVERY_MS) return;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    update();
+    addEventListener('scroll', requestUpdate, { passive: true });
+    addEventListener('resize', requestUpdate, { passive: true });
+  })();
+
   /* ------------- Live HUD clock ------------- */
   (function initClock() {
     const el = document.getElementById('hudClock');
@@ -60,7 +104,7 @@
     setInterval(update, 1000);
   })();
 
-  /* ------------- Animated metric counters ------------- */
+  /* ------------- Animated metric counters (values exist in DOM immediately for a11y/SEO) ------------- */
   (function initMetrics() {
     const metrics = document.querySelectorAll('.hud-metric');
     if (!metrics.length) return;
@@ -69,13 +113,14 @@
       const target = parseFloat(el.dataset.counter || '0');
       const suffix = el.dataset.suffix || '';
       const isFloat = String(el.dataset.counter || '').includes('.');
-      const duration = 1600;
+      const duration = 1200;
+      const startValue = target > 0 ? target * 0.82 : 0;
       const start = performance.now();
 
       function step(now) {
         const t = Math.min(1, (now - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-        const cur = target * eased;
+        const cur = startValue + (target - startValue) * eased;
         el.textContent = (isFloat ? cur.toFixed(2) : Math.round(cur)) + suffix;
         if (t < 1) requestAnimationFrame(step);
         else el.textContent = (isFloat ? target.toFixed(2) : target) + suffix;
@@ -105,13 +150,13 @@
     const list = document.getElementById('threatFeed');
     if (!list) return;
     const extras = [
-      { sev: 'info', msg: 'IAM session audit · 0 anomalies in last cycle' },
+      { sev: 'ok',   msg: 'Phishing classifier regression passed · F1 0.9968' },
+      { sev: 'info', msg: 'Open channel · AI Security / Detection Engineering' },
       { sev: 'warn', msg: 'Z-score volume spike · 3.4σ at gateway' },
       { sev: 'ok',   msg: 'Zero Trust policy reload · 1,204 rules valid' },
       { sev: 'info', msg: 'STIX/TAXII feed sync · 89 new indicators' },
       { sev: 'crit', msg: 'Brute force pattern · 5 attempts / 60s · blocked' },
-      { sev: 'ok',   msg: 'Phishing classifier passed regression suite' },
-      { sev: 'info', msg: 'OSCP prep · pwn module 14/20 complete' },
+      { sev: 'info', msg: 'Masked signal · operator verified' },
     ];
     const sevClass = { info: 'hud-sev-info', warn: 'hud-sev-warn', crit: 'hud-sev-crit', ok: 'hud-sev-ok' };
     let idx = 0;
@@ -161,6 +206,10 @@
   clear            Clear terminal
   whoami           Print operator identity
   sudo hire-me     Initiate hiring sequence
+  manifesto        Signal doctrine
+  signal           Role/contact status
+  mask             Symbol note
+  casefiles        Shipped build evidence
   konami           ???`,
 
       about: () => `MAHMOUD ("MICHAEL") AL KURDI
@@ -210,7 +259,22 @@ COMPLIANCE: NIST CSF, NIST SP 800-53, CIS Controls, ISO 27001, FISMA, GDPR, DevS
 
       clear: () => { out.innerHTML = ''; return null; },
 
-      whoami: () => 'michael@kurdi · ai-systems-architect',
+      manifesto: () => `No theater. No slideware.
+Detection systems, response playbooks, and AI workflows
+built for the moment when quiet failures become visible.`,
+
+      signal: () => `STATUS: OPEN TO ROLES
+TARGET: AI Security / Detection Engineering / Security Automation
+LOCATION: Charlotte, NC / Remote
+CONTACT: <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a>`,
+
+      mask: () => `The mask is not concealment.
+It is a reminder: systems should be judged by what they reveal.
+This is an original masked-signal motif — resistance energy, not fan art.`,
+
+      casefiles: () => commands.builds(),
+
+      whoami: () => 'michael@kurdi · masked-signal · ai-security-builder',
 
       'sudo hire-me': () => `[sudo] password for recruiter: ********
 ✓ access granted
@@ -339,11 +403,11 @@ COMPLIANCE: NIST CSF, NIST SP 800-53, CIS Controls, ISO 27001, FISMA, GDPR, DevS
   /* ------------- Console signature ------------- */
   if (typeof console !== 'undefined' && console.log) {
     const styles = [
-      'color: #7cf0c1; font-family: monospace; font-weight: 700; font-size: 14px;',
-      'color: #6fb3ff; font-family: monospace; font-size: 12px;',
+      'color: #d0182f; font-family: monospace; font-weight: 700; font-size: 14px;',
+      'color: #f2eadc; font-family: monospace; font-size: 12px;',
       'color: #8a93a8; font-family: monospace; font-size: 11px;',
     ];
-    console.log('%c[ km-it-ops ]%c :: AI Systems Architect', styles[0], styles[1]);
+    console.log('%c[ km-it-ops ]%c :: MASKED_SIGNAL // AI Security', styles[0], styles[1]);
     console.log('%cMahmoud (Michael) Al Kurdi  ·  github.com/KM-it-ops', styles[2]);
     console.log('%ckurdi.michael.it@gmail.com', styles[2]);
   }
