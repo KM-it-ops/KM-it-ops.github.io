@@ -5,39 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#05050a" />
+  <meta name="theme-color" content="#080b10" />
   <meta name="description"
-    content="Mahmoud (&quot;Michael&quot;) Al Kurdi — SOC / cybersecurity analyst and security engineer. CompTIA Security+, B.S. IT Cybersecurity. Ships Python detection tooling, ML pipelines, and LLM expert systems. Charlotte, NC." />
+    content="Mahmoud (&quot;Michael&quot;) Al Kurdi - SOC / cybersecurity analyst portfolio. Security+, B.S. IT Cybersecurity, Python detection tooling, ML phishing classification, and vulnerability management projects." />
   <meta name="author" content="Mahmoud (&quot;Michael&quot;) Al Kurdi" />
   <meta name="keywords"
     content="SOC analyst, cybersecurity analyst, detection engineering, Python, machine learning, Security+, incident response, Charlotte NC, portfolio" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mahmoud (&quot;Michael&quot;) Al Kurdi — SOC &amp; Security Engineering Portfolio" />
+  <meta property="og:title" content="Mahmoud (&quot;Michael&quot;) Al Kurdi - SOC &amp; Cybersecurity Analyst" />
   <meta property="og:description"
-    content="Detection engineering, Python tooling, ML pipelines, and LLM expert systems. Open to SOC / Cybersecurity Analyst roles." />
+    content="Case evidence portfolio for SOC, cybersecurity analyst, Python security tooling, ML classification, and vulnerability management work." />
   <meta property="og:url" content="https://km-it-ops.github.io/" />
   <meta property="og:image" content="https://km-it-ops.github.io/assets/og-image.svg" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mahmoud (&quot;Michael&quot;) Al Kurdi — SOC &amp; Security Engineering" />
-  <meta name="twitter:description" content="Detection engineering, Python tooling, ML, and LLM expert systems." />
+  <meta name="twitter:title" content="Mahmoud (&quot;Michael&quot;) Al Kurdi - SOC &amp; Cybersecurity Analyst" />
+  <meta name="twitter:description" content="Security case evidence, Python tooling, ML, and analyst-ready project proof." />
   <meta name="twitter:image" content="https://km-it-ops.github.io/assets/og-image.svg" />
 
   <link rel="canonical" href="https://km-it-ops.github.io/" />
-
-  <title>Mahmoud (&quot;Michael&quot;) Al Kurdi &middot; SOC &amp; Security Engineer</title>
-
-  <!-- Preconnect -->
+  <title>Mahmoud (&quot;Michael&quot;) Al Kurdi | SOC &amp; Cybersecurity Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,6 +39,7 @@
     "jobTitle": "SOC / Cybersecurity Analyst",
     "url": "https://km-it-ops.github.io/",
     "email": "mailto:kurdi.michael.it@gmail.com",
+    "image": "https://km-it-ops.github.io/assets/profile-portrait.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Charlotte",
@@ -62,668 +55,344 @@
       "name": "Southern New Hampshire University"
     },
     "knowsAbout": [
-      "Security Operations", "Incident Response", "Detection Engineering",
-      "Python", "Machine Learning", "Prompt Engineering", "Vulnerability Management"
+      "Security Operations",
+      "Incident Response",
+      "Detection Engineering",
+      "Python",
+      "Machine Learning",
+      "Prompt Engineering",
+      "Vulnerability Management"
     ]
   }
   </script>
 </head>
 
 <body>
-
-  <!-- Scroll progress bar -->
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- Skip link -->
-  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="site-nav" id="navbar" aria-label="Main navigation">
+    <a class="brand" href="#hero" aria-label="Mahmoud Michael Al Kurdi home">
+      <span class="brand-mark">KM</span>
+      <span class="brand-text">case evidence briefing</span>
+    </a>
 
-  <!-- ========== NAVIGATION ========== -->
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Mahmoud Michael Al Kurdi — home">
-        <span class="nav-logo-prompt">$</span>
-        <span class="nav-logo-name">al-kurdi<span class="nav-logo-caret">_</span></span>
-      </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#evidence">Evidence</a>
+      <a href="#projects">Case files</a>
+      <a href="#stack">Stack</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-      <div class="nav-links" role="menubar">
-        <a href="#about" role="menuitem"><span class="nav-hash">#</span>about</a>
-        <a href="#projects" role="menuitem"><span class="nav-hash">#</span>projects</a>
-        <a href="#stack" role="menuitem"><span class="nav-hash">#</span>stack</a>
-        <a href="#timeline" role="menuitem"><span class="nav-hash">#</span>timeline</a>
-        <a href="#terminal" role="menuitem"><span class="nav-hash">#</span>terminal</a>
-        <a href="#contact" role="menuitem"><span class="nav-hash">#</span>contact</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="cmdk-trigger" id="cmdkTrigger" aria-label="Open command palette" title="Open command palette (⌘K)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <span>Search</span>
-          <kbd class="kbd"><span class="kbd-mod">⌘</span>K</kbd>
-        </button>
-
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+    <div class="nav-actions">
+      <button class="icon-button" id="cmdkTrigger" type="button" aria-label="Open search">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button class="menu-button" id="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <div class="mobile-menu" id="mobileMenu" role="menu">
-    <a href="#about" role="menuitem"><span class="nav-hash">#</span>about</a>
-    <a href="#projects" role="menuitem"><span class="nav-hash">#</span>projects</a>
-    <a href="#stack" role="menuitem"><span class="nav-hash">#</span>stack</a>
-    <a href="#timeline" role="menuitem"><span class="nav-hash">#</span>timeline</a>
-    <a href="#terminal" role="menuitem"><span class="nav-hash">#</span>terminal</a>
-    <a href="#contact" role="menuitem"><span class="nav-hash">#</span>contact</a>
-    <a href="resume/index.html" role="menuitem" class="nav-resume">resume</a>
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="#evidence">Evidence</a>
+    <a href="#projects">Case files</a>
+    <a href="#stack">Stack</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <main id="main">
+    <section class="hero" id="hero" aria-label="Portfolio briefing introduction">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <div class="briefing-label">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open to SOC analyst roles
+          </div>
 
-    <!-- ========== HERO ========== -->
-    <section id="hero" aria-label="Hero introduction">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
-      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+          <p class="eyebrow">Portfolio brief / Charlotte / Remote</p>
+          <h1>Mahmoud <span>("Michael")</span> Al Kurdi</h1>
+          <p class="hero-lede">
+            Security operator and analyst candidate building verifiable detection work:
+            Python security tooling, ML classification, vulnerability workflows, and
+            documentation a reviewer can inspect quickly.
+          </p>
 
-      <div class="hero-content">
-        <div class="hero-status" role="status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span class="status-label">Available for SOC &amp; Cybersecurity Analyst roles</span>
-          <span class="status-loc">· Charlotte, NC · Remote OK</span>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="assets/Michael_Kurdi_Resume_2026.pdf" download="Michael_Kurdi_Resume_2026.pdf">Resume PDF</a>
+            <a class="button secondary" href="https://github.com/KM-it-ops" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button secondary" href="mailto:kurdi.michael.it@gmail.com?subject=Opportunity%20-%20Mahmoud%20Michael%20Al%20Kurdi">Email</a>
+          </div>
         </div>
 
-        <h1 class="hero-name" aria-label="Mahmoud Michael Al Kurdi">
-          <span class="hero-name-part">Mahmoud</span>
-          <span class="hero-name-part hero-name-accent">("Michael")</span>
-          <span class="hero-name-part">Al Kurdi</span>
-        </h1>
+        <aside class="portrait-panel" aria-label="Profile and briefing status">
+          <div class="portrait-frame">
+            <img src="assets/profile-portrait.png" alt="Mahmoud Michael Al Kurdi profile portrait" />
+          </div>
+          <dl class="identity-grid">
+            <div>
+              <dt>Target role</dt>
+              <dd>SOC / Cybersecurity Analyst</dd>
+            </div>
+            <div>
+              <dt>Credential</dt>
+              <dd>CompTIA Security+</dd>
+            </div>
+            <div>
+              <dt>Education</dt>
+              <dd>B.S. IT Cybersecurity</dd>
+            </div>
+            <div>
+              <dt>Signal</dt>
+              <dd>8+ years cleared operations</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
 
-        <p class="hero-tag">
-          <span class="hero-tag-slash">/</span>
-          Map the signals. Show the decisions. Ship detection code reviewers can verify.
+      <div class="brief-strip" aria-label="Briefing summary">
+        <div>
+          <span>Report type</span>
+          <strong>Hiring evidence</strong>
+        </div>
+        <div>
+          <span>Focus</span>
+          <strong>Detection and triage</strong>
+        </div>
+        <div>
+          <span>Review path</span>
+          <strong>Resume + repos</strong>
+        </div>
+        <div>
+          <span>Availability</span>
+          <strong>Charlotte / Remote</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading">
+        <p class="eyebrow">01 / evidence</p>
+        <h2 id="evidence-title">Proof points for a fast security review.</h2>
+        <p>
+          The portfolio is organized around visible outcomes: what was built, how it was validated,
+          and where a reviewer can inspect the source.
         </p>
-
-        <div class="signal-map-hero" role="img" aria-label="Signal map connecting logs, email, SIEM, LLM, and triage">
-          <span class="signal-orbit orbit-one"></span>
-          <span class="signal-orbit orbit-two"></span>
-          <span class="signal-node node-logs">logs</span>
-          <span class="signal-node node-email">email</span>
-          <span class="signal-node node-siem">SIEM</span>
-          <span class="signal-node node-llm">LLM</span>
-          <span class="signal-node node-triage">triage</span>
-          <div class="signal-readout">
-            <span>signal confidence</span>
-            <strong>99.68%</strong>
-            <em>phishing F1 / 5-fold CV</em>
-          </div>
-        </div>
-
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary" id="cta-projects">
-            <span class="btn-icon" aria-hidden="true">&gt;_</span>
-            View featured builds
-          </a>
-          <a href="https://github.com/KM-it-ops" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub
-          </a>
-          <a href="assets/Michael_Kurdi_Resume_2026.pdf" class="btn btn-ghost" id="cta-resume-pdf" download="Michael_Kurdi_Resume_2026.pdf">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            resume.pdf
-          </a>
-          <button class="btn btn-ghost" id="ctaCmdk" type="button">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            Search <kbd class="kbd inline"><span class="kbd-mod">⌘</span>K</kbd>
-          </button>
-        </div>
-
-        <!-- Stats strip -->
-        <ul class="hero-metrics" aria-label="Quick metrics">
-          <li><strong>8+</strong><span>yrs cleared ops</span></li>
-          <li><strong>4</strong><span>shipped security builds</span></li>
-          <li><strong>99.68%</strong><span>phishing F1 (5-fold CV)</span></li>
-          <li><strong>3.96</strong><span>GPA · summa cum laude</span></li>
-        </ul>
-
-        <ul class="signal-proof" aria-label="Portfolio proof points">
-          <li><span>detect</span><strong>Rules + statistics for SOC triage</strong></li>
-          <li><span>classify</span><strong>TF-IDF + Random Forest phishing analysis</strong></li>
-          <li><span>document</span><strong>Resume, READMEs, and runnable repos</strong></li>
-        </ul>
       </div>
 
-      <button class="scroll-indicator" aria-label="Scroll to about">
-        <span>scroll</span>
-        <div class="scroll-arrow"></div>
-      </button>
+      <div class="evidence-grid">
+        <article class="evidence-card high">
+          <div class="card-kicker">ML signal</div>
+          <h3>99.68% F1 phishing classification</h3>
+          <p>TF-IDF and Random Forest pipeline with 5-fold cross validation and interpretable feature output.</p>
+          <a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">Inspect repository</a>
+        </article>
+
+        <article class="evidence-card">
+          <div class="card-kicker">SOC triage</div>
+          <h3>Rules plus statistics for log anomalies</h3>
+          <p>Detects brute force patterns, port scans, and volume spikes with reviewer-readable output.</p>
+          <a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">Inspect repository</a>
+        </article>
+
+        <article class="evidence-card">
+          <div class="card-kicker">Workflow delivery</div>
+          <h3>Vulnerability dashboard with CRUD and KPIs</h3>
+          <p>Flask, SQLite, REST-style workflows, severity tracking, live search, and operational status views.</p>
+          <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">Inspect repository</a>
+        </article>
+      </div>
     </section>
 
-    <!-- ========== ABOUT ========== -->
-    <section id="about" aria-label="About me">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow"><span class="sec-num">01</span> / about</p>
-          <h2 class="section-title">Readable security work, not portfolio theater.</h2>
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">02 / analyst profile</p>
+        <h2 id="about-title">Readable security work, not portfolio theater.</h2>
+      </div>
+
+      <div class="about-layout">
+        <div class="brief-copy">
+          <p>
+            I am a CompTIA Security+ professional with more than eight years in federally
+            regulated, security-cleared environments across FAA, OSHA, IATA, and CBP contexts.
+            I hold a B.S. in Information Technology with a cybersecurity concentration from
+            Southern New Hampshire University, graduating summa cum laude with a 3.96 GPA.
+          </p>
+          <p>
+            My strongest work sits at the boundary of analyst judgment and verifiable tooling:
+            detection rules, Python workflows, classifier evaluation, vulnerability tracking,
+            prompt-engineered expert systems, and documentation that makes the evidence easy to audit.
+          </p>
         </div>
 
-        <div class="about-layout">
-          <div class="about-prose reveal">
-            <p>
-              I'm <strong>Mahmoud ("Michael") Al Kurdi</strong> — a <span class="highlight">CompTIA Security+</span> professional with
-              <strong>more than eight years</strong> in federally regulated, security-cleared environments
-              (FAA, OSHA, IATA, CBP). I hold a <strong>B.S. in Information Technology (Cybersecurity)</strong>
-              from SNHU (Summa Cum Laude, 3.96 GPA) and focus on <span class="highlight">incident response,
-              detection engineering, and Python security tooling</span>.
-            </p>
-            <p>
-              I'm targeting <strong>SOC Analyst</strong> / <strong>Cybersecurity Analyst</strong> roles and I ship
-              real code: rule-based log anomaly engines, ML phishing classifiers with cross-validated metrics,
-              and <strong>prompt-engineered expert systems</strong> packaged with docs, tests, and print-ready resumes.
-              I care about reproducibility, clean READMEs, and outputs a human reviewer can actually verify.
-            </p>
-            <p class="about-kbd-hint">
-              Press <kbd class="kbd"><span class="kbd-mod">⌘</span>K</kbd> anywhere to open the command palette.
-              Or jump to <a href="#terminal">#terminal</a> for an interactive shell.
-            </p>
-          </div>
-
-          <aside class="about-card-panel reveal" aria-label="Quick facts">
-            <div class="about-panel-header">
-              <span class="panel-label">~/whoami.json</span>
-            </div>
-            <pre class="about-panel-code"><code><span class="tok-punc">{</span>
-  <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"Mahmoud (&quot;Michael&quot;) Al Kurdi"</span><span class="tok-punc">,</span>
-  <span class="tok-key">"role"</span><span class="tok-punc">:</span> <span class="tok-str">"SOC / Cybersecurity Analyst"</span><span class="tok-punc">,</span>
-  <span class="tok-key">"location"</span><span class="tok-punc">:</span> <span class="tok-str">"Charlotte, NC"</span><span class="tok-punc">,</span>
-  <span class="tok-key">"remote"</span><span class="tok-punc">:</span> <span class="tok-bool">true</span><span class="tok-punc">,</span>
-  <span class="tok-key">"cert"</span><span class="tok-punc">:</span> <span class="tok-str">"CompTIA Security+ ce"</span><span class="tok-punc">,</span>
-  <span class="tok-key">"stack"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"python"</span><span class="tok-punc">,</span> <span class="tok-str">"flask"</span><span class="tok-punc">,</span> <span class="tok-str">"react"</span><span class="tok-punc">,</span> <span class="tok-str">"sklearn"</span><span class="tok-punc">]</span><span class="tok-punc">,</span>
-  <span class="tok-key">"currently"</span><span class="tok-punc">:</span> <span class="tok-str">"building detection tooling &amp; LLM eval harnesses"</span><span class="tok-punc">,</span>
-  <span class="tok-key">"open_to"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"SOC"</span><span class="tok-punc">,</span> <span class="tok-str">"SecEng"</span><span class="tok-punc">,</span> <span class="tok-str">"Detection"</span><span class="tok-punc">]</span>
-<span class="tok-punc">}</span></code></pre>
-          </aside>
-        </div>
-
-        <!-- What I do cards -->
-        <div class="about-grid">
-          <div class="about-card reveal">
-            <div class="about-card-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2"/>
-                <path d="M8 21h8"/><path d="M12 17v4"/>
-                <path d="M7 8l3 3-3 3"/><line x1="13" y1="14" x2="17" y2="14"/>
-              </svg>
-            </div>
-            <h3>Detection &amp; analytics</h3>
-            <p>Rule-based and statistical engines for logs and email. Anomaly categories, SOC-style triage output, ML pipelines with measured cross-validated performance.</p>
-          </div>
-          <div class="about-card reveal">
-            <div class="about-card-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <h3>Expert LLM systems</h3>
-            <p>Role priming, XML structuring, CoT, ReAct, self-reflection, and hallucination guardrails — shipped as reproducible prompts with GitHub-ready docs and UIs.</p>
-          </div>
-          <div class="about-card reveal">
-            <div class="about-card-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                <path d="M8 7h8"/><path d="M8 11h6"/>
-              </svg>
-            </div>
-            <h3>Full-stack delivery</h3>
-            <p>Python, React, Flask, SQLite, REST APIs, CI-friendly static sites on GitHub Pages — with READMEs and UX that hold up to real reviewers.</p>
-          </div>
+        <div class="capability-matrix" aria-label="Capability matrix">
+          <div><span>Detect</span><strong>Auth logs, scans, spikes, and triage patterns</strong></div>
+          <div><span>Classify</span><strong>Phishing signals with validated ML metrics</strong></div>
+          <div><span>Operate</span><strong>Security-cleared, regulated work environments</strong></div>
+          <div><span>Document</span><strong>READMEs, resumes, and reviewer-friendly artifacts</strong></div>
         </div>
       </div>
     </section>
 
-    <!-- ========== PROJECTS ========== -->
-    <section id="projects" aria-label="Featured projects">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow"><span class="sec-num">02</span> / project signals</p>
-          <h2 class="section-title">Proof you can inspect.</h2>
-          <p class="section-subtitle">Open source, documented, deployable. Every featured build maps to a security signal: detect, classify, track, or advise.</p>
-        </div>
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="eyebrow">03 / case files</p>
+        <h2 id="projects-title">Featured builds as evidence packets.</h2>
+        <p>Each case file names the security problem, method, evidence, and repo path.</p>
+      </div>
 
-        <div class="projects-grid">
+      <div class="case-list">
+        <article class="case-file">
+          <header>
+            <p class="case-id">CASE-001 / prompt system</p>
+            <h3>StockPath Navigator</h3>
+            <span>AI trading expert system / React / TypeScript</span>
+          </header>
+          <div class="case-columns">
+            <div><strong>Problem</strong><p>Package complex market-analysis reasoning into a repeatable expert workflow.</p></div>
+            <div><strong>Method</strong><p>Seventeen prompt-engineering techniques surfaced through a reviewer-friendly UI.</p></div>
+            <div><strong>Evidence</strong><p>Documented v3.0 system with visible technique coverage and code artifacts.</p></div>
+            <div><strong>Repo</strong><p><a href="https://github.com/KM-it-ops/StockPath-Navigator" target="_blank" rel="noopener noreferrer">Code</a> / <a href="https://github.com/KM-it-ops/StockPath-Navigator#readme" target="_blank" rel="noopener noreferrer">README</a></p></div>
+          </div>
+        </article>
 
-          <!-- StockPath -->
-          <article class="project-card reveal" data-tags="prompt-engineering react typescript">
-            <header class="project-head">
-              <div class="project-head-top">
-                <span class="project-lang"><span class="lang-dot lang-py"></span>Prompt System · React</span>
-                <span class="project-badge">featured</span>
-              </div>
-              <h3 class="project-title">
-                <a href="https://github.com/KM-it-ops/StockPath-Navigator" target="_blank" rel="noopener noreferrer">
-                  StockPath Navigator <span class="link-arrow">↗</span>
-                </a>
-              </h3>
-              <p class="project-sub">AI-powered trading expert system · 17 prompt-engineering techniques</p>
-            </header>
+        <article class="case-file">
+          <header>
+            <p class="case-id">CASE-002 / vulnerability operations</p>
+            <h3>Vulnerability Management Mini Program</h3>
+            <span>Python / Flask / SQLite / REST workflows</span>
+          </header>
+          <div class="case-columns">
+            <div><strong>Problem</strong><p>Track vulnerability ownership, status, severity, and remediation progress.</p></div>
+            <div><strong>Method</strong><p>Full-stack dashboard with CRUD, KPI cards, search, filtering, and severity states.</p></div>
+            <div><strong>Evidence</strong><p>Operational UI patterns aligned to analyst workflows and management reporting.</p></div>
+            <div><strong>Repo</strong><p><a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">Code</a> / <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program#readme" target="_blank" rel="noopener noreferrer">README</a></p></div>
+          </div>
+        </article>
 
-            <div class="terminal-frame">
-              <div class="terminal-header">
-                <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
-                <span class="terminal-title">stockpath-navigator</span>
-              </div>
-              <div class="terminal-body">
-                <div><span class="comment">// analyze AAPL — ReAct loop</span></div>
-                <div><span class="prompt">user &gt;</span> analyze AAPL trend</div>
-                <div><span class="output">◆ reasoning:</span> bullish pattern</div>
-                <div><span class="output">◆ risk:</span> moderate</div>
-                <div><span class="output">◆ confidence:</span> 87%</div>
-                <div><span class="prompt">⚡</span> <span class="comment">safety guardrails active</span></div>
-              </div>
-            </div>
+        <article class="case-file">
+          <header>
+            <p class="case-id">CASE-003 / ML classification</p>
+            <h3>Phishing Email Classifier</h3>
+            <span>Python / scikit-learn / TF-IDF / Random Forest</span>
+          </header>
+          <div class="case-columns">
+            <div><strong>Problem</strong><p>Separate phishing from legitimate email using explainable features.</p></div>
+            <div><strong>Method</strong><p>Text vectorization, model evaluation, cross validation, and feature inspection.</p></div>
+            <div><strong>Evidence</strong><p>99.68% F1 reported with 5-fold cross validation and visible metrics.</p></div>
+            <div><strong>Repo</strong><p><a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">Code</a> / <a href="https://github.com/KM-it-ops/phishing-email-classifier#readme" target="_blank" rel="noopener noreferrer">README</a></p></div>
+          </div>
+        </article>
 
-            <p class="project-desc">
-              A disciplined system prompt that turns any reasoning-capable LLM into a stock market analyst
-              and trading coach. Real-time analysis, trade journaling, emotional-state management, and an
-              interactive React dashboard.
-            </p>
-
-            <ul class="tech-badges" aria-label="Technologies">
-              <li>Prompt Engineering</li><li>ReAct</li><li>CoT</li><li>React</li><li>Safety Guardrails</li>
-            </ul>
-
-            <footer class="project-foot">
-              <a href="https://github.com/KM-it-ops/StockPath-Navigator" target="_blank" rel="noopener noreferrer">Code →</a>
-              <a href="https://github.com/KM-it-ops/StockPath-Navigator#readme" target="_blank" rel="noopener noreferrer">README →</a>
-            </footer>
-          </article>
-
-          <!-- VulnTrack -->
-          <article class="project-card reveal" data-tags="python flask sqlite crud">
-            <header class="project-head">
-              <div class="project-head-top">
-                <span class="project-lang"><span class="lang-dot lang-py"></span>Python · Flask · SQLite</span>
-                <span class="project-badge">v1.0</span>
-              </div>
-              <h3 class="project-title">
-                <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">
-                  VulnTrack Dashboard <span class="link-arrow">↗</span>
-                </a>
-              </h3>
-              <p class="project-sub">Full-stack vulnerability management · KPIs · CRUD · REST</p>
-            </header>
-
-            <div class="terminal-frame">
-              <div class="terminal-header">
-                <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
-                <span class="terminal-title">vulntrack · GET /api/vulnerabilities</span>
-              </div>
-              <div class="terminal-body">
-                <div><span class="comment">// severity triage dashboard</span></div>
-                <div><span class="prompt">200</span> OK  <span class="comment">12 records loaded</span></div>
-                <div><span class="output">critical:</span> 3</div>
-                <div><span class="output">high:</span> 5</div>
-                <div><span class="output output-ok">resolved:</span> 4 patched</div>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              Full-stack dashboard with KPI tracking, color-coded severity, CRUD, live search/filter, and toast
-              notifications — pre-seeded with 12 sample records. Dark-mode cybersecurity branding on a REST API.
-            </p>
-
-            <ul class="tech-badges">
-              <li>Python</li><li>Flask</li><li>SQLite</li><li>REST</li><li>CRUD</li>
-            </ul>
-
-            <footer class="project-foot">
-              <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">Code →</a>
-              <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program#readme" target="_blank" rel="noopener noreferrer">README →</a>
-            </footer>
-          </article>
-
-          <!-- Phishing classifier -->
-          <article class="project-card reveal" data-tags="python ml sklearn tfidf">
-            <header class="project-head">
-              <div class="project-head-top">
-                <span class="project-lang"><span class="lang-dot lang-py"></span>Python · scikit-learn</span>
-                <span class="project-badge">ML</span>
-              </div>
-              <h3 class="project-title">
-                <a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">
-                  Phishing Email Classifier <span class="link-arrow">↗</span>
-                </a>
-              </h3>
-              <p class="project-sub">TF-IDF + Random Forest · 99.68% F1 · 5-fold CV · interpretable</p>
-            </header>
-
-            <div class="terminal-frame">
-              <div class="terminal-header">
-                <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
-                <span class="terminal-title">phishing-email-classifier</span>
-              </div>
-              <div class="terminal-body">
-                <div><span class="comment"># RandomForest + TF-IDF pipeline</span></div>
-                <div><span class="prompt">&gt;&gt;&gt;</span> features_engineered = <span class="output">207</span></div>
-                <div><span class="prompt">&gt;&gt;&gt;</span> f1_cv5 = <span class="output">0.9968</span></div>
-                <div><span class="prompt">&gt;&gt;&gt;</span> importances.head(5)</div>
-                <div><span class="comment"># surfaces what drove each label</span></div>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              Text-based feature extraction with TF-IDF plus custom regex signals, feature-importance
-              analysis for interpretability, and SOC-style reasoning about what drove each label.
-            </p>
-
-            <ul class="tech-badges">
-              <li>Python</li><li>scikit-learn</li><li>TF-IDF</li><li>Cross-validation</li>
-            </ul>
-
-            <footer class="project-foot">
-              <a href="https://github.com/KM-it-ops/phishing-email-classifier" target="_blank" rel="noopener noreferrer">Code →</a>
-              <a href="https://github.com/KM-it-ops/phishing-email-classifier#readme" target="_blank" rel="noopener noreferrer">README →</a>
-            </footer>
-          </article>
-
-          <!-- Log anomaly -->
-          <article class="project-card reveal" data-tags="python pandas soc rules statistics">
-            <header class="project-head">
-              <div class="project-head-top">
-                <span class="project-lang"><span class="lang-dot lang-py"></span>Python · pandas · NumPy</span>
-                <span class="project-badge">SOC</span>
-              </div>
-              <h3 class="project-title">
-                <a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">
-                  Log Anomaly Engine <span class="link-arrow">↗</span>
-                </a>
-              </h3>
-              <p class="project-sub">Rules + statistics for brute force, port scans, volume spikes</p>
-            </header>
-
-            <div class="terminal-frame">
-              <div class="terminal-header">
-                <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
-                <span class="terminal-title">detect --input auth.log</span>
-              </div>
-              <div class="terminal-body">
-                <div><span class="comment"># rule + statistical engine</span></div>
-                <div><span class="output">brute_force</span> threshold hit  <span class="comment">(5/60s)</span></div>
-                <div><span class="output">port_scan</span> pattern detected</div>
-                <div><span class="output">z_score</span> volume spike (3.4σ)</div>
-                <div><span class="prompt">alerts</span> <span class="comment">structured for SOC triage</span></div>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              Brute-force thresholds, port-scan patterns, off-hours access, unknown-IP heuristics, privilege
-              escalation, and z-score volume spikes — with output structured for SOC-style triage pipelines.
-            </p>
-
-            <ul class="tech-badges">
-              <li>Python</li><li>pandas</li><li>NumPy</li><li>Log analysis</li>
-            </ul>
-
-            <footer class="project-foot">
-              <a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">Code →</a>
-              <a href="https://github.com/KM-it-ops/security-log-anomaly-detection#readme" target="_blank" rel="noopener noreferrer">README →</a>
-            </footer>
-          </article>
-
-        </div>
+        <article class="case-file">
+          <header>
+            <p class="case-id">CASE-004 / SOC detection</p>
+            <h3>Security Log Anomaly Detection</h3>
+            <span>Python / pandas / NumPy / rules and statistics</span>
+          </header>
+          <div class="case-columns">
+            <div><strong>Problem</strong><p>Surface high-signal authentication and network anomalies for analyst triage.</p></div>
+            <div><strong>Method</strong><p>Rule-based checks and statistical thresholds for brute force, scans, and spikes.</p></div>
+            <div><strong>Evidence</strong><p>Readable findings designed for fast investigation and clear prioritization.</p></div>
+            <div><strong>Repo</strong><p><a href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">Code</a> / <a href="https://github.com/KM-it-ops/security-log-anomaly-detection#readme" target="_blank" rel="noopener noreferrer">README</a></p></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- ========== STACK / USES ========== -->
-    <section id="stack" aria-label="Tech stack">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow"><span class="sec-num">03</span> / stack</p>
-          <h2 class="section-title">Tools behind the signals.</h2>
-          <p class="section-subtitle">Daily drivers — tools I actually ship with, not buzzwords.</p>
-        </div>
+    <section class="section stack-section" id="stack" aria-labelledby="stack-title">
+      <div class="section-heading">
+        <p class="eyebrow">04 / stack</p>
+        <h2 id="stack-title">Tools grouped by analyst value.</h2>
+      </div>
 
-        <div class="stack-grid reveal">
-          <div class="stack-group">
-            <h3 class="stack-group-title">Languages</h3>
-            <ul class="stack-list">
-              <li><span class="stk-bar" style="--pct:90%;"></span><span class="stk-name">Python</span><span class="stk-pct">90%</span></li>
-              <li><span class="stk-bar" style="--pct:75%;"></span><span class="stk-name">JavaScript / TypeScript</span><span class="stk-pct">75%</span></li>
-              <li><span class="stk-bar" style="--pct:70%;"></span><span class="stk-name">Bash / Shell</span><span class="stk-pct">70%</span></li>
-              <li><span class="stk-bar" style="--pct:65%;"></span><span class="stk-name">SQL</span><span class="stk-pct">65%</span></li>
-            </ul>
-          </div>
-
-          <div class="stack-group">
-            <h3 class="stack-group-title">Security</h3>
-            <ul class="stack-list">
-              <li><span class="stk-bar" style="--pct:85%;"></span><span class="stk-name">Detection engineering</span><span class="stk-pct">85%</span></li>
-              <li><span class="stk-bar" style="--pct:80%;"></span><span class="stk-name">Incident response</span><span class="stk-pct">80%</span></li>
-              <li><span class="stk-bar" style="--pct:75%;"></span><span class="stk-name">Vulnerability mgmt</span><span class="stk-pct">75%</span></li>
-              <li><span class="stk-bar" style="--pct:70%;"></span><span class="stk-name">Access control / IAM</span><span class="stk-pct">70%</span></li>
-            </ul>
-          </div>
-
-          <div class="stack-group">
-            <h3 class="stack-group-title">Frameworks &amp; Data</h3>
-            <ul class="stack-list">
-              <li><span class="stk-bar" style="--pct:80%;"></span><span class="stk-name">Flask · FastAPI</span><span class="stk-pct">80%</span></li>
-              <li><span class="stk-bar" style="--pct:75%;"></span><span class="stk-name">React</span><span class="stk-pct">75%</span></li>
-              <li><span class="stk-bar" style="--pct:85%;"></span><span class="stk-name">pandas · NumPy</span><span class="stk-pct">85%</span></li>
-              <li><span class="stk-bar" style="--pct:78%;"></span><span class="stk-name">scikit-learn</span><span class="stk-pct">78%</span></li>
-            </ul>
-          </div>
-
-          <div class="stack-group">
-            <h3 class="stack-group-title">Tooling</h3>
-            <ul class="stack-list">
-              <li><span class="stk-bar" style="--pct:90%;"></span><span class="stk-name">Git · GitHub Actions</span><span class="stk-pct">90%</span></li>
-              <li><span class="stk-bar" style="--pct:85%;"></span><span class="stk-name">VS Code · Cursor</span><span class="stk-pct">85%</span></li>
-              <li><span class="stk-bar" style="--pct:70%;"></span><span class="stk-name">Docker</span><span class="stk-pct">70%</span></li>
-              <li><span class="stk-bar" style="--pct:80%;"></span><span class="stk-name">LLM APIs · Prompt Eng</span><span class="stk-pct">80%</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="chips-row reveal" aria-label="Keywords">
-          <span class="chip">python</span><span class="chip">react</span><span class="chip">flask</span>
-          <span class="chip">fastapi</span><span class="chip">pandas</span><span class="chip">numpy</span>
-          <span class="chip">scikit-learn</span><span class="chip">tf-idf</span><span class="chip">random-forest</span>
-          <span class="chip">sqlite</span><span class="chip">rest</span><span class="chip">git</span>
-          <span class="chip">docker</span><span class="chip">github-actions</span><span class="chip">bash</span>
-          <span class="chip">regex</span><span class="chip">prompt-engineering</span><span class="chip">react-native</span>
-          <span class="chip">soc</span><span class="chip">siem</span><span class="chip">incident-response</span>
-          <span class="chip">siem-hunting</span><span class="chip">mitre-att&amp;ck</span><span class="chip">yara</span>
-        </div>
+      <div class="stack-grid">
+        <article>
+          <h3>Security</h3>
+          <p>SOC triage, incident response, vulnerability management, log analysis, detection engineering, compliance-aware operations.</p>
+        </article>
+        <article>
+          <h3>Languages</h3>
+          <p>Python, SQL, JavaScript, TypeScript, Bash, PowerShell, HTML, CSS.</p>
+        </article>
+        <article>
+          <h3>Data and ML</h3>
+          <p>pandas, NumPy, scikit-learn, TF-IDF, Random Forest, metrics, feature interpretation.</p>
+        </article>
+        <article>
+          <h3>Delivery</h3>
+          <p>Git, GitHub, Flask, SQLite, React, documentation, static sites, reviewer-focused READMEs.</p>
+        </article>
       </div>
     </section>
 
-    <!-- ========== TIMELINE (git log) ========== -->
-    <section id="timeline" aria-label="Career timeline">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow"><span class="sec-num">04</span> / timeline</p>
-          <h2 class="section-title">Career commits.</h2>
-          <p class="section-subtitle">Commits to the career repo. Most recent first.</p>
-        </div>
-
-        <ol class="timeline reveal" aria-label="Career commits">
-          <li class="tl-item">
-            <div class="tl-sha">a1b2c3d</div>
-            <div class="tl-meta"><span class="tl-date">2026</span><span class="tl-tag tl-tag-latest">HEAD → main</span></div>
-            <h3 class="tl-title">Shipped <code>StockPath Navigator</code> v3.0 + Signal Atlas site refresh</h3>
-            <p class="tl-body">17-technique prompt-engineered trading system with React UI. Refreshed this site around verifiable signals, keyboard shortcuts, interactive terminal, and SEO polish.</p>
-          </li>
-          <li class="tl-item">
-            <div class="tl-sha">f4e5d6a</div>
-            <div class="tl-meta"><span class="tl-date">2025</span><span class="tl-tag">milestone</span></div>
-            <h3 class="tl-title">Earned B.S. IT Cybersecurity · summa cum laude · SNHU</h3>
-            <p class="tl-body">3.96 GPA. President's List. Alpha Sigma Lambda. Capstone in detection/response fundamentals.</p>
-          </li>
-          <li class="tl-item">
-            <div class="tl-sha">9c8b7a6</div>
-            <div class="tl-meta"><span class="tl-date">2025</span><span class="tl-tag">cert</span></div>
-            <h3 class="tl-title">Passed CompTIA Security+ ce</h3>
-            <p class="tl-body">Foundational certification aligned with SOC and GRC expectations.</p>
-          </li>
-          <li class="tl-item">
-            <div class="tl-sha">5d4c3b2</div>
-            <div class="tl-meta"><span class="tl-date">2024</span><span class="tl-tag">build</span></div>
-            <h3 class="tl-title">Open-sourced phishing classifier + log anomaly engine</h3>
-            <p class="tl-body">ML and rule-based detection with cross-validated metrics, feature interpretability, and SOC-shaped triage output.</p>
-          </li>
-          <li class="tl-item">
-            <div class="tl-sha">1a2b3c4</div>
-            <div class="tl-meta"><span class="tl-date">2017–present</span><span class="tl-tag">ops</span></div>
-            <h3 class="tl-title">8+ yrs · cleared, regulated operations</h3>
-            <p class="tl-body">FAA, OSHA, IATA, CBP compliance. Security clearance + CBP badge endorsement. Access control, audit readiness, incident-handling reflexes you can't fake.</p>
-          </li>
-        </ol>
+    <section class="section timeline-section" id="timeline" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <p class="eyebrow">05 / timeline</p>
+        <h2 id="timeline-title">Recent signal history.</h2>
       </div>
+
+      <ol class="timeline">
+        <li>
+          <span>2026</span>
+          <strong>Shipped StockPath Navigator v3.0 and portfolio briefing refresh</strong>
+          <p>Updated the portfolio around verifiable case evidence, recruiter paths, and direct repo review.</p>
+        </li>
+        <li>
+          <span>2026</span>
+          <strong>Earned B.S. IT Cybersecurity from SNHU</strong>
+          <p>Graduated summa cum laude with a 3.96 GPA.</p>
+        </li>
+        <li>
+          <span>2025</span>
+          <strong>Passed CompTIA Security+ ce</strong>
+          <p>Validated security foundations for SOC and analyst workflows.</p>
+        </li>
+        <li>
+          <span>2024-2026</span>
+          <strong>Open-sourced detection, ML, and vulnerability tooling</strong>
+          <p>Published projects with metrics, documentation, and inspection paths.</p>
+        </li>
+      </ol>
     </section>
 
-    <!-- ========== INTERACTIVE TERMINAL ========== -->
-    <section id="terminal" aria-label="Interactive terminal">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow"><span class="sec-num">05</span> / terminal</p>
-          <h2 class="section-title">$ <span class="accent">./portfolio.sh</span></h2>
-          <p class="section-subtitle">A real sandboxed shell. Try <code>help</code>, <code>about</code>, <code>projects</code>, <code>skills</code>, <code>contact</code>, <code>sudo hire-me</code>.</p>
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">06 / contact</p>
+          <h2 id="contact-title">Ready for SOC, cybersecurity analyst, and detection engineering conversations.</h2>
+          <p>Remote or Charlotte, NC. Best first review path: resume, GitHub, then a quick email.</p>
         </div>
 
-        <div class="iterm reveal" id="iterm">
-          <div class="iterm-header">
-            <div class="iterm-dots">
-              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-            </div>
-            <span class="iterm-title">zsh — michael@al-kurdi — 120×40</span>
-          </div>
-          <div class="iterm-body" id="itermBody" tabindex="0" role="application" aria-label="Interactive terminal. Type help to see commands.">
-            <div class="iterm-out" id="itermOut"></div>
-            <form class="iterm-inputline" id="itermForm" autocomplete="off" spellcheck="false">
-              <span class="iterm-prompt"><span class="term-user">michael</span><span class="term-at">@</span><span class="term-host">al-kurdi</span><span class="term-path">:~</span><span class="term-sym">$</span></span>
-              <input class="iterm-input" id="itermInput" type="text" autocapitalize="off" autocorrect="off" aria-label="Terminal input" />
-            </form>
-          </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:kurdi.michael.it@gmail.com?subject=Opportunity%20-%20Mahmoud%20Michael%20Al%20Kurdi">Email Michael</a>
+          <a class="button secondary" href="assets/Michael_Kurdi_Resume_2026.pdf" download="Michael_Kurdi_Resume_2026.pdf">Resume PDF</a>
+          <a class="button secondary" href="https://linkedin.com/in/michael-kurdi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/KM-it-ops" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </section>
-
-    <!-- ========== CONTACT ========== -->
-    <section id="contact" aria-label="Contact">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow"><span class="sec-num">06</span> / contact</p>
-          <h2 class="section-title">Bring me into the queue.</h2>
-          <p class="section-subtitle">Open to SOC Analyst / Cybersecurity Analyst / Detection Engineering · remote or Charlotte, NC.</p>
-        </div>
-
-        <div class="contact-primary-cta reveal">
-          <a href="mailto:kurdi.michael.it@gmail.com?subject=Opportunity%20%E2%80%94%20Mahmoud%20%28%22Michael%22%29%20Al%20Kurdi" class="btn btn-primary">
-            <span class="btn-icon" aria-hidden="true">✉</span> Email me
-          </a>
-          <a href="assets/Michael_Kurdi_Resume_2026.pdf" class="btn btn-ghost" download="Michael_Kurdi_Resume_2026.pdf">
-            Download resume.pdf
-          </a>
-          <a href="resume/index.html" class="btn btn-ghost">Web resume</a>
-        </div>
-
-        <div class="contact-grid reveal">
-          <a href="https://github.com/KM-it-ops" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-            <div class="contact-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </div>
-            <div class="contact-label">GitHub</div>
-            <div class="contact-value">@KM-it-ops</div>
-          </a>
-
-          <a href="https://linkedin.com/in/michael-kurdi" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-            <div class="contact-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </div>
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value">michael-kurdi</div>
-          </a>
-
-          <a href="mailto:kurdi.michael.it@gmail.com" class="contact-card" aria-label="Send email">
-            <div class="contact-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/>
-              </svg>
-            </div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value">kurdi.michael.it@gmail.com</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer-inner">
-      <p class="footer-left">
-        <span class="footer-tag">static</span>
-        <span class="footer-sep">·</span>
-        <span class="footer-tag">0 deps</span>
-        <span class="footer-sep">·</span>
-        <span class="footer-tag">a11y</span>
-        <span class="footer-sep">·</span>
-        GitHub Pages
-      </p>
-      <p class="footer-right">
-        <span>Built by hand with <kbd class="kbd">vim</kbd> &amp; <kbd class="kbd">git</kbd></span>
-        <span class="footer-sep">·</span>
-        <span>© 2026 Mahmoud ("Michael") Al Kurdi</span>
-      </p>
-    </div>
+  <footer class="site-footer">
+    <span>Mahmoud ("Michael") Al Kurdi</span>
+    <span>SOC / Cybersecurity Analyst</span>
+    <span>Charlotte, NC</span>
   </footer>
 
-  <!-- ========== COMMAND PALETTE ========== -->
-  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
-    <div class="cmdk-backdrop" id="cmdkBackdrop"></div>
-    <div class="cmdk-panel" role="document">
-      <div class="cmdk-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input id="cmdkInput" type="text" placeholder="Type a command or search…" autocomplete="off" spellcheck="false" aria-label="Search commands" />
-        <kbd class="kbd">ESC</kbd>
-      </div>
-      <ul class="cmdk-list" id="cmdkList" role="listbox" aria-label="Commands"></ul>
-      <div class="cmdk-foot">
-        <span><kbd class="kbd">↑</kbd><kbd class="kbd">↓</kbd> navigate</span>
-        <span><kbd class="kbd">⏎</kbd> select</span>
-        <span><kbd class="kbd">ESC</kbd> close</span>
-      </div>
+  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle" hidden>
+    <div class="cmdk-backdrop" data-close-cmdk></div>
+    <div class="cmdk-panel">
+      <h2 id="cmdkTitle">Search portfolio</h2>
+      <input id="cmdkInput" type="search" autocomplete="off" placeholder="Search sections, projects, links" aria-label="Search portfolio" />
+      <div class="cmdk-list" id="cmdkList" role="listbox"></div>
     </div>
   </div>
 
-  <!-- Script -->
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

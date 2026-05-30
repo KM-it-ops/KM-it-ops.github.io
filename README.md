@@ -1,69 +1,55 @@
-# michael@kurdi:~$ whoami
+# mahmoud@al-kurdi:~$ portfolio-brief
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-7cf0c1?style=flat-square&logo=github&labelColor=05070c)](https://km-it-ops.github.io/)
-[![Built with](https://img.shields.io/badge/built%20with-HTML%20%2B%20CSS%20%2B%20vanilla%20JS-7aa2ff?style=flat-square&labelColor=05070c)](https://km-it-ops.github.io/)
-[![0 deps](https://img.shields.io/badge/dependencies-0-b07cff?style=flat-square&labelColor=05070c)](https://km-it-ops.github.io/)
-[![Resume](https://img.shields.io/badge/resume-.pdf-ffb547?style=flat-square&labelColor=05070c)](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-79e8bd?style=flat-square&logo=github&labelColor=080b10)](https://km-it-ops.github.io/)
+[![Built with](https://img.shields.io/badge/built%20with-HTML%20%2B%20CSS%20%2B%20vanilla%20JS-7ba7ff?style=flat-square&labelColor=080b10)](https://km-it-ops.github.io/)
+[![0 deps](https://img.shields.io/badge/dependencies-0-f2b84b?style=flat-square&labelColor=080b10)](https://km-it-ops.github.io/)
+[![Resume](https://img.shields.io/badge/resume-.pdf-ef6d6d?style=flat-square&labelColor=080b10)](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
 
-Personal portfolio for **Mahmoud ("Michael") Al Kurdi** — AI Systems Architect building ML-driven security automation. Static HTML, CSS, and vanilla JavaScript. **Zero build step, zero runtime dependencies.**
+Personal portfolio for **Mahmoud ("Michael") Al Kurdi** - SOC / cybersecurity analyst and security engineer. Static HTML, CSS, and vanilla JavaScript. **Zero build step, zero runtime dependencies.**
 
 ## Live
 
-- Site · <https://km-it-ops.github.io/>
-- PDF résumé · [`assets/Michael_Kurdi_Resume_2026.pdf`](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
-- Web résumé (print-friendly) · <https://km-it-ops.github.io/resume/>
+- Site: <https://km-it-ops.github.io/>
+- PDF resume: [`assets/Michael_Kurdi_Resume_2026.pdf`](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
+- Web resume: <https://km-it-ops.github.io/resume/>
 
-## Features
+## Current Design
 
-- **Signal Atlas UI** — security signal map hero, JetBrains Mono + Space Grotesk typography, dark analyst palette, cyan/violet data surfaces.
-- **Command palette** (`⌘K` / `Ctrl+K` / `/`) — fuzzy search every section, project, and contact link.
-- **Interactive terminal** — real REPL with `help`, `about`, `projects`, `skills`, `contact`, `open`, `goto`, `theme`, `matrix`, `sudo hire-me`, arrow-key history, and `Ctrl+L` clear.
-- **Live typing + particle constellation** on the hero, paused when off-screen for battery friendliness.
-- **Git-log style career timeline** with SHA-style ids and tags.
-- **Tech stack panel** with proficiency bars + searchable keyword chips.
-- **Scroll progress bar**, active-section nav highlight, glass-morphism navbar.
-- **Konami code** → confetti. Console art + contact info on page load.
-- **Accessibility** — skip link, keyboard navigation, `prefers-reduced-motion` respect, semantic landmarks, ARIA labels.
-- **SEO** — JSON-LD `Person`, Open Graph image, Twitter card, `robots.txt`, `sitemap.xml`, canonical URL.
+The site now uses a **Case Evidence Briefing** structure: a recruiter-ready cybersecurity brief that foregrounds profile, credentials, security evidence, and repository review paths.
 
-## Shortcuts
+Highlights:
 
-| Keys              | Action                           |
-|-------------------|----------------------------------|
-| `⌘K` / `Ctrl+K`  | Open command palette             |
-| `/`               | Open command palette             |
-| `↑` / `↓`         | Navigate palette / terminal hist |
-| `Enter`           | Run selected command             |
-| `Esc`             | Close palette / mobile menu      |
-| `Ctrl+L`          | Clear interactive terminal       |
-| `↑↑↓↓←→←→BA`      | Konami confetti                  |
+- Briefing-style hero with profile portrait, role target, location, availability, and direct CTAs.
+- Evidence tiles for phishing ML, log anomaly detection, and vulnerability workflow delivery.
+- Case-file project panels organized as `Problem`, `Method`, `Evidence`, and `Repo`.
+- Compact stack, timeline, and contact sections tuned for fast scanning.
+- Command palette for section and link navigation.
+- Accessibility basics: skip link, semantic landmarks, focus states, keyboard-accessible dialog, and `prefers-reduced-motion` support.
+- SEO metadata, JSON-LD `Person`, Open Graph image, Twitter card, `robots.txt`, `sitemap.xml`, and canonical URL.
 
 ## Structure
 
-| Path                                                         | Purpose                                      |
-|--------------------------------------------------------------|----------------------------------------------|
-| [`index.html`](index.html)                                   | Landing page with all sections               |
-| [`styles.css`](styles.css)                                   | Design tokens, layout, responsive, a11y      |
-| [`script.js`](script.js)                                     | Canvas, typing, palette, terminal, easter eggs |
-| [`assets/Michael_Kurdi_Resume_2026.pdf`](assets/)            | Canonical PDF résumé                         |
-| [`assets/og-image.svg`](assets/og-image.svg)                 | Social share card                            |
-| [`resume/`](resume/)                                         | Print-friendly web résumé                    |
-| [`robots.txt`](robots.txt), [`sitemap.xml`](sitemap.xml)     | SEO                                          |
-| [`site.webmanifest`](site.webmanifest)                       | PWA manifest                                 |
-| [`PROFILE_README.md`](PROFILE_README.md)                     | Copy for GitHub profile README               |
+| Path | Purpose |
+| --- | --- |
+| [`index.html`](index.html) | Main portfolio page |
+| [`styles.css`](styles.css) | Case Evidence Briefing visual system and responsive layout |
+| [`script.js`](script.js) | Navigation state, scroll progress, mobile menu, and command palette |
+| [`assets/profile-portrait.png`](assets/profile-portrait.png) | Profile portrait used in the hero |
+| [`assets/Michael_Kurdi_Resume_2026.pdf`](assets/) | Canonical PDF resume |
+| [`assets/og-image.svg`](assets/og-image.svg) | Social share card |
+| [`resume/`](resume/) | Print-friendly web resume |
+| [`robots.txt`](robots.txt), [`sitemap.xml`](sitemap.xml) | SEO |
+| [`site.webmanifest`](site.webmanifest) | PWA manifest |
+| [`PROFILE_README.md`](PROFILE_README.md) | Copy for GitHub profile README |
 
-## Updating the résumé
-
-Copy the authoritative PDF into `assets/Michael_Kurdi_Resume_2026.pdf`, adjust [`resume/index.html`](resume/index.html) if the wording changed, commit, push.
-
-## Local preview
+## Local Preview
 
 Open `index.html` directly, or serve it:
 
 ```bash
-npx --yes serve -p 5173 .
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
 ## License
 
-© 2026 Mahmoud ("Michael") Al Kurdi. All rights reserved.
+Copyright 2026 Mahmoud ("Michael") Al Kurdi. All rights reserved.
