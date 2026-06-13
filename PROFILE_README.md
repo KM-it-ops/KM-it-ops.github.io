@@ -1,16 +1,30 @@
 # Mahmoud ("Michael") Al Kurdi
 
-**CompTIA Security+** · **B.S. Information Technology (Cybersecurity), SNHU 2025** · Charlotte, NC
+**CompTIA Security+ ce** | **B.S. Information Technologies (Cybersecurity), SNHU** | Summa Cum Laude, GPA 3.96 | Charlotte, NC / Remote
 
-**AI Systems Architect** building machine learning–driven security automation. I ship detection systems, not slide decks — phishing classifiers (99.68% F1), anomaly detection engines, AI workflow tooling, and cross-framework incident-response playbooks, all live on GitHub. Eight years in federally regulated, security-cleared environments (FAA, OSHA, IATA, CBP) at American Airlines — operator-grade instincts for incident response, access control, and compliance.
+Security+ certified IT/cybersecurity graduate building practical defensive security and AI systems work. Current focus: SOC workflows, MITRE ATT&CK-aligned analysis, prompt-injection-resistant security tooling, reproducible AI coding-agent benchmarks, and documentation-heavy projects that recruiters and hiring managers can inspect quickly.
 
-- **Résumé (PDF):** [Michael_Kurdi_Resume_2026.pdf](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
-- **Portfolio + web resume:** [km-it-ops.github.io](https://km-it-ops.github.io/) · [Web resume / print](https://km-it-ops.github.io/resume/)
+- **Portfolio:** [km-it-ops.github.io](https://km-it-ops.github.io/)
+- **Resume PDF:** [Michael_Kurdi_Resume_2026.pdf](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
+- **LinkedIn:** [mahmoud-michael-al-kurdi](https://www.linkedin.com/in/mahmoud-michael-al-kurdi/)
+- **Email:** [kurdi.michael.it@gmail.com](mailto:kurdi.michael.it@gmail.com)
 
-**Pinned (resume-aligned builds):** [phishing-email-classifier](https://github.com/KM-it-ops/phishing-email-classifier) · [security-log-anomaly-detection](https://github.com/KM-it-ops/security-log-anomaly-detection) · [StockPath-Navigator](https://github.com/KM-it-ops/StockPath-Navigator) · [incident-response-playbooks](https://github.com/KM-it-ops/incident-response-playbooks) · [cyber-defense-playbook](https://github.com/KM-it-ops/cyber-defense-playbook) · [Vulnerability-Management-Mini-Program](https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program).
+## Flagship Projects
 
-**Contact:** [LinkedIn](https://www.linkedin.com/in/mahmoud-michael-al-kurdi/) · [Email](mailto:kurdi.michael.it@gmail.com)
+- **[AgentForge](https://github.com/KM-it-ops/AgentForge)** - Framework for configuring, evaluating, and benchmarking AI coding agents across real engineering workflows. Includes adapters, verification scripts, readiness docs, package smoke tests, and a visual demo.
+- **[AgentForge ATT&CKLens Benchmark](https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark)** - Reproducible benchmark comparing multiple AI coding agents building the same defensive cybersecurity app from one spec, safety rules, acceptance tests, and scoring rubric.
+- **[Vulnerability Management Mini Program](https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program)** - Flask/SQLite vulnerability workflow dashboard with CRUD, severity tracking, status views, and operational reporting patterns.
+- **[Security Log Anomaly Detection](https://github.com/KM-it-ops/security-log-anomaly-detection)** - Python detection project for authentication and network anomaly triage.
+
+## Current Focus
+
+- SOC analyst and security operations workflows
+- Detection engineering fundamentals
+- MITRE ATT&CK mapping with evidence and uncertainty handling
+- Defensive security automation
+- AI agent evaluation and benchmark design
+- Clear documentation, scorecards, tests, and reviewer-friendly proof
 
 ---
 
-_To use this as your GitHub profile README, create a public repository named **KM-it-ops** (same as your username), add `README.md`, and paste the content above (omit this instruction block)._
+_To use this as your GitHub profile README, create a public repository named **KM-it-ops** and paste this content into its `README.md`._
