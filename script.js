@@ -13,12 +13,12 @@
       summary: 'Framework for configuring, evaluating, and benchmarking AI coding agents across real engineering workflows.',
       capabilities: [
         'Agent configuration and verification',
-        'Adapters for Claude, Codex, Cursor, and generic agents',
+        'Adapters for Claude Code, Codex, and generic agents (Cursor/Gemini on roadmap)',
         'Round-trip verification and smoke tests',
         'Safety guardrails and policy enforcement',
         'Release-ready packaging and documentation'
       ],
-      stack: ['Python', 'FastAPI', 'SQLite', 'Pydantic', 'LangChain', 'Docker', 'GitHub Actions'],
+      stack: ['JavaScript (Node)', 'YAML specs', 'Bash + PowerShell', 'Zero-dependency emitters', 'GitHub Actions CI'],
       links: [
         ['GitHub Repository', 'https://github.com/KM-it-ops/AgentForge'],
         ['Documentation', 'https://github.com/KM-it-ops/AgentForge#readme']
@@ -43,6 +43,26 @@
       links: [
         ['GitHub Repository', 'https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark'],
         ['Methodology', 'https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark#readme']
+      ]
+    },
+    {
+      id: 'shared-brain',
+      label: 'Shared-Brain MCP',
+      subtitle: 'Multi-agent memory',
+      type: 'core',
+      x: 50,
+      y: 30,
+      status: 'active',
+      summary: 'A self-indexing LLM-Wiki plus MCP server (stdio + HTTP hub) that federates one memory across Claude, Cursor, and Codex.',
+      capabilities: [
+        'MCP server: stdio + Streamable-HTTP hub',
+        'Bearer-token auth, write-lock, fail-closed',
+        'Lint-on-write (drift / dead-link / secret scan)',
+        'Round-trip verified across three agent clients'
+      ],
+      stack: ['TypeScript', 'MCP', 'Node', 'Vitest', 'Markdown LLM-Wiki'],
+      links: [
+        ['GitHub Profile', 'https://github.com/KM-it-ops']
       ]
     },
     { id: 'telemetry', label: 'Telemetry Adapters', subtitle: 'Ingest & Normalize', type: 'capability', x: 44, y: 18, status: 'building' },
@@ -100,6 +120,7 @@
 
   const connections = [
     ['agentforge', 'attacklens'],
+    ['agentforge', 'shared-brain'],
     ['agentforge', 'telemetry'],
     ['attacklens', 'detection-rules'],
     ['attacklens', 'cloud-connectors'],
@@ -143,12 +164,39 @@
     },
     {
       id: 'CASE-003',
-      title: 'Vulnerability Management Mini Program',
-      tag: 'Python / Flask / SQLite / REST workflows',
-      problem: 'Track vulnerability ownership, severity, status, and remediation progress.',
-      method: 'Dashboard with CRUD, KPI cards, filtering, severity states, and analyst workflow patterns.',
-      evidence: 'Operational UI patterns aligned to analyst triage and management reporting.',
-      link: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program'
+      title: 'Shared-Brain MCP (LLM-Wiki)',
+      tag: 'Model Context Protocol server · multi-agent memory',
+      problem: 'AI coding agents (Claude, Cursor, Codex) each forget what the others learned — knowledge silos per tool.',
+      method: 'A self-indexing markdown LLM-Wiki plus an MCP server (stdio + HTTP hub) federating one brain across every agent; bearer-token auth, write-lock, lint-on-write, 34 tests.',
+      evidence: 'Round-trip verified across three clients — a note written in one agent is readable in all three.',
+      link: 'https://github.com/KM-it-ops'
+    },
+    {
+      id: 'CASE-004',
+      title: 'OSINT Dashboard',
+      tag: 'Python · OSINT aggregation & visualization',
+      problem: 'Open-source intelligence is scattered across feeds with no unified, analyst-friendly view.',
+      method: 'Python pipeline aggregating OSINT sources into an interactive visualization dashboard for triage and pivoting.',
+      evidence: 'Public, runnable app demonstrating data-engineering and threat-intel workflow design.',
+      link: 'https://github.com/KM-it-ops/osint-dashboard'
+    },
+    {
+      id: 'CASE-005',
+      title: 'Cyber Defense Playbook',
+      tag: 'Threat intel · CISA AIS · YARA · MITRE ATT&CK',
+      problem: 'Defensive teams need layered, framework-aligned controls, not ad-hoc guidance.',
+      method: 'Threat-intelligence framework integrating CISA AIS, YARA rules, MITRE ATT&CK mapping, and defense-in-depth controls.',
+      evidence: 'Public reference library mapping detections and controls to recognized frameworks.',
+      link: 'https://github.com/KM-it-ops/cyber-defense-playbook'
+    },
+    {
+      id: 'CASE-006',
+      title: 'Incident Response Playbooks',
+      tag: 'ISO/IEC 27035 · NIST SP 800-61r2 · CSF 2.0',
+      problem: 'IR processes vary by team and rarely trace cleanly to a recognized standard.',
+      method: 'Cross-framework IR playbook library aligning response phases to ISO/IEC 27035:2016 and NIST SP 800-61r2 (CSF 2.0).',
+      evidence: 'Public, standard-mapped runbooks usable as SOC reference material.',
+      link: 'https://github.com/KM-it-ops/incident-response-playbooks'
     }
   ];
 
