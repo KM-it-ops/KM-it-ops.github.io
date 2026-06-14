@@ -62,7 +62,7 @@
       ],
       stack: ['TypeScript', 'MCP', 'Node', 'Vitest', 'Markdown LLM-Wiki'],
       links: [
-        ['GitHub Profile', 'https://github.com/KM-it-ops']
+        ['GitHub Repository', 'https://github.com/KM-it-ops/memory-mcp']
       ]
     },
     { id: 'telemetry', label: 'Telemetry Adapters', subtitle: 'Ingest & Normalize', type: 'capability', x: 44, y: 18, status: 'building' },
@@ -169,7 +169,7 @@
       problem: 'AI coding agents (Claude, Cursor, Codex) each forget what the others learned — knowledge silos per tool.',
       method: 'A self-indexing markdown LLM-Wiki plus an MCP server (stdio + HTTP hub) federating one brain across every agent; bearer-token auth, write-lock, lint-on-write, 34 tests.',
       evidence: 'Round-trip verified across three clients — a note written in one agent is readable in all three.',
-      link: 'https://github.com/KM-it-ops'
+      link: 'https://github.com/KM-it-ops/memory-mcp'
     },
     {
       id: 'CASE-004',
