@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500" role="img" aria-label="Masked Signal  Evidence-led defensive security">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04060a"/>
+      <stop offset="100%" stop-color="#0a0d16"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="85%">
+      <stop offset="0%" stop-color="#7cf0c1" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7cf0c1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7cf0c1"/>
+      <stop offset="60%" stop-color="#6fb3ff"/>
+      <stop offset="100%" stop-color="#b07cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="500" fill="url(#bg)"/>
+  <rect width="1500" height="500" fill="url(#glow)"/>
+
+  <g stroke="#7cf0c1" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 62 H1500 M0 124 H1500 M0 186 H1500 M0 248 H1500 M0 310 H1500 M0 372 H1500 M0 434 H1500"/>
+    <path d="M62 0 V500 M124 0 V500 M186 0 V500 M248 0 V500 M310 0 V500 M372 0 V500 M434 0 V500 M496 0 V500 M558 0 V500 M620 0 V500 M682 0 V500 M744 0 V500 M806 0 V500 M868 0 V500 M930 0 V500 M992 0 V500 M1054 0 V500 M1116 0 V500 M1178 0 V500 M1240 0 V500 M1302 0 V500 M1364 0 V500 M1426 0 V500"/>
+  </g>
+
+  <g transform="translate(64,64)">
+    <rect width="1372" height="372" rx="16" fill="#0a0d16" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect width="1372" height="44" rx="16" fill="#0e1220"/>
+    <rect width="1372" height="44" y="22" fill="#0e1220"/>
+    <circle cx="26" cy="22" r="7" fill="#ff5f57"/>
+    <circle cx="48" cy="22" r="7" fill="#febc2e"/>
+    <circle cx="70" cy="22" r="7" fill="#28c840"/>
+    <text x="686" y="28" text-anchor="middle" fill="#8a93a8" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14">michael@kurdi: ~/masked-signal</text>
+  </g>
+
+  <g font-family="JetBrains Mono, ui-monospace, monospace" fill="#c8d0e0">
+    <text x="96" y="168" font-size="20">
+      <tspan fill="#7cf0c1">michael</tspan><tspan fill="#5a6478">@</tspan><tspan fill="#6fb3ff">kurdi</tspan><tspan fill="#b07cff">:~$</tspan>
+      <tspan fill="#eef3fb" dx="10">cat role.txt</tspan>
+    </text>
+    <text x="96" y="210" font-size="18" fill="#8a93a8">SOC / Detection Engineering / Security Automation  Charlotte NC / Remote</text>
+  </g>
+
+  <text x="96" y="300" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="72" letter-spacing="-2" fill="#eef3fb">Evidence-led</text>
+  <text x="96" y="382" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="72" letter-spacing="-2" fill="url(#accent)">defensive security</text>
+
+  <g transform="translate(96,404)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15">
+    <rect width="154" height="32" rx="6" fill="#7cf0c1" fill-opacity="0.14" stroke="#7cf0c1" stroke-opacity="0.35"/>
+    <text x="77" y="21" text-anchor="middle" fill="#7cf0c1">AgentForge</text>
+    <g transform="translate(170,0)">
+      <rect width="210" height="32" rx="6" fill="#ff5e6e" fill-opacity="0.12" stroke="#ff5e6e" stroke-opacity="0.35"/>
+      <text x="105" y="21" text-anchor="middle" fill="#ff5e6e">ATT&amp;CKLens</text>
+    </g>
+    <g transform="translate(396,0)">
+      <rect width="188" height="32" rx="6" fill="#6fb3ff" fill-opacity="0.12" stroke="#6fb3ff" stroke-opacity="0.35"/>
+      <text x="94" y="21" text-anchor="middle" fill="#6fb3ff">MITRE ATT&amp;CK</text>
+    </g>
+  </g>
+
+  <text x="1436" y="468" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#5a6478">km-it-ops.github.io</text>
+</svg>
