@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396" role="img" aria-label="Mahmoud Michael Al Kurdi  SOC, Detection Engineering, Security Automation">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396" role="img" aria-label="Mahmoud Michael Al Kurdi - SOC, Detection Engineering, Security Automation">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#04060a"/>
@@ -37,15 +37,15 @@
 
     <text x="36" y="108" fill="#7cf0c1" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" letter-spacing="0.08em">IDENTITY</text>
     <text x="36" y="156" fill="#eef3fb" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-size="42" font-weight="700" letter-spacing="-1.5">Mahmoud ("Michael") Al Kurdi</text>
-    <text x="36" y="198" fill="#c8d0e0" font-family="Inter, system-ui, sans-serif" font-size="22">SOC Analyst · Detection Engineering · Security Automation</text>
+    <text x="36" y="198" fill="#c8d0e0" font-family="Inter, system-ui, sans-serif" font-size="22">SOC Analyst &#183; Detection Engineering &#183; Security Automation</text>
 
     <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#8a93a8">
       <text x="36" y="248">LOGS</text>
-      <text x="110" y="248" fill="#5a6478">’</text>
+      <text x="110" y="248" fill="#5a6478">&#8594;</text>
       <text x="140" y="248">DETECT</text>
-      <text x="250" y="248" fill="#5a6478">’</text>
+      <text x="250" y="248" fill="#5a6478">&#8594;</text>
       <text x="280" y="248">MAP (ATT&amp;CK)</text>
-      <text x="470" y="248" fill="#5a6478">’</text>
+      <text x="470" y="248" fill="#5a6478">&#8594;</text>
       <text x="500" y="248" fill="#7cf0c1">REPORT</text>
     </g>
 
