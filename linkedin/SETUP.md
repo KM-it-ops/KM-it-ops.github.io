@@ -12,11 +12,15 @@ Copy from [`ABOUT.md`](ABOUT.md).
 
 ## 3. Banner image
 
+**Ready-to-upload PNG:** [`assets/linkedin-banner.png`](../assets/linkedin-banner.png) (1584 × 396)
+
+Or export from SVG:
+
 1. Open `assets/linkedin-banner.svg` in a browser (or export from Figma/Inkscape).
 2. Export as **PNG, 1584 × 396 px**.
 3. LinkedIn → **Profile → Edit banner → Upload**.
 
-File: [`../assets/linkedin-banner.svg`](../assets/linkedin-banner.svg)
+Source SVG: [`../assets/linkedin-banner.svg`](../assets/linkedin-banner.svg)
 
 ## 4. Profile photo
 

@@ -4,10 +4,15 @@
 
 **Repo:** [github.com/KM-it-ops/KM-it-ops](https://github.com/KM-it-ops/KM-it-ops)
 
-Source of truth in this portfolio repo:
+### Option A — GitHub Actions sync (recommended)
 
-- [`PROFILE_README.md`](../PROFILE_README.md) → `README.md`
-- [`assets/profile-banner.svg`](../assets/profile-banner.svg) → `assets/profile-banner.svg`
+1. Create a fine-grained PAT with **Contents: Read and write** on `KM-it-ops/KM-it-ops`.
+2. Add it as repo secret **`PROFILE_REPO_TOKEN`** on `KM-it-ops.github.io`.
+3. Run **Actions → Sync profile README → Run workflow** (or push changes under `profile-repo/`).
+
+Workflow: [`.github/workflows/sync-profile-readme.yml`](../.github/workflows/sync-profile-readme.yml)
+
+### Option B — Local script
 
 Deploy from this repo:
 
