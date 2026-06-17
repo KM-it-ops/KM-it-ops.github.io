@@ -50,7 +50,7 @@
 
   <!-- tagline -->
   <text x="110" y="455" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" fill="#8d93a8">
-    SOC &#183; AI security automation &#183; AgentForge &#183; MITRE ATT&amp;CK
+    SOC &#183; Detection Engineering &#183; AgentForge &#183; MITRE ATT&amp;CK
   </text>
 
   <!-- badges -->
