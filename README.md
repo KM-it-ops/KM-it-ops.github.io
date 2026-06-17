@@ -5,7 +5,9 @@
 [![0 deps](https://img.shields.io/badge/dependencies-0-f2b84b?style=flat-square&labelColor=080b10)](https://km-it-ops.github.io/)
 [![Resume](https://img.shields.io/badge/resume-.pdf-ef6d6d?style=flat-square&labelColor=080b10)](https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf)
 
-Personal portfolio for **Mahmoud ("Michael") Al Kurdi** - SOC / cybersecurity analyst and security engineer. Static HTML, CSS, and vanilla JavaScript. **Zero build step, zero runtime dependencies.**
+Personal portfolio for **Mahmoud ("Michael") Al Kurdi** — SOC / cybersecurity analyst and security engineer. Static HTML, CSS, and vanilla JavaScript. **Zero build step, zero runtime dependencies.**
+
+**Brand:** [Masked Signal](DESIGN.md) — evidence-led defensive security (GitHub + LinkedIn rollout in [`docs/BRAND_ROLLOUT.md`](docs/BRAND_ROLLOUT.md)).
 
 ## Live
 
@@ -40,7 +42,12 @@ Highlights:
 | [`resume/`](resume/) | Print-friendly web resume |
 | [`robots.txt`](robots.txt), [`sitemap.xml`](sitemap.xml) | SEO |
 | [`site.webmanifest`](site.webmanifest) | PWA manifest |
-| [`PROFILE_README.md`](PROFILE_README.md) | Copy for GitHub profile README |
+| [`PROFILE_README.md`](PROFILE_README.md) | Source for GitHub profile README (`KM-it-ops/KM-it-ops`) |
+| [`linkedin/`](linkedin/) | LinkedIn headline, About, posts, setup checklist |
+| [`docs/BRAND_ROLLOUT.md`](docs/BRAND_ROLLOUT.md) | Unified brand rollout guide |
+| [`docs/GITHUB_PROFILE_SETUP.md`](docs/GITHUB_PROFILE_SETUP.md) | GitHub bio, pins, profile README deploy |
+| [`assets/linkedin-banner.svg`](assets/linkedin-banner.svg) | LinkedIn banner (export to PNG) |
+| [`assets/profile-banner.svg`](assets/profile-banner.svg) | GitHub profile README header |
 
 ## Local Preview
 
