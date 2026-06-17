@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396" role="img" aria-label="Mahmoud Michael Al Kurdi  SOC, Detection Engineering, Security Automation">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04060a"/>
+      <stop offset="100%" stop-color="#0a0d16"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#7cf0c1" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#7cf0c1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="alert" cx="92%" cy="100%" r="55%">
+      <stop offset="0%" stop-color="#ff5e6e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ff5e6e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7cf0c1"/>
+      <stop offset="55%" stop-color="#6fb3ff"/>
+      <stop offset="100%" stop-color="#b07cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#bg)"/>
+  <rect width="1584" height="396" fill="url(#glow)"/>
+  <rect width="1584" height="396" fill="url(#alert)"/>
+
+  <g stroke="#7cf0c1" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 66 H1584 M0 132 H1584 M0 198 H1584 M0 264 H1584 M0 330 H1584"/>
+    <path d="M66 0 V396 M132 0 V396 M198 0 V396 M264 0 V396 M330 0 V396 M396 0 V396 M462 0 V396 M528 0 V396 M594 0 V396 M660 0 V396 M726 0 V396 M792 0 V396 M858 0 V396 M924 0 V396 M990 0 V396 M1056 0 V396 M1122 0 V396 M1188 0 V396 M1254 0 V396 M1320 0 V396 M1386 0 V396 M1452 0 V396 M1518 0 V396"/>
+  </g>
+
+  <g transform="translate(72,48)">
+    <rect width="1440" height="300" rx="14" fill="#0e1220" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.1"/>
+    <circle cx="28" cy="28" r="6" fill="#ff5e6e"/>
+    <text x="48" y="32" fill="#8a93a8" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13">masked-signal / evidence-console</text>
+    <line x1="0" y1="52" x2="1440" y2="52" stroke="#ffffff" stroke-opacity="0.08"/>
+
+    <text x="36" y="108" fill="#7cf0c1" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" letter-spacing="0.08em">IDENTITY</text>
+    <text x="36" y="156" fill="#eef3fb" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-size="42" font-weight="700" letter-spacing="-1.5">Mahmoud ("Michael") Al Kurdi</text>
+    <text x="36" y="198" fill="#c8d0e0" font-family="Inter, system-ui, sans-serif" font-size="22">SOC Analyst · Detection Engineering · Security Automation</text>
+
+    <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#8a93a8">
+      <text x="36" y="248">LOGS</text>
+      <text x="110" y="248" fill="#5a6478">’</text>
+      <text x="140" y="248">DETECT</text>
+      <text x="250" y="248" fill="#5a6478">’</text>
+      <text x="280" y="248">MAP (ATT&amp;CK)</text>
+      <text x="470" y="248" fill="#5a6478">’</text>
+      <text x="500" y="248" fill="#7cf0c1">REPORT</text>
+    </g>
+
+    <g transform="translate(36,262)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13">
+      <rect width="132" height="28" rx="6" fill="#7cf0c1" fill-opacity="0.12" stroke="#7cf0c1" stroke-opacity="0.35"/>
+      <text x="66" y="19" text-anchor="middle" fill="#7cf0c1">Security+ ce</text>
+      <g transform="translate(148,0)">
+        <rect width="210" height="28" rx="6" fill="#6fb3ff" fill-opacity="0.12" stroke="#6fb3ff" stroke-opacity="0.35"/>
+        <text x="105" y="19" text-anchor="middle" fill="#6fb3ff">SNHU Summa 3.96</text>
+      </g>
+      <g transform="translate(378,0)">
+        <rect width="188" height="28" rx="6" fill="#b07cff" fill-opacity="0.14" stroke="#b07cff" stroke-opacity="0.35"/>
+        <text x="94" y="19" text-anchor="middle" fill="#b07cff">Charlotte / Remote</text>
+      </g>
+    </g>
+
+    <text x="1404" y="286" text-anchor="end" fill="url(#accent)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16">km-it-ops.github.io</text>
+  </g>
+</svg>
