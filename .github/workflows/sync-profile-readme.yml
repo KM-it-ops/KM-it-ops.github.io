@@ -9,14 +9,24 @@ on:
       - 'profile-repo/**'
       - 'PROFILE_README.md'
       - 'assets/profile-banner.svg'
+      - '.github/workflows/sync-profile-readme.yml'
 
 jobs:
   sync:
-    if: ${{ secrets.PROFILE_REPO_TOKEN != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout portfolio
         uses: actions/checkout@v4
+
+      - name: Verify profile sync token
+        env:
+          PROFILE_REPO_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          if [ -z "$PROFILE_REPO_TOKEN" ]; then
+            echo "::error::PROFILE_REPO_TOKEN is not set. Add a fine-grained PAT with Contents write on KM-it-ops/KM-it-ops."
+            echo "See docs/PROFILE_SYNC_ONE_TIME.md"
+            exit 1
+          fi
 
       - name: Checkout profile repository
         uses: actions/checkout@v4
@@ -43,13 +53,3 @@ jobs:
           fi
           git commit -m "Sync profile README from KM-it-ops.github.io (Masked Signal brand)"
           git push origin main
-
-  notify-missing-secret:
-    if: ${{ secrets.PROFILE_REPO_TOKEN == '' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Explain missing secret
-        run: |
-          echo "::warning::PROFILE_REPO_TOKEN is not set. Add a fine-grained PAT with Contents write on KM-it-ops/KM-it-ops."
-          echo "See docs/PROFILE_SYNC_ONE_TIME.md"
-          exit 1
