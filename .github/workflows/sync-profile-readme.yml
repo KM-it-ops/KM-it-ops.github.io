@@ -12,6 +12,7 @@ on:
 
 jobs:
   sync:
+    if: ${{ secrets.PROFILE_REPO_TOKEN != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout portfolio
@@ -42,3 +43,13 @@ jobs:
           fi
           git commit -m "Sync profile README from KM-it-ops.github.io (Masked Signal brand)"
           git push origin main
+
+  notify-missing-secret:
+    if: ${{ secrets.PROFILE_REPO_TOKEN == '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain missing secret
+        run: |
+          echo "::warning::PROFILE_REPO_TOKEN is not set. Add a fine-grained PAT with Contents write on KM-it-ops/KM-it-ops."
+          echo "See docs/PROFILE_SYNC_ONE_TIME.md"
+          exit 1
