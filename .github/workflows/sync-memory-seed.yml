@@ -1,0 +1,44 @@
+name: Sync memory seed to memory-mcp
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'memory-seeds/**'
+      - '.github/workflows/sync-memory-seed.yml'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+
+      - name: Push wiki seeds to memory-mcp (when token available)
+        env:
+          MEMORY_MCP_REPO_TOKEN: ${{ secrets.MEMORY_MCP_REPO_TOKEN }}
+          PROFILE_REPO_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          TOKEN="${MEMORY_MCP_REPO_TOKEN:-$PROFILE_REPO_TOKEN}"
+          if [ -z "$TOKEN" ]; then
+            echo "No MEMORY_MCP_REPO_TOKEN or PROFILE_REPO_TOKEN — seed stays in memory-seeds/ for local import."
+            exit 0
+          fi
+
+          git clone "https://x-access-token:${TOKEN}@github.com/KM-it-ops/memory-mcp.git" memory-mcp-target
+          mkdir -p memory-mcp-target/wiki-seeds/project
+          cp memory-seeds/project/*.md memory-mcp-target/wiki-seeds/project/
+          cp memory-seeds/README.md memory-mcp-target/wiki-seeds/README.md
+
+          cd memory-mcp-target
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wiki-seeds/
+          if git diff --staged --quiet; then
+            echo "Memory seeds already up to date on memory-mcp."
+            exit 0
+          fi
+          git commit -m "Sync wiki seed: masked-signal-github-brand-rollout from KM-it-ops.github.io"
+          git push origin main
