@@ -1,0 +1,41 @@
+name: Sync GitHub profile settings
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/profile-settings.json'
+      - '.github/workflows/sync-github-profile-settings.yml'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify user profile token
+        env:
+          GITHUB_USER_TOKEN: ${{ secrets.GITHUB_USER_TOKEN }}
+          PROFILE_REPO_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          if [ -z "$GITHUB_USER_TOKEN" ] && [ -z "$PROFILE_REPO_TOKEN" ]; then
+            echo "::error::Set GITHUB_USER_TOKEN (Profile write) or extend PROFILE_REPO_TOKEN with Account → Profile write."
+            exit 1
+          fi
+
+      - name: Update GitHub profile bio, name, location, website
+        env:
+          GITHUB_USER_TOKEN: ${{ secrets.GITHUB_USER_TOKEN }}
+          PROFILE_REPO_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          TOKEN="${GITHUB_USER_TOKEN:-$PROFILE_REPO_TOKEN}"
+          curl -fsSL -X PATCH \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -d @.github/profile-settings.json \
+            https://api.github.com/user \
+            | jq '{login, name, bio, blog, location, hireable}'
