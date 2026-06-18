@@ -29,8 +29,10 @@ jobs:
 
           git clone "https://x-access-token:${TOKEN}@github.com/KM-it-ops/memory-mcp.git" memory-mcp-target
           mkdir -p memory-mcp-target/wiki-seeds/project
+          mkdir -p memory-mcp-target/scripts
           cp memory-seeds/project/*.md memory-mcp-target/wiki-seeds/project/
           cp memory-seeds/README.md memory-mcp-target/wiki-seeds/README.md
+          cp scripts/write-wiki-seed.mts memory-mcp-target/scripts/write-wiki-seed.mts
 
           cd memory-mcp-target
           git config user.name "github-actions[bot]"
