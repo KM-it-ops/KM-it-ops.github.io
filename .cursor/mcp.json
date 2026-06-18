@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "bash",
+      "args": ["scripts/start-memory-mcp.sh"]
+    }
+  }
+}
