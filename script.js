@@ -21,7 +21,8 @@
       stack: ['JavaScript (Node)', 'YAML specs', 'Bash + PowerShell', 'Zero-dependency emitters', 'GitHub Actions CI'],
       links: [
         ['GitHub Repository', 'https://github.com/KM-it-ops/AgentForge'],
-        ['Documentation', 'https://github.com/KM-it-ops/AgentForge#readme']
+        ['Documentation', 'https://github.com/KM-it-ops/AgentForge#readme'],
+        ['AgentForge Studio', 'https://agentforgestudio-alpha.vercel.app']
       ]
     },
     {
@@ -150,8 +151,8 @@
       tag: 'AI agent configuration and verification framework',
       problem: 'Teams need repeatable agent setup, readiness proof, and reusable workflow documentation.',
       method: 'Canonical specs, platform adapters, smoke tests, safety rules, and release readiness docs.',
-      evidence: 'GitHub repo, docs, visual demo, package checks, and active development history.',
-      link: 'https://github.com/KM-it-ops/AgentForge'
+      evidence: 'GitHub repo, docs, visual demo, AgentForge Studio live compile preview, package checks, and active development history.',
+      link: 'https://agentforgestudio-alpha.vercel.app'
     },
     {
       id: 'CASE-002',
