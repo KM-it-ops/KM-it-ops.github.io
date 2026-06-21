@@ -22,7 +22,8 @@
       links: [
         ['GitHub Repository', 'https://github.com/KM-it-ops/AgentForge'],
         ['Documentation', 'https://github.com/KM-it-ops/AgentForge#readme'],
-        ['AgentForge Studio', 'https://agentforgestudio-alpha.vercel.app']
+        ['Visual demo', 'https://km-it-ops.github.io/AgentForge/docs/demo/'],
+        ['Customize spec', 'https://github.com/KM-it-ops/AgentForge/blob/main/spec/CUSTOMIZE.md']
       ]
     },
     {
@@ -151,8 +152,8 @@
       tag: 'AI agent configuration and verification framework',
       problem: 'Teams need repeatable agent setup, readiness proof, and reusable workflow documentation.',
       method: 'Canonical specs, platform adapters, smoke tests, safety rules, and release readiness docs.',
-      evidence: 'GitHub repo, docs, visual demo, AgentForge Studio live compile preview, package checks, and active development history.',
-      link: 'https://agentforgestudio-alpha.vercel.app'
+      evidence: 'GitHub repo, visual demo with clone-and-customize path, verify suite, and active development history.',
+      link: 'https://km-it-ops.github.io/AgentForge/docs/demo/'
     },
     {
       id: 'CASE-002',
