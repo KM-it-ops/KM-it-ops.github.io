@@ -1,0 +1,12 @@
+{
+  "name": "brain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal brain toolkit stub for memory-mcp (index, hot, lint)",
+  "scripts": {
+    "index": "node scripts/index.mjs",
+    "hot": "node scripts/hot.mjs",
+    "lint": "node scripts/lint.mjs"
+  }
+}
