@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahmoud "Michael" Al Kurdi — Security Operations Analyst · Issue #01</title>
+<meta name="description" content="Photocopy zine portfolio of Mahmoud (Michael) Al Kurdi — SOC-track security analyst. 8 years of federally regulated aviation security operations, CompTIA Security+ ce, B.S. IT (Cybersecurity) summa cum laude. Every claim has a receipt.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111008'/%3E%3Ctext x='32' y='46' font-size='40' font-family='Arial Black, sans-serif' font-weight='900' fill='%23c9f31d' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700;900&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PHOTOCOPY ZINE — Mahmoud "Michael" Al Kurdi · Issue #01
+   One neon (acid green). Black ink. Cheap paper. Real facts.
+   ============================================================ */
+:root{
+  --paper:#f2efe5;
+  --paper-hi:#faf8f0;
+  --paper-lo:#e6e2d2;
+  --ink:#12100a;
+  --ink-soft:#2b2820;
+  --neon:#c9f31d;
+  --tape:rgba(243,236,196,.62);
+  --shadow:rgba(20,16,8,.28);
+  --mono:'Special Elite', 'Courier New', monospace;
+  --grot:'Archivo', sans-serif;
+  --black:'Archivo Black', sans-serif;
+  --marker:'Permanent Marker', cursive;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ overflow-x:clip; }
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior:smooth; }
+}
+body{
+  margin:0;
+  overflow-x:clip;
+  background:
+    /* faint photocopy roller streaks */
+    repeating-linear-gradient(92deg, rgba(18,16,10,.028) 0 2px, transparent 2px 110px),
+    linear-gradient(180deg, var(--paper-hi), var(--paper) 240px),
+    var(--paper);
+  color:var(--ink);
+  font-family:var(--grot);
+  font-size:1.0625rem;
+  line-height:1.55;
+}
+/* toner grain over EVERYTHING */
+body::after{
+  content:"";
+  position:fixed; inset:0; z-index:120;
+  pointer-events:none;
+  opacity:.5;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.28 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{ background:var(--neon); color:var(--ink); }
+
+/* ---------- type helpers ---------- */
+h1,h2,h3{ line-height:1.05; margin:0; }
+p{ margin:0 0 1em; }
+a{ color:inherit; }
+.mono{ font-family:var(--mono); }
+.marker{ font-family:var(--marker); }
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* ---------- focus: fat, obvious, punk ---------- */
+:focus{ outline:none; }
+:focus-visible{
+  outline:3px solid var(--ink);
+  outline-offset:3px;
+  box-shadow:0 0 0 8px var(--neon);
+  border-radius:2px;
+  position:relative; z-index:60;
+}
+.invert :focus-visible{
+  outline-color:var(--paper);
+  box-shadow:0 0 0 8px var(--neon);
+}
+
+/* ---------- skip link ---------- */
+.skip{
+  position:fixed; top:-100px; left:14px; z-index:200;
+  background:var(--neon); color:var(--ink);
+  font-family:var(--black); text-transform:uppercase; text-decoration:none;
+  padding:.7em 1.1em; border:3px solid var(--ink);
+  transition:top .15s ease;
+}
+.skip:focus{ top:12px; }
+
+/* ============================================================
+   TOP BAR / NAV — a strip of black tape with stickers slapped on
+   ============================================================ */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:var(--ink);
+  color:var(--paper);
+  padding:.55rem .9rem;
+  box-shadow:0 4px 0 rgba(18,16,10,.85), 0 10px 22px var(--shadow);
+}
+.topbar-in{
+  max-width:1160px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.8rem; flex-wrap:wrap;
+}
+.brand{
+  font-family:var(--marker);
+  font-size:1.15rem;
+  color:var(--paper);
+  text-decoration:none;
+  transform:rotate(-1.5deg);
+  display:inline-block;
+  white-space:nowrap;
+}
+.brand b{ color:var(--neon); font-weight:400; }
+.topnav ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:.45rem; flex-wrap:wrap;
+}
+.topnav a{
+  display:inline-block;
+  font-family:var(--black);
+  font-size:.72rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--paper);
+  border:2px solid var(--paper);
+  padding:.42em .75em;
+  box-shadow:2px 2px 0 rgba(0,0,0,.55);
+  transition:transform .12s ease, background .12s ease;
+}
+.topnav li:nth-child(odd) a{ transform:rotate(-2deg); }
+.topnav li:nth-child(even) a{ transform:rotate(1.6deg); }
+.topnav a:hover{ background:var(--neon); transform:rotate(0) scale(1.06); }
+.topnav a[aria-current="true"]{
+  background:var(--neon);
+  border-color:var(--ink);
+  box-shadow:2px 2px 0 rgba(0,0,0,.8), inset 0 0 0 2px var(--ink);
+}
+
+/* ============================================================
+   SHARED ZINE PARTS
+   ============================================================ */
+.wrap{ max-width:1160px; margin:0 auto; padding:0 1.25rem; }
+section{ position:relative; scroll-margin-top:92px; }
+
+/* page number in the corner, like a stapled zine */
+.pageno{
+  position:absolute; right:1rem; bottom:.6rem;
+  font-family:var(--mono); font-size:.8rem;
+  color:var(--ink-soft); opacity:.75;
+  transform:rotate(-2deg);
+}
+
+/* halftone dot fields */
+.halftone{
+  background-image:radial-gradient(var(--ink) 1.1px, transparent 1.4px);
+  background-size:9px 9px;
+}
+
+/* torn-paper clipping: wrapper carries shadow+rotation, inner carries clip */
+.clip{ position:relative; filter:drop-shadow(4px 7px 0 var(--shadow)); }
+.torn{
+  background:var(--paper-hi);
+  padding:1.6rem 1.5rem 1.4rem;
+  clip-path:polygon(
+    0% 2.5%, 4% .6%, 9% 2.8%, 15% .4%, 21% 2.6%, 28% 0%, 35% 2.4%, 42% .6%,
+    49% 2.8%, 56% .4%, 63% 2.6%, 70% .2%, 77% 2.4%, 84% .8%, 91% 2.8%, 96% .8%,
+    100% 2.6%, 99.4% 14%, 100% 27%, 99.3% 40%, 100% 53%, 99.4% 66%, 100% 79%,
+    99.3% 90%, 100% 97.4%, 95% 99.4%, 89% 97.6%, 82% 100%, 75% 98%, 68% 100%,
+    61% 97.6%, 54% 100%, 47% 98.2%, 40% 100%, 33% 97.6%, 26% 100%, 19% 98.2%,
+    12% 100%, 7% 97.8%, 2.5% 100%, 0% 96.8%, .7% 84%, 0% 71%, .8% 57%, 0% 44%,
+    .7% 30%, 0% 16%);
+}
+
+/* strips of masking tape */
+.tape{
+  position:absolute; z-index:5;
+  width:96px; height:26px;
+  background:linear-gradient(100deg, var(--tape), rgba(243,236,196,.8));
+  border:1px solid rgba(20,16,8,.09);
+  box-shadow:0 2px 3px rgba(20,16,8,.18);
+  pointer-events:none;
+}
+.tape--tl{ top:-12px; left:8%; transform:rotate(-7deg); }
+.tape--tr{ top:-12px; right:8%; transform:rotate(6deg); }
+.tape--tc{ top:-13px; left:50%; transform:translateX(-50%) rotate(-2deg); }
+
+/* sticker chips */
+.chip{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  background:var(--paper-hi);
+  border:2px solid var(--ink);
+  border-radius:999px;
+  padding:.22em .8em .18em;
+  margin:.18rem .12rem;
+  box-shadow:2px 2px 0 var(--shadow);
+  white-space:nowrap;
+}
+.chip--neon{ background:var(--neon); }
+.chip--ink{ background:var(--ink); color:var(--paper); }
+
+/* torn black headline strip */
+.headline{
+  display:inline-block;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--black);
+  font-size:clamp(1.9rem, 4.6vw, 3.4rem);
+  text-transform:uppercase;
+  letter-spacing:.01em;
+  padding:.28em .7em .3em;
+  transform:rotate(-1.2deg);
+  clip-path:polygon(1.5% 0%, 98% 4%, 100% 22%, 98.6% 46%, 100% 74%, 98.4% 100%, 3% 97%, 0% 76%, 1.4% 48%, 0% 24%);
+  filter:drop-shadow(4px 5px 0 var(--shadow));
+}
+.headline .hl{ color:var(--neon); }
+.kick{
+  font-family:var(--mono);
+  font-size:.85rem;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin:0 0 .7rem;
+}
+.scrawl{
+  font-family:var(--marker);
+  font-size:clamp(1.05rem, 2vw, 1.35rem);
+  color:var(--ink);
+  transform:rotate(-1.3deg);
+  display:inline-block;
+  margin:.9rem 0 0;
+}
+.scrawl .u{
+  background:linear-gradient(transparent 55%, var(--neon) 55% 92%, transparent 92%);
+  padding:0 .1em;
+}
+
+/* marker-style inline links */
+.mklink{
+  font-family:var(--black);
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  text-decoration:none;
+  color:var(--ink);
+  border-bottom:3px solid var(--ink);
+  padding-bottom:.05em;
+  transition:background .12s ease;
+}
+.mklink:hover{ background:var(--neon); border-color:var(--ink); }
+
+/* big sticker buttons */
+.btn{
+  display:inline-block;
+  font-family:var(--black);
+  font-size:.95rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--neon);
+  border:3px solid var(--ink);
+  border-radius:3px;
+  padding:.85em 1.35em .8em;
+  box-shadow:5px 5px 0 var(--ink);
+  transform:rotate(-1.4deg);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{ transform:rotate(-1.4deg) translate(2px,2px); box-shadow:3px 3px 0 var(--ink); }
+.btn:active{ transform:rotate(-1.4deg) translate(5px,5px); box-shadow:0 0 0 var(--ink); }
+.btn--ghost{ background:var(--paper-hi); transform:rotate(1.1deg); }
+.btn--ghost:hover{ transform:rotate(1.1deg) translate(2px,2px); }
+.btn--ghost:active{ transform:rotate(1.1deg) translate(5px,5px); }
+
+/* hand-drawn doodle svgs */
+.doodle{ display:block; pointer-events:none; }
+
+/* ============================================================
+   HERO — the front cover
+   ============================================================ */
+.cover{
+  position:relative;
+  padding:3.4rem 0 4.6rem;
+  overflow:clip;
+}
+/* registration crosshair marks — print-shop chrome */
+.reg{
+  position:absolute; width:22px; height:22px; opacity:.55; pointer-events:none;
+}
+.reg::before,.reg::after{ content:""; position:absolute; background:var(--ink); }
+.reg::before{ left:50%; top:0; width:1.5px; height:100%; transform:translateX(-50%); }
+.reg::after{ top:50%; left:0; height:1.5px; width:100%; transform:translateY(-50%); }
+.reg--tl{ top:14px; left:14px; } .reg--tr{ top:14px; right:14px; }
+.reg--bl{ bottom:14px; left:14px; } .reg--br{ bottom:14px; right:14px; }
+
+.cover-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  gap:3rem 2.6rem;
+  align-items:start;
+}
+
+/* masthead pieces */
+.issue-tape{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.82rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:var(--tape);
+  border:1px solid rgba(20,16,8,.12);
+  box-shadow:0 2px 3px rgba(20,16,8,.15);
+  padding:.4em 1.1em .3em;
+  transform:rotate(-1.6deg);
+  margin-bottom:1.3rem;
+}
+.prename{
+  font-family:var(--mono);
+  font-size:clamp(1.15rem, 2.6vw, 1.7rem);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  margin:0 0 .2rem;
+}
+.prename .nick{
+  font-family:var(--marker);
+  letter-spacing:0;
+  text-transform:none;
+  font-size:.95em;
+  background:linear-gradient(transparent 50%, var(--neon) 50% 94%, transparent 94%);
+  padding:0 .15em;
+}
+
+/* ransom-note surname */
+.ransom{
+  display:flex; flex-wrap:wrap; gap:.12em .1em;
+  margin:.35rem 0 1.1rem;
+  font-size:clamp(2.9rem, 10.5vw, 7.2rem);
+}
+.rl{
+  display:inline-block;
+  font-family:var(--black);
+  line-height:1;
+  padding:.04em .1em;
+}
+.rl--sp{ width:.35em; padding:0; }
+.rl:nth-child(4n+1){ background:var(--ink); color:var(--paper); transform:rotate(-2.4deg); }
+.rl:nth-child(4n+2){ background:var(--paper-hi); color:var(--ink); border:3px solid var(--ink); transform:rotate(1.8deg) translateY(-.03em); box-shadow:3px 3px 0 var(--shadow); }
+.rl:nth-child(4n+3){ background:var(--neon); color:var(--ink); transform:rotate(-1.2deg) translateY(.05em); }
+.rl:nth-child(4n){ background:var(--ink); color:var(--neon); transform:rotate(2.6deg); font-family:var(--mono); font-weight:700; padding:.02em .14em; }
+.rl--sp{ background:none !important; border:none !important; box-shadow:none !important; }
+
+.role-strip{
+  display:inline-block;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--black);
+  font-size:clamp(1rem, 2.4vw, 1.5rem);
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  padding:.4em .9em .38em;
+  transform:rotate(-1deg);
+  clip-path:polygon(1% 8%, 99% 0%, 100% 88%, 98.6% 100%, 1.6% 96%, 0% 20%);
+}
+.cover-copy{
+  max-width:34rem;
+  margin-top:1.4rem;
+  font-size:1.06rem;
+}
+.cover-ctas{ margin-top:1.6rem; display:flex; gap:1.1rem .9rem; flex-wrap:wrap; align-items:center; }
+
+/* field-notes taped card */
+.fieldnotes{ position:relative; margin-top:1.2rem; transform:rotate(1.6deg); }
+.fieldnotes .torn{ background:var(--paper-hi); }
+.fieldnotes h2{
+  font-family:var(--mono);
+  font-size:1rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  border-bottom:2px dashed var(--ink);
+  padding-bottom:.5rem;
+  margin-bottom:.8rem;
+}
+.factlist{ list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:.92rem; }
+.factlist li{
+  padding:.34em 0 .3em 1.4em;
+  position:relative;
+  border-bottom:1px dotted rgba(20,16,8,.35);
+}
+.factlist li::before{
+  content:"✚";
+  position:absolute; left:0; top:.32em;
+  font-size:.85em;
+}
+.factlist li:last-child{ border-bottom:none; }
+
+/* rubber stamp */
+.stamp{
+  position:absolute;
+  right:-10px; bottom:-46px;
+  z-index:6;
+  font-family:var(--black);
+  text-transform:uppercase;
+  text-align:center;
+  color:var(--ink);
+  border:4px double var(--ink);
+  border-radius:6px;
+  padding:.7em 1em .6em;
+  transform:rotate(-8deg);
+  background:rgba(242,239,229,.4);
+  mix-blend-mode:multiply;
+  opacity:.92;
+  line-height:1.15;
+  letter-spacing:.06em;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.9 -0.35'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23r)'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.9 -0.35'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23r)'/%3E%3C/svg%3E");
+}
+.stamp .big{ font-size:1.05rem; display:block; }
+.stamp .small{ font-family:var(--mono); font-size:.68rem; display:block; letter-spacing:.1em; }
+
+/* halftone blob behind the field notes */
+.blob{
+  position:absolute;
+  width:min(340px, 70vw); height:min(340px, 70vw);
+  right:-60px; top:-40px;
+  border-radius:50%;
+  z-index:-1;
+  opacity:.5;
+  -webkit-mask-image:radial-gradient(circle, #000 40%, transparent 70%);
+  mask-image:radial-gradient(circle, #000 40%, transparent 70%);
+}
+.cover-scrawl{ position:relative; margin-top:2.6rem; }
+.cover-scrawl .doodle{ position:absolute; left:-8px; top:-34px; width:70px; transform:rotate(14deg); }
+
+/* ============================================================
+   RECEIPT MARQUEE STRIP
+   ============================================================ */
+.strip{
+  background:var(--neon);
+  border-top:3px solid var(--ink);
+  border-bottom:3px solid var(--ink);
+  transform:rotate(-1deg);
+  margin:0 -2% 3.5rem;
+  width:104%;
+  overflow:clip;
+  box-shadow:0 6px 14px var(--shadow);
+}
+.strip-track{
+  display:flex; width:max-content;
+  font-family:var(--black);
+  font-size:1.05rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  padding:.55em 0;
+}
+.strip-track span{ padding:0 .6em; }
+@media (prefers-reduced-motion: no-preference){
+  .strip-track{ animation:crawl 26s linear infinite; }
+  @keyframes crawl{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+}
+
+/* ============================================================
+   ABOUT — p.02
+   ============================================================ */
+.about{ padding:2.2rem 0 4.8rem; }
+.about-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+  gap:2.8rem 2.4rem;
+  margin-top:2.4rem;
+  align-items:start;
+}
+.about-story{ transform:rotate(-.6deg); }
+.about-story .torn{ padding:2rem 1.9rem 1.7rem; }
+.about-story p{ font-family:var(--mono); font-size:.98rem; line-height:1.7; }
+.about-story p strong{ background:linear-gradient(transparent 55%, var(--neon) 55% 92%, transparent 92%); font-weight:700; }
+.dropcap::first-letter{
+  font-family:var(--black);
+  font-size:3.1em;
+  float:left;
+  line-height:.85;
+  padding:.04em .12em 0 0;
+  color:var(--ink);
+}
+/* stat stickers */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:1.2rem;
+}
+.stat{
+  position:relative;
+  border:3px solid var(--ink);
+  background:var(--paper-hi);
+  padding:1.1rem 1rem .9rem;
+  box-shadow:5px 5px 0 var(--shadow);
+  text-align:center;
+}
+.stat:nth-child(1){ transform:rotate(-2deg); }
+.stat:nth-child(2){ transform:rotate(1.6deg); background:var(--neon); }
+.stat:nth-child(3){ transform:rotate(1.2deg); background:var(--ink); color:var(--paper); }
+.stat:nth-child(4){ transform:rotate(-1.4deg); }
+.stat .n{ font-family:var(--black); font-size:2rem; display:block; line-height:1; }
+.stat .l{ font-family:var(--mono); font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; display:block; margin-top:.45rem; }
+/* wanted-style roles poster */
+.wanted{
+  grid-column:1 / -1;
+  position:relative;
+  transform:rotate(.5deg);
+  margin-top:.6rem;
+}
+.wanted .torn{ padding:1.6rem 1.7rem 1.5rem; }
+.wanted h3{
+  font-family:var(--black);
+  font-size:1.15rem;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin-bottom:.7rem;
+}
+.wanted h3 span{ background:var(--neon); padding:.1em .3em; }
+/* skills wall */
+.skills{ margin-top:2.6rem; }
+.skillgroup{ margin-top:1.3rem; }
+.skillgroup h3{
+  font-family:var(--marker);
+  font-size:1.2rem;
+  transform:rotate(-1deg);
+  display:inline-block;
+  margin-bottom:.4rem;
+}
+.skillgroup h3::after{ content:" ↓"; color:var(--ink-soft); }
+
+/* ============================================================
+   PROJECTS — p.03 "THE RECEIPTS"
+   ============================================================ */
+.projects{ padding:2.2rem 0 5rem; }
+.projects-head{ position:relative; }
+.projects-head .doodle{ position:absolute; right:6%; top:-14px; width:120px; transform:rotate(8deg); display:none; }
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:3rem 2.4rem;
+  margin-top:2.8rem;
+}
+.proj{ position:relative; }
+.proj:nth-child(1){ transform:rotate(-1.1deg); }
+.proj:nth-child(2){ transform:rotate(1.2deg); margin-top:1.6rem; }
+.proj:nth-child(3){ transform:rotate(1deg); }
+.proj:nth-child(4){ transform:rotate(-1.3deg); margin-top:1.4rem; }
+.proj .torn{ padding:1.7rem 1.6rem 1.5rem; }
+.proj-no{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  display:inline-block;
+  border:2px solid var(--ink);
+  padding:.15em .6em;
+  transform:rotate(-1.5deg);
+  margin-bottom:.8rem;
+  background:var(--paper);
+}
+.proj h3{
+  font-family:var(--black);
+  font-size:clamp(1.35rem, 2.4vw, 1.7rem);
+  text-transform:uppercase;
+  margin-bottom:.25rem;
+}
+.proj .sub{
+  font-family:var(--marker);
+  font-size:1.02rem;
+  color:var(--ink-soft);
+  margin-bottom:.8rem;
+  display:block;
+  transform:rotate(-.6deg);
+}
+.proj p{ font-size:.96rem; }
+.proj .prooflist{
+  list-style:none; margin:.4rem 0 .9rem; padding:0;
+  font-family:var(--mono); font-size:.85rem;
+}
+.proj .prooflist li{ padding:.16em 0 .16em 1.3em; position:relative; }
+.proj .prooflist li::before{ content:"☒"; position:absolute; left:0; top:.14em; }
+.proj-links{ display:flex; gap:1.1rem; flex-wrap:wrap; margin:.9rem 0 .6rem; }
+.proj-chips{ margin-top:.5rem; }
+.finemitre{ font-family:var(--mono); font-size:.68rem; opacity:.75; margin-top:.8rem; }
+/* benchmark bar chart, hand-cut */
+.chart{ margin:1rem 0 .4rem; }
+.chart-row{
+  display:grid;
+  grid-template-columns:8.4em 1fr 2.4em;
+  align-items:center;
+  gap:.55em;
+  margin:.34em 0;
+  font-family:var(--mono);
+  font-size:.8rem;
+}
+.chart-row .bar{
+  height:1.05em;
+  background:
+    repeating-linear-gradient(115deg, rgba(242,239,229,.16) 0 3px, transparent 3px 7px),
+    var(--ink);
+  border:1.5px solid var(--ink);
+  transform:skewX(-6deg);
+  box-shadow:2px 2px 0 var(--shadow);
+}
+.chart-row.top .bar{
+  background:
+    repeating-linear-gradient(115deg, rgba(18,16,10,.14) 0 3px, transparent 3px 7px),
+    var(--neon);
+}
+.chart-row .score{ text-align:right; font-weight:700; }
+.chart-cap{ font-family:var(--mono); font-size:.72rem; opacity:.8; }
+
+/* ============================================================
+   RESUME — p.04 "THE PAPER TRAIL"
+   ============================================================ */
+.resume{ padding:2.2rem 0 5.4rem; }
+.sheet-zone{ display:grid; grid-template-columns:minmax(0,1fr); justify-items:center; margin-top:2.8rem; position:relative; }
+.sheet{
+  position:relative;
+  width:min(780px, 100%);
+  transform:rotate(-.7deg);
+}
+.sheet .torn{ padding:2.6rem 2.3rem 2.1rem; }
+.staple{
+  position:absolute; z-index:6;
+  width:34px; height:9px;
+  background:linear-gradient(180deg, #b9b4a4, #7d786a 70%, #5c584d);
+  border-radius:2px;
+  box-shadow:0 1px 2px rgba(20,16,8,.5);
+}
+.staple--l{ top:10px; left:34px; transform:rotate(-44deg); }
+.staple--r{ top:10px; right:34px; transform:rotate(43deg); }
+.sheet h3{
+  font-family:var(--black);
+  font-size:1rem;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  background:var(--ink);
+  color:var(--paper);
+  display:inline-block;
+  padding:.3em .8em;
+  transform:rotate(-.8deg);
+  margin:1.6rem 0 .9rem;
+}
+.sheet h3:first-of-type{ margin-top:0; }
+.job{ border-bottom:1.5px dashed rgba(20,16,8,.4); padding:.85rem 0; position:relative; }
+.job:last-of-type{ border-bottom:none; }
+.job .when{
+  font-family:var(--mono); font-size:.8rem;
+  letter-spacing:.1em;
+  background:var(--paper-lo);
+  border:1.5px solid var(--ink);
+  display:inline-block;
+  padding:.08em .55em;
+  transform:rotate(-1deg);
+  margin-bottom:.35rem;
+}
+.job h4{
+  font-family:var(--black);
+  font-size:1.06rem;
+  margin:.1rem 0 .15rem;
+  text-transform:uppercase;
+}
+.job .org{ font-family:var(--mono); font-size:.9rem; }
+.job ul{
+  margin:.55rem 0 0; padding:0;
+  list-style:none;
+  font-family:var(--mono);
+  font-size:.86rem;
+  line-height:1.6;
+}
+.job ul li{ padding-left:1.25em; position:relative; }
+.job ul li::before{ content:"✚"; position:absolute; left:0; font-size:.8em; top:.2em; }
+.edu-line{ font-family:var(--mono); font-size:.9rem; margin:.3rem 0; }
+.edu-line strong{ background:linear-gradient(transparent 55%, var(--neon) 55% 92%, transparent 92%); }
+.resume-note{
+  position:absolute;
+  right:2%; top:-26px;
+  z-index:8;
+  transform:rotate(3deg);
+  max-width:220px;
+  text-align:center;
+}
+.resume-cta{ text-align:center; margin-top:2.6rem; }
+.resume-cta .btn{ font-size:1.1rem; }
+.resume-cta .mono{ display:block; margin-top:1rem; font-size:.8rem; opacity:.8; }
+
+/* ============================================================
+   CONTACT — p.05 — photocopy NEGATIVE (inverted page)
+   ============================================================ */
+.contact{
+  background:var(--ink);
+  color:var(--paper);
+  padding:4.4rem 0 2.2rem;
+  clip-path:polygon(0% 1.6%, 5% 0%, 11% 1.4%, 18% .2%, 25% 1.6%, 33% 0%, 41% 1.4%, 49% .3%, 57% 1.5%, 65% .2%, 73% 1.4%, 81% .2%, 89% 1.5%, 95% .4%, 100% 1.4%, 100% 100%, 0% 100%);
+  margin-top:1rem;
+}
+.contact .headline{
+  background:var(--paper);
+  color:var(--ink);
+  filter:drop-shadow(4px 5px 0 rgba(0,0,0,.55));
+}
+.contact .kick{ color:var(--neon); }
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  gap:1.7rem 1.4rem;
+  margin-top:2.6rem;
+}
+.addr{
+  position:relative;
+  display:block;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--paper-hi);
+  border:2.5px solid var(--paper-hi);
+  padding:1.05rem 1.1rem .95rem;
+  font-family:var(--mono);
+  box-shadow:4px 5px 0 rgba(0,0,0,.5);
+  transition:transform .12s ease, background .12s ease;
+}
+.addr:nth-child(odd){ transform:rotate(-1.6deg); }
+.addr:nth-child(even){ transform:rotate(1.4deg); }
+.addr:hover{ background:var(--neon); transform:rotate(0) scale(1.03); }
+.addr .lab{
+  font-family:var(--black);
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:.3rem;
+}
+.addr .val{ font-size:.92rem; word-break:break-word; }
+.addr .tape{ top:-12px; left:50%; transform:translateX(-50%) rotate(-3deg); width:78px; height:22px; }
+.contact-open{
+  margin-top:2.8rem;
+  font-family:var(--mono);
+  font-size:.92rem;
+  border:1.5px dashed rgba(242,239,229,.5);
+  padding:1.1rem 1.3rem;
+  transform:rotate(-.4deg);
+}
+.contact-open strong{ color:var(--neon); font-weight:400; font-family:var(--black); text-transform:uppercase; font-size:.8rem; letter-spacing:.12em; }
+/* barcode footer */
+.colophon{
+  margin-top:3.6rem;
+  padding-top:1.8rem;
+  border-top:1.5px solid rgba(242,239,229,.3);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:1.6rem;
+  align-items:end;
+}
+.colophon .fine{
+  font-family:var(--mono);
+  font-size:.72rem;
+  line-height:1.7;
+  color:#c9c4b2;
+  max-width:46rem;
+}
+.barcode{
+  width:150px; height:56px;
+  background:repeating-linear-gradient(90deg,
+    var(--paper) 0 2px, var(--ink) 2px 4px, var(--paper) 4px 5px, var(--ink) 5px 9px,
+    var(--paper) 9px 11px, var(--ink) 11px 12px, var(--paper) 12px 15px, var(--ink) 15px 18px,
+    var(--paper) 18px 19px, var(--ink) 19px 23px);
+  border:4px solid var(--paper);
+  position:relative;
+}
+.barcode span{
+  position:absolute; left:0; right:0; bottom:-24px;
+  text-align:center;
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.3em;
+  color:var(--paper);
+}
+
+/* ============================================================
+   ENTRANCE CHOREOGRAPHY — the cover gets "pasted up" on load.
+   Hidden states ONLY when JS confirms motion is OK (html.motion),
+   so no-JS and reduced-motion users see everything instantly.
+   ============================================================ */
+html.motion .slap{
+  opacity:0;
+  animation:slapIn .55s cubic-bezier(.18,1.5,.32,1) both;
+  animation-delay:var(--d, 0s);
+}
+@keyframes slapIn{
+  0%{ opacity:0; transform:scale(1.5) rotate(var(--rr, 0deg)) translateY(-8px); filter:blur(3px); }
+  70%{ opacity:1; filter:blur(0); }
+  100%{ opacity:1; transform:none; filter:blur(0); }
+}
+html.motion .rl{ opacity:0; animation:slapLetter .5s cubic-bezier(.2,1.6,.3,1) both; animation-delay:var(--d, 0s); }
+@keyframes slapLetter{
+  0%{ opacity:0; transform:scale(2) rotate(8deg); filter:blur(2px); }
+  100%{ opacity:1; transform:none; filter:blur(0); }
+}
+/* letters keep their resting rotation via nth-child transforms — animate a wrapper trick:
+   we animate to `none` which would kill resting rotation, so instead letters get their
+   rotation re-applied post-animation via animation-fill-mode + we simply rotate inside a span */
+html.motion .stamp{
+  opacity:0;
+  animation:stampThud .6s cubic-bezier(.2,1.3,.3,1) 1.45s both;
+}
+@keyframes stampThud{
+  0%{ opacity:0; transform:scale(2.4) rotate(-24deg); }
+  55%{ opacity:.92; transform:scale(.9) rotate(-6.5deg); }
+  75%{ transform:scale(1.06) rotate(-8.6deg); }
+  100%{ opacity:.92; transform:scale(1) rotate(-8deg); }
+}
+/* scroll-in reveals */
+html.motion .rv{
+  opacity:0;
+  transform:translateY(26px) rotate(.6deg);
+  transition:opacity .55s ease, transform .55s cubic-bezier(.2,1.2,.3,1);
+}
+html.motion .rv.on{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation:none !important; transition:none !important; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 940px){
+  .cover-grid{ grid-template-columns:1fr; gap:2.2rem; }
+  .fieldnotes{ max-width:520px; }
+  .about-grid{ grid-template-columns:1fr; }
+  .proj-grid{ grid-template-columns:1fr; gap:2.6rem; }
+  .proj:nth-child(2),.proj:nth-child(4){ margin-top:0; }
+  .colophon{ grid-template-columns:1fr; }
+  .barcode{ margin-bottom:20px; }
+}
+@media (max-width: 560px){
+  body{ font-size:1rem; }
+  .wrap{ padding:0 1rem; }
+  .topbar{ padding:.5rem .6rem; }
+  .brand{ font-size:1rem; }
+  .topnav a{ font-size:.64rem; padding:.4em .55em; }
+  .cover{ padding:2.4rem 0 4.2rem; }
+  .ransom{ gap:.1em .08em; }
+  .rl{ padding:.05em .09em; }
+  .stats{ grid-template-columns:repeat(2, minmax(0,1fr)); gap:.9rem; }
+  .stat .n{ font-size:1.5rem; }
+  .stamp{ right:2px; bottom:-40px; padding:.55em .7em .5em; }
+  .stamp .big{ font-size:.85rem; }
+  .chart-row{ grid-template-columns:6.6em 1fr 2.2em; font-size:.72rem; }
+  .sheet .torn{ padding:2.2rem 1.3rem 1.8rem; }
+  .resume-note{ position:static; margin:0 auto 1.4rem; transform:rotate(-2deg); }
+  .reg{ display:none; }
+  .pageno{ right:.6rem; }
+  .torn{ padding:1.4rem 1.15rem 1.25rem; }
+}
+</style>
+<script>
+/* Motion gate — runs before paint so entrance states never flash */
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  document.documentElement.classList.add('motion');
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ==================== NAV ==================== -->
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#home">AL KURDI <b>ZINE</b> · issue #01</a>
+    <nav class="topnav" aria-label="Sections">
+      <ul>
+        <li><a href="#home">Cover</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Receipts</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ==================== HERO / COVER ==================== -->
+<section class="cover" id="home" aria-labelledby="cover-title">
+  <span class="reg reg--tl" aria-hidden="true"></span>
+  <span class="reg reg--tr" aria-hidden="true"></span>
+  <span class="reg reg--bl" aria-hidden="true"></span>
+  <span class="reg reg--br" aria-hidden="true"></span>
+
+  <div class="wrap">
+    <div class="cover-grid">
+      <div>
+        <p class="issue-tape slap" style="--d:.05s; --rr:-4deg">Issue #01 · Charlotte, NC · price: free · summer 2026</p>
+
+        <h1 id="cover-title">
+          <span class="sr-only">Mahmoud "Michael" Al Kurdi — Security Operations Analyst</span>
+          <span aria-hidden="true">
+            <span class="prename slap" style="--d:.25s; --rr:2deg">MAHMOUD <span class="nick">“Michael”</span></span>
+            <span class="ransom">
+              <span class="rl" style="--d:.45s">A</span><span class="rl" style="--d:.52s">L</span><span class="rl rl--sp" style="--d:.55s">&nbsp;</span><span class="rl" style="--d:.59s">K</span><span class="rl" style="--d:.66s">U</span><span class="rl" style="--d:.73s">R</span><span class="rl" style="--d:.80s">D</span><span class="rl" style="--d:.87s">I</span>
+            </span>
+          </span>
+        </h1>
+
+        <p class="slap" style="--d:1.0s; --rr:-3deg; margin:0">
+          <span class="role-strip">Security Operations Analyst</span>
+        </p>
+
+        <p class="cover-copy slap" style="--d:1.15s">
+          Eight years running federally regulated aviation security operations for
+          American Airlines — clearance, CBP badge endorsement, incident response drilled
+          on repeat. Now CompTIA Security+ certified with a cybersecurity degree finished
+          <strong>summa cum laude</strong> and public, testable security projects on GitHub.
+        </p>
+
+        <p class="scrawl slap" style="--d:1.3s; --rr:3deg">
+          every claim on this page maps to a <span class="u">public repo, credential, or document.</span>
+        </p>
+
+        <div class="cover-ctas slap" style="--d:1.45s">
+          <a class="btn" href="#projects">See the receipts ↓</a>
+          <a class="btn btn--ghost" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>Grab the resume (PDF)</a>
+        </div>
+      </div>
+
+      <div class="fieldnotes clip slap" style="--d:.9s; --rr:5deg">
+        <span class="blob halftone" aria-hidden="true"></span>
+        <span class="tape tape--tc" aria-hidden="true"></span>
+        <div class="torn">
+          <h2>Field notes</h2>
+          <ul class="factlist">
+            <li>SOC-track analyst · Charlotte, NC · open to remote</li>
+            <li>CompTIA Security+ ce (SY0-701) — valid thru Jan 2028</li>
+            <li>B.S. Information Technologies, Cybersecurity — SNHU, summa cum laude, 3.96 GPA</li>
+            <li>8 yrs aviation security ops, American Airlines (2015–2023)</li>
+            <li>Builds reproducible, defensive security tooling — MITRE ATT&amp;CK-aligned</li>
+            <li>Available now for full-time roles</li>
+          </ul>
+        </div>
+        <div class="stamp" aria-label="Stamp: CompTIA Security+ ce verified, SY0-701, January 2025 to January 2028">
+          <span class="big">Security+ ce</span>
+          <span class="small">VERIFIED · SY0-701</span>
+          <span class="small">JAN 2025 → JAN 2028</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-scrawl slap" style="--d:1.6s">
+      <svg class="doodle" viewBox="0 0 80 60" aria-hidden="true">
+        <path d="M12 6 C30 2, 48 14, 44 30 C41 43, 26 46, 22 38 C18 30, 34 26, 44 34 C54 42, 60 48, 66 52" fill="none" stroke="#12100a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M58 54 L67 53 L62 45" fill="none" stroke="#12100a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="marker" style="transform:rotate(-1.5deg); font-size:1.1rem; margin:0 0 0 3.2rem;">keep scrolling — the receipts are stapled below</p>
+    </div>
+  </div>
+  <span class="pageno" aria-hidden="true">cover</span>
+</section>
+
+<!-- ==================== RECEIPT STRIP ==================== -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Every claim has a receipt ★ No invented facts ★ Defensive security only ★ 8 years regulated ops ★ Security+ certified ★ Summa cum laude ★</span>
+    <span>Every claim has a receipt ★ No invented facts ★ Defensive security only ★ 8 years regulated ops ★ Security+ certified ★ Summa cum laude ★</span>
+  </div>
+</div>
+
+<!-- ==================== ABOUT ==================== -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <p class="kick rv">p.02 — the analyst</p>
+    <h2 class="headline rv" id="about-title">Who is <span class="hl">this guy?</span></h2>
+
+    <div class="about-grid">
+      <div class="about-story clip rv">
+        <span class="tape tape--tl" aria-hidden="true"></span>
+        <span class="tape tape--tr" aria-hidden="true"></span>
+        <div class="torn">
+          <p class="dropcap">For eight years — 2015 to 2023 — Michael was an <strong>Aviation Security
+          Operations Crew Chief</strong> at American Airlines in Charlotte. Federally regulated
+          operations. A security clearance and CBP badge endorsement. International flight
+          operations run under FAA, OSHA, IATA, and CBP requirements, with recurrent
+          incident-response and safety/security training every year.</p>
+          <p>That job is the foundation: <strong>high-accountability documentation, identity
+          validation, and access control</strong> — done daily, under real regulators, where
+          sloppy paperwork isn't an option. The habits a SOC wants on day one.</p>
+          <p>He then converted that discipline into credentials and code: a <strong>B.S. in
+          Information Technologies (Cybersecurity concentration)</strong> from Southern New
+          Hampshire University — completed December 2025, summa cum laude, 3.96 GPA, inducted
+          into the Sigma Psi chapter of Alpha Sigma Lambda — plus <strong>CompTIA Security+ ce
+          (SY0-701)</strong>, and four public, defense-focused projects.</p>
+          <p style="margin-bottom:0">The through-line: evidence first. Alerts get documented, mappings get cited,
+          uncertainty gets flagged — <strong>"No Clear Mapping" is a valid answer</strong>,
+          guessing is not.</p>
+        </div>
+      </div>
+
+      <div class="stats rv" role="list" aria-label="Quick stats">
+        <div class="stat" role="listitem"><span class="n">8 yrs</span><span class="l">federally regulated security ops</span></div>
+        <div class="stat" role="listitem"><span class="n">SY0-701</span><span class="l">CompTIA Security+ ce · 2025–2028</span></div>
+        <div class="stat" role="listitem"><span class="n">3.96</span><span class="l">GPA · B.S. IT cybersecurity · summa cum laude</span></div>
+        <div class="stat" role="listitem"><span class="n">4</span><span class="l">public projects — all defensive</span></div>
+      </div>
+
+      <div class="wanted clip rv">
+        <span class="tape tape--tl" aria-hidden="true"></span>
+        <span class="tape tape--tr" aria-hidden="true"></span>
+        <div class="torn">
+          <h3><span>Now booking</span> — target roles</h3>
+          <p style="margin-bottom:0">
+            <span class="chip chip--neon">SOC Analyst</span>
+            <span class="chip">Security Operations Analyst</span>
+            <span class="chip">Cybersecurity Analyst</span>
+            <span class="chip">Incident Response Analyst</span>
+            <span class="chip">Junior Detection Engineer</span>
+            <span class="chip">Security Automation</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills rv">
+      <h2 class="sr-only">Skills</h2>
+      <div class="skillgroup">
+        <h3>SOC / SecOps</h3>
+        <div>
+          <span class="chip">alert triage</span><span class="chip">security monitoring</span><span class="chip chip--ink">incident documentation</span><span class="chip">log analysis</span><span class="chip">evidence review</span><span class="chip">authentication events</span><span class="chip chip--neon">DNS investigation</span><span class="chip">remediation planning</span><span class="chip">escalation notes</span>
+        </div>
+      </div>
+      <div class="skillgroup">
+        <h3>Cybersecurity</h3>
+        <div>
+          <span class="chip chip--neon">MITRE ATT&amp;CK</span><span class="chip">defensive security</span><span class="chip chip--ink">prompt-injection resistance</span><span class="chip">access control</span><span class="chip">least privilege</span><span class="chip">security documentation</span><span class="chip">confidence scoring</span><span class="chip">"No Clear Mapping" handling</span>
+        </div>
+      </div>
+      <div class="skillgroup">
+        <h3>AI / Automation</h3>
+        <div>
+          <span class="chip chip--ink">AI coding-agent evaluation</span><span class="chip">reproducible benchmark design</span><span class="chip chip--neon">rubric-based scoring</span><span class="chip">prompt architecture</span><span class="chip">safety rules</span><span class="chip">acceptance criteria</span><span class="chip">automated reporting</span>
+        </div>
+      </div>
+      <div class="skillgroup">
+        <h3>Toolbox</h3>
+        <div>
+          <span class="chip">Python</span><span class="chip">Gradio</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip chip--neon">PowerShell</span><span class="chip">Bash</span><span class="chip chip--ink">Git / GitHub</span><span class="chip">Markdown</span><span class="chip">JSON</span><span class="chip">YAML</span><span class="chip">HTML/CSS</span><span class="chip">pytest</span><span class="chip">npm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="pageno" aria-hidden="true">p.02</span>
+</section>
+
+<!-- ==================== PROJECTS ==================== -->
+<section class="projects" id="projects" aria-labelledby="projects-title">
+  <div class="wrap">
+    <div class="projects-head">
+      <p class="kick rv">p.03 — proof of work</p>
+      <h2 class="headline rv" id="projects-title">The <span class="hl">receipts</span></h2>
+      <p class="scrawl rv" style="display:block; max-width:36rem;">four clippings, all public, all defensive. cut them out and check them yourself.</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- 1. AgentForge -->
+      <article class="proj clip rv" aria-labelledby="p1t">
+        <span class="tape tape--tl" aria-hidden="true"></span>
+        <span class="tape tape--tr" aria-hidden="true"></span>
+        <div class="torn">
+          <span class="proj-no">Clipping #01 · shipped to npm</span>
+          <h3 id="p1t">AgentForge</h3>
+          <span class="sub">"one spec, many agents"</span>
+          <p>A configuration framework for agentic AI coding assistants: write the spec once,
+          deploy it to <strong>6 adapter targets</strong> — Claude Code, Codex, Gemini CLI,
+          Cursor, Aider, and a generic adapter. Published to npm as
+          <span class="mono">@kmitops/agentforge@0.3.1</span>. MIT licensed.</p>
+          <ul class="prooflist" aria-label="Proof it works">
+            <li>adapter round-trip tests</li>
+            <li>install smoke tests</li>
+            <li>doctor CLI + readiness runbook</li>
+            <li>live public demo</li>
+          </ul>
+          <div class="proj-links">
+            <a class="mklink" href="https://github.com/KM-it-ops/AgentForge" target="_blank" rel="noopener">Repo ↗</a>
+            <a class="mklink" href="https://www.npmjs.com/package/@kmitops/agentforge" target="_blank" rel="noopener">npm ↗</a>
+            <a class="mklink" href="https://km-it-ops.github.io/AgentForge/docs/demo/" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+          <div class="proj-chips">
+            <span class="chip">Node.js</span><span class="chip">npm</span><span class="chip chip--neon">6 adapters</span><span class="chip">MIT</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. ATT&CKLens Benchmark -->
+      <article class="proj clip rv" aria-labelledby="p2t">
+        <span class="tape tape--tc" aria-hidden="true"></span>
+        <div class="torn">
+          <span class="proj-no">Clipping #02 · reproducible benchmark</span>
+          <h3 id="p2t">AgentForge ATT&amp;CKLens Benchmark</h3>
+          <span class="sub">can AI agents build honest defensive tooling?</span>
+          <p>A reproducible <strong>defensive</strong> cybersecurity benchmark: 7 AI coding-agent
+          artifacts scored against a 100-point rubric — ATT&amp;CK mapping discipline,
+          prompt-injection resistance, evidence citation, uncertainty handling
+          ("No Clear Mapping"), detection ideas, remediation guidance, analyst follow-ups.
+          One branch per agent; the harness re-runs via <span class="mono">benchmark-all.ps1</span>. MIT.</p>
+          <div class="chart" role="img" aria-label="Benchmark scores out of 100: Cursor 100, Claude Code 98, Hermes Nemotron 98, Codex 96, Lovable Repaired 76, Mistral Vibe 75, Lovable Original 40.">
+            <div class="chart-row top" aria-hidden="true"><span>Cursor</span><span class="bar" style="width:100%"></span><span class="score">100</span></div>
+            <div class="chart-row" aria-hidden="true"><span>Claude Code</span><span class="bar" style="width:98%"></span><span class="score">98</span></div>
+            <div class="chart-row" aria-hidden="true"><span>Hermes Nemotron</span><span class="bar" style="width:98%"></span><span class="score">98</span></div>
+            <div class="chart-row" aria-hidden="true"><span>Codex</span><span class="bar" style="width:96%"></span><span class="score">96</span></div>
+            <div class="chart-row" aria-hidden="true"><span>Lovable (repaired)</span><span class="bar" style="width:76%"></span><span class="score">76</span></div>
+            <div class="chart-row" aria-hidden="true"><span>Mistral Vibe</span><span class="bar" style="width:75%"></span><span class="score">75</span></div>
+            <div class="chart-row" aria-hidden="true"><span>Lovable (original)</span><span class="bar" style="width:40%"></span><span class="score">40</span></div>
+            <p class="chart-cap" aria-hidden="true">rubric of 100 · 7 agent artifacts · re-run it yourself</p>
+          </div>
+          <div class="proj-links">
+            <a class="mklink" href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark" target="_blank" rel="noopener">Repo ↗</a>
+          </div>
+          <div class="proj-chips">
+            <span class="chip chip--neon">MITRE ATT&amp;CK</span><span class="chip">PowerShell</span><span class="chip">rubric scoring</span><span class="chip">MIT</span>
+          </div>
+          <p class="finemitre">MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation.</p>
+        </div>
+      </article>
+
+      <!-- 3. Vulnerability Management Mini Program -->
+      <article class="proj clip rv" aria-labelledby="p3t">
+        <span class="tape tape--tl" aria-hidden="true"></span>
+        <span class="tape tape--tr" aria-hidden="true"></span>
+        <div class="torn">
+          <span class="proj-no">Clipping #03 · vuln tracking</span>
+          <h3 id="p3t">Vulnerability Management Mini Program</h3>
+          <span class="sub">track it, triage it, close it out</span>
+          <p>A Python / Flask / SQLite dashboard for vulnerability tracking: full CRUD,
+          KPI cards, search, filtering, and severity states — the remediation-planning
+          workflow a small security team actually runs.</p>
+          <div class="proj-links">
+            <a class="mklink" href="https://github.com/KM-it-ops" target="_blank" rel="noopener">More on GitHub ↗</a>
+          </div>
+          <div class="proj-chips">
+            <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip chip--neon">KPI cards</span><span class="chip">severity states</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Security Log Anomaly Detection -->
+      <article class="proj clip rv" aria-labelledby="p4t">
+        <span class="tape tape--tc" aria-hidden="true"></span>
+        <div class="torn">
+          <span class="proj-no">Clipping #04 · detection logic</span>
+          <h3 id="p4t">Security Log Anomaly Detection</h3>
+          <span class="sub">rules + statistics, not vibes</span>
+          <p>Python with pandas and NumPy: rule-based plus statistical detection for
+          authentication and network anomaly triage — the log-analysis muscle behind
+          the SOC skill set, written out as running code.</p>
+          <div class="proj-links">
+            <a class="mklink" href="https://github.com/KM-it-ops" target="_blank" rel="noopener">More on GitHub ↗</a>
+          </div>
+          <div class="proj-chips">
+            <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip chip--neon">auth events</span><span class="chip">network triage</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <span class="pageno" aria-hidden="true">p.03</span>
+</section>
+
+<!-- ==================== RESUME ==================== -->
+<section class="resume" id="resume" aria-labelledby="resume-title">
+  <div class="wrap">
+    <p class="kick rv">p.04 — stapled inside</p>
+    <h2 class="headline rv" id="resume-title">The paper <span class="hl">trail</span></h2>
+
+    <div class="sheet-zone">
+      <p class="resume-note marker rv" style="font-size:1.05rem;">the whole thing, photocopied — PDF at the bottom ↓</p>
+
+      <div class="sheet clip rv">
+        <span class="staple staple--l" aria-hidden="true"></span>
+        <span class="staple staple--r" aria-hidden="true"></span>
+        <div class="torn">
+          <h3>Experience</h3>
+
+          <article class="job">
+            <span class="when">2015 — 2023</span>
+            <h4>Aviation Security Operations Crew Chief</h4>
+            <p class="org">American Airlines · Charlotte, NC</p>
+            <ul>
+              <li>Federally regulated operations — security clearance + CBP badge endorsement</li>
+              <li>International flight ops under FAA / OSHA / IATA / CBP requirements</li>
+              <li>Recurrent incident-response and safety/security training</li>
+              <li>High-accountability documentation, identity validation, access control</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <span class="when">2024 — 2025</span>
+            <h4>Courier &amp; Logistics Specialist</h4>
+            <p class="org">USPS · Kannapolis, NC</p>
+          </article>
+
+          <article class="job">
+            <span class="when">2025 — present</span>
+            <h4>Delivery Associate</h4>
+            <p class="org">Fossa Logistics LLC (Amazon DSP) · Charlotte, NC</p>
+            <ul>
+              <li>Meanwhile: finished the degree (Dec 2025) and shipped 4 public security projects</li>
+            </ul>
+          </article>
+
+          <h3>Education</h3>
+          <p class="edu-line"><strong>B.S. Information Technologies — Cybersecurity concentration</strong></p>
+          <p class="edu-line">Southern New Hampshire University · completed Dec 2025 · conferred Jan 1, 2026</p>
+          <p class="edu-line">Summa Cum Laude · 3.96 GPA · Sigma Psi chapter, Alpha Sigma Lambda</p>
+
+          <h3>Certification</h3>
+          <p class="edu-line"><strong>CompTIA Security+ ce (SY0-701)</strong></p>
+          <p class="edu-line">Issued Jan 7, 2025 · valid through Jan 7, 2028</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-cta rv">
+      <a class="btn" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>Grab the PDF resume ↓</a>
+      <span class="mono">Michael_Kurdi_Resume_2026.pdf — print it, staple it, pass it around.</span>
+    </div>
+  </div>
+  <span class="pageno" aria-hidden="true">p.04</span>
+</section>
+
+<!-- ==================== CONTACT (photocopy negative) ==================== -->
+<section class="contact invert" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="kick rv">p.05 — back cover · the negative</p>
+    <h2 class="headline rv" id="contact-title">Write to the editor</h2>
+    <p class="rv" style="max-width:38rem; margin-top:1.4rem; font-family:var(--mono); font-size:.95rem;">
+      Recruiters, hiring managers, security engineers — mail goes straight to Michael.
+      Fastest reply: email. Everything below is a real, working address.
+    </p>
+
+    <div class="contact-grid rv">
+      <a class="addr" href="mailto:kurdi.michael.it@gmail.com">
+        <span class="tape" aria-hidden="true"></span>
+        <span class="lab">Email</span>
+        <span class="val">kurdi.michael.it@gmail.com</span>
+      </a>
+      <a class="addr" href="tel:+17044568322">
+        <span class="tape" aria-hidden="true"></span>
+        <span class="lab">Phone</span>
+        <span class="val">(704) 456-8322</span>
+      </a>
+      <a class="addr" href="https://github.com/KM-it-ops" target="_blank" rel="noopener">
+        <span class="tape" aria-hidden="true"></span>
+        <span class="lab">GitHub</span>
+        <span class="val">github.com/KM-it-ops</span>
+      </a>
+      <a class="addr" href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" target="_blank" rel="noopener">
+        <span class="tape" aria-hidden="true"></span>
+        <span class="lab">LinkedIn</span>
+        <span class="val">mahmoud-michael-al-kurdi</span>
+      </a>
+      <a class="addr" href="https://km-it-ops.github.io" target="_blank" rel="noopener">
+        <span class="tape" aria-hidden="true"></span>
+        <span class="lab">Site</span>
+        <span class="val">km-it-ops.github.io</span>
+      </a>
+    </div>
+
+    <p class="contact-open rv">
+      <strong>Open to:</strong> SOC Analyst · Security Operations Analyst · Cybersecurity Analyst ·
+      Incident Response Analyst · Junior Detection Engineer · Security Automation<br>
+      Charlotte, NC · open to remote · available for full-time roles now.
+    </p>
+
+    <footer class="colophon">
+      <p class="fine">
+        AL KURDI ZINE issue #01 · photocopied with pride in Charlotte, NC · © 2026 Mahmoud
+        ("Michael") Al Kurdi. All security content on this page is defensive — detection,
+        documentation, and mitigation. No facts were invented in the making of this zine:
+        every claim maps to a public repo, credential, or document.
+        MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation.
+      </p>
+      <div class="barcode" aria-hidden="true"><span>ISSN-DIY-2026</span></div>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var motionOK = document.documentElement.classList.contains('motion');
+
+  /* ---------- scroll-in reveals (only when motion is allowed) ---------- */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if (motionOK && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('on');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('on'); });
+  }
+
+  /* ---------- nav spy: mark the section you're reading ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.topnav a'));
+  var map = {};
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    map[id] = a;
+  });
+  var sections = Object.keys(map)
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+
+  function setCurrent(id) {
+    links.forEach(function (a) { a.removeAttribute('aria-current'); });
+    if (map[id]) map[id].setAttribute('aria-current', 'true');
+  }
+
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) setCurrent(e.target.id);
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ---------- ransom letters: keep resting rotation after entrance ----------
+     The slapLetter keyframe ends at `transform:none`, which would erase each
+     letter's nth-child tilt. Restore the computed tilt as an inline transform
+     once its animation finishes. Cheap, one-time, per letter. */
+  if (motionOK) {
+    var letters = document.querySelectorAll('.rl');
+    Array.prototype.forEach.call(letters, function (el) {
+      var resting = null;
+      el.addEventListener('animationstart', function () {
+        // read the pre-animation nth-child transform from a clone-free trick:
+        // temporarily clear animation to sample the resting style
+        var anim = el.style.animation;
+        el.style.animation = 'none';
+        resting = getComputedStyle(el).transform;
+        el.style.animation = anim;
+      }, { once: true });
+      el.addEventListener('animationend', function () {
+        if (resting && resting !== 'none') el.style.transform = resting;
+      }, { once: true });
+    });
+  }
+})();
+</script>
+</body>
+</html>

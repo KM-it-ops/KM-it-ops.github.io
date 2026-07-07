@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahmoud "Michael" Al Kurdi — Security Operations Analyst — Control Panel KM-01</title>
+<meta name="description" content="Security Operations Analyst. 8 years of federally regulated aviation security operations, CompTIA Security+ (SY0-701), B.S. IT Cybersecurity summa cum laude. Defensive tooling, in public.">
+<meta name="theme-color" content="#23272c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23ffc400'/%3E%3Cpath d='M-6 22 8 -6h5L-1 22zM7 22 21 -6h5L12 22z' fill='%231a1d21'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Chivo+Mono:wght@400;500;600&family=Saira:wght@400;500;600&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ============================================================
+   CONTROL PANEL KM-01 — industrial HMI concept
+   gunmetal · safety yellow · analog gauges · engraved plates
+   ============================================================ */
+:root{
+  --bg:#212429;
+  --bg-deep:#191c20;
+  --steel-hi:#3f454e;
+  --steel:#31363d;
+  --steel-lo:#282c32;
+  --well:#15171b;
+  --line:#0e1013;
+  --ink:#e3e7ec;
+  --ink-body:#c3cad3;
+  --ink-dim:#98a1ac;
+  --ink-engrave:#828b96;
+  --safety:#ffc400;
+  --safety-deep:#d9a600;
+  --safety-ink:#241d00;
+  --lamp-green:#4ade80;
+  --lamp-amber:#ffb020;
+  --lamp-red:#ff5148;
+  --face:#ece7d6;
+  --face-ink:#26292e;
+  --wrap:1180px;
+  --radius:10px;
+  --font-display:"Big Shoulders Display",sans-serif;
+  --font-body:"Saira",sans-serif;
+  --font-stencil:"Saira Stencil One",sans-serif;
+  --font-mono:"Chivo Mono",monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth;}
+}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.65;
+  color:var(--ink-body);
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(1100px 520px at 50% -140px, rgba(255,255,255,.05), transparent 62%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 3px);
+}
+::selection{background:var(--safety);color:var(--safety-ink);}
+img,svg{display:block;max-width:100%;}
+a{color:var(--safety);}
+:focus-visible{outline:3px solid var(--safety);outline-offset:3px;border-radius:4px;}
+.skip-link{
+  position:absolute;left:12px;top:-60px;z-index:200;
+  background:var(--safety);color:var(--safety-ink);
+  font-family:var(--font-display);font-weight:700;letter-spacing:.1em;
+  padding:10px 18px;border-radius:0 0 6px 6px;text-decoration:none;
+  transition:top .15s ease;
+}
+.skip-link:focus{top:0;}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+
+/* ---------- shared hardware ---------- */
+.hazard{
+  height:12px;
+  background:repeating-linear-gradient(-45deg, var(--safety) 0 15px, #16181b 15px 30px);
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+}
+.panel{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background-image:
+    radial-gradient(circle 5px at 15px 15px, #99a2ad 0 1.6px, #4d545d 2.6px, #16181c 4.2px, transparent 5px),
+    radial-gradient(circle 5px at calc(100% - 15px) 15px, #99a2ad 0 1.6px, #4d545d 2.6px, #16181c 4.2px, transparent 5px),
+    radial-gradient(circle 5px at 15px calc(100% - 15px), #99a2ad 0 1.6px, #4d545d 2.6px, #16181c 4.2px, transparent 5px),
+    radial-gradient(circle 5px at calc(100% - 15px) calc(100% - 15px), #99a2ad 0 1.6px, #4d545d 2.6px, #16181c 4.2px, transparent 5px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, var(--steel-hi), var(--steel-lo));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -1px 0 rgba(0,0,0,.55),
+    0 14px 30px rgba(0,0,0,.38);
+}
+.well{
+  background:var(--well);
+  border:1px solid #0b0d10;
+  border-radius:6px;
+  box-shadow:inset 0 2px 8px rgba(0,0,0,.65), 0 1px 0 rgba(255,255,255,.06);
+}
+.label{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-engrave);
+  text-shadow:0 1px 0 rgba(0,0,0,.7);
+}
+.mono{font-family:var(--font-mono);}
+.chip{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--ink-dim);
+  background:linear-gradient(180deg,#2b3036,#23272c);
+  border:1px solid #101215;
+  border-radius:4px;
+  padding:4px 9px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 2px 0 rgba(0,0,0,.35);
+  white-space:nowrap;
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:14px 0 0;list-style:none;}
+
+/* indicator lamps */
+.lamp{
+  position:relative;
+  width:18px;height:18px;flex:0 0 18px;
+  border-radius:50%;
+  border:2px solid #101215;
+  background:radial-gradient(circle at 35% 30%, #565f6a, #2e3339 72%);
+  box-shadow:inset 0 2px 3px rgba(0,0,0,.75), 0 1px 0 rgba(255,255,255,.07);
+}
+.lamp i{
+  position:absolute;inset:1px;border-radius:50%;
+  opacity:0;
+}
+.lamp.lit i{opacity:1;}
+.lamp-green i{
+  background:radial-gradient(circle at 35% 30%, #eafff2, var(--lamp-green) 55%, #14813f 95%);
+  box-shadow:0 0 12px rgba(74,222,128,.6);
+}
+.lamp-amber i{
+  background:radial-gradient(circle at 35% 30%, #fff3d6, var(--lamp-amber) 55%, #a05f00 95%);
+  box-shadow:0 0 12px rgba(255,176,32,.6);
+}
+html.js:not(.powered) .lamp.lit i{opacity:0;}
+html.powered .lamp.lit i{
+  opacity:1;
+  animation:lampflick .7s linear both;
+  animation-delay:var(--d,0s);
+}
+@keyframes lampflick{
+  0%{opacity:0}
+  34%{opacity:1}
+  48%{opacity:.2}
+  62%{opacity:1}
+  76%{opacity:.45}
+  100%{opacity:1}
+}
+
+/* push buttons */
+.btn{
+  display:inline-block;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:17px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 26px 15px;
+  border-radius:7px;
+  cursor:pointer;
+  text-align:center;
+}
+.btn-primary{
+  color:var(--safety-ink);
+  background:linear-gradient(180deg,#ffd23f,#efac00);
+  border:1px solid #6d5600;
+  box-shadow:0 5px 0 #7d6300, 0 9px 18px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.55);
+}
+.btn-primary:hover{background:linear-gradient(180deg,#ffdb63,#f7b70e);}
+.btn-primary:active{transform:translateY(4px);box-shadow:0 1px 0 #7d6300, inset 0 1px 0 rgba(255,255,255,.55);}
+.btn-steel{
+  color:var(--ink);
+  background:linear-gradient(180deg,#474e57,#2e3339);
+  border:1px solid #0d0f12;
+  box-shadow:0 5px 0 #16181c, 0 9px 18px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.12);
+}
+.btn-steel:hover{color:var(--safety);}
+.btn-steel:active{transform:translateY(4px);box-shadow:0 1px 0 #16181c, inset 0 1px 0 rgba(255,255,255,.12);}
+.btn-small{
+  font-size:13px;
+  padding:9px 16px 10px;
+  letter-spacing:.14em;
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  position:sticky;top:0;z-index:100;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.015) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg,#343a42,#25292f);
+  border-bottom:1px solid #000;
+  box-shadow:0 6px 18px rgba(0,0,0,.45);
+}
+.mast-inner{
+  max-width:var(--wrap);margin:0 auto;
+  display:flex;align-items:center;gap:20px;
+  padding:10px 24px;
+  flex-wrap:wrap;
+}
+.nameplate{
+  display:flex;flex-direction:column;gap:1px;
+  padding:6px 14px;
+  background:var(--well);
+  border:1px solid #0b0d10;
+  border-radius:5px;
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.6), 0 1px 0 rgba(255,255,255,.05);
+  text-decoration:none;
+}
+.np-code{
+  font-family:var(--font-stencil);
+  font-size:11px;
+  letter-spacing:.3em;
+  color:var(--safety);
+}
+.np-name{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:17px;
+  letter-spacing:.12em;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.nav{margin-left:auto;}
+.nav ul{
+  display:flex;gap:8px;list-style:none;margin:0;padding:0;
+  overflow-x:auto;
+}
+.nav a{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.14em;
+  color:var(--ink-dim);
+  text-decoration:none;
+  padding:9px 13px;
+  border:1px solid #101215;
+  border-radius:5px;
+  background:linear-gradient(180deg,#343a41,#282c31);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07), 0 2px 0 #14161a;
+  white-space:nowrap;
+}
+.nav a:hover{color:var(--ink);}
+.nav a:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);}
+.nav .led{
+  width:8px;height:8px;flex:0 0 8px;border-radius:50%;
+  background:#1d2126;
+  border:1px solid #0c0e11;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.8);
+}
+.nav a[aria-current]{color:var(--safety);border-color:#000;}
+.nav a[aria-current] .led{
+  background:radial-gradient(circle at 35% 30%, #fff3d6, var(--safety) 60%, #9a7500);
+  box-shadow:0 0 8px rgba(255,196,0,.7);
+}
+.mast-status{
+  display:flex;align-items:center;gap:14px;
+}
+.pwr{
+  display:flex;align-items:center;gap:7px;
+}
+.clock{
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--lamp-amber);
+  background:var(--well);
+  border:1px solid #0b0d10;
+  border-radius:4px;
+  padding:5px 10px;
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.65);
+  letter-spacing:.08em;
+  min-width:86px;
+  text-align:center;
+}
+
+/* ---------- sections ---------- */
+main{display:block;}
+.sec{padding:72px 0 84px;scroll-margin-top:96px;}
+.sec + .hazard{margin:0;}
+.sec-head{margin-bottom:36px;}
+.sec-plate{
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+  border-bottom:2px solid #111317;
+  box-shadow:0 1px 0 rgba(255,255,255,.05);
+  padding-bottom:14px;
+}
+.sec-code{
+  font-family:var(--font-stencil);
+  font-size:14px;
+  letter-spacing:.24em;
+  color:var(--safety-ink);
+  background:linear-gradient(180deg,#ffd23f,#efac00);
+  border:1px solid #6d5600;
+  border-radius:3px;
+  padding:3px 10px 2px;
+  box-shadow:0 2px 0 #7d6300;
+  white-space:nowrap;
+}
+.sec-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(30px,4.4vw,46px);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin:0;
+  line-height:1;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
+}
+.sec-sub{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--ink-engrave);
+  margin-left:auto;
+}
+
+/* reveal choreography */
+html.js .rev{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+html.js .rev.lit{opacity:1;transform:none;}
+
+/* ---------- hero ---------- */
+.hero{padding-top:56px;}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+  gap:26px;
+  align-items:stretch;
+}
+.hero-main{padding:34px 36px 36px;}
+.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+.stamp{
+  font-family:var(--font-stencil);
+  font-size:12px;
+  letter-spacing:.22em;
+  color:var(--safety);
+  border:2px solid var(--safety);
+  border-radius:3px;
+  padding:4px 10px 3px;
+  background:rgba(255,196,0,.05);
+}
+.stamp.green{color:var(--lamp-green);border-color:var(--lamp-green);background:rgba(74,222,128,.05);}
+h1{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(46px,7.4vw,88px);
+  line-height:.95;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  margin:0 0 10px;
+  color:var(--ink);
+  text-shadow:0 3px 0 rgba(0,0,0,.55);
+}
+h1 .h1-stencil{
+  display:block;
+  font-family:var(--font-stencil);
+  font-weight:400;
+  color:var(--safety);
+  font-size:.92em;
+  letter-spacing:.04em;
+  text-shadow:0 3px 0 rgba(0,0,0,.55);
+}
+.hero-role{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(17px,2.4vw,22px);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--lamp-amber);
+  margin:0 0 18px;
+}
+.hero-copy{max-width:56ch;margin:0 0 24px;}
+.lamp-bank{
+  display:flex;flex-wrap:wrap;gap:14px 26px;
+  padding:16px 18px;
+  margin-bottom:26px;
+}
+.lamp-item{display:flex;align-items:center;gap:10px;}
+.lamp-item .label{letter-spacing:.16em;color:var(--ink-dim);}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;}
+.dataplate{
+  margin:0;
+  padding:16px 20px;
+  display:grid;
+  grid-template-columns:max-content 1fr;
+  gap:9px 22px;
+}
+.dataplate div{display:contents;}
+.dataplate dt{
+  font-family:var(--font-body);
+  font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-engrave);
+  align-self:center;
+}
+.dataplate dd{
+  margin:0;
+  font-family:var(--font-mono);
+  font-size:13.5px;
+  color:var(--ink);
+}
+
+/* gauge bank */
+.gauge-bank{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;}
+.gb-head{
+  display:flex;align-items:center;gap:12px;
+  padding-bottom:12px;
+  border-bottom:1px solid #14161a;
+  box-shadow:0 1px 0 rgba(255,255,255,.05);
+}
+.gb-title{
+  font-family:var(--font-display);
+  font-weight:700;font-size:18px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.gb-head .lamp{margin-left:auto;}
+.gauges{display:grid;grid-template-columns:1fr;gap:14px;}
+.gauge{
+  margin:0;
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:6px 18px;
+  align-items:center;
+  padding:12px 14px;
+}
+.gauge svg{width:150px;height:auto;}
+.g-outer{fill:#0f1114;}
+.g-bezel{fill:#3d434c;stroke:#14161a;stroke-width:1;}
+.g-face{fill:var(--face);}
+.g-inset{fill:none;stroke:rgba(0,0,0,.16);stroke-width:4;}
+.g-scale{fill:none;stroke:#8e8a7c;stroke-width:2;}
+.g-zone{fill:none;stroke:#2f9e5b;stroke-width:6;}
+.g-ticks line{stroke:var(--face-ink);stroke-width:2.4;}
+.g-ticks-minor line{stroke:#6f6c62;stroke-width:1.4;}
+.g-num{
+  font-family:var(--font-mono);font-size:11px;font-weight:600;
+  fill:var(--face-ink);text-anchor:middle;
+}
+.needle{
+  transform-box:view-box;
+  transform-origin:50% 59.375%;
+  transform:rotate(var(--deg));
+}
+html.js:not(.powered) .needle{transform:rotate(-120deg);}
+html.powered .needle{
+  transform:rotate(var(--deg));
+  transition:transform 1.7s cubic-bezier(.3,1.35,.35,1);
+  transition-delay:var(--d,0s);
+}
+.needle polygon{fill:var(--lamp-red);stroke:#7d1712;stroke-width:.6;}
+.g-hub{fill:#23262b;stroke:#0d0f11;stroke-width:2;}
+.g-glass{fill:rgba(255,255,255,.09);}
+.g-cap{display:flex;flex-direction:column;gap:8px;}
+.g-label{letter-spacing:.18em;}
+.g-read{
+  align-self:flex-start;
+  font-family:var(--font-mono);
+  font-size:19px;font-weight:600;
+  color:var(--lamp-amber);
+  padding:6px 14px;
+  letter-spacing:.1em;
+  text-shadow:0 0 10px rgba(255,176,32,.4);
+}
+.gb-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-top:4px;
+}
+.gb-note{font-family:var(--font-mono);font-size:11px;color:var(--ink-engrave);}
+
+/* ---------- about ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  gap:26px;
+  margin-bottom:26px;
+}
+.panel-cap{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 22px;
+  border-bottom:1px solid #14161a;
+  box-shadow:0 1px 0 rgba(255,255,255,.05);
+}
+.panel-cap h3{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:700;font-size:18px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.panel-body{padding:20px 22px 24px;}
+.panel-body p{margin:0 0 14px;}
+.panel-body p:last-child{margin-bottom:0;}
+.cred-stack{display:flex;flex-direction:column;gap:20px;}
+.cred-plate{padding:16px 18px;}
+.cred-plate .label{display:block;margin-bottom:6px;}
+.cred-title{
+  font-family:var(--font-display);
+  font-weight:700;font-size:21px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink);margin:0 0 4px;
+}
+.cred-meta{font-family:var(--font-mono);font-size:12.5px;color:var(--ink-dim);margin:0;}
+.cred-meta strong{color:var(--lamp-green);font-weight:600;}
+.toggles{
+  display:flex;gap:20px;flex-wrap:wrap;
+  padding:18px 20px;
+  justify-content:space-around;
+}
+.toggle{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.tg-switch{
+  position:relative;
+  width:34px;height:60px;border-radius:17px;
+  background:var(--well);
+  border:1px solid #0b0d10;
+  box-shadow:inset 0 3px 8px rgba(0,0,0,.7), 0 1px 0 rgba(255,255,255,.06);
+}
+.tg-switch::before{
+  content:"";
+  position:absolute;left:4px;right:4px;top:4px;height:26px;
+  border-radius:13px;
+  background:linear-gradient(180deg,#eef1f5,#9aa3ad 60%,#7c8590);
+  box-shadow:0 3px 5px rgba(0,0,0,.55), inset 0 -6px 8px rgba(0,0,0,.22);
+}
+.tg-on{
+  font-family:var(--font-stencil);
+  font-size:10px;letter-spacing:.2em;
+  color:var(--lamp-green);
+}
+.toggle .label{text-align:center;max-width:110px;letter-spacing:.14em;line-height:1.5;}
+
+/* skills cluster */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+.skill-panel .panel-body{padding-top:16px;}
+.segmeter{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:14px;
+}
+.segbar{
+  position:relative;flex:1;height:16px;border-radius:4px;overflow:hidden;
+}
+.segfill{
+  position:absolute;inset:2px auto 2px 2px;
+  width:var(--w);
+  background:repeating-linear-gradient(90deg, var(--lamp-amber) 0 11px, transparent 11px 15px);
+  box-shadow:0 0 8px rgba(255,176,32,.35);
+  transition:width 1s ease .15s;
+}
+html.js .rev:not(.lit) .segfill{width:0;}
+.seg-count{
+  font-family:var(--font-mono);font-size:12px;color:var(--lamp-amber);
+  min-width:84px;text-align:right;letter-spacing:.06em;
+}
+
+/* ---------- projects ---------- */
+.notice{
+  display:flex;align-items:center;gap:14px;
+  border:2px solid var(--safety);
+  border-radius:8px;
+  background:rgba(255,196,0,.055);
+  padding:12px 18px;
+  margin-bottom:30px;
+}
+.notice-icon{
+  flex:0 0 auto;
+  width:0;height:0;
+  border-left:13px solid transparent;
+  border-right:13px solid transparent;
+  border-bottom:22px solid var(--safety);
+  position:relative;
+}
+.notice p{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:600;font-size:15px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--safety);
+}
+.unit{margin-bottom:26px;}
+.unit-head{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px 22px;
+  border-bottom:1px solid #14161a;
+  box-shadow:0 1px 0 rgba(255,255,255,.05);
+}
+.unit-code{
+  font-family:var(--font-stencil);
+  font-size:13px;letter-spacing:.22em;
+  color:var(--safety);
+  border:1px solid rgba(255,196,0,.5);
+  border-radius:3px;
+  padding:3px 9px 2px;
+}
+.unit-head h3{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:700;font-size:clamp(21px,3vw,27px);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink);
+}
+.unit-status{
+  margin-left:auto;
+  display:flex;align-items:center;gap:9px;
+}
+.unit-status .label{color:var(--lamp-green);letter-spacing:.18em;}
+.unit-body{padding:20px 22px 24px;}
+.unit-body > p{margin:0 0 16px;max-width:74ch;}
+.spec{
+  margin:0 0 4px;
+  padding:14px 18px;
+  display:grid;
+  grid-template-columns:max-content 1fr;
+  gap:8px 22px;
+}
+.spec div{display:contents;}
+.spec dt{
+  font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-engrave);align-self:center;
+}
+.spec dd{margin:0;font-family:var(--font-mono);font-size:13px;color:var(--ink);}
+.unit-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;}
+
+/* benchmark meter bank */
+.bm-bank{
+  list-style:none;margin:16px 0 6px;padding:16px 18px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.bm-row{
+  display:grid;
+  grid-template-columns:160px 1fr 44px;
+  align-items:center;gap:12px;
+}
+.bm-name{
+  font-family:var(--font-display);
+  font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-dim);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.bm-track{
+  position:relative;height:14px;border-radius:3px;overflow:hidden;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), rgba(255,255,255,.07) calc(10% - 1px) 10%),
+    var(--well);
+  border:1px solid #0b0d10;
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.65);
+}
+.bm-fill{
+  position:absolute;inset:2px auto 2px 2px;
+  width:var(--w);
+  border-radius:2px;
+  transition:width 1.1s cubic-bezier(.25,.9,.3,1) .15s;
+}
+html.js .rev:not(.lit) .bm-fill{width:0;}
+.grade-a{background:linear-gradient(180deg,#63e893,#27a457);box-shadow:0 0 8px rgba(74,222,128,.4);}
+.grade-b{background:linear-gradient(180deg,#ffc25a,#d98a00);box-shadow:0 0 8px rgba(255,176,32,.4);}
+.grade-c{background:linear-gradient(180deg,#ff7a70,#d02e24);box-shadow:0 0 8px rgba(255,81,72,.4);}
+.bm-val{
+  font-family:var(--font-mono);font-size:13px;font-weight:600;
+  color:var(--lamp-amber);text-align:right;
+}
+.bm-note{
+  font-family:var(--font-mono);font-size:11.5px;color:var(--ink-engrave);
+  margin:10px 0 0;
+}
+.units-duo{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;
+}
+.mitre-ack{
+  font-family:var(--font-mono);font-size:11.5px;color:var(--ink-engrave);
+  margin:22px 0 0;
+}
+
+/* ---------- resume ---------- */
+.resume-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);
+  gap:26px;
+  align-items:start;
+}
+.doc-panel .panel-body{display:flex;flex-direction:column;gap:18px;}
+.doc-slot{
+  padding:22px 20px;
+  text-align:center;
+  border-style:dashed;
+  border-width:2px;
+  border-color:#0b0d10;
+}
+.doc-slot .label{display:block;margin-bottom:12px;}
+.btn-download{
+  display:block;
+  font-size:19px;
+  padding:18px 24px 19px;
+  position:relative;
+}
+.doc-meta{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-engrave);margin:12px 0 0;}
+.table-scroll{overflow-x:auto;}
+.log-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+.log-table caption{
+  text-align:left;
+  padding-bottom:10px;
+  font-family:var(--font-display);
+  font-weight:700;font-size:16px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.log-table th{
+  text-align:left;
+  font-family:var(--font-body);
+  font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-engrave);
+  padding:8px 14px;
+  border-bottom:2px solid #111317;
+}
+.log-table td{
+  padding:12px 14px;
+  border-bottom:1px solid #1a1e23;
+  vertical-align:top;
+}
+.log-table .lt-date{font-family:var(--font-mono);font-size:12.5px;color:var(--lamp-amber);white-space:nowrap;}
+.log-table .lt-role{font-family:var(--font-display);font-weight:600;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);}
+.log-table .lt-org{font-family:var(--font-mono);font-size:12.5px;color:var(--ink-dim);}
+.log-table .lt-note{color:var(--ink-body);font-size:13.5px;max-width:44ch;}
+
+/* ---------- contact ---------- */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+  margin-bottom:26px;
+}
+.contact-card{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 22px;
+  text-decoration:none;
+}
+.contact-card:hover .cc-value{color:var(--safety);}
+.contact-card:active{transform:translateY(2px);}
+.cc-text{min-width:0;}
+.cc-label{display:block;margin-bottom:3px;}
+.cc-value{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:15px;
+  color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.cc-arrow{
+  margin-left:auto;
+  font-family:var(--font-display);font-weight:700;font-size:20px;
+  color:var(--ink-engrave);
+}
+.contact-card:hover .cc-arrow{color:var(--safety);}
+.contact-note{
+  padding:16px 20px;
+  font-family:var(--font-mono);font-size:12.5px;color:var(--ink-dim);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+
+/* ---------- footer ---------- */
+.footer{
+  background:linear-gradient(180deg,#24282d,#1a1d21);
+  border-top:1px solid #000;
+  padding:34px 0 44px;
+  margin-top:0;
+}
+.footer-inner{
+  display:flex;flex-direction:column;gap:8px;
+}
+.footer p{
+  margin:0;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--ink-engrave);
+}
+.footer .ethos{
+  font-family:var(--font-display);
+  font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-dim);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .hero-grid,.about-grid,.resume-grid{grid-template-columns:1fr;}
+  .gauges{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .sec-sub{margin-left:0;width:100%;}
+}
+@media (max-width:700px){
+  .clock{display:none;}
+  .mast-inner{gap:12px;}
+  .nav{margin-left:0;width:100%;order:3;}
+  .skills-grid,.units-duo,.contact-grid{grid-template-columns:1fr;}
+  .sec{padding:56px 0 64px;}
+  .bm-row{grid-template-columns:104px 1fr 40px;}
+  .bm-name{font-size:12px;}
+}
+@media (max-width:520px){
+  .nav ul{flex-wrap:wrap;overflow-x:visible;}
+  .nav a{font-size:13px;padding:7px 10px;letter-spacing:.1em;}
+}
+@media (max-width:430px){
+  .wrap{padding:0 16px;}
+  .hero-main{padding:26px 20px 28px;}
+  .gauge{grid-template-columns:120px 1fr;padding:10px;}
+  .gauge svg{width:120px;}
+  .dataplate{grid-template-columns:1fr;gap:2px 0;}
+  .dataplate dt{margin-top:8px;}
+  .spec{grid-template-columns:1fr;gap:2px 0;}
+  .spec dt{margin-top:8px;}
+  .hero-actions .btn{flex:1 1 100%;}
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  html.js .rev{opacity:1;transform:none;}
+  .needle{transform:rotate(var(--deg)) !important;transition:none !important;}
+  html.js:not(.powered) .lamp.lit i,
+  html.powered .lamp.lit i{opacity:1;animation:none;}
+  html.js .rev:not(.lit) .segfill,
+  html.js .rev:not(.lit) .bm-fill{width:var(--w);}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= MASTHEAD ================= -->
+<header class="masthead">
+  <div class="mast-inner">
+    <a class="nameplate" href="#home" aria-label="Control panel KM-01, Michael Al Kurdi — back to top">
+      <span class="np-code">UNIT KM-01</span>
+      <span class="np-name">M. "MICHAEL" AL KURDI</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        <li><a href="#home"><span class="led" aria-hidden="true"></span>HOME</a></li>
+        <li><a href="#about"><span class="led" aria-hidden="true"></span>ABOUT</a></li>
+        <li><a href="#projects"><span class="led" aria-hidden="true"></span>PROJECTS</a></li>
+        <li><a href="#resume"><span class="led" aria-hidden="true"></span>RESUME</a></li>
+        <li><a href="#contact"><span class="led" aria-hidden="true"></span>CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="mast-status">
+      <div class="pwr" role="img" aria-label="Panel power: on">
+        <span class="lamp lamp-green lit" style="--d:0s"><i></i></span>
+        <span class="label">PWR</span>
+      </div>
+      <time class="clock" id="clock" aria-label="Local time">--:--:--</time>
+    </div>
+  </div>
+  <div class="hazard" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="sec hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-main panel">
+          <div class="badge-row">
+            <span class="stamp">SECURITY OPERATIONS</span>
+            <span class="stamp green">DEFENSIVE ONLY</span>
+          </div>
+          <h1 id="hero-title">
+            Mahmoud "Michael"
+            <span class="h1-stencil">Al Kurdi</span>
+          </h1>
+          <p class="hero-role">Security Operations Analyst — SOC &middot; IR &middot; Detection</p>
+          <p class="hero-copy">
+            Eight years running federally regulated aviation security operations for American
+            Airlines — clearances, CBP endorsement, incident-response drills, and documentation
+            that had to hold up under audit. Now Security+ certified, degreed in cybersecurity
+            summa cum laude, and building defensive tooling in public.
+            <strong>Every claim on this panel maps to a public repo, credential, or document.</strong>
+          </p>
+          <div class="lamp-bank well" role="img" aria-label="Status lamps: Security+ certified — on. B.S. cybersecurity — on. 8 years regulated operations — on. Available full-time — on.">
+            <span class="lamp-item"><span class="lamp lamp-green lit" style="--d:.15s"><i></i></span><span class="label">SEC+ CERTIFIED</span></span>
+            <span class="lamp-item"><span class="lamp lamp-green lit" style="--d:.3s"><i></i></span><span class="label">B.S. CYBERSEC</span></span>
+            <span class="lamp-item"><span class="lamp lamp-green lit" style="--d:.45s"><i></i></span><span class="label">8Y REG OPS</span></span>
+            <span class="lamp-item"><span class="lamp lamp-amber lit" style="--d:.6s"><i></i></span><span class="label">AVAILABLE NOW</span></span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Inspect Projects</a>
+            <a class="btn btn-steel" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>Resume PDF</a>
+          </div>
+          <dl class="dataplate well">
+            <div><dt>Designation</dt><dd>SOC / Security Operations / Incident Response Analyst</dd></div>
+            <div><dt>Certification</dt><dd>CompTIA Security+ ce (SY0-701) &middot; valid thru 01/2028</dd></div>
+            <div><dt>Education</dt><dd>B.S. IT — Cybersecurity &middot; SNHU &middot; Summa Cum Laude</dd></div>
+            <div><dt>Base</dt><dd>Charlotte, NC &middot; remote OK &middot; full-time available</dd></div>
+          </dl>
+        </div>
+
+        <div class="gauge-bank panel rev">
+          <div class="gb-head">
+            <span class="gb-title">Operator Telemetry</span>
+            <span class="lamp lamp-green lit" style="--d:.75s"><i></i></span>
+          </div>
+          <div class="gauges">
+
+            <figure class="gauge well">
+              <svg viewBox="0 0 200 160" aria-hidden="true" focusable="false">
+                <circle class="g-outer" cx="100" cy="95" r="88"/>
+                <circle class="g-bezel" cx="100" cy="95" r="84"/>
+                <circle class="g-face" cx="100" cy="95" r="78"/>
+                <circle class="g-inset" cx="100" cy="95" r="76"/>
+                <path class="g-scale" d="M54.97,121 A52,52 0 1 1 145.03,121"/>
+                <path class="g-zone" d="M145.03,69 A52,52 0 0 1 145.03,121"/>
+                <g class="g-ticks">
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-120 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-90 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-60 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-30 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(30 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(60 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(90 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(120 100 95)"/>
+                </g>
+                <g class="g-ticks-minor">
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-105 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-75 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-45 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-15 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(15 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(45 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(75 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(105 100 95)"/>
+                </g>
+                <text class="g-num" x="65" y="119">0</text>
+                <text class="g-num" x="136" y="119">10</text>
+                <ellipse class="g-glass" cx="78" cy="60" rx="44" ry="24" transform="rotate(-18 78 60)"/>
+                <g class="needle" style="--deg:72deg; --d:.2s">
+                  <polygon points="96.8,106 100,31 103.2,106"/>
+                  <circle class="g-hub" cx="100" cy="95" r="9"/>
+                </g>
+              </svg>
+              <figcaption class="g-cap">
+                <span class="label g-label">Regulated Security Ops</span>
+                <span class="g-read well" aria-label="8 years">8 YRS</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gauge well">
+              <svg viewBox="0 0 200 160" aria-hidden="true" focusable="false">
+                <circle class="g-outer" cx="100" cy="95" r="88"/>
+                <circle class="g-bezel" cx="100" cy="95" r="84"/>
+                <circle class="g-face" cx="100" cy="95" r="78"/>
+                <circle class="g-inset" cx="100" cy="95" r="76"/>
+                <path class="g-scale" d="M54.97,121 A52,52 0 1 1 145.03,121"/>
+                <path class="g-zone" d="M145.03,69 A52,52 0 0 1 145.03,121"/>
+                <g class="g-ticks">
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-120 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-90 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-60 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-30 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(30 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(60 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(90 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(120 100 95)"/>
+                </g>
+                <g class="g-ticks-minor">
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-105 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-75 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-45 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-15 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(15 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(45 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(75 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(105 100 95)"/>
+                </g>
+                <text class="g-num" x="65" y="119">0</text>
+                <text class="g-num" x="136" y="119">4.0</text>
+                <ellipse class="g-glass" cx="78" cy="60" rx="44" ry="24" transform="rotate(-18 78 60)"/>
+                <g class="needle" style="--deg:117.6deg; --d:.4s">
+                  <polygon points="96.8,106 100,31 103.2,106"/>
+                  <circle class="g-hub" cx="100" cy="95" r="9"/>
+                </g>
+              </svg>
+              <figcaption class="g-cap">
+                <span class="label g-label">GPA — Summa Cum Laude</span>
+                <span class="g-read well" aria-label="3.96 out of 4.0">3.96</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gauge well">
+              <svg viewBox="0 0 200 160" aria-hidden="true" focusable="false">
+                <circle class="g-outer" cx="100" cy="95" r="88"/>
+                <circle class="g-bezel" cx="100" cy="95" r="84"/>
+                <circle class="g-face" cx="100" cy="95" r="78"/>
+                <circle class="g-inset" cx="100" cy="95" r="76"/>
+                <path class="g-scale" d="M54.97,121 A52,52 0 1 1 145.03,121"/>
+                <path class="g-zone" d="M145.03,69 A52,52 0 0 1 145.03,121"/>
+                <g class="g-ticks">
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-120 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-90 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-60 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(-30 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(30 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(60 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(90 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="35" transform="rotate(120 100 95)"/>
+                </g>
+                <g class="g-ticks-minor">
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-105 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-75 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-45 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(-15 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(15 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(45 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(75 100 95)"/>
+                  <line x1="100" y1="23" x2="100" y2="29" transform="rotate(105 100 95)"/>
+                </g>
+                <text class="g-num" x="65" y="119">0</text>
+                <text class="g-num" x="136" y="119">10</text>
+                <ellipse class="g-glass" cx="78" cy="60" rx="44" ry="24" transform="rotate(-18 78 60)"/>
+                <g class="needle" style="--deg:48deg; --d:.6s">
+                  <polygon points="96.8,106 100,31 103.2,106"/>
+                  <circle class="g-hub" cx="100" cy="95" r="9"/>
+                </g>
+              </svg>
+              <figcaption class="g-cap">
+                <span class="label g-label">AI Agents Benchmarked</span>
+                <span class="g-read well" aria-label="7 agent artifacts">7</span>
+              </figcaption>
+            </figure>
+
+          </div>
+          <div class="gb-foot">
+            <p class="gb-note">ALL READINGS VERIFIABLE — SEE PANELS 02–04</p>
+            <button class="btn btn-steel btn-small" id="lamp-test" type="button">Lamp Test</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="sec" aria-labelledby="about-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="sec-plate">
+          <span class="sec-code">PANEL 02</span>
+          <h2 class="sec-title" id="about-title">Operator Specifications</h2>
+          <span class="sec-sub">IDENTITY &middot; CREDENTIALS &middot; CAPABILITIES</span>
+        </div>
+      </header>
+
+      <div class="about-grid">
+        <article class="panel rev">
+          <div class="panel-cap">
+            <h3>Service History</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              I spent eight years (2015–2023) as an <strong>Aviation Security Operations Crew
+              Chief for American Airlines</strong> in Charlotte — federally regulated operations
+              under FAA, OSHA, IATA, and CBP requirements, holding a security clearance and CBP
+              badge endorsement for international flight operations. The job was identity
+              validation, access control, recurrent incident-response and safety/security
+              training, and documentation accurate enough to survive a federal audit. That is
+              SOC discipline, learned on a live ramp instead of a dashboard.
+            </p>
+            <p>
+              I converted that operational foundation into formal credentials: a
+              <strong>B.S. in Information Technologies, Cybersecurity concentration</strong>
+              (Southern New Hampshire University, summa cum laude, 3.96 GPA) and
+              <strong>CompTIA Security+ ce</strong>. Along the way I built and published
+              defensive security tooling — including a reproducible benchmark that scores AI
+              coding agents on whether they can build secure, MITRE ATT&amp;CK-aligned defensive
+              tools without overclaiming.
+            </p>
+            <p>
+              The operating principle across all of it: evidence first. Alerts get documented,
+              claims get cited, and anything without a clear mapping gets flagged as exactly
+              that — no guesswork dressed up as confidence.
+            </p>
+          </div>
+        </article>
+
+        <div class="cred-stack">
+          <div class="cred-plate panel rev">
+            <span class="label">Certification</span>
+            <p class="cred-title">CompTIA Security+ ce</p>
+            <p class="cred-meta">SY0-701 &middot; issued JAN 07 2025 &middot; <strong>valid thru JAN 07 2028</strong></p>
+          </div>
+          <div class="cred-plate panel rev">
+            <span class="label">Education</span>
+            <p class="cred-title">B.S. Information Technologies</p>
+            <p class="cred-meta">
+              Cybersecurity concentration &middot; SNHU &middot; conferred JAN 2026<br>
+              <strong>Summa Cum Laude &middot; 3.96 GPA</strong> &middot; Alpha Sigma Lambda (Sigma Psi)
+            </p>
+          </div>
+          <div class="toggles panel rev" role="img" aria-label="Configuration switches, all set to on: available full-time, open to remote, defensive work only.">
+            <span class="toggle">
+              <span class="tg-on" aria-hidden="true">ON</span>
+              <span class="tg-switch" aria-hidden="true"></span>
+              <span class="label">Full-Time<br>Available</span>
+            </span>
+            <span class="toggle">
+              <span class="tg-on" aria-hidden="true">ON</span>
+              <span class="tg-switch" aria-hidden="true"></span>
+              <span class="label">Remote<br>OK</span>
+            </span>
+            <span class="toggle">
+              <span class="tg-on" aria-hidden="true">ON</span>
+              <span class="tg-switch" aria-hidden="true"></span>
+              <span class="label">Defensive<br>Only</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <article class="panel skill-panel rev">
+          <div class="panel-cap"><h3>SOC / SecOps</h3></div>
+          <div class="panel-body">
+            <div class="segmeter">
+              <span class="segbar well"><span class="segfill" style="--w:77%"></span></span>
+              <span class="seg-count">10 MODULES</span>
+            </div>
+            <ul class="chips">
+              <li class="chip">alert triage</li>
+              <li class="chip">security monitoring</li>
+              <li class="chip">incident documentation</li>
+              <li class="chip">log analysis</li>
+              <li class="chip">evidence review</li>
+              <li class="chip">authentication events</li>
+              <li class="chip">DNS investigation</li>
+              <li class="chip">vulnerability awareness</li>
+              <li class="chip">remediation planning</li>
+              <li class="chip">escalation notes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel skill-panel rev">
+          <div class="panel-cap"><h3>Cybersecurity</h3></div>
+          <div class="panel-body">
+            <div class="segmeter">
+              <span class="segbar well"><span class="segfill" style="--w:62%"></span></span>
+              <span class="seg-count">8 MODULES</span>
+            </div>
+            <ul class="chips">
+              <li class="chip">MITRE ATT&amp;CK</li>
+              <li class="chip">defensive security</li>
+              <li class="chip">prompt-injection resistance</li>
+              <li class="chip">access control</li>
+              <li class="chip">least privilege</li>
+              <li class="chip">security documentation</li>
+              <li class="chip">confidence scoring</li>
+              <li class="chip">"No Clear Mapping" handling</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel skill-panel rev">
+          <div class="panel-cap"><h3>AI / Automation</h3></div>
+          <div class="panel-body">
+            <div class="segmeter">
+              <span class="segbar well"><span class="segfill" style="--w:54%"></span></span>
+              <span class="seg-count">7 MODULES</span>
+            </div>
+            <ul class="chips">
+              <li class="chip">AI coding-agent evaluation</li>
+              <li class="chip">reproducible benchmark design</li>
+              <li class="chip">rubric-based scoring</li>
+              <li class="chip">prompt architecture</li>
+              <li class="chip">safety rules</li>
+              <li class="chip">acceptance criteria</li>
+              <li class="chip">automated reporting</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel skill-panel rev">
+          <div class="panel-cap"><h3>Tooling</h3></div>
+          <div class="panel-body">
+            <div class="segmeter">
+              <span class="segbar well"><span class="segfill" style="--w:100%"></span></span>
+              <span class="seg-count">13 MODULES</span>
+            </div>
+            <ul class="chips">
+              <li class="chip">Python</li>
+              <li class="chip">Gradio</li>
+              <li class="chip">JavaScript</li>
+              <li class="chip">Node.js</li>
+              <li class="chip">PowerShell</li>
+              <li class="chip">Bash</li>
+              <li class="chip">Git/GitHub</li>
+              <li class="chip">Markdown</li>
+              <li class="chip">JSON</li>
+              <li class="chip">YAML</li>
+              <li class="chip">HTML/CSS</li>
+              <li class="chip">pytest</li>
+              <li class="chip">npm</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="sec" aria-labelledby="projects-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="sec-plate">
+          <span class="sec-code">PANEL 03</span>
+          <h2 class="sec-title" id="projects-title">Field Units</h2>
+          <span class="sec-sub">PUBLIC REPOS &middot; VERIFIABLE OUTPUT</span>
+        </div>
+      </header>
+
+      <div class="notice rev" role="note">
+        <span class="notice-icon" aria-hidden="true"></span>
+        <p>Notice — all security work on this panel is defensive: detection, triage &amp; mitigation only.</p>
+      </div>
+
+      <article class="unit panel rev">
+        <div class="unit-head">
+          <span class="unit-code">UNIT-01</span>
+          <h3>AgentForge</h3>
+          <span class="unit-status">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="label">Operational</span>
+          </span>
+        </div>
+        <div class="unit-body">
+          <p>
+            "One spec, many agents." A configuration framework for agentic AI coding
+            assistants: write your project rules once, and AgentForge compiles them for six
+            adapter targets — Claude Code, Codex, Gemini CLI, Cursor, Aider, and a generic
+            fallback. Shipped to npm and proven with tests, not promises.
+          </p>
+          <dl class="spec well">
+            <div><dt>Type</dt><dd>Config framework for AI coding assistants</dd></div>
+            <div><dt>Targets</dt><dd>6 adapters — Claude Code &middot; Codex &middot; Gemini CLI &middot; Cursor &middot; Aider &middot; generic</dd></div>
+            <div><dt>Distribution</dt><dd>npm &middot; @kmitops/agentforge@0.3.1</dd></div>
+            <div><dt>Proof</dt><dd>adapter round-trip tests &middot; install smoke tests &middot; doctor CLI &middot; readiness runbook</dd></div>
+            <div><dt>License</dt><dd>MIT</dd></div>
+          </dl>
+          <div class="unit-actions">
+            <a class="btn btn-primary btn-small" href="https://github.com/KM-it-ops/AgentForge" rel="noopener">Open Repo</a>
+            <a class="btn btn-steel btn-small" href="https://km-it-ops.github.io/AgentForge/docs/demo/" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="unit panel rev">
+        <div class="unit-head">
+          <span class="unit-code">UNIT-02</span>
+          <h3>AgentForge ATT&amp;CKLens Benchmark</h3>
+          <span class="unit-status">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="label">Operational</span>
+          </span>
+        </div>
+        <div class="unit-body">
+          <p>
+            A reproducible <strong>defensive</strong> cybersecurity benchmark asking one
+            question: can AI coding agents build secure, uncertainty-aware, MITRE
+            ATT&amp;CK-aligned defensive tooling? Seven agent artifacts, one branch each,
+            scored against a 100-point rubric. Grading covers ATT&amp;CK mapping discipline,
+            prompt-injection resistance, evidence citation, uncertainty handling
+            ("No Clear Mapping"), detection ideas, remediation guidance, and analyst
+            follow-up questions.
+          </p>
+          <ul class="bm-bank well" aria-label="Benchmark scores out of 100">
+            <li class="bm-row"><span class="bm-name">Cursor</span><span class="bm-track"><span class="bm-fill grade-a" style="--w:100%"></span></span><span class="bm-val">100</span></li>
+            <li class="bm-row"><span class="bm-name">Claude Code</span><span class="bm-track"><span class="bm-fill grade-a" style="--w:98%"></span></span><span class="bm-val">98</span></li>
+            <li class="bm-row"><span class="bm-name">Hermes Nemotron</span><span class="bm-track"><span class="bm-fill grade-a" style="--w:98%"></span></span><span class="bm-val">98</span></li>
+            <li class="bm-row"><span class="bm-name">Codex</span><span class="bm-track"><span class="bm-fill grade-a" style="--w:96%"></span></span><span class="bm-val">96</span></li>
+            <li class="bm-row"><span class="bm-name">Lovable Repaired</span><span class="bm-track"><span class="bm-fill grade-b" style="--w:76%"></span></span><span class="bm-val">76</span></li>
+            <li class="bm-row"><span class="bm-name">Mistral Vibe</span><span class="bm-track"><span class="bm-fill grade-b" style="--w:75%"></span></span><span class="bm-val">75</span></li>
+            <li class="bm-row"><span class="bm-name">Lovable Original</span><span class="bm-track"><span class="bm-fill grade-c" style="--w:40%"></span></span><span class="bm-val">40</span></li>
+          </ul>
+          <p class="bm-note">RUBRIC: 100 PTS &middot; ONE BRANCH PER AGENT &middot; HARNESS RE-RUNS VIA benchmark-all.ps1 &middot; MIT</p>
+          <div class="unit-actions">
+            <a class="btn btn-primary btn-small" href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark" rel="noopener">Open Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="units-duo">
+        <article class="unit panel rev">
+          <div class="unit-head">
+            <span class="unit-code">UNIT-03</span>
+            <h3>Vuln Management Mini&nbsp;Program</h3>
+          </div>
+          <div class="unit-body">
+            <p>
+              A vulnerability management dashboard: full CRUD workflow, KPI cards, search,
+              filtering, and severity states — the paperwork half of remediation, done
+              properly.
+            </p>
+            <ul class="chips">
+              <li class="chip">Python</li>
+              <li class="chip">Flask</li>
+              <li class="chip">SQLite</li>
+              <li class="chip">KPI cards</li>
+              <li class="chip">severity states</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="unit panel rev">
+          <div class="unit-head">
+            <span class="unit-code">UNIT-04</span>
+            <h3>Security Log Anomaly&nbsp;Detection</h3>
+          </div>
+          <div class="unit-body">
+            <p>
+              Rule-based plus statistical detection for authentication and network anomaly
+              triage — flagging what deviates, and saying so with numbers.
+            </p>
+            <ul class="chips">
+              <li class="chip">Python</li>
+              <li class="chip">pandas</li>
+              <li class="chip">NumPy</li>
+              <li class="chip">auth events</li>
+              <li class="chip">network triage</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <p class="mitre-ack">MITRE ATT&amp;CK&reg; is a registered trademark of The MITRE Corporation.</p>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <!-- ================= RESUME ================= -->
+  <section id="resume" class="sec" aria-labelledby="resume-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="sec-plate">
+          <span class="sec-code">PANEL 04</span>
+          <h2 class="sec-title" id="resume-title">Service Record</h2>
+          <span class="sec-sub">DOCUMENTATION &middot; ISSUED 2026</span>
+        </div>
+      </header>
+
+      <div class="resume-grid">
+        <article class="panel doc-panel rev">
+          <div class="panel-cap"><h3>Document Dispenser</h3></div>
+          <div class="panel-body">
+            <div class="doc-slot well">
+              <span class="label">Pull for full specification</span>
+              <a class="btn btn-primary btn-download" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>
+                Download Resume — PDF
+              </a>
+              <p class="doc-meta">Michael_Kurdi_Resume_2026.pdf &middot; single sheet &middot; no fluff</p>
+            </div>
+            <dl class="dataplate well">
+              <div><dt>Operator</dt><dd>Mahmoud "Michael" Al Kurdi</dd></div>
+              <div><dt>Cert</dt><dd>Security+ ce SY0-701 (01/2025 → 01/2028)</dd></div>
+              <div><dt>Degree</dt><dd>B.S. IT — Cybersecurity, SNHU, 3.96 GPA</dd></div>
+              <div><dt>Honors</dt><dd>Summa Cum Laude &middot; Alpha Sigma Lambda</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="panel rev">
+          <div class="panel-cap"><h3>Maintenance Log — Assignments</h3></div>
+          <div class="panel-body">
+            <div class="table-scroll">
+              <table class="log-table">
+                <caption class="visually-hidden" style="position:absolute;left:-9999px;">Employment history</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Period</th>
+                    <th scope="col">Assignment</th>
+                    <th scope="col">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="lt-date">2025 — NOW</td>
+                    <td>
+                      <span class="lt-role">Delivery Associate</span><br>
+                      <span class="lt-org">Fossa Logistics LLC (Amazon DSP) &middot; Charlotte, NC</span>
+                    </td>
+                    <td class="lt-note">Route logistics while completing the cybersecurity transition.</td>
+                  </tr>
+                  <tr>
+                    <td class="lt-date">2024 — 2025</td>
+                    <td>
+                      <span class="lt-role">Courier &amp; Logistics Specialist</span><br>
+                      <span class="lt-org">USPS &middot; Kannapolis, NC</span>
+                    </td>
+                    <td class="lt-note">Federal service standards, chain-of-custody handling.</td>
+                  </tr>
+                  <tr>
+                    <td class="lt-date">2015 — 2023</td>
+                    <td>
+                      <span class="lt-role">Aviation Security Ops Crew Chief</span><br>
+                      <span class="lt-org">American Airlines &middot; Charlotte, NC</span>
+                    </td>
+                    <td class="lt-note">8 years federally regulated ops — security clearance, CBP badge endorsement, FAA/OSHA/IATA/CBP requirements, recurrent IR &amp; safety/security training, identity validation and access control.</td>
+                  </tr>
+                  <tr>
+                    <td class="lt-date">DEC 2025</td>
+                    <td>
+                      <span class="lt-role">B.S. Information Technologies</span><br>
+                      <span class="lt-org">SNHU &middot; Cybersecurity concentration</span>
+                    </td>
+                    <td class="lt-note">Conferred Jan 1 2026 &middot; Summa Cum Laude, 3.96 GPA.</td>
+                  </tr>
+                  <tr>
+                    <td class="lt-date">JAN 2025</td>
+                    <td>
+                      <span class="lt-role">CompTIA Security+ ce</span><br>
+                      <span class="lt-org">SY0-701</span>
+                    </td>
+                    <td class="lt-note">Valid through Jan 7 2028.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="sec" aria-labelledby="contact-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="sec-plate">
+          <span class="sec-code">PANEL 05</span>
+          <h2 class="sec-title" id="contact-title">Communications</h2>
+          <span class="sec-sub">DIRECT LINES — NO GATEKEEPING</span>
+        </div>
+      </header>
+
+      <address style="font-style:normal;">
+        <div class="contact-grid">
+          <a class="contact-card panel rev" href="mailto:kurdi.michael.it@gmail.com">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="cc-text">
+              <span class="label cc-label">Email</span>
+              <span class="cc-value">kurdi.michael.it@gmail.com</span>
+            </span>
+            <span class="cc-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="contact-card panel rev" href="tel:+17044568322">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="cc-text">
+              <span class="label cc-label">Phone</span>
+              <span class="cc-value">(704) 456-8322</span>
+            </span>
+            <span class="cc-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="contact-card panel rev" href="https://github.com/KM-it-ops" rel="noopener">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="cc-text">
+              <span class="label cc-label">GitHub</span>
+              <span class="cc-value">github.com/KM-it-ops</span>
+            </span>
+            <span class="cc-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="contact-card panel rev" href="https://linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="cc-text">
+              <span class="label cc-label">LinkedIn</span>
+              <span class="cc-value">in/mahmoud-michael-al-kurdi</span>
+            </span>
+            <span class="cc-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="contact-card panel rev" href="https://km-it-ops.github.io" rel="noopener">
+            <span class="lamp lamp-green lit"><i></i></span>
+            <span class="cc-text">
+              <span class="label cc-label">Site</span>
+              <span class="cc-value">km-it-ops.github.io</span>
+            </span>
+            <span class="cc-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="contact-card panel rev" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>
+            <span class="lamp lamp-amber lit"><i></i></span>
+            <span class="cc-text">
+              <span class="label cc-label">Resume</span>
+              <span class="cc-value">Michael_Kurdi_Resume_2026.pdf</span>
+            </span>
+            <span class="cc-arrow" aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </address>
+
+      <div class="contact-note well rev">
+        <span class="label">Status</span>
+        <span class="mono">CHARLOTTE, NC &middot; OPEN TO REMOTE &middot; AVAILABLE FOR FULL-TIME SOC / SECOPS / IR / DETECTION / SECURITY-AUTOMATION ROLES</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="hazard" aria-hidden="true" style="margin-bottom:30px;"></div>
+  <div class="wrap footer-inner">
+    <p class="ethos">Fabricated claims: zero. Every claim maps to a public repo, credential, or document.</p>
+    <p>&copy; 2026 Mahmoud "Michael" Al Kurdi &middot; Unit KM-01 &middot; single-file build &middot; no trackers, no frameworks.</p>
+    <p>MITRE ATT&amp;CK&reg; is a registered trademark of The MITRE Corporation.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var doc = document.documentElement;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---- panel clock ---- */
+  var clock = document.getElementById("clock");
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var d = new Date();
+    clock.textContent = pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+  }
+  if (clock) { tick(); window.setInterval(tick, 1000); }
+
+  /* ---- power-up sequence: lamps flick on, needles sweep ---- */
+  function powerUp() { doc.classList.add("powered"); }
+  if (reduce.matches) {
+    powerUp();
+  } else {
+    window.setTimeout(powerUp, 350);
+  }
+
+  /* ---- lamp test: replay the energize sequence ---- */
+  var lampBtn = document.getElementById("lamp-test");
+  if (lampBtn) {
+    lampBtn.addEventListener("click", function () {
+      doc.classList.remove("powered");
+      void doc.offsetWidth; /* force reflow so the sequence restarts */
+      window.setTimeout(powerUp, reduce.matches ? 0 : 150);
+    });
+  }
+
+  /* ---- reveal + meter energize on scroll ---- */
+  var revs = Array.prototype.slice.call(document.querySelectorAll(".rev"));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+
+  if ("IntersectionObserver" in window) {
+    var revealer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("lit");
+          revealer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+    revs.forEach(function (el) { revealer.observe(el); });
+
+    /* nav lamp tracking */
+    var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
+    var tracker = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (l) { l.removeAttribute("aria-current"); });
+          var link = document.querySelector('.nav a[href="#' + entry.target.id + '"]');
+          if (link) { link.setAttribute("aria-current", "true"); }
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+    sections.forEach(function (s) { tracker.observe(s); });
+  } else {
+    revs.forEach(function (el) { el.classList.add("lit"); });
+  }
+})();
+</script>
+</body>
+</html>

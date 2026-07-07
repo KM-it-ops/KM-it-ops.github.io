@@ -5,13 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Mahmoud (Michael) Al Kurdi — Security Operations Analyst. 8 years of federally regulated security operations, CompTIA Security+ ce, B.S. IT (Cybersecurity) Summa Cum Laude. Insert coin to continue.">
 <meta name="theme-color" content="#05071c">
-<link rel="canonical" href="https://km-it-ops.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AL KURDI — INSERT COIN · Security Operations Arcade">
-<meta property="og:description" content="Mahmoud (Michael) Al Kurdi — Security Operations Analyst. 8 years of federally regulated security operations, CompTIA Security+ ce, B.S. IT (Cybersecurity) Summa Cum Laude. Insert coin to continue.">
-<meta property="og:url" content="https://km-it-ops.github.io/">
-<meta property="og:image" content="https://km-it-ops.github.io/assets/og-image.svg">
-<meta name="twitter:card" content="summary_large_image">
 <title>AL KURDI — INSERT COIN · Security Operations Arcade</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect x='2' y='0' width='4' height='1' fill='%238a5a00'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%238a5a00'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%238a5a00'/%3E%3Crect x='2' y='1' width='4' height='1' fill='%23ffd23f'/%3E%3Crect x='0' y='2' width='1' height='4' fill='%238a5a00'/%3E%3Crect x='7' y='2' width='1' height='4' fill='%238a5a00'/%3E%3Crect x='1' y='2' width='2' height='4' fill='%23ffd23f'/%3E%3Crect x='3' y='2' width='2' height='4' fill='%23e0980f'/%3E%3Crect x='5' y='2' width='2' height='4' fill='%23ffd23f'/%3E%3Crect x='1' y='6' width='1' height='1' fill='%238a5a00'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%238a5a00'/%3E%3Crect x='2' y='6' width='4' height='1' fill='%23ffd23f'/%3E%3Crect x='2' y='7' width='4' height='1' fill='%238a5a00'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,8 +206,6 @@ section{ scroll-margin-top:104px; }
   box-shadow:inset -5px -5px 0 0 rgba(0,0,0,.25), inset 5px 5px 0 0 rgba(255,255,255,.35), 9px 9px 0 0 #000; }
 .btn:active{ transform:translate(4px,4px);
   box-shadow:inset -5px -5px 0 0 rgba(0,0,0,.25), inset 5px 5px 0 0 rgba(255,255,255,.35), 2px 2px 0 0 #000; }
-.btn:disabled{ opacity:.45; cursor:default; transform:none !important;
-  box-shadow:inset -5px -5px 0 0 rgba(0,0,0,.25), inset 5px 5px 0 0 rgba(255,255,255,.35), 7px 7px 0 0 #000 !important; }
 .btn.pink{ background:var(--pink); color:var(--white); }
 .btn.cyan{ background:var(--cyan); color:#052a33; }
 .btn.ghost{
@@ -515,63 +506,7 @@ footer .gover{
 footer p{ margin-top:14px; font-size:13px; color:var(--dim); max-width:78ch; margin-inline:auto; }
 footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spacing:1px; color:var(--body); }
 
-/* ---------- BONUS ROUND / TRIAGE RUSH ---------- */
-.visually-hidden{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-}
-.tr-hud{
-  display:flex; flex-wrap:wrap; gap:14px 26px; align-items:center;
-  font-family:var(--sk); font-weight:700; font-size:15px; letter-spacing:1px;
-  color:var(--body); padding-bottom:20px; border-bottom:3px solid var(--navy2); margin-bottom:24px;
-}
-.tr-stat b{ color:var(--orange); margin-right:6px; font-family:var(--px); font-size:10px; }
-.tr-lives{ margin-left:auto; font-size:20px; letter-spacing:4px; color:var(--red); }
-.tr-life.lost{ opacity:.22; filter:grayscale(1); }
-
-.tr-screen{ display:none; }
-#triage-game[data-state="start"] .tr-screen[data-screen="start"]{ display:block; }
-#triage-game[data-state="play"] .tr-screen[data-screen="play"]{ display:block; }
-#triage-game[data-state="over"] .tr-screen[data-screen="over"]{ display:block; }
-.tr-screen p{ max-width:66ch; }
-.tr-screen .press-start{ margin-top:22px; }
-
-.tr-timerbar-track{
-  height:16px; background:var(--navy2); border:3px solid var(--line); margin-bottom:22px;
-}
-.tr-timerbar{ height:100%; width:100%; background:var(--lime); }
-
-.tr-alert-card{
-  background:var(--ink); border:3px dashed var(--line); padding:22px 20px; margin-bottom:16px;
-}
-.tr-alert-label{
-  font-family:var(--px); font-size:10px; letter-spacing:2px; color:var(--pink); margin-bottom:12px;
-}
-.tr-alert-text{ font-family:var(--mono); font-size:16px; line-height:1.6; color:var(--white); max-width:none; }
-
-.tr-feedback{
-  min-height:1.6em; font-family:var(--px); font-size:12px; letter-spacing:1px; margin-bottom:14px;
-}
-.tr-feedback.ok{ color:var(--lime); }
-.tr-feedback.bad{ color:var(--red); }
-
-.tr-choices{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-.btn.fp, .btn.tp{
-  flex-direction:column; text-align:center; gap:6px; justify-content:center; width:100%;
-  font-size:12px;
-}
-.btn.fp span, .btn.tp span{ font-family:var(--sk); font-size:12px; letter-spacing:1px; }
-.btn.fp{ background:var(--cyan); color:#052a33; }
-.btn.tp{ background:var(--red); color:var(--white); }
-.tr-hint{ margin-top:16px; font-family:var(--sk); font-size:13px; letter-spacing:1px; color:var(--dim); text-align:center; }
-
-.tr-over-title{
-  font-family:var(--px); font-size:22px; color:var(--pink); text-shadow:0 4px 0 var(--pink-d); margin-bottom:18px;
-}
-.tr-final{ font-family:var(--sk); font-weight:700; font-size:16px; letter-spacing:1px; color:var(--white); margin-bottom:8px; }
-.tr-final span{ color:var(--yellow); font-family:var(--px); font-size:14px; margin-left:8px; }
-.tr-newbest{ margin-top:10px; font-family:var(--px); font-size:12px; color:var(--yellow); animation:blink 1s steps(2, jump-none) infinite; }
-
+/* ---------- toast ---------- */
 .toast{
   position:fixed; left:50%; bottom:26px; transform:translate(-50%, 140%);
   z-index:60; font-family:var(--px); font-size:11px; line-height:1.6;
@@ -611,9 +546,6 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
   table.hst{ font-size:9px; }
   .hst th{ font-size:8px; }
   .hst td{ padding:10px 8px; }
-  .tr-choices{ grid-template-columns:1fr; }
-  .tr-lives{ margin-left:0; width:100%; }
-  .tr-hud{ gap:10px 16px; }
 }
 
 /* ============================================================
@@ -685,7 +617,6 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
       <a href="#start" data-nav="start">START</a>
       <a href="#player" data-nav="player">PLAYER</a>
       <a href="#games" data-nav="games">GAMES</a>
-      <a href="#bonus" data-nav="bonus">BONUS</a>
       <a href="#stages" data-nav="stages">STAGES</a>
       <a href="#continue" data-nav="continue">CONTINUE</a>
     </nav>
@@ -927,68 +858,11 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
 
   <hr class="strip" aria-hidden="true">
 
-  <!-- ================= BONUS ROUND / TRIAGE RUSH ================= -->
-  <section id="bonus" aria-labelledby="bonus-h">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <p class="kicker">SCENE 04 &middot; BONUS ROUND</p>
-        <h2 id="bonus-h">TRIAGE RUSH</h2>
-        <p class="lede">A playable cabinet, not just a metaphor. Classify each alert before the clock runs out &mdash; TRUE POSITIVE (escalate) or FALSE POSITIVE (dismiss). <a href="#stages">Skip the game &rarr;</a></p>
-      </div>
-
-      <div class="win c-orange rv" id="triage-game" data-state="start" tabindex="-1">
-        <div class="win-bar"><span>TRIAGE RUSH &middot; BONUS CABINET</span><span class="dots">&#9642;&#9642;&#9642;</span></div>
-        <div class="win-body">
-
-          <div class="tr-hud">
-            <span class="tr-stat"><b>SCORE</b> <span id="tr-score">000000</span></span>
-            <span class="tr-stat"><b>BEST</b> <span id="tr-best">000000</span></span>
-            <span class="tr-stat"><b>STREAK</b> <span id="tr-streak">x1</span></span>
-            <span class="tr-lives" aria-hidden="true">
-              <span class="tr-life">&hearts;</span><span class="tr-life">&hearts;</span><span class="tr-life">&hearts;</span>
-            </span>
-          </div>
-
-          <div class="tr-screen" data-screen="start">
-            <p>Twenty real-shape SOC scenarios. Three lives. The clock speeds up as your score climbs &mdash; the rubric is the same one used on the ATT&amp;CKLens benchmark: evidence over instinct. Ready?</p>
-            <button class="btn press-start" id="tr-start-btn" type="button">&#9654; PRESS START</button>
-          </div>
-
-          <div class="tr-screen" data-screen="play">
-            <div class="tr-timerbar-track" aria-hidden="true"><div class="tr-timerbar" id="tr-timerbar"></div></div>
-            <div class="tr-alert-card" id="tr-alert-card" tabindex="-1">
-              <p class="tr-alert-label">INCOMING ALERT</p>
-              <p class="tr-alert-text" id="tr-alert-text">&mdash;</p>
-            </div>
-            <p class="tr-feedback" id="tr-feedback" aria-hidden="true">&nbsp;</p>
-            <div class="tr-choices">
-              <button class="btn fp" id="tr-dis-btn" type="button">&#9664; DISMISS<br><span>FALSE POSITIVE</span></button>
-              <button class="btn tp" id="tr-esc-btn" type="button">ESCALATE &#9654;<br><span>TRUE POSITIVE</span></button>
-            </div>
-            <p class="tr-hint">KEYBOARD: &larr; DISMISS &nbsp;&middot;&nbsp; ESCALATE &rarr;</p>
-            <p class="visually-hidden" id="tr-announce" aria-live="polite"></p>
-          </div>
-
-          <div class="tr-screen" data-screen="over">
-            <p class="tr-over-title">GAME OVER</p>
-            <p class="tr-final">FINAL SCORE <span id="tr-final-score">000000</span></p>
-            <p class="tr-final">BEST <span id="tr-final-best">000000</span></p>
-            <p class="tr-newbest" id="tr-newbest" hidden>&#9733; NEW HIGH SCORE &#9733;</p>
-            <button class="btn" id="tr-again-btn" type="button">&#8635; PLAY AGAIN</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="strip" aria-hidden="true">
-
   <!-- ================= RESUME / STAGE SELECT ================= -->
   <section id="stages" aria-labelledby="stages-h">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="kicker">SCENE 05 · STAGE SELECT</p>
+        <p class="kicker">SCENE 04 · STAGE SELECT</p>
         <h2 id="stages-h">CAREER PLAYTHROUGH</h2>
         <p class="lede">Every stage cleared, in order. The full run is available as a PDF speedrun document below.</p>
       </div>
@@ -1052,7 +926,7 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
       </div>
 
       <div class="dl-row rv">
-        <a class="btn" href="assets/Michael_Kurdi_Resume_2026.pdf">
+        <a class="btn" href="../../assets/Michael_Kurdi_Resume_2026.pdf">
           <svg class="ico" width="20" height="20" aria-hidden="true"><use href="#px-coin"/></svg>
           DOWNLOAD RESUME.PDF
         </a>
@@ -1111,7 +985,7 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
           <span class="val">km-it-ops.github.io</span>
           <span class="sub">HOME CABINET</span>
         </a>
-        <a class="clink rv" style="--d:.3s" href="assets/Michael_Kurdi_Resume_2026.pdf">
+        <a class="clink rv" style="--d:.3s" href="../../assets/Michael_Kurdi_Resume_2026.pdf">
           <span class="lab">▶ RESUME.PDF</span>
           <span class="val">Michael_Kurdi_Resume_2026.pdf</span>
           <span class="sub">THE FULL PLAYTHROUGH, ONE PAGE LOAD</span>
@@ -1131,7 +1005,6 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
        Built as one HTML file: no frameworks, no build step, no tracking — the only external call is the font ROM.</p>
     <p class="cr">© 2026 MAHMOUD (“MICHAEL”) AL KURDI · PLAYER 1 · CHARLOTTE, NC<br>
        PSST — TRY THE KONAMI CODE.</p>
-    <p style="margin-top:18px"><a href="concepts/index.html">OTHER CABINETS IN THE ARCADE (10 MORE CONCEPTS)</a></p>
   </div>
 </footer>
 
@@ -1180,7 +1053,7 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
 
   /* ---------- nav: highlight current stage ---------- */
   var navLinks = document.querySelectorAll(".hud-nav a");
-  var sections = ["start","player","games","bonus","stages","continue"]
+  var sections = ["start","player","games","stages","continue"]
     .map(function(id){ return document.getElementById(id); });
   if ("IntersectionObserver" in window){
     var no = new IntersectionObserver(function(entries){
@@ -1288,183 +1161,6 @@ footer .cr{ margin-top:22px; font-family:var(--sk); font-size:14px; letter-spaci
       ki = (k === seq[0]) ? 1 : 0;
     }
   });
-
-  /* ---------- BONUS ROUND: TRIAGE RUSH ---------- */
-  (function(){
-    var root = document.getElementById("triage-game");
-    if (!root) return;
-
-    var ALERTS = [
-      { t: "5 failed logins from a new country, then 1 success on the same admin account.", v: true },
-      { t: "Badge scan at 8:58 AM, VPN login at 9:01 AM \u2014 same employee, same laptop.", v: false },
-      { t: "Workstation beacons to a domain registered 6 hours ago, every 60 seconds.", v: true },
-      { t: "User-initiated password reset from their enrolled, MFA-verified device.", v: false },
-      { t: "Dormant service account suddenly issues 10,000 API calls in one minute.", v: true },
-      { t: "Backup job authenticates with its service account, exactly on schedule.", v: false },
-      { t: "A Word document spawns PowerShell, which downloads an encoded payload.", v: true },
-      { t: "A signed patch-management script runs PowerShell under the IT admin's account.", v: false },
-      { t: "Outbound connection matches a C2 indicator from this morning's threat feed.", v: true },
-      { t: "Marketing laptop visits a SaaS tool that IT approved last week.", v: false },
-      { t: "Admin account logs in from a Tor exit node at 3:14 AM.", v: true },
-      { t: "Developer pushes code from a home IP matching their known VPN range.", v: false },
-      { t: "1,200 files renamed with a new extension across a shared drive in 90 seconds.", v: true },
-      { t: "Antivirus definitions update by reaching out to the vendor's CDN, as scheduled.", v: false },
-      { t: "New admin account created, then immediately used to clear the security log.", v: true },
-      { t: "Password-reset ticket closed after a callback to the employee's verified number.", v: false },
-      { t: "One failed MFA push, followed by a normal approval two minutes later.", v: false },
-      { t: "Same user receives 40 MFA push prompts in ten minutes, then approves one.", v: true },
-      { t: "Networked printer beacons to an external IP at 2 AM on a Sunday.", v: true },
-      { t: "Laptop checks in to the MDM server on its normal daily schedule.", v: false }
-    ];
-
-    var el = {
-      startBtn: document.getElementById("tr-start-btn"),
-      againBtn: document.getElementById("tr-again-btn"),
-      escBtn: document.getElementById("tr-esc-btn"),
-      disBtn: document.getElementById("tr-dis-btn"),
-      alertText: document.getElementById("tr-alert-text"),
-      alertCard: document.getElementById("tr-alert-card"),
-      score: document.getElementById("tr-score"),
-      streak: document.getElementById("tr-streak"),
-      best: document.getElementById("tr-best"),
-      finalScore: document.getElementById("tr-final-score"),
-      finalBest: document.getElementById("tr-final-best"),
-      newBest: document.getElementById("tr-newbest"),
-      lives: [].slice.call(document.querySelectorAll(".tr-life")),
-      bar: document.getElementById("tr-timerbar"),
-      announce: document.getElementById("tr-announce"),
-      feedback: document.getElementById("tr-feedback")
-    };
-
-    var state = "start", deck = [], idx = 0, current = null;
-    var lives = 3, score = 0, streak = 0, best = 0;
-    var timeLimit = 4600, tickId = null, locked = false;
-
-    try { best = parseInt(localStorage.getItem("triageRushBest") || "0", 10) || 0; } catch (e) {}
-    el.best.textContent = pad(best);
-
-    function pad(n){ return String(n).padStart(6, "0"); }
-
-    function shuffle(arr){
-      var a = arr.slice();
-      for (var i = a.length - 1; i > 0; i--){
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
-      }
-      return a;
-    }
-
-    function setScreen(s){
-      state = s;
-      root.setAttribute("data-state", s);
-      if (s === "start" && el.startBtn) el.startBtn.focus();
-      if (s === "play" && el.alertCard) el.alertCard.focus();
-      if (s === "over" && el.againBtn) el.againBtn.focus();
-    }
-
-    function updateHud(){
-      el.score.textContent = pad(score);
-      el.streak.textContent = "x" + (1 + Math.min(Math.floor(streak / 3), 4));
-      el.lives.forEach(function(li, i){ li.classList.toggle("lost", i >= lives); });
-    }
-
-    function startGame(){
-      lives = 3; score = 0; streak = 0;
-      deck = shuffle(ALERTS); idx = 0;
-      updateHud();
-      setScreen("play");
-      nextRound();
-    }
-
-    function nextRound(){
-      if (idx >= deck.length){ deck = shuffle(ALERTS); idx = 0; }
-      current = deck[idx++];
-      el.alertText.textContent = current.t;
-      el.feedback.textContent = "\u00a0";
-      el.feedback.className = "tr-feedback";
-      timeLimit = Math.max(2200, 4600 - score * 4);
-      locked = false;
-      el.escBtn.disabled = false;
-      el.disBtn.disabled = false;
-      runTimer();
-    }
-
-    function runTimer(){
-      var reducedNow = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var start = Date.now();
-      clearInterval(tickId);
-      tickId = setInterval(function(){
-        var elapsed = Date.now() - start;
-        var pct = Math.max(0, 1 - elapsed / timeLimit);
-        el.bar.style.width = (pct * 100) + "%";
-        if (elapsed >= timeLimit){
-          clearInterval(tickId);
-          missRound();
-        }
-      }, reducedNow ? 200 : 60);
-    }
-
-    function answer(userSaysEscalate){
-      if (state !== "play" || locked) return;
-      locked = true;
-      el.escBtn.disabled = true;
-      el.disBtn.disabled = true;
-      clearInterval(tickId);
-      var correct = (userSaysEscalate === current.v);
-      if (correct){
-        streak++;
-        var mult = 1 + Math.min(Math.floor(streak / 3), 4);
-        score += 100 * mult;
-        el.feedback.textContent = "CORRECT +" + (100 * mult);
-        el.feedback.className = "tr-feedback ok";
-      } else {
-        streak = 0; lives--;
-        el.feedback.textContent = "WRONG \u2014 WAS " + (current.v ? "TRUE POSITIVE" : "FALSE POSITIVE");
-        el.feedback.className = "tr-feedback bad";
-      }
-      updateHud();
-      el.announce.textContent = (correct ? "Correct. " : "Incorrect. ") + "Score " + score + ". Lives remaining " + lives + ".";
-      if (lives <= 0){ endGame(); return; }
-      setTimeout(nextRound, 550);
-    }
-
-    function missRound(){
-      if (locked) return;
-      locked = true;
-      el.escBtn.disabled = true;
-      el.disBtn.disabled = true;
-      streak = 0; lives--;
-      el.feedback.textContent = "TOO SLOW";
-      el.feedback.className = "tr-feedback bad";
-      updateHud();
-      el.announce.textContent = "Time expired. Lives remaining " + lives + ".";
-      if (lives <= 0){ endGame(); return; }
-      setTimeout(nextRound, 550);
-    }
-
-    function endGame(){
-      clearInterval(tickId);
-      var isNew = score > best;
-      if (isNew){ best = score; try { localStorage.setItem("triageRushBest", String(best)); } catch (e) {} }
-      el.finalScore.textContent = pad(score);
-      el.finalBest.textContent = pad(best);
-      el.newBest.hidden = !isNew;
-      el.best.textContent = pad(best);
-      setScreen("over");
-    }
-
-    el.startBtn.addEventListener("click", startGame);
-    el.againBtn.addEventListener("click", startGame);
-    el.escBtn.addEventListener("click", function(){ answer(true); });
-    el.disBtn.addEventListener("click", function(){ answer(false); });
-    document.addEventListener("keydown", function(e){
-      if (state !== "play") return;
-      if (e.key === "ArrowRight"){ e.preventDefault(); answer(true); }
-      else if (e.key === "ArrowLeft"){ e.preventDefault(); answer(false); }
-    });
-
-    setScreen("start");
-  })();
 })();
 </script>
 </body>

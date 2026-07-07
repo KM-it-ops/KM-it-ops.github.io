@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kurdi File — Mahmoud “Michael” Al Kurdi · Security Operations Analyst</title>
+<meta name="description" content="Case file of Mahmoud “Michael” Al Kurdi — Security+ certified security operations analyst in Charlotte, NC. Eight years of federally regulated ops. Every claim maps to a public repo, credential, or document.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d0c0a'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23a61c26' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CASE NOIR — a film-noir case file
+   Palette: near-black ink, bone paper, one deep red.
+   ============================================================ */
+:root{
+  --ink:        #0d0c0a;
+  --ink-2:      #131110;
+  --ink-3:      #191612;
+  --paper:      #ece5d6;
+  --paper-2:    #e3dac8;
+  --paper-ink:  #1a1712;
+  --paper-dim:  #55503f;
+  --bone:       #e9e1d0;
+  --faded:      #a29a8b;
+  --dim:        #6f695c;
+  --red:        #a61c26;
+  --red-hi:     #c9303b;
+  --red-deep:   #6e1118;
+  --line:       rgba(233,225,208,.14);
+  --line-hard:  rgba(233,225,208,.28);
+  --paper-line: rgba(26,23,18,.18);
+  --serif:      "Libre Caslon Text", "Georgia", serif;
+  --display:    "DM Serif Display", "Georgia", serif;
+  --type:       "Special Elite", "Courier New", monospace;
+  --shadow-long: 18px 18px 0 rgba(0,0,0,.45);
+  --ease-out:   cubic-bezier(.19,1,.22,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+html{
+  scroll-padding-top: 5.25rem;
+  -webkit-text-size-adjust:100%;
+}
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior:smooth; }
+}
+
+body{
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+::selection{ background: var(--red); color: var(--paper); }
+
+/* ---------- focus ---------- */
+a,button,summary{ outline: none; }
+:focus-visible{
+  outline: 2px solid var(--red-hi);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+.on-paper :focus-visible{ outline-color: var(--red); }
+
+.skip-link{
+  position: fixed; top: -4rem; left: 1rem; z-index: 200;
+  background: var(--red); color: var(--paper);
+  font-family: var(--type); font-size:.8rem; letter-spacing:.08em;
+  padding:.65rem 1.1rem; text-decoration:none; text-transform:uppercase;
+  transition: top .2s ease;
+}
+.skip-link:focus{ top: 1rem; }
+
+/* ============================================================
+   FILM GRAIN — the whole picture is shot on stock
+   ============================================================ */
+.grain{
+  position: fixed; inset: -60%;
+  width: 220%; height: 220%;
+  pointer-events: none;
+  z-index: 120;
+  opacity: .11;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+@media (prefers-reduced-motion: no-preference){
+  .grain{ animation: grain 1.4s steps(6) infinite; }
+}
+@keyframes grain{
+  0%   { transform: translate(0,0); }
+  20%  { transform: translate(-3%, 2%); }
+  40%  { transform: translate(2%, -3%); }
+  60%  { transform: translate(-2%, -1%); }
+  80%  { transform: translate(3%, 3%); }
+  100% { transform: translate(-1%, 2%); }
+}
+
+/* subtle vignette — every frame closes in at the corners */
+.vignette{
+  position: fixed; inset: 0; pointer-events: none; z-index: 119;
+  background: radial-gradient(ellipse at 50% 42%, transparent 55%, rgba(0,0,0,.5) 100%);
+}
+
+/* ============================================================
+   OPENING CURTAINS — one orchestrated load
+   ============================================================ */
+.curtain{
+  position: fixed; left:0; width:100%; height: 51vh;
+  background: #060505; z-index: 150; pointer-events: none;
+}
+.curtain--top{ top:0; transform-origin: top center; border-bottom: 1px solid var(--red-deep); }
+.curtain--bottom{ bottom:0; transform-origin: bottom center; border-top: 1px solid var(--red-deep); }
+@media (prefers-reduced-motion: no-preference){
+  .curtain{ animation: curtain 1.25s var(--ease-out) .55s forwards; }
+}
+@media (prefers-reduced-motion: reduce){
+  .curtain{ display:none; }
+}
+@keyframes curtain{
+  to{ transform: scaleY(0); visibility: hidden; }
+}
+
+/* ============================================================
+   MASTHEAD / NAV
+   ============================================================ */
+.masthead{
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: rgba(13,12,10,.88);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.masthead-inner{
+  max-width: 72rem; margin: 0 auto;
+  padding: .85rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.brand{
+  font-family: var(--type);
+  font-size: .82rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--bone); text-decoration: none; white-space: nowrap;
+  display:flex; align-items:center; gap:.6rem;
+}
+.brand .badge{
+  display:inline-block; width:.55rem; height:.55rem; border-radius:50%;
+  background: var(--red); box-shadow: 0 0 0 3px rgba(166,28,38,.25);
+}
+.brand:hover{ color: var(--red-hi); }
+
+.case-nav ul{
+  list-style:none; display:flex; gap:.25rem;
+}
+.case-nav a{
+  font-family: var(--type);
+  font-size:.74rem; letter-spacing:.12em; text-transform:uppercase;
+  color: var(--faded); text-decoration:none;
+  padding:.55rem .8rem; display:block; position:relative;
+  transition: color .2s ease;
+}
+.case-nav a::after{
+  content:""; position:absolute; left:.8rem; right:.8rem; bottom:.28rem;
+  height:2px; background: var(--red);
+  transform: scaleX(0); transform-origin:left;
+  transition: transform .25s var(--ease-out);
+}
+.case-nav a:hover{ color: var(--bone); }
+.case-nav a:hover::after{ transform: scaleX(1); }
+.case-nav a[aria-current="true"]{ color: var(--bone); }
+.case-nav a[aria-current="true"]::after{ transform: scaleX(1); }
+
+@media (max-width: 47.9rem){
+  .masthead-inner{ flex-direction:column; align-items:flex-start; gap:.15rem; padding:.7rem 1rem .35rem; }
+  .case-nav{ width:100%; overflow-x:auto; scrollbar-width:none; }
+  .case-nav::-webkit-scrollbar{ display:none; }
+  .case-nav ul{ gap:0; }
+  .case-nav a{ padding:.5rem .62rem; font-size:.7rem; white-space:nowrap; }
+  html{ scroll-padding-top: 6.6rem; }
+}
+
+/* ============================================================
+   SHARED LAYOUT
+   ============================================================ */
+.wrap{ max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+@media (max-width: 47.9rem){ .wrap{ padding: 0 1.1rem; } }
+
+.section{ padding: 7.5rem 0; position:relative; }
+@media (max-width: 47.9rem){ .section{ padding: 5rem 0; } }
+
+.section + .section{ border-top: 1px solid var(--line); }
+
+.kicker{
+  font-family: var(--type);
+  font-size: .78rem; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--red-hi);
+  margin-bottom: 1.1rem;
+}
+.kicker::before{
+  content:"— "; color: var(--dim);
+}
+h2{
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.04;
+  color: var(--bone);
+  letter-spacing: .005em;
+}
+h2 .period{ color: var(--red-hi); }
+.section-sub{
+  margin-top: 1.25rem; max-width: 46rem;
+  color: var(--faded); font-style: italic;
+}
+.section-head{ margin-bottom: 3.5rem; }
+
+/* ============================================================
+   REVEALS (progressive — only when JS present)
+   ============================================================ */
+.js .reveal{ opacity:0; transform: translateY(26px); }
+.js .reveal.is-in{
+  opacity:1; transform:none;
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/* ============================================================
+   HERO — the title card
+   ============================================================ */
+.hero{
+  min-height: 100svh;
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative;
+  padding: 8.5rem 0 5rem;
+  overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 18% 8%, rgba(233,225,208,.05), transparent 55%),
+    var(--ink);
+}
+
+/* venetian-blind light, thrown across the room */
+.blinds{
+  position:absolute; inset:-12% -30%;
+  pointer-events:none;
+  background: repeating-linear-gradient(
+    104deg,
+    transparent 0px,
+    transparent 54px,
+    rgba(233,225,208,.055) 54px,
+    rgba(233,225,208,.055) 92px
+  );
+  -webkit-mask-image: radial-gradient(80% 75% at 62% 30%, #000 25%, transparent 78%);
+  mask-image: radial-gradient(80% 75% at 62% 30%, #000 25%, transparent 78%);
+}
+@media (prefers-reduced-motion: no-preference){
+  .blinds{ animation: blind-drift 26s ease-in-out infinite alternate; }
+}
+@keyframes blind-drift{
+  from{ transform: translateX(-1.5%) }
+  to  { transform: translateX(1.5%) }
+}
+
+/* a slow cone of light that leans with the cursor */
+.spot{
+  position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(38rem 30rem at var(--mx,68%) var(--my,26%),
+              rgba(233,225,208,.075), transparent 65%);
+  transition: background-position .1s linear;
+}
+
+.hero-inner{ position:relative; z-index:2; }
+
+.file-tab{
+  display:inline-block;
+  font-family: var(--type);
+  font-size:.8rem; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--faded);
+  border: 1px solid var(--line-hard);
+  padding: .5rem .95rem;
+  margin-bottom: 2.2rem;
+  position:relative;
+}
+.file-tab strong{ color: var(--red-hi); font-weight:400; }
+
+.hero h1{
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 9.4vw, 7.4rem);
+  line-height: .98;
+  letter-spacing: .004em;
+  color: var(--bone);
+  text-shadow: 4px 4px 0 rgba(110,17,24,.55);
+  max-width: 15ch;
+}
+.hero h1 .quote{
+  font-style: italic;
+  color: var(--red-hi);
+  text-shadow: none;
+}
+.hero-rule{
+  width: 7.5rem; height: 4px; background: var(--red);
+  margin: 2.1rem 0 2rem;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.5);
+}
+.lede{
+  max-width: 42rem;
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+  line-height: 1.8;
+  color: var(--faded);
+}
+.lede em{ color: var(--bone); font-style: italic; }
+.lede .oath{ color: var(--bone); }
+
+.hero-evidence{
+  display:flex; flex-wrap:wrap; gap:.65rem;
+  margin-top: 2.2rem;
+}
+.tag-stamp{
+  font-family: var(--type);
+  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color: var(--bone);
+  border: 1px solid var(--line-hard);
+  padding:.45rem .8rem;
+  background: rgba(233,225,208,.03);
+}
+.tag-stamp b{ color: var(--red-hi); font-weight:400; }
+
+.hero-cta{
+  display:flex; flex-wrap:wrap; gap:1rem; margin-top: 2.6rem;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-family: var(--type);
+  font-size:.82rem; letter-spacing:.16em; text-transform:uppercase;
+  text-decoration:none;
+  padding: .95rem 1.6rem;
+  border:1px solid transparent;
+  transition: transform .18s var(--ease-out), box-shadow .18s var(--ease-out),
+              background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.btn--red{
+  background: var(--red); color: var(--paper);
+  box-shadow: 8px 8px 0 rgba(0,0,0,.5);
+}
+.btn--red:hover{ background: var(--red-hi); transform: translate(-2px,-2px); box-shadow: 12px 12px 0 rgba(0,0,0,.5); }
+.btn--red:active{ transform: translate(2px,2px); box-shadow: 4px 4px 0 rgba(0,0,0,.5); }
+.btn--ghost{
+  border-color: var(--line-hard); color: var(--bone);
+}
+.btn--ghost:hover{ border-color: var(--red-hi); color: var(--red-hi); }
+
+/* the big OPEN stamp in the corner */
+.stamp-open{
+  position:absolute; z-index:2;
+  top: clamp(6.5rem, 12vh, 9rem); right: clamp(1rem, 6vw, 5rem);
+  font-family: var(--type);
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  letter-spacing:.34em; text-transform:uppercase;
+  color: var(--red-hi);
+  border: 3px double var(--red-hi);
+  padding: .55rem 1.2rem .55rem 1.5rem;
+  transform: rotate(8deg);
+  opacity:.85;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0.35'/%3E%3C/filter%3E%3Crect width='120' height='120' fill='%23fff' filter='url(%23r)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0.35'/%3E%3C/filter%3E%3Crect width='120' height='120' fill='%23fff' filter='url(%23r)'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+@media (max-width: 47.9rem){
+  .stamp-open{ top: 8.6rem; right: .9rem; font-size:.85rem; letter-spacing:.28em; }
+}
+
+.scroll-cue{
+  position:absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%);
+  font-family: var(--type); font-size:.68rem; letter-spacing:.3em;
+  text-transform:uppercase; color: var(--dim); z-index:2;
+  text-align:center; white-space:nowrap;
+}
+.scroll-cue::after{
+  content:""; display:block; width:1px; height:2.6rem;
+  background: linear-gradient(var(--red), transparent);
+  margin:.7rem auto 0;
+}
+@media (prefers-reduced-motion: no-preference){
+  .scroll-cue{ animation: cue 2.6s ease-in-out infinite; }
+}
+@keyframes cue{ 0%,100%{ opacity:.55 } 50%{ opacity:1 } }
+
+/* hero load choreography */
+@media (prefers-reduced-motion: no-preference){
+  .boot{ opacity:0; transform: translateY(30px); filter: blur(5px);
+         animation: boot 1.1s var(--ease-out) forwards; }
+  .boot-1{ animation-delay: .95s }
+  .boot-2{ animation-delay: 1.12s }
+  .boot-3{ animation-delay: 1.32s }
+  .boot-4{ animation-delay: 1.5s }
+  .boot-5{ animation-delay: 1.66s }
+  .boot-6{ animation-delay: 1.82s }
+  .hero h1{ animation-name: boot-title; }
+  .stamp-open{ opacity:0; transform: rotate(8deg) scale(1.6);
+               animation: stamp-slam .45s cubic-bezier(.3,1.6,.6,1) 2.15s forwards; }
+}
+@keyframes boot{
+  to{ opacity:1; transform:none; filter:none; }
+}
+@keyframes boot-title{
+  from{ opacity:0; transform: translateY(30px); filter: blur(6px); letter-spacing:.09em; }
+  to  { opacity:1; transform:none; filter:none; letter-spacing:.004em; }
+}
+@keyframes stamp-slam{
+  to{ opacity:.85; transform: rotate(8deg) scale(1); }
+}
+
+/* ============================================================
+   PAPER — anything typed goes on stock
+   ============================================================ */
+.paper{
+  background:
+    repeating-linear-gradient(104deg, transparent 0 54px, rgba(26,23,18,.028) 54px 92px),
+    linear-gradient(180deg, var(--paper), var(--paper-2));
+  color: var(--paper-ink);
+  box-shadow: var(--shadow-long);
+  position:relative;
+}
+.paper::before{ /* punched staple corner */
+  content:""; position:absolute; top:.9rem; left:.9rem;
+  width:.6rem; height:.6rem; border-radius:50%;
+  background: radial-gradient(circle at 35% 35%, #c9c0ac, #8f8672);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,.45);
+}
+.on-paper a{ color: var(--red); }
+.on-paper a:hover{ color: var(--red-deep); }
+
+/* ============================================================
+   ACT I — THE PROFILE
+   ============================================================ */
+.profile-grid{
+  display:grid; grid-template-columns: minmax(0,1.35fr) minmax(0,1fr);
+  gap: 3.5rem; align-items:start;
+}
+@media (max-width: 60rem){
+  .profile-grid{ grid-template-columns: 1fr; gap: 3rem; }
+}
+
+.narrative p{ margin-bottom: 1.5rem; color: var(--bone); }
+.narrative p:last-child{ margin-bottom:0; }
+.narrative .mute{ color: var(--faded); }
+.narrative p:first-of-type::first-letter{
+  font-family: var(--display);
+  font-size: 4.6em; line-height: .78;
+  float:left; padding: .08em .12em 0 0;
+  color: var(--red-hi);
+}
+.narrative em{ color: var(--bone); }
+.narrative .filedate{
+  font-family: var(--type); font-size:.78rem; letter-spacing:.18em;
+  text-transform:uppercase; color: var(--dim);
+  margin-bottom:1.6rem;
+}
+
+/* dossier sheet */
+.dossier{
+  padding: 2.6rem 2.2rem 2.4rem;
+  font-family: var(--type);
+  transform: rotate(.6deg);
+}
+@media (max-width: 47.9rem){ .dossier{ padding: 2.1rem 1.35rem 2rem; transform:none; } }
+.dossier h3{
+  font-size:.95rem; letter-spacing:.26em; text-transform:uppercase;
+  font-weight:400; color: var(--paper-ink);
+  border-bottom: 2px solid var(--paper-ink);
+  padding-bottom:.7rem; margin-bottom: 1.4rem;
+}
+.dossier dl{ display:grid; grid-template-columns: 1fr; gap: 1.05rem; }
+.dossier dt{
+  font-size:.66rem; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--red);
+}
+.dossier dd{
+  font-family: var(--serif);
+  font-size:.95rem; line-height:1.55; color: var(--paper-ink);
+  margin-top:.15rem;
+}
+.dossier .verified{
+  position:absolute; right: 1.3rem; bottom: 1.2rem;
+  font-size:.85rem; letter-spacing:.3em; text-transform:uppercase;
+  color: var(--red); border: 3px double var(--red);
+  padding:.35rem .7rem .35rem 1rem;
+  transform: rotate(-7deg); opacity:.8;
+}
+
+/* known methods */
+.methods{ margin-top: 4.5rem; }
+.methods h3{
+  font-family: var(--type); font-weight:400;
+  font-size:.85rem; letter-spacing:.28em; text-transform:uppercase;
+  color: var(--faded); margin-bottom: 2rem;
+}
+.methods h3 b{ color: var(--red-hi); font-weight:400; }
+.methods-grid{
+  display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 2rem;
+}
+@media (max-width: 60rem){ .methods-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 33rem){ .methods-grid{ grid-template-columns: 1fr; } }
+.method-col h4{
+  font-family: var(--type); font-weight:400;
+  font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+  color: var(--red-hi);
+  border-bottom:1px solid var(--line); padding-bottom:.55rem; margin-bottom:.9rem;
+}
+.method-col ul{ list-style:none; }
+.method-col li{
+  font-size:.92rem; color: var(--faded);
+  padding:.28rem 0 .28rem 1.05rem; position:relative; line-height:1.45;
+}
+.method-col li::before{
+  content:"·"; position:absolute; left:.15rem; color: var(--red-hi);
+}
+
+/* ============================================================
+   ACT II — THE EXHIBITS
+   ============================================================ */
+.exhibits-list{
+  display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 3rem 2.5rem;
+}
+@media (max-width: 60rem){ .exhibits-list{ grid-template-columns: 1fr; } }
+.exhibit--wide{ grid-column: 1 / -1; }
+
+.exhibit{
+  padding: 3rem 2.6rem 2.6rem;
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out);
+}
+@media (max-width: 47.9rem){ .exhibit{ padding: 2.4rem 1.35rem 2rem; } }
+.exhibit:hover{
+  transform: translate(-3px,-3px);
+  box-shadow: 24px 24px 0 rgba(0,0,0,.5);
+}
+
+.exhibit-mark{
+  display:inline-block;
+  font-family: var(--type);
+  font-size:.78rem; letter-spacing:.3em; text-transform:uppercase;
+  color: var(--red); border: 3px double var(--red);
+  padding:.4rem .8rem .4rem 1.05rem;
+  transform: rotate(-2.5deg);
+  margin-bottom: 1.6rem;
+}
+.exhibit h3{
+  font-family: var(--display); font-weight:400;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height:1.08;
+  color: var(--paper-ink);
+}
+.exhibit .epigraph{
+  font-style:italic; color: var(--paper-dim);
+  margin-top:.4rem; font-size:1.05rem;
+}
+.exhibit .body{
+  margin-top: 1.3rem; color: var(--paper-ink);
+  max-width: 62ch;
+}
+.exhibit .proof{
+  margin-top: 1.5rem;
+  font-family: var(--type);
+  font-size:.74rem; letter-spacing:.1em; line-height: 2;
+  text-transform:uppercase; color: var(--paper-dim);
+  border-top: 1px dashed var(--paper-line);
+  padding-top: 1rem;
+}
+.exhibit .proof b{ color: var(--red); font-weight:400; }
+.exhibit-links{
+  margin-top: 1.5rem; display:flex; flex-wrap:wrap; gap:.7rem;
+}
+.exhibit-links a{
+  font-family: var(--type);
+  font-size:.75rem; letter-spacing:.14em; text-transform:uppercase;
+  text-decoration:none;
+  color: var(--paper);
+  background: var(--paper-ink);
+  padding:.55rem 1rem;
+  transition: background-color .18s ease, transform .18s var(--ease-out);
+}
+.exhibit-links a:hover{ background: var(--red); transform: translateY(-2px); color: var(--paper); }
+
+/* benchmark ledger */
+.ledger{
+  margin-top: 1.8rem;
+  border: 1px solid var(--paper-line);
+  padding: 1.4rem 1.5rem 1.2rem;
+  background: rgba(26,23,18,.03);
+}
+.ledger-title{
+  font-family: var(--type); font-size:.72rem; letter-spacing:.24em;
+  text-transform:uppercase; color: var(--paper-dim); margin-bottom: 1.1rem;
+}
+.ledger ol{ list-style:none; display:grid; gap:.55rem; }
+.score{
+  display:grid;
+  grid-template-columns: minmax(7.5rem, 11rem) 1fr 2.6rem;
+  align-items:center; gap: .9rem;
+}
+@media (max-width: 33rem){
+  .score{ grid-template-columns: minmax(6.4rem, 8rem) 1fr 2.2rem; gap:.55rem; }
+}
+.score-name{
+  font-family: var(--type); font-size:.74rem; letter-spacing:.06em;
+  text-transform:uppercase; color: var(--paper-ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.score-bar{
+  height: .65rem; background: rgba(26,23,18,.12);
+  position:relative; overflow:hidden;
+}
+.score-bar i{
+  position:absolute; inset:0; right:auto;
+  width: var(--w, 0%);
+  background: linear-gradient(90deg, var(--red-deep), var(--red));
+}
+.js .score-bar i{ width: 0; transition: width 1.1s var(--ease-out); }
+.js .is-in .score-bar i{ width: var(--w, 0%); }
+@media (prefers-reduced-motion: reduce){
+  .js .score-bar i{ width: var(--w, 0%); transition:none; }
+}
+.score-val{
+  font-family: var(--type); font-size:.8rem; color: var(--red);
+  text-align:right;
+}
+.ledger .footnote{
+  margin-top: 1.1rem; font-size:.78rem; font-style:italic;
+  color: var(--paper-dim); line-height:1.6;
+}
+
+/* ============================================================
+   ACT III — THE RECORD
+   ============================================================ */
+.record-grid{
+  display:grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr);
+  gap: 4rem;
+}
+@media (max-width: 60rem){ .record-grid{ grid-template-columns: 1fr; gap: 3rem; } }
+
+.timeline{ list-style:none; position:relative; padding-left: 1.9rem; }
+.timeline::before{
+  content:""; position:absolute; left:.35rem; top:.5rem; bottom:.5rem;
+  width:1px; background: var(--line-hard);
+}
+.timeline > li{ position:relative; padding-bottom: 2.6rem; }
+.timeline > li:last-child{ padding-bottom: 0; }
+.timeline > li::before{
+  content:""; position:absolute; left: -1.9rem; top:.55rem;
+  width:.75rem; height:.75rem; border-radius:50%;
+  background: var(--ink); border: 2px solid var(--red);
+}
+.time-span{
+  font-family: var(--type); font-size:.74rem; letter-spacing:.22em;
+  text-transform:uppercase; color: var(--red-hi);
+}
+.timeline h3{
+  font-family: var(--display); font-weight:400;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+  color: var(--bone); margin:.35rem 0 .15rem;
+}
+.timeline .org{
+  font-style:italic; color: var(--faded); font-size:.98rem;
+}
+.timeline .detail{
+  margin-top:.75rem; color: var(--faded); font-size:.98rem; max-width: 56ch;
+}
+.timeline .detail b{ color: var(--bone); font-weight:400; }
+
+.credentials{ display:grid; gap: 1.6rem; align-content:start; }
+.cred-card{
+  padding: 2rem 1.9rem 1.8rem;
+  transform: rotate(-.5deg);
+}
+.cred-card:nth-child(2){ transform: rotate(.7deg); }
+@media (max-width: 47.9rem){ .cred-card{ transform:none !important; padding: 1.7rem 1.3rem 1.5rem; } }
+.cred-card .cred-kind{
+  font-family: var(--type); font-size:.68rem; letter-spacing:.26em;
+  text-transform:uppercase; color: var(--red); margin-bottom:.7rem;
+}
+.cred-card h3{
+  font-family: var(--display); font-weight:400;
+  font-size:1.45rem; line-height:1.15; color: var(--paper-ink);
+}
+.cred-card p{
+  margin-top:.6rem; font-size:.95rem; color: var(--paper-dim); line-height:1.6;
+}
+.cred-card p b{ color: var(--paper-ink); font-weight:700; }
+
+.record-cta{
+  margin-top: 3.6rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:1.4rem;
+}
+.record-cta .aside{
+  font-family: var(--type); font-size:.74rem; letter-spacing:.14em;
+  text-transform:uppercase; color: var(--dim);
+}
+
+/* ============================================================
+   EPILOGUE — CONTACT
+   ============================================================ */
+.contact-grid{
+  display:grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr);
+  gap: 4rem; align-items:start;
+}
+@media (max-width: 60rem){ .contact-grid{ grid-template-columns: 1fr; gap: 3rem; } }
+.contact-copy p{ color: var(--faded); margin-bottom:1.4rem; max-width: 46ch; }
+.contact-copy p em{ color: var(--bone); }
+.contact-copy .closer{
+  font-family: var(--display); font-style:italic;
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height:1.35;
+  color: var(--bone);
+}
+.contact-copy .closer .red{ color: var(--red-hi); }
+
+.channels{ list-style:none; border-top: 1px solid var(--line); }
+.channels li{
+  display:grid; grid-template-columns: minmax(7.2rem, 9.5rem) 1fr;
+  gap:1rem; align-items:baseline;
+  padding: 1.05rem .25rem;
+  border-bottom: 1px solid var(--line);
+}
+@media (max-width: 33rem){
+  .channels li{ grid-template-columns: 1fr; gap:.15rem; }
+}
+.channels .ch-label{
+  font-family: var(--type); font-size:.68rem; letter-spacing:.24em;
+  text-transform:uppercase; color: var(--dim);
+}
+.channels a{
+  color: var(--bone); text-decoration:none;
+  border-bottom: 1px solid var(--line-hard);
+  transition: color .18s ease, border-color .18s ease;
+  overflow-wrap:anywhere;
+}
+.channels a:hover{ color: var(--red-hi); border-color: var(--red-hi); }
+.contact-cta{ margin-top: 2.2rem; display:flex; flex-wrap:wrap; gap:1rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.colophon{
+  border-top: 1px solid var(--line);
+  padding: 3rem 0 3.4rem;
+}
+.colophon-inner{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.2rem 2.5rem;
+}
+.colophon p{
+  font-family: var(--type); font-size:.7rem; letter-spacing:.1em;
+  color: var(--dim); line-height:1.9; max-width: 46rem;
+  text-transform: uppercase;
+}
+.colophon .oath{ color: var(--faded); }
+.colophon .oath b{ color: var(--red-hi); font-weight:400; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the file</a>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="curtain curtain--top" aria-hidden="true"></div>
+<div class="curtain curtain--bottom" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="#case"><span class="badge" aria-hidden="true"></span>The&nbsp;Kurdi&nbsp;File</a>
+    <nav class="case-nav" aria-label="Case file sections">
+      <ul>
+        <li><a href="#case">The Case</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#exhibits">Exhibits</a></li>
+        <li><a href="#record">The Record</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ THE CASE (HERO) ============ -->
+  <section class="hero" id="case" aria-labelledby="case-title">
+    <div class="blinds" aria-hidden="true"></div>
+    <div class="spot" aria-hidden="true"></div>
+    <p class="stamp-open" aria-hidden="true">Open</p>
+
+    <div class="wrap hero-inner">
+      <p class="file-tab boot boot-1">Case file <strong>№ 26-0107</strong> · Security Operations · Charlotte, NC</p>
+      <h1 id="case-title" class="boot boot-2">Mahmoud <span class="quote">“Michael”</span> Al&nbsp;Kurdi</h1>
+      <div class="hero-rule boot boot-3" aria-hidden="true"></div>
+      <p class="lede boot boot-4">
+        The analyst walked in with <em>eight years of federally regulated security
+        operations</em> and a spotless paper trail. Security+ certified. Summa cum laude.
+        Builds defensive tooling — and benchmarks the AI agents that build it.
+        <span class="oath">Every claim in this file maps to a public repo, a credential,
+        or a document.</span>
+      </p>
+      <ul class="hero-evidence boot boot-5" aria-label="Key facts">
+        <li class="tag-stamp"><b>CompTIA Security+ ce</b> · SY0-701</li>
+        <li class="tag-stamp"><b>B.S. IT — Cybersecurity</b> · Summa Cum Laude</li>
+        <li class="tag-stamp"><b>8 yrs</b> federal aviation security ops</li>
+      </ul>
+      <div class="hero-cta boot boot-6">
+        <a class="btn btn--red" href="#exhibits">Open the exhibits</a>
+        <a class="btn btn--ghost" href="../../assets/Michael_Kurdi_Resume_2026.pdf">Pull the record — PDF</a>
+      </div>
+    </div>
+
+    <p class="scroll-cue" aria-hidden="true">The file continues</p>
+  </section>
+
+  <!-- ============ ACT I — PROFILE ============ -->
+  <section class="section" id="profile" aria-labelledby="profile-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Act I</p>
+        <h2 id="profile-title">The Profile<span class="period">.</span></h2>
+        <p class="section-sub">Who he is, where he's been, and why the paper trail holds up.</p>
+      </header>
+
+      <div class="profile-grid">
+        <div class="narrative reveal">
+          <p class="filedate">Investigator's notes — filed 2026</p>
+          <p>
+            Eight years on the concourse at Charlotte Douglas. From 2015 to 2023,
+            Mahmoud “Michael” Al Kurdi ran aviation security operations as a
+            <em>crew chief for American Airlines</em> — security clearance, CBP badge
+            endorsement, international flight operations under FAA, OSHA, IATA, and
+            CBP requirements. Recurrent incident-response and safety training, year
+            after year. Identity validation. Access control. The kind of work where
+            documentation isn't paperwork — it's the whole case.
+          </p>
+          <p class="mute">
+            Then the pivot, deliberate and on the record. January 2025: <em>CompTIA
+            Security+ ce (SY0-701)</em>, valid through January 2028. December 2025:
+            the degree — <em>B.S. Information Technologies, cybersecurity
+            concentration</em>, Southern New Hampshire University. Summa cum laude,
+            3.96 GPA, inducted into the Sigma Psi chapter of Alpha Sigma Lambda.
+            He kept the lights on with logistics work at USPS and an Amazon DSP
+            while he did it.
+          </p>
+          <p class="mute">
+            What he wants now is plain: a seat on a security operations team —
+            alert triage, incident response, detection engineering, security
+            automation. What he brings is in the exhibits below.
+            <em>Draw your own conclusions; the evidence is public.</em>
+          </p>
+        </div>
+
+        <div class="dossier paper on-paper reveal">
+          <h3>Subject Dossier</h3>
+          <dl>
+            <div>
+              <dt>Subject</dt>
+              <dd>Mahmoud “Michael” Al Kurdi</dd>
+            </div>
+            <div>
+              <dt>Last known location</dt>
+              <dd>Charlotte, NC — open to remote</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Available — full-time</dd>
+            </div>
+            <div>
+              <dt>Credential</dt>
+              <dd>CompTIA Security+ ce (SY0-701) · Jan 2025 – Jan 2028</dd>
+            </div>
+            <div>
+              <dt>Education</dt>
+              <dd>B.S. Information Technologies, Cybersecurity — SNHU · Summa Cum Laude, 3.96 GPA</dd>
+            </div>
+            <div>
+              <dt>Honors</dt>
+              <dd>Alpha Sigma Lambda, Sigma Psi chapter</dd>
+            </div>
+            <div>
+              <dt>Wanted for</dt>
+              <dd>SOC Analyst · Security Operations Analyst · Cybersecurity Analyst · Incident Response Analyst · Junior Detection Engineer · Security Automation</dd>
+            </div>
+          </dl>
+          <p class="verified" aria-hidden="true">Verified</p>
+        </div>
+      </div>
+
+      <div class="methods reveal">
+        <h3>Known methods <b>— skills on record</b></h3>
+        <div class="methods-grid">
+          <div class="method-col">
+            <h4>SOC / SecOps</h4>
+            <ul>
+              <li>Alert triage</li>
+              <li>Security monitoring</li>
+              <li>Incident documentation</li>
+              <li>Log analysis</li>
+              <li>Evidence review</li>
+              <li>Authentication events</li>
+              <li>DNS investigation</li>
+              <li>Remediation planning</li>
+              <li>Escalation notes</li>
+            </ul>
+          </div>
+          <div class="method-col">
+            <h4>Cybersecurity</h4>
+            <ul>
+              <li>MITRE ATT&amp;CK</li>
+              <li>Defensive security</li>
+              <li>Prompt-injection resistance</li>
+              <li>Access control</li>
+              <li>Least privilege</li>
+              <li>Security documentation</li>
+              <li>Confidence scoring</li>
+              <li>“No Clear Mapping” handling</li>
+            </ul>
+          </div>
+          <div class="method-col">
+            <h4>AI / Automation</h4>
+            <ul>
+              <li>AI coding-agent evaluation</li>
+              <li>Reproducible benchmark design</li>
+              <li>Rubric-based scoring</li>
+              <li>Prompt architecture</li>
+              <li>Safety rules</li>
+              <li>Acceptance criteria</li>
+              <li>Automated reporting</li>
+            </ul>
+          </div>
+          <div class="method-col">
+            <h4>Tools</h4>
+            <ul>
+              <li>Python · pytest</li>
+              <li>JavaScript · Node.js · npm</li>
+              <li>PowerShell · Bash</li>
+              <li>Git / GitHub</li>
+              <li>Gradio</li>
+              <li>HTML/CSS</li>
+              <li>Markdown · JSON · YAML</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACT II — EXHIBITS ============ -->
+  <section class="section" id="exhibits" aria-labelledby="exhibits-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Act II</p>
+        <h2 id="exhibits-title">The Exhibits<span class="period">.</span></h2>
+        <p class="section-sub">Evidence log. Four items entered into the record — all public, all reproducible.</p>
+      </header>
+
+      <div class="exhibits-list">
+
+        <article class="exhibit exhibit--wide paper on-paper reveal" aria-labelledby="ex-a">
+          <p class="exhibit-mark">Exhibit A</p>
+          <h3 id="ex-a">AgentForge</h3>
+          <p class="epigraph">“One spec, many agents.”</p>
+          <p class="body">
+            A configuration framework for agentic AI coding assistants: write the
+            spec once, deploy it to six adapter targets — Claude Code, Codex,
+            Gemini CLI, Cursor, Aider, and a generic fallback. Published to npm as
+            <b>@kmitops/agentforge@0.3.1</b>, MIT licensed.
+          </p>
+          <p class="proof"><b>Proof on file:</b> adapter round-trip tests · install smoke tests · doctor CLI · readiness runbook · live demo</p>
+          <div class="exhibit-links">
+            <a href="https://github.com/KM-it-ops/AgentForge">Repository</a>
+            <a href="https://km-it-ops.github.io/AgentForge/docs/demo/">Live demo</a>
+          </div>
+        </article>
+
+        <article class="exhibit exhibit--wide paper on-paper reveal" aria-labelledby="ex-b">
+          <p class="exhibit-mark">Exhibit B</p>
+          <h3 id="ex-b">AgentForge ATT&amp;CKLens Benchmark</h3>
+          <p class="epigraph">Seven agents interrogated. One rubric. Nobody walked.</p>
+          <p class="body">
+            A reproducible, strictly defensive cybersecurity benchmark asking one
+            question: can AI coding agents build secure, uncertainty-aware,
+            MITRE ATT&amp;CK–aligned defensive tooling? Seven agent artifacts were
+            graded against a 100-point rubric — ATT&amp;CK mapping discipline,
+            prompt-injection resistance, evidence citation, uncertainty handling
+            (“No Clear Mapping”), detection ideas, remediation guidance, and analyst
+            follow-up questions. One branch per agent; the harness re-runs on demand
+            via <b>benchmark-all.ps1</b>. MIT licensed.
+          </p>
+          <div class="ledger">
+            <p class="ledger-title">Interrogation ledger — scores out of 100</p>
+            <ol>
+              <li class="score"><span class="score-name">Cursor</span><span class="score-bar" aria-hidden="true"><i style="--w:100%"></i></span><span class="score-val">100</span></li>
+              <li class="score"><span class="score-name">Claude Code</span><span class="score-bar" aria-hidden="true"><i style="--w:98%"></i></span><span class="score-val">98</span></li>
+              <li class="score"><span class="score-name">Hermes Nemotron</span><span class="score-bar" aria-hidden="true"><i style="--w:98%"></i></span><span class="score-val">98</span></li>
+              <li class="score"><span class="score-name">Codex</span><span class="score-bar" aria-hidden="true"><i style="--w:96%"></i></span><span class="score-val">96</span></li>
+              <li class="score"><span class="score-name">Lovable Repaired</span><span class="score-bar" aria-hidden="true"><i style="--w:76%"></i></span><span class="score-val">76</span></li>
+              <li class="score"><span class="score-name">Mistral Vibe</span><span class="score-bar" aria-hidden="true"><i style="--w:75%"></i></span><span class="score-val">75</span></li>
+              <li class="score"><span class="score-name">Lovable Original</span><span class="score-bar" aria-hidden="true"><i style="--w:40%"></i></span><span class="score-val">40</span></li>
+            </ol>
+            <p class="footnote">MITRE ATT&amp;CK&reg; is a registered trademark of The MITRE Corporation.</p>
+          </div>
+          <div class="exhibit-links">
+            <a href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark">Repository</a>
+          </div>
+        </article>
+
+        <article class="exhibit paper on-paper reveal" aria-labelledby="ex-c">
+          <p class="exhibit-mark">Exhibit C</p>
+          <h3 id="ex-c">Vulnerability Management Mini Program</h3>
+          <p class="epigraph">Everything broken, on one board.</p>
+          <p class="body">
+            A Python/Flask/SQLite dashboard for tracking what's vulnerable and
+            what's been fixed: full CRUD, KPI cards, search, filtering, and
+            severity states.
+          </p>
+          <p class="proof"><b>Stack:</b> Python · Flask · SQLite</p>
+        </article>
+
+        <article class="exhibit paper on-paper reveal" aria-labelledby="ex-d">
+          <p class="exhibit-mark">Exhibit D</p>
+          <h3 id="ex-d">Security Log Anomaly Detection</h3>
+          <p class="epigraph">The logs always talk. You just have to listen.</p>
+          <p class="body">
+            Rule-based and statistical detection in Python with pandas and NumPy,
+            built for authentication and network anomaly triage.
+          </p>
+          <p class="proof"><b>Stack:</b> Python · pandas · NumPy</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACT III — THE RECORD ============ -->
+  <section class="section" id="record" aria-labelledby="record-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Act III</p>
+        <h2 id="record-title">The Record<span class="period">.</span></h2>
+        <p class="section-sub">The history, in order. Nothing sealed, nothing redacted.</p>
+      </header>
+
+      <div class="record-grid">
+        <ol class="timeline reveal" aria-label="Work history">
+          <li>
+            <p class="time-span">2025 — Present</p>
+            <h3>Delivery Associate</h3>
+            <p class="org">Fossa Logistics LLC (Amazon DSP) · Charlotte, NC</p>
+          </li>
+          <li>
+            <p class="time-span">2024 — 2025</p>
+            <h3>Courier &amp; Logistics Specialist</h3>
+            <p class="org">USPS · Kannapolis, NC</p>
+          </li>
+          <li>
+            <p class="time-span">2015 — 2023</p>
+            <h3>Aviation Security Operations Crew Chief</h3>
+            <p class="org">American Airlines · Charlotte, NC</p>
+            <p class="detail">
+              Federally regulated operations under <b>FAA, OSHA, IATA, and CBP</b>
+              requirements. Security clearance with CBP badge endorsement;
+              international flight operations. Recurrent incident-response and
+              safety/security training. High-accountability documentation,
+              identity validation, and access control — eight years of it.
+            </p>
+          </li>
+        </ol>
+
+        <div class="credentials reveal">
+          <div class="cred-card paper on-paper">
+            <p class="cred-kind">Credential</p>
+            <h3>CompTIA Security+ ce (SY0-701)</h3>
+            <p>Issued <b>January 7, 2025</b> · valid through <b>January 7, 2028</b>.</p>
+          </div>
+          <div class="cred-card paper on-paper">
+            <p class="cred-kind">Education</p>
+            <h3>B.S. Information Technologies — Cybersecurity</h3>
+            <p>Southern New Hampshire University. Completed <b>December 2025</b>,
+               conferred <b>January 1, 2026</b>. <b>Summa Cum Laude, 3.96 GPA</b> ·
+               Sigma Psi chapter of Alpha Sigma Lambda.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="record-cta reveal">
+        <a class="btn btn--red" href="../../assets/Michael_Kurdi_Resume_2026.pdf">Pull the full record — PDF</a>
+        <p class="aside">One page. Typed. Signed off.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EPILOGUE — CONTACT ============ -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="kicker">Epilogue</p>
+        <h2 id="contact-title">Close the Case<span class="period">.</span></h2>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <p>
+            The office is open. <em>Charlotte, North Carolina</em> — remote works
+            fine. If you're building a security operations team and want an analyst
+            whose claims come with receipts, the channels are on the right.
+          </p>
+          <p class="closer">
+            “Somewhere in your stack, an alert is waiting to be read properly.<br>
+            <span class="red">He reads them properly.</span>”
+          </p>
+          <div class="contact-cta">
+            <a class="btn btn--red" href="mailto:kurdi.michael.it@gmail.com">Send word</a>
+            <a class="btn btn--ghost" href="../../assets/Michael_Kurdi_Resume_2026.pdf">The record — PDF</a>
+          </div>
+        </div>
+
+        <ul class="channels reveal">
+          <li>
+            <span class="ch-label">Wire</span>
+            <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a>
+          </li>
+          <li>
+            <span class="ch-label">Direct line</span>
+            <a href="tel:+17044568322">(704) 456-8322</a>
+          </li>
+          <li>
+            <span class="ch-label">Evidence locker</span>
+            <a href="https://github.com/KM-it-ops">github.com/KM-it-ops</a>
+          </li>
+          <li>
+            <span class="ch-label">Dossier</span>
+            <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi">linkedin.com/in/mahmoud-michael-al-kurdi</a>
+          </li>
+          <li>
+            <span class="ch-label">Field office</span>
+            <a href="https://km-it-ops.github.io">km-it-ops.github.io</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="colophon">
+  <div class="wrap colophon-inner">
+    <p class="oath">Nothing in this file is on hearsay — <b>every claim maps to a public repo, credential, or document.</b></p>
+    <p>&copy; 2026 Mahmoud “Michael” Al Kurdi · Charlotte, NC<br>
+       MITRE ATT&amp;CK&reg; is a registered trademark of The MITRE Corporation.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---------- scroll reveals ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduceMotion.matches){
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add("is-in");
+          ro.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.05 });
+    revealEls.forEach(function(el){ ro.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("is-in"); });
+  }
+
+  /* ---------- active section in nav ---------- */
+  var navLinks = document.querySelectorAll(".case-nav a");
+  var byId = {};
+  navLinks.forEach(function(a){
+    var id = a.getAttribute("href").slice(1);
+    byId[id] = a;
+  });
+  var sections = document.querySelectorAll("main section[id]");
+  if ("IntersectionObserver" in window){
+    var current = null;
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          if (current) current.removeAttribute("aria-current");
+          var link = byId[e.target.id];
+          if (link){
+            link.setAttribute("aria-current","true");
+            current = link;
+          }
+        }
+      });
+    }, { rootMargin: "-38% 0px -52% 0px", threshold: 0 });
+    sections.forEach(function(s){ so.observe(s); });
+  }
+
+  /* ---------- hero spotlight follows the cursor ---------- */
+  var hero = document.querySelector(".hero");
+  var spot = document.querySelector(".spot");
+  var fine = window.matchMedia("(pointer: fine)");
+  if (hero && spot && fine.matches && !reduceMotion.matches){
+    var ticking = false, mx = 0, my = 0;
+    hero.addEventListener("pointermove", function(ev){
+      var r = hero.getBoundingClientRect();
+      mx = ((ev.clientX - r.left) / r.width) * 100;
+      my = ((ev.clientY - r.top) / r.height) * 100;
+      if (!ticking){
+        ticking = true;
+        requestAnimationFrame(function(){
+          spot.style.setProperty("--mx", mx + "%");
+          spot.style.setProperty("--my", my + "%");
+          ticking = false;
+        });
+      }
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

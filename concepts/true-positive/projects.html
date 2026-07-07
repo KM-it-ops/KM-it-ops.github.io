@@ -1,0 +1,248 @@
+<!doctype html>
+<!-- KM://OPS — TRUE POSITIVE · every claim maps to a public artifact: github.com/KM-it-ops · press ` for the console -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05070f">
+  <title>Projects — AgentForge & ATT&CKLens Benchmark · Mahmoud ("Michael") Al Kurdi</title>
+  <meta name="description" content="Case files: AgentForge (one spec, many agents — 6 adapter targets on npm) and the ATT&CKLens Benchmark (7 AI agents scored on defensive, MITRE ATT&CK-aligned security tooling). Plus supporting detection projects.">
+  <link rel="canonical" href="https://km-it-ops.github.io/projects.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Martian+Mono:wght@400;700&family=Workbench&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/themes.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="glow-field" aria-hidden="true"></div>
+  <div class="crt-vignette" aria-hidden="true"></div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>view=case_files count=<b>4</b> flagship=2</span>
+      <span>AF-001: adapters=6 npm=<b>@kmitops/agentforge@0.3.1</b> license=MIT</span>
+      <span class="warn">AL-002: agents=7 top_score=100 harness=benchmark-all.ps1 reproducible=true</span>
+      <span>framing=<b>defensive_only</b> focus=detection+mitigation</span>
+      <span>proof=[round_trip_tests, acceptance_tests, scorecards, raw_outputs, logs, final_report]</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html"><span class="brand__dot"></span>KM://OPS</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav">menu ≡</button>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="index.html"><span class="pre">01/</span> Home</a>
+        <a href="about.html"><span class="pre">02/</span> About</a>
+        <a href="projects.html" aria-current="page"><span class="pre">03/</span> Projects</a>
+        <a href="resume.html"><span class="pre">04/</span> Resume</a>
+        <a href="contact.html"><span class="pre">05/</span> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom:clamp(2rem,4vw,3rem)">
+      <div class="wrap">
+        <p class="kicker">Case files // 03</p>
+        <h1 class="display glitchable" aria-label="Open the evidence" style="font-size:clamp(2.8rem,9.5vw,7.5rem);margin-top:1rem">
+          <span data-decode>Open the</span><br><span class="hollow" data-decode>evidence.</span>
+        </h1>
+        <p class="hero__verdict" style="margin-top:1.5rem">
+          Two flagship investigations and the supporting work around them. Everything below is public
+          on GitHub — specs, safety rules, tests, scorecards, and reports included.
+        </p>
+      </div>
+    </section>
+
+    <!-- AGENTFORGE -->
+    <section class="section" id="agentforge" style="padding-top:1rem">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <p class="kicker">Case file AF-001 // shipped · MIT license</p>
+          <h3 class="glitchable">AgentForge</h3>
+          <p class="lede">
+            <strong>One spec. Many agents.</strong> Agentic coding assistants each want their own config dialect —
+            CLAUDE.md and hooks here, AGENTS.md there, <code>.cursor/rules</code> somewhere else. AgentForge separates
+            the portable agent posture from each tool's file formats: author identity, routing, memory, automation,
+            and telemetry once in canonical YAML, then compile platform-native files for every runtime you use.
+          </p>
+          <div class="project-cols">
+            <div>
+              <p class="kicker" style="margin-bottom:.8rem">What ships</p>
+              <ul class="speclist">
+                <li><strong>Six adapter targets:</strong> Claude Code, Codex, Gemini CLI, Cursor, Aider, and a portable generic AGENTS.md.</li>
+                <li><strong>A real CLI:</strong> <code>agentforge init &lt;adapter&gt;</code> and <code>agentforge doctor</code>, published to npm as <code>@kmitops/agentforge@0.3.1</code> — runnable via npx with no clone.</li>
+                <li><strong>Proof, not promises:</strong> adapter round-trip tests, package install smoke tests, a readiness runbook, and a visual demo.</li>
+                <li><strong>Safe to re-run:</strong> idempotent installs; every install creates a git-tracked checkpoint so rollback is one command.</li>
+                <li><strong>Benchmarks built in:</strong> the AgentForge suite includes reproducible agent evaluations — ATT&amp;CKLens (below) is its first defensive-security benchmark.</li>
+              </ul>
+            </div>
+            <div class="factbox">
+              <dl>
+                <dt>Stack</dt><dd>Node.js ≥ 18 · npm · bash · YAML</dd>
+                <dt>Registry</dt><dd>npm — @kmitops/agentforge@0.3.1</dd>
+                <dt>Verification</dt><dd>Round-trip tests · install smoke tests · doctor CLI · readiness runbook</dd>
+                <dt>License</dt><dd>MIT</dd>
+              </dl>
+              <div class="hero__cta" style="margin-top:1.3rem">
+                <a class="btn btn--solid" href="https://km-it-ops.github.io/AgentForge/docs/demo/" target="_blank" rel="noopener noreferrer">Live demo →</a>
+                <a class="btn" href="https://github.com/KM-it-ops/AgentForge" target="_blank" rel="noopener noreferrer">Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTACKLENS -->
+    <section class="section" id="attacklens" style="padding-top:0">
+      <div class="wrap">
+        <div class="project-hero project-hero--amber reveal">
+          <p class="kicker kicker--amber">Case file AL-002 // published · MIT license</p>
+          <h3 class="glitchable">ATT&amp;CKLens Benchmark</h3>
+          <p class="lede">
+            <strong>The question:</strong> can AI coding agents build secure, uncertainty-aware,
+            MITRE ATT&amp;CK-aligned <em>defensive</em> security tooling? Seven agents got identical
+            specifications, standardized acceptance tests, and prompt-injection challenges. Their output was
+            scored against a published rubric — mapping discipline, evidence citation, confidence handling
+            ("No Clear Mapping" when warranted), detection ideas, remediation guidance, and the follow-up
+            questions a real analyst would ask.
+          </p>
+
+          <div class="pipeline" role="img" aria-label="Benchmark methodology: one spec with safety rules, seven agents build the same app, acceptance tests and injection challenges, rubric-based scoring, published final report.">
+            <div class="pipeline__step"><b>01</b>One spec + safety rules</div>
+            <div class="pipeline__link" aria-hidden="true"></div>
+            <div class="pipeline__step"><b>02</b>7 agents build the same app</div>
+            <div class="pipeline__link" aria-hidden="true"></div>
+            <div class="pipeline__step"><b>03</b>Acceptance tests + injection challenges</div>
+            <div class="pipeline__link" aria-hidden="true"></div>
+            <div class="pipeline__step"><b>04</b>Rubric-based scoring</div>
+            <div class="pipeline__link" aria-hidden="true"></div>
+            <div class="pipeline__step"><b>05</b>Published final report</div>
+          </div>
+
+          <div class="project-cols">
+            <div>
+              <p class="kicker kicker--amber" style="margin-bottom:1.1rem">Final scores — 7 agent artifacts, rubric of 100</p>
+              <div class="scoreboard" role="img" aria-label="Bar chart of final benchmark scores: Cursor 100, Claude Code 98, Hermes Nemotron 98, Codex 96, Lovable Repaired 76, Mistral Vibe 75, Lovable Original 40.">
+                <div class="scorebar is-top" data-score="100"><span class="name">Cursor</span><span class="track"><span class="fill"></span></span><span class="val">100</span></div>
+                <div class="scorebar" data-score="98"><span class="name">Claude Code</span><span class="track"><span class="fill"></span></span><span class="val">98</span></div>
+                <div class="scorebar" data-score="98"><span class="name">Hermes Nemotron</span><span class="track"><span class="fill"></span></span><span class="val">98</span></div>
+                <div class="scorebar" data-score="96"><span class="name">Codex</span><span class="track"><span class="fill"></span></span><span class="val">96</span></div>
+                <div class="scorebar" data-score="76"><span class="name">Lovable Repaired</span><span class="track"><span class="fill"></span></span><span class="val">76</span></div>
+                <div class="scorebar" data-score="75"><span class="name">Mistral Vibe</span><span class="track"><span class="fill"></span></span><span class="val">75</span></div>
+                <div class="scorebar is-low" data-score="40"><span class="name">Lovable Original</span><span class="track"><span class="fill"></span></span><span class="val">40</span></div>
+              </div>
+              <p class="mono-note" style="margin-top:1rem">
+                Full methodology, scorecards, raw outputs, and logs live in the repo. The authoritative
+                report is <code>evaluations/final/final-report.md</code>.
+              </p>
+            </div>
+            <div>
+              <p class="kicker kicker--amber" style="margin-bottom:.8rem">Why it's credible</p>
+              <ul class="speclist">
+                <li><strong>Reproducible by design:</strong> one branch per evaluated agent plus a main harness branch — clone, fetch all, run <code>benchmark-all.ps1</code>, and the harness re-scores every submission.</li>
+                <li><strong>Defensive framing throughout:</strong> agents are graded on detection and mitigation quality and on resisting prompt injection — not on building offensive capability.</li>
+                <li><strong>Honesty is scored:</strong> the rubric rewards "No Clear Mapping" over confident guessing, plus evidence citation and analyst follow-up questions.</li>
+                <li><strong>Everything preserved:</strong> scripts, scorecards, raw outputs, logs, branch inventory, acceptance tests, and a final report.</li>
+              </ul>
+              <div class="hero__cta" style="margin-top:1.3rem">
+                <a class="btn btn--amber" href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark" target="_blank" rel="noopener noreferrer">Repository →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mono-note reveal">
+          MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. ATT&amp;CK content is used under
+          MITRE's Terms of Use. The benchmark is independent work, not affiliated with or endorsed by MITRE.
+        </p>
+      </div>
+    </section>
+
+    <!-- SUPPORTING WORK -->
+    <section class="section" style="padding-top:2rem">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="ghostnum" aria-hidden="true">03</span>
+          <div>
+            <p class="kicker">Supporting evidence</p>
+            <h2 class="display glitchable">Also on file.</h2>
+          </div>
+        </div>
+        <div class="case-grid">
+          <a class="case reveal" href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" target="_blank" rel="noopener noreferrer">
+            <div class="case__bar"><span>CASE FILE // VM-003</span><span>GITHUB ↗</span></div>
+            <div class="case__body">
+              <h3>Vulnerability Management Mini&nbsp;Program</h3>
+              <p>Dashboard-style vulnerability workflow with CRUD, KPI cards, search, filtering, severity
+                 states, and operational status views aligned to how analysts actually track remediation.</p>
+              <div class="case__meta">
+                <span class="chip">Python</span><span class="chip">Flask</span>
+                <span class="chip">SQLite</span><span class="chip">REST workflows</span>
+              </div>
+              <span class="case__go">View repository →</span>
+            </div>
+          </a>
+          <a class="case reveal" data-delay="1" href="https://github.com/KM-it-ops/security-log-anomaly-detection" target="_blank" rel="noopener noreferrer">
+            <div class="case__bar"><span>CASE FILE // AD-004</span><span>GITHUB ↗</span></div>
+            <div class="case__body">
+              <h3>Security Log Anomaly Detection</h3>
+              <p>SOC-style detection work for authentication and network anomaly triage — rule-based and
+                 statistical approaches with output written to be read by a human analyst, not just parsed.</p>
+              <div class="case__meta">
+                <span class="chip">Python</span><span class="chip">pandas</span>
+                <span class="chip">NumPy</span><span class="chip">Rules + statistics</span>
+              </div>
+              <span class="case__go">View repository →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2 class="display glitchable">Reproduce it.<br>Then call me.</h2>
+        <p>The strongest interview question you can ask me is "walk me through your benchmark harness." I'd love that.</p>
+        <div class="hero__cta">
+          <a class="btn btn--amber" href="contact.html">Escalate → contact</a>
+          <a class="btn btn--ghost" href="https://github.com/KM-it-ops" target="_blank" rel="noopener noreferrer">All repositories</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="sig">KM://OPS</span>
+      <span>No fabricated telemetry — every claim maps to a public repo or document.</span>
+      <span>
+        <a href="https://github.com/KM-it-ops" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+        <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+      </span>
+      <span>Hosted on GitHub Pages · press <b>`</b> for console</span>
+    </div>
+  </footer>
+
+  <button class="term-fab" id="termFab" aria-expanded="false" aria-controls="terminal">&gt;_ console</button>
+  <div class="terminal" id="terminal" role="dialog" aria-label="Interactive console">
+    <div class="terminal__bar">
+      <span>guest@km-ops — visitor shell</span>
+      <button class="terminal__close" aria-label="Close console">×</button>
+    </div>
+    <div class="terminal__out" aria-live="polite"></div>
+    <div class="terminal__row">
+      <span class="ps1" aria-hidden="true">$</span>
+      <input type="text" aria-label="Console command input" autocomplete="off" spellcheck="false">
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
