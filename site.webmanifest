@@ -1,10 +1,10 @@
 {
-  "name": "Michael Kurdi — SOC & Security Engineering",
-  "short_name": "M. Kurdi",
-  "description": "SOC-oriented security analyst and detection engineer. Ships Python tooling, ML pipelines, and LLM expert systems.",
+  "name": "KM://OPS — Mahmoud (\"Michael\") Al Kurdi — Insert Coin",
+  "short_name": "KM://OPS",
+  "description": "SOC analyst & detection engineer portfolio — retro arcade cabinet, INSERT COIN.",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#05070c",
-  "theme_color": "#05070c",
+  "display": "browser",
+  "background_color": "#05071c",
+  "theme_color": "#05071c",
   "icons": []
 }

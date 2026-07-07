@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#05071c">
+<title>GAME OVER — KM://OPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#05071c; --navy:#0c1136; --line:#2b3595; --yellow:#ffd23f; --pink:#ff2e88; --cyan:#2de2ff; --body:#c7d0ff; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--ink); color:var(--body); font-family:'Silkscreen', monospace;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:24px;
+  }
+  h1{
+    font-family:'Press Start 2P', monospace; font-size:clamp(28px,8vw,56px);
+    color:var(--pink); text-shadow:0 6px 0 #8f0f47, 0 12px 0 #000; letter-spacing:2px;
+  }
+  p{ margin-top:22px; font-size:16px; max-width:52ch; }
+  a{
+    display:inline-block; margin-top:30px; font-family:'Press Start 2P', monospace;
+    font-size:12px; text-decoration:none; color:#171123; background:var(--yellow);
+    padding:16px 20px 14px; box-shadow:6px 6px 0 0 #000;
+  }
+  a:hover{ transform:translate(-2px,-2px); box-shadow:8px 8px 0 0 #000; }
+  @media (prefers-reduced-motion: reduce){ * { transition:none !important; } }
+</style>
+</head>
+<body>
+  <div>
+    <h1>GAME OVER</h1>
+    <p>This screen doesn't exist in this cabinet. No high score here — just a missing cartridge.</p>
+    <a href="index.html">▶ INSERT COIN TO CONTINUE</a>
+  </div>
+</body>
+</html>
