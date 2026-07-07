@@ -1,0 +1,178 @@
+<!doctype html>
+<!-- KM://OPS concept gallery — preview-phase tool. Delete before launch after picking the winning direction. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05070f">
+  <meta name="robots" content="noindex">
+  <title>Concept Gallery — KM://OPS</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Martian+Mono:wght@400;700&family=Workbench&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .gal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.4rem; }
+    .gal-card {
+      border: 2px solid var(--line-bright); background: var(--panel);
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .gal-card:hover { border-color: var(--pri); transform: translate(-3px, -3px); box-shadow: var(--shadow-pop); }
+    .gal-card:hover h3 { color: var(--pri); }
+    .gal-card__bar {
+      display: flex; justify-content: space-between;
+      padding: .55rem 1.1rem; border-bottom: 1px solid var(--line);
+      font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--txt-faint);
+    }
+    .gal-card__body { padding: 1.2rem 1.1rem 1.4rem; display: flex; flex-direction: column; gap: .7rem; flex: 1; }
+    .gal-card h3 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 1.55rem; color: var(--txt-hi); transition: color .15s ease; }
+    .gal-card p { font-size: .76rem; color: var(--txt-dim); flex: 1; }
+    .gal-card .go { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pri); }
+    .gal-card--incumbent { border-color: var(--sec); }
+    .gal-card--incumbent .gal-card__bar { color: var(--sec); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="glow-field" aria-hidden="true"></div>
+  <div class="crt-vignette" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html"><span class="brand__dot"></span>KM://OPS</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html"><span class="pre">←</span> Back to site</a>
+        <a href="../themes.html"><span class="pre">::</span> Theme lab</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom:1.5rem">
+      <div class="wrap">
+        <p class="kicker">Preview tool // not shipped to production</p>
+        <h1 class="display" style="font-size:clamp(2.6rem,8vw,6rem);margin-top:1rem">Concept gallery.</h1>
+        <p class="hero__verdict" style="margin-top:1.4rem">
+          Ten clean-sheet design directions, each a complete standalone homepage built from the same
+          verified fact sheet — plus the incumbent. Same analyst, same evidence, eleven personalities.
+          Open any of them; your browser's back button returns here.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="gal-grid">
+          <a class="gal-card gal-card--incumbent" href="../index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 05</span><span>LIVE SITE</span></div>
+            <div class="gal-card__body">
+              <h3>Insert Coin</h3>
+              <p>The current build: retro arcade cabinet. Attract-mode hero, character stats, HIGH SCORES benchmark table, Konami code — plus a playable bonus round, Triage Rush.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="true-positive/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 00</span><span>ARCHIVED</span></div>
+            <div class="gal-card__body">
+              <h3>True Positive</h3>
+              <p>The previous build: SOC-console neo-brutalism — detection rule hero, radar, boot sequence, terminal easter egg, electric blue/violet with 10 swappable palettes. Preserved here in full.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="broadsheet/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 01</span><span>LIGHT · EDITORIAL</span></div>
+            <div class="gal-card__body">
+              <h3>The Broadsheet</h3>
+              <p>Prestige newspaper front page. The analyst is the lead story; the benchmark runs like sports standings; serif masthead and column rules on ivory paper.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="dossier/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 02</span><span>LIGHT · TACTILE</span></div>
+            <div class="gal-card__body">
+              <h3>Paper Dossier</h3>
+              <p>A physical case file: manila folders, typewriter type, ink stamps, folder-tab navigation, and hover-to-reveal redaction bars.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="brutalist/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 03</span><span>LIGHT · LOUD</span></div>
+            <div class="gal-card__body">
+              <h3>Raw Brutalist</h3>
+              <p>Enormous black type on stark white, thick borders, zero decoration, one violent accent color. Confidence through scale and restraint.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="swiss/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 04</span><span>LIGHT · PRECISE</span></div>
+            <div class="gal-card__body">
+              <h3>Swiss Grid</h3>
+              <p>International Typographic Style: mathematical grid, red/black/white, numbered margins, museum-poster calm. The hierarchy is the design.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="arcade/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 05</span><span>ORIGINAL PROTOTYPE</span></div>
+            <div class="gal-card__body">
+              <h3>Insert Coin <span style="font-size:.6em;color:var(--txt-faint)">(pre-game)</span></h3>
+              <p>The original pitch, unchanged: pixel type, attract-mode hero, HIGH SCORES table, character stats. The promoted live build above adds Triage Rush and lives at the site root.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="blueprint/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 06</span><span>DARK · TECHNICAL</span></div>
+            <div class="gal-card__body">
+              <h3>Blueprint</h3>
+              <p>Cyanotype engineering drawing: Prussian blue, white linework, dimension arrows, drawing callouts, and a real title block with a revision table.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="noir/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 07</span><span>DARK · CINEMATIC</span></div>
+            <div class="gal-card__body">
+              <h3>Case Noir</h3>
+              <p>Hard-boiled detective file: high-contrast black &amp; white, film grain, venetian-blind light, projects as exhibits, resume as The Record.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="aurora/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 08</span><span>DARK · PREMIUM</span></div>
+            <div class="gal-card__body">
+              <h3>Aurora Glass</h3>
+              <p>Security-startup keynote: aurora mesh gradients, frosted glass panels, soft glows, elegant light-weight type. The analyst as a well-funded product.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="industrial/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 09</span><span>DARK · UTILITARIAN</span></div>
+            <div class="gal-card__body">
+              <h3>Control Panel</h3>
+              <p>Industrial HMI: gunmetal panels, safety-yellow hazard striping, riveted corners, skills as gauges, the benchmark as a bank of analog meters.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+          <a class="gal-card" href="zine/index.html">
+            <div class="gal-card__bar"><span>CONCEPT // 10</span><span>WILD · DIY</span></div>
+            <div class="gal-card__body">
+              <h3>Photocopy Zine</h3>
+              <p>Punk collage: torn paper, taped-on rotated clippings, marker scrawl, halftone texture, one neon highlight. Chaotic energy, professional facts.</p>
+              <span class="go">Open concept →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="sig">KM://OPS</span>
+      <span>Concept gallery — preview phase only. All eleven built from the same verified fact sheet.</span>
+    </div>
+  </footer>
+</body>
+</html>
