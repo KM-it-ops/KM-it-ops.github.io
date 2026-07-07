@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Analyst Ledger — Mahmoud ("Michael") Al Kurdi · Security Operations Portfolio</title>
+<meta name="description" content="The Analyst Ledger: a broadsheet portfolio for Mahmoud ('Michael') Al Kurdi — Security+ certified security operations analyst in Charlotte, N.C. Eight years of federally regulated operations, public projects, and receipts for every claim.">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Libre+Franklin:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE ANALYST LEDGER — an editorial broadsheet portfolio
+   Fraunces (display) · Newsreader (text) · Libre Franklin (meta)
+   ============================================================ */
+
+/* ---------- 1. Reset & tokens ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:        #f6efe0;
+  --paper-warm:   #f1e9d6;
+  --paper-deep:   #eae0c8;
+  --desk:         #d8cdb2;
+  --ink:          #1d1a14;
+  --ink-soft:     #4c463a;
+  --ink-faint:    #7c7462;
+  --hairline:     rgba(29, 26, 20, .30);
+  --hairline-lt:  rgba(29, 26, 20, .16);
+  --oxblood:      #6e1d24;
+  --oxblood-deep: #55151b;
+
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body:    "Newsreader", Georgia, "Times New Roman", serif;
+  --sans:    "Libre Franklin", "Franklin Gothic Medium", sans-serif;
+
+  --sheet-max: 1200px;
+  --gutter: clamp(1.1rem, 3.4vw, 3rem);
+}
+
+html {
+  background: var(--desk);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  font-family: var(--body);
+  font-optical-sizing: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  background:
+    radial-gradient(1400px 500px at 50% -180px, rgba(255,255,255,.20), transparent 70%),
+    var(--desk);
+}
+
+::selection { background: var(--oxblood); color: var(--paper); }
+
+img, svg { max-width: 100%; display: block; }
+
+/* ---------- 2. Base typography & links ---------- */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--oxblood);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+  transition: color .2s ease;
+}
+a:hover { color: var(--oxblood); }
+
+:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--oxblood);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: .85rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .7em 1.2em;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+  color: var(--paper);
+}
+
+.kicker {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  display: inline-flex;
+  align-items: center;
+  gap: .8em;
+}
+.kicker::after {
+  content: "";
+  width: 3.2em;
+  border-top: 1px solid var(--hairline);
+}
+
+.byline {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.byline b { color: var(--ink); font-weight: 800; }
+
+.deck {
+  font-family: var(--body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.12rem, 1.9vw, 1.34rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.endmark::after {
+  content: "■";
+  color: var(--oxblood);
+  font-size: .62em;
+  margin-left: .4em;
+  vertical-align: .12em;
+}
+
+/* Drop caps */
+.dropcap::first-letter {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 3.55em;
+  line-height: .8;
+  float: left;
+  color: var(--oxblood);
+  padding: .06em .1em 0 0;
+}
+
+/* Rules */
+.rule-thick { border: 0; border-top: 3px solid var(--ink); }
+.rule-thin  { border: 0; border-top: 1px solid var(--ink); }
+.rule-hair  { border: 0; border-top: 1px solid var(--hairline); }
+.rule-pair  { border: 0; border-top: 3px solid var(--ink); position: relative; }
+.rule-pair::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 4px;
+  border-top: 1px solid var(--ink);
+}
+
+.fleuron {
+  text-align: center;
+  color: var(--oxblood);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: clamp(2.4rem, 5vw, 4rem) 0;
+}
+.fleuron::before, .fleuron::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--hairline);
+}
+
+/* ---------- 3. The sheet ---------- */
+.sheet {
+  max-width: var(--sheet-max);
+  margin: 0 auto;
+  background:
+    linear-gradient(rgba(255,255,255,.16), rgba(255,255,255,0) 300px),
+    var(--paper);
+  border-left: 1px solid rgba(29,26,20,.14);
+  border-right: 1px solid rgba(29,26,20,.14);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.25) inset, 0 22px 60px rgba(43,36,24,.28);
+  padding: 0 var(--gutter) clamp(2rem, 4vw, 3.4rem);
+  position: relative;
+}
+/* faint newsprint grain */
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .42 0 0 0 0 .36 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.sheet > * { position: relative; }
+
+/* ---------- 4. Top bar ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: .85rem 0 .6rem;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.topbar .tb-date { color: var(--ink); font-weight: 800; }
+.topbar .tb-motto { text-align: center; }
+.topbar .tb-right { text-align: right; }
+
+/* ---------- 5. Masthead ---------- */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 3.2fr) 1fr;
+  align-items: center;
+  gap: 1.2rem;
+  padding: clamp(1.2rem, 3vw, 2.2rem) 0 clamp(.9rem, 2vw, 1.4rem);
+}
+.ear {
+  border: 1px solid var(--hairline);
+  padding: .7rem .8rem;
+  font-family: var(--sans);
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.ear strong { color: var(--ink); font-weight: 800; display: block; }
+.ear .ox { color: var(--oxblood); font-weight: 800; }
+
+.masthead-title {
+  text-align: center;
+}
+.masthead-title h1 {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-size: clamp(2.9rem, 8.6vw, 6.4rem);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: .96;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.masthead-title h1 .thin { font-weight: 400; font-style: italic; }
+.masthead-sub {
+  margin-top: .85rem;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.masthead-sub b { color: var(--oxblood); font-weight: 800; }
+
+/* credential strip under masthead */
+.credstrip {
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+  padding: .55rem 0 .5rem;
+  margin-top: .2rem;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.credstrip::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 4px;
+  border-top: 1px solid var(--ink);
+}
+.credstrip .sep { color: var(--oxblood); padding: 0 .55em; }
+
+/* ---------- 6. Section nav ---------- */
+.paper-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter);
+}
+.paper-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.paper-nav ul::-webkit-scrollbar { display: none; }
+.paper-nav li { display: flex; align-items: center; }
+.paper-nav li + li::before {
+  content: "·";
+  color: var(--hairline);
+  padding: 0 .35rem;
+}
+.paper-nav a {
+  display: inline-block;
+  padding: .78rem .55rem .68rem;
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: color .2s ease, border-color .2s ease;
+}
+.paper-nav a:hover { color: var(--oxblood); }
+.paper-nav a[aria-current="true"] {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
+}
+
+/* ---------- 7. Section bars ---------- */
+section { scroll-margin-top: 4.2rem; }
+
+.section-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+  padding: .55rem .2rem .5rem;
+  margin-bottom: clamp(1.6rem, 3.4vw, 2.6rem);
+}
+.section-bar::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 4px;
+  border-top: 1px solid var(--ink);
+}
+.section-bar .sb-left,
+.section-bar .sb-right {
+  font-family: var(--sans);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.section-bar .sb-right { text-align: right; }
+.section-bar h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink);
+}
+
+/* ---------- 8. Front page ---------- */
+.frontpage { padding-top: clamp(1.6rem, 3.5vw, 2.8rem); }
+
+.fp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+  gap: 0 clamp(1.4rem, 3vw, 2.4rem);
+}
+.fp-lead { min-width: 0; }
+.fp-rail {
+  min-width: 0;
+  border-left: 1px solid var(--hairline);
+  padding-left: clamp(1.4rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+}
+
+.fp-lead .headline {
+  font-family: var(--display);
+  font-size: clamp(2.15rem, 5vw, 4.05rem);
+  font-weight: 640;
+  line-height: 1.02;
+  letter-spacing: -.012em;
+  margin: .55rem 0 1rem;
+  text-wrap: balance;
+}
+.fp-lead .deck { margin-bottom: 1.15rem; max-width: 62ch; }
+.fp-lead .byline-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.4rem;
+  padding: .6rem 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 1.3rem;
+}
+
+.colset {
+  columns: 2;
+  column-gap: 2.4rem;
+  column-rule: 1px solid var(--hairline-lt);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.colset p { margin-bottom: 1em; break-inside: avoid-column; }
+.colset p:last-child { margin-bottom: 0; }
+.colset .dateline {
+  font-family: var(--sans);
+  font-size: .8em;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.jumpline {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+.jumpline a { text-decoration-thickness: 1px; }
+
+/* Rail: stats box */
+.statbox {
+  border: 1px solid var(--ink);
+  padding: 1.1rem 1.15rem 1.2rem;
+  position: relative;
+  background: var(--paper-warm);
+}
+.statbox h3 {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: .65rem;
+  margin-bottom: .85rem;
+  border-bottom: 3px double var(--ink);
+}
+.statbox dl { display: grid; gap: .78rem; }
+.statbox .stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: .8rem;
+}
+.statbox dt {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--oxblood);
+  font-variant-numeric: lining-nums;
+  min-width: 2.6ch;
+}
+.statbox dd {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.stamp {
+  position: absolute;
+  top: -.95rem;
+  right: -.65rem;
+  transform: rotate(6deg);
+  border: 3px double var(--oxblood);
+  color: var(--oxblood);
+  padding: .34em .7em .3em;
+  font-family: var(--sans);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  background: transparent;
+  mix-blend-mode: multiply;
+  opacity: .92;
+  pointer-events: none;
+}
+
+/* Rail: pull quote */
+.pullquote {
+  border-top: 3px double var(--ink);
+  border-bottom: 3px double var(--ink);
+  padding: 1.15rem .2rem;
+  text-align: center;
+}
+.pullquote blockquote {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.32rem;
+  line-height: 1.32;
+  color: var(--ink);
+  quotes: "\201C" "\201D";
+}
+.pullquote blockquote::before { content: open-quote; color: var(--oxblood); }
+.pullquote blockquote::after  { content: close-quote; color: var(--oxblood); }
+.pullquote figcaption {
+  margin-top: .6rem;
+  font-family: var(--sans);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Rail: edition index */
+.edition-index h3 {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: .5rem;
+  margin-bottom: .7rem;
+}
+.edition-index ol { list-style: none; }
+.edition-index li a {
+  display: flex;
+  align-items: baseline;
+  gap: .5em;
+  text-decoration: none;
+  font-family: var(--body);
+  font-size: 1.02rem;
+  padding: .34rem 0;
+}
+.edition-index li a:hover .ei-name { color: var(--oxblood); }
+.edition-index .ei-name { font-weight: 500; }
+.edition-index .ei-leader {
+  flex: 1;
+  border-bottom: 2px dotted var(--hairline);
+  transform: translateY(-.28em);
+}
+.edition-index .ei-page {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--oxblood);
+}
+
+/* Below the fold: briefs */
+.briefs {
+  margin-top: clamp(2rem, 4.5vw, 3.2rem);
+  border-top: 3px double var(--ink);
+  padding-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2rem;
+}
+.brief { min-width: 0; }
+.brief + .brief {
+  border-left: 1px solid var(--hairline-lt);
+  padding-left: 2rem;
+}
+.brief h3 {
+  font-family: var(--display);
+  font-weight: 640;
+  font-size: 1.22rem;
+  line-height: 1.2;
+  margin: .5rem 0 .45rem;
+}
+.brief p { font-size: .98rem; line-height: 1.55; color: var(--ink-soft); }
+.brief .jumpline { display: inline-block; margin-top: .55rem; }
+
+/* ---------- 9. Inside pages: shared story styles ---------- */
+.story-head { max-width: 70ch; }
+.story-head .headline {
+  font-family: var(--display);
+  font-weight: 640;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.06;
+  letter-spacing: -.01em;
+  margin: .55rem 0 .85rem;
+  text-wrap: balance;
+}
+.story-head .deck { margin-bottom: 1rem; }
+.story-head .byline { display: block; padding-bottom: 1.1rem; }
+
+.two-rail {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+  gap: 0 clamp(1.4rem, 3vw, 2.4rem);
+}
+.two-rail > aside {
+  border-left: 1px solid var(--hairline);
+  padding-left: clamp(1.4rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  min-width: 0;
+}
+.two-rail > .tr-main { min-width: 0; }
+
+/* Portrait "engraving" */
+.portrait { text-align: center; }
+.engraving {
+  border: 1px solid var(--ink);
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+  padding: 1.9rem 1rem;
+  background:
+    repeating-linear-gradient(45deg, rgba(29,26,20,.06) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(-45deg, rgba(29,26,20,.05) 0 1px, transparent 1px 7px),
+    var(--paper-warm);
+  display: grid;
+  place-items: center;
+  margin: 3px;
+}
+.engraving span {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 4.4rem;
+  line-height: 1;
+  color: var(--oxblood);
+  letter-spacing: -.04em;
+}
+.portrait figcaption {
+  margin-top: .65rem;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Chronicle timeline */
+.chronicle h3, .rail-h {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: .5rem;
+  margin-bottom: .75rem;
+}
+.chronicle ul { list-style: none; }
+.chronicle li {
+  display: grid;
+  grid-template-columns: 6.4em 1fr;
+  gap: .7rem;
+  padding: .42rem 0;
+  border-bottom: 1px solid var(--hairline-lt);
+  font-size: .95rem;
+  line-height: 1.45;
+}
+.chronicle li:last-child { border-bottom: 0; }
+.chronicle time {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--oxblood);
+  padding-top: .18em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 10. Projects section ---------- */
+.story + .story {
+  border-top: 1px solid var(--hairline);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.linkrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.6rem;
+  margin-top: 1.1rem;
+}
+.linkrow a {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  text-decoration-thickness: 1px;
+}
+.linkrow a::after { content: " ↗"; font-size: .9em; }
+
+.tagrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1rem;
+}
+.tagrow span {
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: 1px solid var(--hairline);
+  padding: .3em .7em;
+  color: var(--ink-soft);
+}
+
+/* Standings table */
+.standings-wrap {
+  border: 1px solid var(--ink);
+  background: var(--paper-warm);
+  padding: 1.1rem 1.2rem 1rem;
+  margin-top: 1.4rem;
+  overflow-x: auto;
+}
+.standings-wrap > h4 {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: .6rem;
+  margin-bottom: .3rem;
+  border-bottom: 3px double var(--ink);
+}
+table.standings {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  min-width: 480px;
+}
+table.standings caption {
+  caption-side: bottom;
+  text-align: left;
+  font-size: .74rem;
+  color: var(--ink-soft);
+  padding-top: .8rem;
+  line-height: 1.6;
+  font-family: var(--body);
+}
+table.standings th {
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--ink-soft);
+  padding: .62rem .5rem .5rem;
+  border-bottom: 1px solid var(--ink);
+}
+table.standings th.num, table.standings td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+table.standings td {
+  padding: .52rem .5rem;
+  border-bottom: 1px solid var(--hairline-lt);
+  font-size: .9rem;
+}
+table.standings tr:last-child td { border-bottom: 0; }
+table.standings td.pos {
+  font-weight: 800;
+  color: var(--oxblood);
+  width: 2.6em;
+  font-variant-numeric: tabular-nums;
+}
+table.standings td.agent { font-weight: 600; letter-spacing: .01em; }
+table.standings td.num.pts { font-weight: 800; font-size: 1rem; }
+table.standings td.barcell { width: 34%; min-width: 110px; }
+.scorebar {
+  display: block;
+  height: 9px;
+  background: rgba(29,26,20,.1);
+  border: 1px solid var(--hairline-lt);
+}
+.scorebar i {
+  display: block;
+  height: 100%;
+  background: var(--oxblood);
+  width: var(--w, 0%);
+}
+tr.champ td.agent::after {
+  content: "◆ TOP OF TABLE";
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: var(--oxblood);
+  margin-left: .7em;
+  vertical-align: .12em;
+}
+
+.smallprint {
+  font-size: .78rem;
+  font-family: var(--sans);
+  color: var(--ink-faint);
+  letter-spacing: .02em;
+  margin-top: .9rem;
+  line-height: 1.6;
+}
+
+/* Project briefs 2-up */
+.duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2.2rem;
+}
+.duo article + article {
+  border-left: 1px solid var(--hairline-lt);
+  padding-left: 2.2rem;
+}
+.duo h3 {
+  font-family: var(--display);
+  font-weight: 640;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  margin: .5rem 0 .55rem;
+}
+.duo p { font-size: 1rem; color: var(--ink-soft); }
+
+/* ---------- 11. The Record (résumé) ---------- */
+.notice {
+  border: 3px double var(--ink);
+  background: var(--paper-warm);
+  padding: 1.3rem 1.5rem;
+  margin-bottom: clamp(1.8rem, 4vw, 2.6rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+.notice .n-copy h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: .25rem;
+}
+.notice .n-copy p {
+  font-size: .98rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.btn-print {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--oxblood);
+  border: 1px solid var(--oxblood-deep);
+  padding: .9em 1.6em;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+.btn-print:hover {
+  background: var(--oxblood-deep);
+  color: var(--paper);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-print:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+.record-entry {
+  padding: 1.05rem 0;
+  border-bottom: 1px solid var(--hairline-lt);
+}
+.record-entry:last-of-type { border-bottom: 0; }
+.record-entry .re-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem 1rem;
+  justify-content: space-between;
+}
+.record-entry h4 {
+  font-family: var(--display);
+  font-weight: 640;
+  font-size: 1.28rem;
+  line-height: 1.2;
+}
+.record-entry .re-when {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  color: var(--oxblood);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.record-entry .re-org {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: .2rem 0 .45rem;
+}
+.record-entry p { font-size: .99rem; color: var(--ink-soft); max-width: 66ch; }
+
+.record-h {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: .45rem;
+  margin: 1.9rem 0 .3rem;
+}
+.record-h:first-of-type { margin-top: 0; }
+
+/* Classifieds rail */
+.classified {
+  border: 1px solid var(--ink);
+  padding: 1rem 1.05rem 1.1rem;
+}
+.classified.wanted { background: var(--paper-warm); }
+.classified h3 {
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 3px double var(--ink);
+  padding-bottom: .55rem;
+  margin-bottom: .75rem;
+}
+.classified p.ad {
+  font-size: .92rem;
+  line-height: 1.55;
+}
+.classified p.ad b { font-weight: 700; }
+.classified .ad-meta {
+  margin-top: .6rem;
+  font-family: var(--sans);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+.skill-group + .skill-group {
+  border-top: 1px solid var(--hairline-lt);
+  margin-top: .75rem;
+  padding-top: .7rem;
+}
+.skill-group h4 {
+  font-family: var(--sans);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  margin-bottom: .3rem;
+}
+.skill-group p {
+  font-size: .86rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* ---------- 12. Correspondence ---------- */
+.letters-intro {
+  max-width: 62ch;
+  margin: 0 auto 1.9rem;
+  text-align: center;
+}
+.letters-intro .headline {
+  font-family: var(--display);
+  font-weight: 640;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  line-height: 1.08;
+  margin: .55rem 0 .8rem;
+  text-wrap: balance;
+}
+.letters-intro .deck { font-size: 1.14rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.contact-cell {
+  padding: 1.05rem .9rem 1.1rem;
+  text-align: center;
+  min-width: 0;
+}
+.contact-cell + .contact-cell { border-left: 1px solid var(--hairline-lt); }
+.contact-cell .cc-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  margin-bottom: .45rem;
+}
+.contact-cell a {
+  font-family: var(--body);
+  font-size: .97rem;
+  font-weight: 500;
+  text-decoration-color: var(--hairline);
+  overflow-wrap: anywhere;
+}
+.contact-cell a:hover { text-decoration-color: var(--oxblood); }
+
+.coupon {
+  margin: 2.2rem auto 0;
+  max-width: 620px;
+  border: 2px dashed var(--ink-faint);
+  padding: 1.4rem 1.6rem 1.5rem;
+  text-align: center;
+  position: relative;
+  background: var(--paper-warm);
+}
+.coupon .scissors {
+  position: absolute;
+  top: -.85em;
+  left: 1.6rem;
+  background: var(--paper);
+  padding: 0 .5em;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+}
+.coupon h3 {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.coupon p {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  margin-bottom: 1.05rem;
+}
+.coupon .btn-print { box-shadow: 3px 3px 0 var(--ink); }
+.coupon .cc-avail {
+  margin-top: .95rem;
+  font-family: var(--sans);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- 13. Footer / colophon ---------- */
+.colophon {
+  margin-top: clamp(2.6rem, 5vw, 4rem);
+  border-top: 3px solid var(--ink);
+  position: relative;
+  padding-top: 1.4rem;
+  text-align: center;
+}
+.colophon::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 4px;
+  border-top: 1px solid var(--ink);
+}
+.colophon .masthead-mini {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: .55rem;
+}
+.colophon p {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  max-width: 72ch;
+  margin: 0 auto .4rem;
+  line-height: 1.7;
+}
+.colophon .fine {
+  font-family: var(--sans);
+  font-size: .66rem;
+  letter-spacing: .06em;
+  color: var(--ink-faint);
+}
+.colophon nav {
+  margin: .9rem 0 .6rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .4rem 1.4rem;
+}
+.colophon nav a {
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* ---------- 14. Load animation: the morning edition ---------- */
+@keyframes settle {
+  from { opacity: 0; transform: translateY(12px); filter: blur(3px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+@keyframes ruleDraw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes stampIn {
+  0%   { opacity: 0; transform: rotate(6deg) scale(2.4); }
+  62%  { opacity: .95; transform: rotate(3deg) scale(.94); }
+  80%  { transform: rotate(7deg) scale(1.04); }
+  100% { opacity: .92; transform: rotate(6deg) scale(1); }
+}
+
+.a-1  { animation: settle .55s ease-out both .05s; }
+.a-2  { animation: settle .75s ease-out both .18s; }
+.a-3  { animation: ruleDraw .8s cubic-bezier(.77,0,.18,1) both .48s; transform-origin: center; }
+.a-4  { animation: settle .55s ease-out both .62s; }
+.a-5  { animation: settle .55s ease-out both .74s; }
+.a-6  { animation: settle .6s ease-out both .84s; }
+.a-7  { animation: settle .6s ease-out both .96s; }
+.a-8  { animation: settle .6s ease-out both 1.08s; }
+.a-9  { animation: settle .65s ease-out both 1.2s; }
+.a-10 { animation: settle .7s ease-out both 1.32s; }
+.a-stamp { animation: stampIn .55s cubic-bezier(.2,1.2,.35,1) both 1.72s; }
+
+/* Scroll reveal (below the fold) — gated on JS + motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  html.js .reveal.is-in { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- 15. Responsive ---------- */
+@media (max-width: 1020px) {
+  .fp-grid, .two-rail { grid-template-columns: 1fr; }
+  .fp-rail, .two-rail > aside {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 3px double var(--ink);
+    margin-top: 2rem;
+    padding-top: 1.8rem;
+  }
+  .fp-rail { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  .fp-rail .edition-index { grid-column: 1 / -1; }
+  .two-rail > aside { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+}
+@media (max-width: 760px) {
+  body { font-size: 1.04rem; }
+  .colset { columns: 1; text-align: left; }
+  .briefs { grid-template-columns: 1fr; gap: 1.4rem 0; }
+  .brief + .brief { border-left: 0; padding-left: 0; border-top: 1px solid var(--hairline-lt); padding-top: 1.4rem; }
+  .duo { grid-template-columns: 1fr; }
+  .duo article + article { border-left: 0; padding-left: 0; border-top: 1px solid var(--hairline-lt); margin-top: 1.6rem; padding-top: 1.6rem; }
+  .fp-rail, .two-rail > aside { grid-template-columns: 1fr; }
+  .masthead { grid-template-columns: 1fr; gap: .9rem; }
+  .ear { display: none; }
+  .topbar { flex-wrap: wrap; justify-content: center; text-align: center; gap: .25rem 1rem; }
+  .topbar .tb-right { text-align: center; }
+  .section-bar { grid-template-columns: 1fr; gap: .25rem; text-align: center; }
+  .section-bar .sb-right { text-align: center; }
+  .contact-grid { grid-template-columns: 1fr; border-left: 0; }
+  .contact-cell + .contact-cell { border-left: 0; border-top: 1px solid var(--hairline-lt); }
+  .notice { justify-content: center; text-align: center; }
+  .stamp { right: .4rem; }
+}
+@media (max-width: 430px) {
+  .paper-nav a { letter-spacing: .1em; padding: .78rem .4rem .68rem; font-size: .68rem; }
+  .masthead-title h1 { font-size: 2.55rem; }
+  .standings-wrap { padding: .8rem .7rem; }
+}
+
+/* ---------- 16. Print ---------- */
+@media print {
+  html, body, .sheet { background: #fff; box-shadow: none; border: 0; }
+  .sheet::before { display: none; }
+  .paper-nav, .skip-link, .coupon .btn-print { display: none; }
+  a { text-decoration: none; color: #000; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#front">Skip to the front page</a>
+
+<div class="sheet">
+
+  <!-- ================= TOP BAR ================= -->
+  <header>
+    <div class="topbar a-1">
+      <span class="tb-date" id="js-date">Friday, July 4, 2026</span>
+      <span class="tb-motto">The Evidence-First Edition</span>
+      <span class="tb-right">Forecast: false positives, clearing by midday</span>
+    </div>
+
+    <!-- ================= MASTHEAD ================= -->
+    <div class="masthead a-2">
+      <div class="ear" aria-hidden="true">
+        <strong>“All the Claims</strong>
+        <strong>Fit to Verify.”</strong>
+        <span class="ox">— House Motto</span>
+      </div>
+      <div class="masthead-title">
+        <h1>The <span class="thin">Analyst</span> Ledger</h1>
+        <p class="masthead-sub">Reporting the defensive security work of <b>Mahmoud (“Michael”) Al Kurdi</b></p>
+      </div>
+      <div class="ear" aria-hidden="true">
+        <strong>Vol. I · <span id="js-edition">No. 185</span></strong>
+        Charlotte, N.C.
+        <span class="ox">Free — Receipts Enclosed</span>
+      </div>
+    </div>
+
+    <div class="credstrip a-3">
+      CompTIA Security+ ce (SY0-701)<span class="sep">◆</span>B.S. Information Technologies, Summa Cum Laude<span class="sep">◆</span>Charlotte, N.C. — Open to Remote<span class="sep">◆</span>Available Full-Time
+    </div>
+
+    <!-- ================= SECTION NAV ================= -->
+    <nav class="paper-nav a-4" aria-label="Sections of this edition">
+      <ul>
+        <li><a href="#front">Front Page</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#record">The Record</a></li>
+        <li><a href="#letters">Correspondence</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= FRONT PAGE / HERO ================= -->
+    <section id="front" class="frontpage" aria-label="Front page — lead story">
+      <div class="fp-grid">
+        <article class="fp-lead">
+          <p class="kicker a-5">Security Operations · Lead Story</p>
+          <h2 class="headline a-6">After Eight Years on Federally Regulated Ground, an Analyst Reports for the SOC</h2>
+          <p class="deck a-7">Security+ certified and summa cum laude, Mahmoud “Michael” Al Kurdi arrives with a crew chief’s discipline, public repositories for receipts, and a simple ethos: every claim maps to evidence.</p>
+          <div class="byline-row a-8">
+            <span class="byline">By <b>The Security Operations Desk</b></span>
+            <span class="byline">Charlotte, N.C.</span>
+          </div>
+
+          <div class="colset a-9">
+            <p class="dropcap"><span class="dateline">CHARLOTTE —</span> Security work rarely announces itself. For eight years it looked like this: international flights turning on schedule, identities validated at the door, access tightly controlled, and every irregularity written down — because on a federally regulated ramp, the paperwork <em>is</em> the security. From 2015 to 2023, Mr.&nbsp;Al&nbsp;Kurdi served as an Aviation Security Operations Crew Chief for American Airlines in Charlotte, holding a security clearance with a CBP badge endorsement and working international flight operations under FAA, OSHA, IATA, and CBP requirements — with recurrent incident-response and safety-and-security training as a standing condition of the job.</p>
+            <p>He has since put the discipline on paper. In January 2025 he earned the CompTIA Security+&nbsp;ce certification (SY0-701, valid through January 2028). In December 2025 he completed a B.S. in Information Technologies with a cybersecurity concentration at Southern New Hampshire University — summa cum laude, 3.96 GPA, inducted into the Sigma Psi chapter of Alpha Sigma Lambda — conferred January 1, 2026.</p>
+            <p>The receipts are public. AgentForge, a configuration framework for agentic AI coding assistants, ships on npm with six adapter targets and a test harness standing behind it. Its companion, the AgentForge ATT&amp;CKLens Benchmark, asks a strictly defensive question — can AI coding agents build secure, uncertainty-aware, MITRE ATT&amp;CK-aligned defensive tooling? — and answers with seven scored artifacts and a re-runnable harness. <span class="jumpline">Standings in <a href="#projects">Section B</a> →</span></p>
+            <p class="endmark">Mr.&nbsp;Al&nbsp;Kurdi is seeking full-time work as a SOC analyst, security operations analyst, cybersecurity analyst, incident-response analyst, junior detection engineer, or in security automation. He is based in Charlotte, N.C., and open to remote.</p>
+          </div>
+        </article>
+
+        <aside class="fp-rail" aria-label="Front page sidebar">
+          <div class="statbox a-10">
+            <span class="stamp a-stamp" aria-hidden="true">Verified</span>
+            <h3>By the Numbers</h3>
+            <dl>
+              <div class="stat"><dt>8</dt><dd>Years in federally regulated security operations, American Airlines</dd></div>
+              <div class="stat"><dt>3.96</dt><dd>GPA — B.S. Information Technologies, summa cum laude, SNHU</dd></div>
+              <div class="stat"><dt>2028</dt><dd>Security+ ce (SY0-701) valid through January</dd></div>
+              <div class="stat"><dt>7</dt><dd>Agent artifacts scored in a reproducible defensive benchmark</dd></div>
+              <div class="stat"><dt>6</dt><dd>AgentForge adapter targets, one spec</dd></div>
+              <div class="stat"><dt>0.3.1</dt><dd>Published to npm as @kmitops/agentforge</dd></div>
+            </dl>
+          </div>
+
+          <figure class="pullquote a-10">
+            <blockquote>Every claim on this page maps to a public repo, a credential, or a document.</blockquote>
+            <figcaption>— The house ethos</figcaption>
+          </figure>
+
+          <nav class="edition-index a-10" aria-label="In this edition">
+            <h3>In This Edition</h3>
+            <ol>
+              <li><a href="#profile"><span class="ei-name">Profile — the making of the analyst</span><span class="ei-leader"></span><span class="ei-page">A2</span></a></li>
+              <li><a href="#projects"><span class="ei-name">Projects &amp; the standings table</span><span class="ei-leader"></span><span class="ei-page">B1</span></a></li>
+              <li><a href="#record"><span class="ei-name">The Record — résumé in full</span><span class="ei-leader"></span><span class="ei-page">C1</span></a></li>
+              <li><a href="#letters"><span class="ei-name">Correspondence — write to the desk</span><span class="ei-leader"></span><span class="ei-page">D1</span></a></li>
+            </ol>
+          </nav>
+        </aside>
+      </div>
+
+      <!-- Below the fold: briefs -->
+      <div class="briefs reveal">
+        <article class="brief">
+          <p class="kicker">Profile · A2</p>
+          <h3>Discipline learned where FAA, OSHA, IATA, and CBP all have opinions</h3>
+          <p>Eight years of identity validation, access control, and high-accountability documentation — and what they teach about alert triage.</p>
+          <a class="jumpline" href="#profile">Turn to Profile →</a>
+        </article>
+        <article class="brief">
+          <p class="kicker">The Standings · B1</p>
+          <h3>Seven agents enter a defensive benchmark; Cursor tops the table at 100</h3>
+          <p>A reproducible rubric grades AI coding agents on ATT&amp;CK discipline, prompt-injection resistance, and honest uncertainty.</p>
+          <a class="jumpline" href="#projects">Full table inside →</a>
+        </article>
+        <article class="brief">
+          <p class="kicker">The Record · C1</p>
+          <h3>The complete record, in print</h3>
+          <p>Experience, education, certification, and skills — with the résumé available as a one-page, print-ready PDF. No paywall.</p>
+          <a class="jumpline" href="#record">Turn to the Record →</a>
+        </article>
+      </div>
+    </section>
+
+    <div class="fleuron" aria-hidden="true">❦</div>
+
+    <!-- ================= PROFILE / ABOUT ================= -->
+    <section id="profile" aria-label="Profile — about the analyst">
+      <header class="section-bar reveal">
+        <span class="sb-left">Section A · Profile</span>
+        <h2>Profile</h2>
+        <span class="sb-right">Page A2</span>
+      </header>
+
+      <div class="two-rail">
+        <article class="tr-main reveal">
+          <div class="story-head">
+            <p class="kicker">The Person Behind the Ledger</p>
+            <h3 class="headline">The Making of an Evidence-First Analyst</h3>
+            <p class="deck">The road from the ramp to the security operations floor ran through federal regulation, a 3.96 GPA, and a habit of writing everything down.</p>
+            <span class="byline">By <b>The Security Operations Desk</b></span>
+          </div>
+
+          <div class="colset">
+            <p class="dropcap">Ask what an aviation security operations crew chief actually does, and the answer sounds familiar to anyone who has worked a SOC shift: validate identities, control access to aircraft and secure areas, document incidents to a standard a federal auditor could act on, and keep operations moving while doing all of it. Mr.&nbsp;Al&nbsp;Kurdi did that work for American Airlines in Charlotte for eight years — under a security clearance with CBP badge endorsement, across international flight operations governed by FAA, OSHA, IATA, and CBP requirements, with recurrent incident-response and safety-and-security training required year after year.</p>
+            <p>The habits transfer. Alert triage rewards the same temperament as flight operations: calm under time pressure, suspicion of tidy explanations, and documentation a stranger could pick up cold. His project work runs on the same ethos — rubric-based scoring, evidence citation, confidence scoring, and an explicit “No Clear Mapping” verdict where the evidence runs out, rather than a guess dressed up as an answer.</p>
+            <p>The road between the ramp and the SOC ran through coursework and delivery routes: courier and logistics work for USPS in Kannapolis (2024–2025), then delivery for Fossa Logistics, an Amazon DSP in Charlotte (2025–present), while completing the cybersecurity degree summa cum laude. The pattern is consistent — high-accountability work, done thoroughly, documented properly.</p>
+            <p class="endmark">He now seeks the room where those habits are the job description: the security operations center — in Charlotte or from it.</p>
+          </div>
+        </article>
+
+        <aside aria-label="Profile sidebar">
+          <figure class="portrait reveal">
+            <div class="engraving" aria-hidden="true"><span>MK</span></div>
+            <figcaption>M. (“Michael”) Al Kurdi, Security Operations Desk. Engraving unavailable; evidence supplied instead.</figcaption>
+          </figure>
+
+          <div class="chronicle reveal">
+            <h3>The Chronicle</h3>
+            <ul>
+              <li><time>2015–23</time><span>Aviation Security Operations Crew Chief, American Airlines, Charlotte</span></li>
+              <li><time>2024–25</time><span>Courier &amp; Logistics Specialist, USPS, Kannapolis</span></li>
+              <li><time>Jan 2025</time><span>CompTIA Security+ ce (SY0-701) earned</span></li>
+              <li><time>2025–</time><span>Delivery Associate, Fossa Logistics LLC (Amazon DSP), Charlotte</span></li>
+              <li><time>Dec 2025</time><span>B.S. Information Technologies (Cybersecurity) completed, SNHU — summa cum laude, 3.96</span></li>
+              <li><time>Jan 2026</time><span>Degree conferred; Alpha Sigma Lambda, Sigma Psi chapter</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="fleuron" aria-hidden="true">❦</div>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" aria-label="Projects — inside-section stories">
+      <header class="section-bar reveal">
+        <span class="sb-left">Section B · Technology</span>
+        <h2>Projects</h2>
+        <span class="sb-right">Page B1</span>
+      </header>
+
+      <!-- Story 1: AgentForge -->
+      <article class="story reveal">
+        <div class="story-head">
+          <p class="kicker">Open Source · Section B Lead</p>
+          <h3 class="headline">“One Spec, Many Agents”: AgentForge Ships Its Configuration Framework to npm</h3>
+          <p class="deck">Six adapter targets, one source of truth — with round-trip tests, smoke tests, and a doctor CLI standing behind the claim.</p>
+          <span class="byline">MIT License · <b>github.com/KM-it-ops/AgentForge</b></span>
+        </div>
+        <div class="colset">
+          <p class="dropcap">The problem is mundane and universal: every agentic coding assistant wants its own configuration dialect. AgentForge keeps one specification and writes it out to six targets — Claude Code, Codex, Gemini CLI, Cursor, Aider, and a generic adapter — published to npm as <strong>@kmitops/agentforge</strong>, version 0.3.1, under the MIT license.</p>
+          <p class="endmark">The proof is the point. Behind the package stand adapter round-trip tests, install smoke tests, a doctor CLI for diagnosing broken setups, a readiness runbook, and a live demo anyone can open. It is the same standard the Ledger applies to its proprietor: don’t claim it, show it.</p>
+        </div>
+        <div class="linkrow">
+          <a href="https://github.com/KM-it-ops/AgentForge" rel="noopener">Repository</a>
+          <a href="https://km-it-ops.github.io/AgentForge/docs/demo/" rel="noopener">Live demo</a>
+        </div>
+        <div class="tagrow" aria-label="Technologies">
+          <span>Node.js</span><span>npm</span><span>JavaScript</span><span>YAML / JSON</span><span>MIT</span>
+        </div>
+      </article>
+
+      <!-- Story 2: ATT&CKLens standings -->
+      <article class="story reveal">
+        <div class="story-head">
+          <p class="kicker">The Standings · Defensive Benchmark</p>
+          <h3 class="headline">Seven Agents, One Rubric: Cursor Tops the Table at a Perfect 100</h3>
+          <p class="deck">A reproducible, strictly defensive benchmark asks whether AI coding agents can build secure, uncertainty-aware, MITRE ATT&amp;CK-aligned tooling. The table below is the box score.</p>
+          <span class="byline">MIT License · <b>github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark</b></span>
+        </div>
+
+        <div class="standings-wrap">
+          <h4>Defensive Tooling League — Final Standings</h4>
+          <table class="standings">
+            <caption>Graded on ATT&amp;CK mapping discipline, prompt-injection resistance, evidence citation, uncertainty handling (“No Clear Mapping”), detection ideas, remediation guidance, and analyst follow-up questions. One branch per agent; the harness re-runs via <code>benchmark-all.ps1</code>.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Pos</th>
+                <th scope="col">Agent Artifact</th>
+                <th scope="col" class="num">Pts / 100</th>
+                <th scope="col" class="num">Off Lead</th>
+                <th scope="col"><span class="visually-hidden">Score bar</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="champ"><td class="pos">1</td><td class="agent">Cursor</td><td class="num pts">100</td><td class="num">—</td><td class="barcell"><span class="scorebar"><i style="--w:100%"></i></span></td></tr>
+              <tr><td class="pos">T-2</td><td class="agent">Claude Code</td><td class="num pts">98</td><td class="num">2</td><td class="barcell"><span class="scorebar"><i style="--w:98%"></i></span></td></tr>
+              <tr><td class="pos">T-2</td><td class="agent">Hermes Nemotron</td><td class="num pts">98</td><td class="num">2</td><td class="barcell"><span class="scorebar"><i style="--w:98%"></i></span></td></tr>
+              <tr><td class="pos">4</td><td class="agent">Codex</td><td class="num pts">96</td><td class="num">4</td><td class="barcell"><span class="scorebar"><i style="--w:96%"></i></span></td></tr>
+              <tr><td class="pos">5</td><td class="agent">Lovable (Repaired)</td><td class="num pts">76</td><td class="num">24</td><td class="barcell"><span class="scorebar"><i style="--w:76%"></i></span></td></tr>
+              <tr><td class="pos">6</td><td class="agent">Mistral Vibe</td><td class="num pts">75</td><td class="num">25</td><td class="barcell"><span class="scorebar"><i style="--w:75%"></i></span></td></tr>
+              <tr><td class="pos">7</td><td class="agent">Lovable (Original)</td><td class="num pts">40</td><td class="num">60</td><td class="barcell"><span class="scorebar"><i style="--w:40%"></i></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="smallprint">All work is defensive: detection, mitigation, and analyst support — never offensive tooling. MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation.</p>
+        <div class="linkrow">
+          <a href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark" rel="noopener">Repository &amp; harness</a>
+        </div>
+      </article>
+
+      <!-- Story 3 & 4: In brief -->
+      <article class="story reveal">
+        <div class="duo">
+          <article>
+            <p class="kicker">In Brief · Dashboards</p>
+            <h3>Vulnerability Management Mini Program</h3>
+            <p class="endmark">A Python, Flask, and SQLite dashboard for the unglamorous middle of security work: CRUD for findings, KPI cards, search, filtering, and severity states — remediation tracking that behaves like a tool, not a spreadsheet.</p>
+            <div class="tagrow" aria-label="Technologies"><span>Python</span><span>Flask</span><span>SQLite</span></div>
+          </article>
+          <article>
+            <p class="kicker">In Brief · Detection</p>
+            <h3>Security Log Anomaly Detection</h3>
+            <p class="endmark">Python with pandas and NumPy: rule-based and statistical detection for authentication and network anomaly triage — the analyst’s oldest question, “is this normal?”, asked in code.</p>
+            <div class="tagrow" aria-label="Technologies"><span>Python</span><span>pandas</span><span>NumPy</span></div>
+          </article>
+        </div>
+      </article>
+    </section>
+
+    <div class="fleuron" aria-hidden="true">❦</div>
+
+    <!-- ================= THE RECORD / RESUME ================= -->
+    <section id="record" aria-label="The Record — résumé">
+      <header class="section-bar reveal">
+        <span class="sb-left">Section C · Public Record</span>
+        <h2>The Record</h2>
+        <span class="sb-right">Page C1</span>
+      </header>
+
+      <div class="notice reveal">
+        <div class="n-copy">
+          <h3>Obtain the Complete Record</h3>
+          <p>The résumé, print-ready in PDF. No paywall, no registration — the Ledger’s readers deserve primary sources.</p>
+        </div>
+        <a class="btn-print" href="../../assets/Michael_Kurdi_Resume_2026.pdf" target="_blank" rel="noopener">Download the Résumé (PDF)</a>
+      </div>
+
+      <div class="two-rail">
+        <div class="tr-main reveal">
+          <h3 class="record-h">Experience</h3>
+          <article class="record-entry">
+            <div class="re-top">
+              <h4>Aviation Security Operations Crew Chief</h4>
+              <span class="re-when">2015–2023</span>
+            </div>
+            <p class="re-org">American Airlines — Charlotte, N.C.</p>
+            <p>Federally regulated operations under FAA, OSHA, IATA, and CBP requirements. Security clearance with CBP badge endorsement; international flight operations. Recurrent incident-response and safety/security training. Identity validation, access control, and high-accountability documentation.</p>
+          </article>
+          <article class="record-entry">
+            <div class="re-top">
+              <h4>Courier &amp; Logistics Specialist</h4>
+              <span class="re-when">2024–2025</span>
+            </div>
+            <p class="re-org">United States Postal Service — Kannapolis, N.C.</p>
+            <p>Time-critical routing and delivery with chain-of-custody accountability.</p>
+          </article>
+          <article class="record-entry">
+            <div class="re-top">
+              <h4>Delivery Associate</h4>
+              <span class="re-when">2025–Present</span>
+            </div>
+            <p class="re-org">Fossa Logistics LLC (Amazon DSP) — Charlotte, N.C.</p>
+            <p>High-volume delivery operations, sustained while completing the cybersecurity degree summa cum laude.</p>
+          </article>
+
+          <h3 class="record-h">Education</h3>
+          <article class="record-entry">
+            <div class="re-top">
+              <h4>B.S. Information Technologies — Cybersecurity Concentration</h4>
+              <span class="re-when">Conferred Jan 2026</span>
+            </div>
+            <p class="re-org">Southern New Hampshire University</p>
+            <p>Completed December 2025; conferred January 1, 2026. Summa cum laude, 3.96 GPA. Sigma Psi chapter of Alpha Sigma Lambda honor society.</p>
+          </article>
+
+          <h3 class="record-h">Certification</h3>
+          <article class="record-entry">
+            <div class="re-top">
+              <h4>CompTIA Security+ ce (SY0-701)</h4>
+              <span class="re-when">Jan 2025 → Jan 2028</span>
+            </div>
+            <p class="re-org">CompTIA</p>
+            <p>Issued January 7, 2025; valid through January 7, 2028.</p>
+          </article>
+        </div>
+
+        <aside aria-label="Classifieds">
+          <div class="classified wanted reveal">
+            <h3>Situations Wanted</h3>
+            <p class="ad"><b>ANALYST, SECURITY OPERATIONS</b> — Security+ certified; eight years federally regulated ops; degree with honors; public receipts. Seeks: SOC Analyst, Security Operations Analyst, Cybersecurity Analyst, Incident Response Analyst, Junior Detection Engineer, Security Automation.</p>
+            <p class="ad-meta">Available full-time · Charlotte, N.C. or remote</p>
+          </div>
+
+          <div class="classified reveal">
+            <h3>Skills Offered — Classified</h3>
+            <div class="skill-group">
+              <h4>SOC / SecOps</h4>
+              <p>Alert triage · security monitoring · incident documentation · log analysis · evidence review · authentication events · DNS investigation · vulnerability awareness · remediation planning · escalation notes</p>
+            </div>
+            <div class="skill-group">
+              <h4>Cybersecurity</h4>
+              <p>MITRE ATT&amp;CK · defensive security · prompt-injection resistance · access control · least privilege · security documentation · confidence scoring · “No Clear Mapping” handling</p>
+            </div>
+            <div class="skill-group">
+              <h4>AI &amp; Automation</h4>
+              <p>AI coding-agent evaluation · reproducible benchmark design · rubric-based scoring · prompt architecture · safety rules · acceptance criteria · automated reporting</p>
+            </div>
+            <div class="skill-group">
+              <h4>Tools</h4>
+              <p>Python · Gradio · JavaScript · Node.js · PowerShell · Bash · Git/GitHub · Markdown · JSON · YAML · HTML/CSS · pytest · npm</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="fleuron" aria-hidden="true">❦</div>
+
+    <!-- ================= CORRESPONDENCE / CONTACT ================= -->
+    <section id="letters" aria-label="Correspondence — contact">
+      <header class="section-bar reveal">
+        <span class="sb-left">Section D · Letters</span>
+        <h2>Correspondence</h2>
+        <span class="sb-right">Page D1</span>
+      </header>
+
+      <div class="letters-intro reveal">
+        <p class="kicker" style="justify-content:center">Letters to the Desk</p>
+        <h3 class="headline">Recruiters, Hiring Managers &amp; Security Engineers Are Invited to Write</h3>
+        <p class="deck">Replies are prompt. Claims are verifiable. Correspondence on SOC, detection, incident response, and security-automation roles is especially welcome.</p>
+      </div>
+
+      <address class="reveal" style="font-style:normal">
+        <div class="contact-grid">
+          <div class="contact-cell">
+            <span class="cc-label">Email</span>
+            <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a>
+          </div>
+          <div class="contact-cell">
+            <span class="cc-label">Telephone</span>
+            <a href="tel:+17044568322">(704) 456-8322</a>
+          </div>
+          <div class="contact-cell">
+            <span class="cc-label">GitHub</span>
+            <a href="https://github.com/KM-it-ops" rel="noopener">github.com/KM-it-ops</a>
+          </div>
+          <div class="contact-cell">
+            <span class="cc-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">in/mahmoud-michael-al-kurdi</a>
+          </div>
+          <div class="contact-cell">
+            <span class="cc-label">Site</span>
+            <a href="https://km-it-ops.github.io" rel="noopener">km-it-ops.github.io</a>
+          </div>
+        </div>
+      </address>
+
+      <div class="coupon reveal">
+        <span class="scissors" aria-hidden="true">✂</span>
+        <h3>Clip &amp; Send</h3>
+        <p>“Dear Mr. Al Kurdi — we read the Ledger, checked the receipts, and would like to talk.”</p>
+        <a class="btn-print" href="mailto:kurdi.michael.it@gmail.com?subject=Read%20the%20Ledger%20—%20let%27s%20talk">Write to the Analyst</a>
+        <p class="cc-avail">Charlotte, N.C. · Open to remote · Available full-time</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= COLOPHON ================= -->
+  <footer class="colophon">
+    <p class="masthead-mini">The Analyst Ledger</p>
+    <p>A one-page portfolio for Mahmoud (“Michael”) Al Kurdi, hand-set in Fraunces, Newsreader, and Libre Franklin. No frameworks, no build step, no tracking — HTML, CSS, and a little JavaScript. All security content is defensive: detection, mitigation, and analyst support.</p>
+    <nav aria-label="Footer">
+      <a href="#front">Front Page</a>
+      <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+      <a href="../../assets/Michael_Kurdi_Resume_2026.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+    </nav>
+    <p class="fine">MITRE ATT&amp;CK® is a registered trademark of The MITRE Corporation. © <span id="js-year">2026</span> Mahmoud (“Michael”) Al Kurdi. Published at Charlotte, N.C.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Dateline: always today's edition ---- */
+  var now = new Date();
+  var dateEl = document.getElementById("js-date");
+  if (dateEl) {
+    dateEl.textContent = now.toLocaleDateString("en-US", {
+      weekday: "long", year: "numeric", month: "long", day: "numeric"
+    });
+  }
+
+  /* ---- Edition number: day of the year ---- */
+  var edEl = document.getElementById("js-edition");
+  if (edEl) {
+    var start = new Date(now.getFullYear(), 0, 0);
+    var dayOfYear = Math.floor((now - start) / 86400000);
+    edEl.textContent = "No. " + dayOfYear;
+  }
+
+  /* ---- Copyright year ---- */
+  var yEl = document.getElementById("js-year");
+  if (yEl) yEl.textContent = String(now.getFullYear());
+
+  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Scroll reveal (below the fold) ---- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if (!prefersReduced && "IntersectionObserver" in window) {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    revealEls.forEach(function (el) { ro.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("is-in"); });
+  }
+
+  /* ---- Scrollspy: mark the current section in the nav ---- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".paper-nav a"));
+  var sections = navLinks
+    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setCurrent(id) {
+    navLinks.forEach(function (a) {
+      if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var visible = {};
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visible[entry.target.id] = entry.isIntersecting ? entry.intersectionRatio : 0;
+      });
+      var best = null, bestRatio = 0;
+      sections.forEach(function (s) {
+        var r = visible[s.id] || 0;
+        if (r > bestRatio) { bestRatio = r; best = s.id; }
+      });
+      if (best) setCurrent(best);
+    }, { rootMargin: "-15% 0px -35% 0px", threshold: [0, .15, .35, .6] });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+  setCurrent("front");
+})();
+</script>
+</body>
+</html>

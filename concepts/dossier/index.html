@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case File — Mahmoud ("Michael") Al Kurdi · Security Operations Analyst</title>
+<meta name="description" content="Personnel case file of Mahmoud ('Michael') Al Kurdi — SOC / Security Operations Analyst. CompTIA Security+ ce, B.S. Cybersecurity summa cum laude, 8 years federally regulated aviation security operations. Every claim maps to a public repo, credential, or document.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 7h10l3 4h15v16H2z' fill='%23eed9a4' stroke='%237c5f2e' stroke-width='1.5'/%3E%3Crect x='6' y='15' width='14' height='2' fill='%23a32e26'/%3E%3Crect x='6' y='19' width='10' height='2' fill='%232a2318'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Staatliches&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PAPER DOSSIER — manila case-file concept
+   Fonts: Special Elite (typewriter display) · Courier Prime (body)
+          Staatliches (stamps/tabs) · Caveat (pencil margin notes)
+   ============================================================ */
+:root{
+  --desk:        #8a6c44;
+  --desk-deep:   #6f5430;
+  --manila:      #eed9a4;
+  --manila-deep: #ddbf7d;
+  --manila-edge: #b8944f;
+  --paper:       #fbf6e8;
+  --paper-2:     #f4ecd6;
+  --card:        #fdf9ee;
+  --ink:         #2a2318;
+  --ink-soft:    #55492f;
+  --ink-faint:   #877757;
+  --red:         #a32e26;
+  --blue:        #1e4e79;
+  --pencil:      #6e6148;
+  --clip:        #98938a;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23g)'/%3E%3C/svg%3E");
+  --distress: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' seed='7'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.7' intercept='0.28'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23d)'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior:smooth; }
+}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:'Courier Prime', 'Courier New', monospace;
+  font-size:1.02rem;
+  line-height:1.62;
+  background-color:var(--desk);
+  background-image:
+    var(--grain),
+    radial-gradient(1200px 500px at 50% -10%, rgba(255,240,200,.24), transparent 70%),
+    radial-gradient(900px 700px at 105% 110%, rgba(30,18,4,.35), transparent 65%),
+    linear-gradient(175deg, #97764b 0%, var(--desk) 45%, #7d5f3a 100%);
+}
+
+::selection{ background:#f2d16b; color:var(--ink); }
+
+/* ---------- typography ---------- */
+h1,h2,h3{ font-family:'Special Elite', 'Courier Prime', monospace; font-weight:400; line-height:1.15; margin:0; }
+p{ margin:0 0 1.05rem; }
+a{ color:var(--blue); text-decoration-thickness:1.5px; text-underline-offset:3px; }
+a:hover{ color:var(--red); }
+:focus-visible{
+  outline:3px dashed var(--blue);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.small{ font-size:.86rem; color:var(--ink-soft); }
+.typed-label{
+  font-family:'Special Elite', monospace;
+  font-size:.82rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.pencil-note{
+  font-family:'Caveat', cursive;
+  font-size:1.35rem;
+  color:var(--pencil);
+  transform:rotate(-2deg);
+  display:inline-block;
+  line-height:1.2;
+}
+
+/* ---------- skip link ---------- */
+.skip-link{
+  position:absolute; left:1rem; top:-4rem; z-index:200;
+  background:var(--ink); color:var(--paper);
+  font-family:'Staatliches', sans-serif; letter-spacing:.12em;
+  padding:.7rem 1.1rem; border-radius:0 0 6px 6px;
+  text-decoration:none; transition:top .2s ease;
+}
+.skip-link:focus{ top:0; }
+
+/* ---------- hanging-tab navigation ---------- */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:linear-gradient(#7d6039, var(--desk-deep));
+  border-bottom:2px solid rgba(40,26,8,.55);
+  box-shadow:0 8px 22px -10px rgba(26,16,3,.65);
+}
+.topbar-inner{
+  max-width:1080px; margin:0 auto;
+  display:flex; align-items:stretch; gap:1rem;
+  padding:0 clamp(.6rem, 2.5vw, 1.25rem);
+}
+.file-id{
+  font-family:'Staatliches', sans-serif;
+  letter-spacing:.14em; font-size:1.02rem;
+  color:#f3e6c3; text-decoration:none;
+  align-self:center; white-space:nowrap; padding:.4rem 0;
+}
+.file-id:hover{ color:#ffd98a; }
+.file-id .dot{ color:#d8a94e; }
+.tabs{
+  display:flex; gap:6px; margin-left:auto;
+  list-style:none; padding:0 2px; margin-top:0; margin-bottom:0;
+  overflow-x:auto; scrollbar-width:none;
+  align-items:flex-start;
+}
+.tabs::-webkit-scrollbar{ display:none; }
+.tab{
+  display:block;
+  background:var(--manila);
+  color:var(--ink);
+  font-family:'Staatliches', sans-serif;
+  font-size:.98rem; letter-spacing:.1em;
+  text-decoration:none;
+  padding:.85rem .8rem .5rem;
+  border:1px solid rgba(92,64,18,.5); border-top:none;
+  border-radius:0 0 9px 9px;
+  box-shadow:0 5px 9px -5px rgba(26,16,3,.6);
+  transform:translateY(-5px);
+  transition:transform .18s ease, background .18s ease;
+  white-space:nowrap;
+}
+.tab:hover{ transform:translateY(0); color:var(--ink); background:#f6e6b7; }
+.tab[aria-current="true"]{
+  background:var(--paper);
+  transform:translateY(0);
+  box-shadow:0 7px 12px -6px rgba(26,16,3,.7);
+}
+.tab .num{ color:var(--red); font-size:.82em; margin-right:.35em; }
+
+/* ---------- layout ---------- */
+main{
+  max-width:1080px; margin:0 auto;
+  padding:clamp(2.2rem, 5vw, 4rem) clamp(.75rem, 3vw, 1.25rem) 4.5rem;
+  display:grid; gap:clamp(3.2rem, 7vw, 5.5rem);
+}
+section{ scroll-margin-top:5.2rem; }
+
+/* ---------- folders & sheets ---------- */
+.folder{
+  position:relative;
+  background:
+    var(--grain),
+    linear-gradient(168deg, #f3e0ad 0%, var(--manila) 40%, #e2c684 100%);
+  border:1px solid rgba(122,90,34,.55);
+  border-radius:12px 16px 12px 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.4),
+    0 24px 44px -20px rgba(30,18,3,.6),
+    0 3px 8px -3px rgba(30,18,3,.35);
+  padding:clamp(1.1rem, 3.5vw, 2.4rem);
+}
+.folder-tab{
+  position:absolute; top:-1.85rem; left:clamp(.9rem, 4vw, 2.2rem);
+  background:linear-gradient(#f3e0ad, var(--manila));
+  border:1px solid rgba(122,90,34,.55); border-bottom:none;
+  border-radius:9px 11px 0 0;
+  padding:.34rem .95rem .55rem;
+  font-family:'Staatliches', sans-serif;
+  font-size:.92rem; letter-spacing:.16em; color:var(--ink-soft);
+  box-shadow:0 -3px 8px -5px rgba(30,18,3,.4);
+}
+.folder-tab .num{ color:var(--red); }
+.sheet{
+  position:relative;
+  background:
+    var(--grain),
+    linear-gradient(178deg, var(--paper) 0%, var(--paper-2) 100%);
+  border:1px solid rgba(122,96,42,.3);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.55) inset,
+    0 14px 26px -16px rgba(35,22,4,.55);
+  padding:clamp(1.3rem, 4vw, 2.8rem);
+}
+.tilt-l{ transform:rotate(-.45deg); }
+.tilt-r{ transform:rotate(.4deg); }
+
+/* scroll-reveal (JS-gated so content is never hidden without JS) */
+html.js .reveal{
+  opacity:0; transform:translateY(26px) rotate(.5deg);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+html.js .reveal.in-view{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  html.js .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/* ---------- stamps ---------- */
+.stamp{
+  display:inline-block;
+  font-family:'Staatliches', sans-serif;
+  letter-spacing:.14em;
+  color:var(--red);
+  border:3px solid currentColor;
+  border-radius:7px;
+  padding:.28em .7em .18em;
+  line-height:1.05;
+  text-transform:uppercase;
+  transform:rotate(-8deg);
+  -webkit-mask-image:var(--distress);
+          mask-image:var(--distress);
+  box-shadow:inset 0 0 0 1.5px currentColor;
+  pointer-events:none;
+  text-align:center;
+}
+.stamp-blue{ color:var(--blue); }
+.stamp-sm{ font-size:.86rem; border-width:2.5px; }
+.stamp-corner{ position:absolute; z-index:3; }
+
+/* round certification stamp (SVG) */
+.round-stamp{
+  color:var(--blue);
+  width:clamp(118px, 16vw, 150px); height:auto;
+  transform:rotate(11deg);
+  -webkit-mask-image:var(--distress);
+          mask-image:var(--distress);
+  font-family:'Staatliches', sans-serif;
+}
+.round-stamp text{ fill:currentColor; }
+.round-stamp textPath{ letter-spacing:.14em; }
+
+/* ---------- fasteners, clips, staples, punches ---------- */
+.fastener{
+  position:absolute; top:-9px; left:50%; transform:translateX(-50%);
+  display:flex; align-items:center; gap:82px; z-index:4;
+}
+.fastener::before{
+  content:""; position:absolute; left:8px; right:8px; top:7px; height:6px;
+  background:linear-gradient(#d9b768, #a5823c);
+  border-radius:3px; box-shadow:0 2px 3px rgba(30,18,3,.35);
+}
+.fastener i{
+  width:20px; height:20px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #f0d489, #b08c3f 60%, #7c5f22);
+  box-shadow:0 2px 4px rgba(30,18,3,.5), inset 0 -2px 3px rgba(60,40,5,.5);
+  position:relative; z-index:1;
+}
+.clip{
+  position:absolute; width:32px; height:auto; z-index:5;
+  filter:drop-shadow(1.5px 2.5px 1.5px rgba(30,18,3,.35));
+}
+.clip path{ stroke:var(--clip); }
+.staple{
+  position:absolute; width:24px; height:8px;
+  border:2.5px solid #8f8b82; border-bottom:none;
+  border-radius:2px 2px 0 0;
+  filter:drop-shadow(1px 1px .5px rgba(30,18,3,.3));
+  z-index:4;
+}
+.punch{
+  position:absolute; left:14px; width:17px; height:17px; border-radius:50%;
+  background:var(--manila-deep);
+  box-shadow:inset 0 1.5px 3px rgba(45,28,5,.45);
+}
+
+/* coffee ring — one, on the cover, like a real desk */
+.coffee-ring{
+  position:absolute; right:6%; bottom:7%;
+  width:92px; height:88px; border-radius:50%;
+  border:7px solid rgba(112,73,28,.14);
+  filter:blur(.5px);
+  transform:rotate(-4deg) scaleX(1.04);
+  pointer-events:none;
+}
+.coffee-ring::after{
+  content:""; position:absolute; inset:-13px -9px -5px -11px;
+  border-radius:50%; border:2px solid rgba(112,73,28,.1);
+}
+
+/* ---------- redaction bars ---------- */
+.redacted{
+  background:#191307;
+  color:transparent;
+  border-radius:2px;
+  padding:0 .3em;
+  box-decoration-break:clone; -webkit-box-decoration-break:clone;
+  cursor:help;
+  transition:background .25s ease, color .25s ease;
+  text-shadow:none;
+}
+.redacted:hover, .redacted:focus-visible{
+  background:#f5d96b;
+  color:var(--ink);
+}
+@media (prefers-reduced-motion: reduce){
+  .redacted{ transition:none; }
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;
+  font-family:'Staatliches', sans-serif;
+  font-size:1.04rem; letter-spacing:.13em;
+  color:var(--ink); background:rgba(255,252,240,.55);
+  border:2.5px solid var(--ink); border-radius:5px;
+  padding:.62rem 1.15rem .5rem;
+  text-decoration:none;
+  box-shadow:3px 3px 0 rgba(42,35,24,.85);
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn:hover{
+  transform:translate(2px,2px);
+  box-shadow:1px 1px 0 rgba(42,35,24,.85);
+  background:#fdf3d3; color:var(--ink);
+}
+.btn:active{ transform:translate(3px,3px); box-shadow:0 0 0 rgba(0,0,0,0); }
+.btn-red{ color:var(--red); border-color:var(--red); box-shadow:3px 3px 0 rgba(163,46,38,.75); }
+.btn-red:hover{ box-shadow:1px 1px 0 rgba(163,46,38,.75); color:var(--red); }
+@media (prefers-reduced-motion: reduce){
+  .btn{ transition:none; }
+}
+
+/* ---------- hero / cover ---------- */
+.cover-folder{ padding-top:clamp(2.2rem, 5vw, 3rem); }
+.cover-grid{
+  display:grid; gap:clamp(1.4rem, 3.5vw, 2.4rem);
+  grid-template-columns:minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items:start;
+}
+.cover-sheet{ padding-top:clamp(2rem, 4vw, 2.6rem); }
+.cover-kicker{
+  display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; align-items:baseline;
+  border-bottom:1.5px solid var(--ink-faint);
+  padding-bottom:.55rem; margin-bottom:1.2rem;
+}
+.cover-name{
+  font-size:clamp(1.9rem, 5.3vw, 3.35rem);
+  letter-spacing:.015em;
+  text-shadow:.5px .5px 0 rgba(42,35,24,.25);
+}
+.cover-role{
+  font-family:'Special Elite', monospace;
+  font-size:clamp(1rem, 2.4vw, 1.28rem);
+  color:var(--ink-soft);
+  margin:.7rem 0 1.3rem;
+}
+.cover-facts{
+  list-style:none; margin:0 0 1.6rem; padding:0;
+  display:grid; gap:.4rem;
+}
+.cover-facts li{ padding-left:1.5em; position:relative; }
+.cover-facts li::before{
+  content:"▸"; position:absolute; left:.2em; color:var(--red);
+}
+.cover-ctas{ display:flex; flex-wrap:wrap; gap:.9rem .8rem; align-items:center; }
+.stamp-open{
+  position:absolute; top:clamp(.4rem,2vw,1.3rem); right:clamp(.6rem,3vw,1.6rem);
+  font-size:clamp(1.25rem, 3.4vw, 2rem);
+  z-index:6;
+}
+.stamp-public{
+  margin-top:1.4rem;
+  transform:rotate(-3deg);
+  font-size:.9rem;
+}
+.barcode{
+  margin-top:1.6rem;
+  width:min(230px, 60%); height:34px;
+  background:repeating-linear-gradient(90deg,
+    var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 7px, transparent 7px 9px,
+    var(--ink) 9px 10px, transparent 10px 14px, var(--ink) 14px 17px, transparent 17px 19px);
+  position:relative;
+}
+.barcode span{
+  position:absolute; left:0; right:0; top:100%;
+  font-size:.72rem; letter-spacing:.4em; color:var(--ink-soft);
+  font-family:'Courier Prime', monospace;
+}
+
+/* index card clipped to the cover */
+.index-card{
+  position:relative;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 27px, rgba(30,78,121,.22) 27px 28px),
+    linear-gradient(#fdfaf0, #f7f0da);
+  border:1px solid rgba(122,96,42,.35);
+  box-shadow:0 10px 20px -12px rgba(35,22,4,.55);
+  padding:2.1rem 1.25rem 1.25rem;
+  transform:rotate(1.6deg);
+  font-size:.92rem; line-height:28px;
+}
+.index-card::before{
+  content:""; position:absolute; left:0; right:0; top:0; height:20px;
+  border-bottom:2px solid rgba(163,46,38,.5);
+  background:transparent;
+}
+.index-card h3{ font-size:1rem; letter-spacing:.14em; margin-bottom:.4rem; }
+.index-card p{ margin:0; }
+.index-card .clip{ top:-16px; left:18px; }
+
+/* ---------- memo (about) ---------- */
+.memo-head{
+  border-bottom:2.5px solid var(--ink);
+  padding-bottom:.8rem; margin-bottom:1.4rem;
+}
+.memo-head h2{
+  font-size:clamp(1.6rem, 4vw, 2.3rem); letter-spacing:.2em;
+}
+.memo-fields{
+  margin:1.1rem 0 0; display:grid; gap:.25rem;
+  font-size:.95rem;
+}
+.memo-fields div{ display:flex; gap:.6rem; flex-wrap:wrap; }
+.memo-fields dt{
+  min-width:5.2em; font-weight:700; letter-spacing:.08em; color:var(--ink-soft);
+}
+.memo-fields dd{ margin:0; }
+.memo-body p{ text-indent:2.2em; }
+.memo-body p:first-of-type{ text-indent:0; }
+.declassify-legend{
+  font-size:.84rem; color:var(--ink-soft);
+  border-top:1px dashed var(--ink-faint);
+  margin-top:1.4rem; padding-top:.7rem;
+}
+.declassify-legend .bar{
+  display:inline-block; width:2.6em; height:.85em;
+  background:#191307; vertical-align:baseline; border-radius:2px; margin-right:.4em;
+}
+
+/* roles + skills */
+.profile-grid{
+  display:grid; gap:1.4rem;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);
+  margin-top:1.8rem;
+}
+.roles-card, .skills-card{
+  border:1.5px solid var(--ink-faint);
+  background:rgba(255,252,240,.5);
+  padding:1.1rem 1.2rem;
+  position:relative;
+}
+.roles-card h3, .skills-card h3{
+  font-size:.95rem; letter-spacing:.2em; margin-bottom:.7rem; color:var(--ink-soft);
+}
+.roles-list{ list-style:none; margin:0; padding:0; display:grid; gap:.45rem; font-size:.95rem; }
+.cb{
+  display:inline-block; width:1.05em; height:1.05em;
+  border:1.8px solid var(--ink); border-radius:2px;
+  margin-right:.55em; vertical-align:-.12em;
+  position:relative;
+}
+.cb.checked::after{
+  content:"✗"; position:absolute; inset:-4px 0 0 1px;
+  color:var(--blue); font-weight:700; font-size:1.05em;
+  font-family:'Courier Prime', monospace;
+}
+.skills-cols{
+  display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+}
+.skills-cols h4{
+  font-family:'Special Elite', monospace; font-weight:400;
+  font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+  margin:0 0 .4rem; color:var(--red);
+}
+.skills-cols ul{
+  list-style:none; margin:0; padding:0; font-size:.88rem; display:grid; gap:.28rem;
+}
+.skills-cols li::before{ content:"– "; color:var(--ink-faint); }
+.tools-line{
+  margin-top:1.1rem; padding-top:.8rem; border-top:1px dashed var(--ink-faint);
+  font-size:.88rem;
+}
+.tools-line strong{ letter-spacing:.1em; }
+
+/* ---------- exhibits (projects) ---------- */
+.exhibits-intro{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1.4rem;
+  margin-bottom:1.6rem;
+}
+.exhibits-intro h2{ font-size:clamp(1.6rem, 4vw, 2.3rem); letter-spacing:.14em; }
+.exhibit-stack{ display:grid; gap:clamp(1.8rem, 4vw, 2.6rem); }
+.exhibit{ position:relative; }
+.exhibit .sheet{ padding-top:clamp(1.8rem, 4vw, 2.4rem); }
+.exhibit-head{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem 1rem;
+  margin-bottom:.4rem;
+}
+.exhibit-letter{
+  font-family:'Staatliches', sans-serif;
+  background:var(--ink); color:var(--paper);
+  padding:.24em .55em .1em; border-radius:3px;
+  letter-spacing:.14em; font-size:.95rem;
+}
+.exhibit h3{ font-size:clamp(1.3rem, 3vw, 1.75rem); }
+.exhibit-sub{
+  font-size:.9rem; color:var(--ink-soft); font-style:italic;
+  margin-bottom:1rem;
+}
+.evidence{
+  margin:1.1rem 0 0; padding:1rem 1.1rem;
+  border:1.5px dashed var(--ink-faint);
+  background:rgba(255,252,240,.45);
+}
+.evidence h4{
+  margin:0 0 .5rem; font-family:'Special Elite', monospace; font-weight:400;
+  font-size:.84rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);
+}
+.evidence ul{ margin:0; padding-left:1.3em; font-size:.92rem; display:grid; gap:.3rem; }
+.exhibit-links{
+  margin-top:1.15rem; display:flex; flex-wrap:wrap; gap:.6rem;
+}
+.tag-link{
+  display:inline-flex; align-items:center; gap:.5em;
+  font-size:.86rem; letter-spacing:.04em;
+  background:var(--manila); color:var(--ink);
+  border:1px solid rgba(122,90,34,.55);
+  padding:.34em .8em .34em .55em; border-radius:3px 14px 14px 3px;
+  text-decoration:none;
+  box-shadow:1.5px 1.5px 0 rgba(42,35,24,.35);
+}
+.tag-link::before{
+  content:""; width:.62em; height:.62em; border-radius:50%;
+  background:var(--paper-2);
+  box-shadow:inset 0 1px 1.5px rgba(45,28,5,.55);
+}
+.tag-link:hover{ background:#f6e6b7; color:var(--red); }
+.exhibit .stamp-corner{ top:-.7rem; right:clamp(.4rem, 3vw, 1.8rem); }
+
+/* benchmark score table */
+.score-table{
+  width:100%; border-collapse:collapse; margin-top:1rem;
+  font-size:.92rem;
+}
+.score-table caption{
+  caption-side:top; text-align:left; font-size:.84rem;
+  letter-spacing:.18em; text-transform:uppercase;
+  font-family:'Special Elite', monospace; color:var(--ink-soft);
+  padding-bottom:.45rem;
+}
+.score-table th{
+  text-align:left; font-weight:700; letter-spacing:.06em;
+  border-bottom:2px solid var(--ink); padding:.3rem .5rem .3rem 0;
+}
+.score-table td{
+  border-bottom:1px dotted var(--ink-faint);
+  padding:.34rem .5rem .34rem 0;
+}
+.score-table .num-col{ text-align:right; font-weight:700; }
+.score-table tr:first-child td{ color:var(--red); }
+.mitre-note{ font-size:.8rem; color:var(--ink-soft); margin-top:.8rem; }
+
+/* ---------- personnel record (resume) ---------- */
+.personnel-sheet{ padding-left:clamp(2.4rem, 6vw, 3.6rem); }
+.personnel-sheet .punch:nth-of-type(1){ top:18%; }
+.personnel-sheet .punch:nth-of-type(2){ top:78%; }
+.form-head{
+  display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline;
+  gap:.4rem 1rem;
+  border-bottom:3px double var(--ink);
+  padding-bottom:.65rem; margin-bottom:1.5rem;
+}
+.form-head h2{ font-size:clamp(1.45rem, 3.6vw, 2.1rem); letter-spacing:.12em; }
+.form-no{ font-size:.8rem; letter-spacing:.2em; color:var(--ink-soft); }
+.form-rows{ margin:0; display:grid; gap:.8rem; }
+.form-row{
+  display:grid; grid-template-columns:minmax(9.5em, 12em) 1fr; gap:.4rem 1rem;
+  align-items:baseline;
+}
+.form-row dt{
+  font-size:.82rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-soft); font-family:'Special Elite', monospace;
+}
+.form-row dd{
+  margin:0; border-bottom:1.5px dotted var(--ink-faint); padding-bottom:.15rem;
+}
+.record-block{ margin-top:2rem; }
+.record-block h3{
+  font-size:1.02rem; letter-spacing:.22em; text-transform:uppercase;
+  border-bottom:1.5px solid var(--ink); padding-bottom:.35rem; margin-bottom:.8rem;
+}
+.service-table{ width:100%; border-collapse:collapse; font-size:.93rem; }
+.service-table th{
+  text-align:left; font-weight:700; border-bottom:2px solid var(--ink);
+  padding:.3rem .6rem .3rem 0; letter-spacing:.06em;
+}
+.service-table td{
+  border-bottom:1px dotted var(--ink-faint);
+  padding:.42rem .6rem .42rem 0; vertical-align:top;
+}
+.service-table .yrs{ white-space:nowrap; font-weight:700; }
+.cert-row{
+  display:flex; flex-wrap:wrap; gap:1.4rem 2.2rem; align-items:center;
+  margin-top:.4rem;
+}
+.cert-row .cert-text{ flex:1 1 300px; }
+.resume-cta{
+  margin-top:2.2rem; padding-top:1.4rem;
+  border-top:3px double var(--ink);
+  display:flex; flex-wrap:wrap; gap:1rem 1.2rem; align-items:center;
+}
+.resume-cta .pencil-note{ margin-left:auto; }
+
+/* ---------- routing slip (contact) ---------- */
+.routing-sheet .stamp-corner{ top:-.9rem; right:clamp(.5rem, 4vw, 2rem); }
+.routing-head{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:.4rem 1rem;
+  align-items:baseline;
+  border-bottom:2.5px solid var(--ink); padding-bottom:.6rem; margin-bottom:1.3rem;
+}
+.routing-head h2{ font-size:clamp(1.45rem, 3.6vw, 2.1rem); letter-spacing:.14em; }
+.routing-grid{
+  display:grid; gap:1.6rem; grid-template-columns:minmax(0, 1.35fr) minmax(0, 1fr);
+}
+.route-actions{ list-style:none; margin:0 0 1.2rem; padding:0; display:grid; gap:.5rem; font-size:.95rem; }
+.contact-table{ width:100%; border-collapse:collapse; font-size:.95rem; }
+.contact-table th{
+  text-align:left; font-family:'Special Elite', monospace; font-weight:400;
+  font-size:.8rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-soft); padding:.42rem 1rem .42rem 0; white-space:nowrap;
+  vertical-align:baseline;
+}
+.contact-table td{
+  border-bottom:1px dotted var(--ink-faint); padding:.42rem 0; word-break:break-word;
+}
+.transmit-card{
+  border:1.5px solid var(--ink-faint);
+  background:rgba(255,252,240,.5);
+  padding:1.2rem 1.25rem; position:relative;
+  transform:rotate(.6deg);
+}
+.transmit-card h3{ font-size:1rem; letter-spacing:.18em; margin-bottom:.6rem; }
+.transmit-card .btn{ margin-top:.7rem; }
+.transmit-card .staple{ top:-5px; right:22px; transform:rotate(6deg); }
+
+/* ---------- footer ---------- */
+footer{
+  background:linear-gradient(rgba(26,16,3,.28), rgba(26,16,3,.5));
+  border-top:2px solid rgba(40,26,8,.55);
+  color:#f0e3c0;
+  padding:1.6rem 1.25rem 2rem;
+  font-size:.84rem; text-align:center;
+}
+footer p{ max-width:860px; margin:0 auto .45rem; }
+footer a{ color:#ffd98a; }
+footer a:hover{ color:#fff; }
+
+/* ============================================================
+   LOAD ANIMATION — the file lands on the desk, the stamp comes down
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference){
+  .cover-folder{ animation:folderIn .7s cubic-bezier(.2,.8,.25,1) both; }
+  .cover-sheet{ animation:sheetIn .8s cubic-bezier(.2,.8,.25,1) both .25s; }
+  .index-card{ animation:cardIn .7s cubic-bezier(.2,.8,.25,1) both .55s; }
+  .stamp-open{ animation:stampSlam .5s cubic-bezier(.2,1.35,.35,1) both 1.05s; }
+  @keyframes folderIn{
+    from{ opacity:0; transform:translateY(34px) rotate(-1deg); }
+    to{ opacity:1; transform:none; }
+  }
+  @keyframes sheetIn{
+    from{ opacity:0; transform:translateY(30px) rotate(1.2deg); }
+    to{ opacity:1; transform:none; }
+  }
+  @keyframes cardIn{
+    from{ opacity:0; transform:translate(18px, 26px) rotate(7deg); }
+    to{ opacity:1; transform:rotate(1.6deg); }
+  }
+  @keyframes stampSlam{
+    0%{ opacity:0; transform:scale(2.7) rotate(-26deg); }
+    55%{ opacity:1; transform:scale(.94) rotate(-6.5deg); }
+    100%{ opacity:1; transform:scale(1) rotate(-8deg); }
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 860px){
+  .cover-grid{ grid-template-columns:1fr; }
+  .index-card{ max-width:430px; }
+  .profile-grid{ grid-template-columns:1fr; }
+  .routing-grid{ grid-template-columns:1fr; }
+}
+@media (max-width: 560px){
+  body{ font-size:.96rem; }
+  .file-id .long{ display:none; }
+  .tab{ font-size:.86rem; padding:.75rem .6rem .45rem; letter-spacing:.07em; }
+  .form-row{ grid-template-columns:1fr; gap:.1rem; }
+  .form-row dd{ margin-bottom:.3rem; }
+  .fastener{ gap:54px; }
+  .coffee-ring{ display:none; }
+  .stamp-open{ position:static; display:inline-block; margin:0 0 1rem; }
+  .cover-sheet{ padding-top:1.3rem; }
+  .service-table .yrs{ white-space:normal; }
+  .score-table{ font-size:.84rem; }
+  .contact-table th{ padding-right:.6rem; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#home">Skip to file contents</a>
+
+<!-- ================= NAV — hanging folder tabs ================= -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="file-id" href="#home">FILE <span class="dot">№</span> 2026<span class="long">-KMK</span>-01</a>
+    <nav aria-label="File sections">
+      <ul class="tabs">
+        <li><a class="tab" href="#home"><span class="num">01</span>COVER</a></li>
+        <li><a class="tab" href="#about"><span class="num">02</span>SUBJECT</a></li>
+        <li><a class="tab" href="#projects"><span class="num">03</span>EXHIBITS</a></li>
+        <li><a class="tab" href="#resume"><span class="num">04</span>PERSONNEL</a></li>
+        <li><a class="tab" href="#contact"><span class="num">05</span>ROUTING</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= 01 · COVER (HERO) ================= -->
+  <section id="home" aria-labelledby="cover-heading">
+    <div class="folder cover-folder">
+      <span class="folder-tab" aria-hidden="true"><span class="num">01 ·</span> AL KURDI, M.</span>
+      <div class="fastener" aria-hidden="true"><i></i><i></i></div>
+      <div class="stamp stamp-open stamp-corner" aria-hidden="true">Open&nbsp;to&nbsp;Work</div>
+      <div class="coffee-ring" aria-hidden="true"></div>
+
+      <div class="cover-grid">
+        <div class="sheet cover-sheet tilt-l">
+          <div class="cover-kicker">
+            <span class="typed-label">Case File — Personnel</span>
+            <span class="typed-label">Status: Active</span>
+            <span class="typed-label">Filed: July 2026</span>
+          </div>
+
+          <h1 class="cover-name" id="cover-heading">AL&nbsp;KURDI,<br>MAHMOUD&nbsp;(&ldquo;MICHAEL&rdquo;)</h1>
+          <p class="cover-role">Security Operations Analyst &mdash; Charlotte, NC &middot; open to remote &middot; available full-time</p>
+
+          <ul class="cover-facts">
+            <li><strong>8 years</strong> of federally regulated aviation security operations &mdash; American&nbsp;Airlines, CLT (2015&ndash;2023)</li>
+            <li><strong>CompTIA Security+ ce</strong> (SY0-701) &mdash; issued Jan 2025, valid through Jan 2028</li>
+            <li><strong>B.S. Information Technologies, Cybersecurity</strong> &mdash; SNHU, summa cum laude</li>
+            <li>Builds <strong>defensive</strong>, evidence-first security tooling &mdash; see Exhibits A&ndash;D</li>
+          </ul>
+
+          <div class="cover-ctas">
+            <a class="btn btn-red" href="#projects">Open the Exhibits</a>
+            <a class="btn" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>Request R&eacute;sum&eacute; (PDF)</a>
+          </div>
+
+          <div class="stamp stamp-blue stamp-sm stamp-public" aria-hidden="true">Unclassified &middot; Public Record</div>
+
+          <div class="barcode" aria-hidden="true"><span>2026&ndash;KMK&ndash;01</span></div>
+        </div>
+
+        <aside class="index-card" aria-label="Summary of facts index card">
+          <svg class="clip" viewBox="0 0 34 78" aria-hidden="true">
+            <path d="M10 22 V56 a6.5 6.5 0 0 0 13 0 V16 a9.5 9.5 0 0 0 -19 0 v44 a13 13 0 0 0 26 0 V22"
+                  fill="none" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+          <h3>SUMMARY OF FACTS</h3>
+          <p>Subject spent eight years running security operations in one of the most regulated
+          environments in the country &mdash; international flight ops under FAA, OSHA, IATA and CBP
+          requirements &mdash; then added the credential, the degree, and a public body of defensive
+          tooling to match.</p>
+          <p style="margin-top:28px;"><strong>Ethos on record:</strong> every claim in this file maps
+          to a public repo, credential, or document.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 · SUBJECT (ABOUT) ================= -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="folder">
+      <span class="folder-tab" aria-hidden="true"><span class="num">02 ·</span> SUBJECT</span>
+      <div class="sheet tilt-r reveal">
+        <span class="staple" style="top:-5px; left:26px; transform:rotate(-5deg);" aria-hidden="true"></span>
+
+        <header class="memo-head">
+          <h2 id="about-heading">MEMORANDUM</h2>
+          <dl class="memo-fields">
+            <div><dt>TO:</dt><dd>Hiring Manager / SOC Lead</dd></div>
+            <div><dt>FROM:</dt><dd>Records Division, File 2026-KMK-01</dd></div>
+            <div><dt>RE:</dt><dd>Background of subject &mdash; AL KURDI, Mahmoud (&ldquo;Michael&rdquo;)</dd></div>
+            <div><dt>DATE:</dt><dd>July 2026</dd></div>
+          </dl>
+        </header>
+
+        <div class="memo-body">
+          <p>From 2015 to 2023 the subject served as <strong>Aviation Security Operations Crew
+          Chief with American Airlines</strong> in Charlotte &mdash; eight years of federally regulated
+          operations under FAA, OSHA, IATA and CBP requirements, holding a
+          <span class="redacted" tabindex="0" title="Hover or focus to declassify">security clearance with CBP badge endorsement</span>
+          for international flight operations. The job was recurrent incident-response and
+          safety/security training, identity validation, access control, and the kind of
+          high-accountability documentation where an unlogged detail is a finding.</p>
+
+          <p>He then converted that operational discipline into formal credentials:
+          <strong>CompTIA Security+ ce (SY0-701)</strong>, issued January&nbsp;2025, and a
+          <strong>B.S. in Information Technologies with a Cybersecurity concentration</strong> from
+          Southern New Hampshire University &mdash; completed December&nbsp;2025, conferred
+          January&nbsp;1,&nbsp;2026, <span class="redacted" tabindex="0" title="Hover or focus to declassify">summa cum laude with a 3.96 GPA</span>,
+          inducted into the Sigma&nbsp;Psi chapter of Alpha&nbsp;Sigma&nbsp;Lambda.</p>
+
+          <p>Current work sits where his two backgrounds meet: <strong>defensive security tooling
+          and AI-agent evaluation</strong>. Exhibit&nbsp;A (AgentForge) is a published configuration
+          framework for agentic coding assistants; Exhibit&nbsp;B is a reproducible benchmark testing
+          whether those agents can build secure, MITRE ATT&amp;CK-aligned <em>defensive</em> tooling.
+          All security work in this file is framed around detection and mitigation &mdash; nothing
+          offensive, ever. The through-line of the whole record: claims are only made where a
+          public repo, credential, or document can back them.</p>
+        </div>
+
+        <p class="declassify-legend"><span class="bar" aria-hidden="true"></span>Portions redacted
+        for modesty. Hover or focus to declassify.</p>
+
+        <div class="profile-grid">
+          <div class="roles-card">
+            <h3>ROLES SOUGHT — CHECK ALL THAT APPLY</h3>
+            <ul class="roles-list">
+              <li><span class="cb checked" aria-hidden="true"></span>SOC Analyst</li>
+              <li><span class="cb checked" aria-hidden="true"></span>Security Operations Analyst</li>
+              <li><span class="cb checked" aria-hidden="true"></span>Cybersecurity Analyst</li>
+              <li><span class="cb checked" aria-hidden="true"></span>Incident Response Analyst</li>
+              <li><span class="cb checked" aria-hidden="true"></span>Junior Detection Engineer</li>
+              <li><span class="cb checked" aria-hidden="true"></span>Security Automation</li>
+            </ul>
+          </div>
+
+          <div class="skills-card">
+            <h3>OBSERVED CAPABILITIES</h3>
+            <div class="skills-cols">
+              <div>
+                <h4>SOC / SecOps</h4>
+                <ul>
+                  <li>Alert triage</li>
+                  <li>Security monitoring</li>
+                  <li>Incident documentation</li>
+                  <li>Log analysis &amp; evidence review</li>
+                  <li>Authentication events</li>
+                  <li>DNS investigation</li>
+                  <li>Remediation planning</li>
+                  <li>Escalation notes</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Cybersecurity</h4>
+                <ul>
+                  <li>MITRE ATT&amp;CK</li>
+                  <li>Defensive security</li>
+                  <li>Prompt-injection resistance</li>
+                  <li>Access control &amp; least privilege</li>
+                  <li>Security documentation</li>
+                  <li>Confidence scoring</li>
+                  <li>&ldquo;No Clear Mapping&rdquo; handling</li>
+                </ul>
+              </div>
+              <div>
+                <h4>AI / Automation</h4>
+                <ul>
+                  <li>AI coding-agent evaluation</li>
+                  <li>Reproducible benchmark design</li>
+                  <li>Rubric-based scoring</li>
+                  <li>Prompt architecture &amp; safety rules</li>
+                  <li>Acceptance criteria</li>
+                  <li>Automated reporting</li>
+                </ul>
+              </div>
+            </div>
+            <p class="tools-line"><strong>TOOLS:</strong> Python &middot; Gradio &middot; JavaScript &middot;
+            Node.js &middot; PowerShell &middot; Bash &middot; Git/GitHub &middot; Markdown &middot; JSON &middot;
+            YAML &middot; HTML/CSS &middot; pytest &middot; npm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 · EXHIBITS (PROJECTS) ================= -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="folder">
+      <span class="folder-tab" aria-hidden="true"><span class="num">03 ·</span> EXHIBITS</span>
+
+      <div class="exhibits-intro">
+        <h2 id="projects-heading">EXHIBITS A&ndash;D</h2>
+        <span class="typed-label">Entered into evidence &mdash; all public, all verifiable</span>
+      </div>
+
+      <div class="exhibit-stack">
+
+        <!-- EXHIBIT A -->
+        <article class="exhibit reveal">
+          <div class="sheet tilt-l">
+            <span class="staple" style="top:-5px; left:20px; transform:rotate(-7deg);" aria-hidden="true"></span>
+            <div class="stamp stamp-sm stamp-corner" aria-hidden="true">Verified &middot; Public</div>
+            <header class="exhibit-head">
+              <span class="exhibit-letter">EXHIBIT A</span>
+              <h3>AgentForge</h3>
+            </header>
+            <p class="exhibit-sub">&ldquo;One spec, many agents&rdquo; &mdash; configuration framework for agentic AI coding assistants &middot; MIT license</p>
+            <p>A single project specification compiled out to <strong>six adapter targets</strong> &mdash;
+            Claude Code, Codex, Gemini CLI, Cursor, Aider, and a generic fallback &mdash; so a team
+            defines its rules once and every agent obeys them. Published to npm as
+            <strong>@kmitops/agentforge@0.3.1</strong>.</p>
+            <div class="evidence">
+              <h4>Proof attached</h4>
+              <ul>
+                <li>Adapter round-trip tests &mdash; spec in, adapter out, spec back</li>
+                <li>Install smoke tests + <code>doctor</code> CLI for environment diagnosis</li>
+                <li>Readiness runbook and a live public demo</li>
+              </ul>
+            </div>
+            <div class="exhibit-links">
+              <a class="tag-link" href="https://github.com/KM-it-ops/AgentForge" rel="noopener">github.com/KM-it-ops/AgentForge</a>
+              <a class="tag-link" href="https://km-it-ops.github.io/AgentForge/docs/demo/" rel="noopener">Live demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EXHIBIT B -->
+        <article class="exhibit reveal">
+          <div class="sheet tilt-r">
+            <span class="staple" style="top:-5px; right:34px; transform:rotate(5deg);" aria-hidden="true"></span>
+            <div class="stamp stamp-blue stamp-sm stamp-corner" aria-hidden="true">Reproducible</div>
+            <header class="exhibit-head">
+              <span class="exhibit-letter">EXHIBIT B</span>
+              <h3>AgentForge ATT&amp;CKLens Benchmark</h3>
+            </header>
+            <p class="exhibit-sub">Reproducible defensive-security benchmark for AI coding agents &middot; MIT license</p>
+            <p>The question under examination: <em>can AI coding agents build secure,
+            uncertainty-aware, MITRE ATT&amp;CK-aligned <strong>defensive</strong> tooling?</em>
+            Seven agent artifacts, one branch per agent, each scored against a 100-point rubric
+            covering ATT&amp;CK mapping discipline, prompt-injection resistance, evidence citation,
+            uncertainty handling (&ldquo;No Clear Mapping&rdquo;), detection ideas, remediation guidance,
+            and analyst follow-up questions. The harness re-runs end to end via
+            <code>benchmark-all.ps1</code>.</p>
+
+            <table class="score-table">
+              <caption>Findings of fact &mdash; scores out of 100</caption>
+              <thead>
+                <tr><th scope="col">Agent artifact</th><th scope="col" class="num-col">Score</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Cursor</td><td class="num-col">100</td></tr>
+                <tr><td>Claude Code</td><td class="num-col">98</td></tr>
+                <tr><td>Hermes Nemotron</td><td class="num-col">98</td></tr>
+                <tr><td>Codex</td><td class="num-col">96</td></tr>
+                <tr><td>Lovable (repaired)</td><td class="num-col">76</td></tr>
+                <tr><td>Mistral Vibe</td><td class="num-col">75</td></tr>
+                <tr><td>Lovable (original)</td><td class="num-col">40</td></tr>
+              </tbody>
+            </table>
+            <p class="mitre-note">MITRE ATT&amp;CK&reg; is a registered trademark of The MITRE Corporation.</p>
+
+            <div class="exhibit-links">
+              <a class="tag-link" href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark" rel="noopener">github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EXHIBIT C -->
+        <article class="exhibit reveal">
+          <div class="sheet tilt-l">
+            <span class="staple" style="top:-5px; left:24px; transform:rotate(-4deg);" aria-hidden="true"></span>
+            <div class="stamp stamp-sm stamp-corner" aria-hidden="true">Logged</div>
+            <header class="exhibit-head">
+              <span class="exhibit-letter">EXHIBIT C</span>
+              <h3>Vulnerability Management Mini Program</h3>
+            </header>
+            <p class="exhibit-sub">Python &middot; Flask &middot; SQLite</p>
+            <p>A vulnerability-tracking dashboard built the way a working analyst would want it:
+            full CRUD over findings, KPI cards for the numbers that matter, search and filtering,
+            and explicit severity states so nothing hides in a spreadsheet tab.</p>
+          </div>
+        </article>
+
+        <!-- EXHIBIT D -->
+        <article class="exhibit reveal">
+          <div class="sheet tilt-r">
+            <span class="staple" style="top:-5px; right:28px; transform:rotate(6deg);" aria-hidden="true"></span>
+            <div class="stamp stamp-blue stamp-sm stamp-corner" aria-hidden="true">For Review</div>
+            <header class="exhibit-head">
+              <span class="exhibit-letter">EXHIBIT D</span>
+              <h3>Security Log Anomaly Detection</h3>
+            </header>
+            <p class="exhibit-sub">Python &middot; pandas &middot; NumPy</p>
+            <p>Rule-based plus statistical detection for triaging authentication and network
+            anomalies &mdash; the unglamorous, essential SOC work of separating a bad login from a
+            bad actor, done in code and documented like evidence.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 · PERSONNEL (RESUME) ================= -->
+  <section id="resume" aria-labelledby="resume-heading">
+    <div class="folder">
+      <span class="folder-tab" aria-hidden="true"><span class="num">04 ·</span> PERSONNEL</span>
+      <div class="sheet personnel-sheet tilt-l reveal">
+        <span class="punch" aria-hidden="true"></span>
+        <span class="punch" aria-hidden="true"></span>
+
+        <header class="form-head">
+          <h2 id="resume-heading">PERSONNEL RECORD</h2>
+          <span class="form-no">STANDARD FORM 2026 &middot; FILE 2026-KMK-01</span>
+        </header>
+
+        <dl class="form-rows">
+          <div class="form-row"><dt>Name</dt><dd>AL KURDI, Mahmoud (&ldquo;Michael&rdquo;)</dd></div>
+          <div class="form-row"><dt>Station</dt><dd>Charlotte, North Carolina &mdash; open to remote</dd></div>
+          <div class="form-row"><dt>Status</dt><dd>Available for full-time roles</dd></div>
+          <div class="form-row"><dt>Sought</dt><dd>SOC Analyst &middot; Security Operations &middot; Incident Response &middot; Junior Detection Engineer &middot; Security Automation</dd></div>
+        </dl>
+
+        <div class="record-block">
+          <h3>Certification</h3>
+          <div class="cert-row">
+            <div class="cert-text">
+              <p><strong>CompTIA Security+ ce (SY0-701)</strong><br>
+              Issued January&nbsp;7,&nbsp;2025 &mdash; valid through January&nbsp;7,&nbsp;2028.</p>
+            </div>
+            <svg class="round-stamp" viewBox="0 0 120 120" role="img"
+                 aria-label="Certification stamp: CompTIA Security plus ce, SY0-701, issued January 7 2025, valid through January 2028">
+              <defs>
+                <path id="cert-circ" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/>
+              </defs>
+              <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="3"/>
+              <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <text font-size="9.2"><textPath href="#cert-circ">SECURITY+ CE &middot; SY0-701 &middot; VALID THRU 01/2028 &middot;</textPath></text>
+              <text x="60" y="58" text-anchor="middle" font-size="15" letter-spacing="1.5">CERTIFIED</text>
+              <text x="60" y="73" text-anchor="middle" font-size="8.6" letter-spacing="1">JAN 07 2025</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="record-block">
+          <h3>Education</h3>
+          <p><strong>B.S. Information Technologies &mdash; Cybersecurity concentration</strong><br>
+          Southern New Hampshire University &middot; completed December&nbsp;2025, conferred
+          January&nbsp;1,&nbsp;2026<br>
+          <strong>Summa Cum Laude, 3.96 GPA</strong> &middot; Sigma&nbsp;Psi chapter of
+          Alpha&nbsp;Sigma&nbsp;Lambda honor society</p>
+        </div>
+
+        <div class="record-block">
+          <h3>Service Record</h3>
+          <table class="service-table">
+            <thead>
+              <tr>
+                <th scope="col">Period</th>
+                <th scope="col">Organization</th>
+                <th scope="col">Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="yrs">2015&ndash;2023</td>
+                <td>American Airlines &mdash; Charlotte, NC</td>
+                <td>Aviation Security Operations Crew Chief. Federally regulated international
+                flight operations under FAA/OSHA/IATA/CBP; security clearance with CBP badge
+                endorsement; recurrent incident-response and safety/security training; identity
+                validation, access control, high-accountability documentation.</td>
+              </tr>
+              <tr>
+                <td class="yrs">2024&ndash;2025</td>
+                <td>USPS &mdash; Kannapolis, NC</td>
+                <td>Courier &amp; Logistics Specialist</td>
+              </tr>
+              <tr>
+                <td class="yrs">2025&ndash;present</td>
+                <td>Fossa Logistics LLC (Amazon DSP) &mdash; Charlotte, NC</td>
+                <td>Delivery Associate</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="resume-cta">
+          <a class="btn btn-red" href="../../assets/Michael_Kurdi_Resume_2026.pdf" download>Request Certified Copy &mdash; PDF</a>
+          <span class="pencil-note" aria-hidden="true">verify &rarr; github.com/KM-it-ops &#10003;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 · ROUTING (CONTACT) ================= -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="folder">
+      <span class="folder-tab" aria-hidden="true"><span class="num">05 ·</span> ROUTING</span>
+      <div class="sheet routing-sheet tilt-r reveal">
+        <div class="stamp stamp-sm stamp-corner" aria-hidden="true">Expedite</div>
+
+        <header class="routing-head">
+          <h2 id="contact-heading">ROUTING &amp; TRANSMITTAL SLIP</h2>
+          <span class="form-no">OPTIONAL FORM 41 (adapted)</span>
+        </header>
+
+        <div class="routing-grid">
+          <div>
+            <ul class="route-actions">
+              <li><span class="cb checked" aria-hidden="true"></span>For reply &mdash; hiring conversation</li>
+              <li><span class="cb checked" aria-hidden="true"></span>For review &mdash; r&eacute;sum&eacute; attached to file, Exhibits A&ndash;D public</li>
+              <li><span class="cb" aria-hidden="true"></span>For filing &mdash; <em>not recommended; subject is available now</em></li>
+            </ul>
+
+            <table class="contact-table">
+              <tbody>
+                <tr>
+                  <th scope="row">Email</th>
+                  <td><a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Phone</th>
+                  <td><a href="tel:+17044568322">(704) 456-8322</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">GitHub</th>
+                  <td><a href="https://github.com/KM-it-ops" rel="noopener">github.com/KM-it-ops</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">LinkedIn</th>
+                  <td><a href="https://linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">linkedin.com/in/mahmoud-michael-al-kurdi</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Site</th>
+                  <td><a href="https://km-it-ops.github.io" rel="noopener">km-it-ops.github.io</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="transmit-card">
+            <span class="staple" aria-hidden="true"></span>
+            <h3>TRANSMIT DIRECT</h3>
+            <p class="small">Recruiters, hiring managers, security engineers: the fastest route to
+            the subject is a direct message. All inquiries regarding SOC, security operations,
+            incident response, detection engineering, or security automation roles are welcome.</p>
+            <a class="btn" href="mailto:kurdi.michael.it@gmail.com?subject=Re%3A%20File%202026-KMK-01%20%E2%80%94%20Security%20Operations%20role">Initiate Contact</a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>This file is a public record. Every claim above maps to a public repo, credential, or
+  document &mdash; start at <a href="https://github.com/KM-it-ops" rel="noopener">github.com/KM-it-ops</a>.</p>
+  <p>MITRE ATT&amp;CK&reg; is a registered trademark of The MITRE Corporation.</p>
+  <p>&copy; 2026 Mahmoud (&ldquo;Michael&rdquo;) Al Kurdi &middot; File № 2026-KMK-01 &middot; &ldquo;Paper Dossier&rdquo; concept</p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---------- scroll reveal for sheets ---------- */
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    var revealObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealEls.forEach(function(el){ revealObs.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in-view"); });
+  }
+
+  /* ---------- scrollspy: pull the active folder tab forward ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var sections = tabs
+    .map(function(tab){ return document.querySelector(tab.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id){
+    tabs.forEach(function(tab){
+      if (tab.getAttribute("href") === "#" + id) {
+        tab.setAttribute("aria-current", "true");
+      } else {
+        tab.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var spyObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { setActive(entry.target.id); }
+      });
+    }, { rootMargin: "-38% 0px -52% 0px", threshold: 0 });
+    sections.forEach(function(sec){ spyObs.observe(sec); });
+  }
+  setActive("home");
+
+  /* keep keyboard/click nav in sync immediately */
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      setActive(tab.getAttribute("href").slice(1));
+    });
+  });
+})();
+</script>
+</body>
+</html>

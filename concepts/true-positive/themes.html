@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- KM://OPS theme lab — preview-phase tool. Delete before launch after baking the winning palette. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05070f">
+  <meta name="robots" content="noindex">
+  <title>Theme Lab — KM://OPS</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Martian+Mono:wght@400;700&family=Workbench&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/themes.js"></script>
+  <style>
+    .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; }
+    .lab-card {
+      border: 2px solid var(--line-bright); background: var(--panel);
+      padding: 1.3rem; display: flex; flex-direction: column; gap: .8rem;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .lab-card:hover { border-color: var(--pri); transform: translate(-3px, -3px); box-shadow: var(--shadow-pop); }
+    .lab-card h3 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 1.5rem; color: var(--txt-hi); }
+    .lab-card p { font-size: .74rem; color: var(--txt-dim); flex: 1; }
+    .lab-card.is-active { border-color: var(--sec); }
+    .lab-card.is-active::after { content: "ACTIVE"; font-size: .6rem; font-weight: 700; letter-spacing: .16em; color: var(--sec); }
+    .swatches { display: flex; gap: .4rem; }
+    .swatches i { display: block; width: 2rem; height: 2rem; border: 1px solid rgba(255,255,255,.18); }
+    .lab-card .btn { justify-content: center; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="glow-field" aria-hidden="true"></div>
+  <div class="crt-vignette" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html"><span class="brand__dot"></span>KM://OPS</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html"><span class="pre">←</span> Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom:1.5rem">
+      <div class="wrap">
+        <p class="kicker">Preview tool // not shipped to production</p>
+        <h1 class="display" style="font-size:clamp(2.6rem,8vw,6rem);margin-top:1rem">Theme lab.</h1>
+        <p class="hero__verdict" style="margin-top:1.4rem">
+          Ten palettes, one site. Picking a theme repaints <strong>every page live</strong> —
+          browse the whole site in it, come back, try another. The winner gets baked in;
+          this page never ships.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="lab-grid" id="labGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="sig">KM://OPS</span>
+      <span>Theme lab — preview phase only.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var grid = document.getElementById("labGrid");
+      var active = null;
+      try { active = localStorage.getItem("kmTheme") || "volt"; } catch (e) { active = "volt"; }
+      var order = ["volt", "ultraviolet", "synthwave", "phosphor", "ember", "arctic", "redline", "goldrush", "tealab", "ghost"];
+      var baked = getComputedStyle(document.documentElement);
+      order.forEach(function (slug) {
+        var t = window.KM_THEMES[slug];
+        if (!t) return;
+        var v = t.vars || {
+          "--ink": "#05070f", "--panel": "#0b1024",
+          "--pri": "#4da3ff", "--sec": "#b46bff", "--txt": "#d8e1ff"
+        };
+        var card = document.createElement("div");
+        card.className = "lab-card" + (slug === active ? " is-active" : "");
+        card.innerHTML =
+          '<div class="swatches" aria-hidden="true">' +
+            ["--ink", "--panel", "--pri", "--sec", "--txt"].map(function (k) {
+              return '<i style="background:' + (v[k] || baked.getPropertyValue(k)) + '"></i>';
+            }).join("") +
+          "</div>" +
+          "<h3>" + t.label + "</h3>" +
+          "<p>" + t.note + "</p>" +
+          '<a class="btn" href="index.html?theme=' + slug + '">Preview site →</a>';
+        grid.appendChild(card);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "KM://OPS — Mahmoud (\"Michael\") Al Kurdi",
+  "short_name": "KM://OPS",
+  "description": "SOC analyst & detection engineer portfolio — TRUE POSITIVE.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#05070f",
+  "theme_color": "#05070f",
+  "icons": [{ "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
