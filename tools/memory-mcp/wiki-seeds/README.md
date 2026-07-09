@@ -11,8 +11,6 @@ Brain-format memories (`memory/<bucket>/<name>.md`) maintained in the portfolio 
 
 ## Import via MCP (Option A)
 
-**Cloud agents:** this repo ships `.cursor/mcp.json` + vendored `tools/memory-mcp`. Run `./scripts/setup-memory-mcp.sh` once; agents get `memory_search` / `memory_write` against `.brain/`. See `docs/MEMORY_MCP_CLOUD.md`.
-
 In any client with `memory` MCP connected, call `memory_write` using `memory-seeds/memory-write-payload.json` or these fields:
 
 - `name`: `masked-signal-github-brand-rollout`
