@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://km-it-ops.github.io/sitemap.xml
