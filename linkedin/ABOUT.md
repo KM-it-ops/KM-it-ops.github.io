@@ -4,30 +4,28 @@ Copy into **Profile → Edit → About**. Plain text — LinkedIn does not rende
 
 ---
 
-I build automated, intelligent security systems — not slide decks.
+I treat prompts like production infrastructure — modular, testable, and honest about missing context.
 
-Security+ certified cybersecurity graduate (SNHU, Summa Cum Laude, 3.96 GPA) targeting SOC Analyst, Cybersecurity Analyst, Junior Detection Engineering, and Security Automation roles. Charlotte, NC / open to remote.
+Security+ certified cybersecurity graduate (SNHU, Summa Cum Laude, 3.96 GPA) targeting AI Prompt Engineer, SOC Analyst, and security automation roles. Charlotte, NC / open to remote.
 
-What makes my work inspectable:
+What hiring managers can inspect today:
 
-→ AgentForge ATT&CKLens Benchmark — reproducible comparison of 7 AI coding agents on defensive-security work: MITRE ATT&CK mapping discipline, prompt-injection resistance, evidence citation, uncertainty handling, and rubric-based scorecards
+→ PromptRig — PromptOps framework for designing, auditing, and evaluating prompt systems: clarify → compile → offline evals → self-heal. Stdlib CLI, JSONL datasets, YAML rubrics, agent permission maps and stop conditions. No API keys required to validate the harness.
+   https://github.com/KM-it-ops/PromptRig
 
-→ AgentForge — framework for configuring, evaluating, and benchmarking AI coding agents with adapters, verification scripts, smoke tests, and documentation
+→ AgentForge ATT&CKLens Benchmark — reproducible comparison of AI coding agents on defensive-security work: MITRE ATT&CK mapping discipline, prompt-injection resistance, evidence citation, uncertainty handling
 
-→ Phishing email classifier — 99.68% F1, Python/scikit-learn ML pipeline
+→ Coursework case files — Packet Tracer recovery, Windows GPO hardening, MySQL analytics, CIS/HIPAA briefs rebuilt as readable proof
 
-→ Security log anomaly detection — brute force, port scan, and privilege escalation detection from logs
+→ Portfolio — https://km-it-ops.github.io/
 
-→ Vulnerability management mini program — Flask/SQLite workflow dashboard with severity tracking and operational views
+Background: 8 years in aviation security operations at American Airlines — federally regulated environment with security clearance, CBP badge endorsement, recurrent incident-response training, and high-accountability documentation. That operator discipline shows up in how I label UNKNOWN context, write stop conditions, and keep evals reproducible.
 
-→ Open-source IR playbooks (ISO/IEC 27035 + NIST SP 800-61 r2, NIST CSF 2.0) and cyber defense framework with MITRE ATT&CK mapping
+Honest gap: I do not invent enterprise SIEM or commercial SAST/DAST tenure. What I do ship is inspectable systems thinking — PromptOps, eval harnesses, and defensive cyber labs a recruiter can audit in minutes.
 
-Background: 8 years in aviation security operations at American Airlines — federally regulated environment with security clearance, CBP badge endorsement, recurrent incident-response training, and zero-compliance-finding supervisory responsibility over 400+ agents. That operator discipline carries into how I document alerts, evidence, and remediation.
+How I work: specs, acceptance tests, scorecards, and README evidence.
 
-How I work: specs, acceptance tests, scorecards, and README evidence recruiters can audit in minutes.
-
-Portfolio: https://km-it-ops.github.io/
 GitHub: https://github.com/KM-it-ops
 Resume: https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf
 
-Open to connect with SOC leaders, detection engineers, and security hiring managers.
+Open to connect with prompt engineering leads, SOC managers, detection engineers, and security hiring managers.

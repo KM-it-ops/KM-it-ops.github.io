@@ -52,6 +52,7 @@ status: open-to-work
 | **MySQL QuantigrationUpdates** | DAD-220 ERD → SQL + Docker demo | Portfolio site (coursework) · publish pending |
 | **CIS / HIPAA SLA Brief** | CYB-260 CIS 5/6/14 + ethics appendix | Portfolio site (coursework) · publish pending |
 | **Bluetooth Security Strategy** | CYB-250 academic threat models (not a pen test) | Portfolio site (coursework) · publish pending |
+| **PromptRig** (secondary) | PromptOps framework — audits, agent permission maps, offline eval harness | [repo](https://github.com/KM-it-ops/PromptRig) |
 | **AgentForge** (secondary) | Multi-adapter agent config framework | [repo](https://github.com/KM-it-ops/AgentForge) |
 | **ATT&CKLens Benchmark** (secondary) | Defensive agent benchmark | [repo](https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark) |
 

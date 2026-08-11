@@ -2,16 +2,16 @@
 
 Copy one of these into **Profile → Edit → Headline**.
 
-## Recommended (SOC-focused)
+## Recommended (dual-track — PromptRig × cyber)
 
 ```
-SOC Analyst | Cybersecurity Analyst | Security+ | Detection Engineering · MITRE ATT&CK · Python | Charlotte NC
+AI Prompt Engineer · Cybersecurity Grad | PromptRig PromptOps · Security+ | Charlotte NC / Remote
 ```
 
-## Alternative (differentiator-heavy)
+## Alternative (SOC-led with PromptOps differentiator)
 
 ```
-Security+ Analyst | Detection Engineering & AI Security Benchmarks | AgentForge · ATT&CKLens | Charlotte NC / Remote
+SOC Analyst · Security+ | PromptOps & AI Security (PromptRig) · Detection · Python | Charlotte NC
 ```
 
 ## Character count
