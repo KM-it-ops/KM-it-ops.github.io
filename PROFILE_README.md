@@ -16,28 +16,28 @@
 </p>
 
 <p align="left">
-  <a href="https://readme-typing-svg.demolab.com/demo/?font=JetBrains+Mono&weight=500&size=22&duration=3000&pause=1000&color=7CF0C1&center=false&vCenter=true&width=900&lines=detection+engineering+%C2%B7+MITRE+ATT%26CK+%C2%B7+reproducible+security+benchmarks;SOC+workflows+%C2%B7+log+analysis+%C2%B7+security+automation">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=22&duration=3000&pause=1000&color=7CF0C1&center=false&vCenter=true&width=900&lines=detection+engineering+%C2%B7+MITRE+ATT%26CK+%C2%B7+reproducible+security+benchmarks;SOC+workflows+%C2%B7+log+analysis+%C2%B7+security+automation" alt="Typing tagline">
+  <a href="https://readme-typing-svg.demolab.com/demo/?font=JetBrains+Mono&weight=500&size=22&duration=3000&pause=1000&color=7CF0C1&center=false&vCenter=true&width=900&lines=new+graduate+%C2%B7+IT+Support+%2F+SOC+%C2%B7+Security%2B;coursework+labs+%C2%B7+aviation+security+ops+transfer">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=22&duration=3000&pause=1000&color=7CF0C1&center=false&vCenter=true&width=900&lines=new+graduate+%C2%B7+IT+Support+%2F+SOC+%C2%B7+Security%2B;coursework+labs+%C2%B7+aviation+security+ops+transfer" alt="Typing tagline">
   </a>
 </p>
 
-**SOC-minded cybersecurity analyst and builder.** I ship inspectable defensive security evidence — detection logic, MITRE ATT&CK mapping discipline, log analysis, vulnerability workflows, and reproducible AI-agent benchmarks — not slide decks.
+**New graduate targeting IT Support and Tier-1 SOC.** Coursework labs (Packet Tracer, GPO hardening, MySQL, CIS/HIPAA briefs, threat models) plus regulated aviation security ops transfer — not years of invented SIEM tenure.
 
 Eight years in federally regulated aviation security operations (American Airlines) with clearance-backed access control, incident response training, and documentation discipline. **Security+ ce** · **B.S. IT (Cybersecurity), SNHU** · Summa Cum Laude · GPA 3.96.
 
 ```yaml
-name: Mahmoud ("Michael") Al Kurdi
-role: SOC Analyst | Cybersecurity Analyst | Detection Engineering
+name: Michael Kurdi
+legal_name: Mahmoud Al Kurdi
+role: IT Support | SOC Analyst | Cloud Support Associate
 location: Charlotte, NC / Remote
 credential: CompTIA Security+ ce (SY0-701)
 education: B.S. Information Technologies — Cybersecurity, SNHU (Summa, 3.96)
 focus:
-  - SOC workflows and alert triage
-  - Detection engineering fundamentals
-  - MITRE ATT&CK mapping with evidence and uncertainty handling
-  - Defensive security automation
-  - AI agent evaluation and benchmark design
-proof_style: specs, acceptance tests, scorecards, reports, reviewer-friendly repos
+  - IT Support and Tier-1 SOC workflows
+  - Network / endpoint lab troubleshooting
+  - Access control and compliance writing
+  - Honest early-career positioning
+proof_style: coursework case studies, checklists, SQL demos, credentials
 status: open-to-work
 ```
 
@@ -47,30 +47,31 @@ status: open-to-work
 
 | Project | Hiring signal | Link |
 | --- | --- | --- |
-| **AgentForge ATT&CKLens Benchmark** | 7 agents compared on defensive-security work; rubric scoring, prompt-injection resistance, reproducible reports | [repo](https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark) |
-| **AgentForge** | Multi-adapter agent config framework; verification, smoke tests, CI, documentation | [repo](https://github.com/KM-it-ops/AgentForge) |
-| **Shared-Brain MCP** | MCP server + LLM-Wiki; bearer auth, lint-on-write, round-trip verified across agents | [repo](https://github.com/KM-it-ops/memory-mcp) |
-| **Security Log Anomaly Detection** | Brute force, port scan, privilege escalation detection from logs | [repo](https://github.com/KM-it-ops/security-log-anomaly-detection) |
-| **Phishing Email Classifier** | ML pipeline; **99.68% F1** on phishing vs legitimate | [repo](https://github.com/KM-it-ops/phishing-email-classifier) |
-| **Threat Intelligence Atlas** | Recruiter-ready portfolio: case files, evidence matrix, live demos | [site](https://km-it-ops.github.io/) |
+| **Packet Tracer Network Lab** | CYB-210 troubleshooting + config scavenger | Portfolio site (coursework) · publish pending |
+| **Windows GPO Hardening** | CYB-220 endpoint hardening checklist | Portfolio site (coursework) · publish pending |
+| **MySQL QuantigrationUpdates** | DAD-220 ERD → SQL + Docker demo | Portfolio site (coursework) · publish pending |
+| **CIS / HIPAA SLA Brief** | CYB-260 CIS 5/6/14 + ethics appendix | Portfolio site (coursework) · publish pending |
+| **Bluetooth Security Strategy** | CYB-250 academic threat models (not a pen test) | Portfolio site (coursework) · publish pending |
+| **AgentForge** (secondary) | Multi-adapter agent config framework | [repo](https://github.com/KM-it-ops/AgentForge) |
+| **ATT&CKLens Benchmark** (secondary) | Defensive agent benchmark | [repo](https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark) |
 
 ---
 
 ## Why hire me (60-second scan)
 
-- I document like an analyst: **Problem → Method → Evidence → Repo** on flagship work.
-- I benchmark AI coding agents on **real defensive-security constraints**, not vibes.
-- I map to **MITRE ATT&CK** with evidence citation and explicit uncertainty handling.
-- I build **Python security tooling** with tests, scorecards, and runnable proof.
-- I bring **8 years** of regulated security operations discipline from aviation.
+- New graduate with **Security+** and **Summa** cyber degree — filter-pass credentials.
+- Coursework labs you can read: network troubleshooting, GPO hardening, SQL, control briefs.
+- **8 years** regulated aviation security ops — access control, incident docs, escalation discipline.
+- Honest about exposure vs hands-on — no invented SIEM production tenure.
+- Side AI tooling exists; it does not drown the early-career hire signal.
 
 ---
 
 ## Currently building
 
-- Expanding **AgentForge** adapters, verification, and release readiness docs
-- **OSINT dashboard** — analyst-grade aggregation and visualization ([`osint-dashboard`](https://github.com/KM-it-ops/osint-dashboard))
-- MITRE ATT&CK-mapped detection content and cross-framework **IR playbooks**
+- Public publish of coursework portfolio (awaiting authority)
+- TryHackMe SOC L1 / Jr PenTester path (gap closes — not claimed proficiency)
+- Expanding **AgentForge** as secondary tooling proof
 
 ---
 

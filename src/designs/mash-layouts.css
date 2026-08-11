@@ -1,0 +1,823 @@
+/* Per-palette unique layouts — each id is a full design skin, not a recolor.
+   Archetypes from 2026 web design sources (bento, neo-brutal, editorial, Swiss,
+   fluid organic, magazine, grain, mono stamp, kinetic, lumen dash). */
+
+/* ——— Shared helpers ——— */
+.mash-root[data-layout] .mash-look-card-meta strong {
+  line-height: 1.15;
+}
+
+/* =========================================
+   1. mood → Lumen Dash (bento + lumen glow)
+   ========================================= */
+.mash-root[data-palette='mood'] {
+  --font: 'Space Grotesk', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+  --radius: 14px;
+}
+
+.mash-root[data-palette='mood'] .mash-hero-grid {
+  gap: 1rem;
+}
+
+@media (min-width: 1100px) {
+  .mash-root[data-palette='mood'] .mash-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.65rem;
+  }
+  .mash-root[data-palette='mood'] .mash-hero-stats > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.mash-root[data-palette='mood'] .mash-hero-stats > div,
+.mash-root[data-palette='mood'] .mash-skill-band,
+.mash-root[data-palette='mood'] .mash-job,
+.mash-root[data-palette='mood'] .mash-ops-card,
+.mash-root[data-palette='mood'] .mash-story-p,
+.mash-root[data-palette='mood'] .mash-cred-grid > div,
+.mash-root[data-palette='mood'] .mash-case {
+  border-radius: var(--radius);
+  border: 1px solid color-mix(in srgb, var(--cyan) 28%, transparent);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+@media (min-width: 900px) {
+  .mash-root[data-palette='mood'] .mash-skill-bands {
+    grid-template-columns: 1.35fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.75rem;
+  }
+  .mash-root[data-palette='mood'] .mash-skill-band:first-child {
+    grid-row: 1 / span 2;
+  }
+}
+
+.mash-root[data-palette='mood'] .mash-hire-box {
+  border-radius: 16px;
+  border-color: color-mix(in srgb, var(--cyan) 45%, transparent);
+}
+
+.mash-root[data-palette='mood'] .mash-marquee {
+  border: none;
+  border-radius: 999px;
+  margin: 0 clamp(1rem, 4vw, 2.4rem);
+  width: auto;
+}
+
+.mash-root[data-palette='mood'] .mash-btn {
+  border-radius: 999px;
+}
+
+/* =========================================
+   2. clubroom → Editorial Void (massive type, flat)
+   ========================================= */
+.mash-root[data-palette='clubroom'] {
+  --font: 'Archivo Black', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='clubroom'] .mash-atmosphere,
+.mash-root[data-palette='clubroom'] .mash-net {
+  opacity: 0.25;
+}
+
+.mash-root[data-palette='clubroom'] .mash-hero h1 span {
+  font-size: clamp(2.6rem, 14vw, 9.5rem);
+  letter-spacing: -0.08em;
+  line-height: 0.82;
+  filter: none;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: var(--paper);
+}
+
+.mash-root[data-palette='clubroom'] .mash-name-2 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #7dd3fc !important;
+  filter: none;
+}
+
+.mash-root[data-palette='clubroom'] .mash-story h2,
+.mash-root[data-palette='clubroom'] .mash-skills h2,
+.mash-root[data-palette='clubroom'] .mash-cases h2,
+.mash-root[data-palette='clubroom'] .mash-ops h2,
+.mash-root[data-palette='clubroom'] .mash-creds h2,
+.mash-root[data-palette='clubroom'] .mash-path h2 {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: var(--paper);
+  filter: none;
+  letter-spacing: -0.06em;
+}
+
+.mash-root[data-palette='clubroom'] .mash-story h2 em,
+.mash-root[data-palette='clubroom'] .mash-skills h2 em,
+.mash-root[data-palette='clubroom'] .mash-cases h2 em,
+.mash-root[data-palette='clubroom'] .mash-ops h2 em,
+.mash-root[data-palette='clubroom'] .mash-creds h2 em,
+.mash-root[data-palette='clubroom'] .mash-path h2 em {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: var(--coral);
+  filter: none;
+}
+
+.mash-root[data-palette='clubroom'] .mash-hero-stats > div,
+.mash-root[data-palette='clubroom'] .mash-skill-band,
+.mash-root[data-palette='clubroom'] .mash-job,
+.mash-root[data-palette='clubroom'] .mash-ops-card,
+.mash-root[data-palette='clubroom'] .mash-story-p,
+.mash-root[data-palette='clubroom'] .mash-cred-grid > div,
+.mash-root[data-palette='clubroom'] .mash-case,
+.mash-root[data-palette='clubroom'] .mash-featured {
+  border-radius: 0;
+  border: none;
+  border-top: 2px solid var(--coral);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.mash-root[data-palette='clubroom'] .mash-hire-box {
+  border-radius: 0;
+  border: 2px solid var(--coral);
+  box-shadow: none;
+  background: #0a0a0a;
+}
+
+.mash-root[data-palette='clubroom'] .mash-btn {
+  border-radius: 0;
+  box-shadow: none;
+  border: 2px solid var(--coral);
+}
+
+.mash-root[data-palette='clubroom'] .mash-marquee {
+  background: var(--coral);
+  color: #0a0a0a;
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   3. forest → Neo-Brutal (hard borders, offset stamps)
+   ========================================= */
+.mash-root[data-palette='forest'] {
+  --font: 'Unbounded', system-ui, sans-serif;
+  --body: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='forest'] .mash-nav {
+  background: var(--void);
+  border-bottom: 3px solid var(--cyan);
+}
+
+.mash-root[data-palette='forest'] .mash-hire-box,
+.mash-root[data-palette='forest'] .mash-hero-stats > div,
+.mash-root[data-palette='forest'] .mash-skill-band,
+.mash-root[data-palette='forest'] .mash-job,
+.mash-root[data-palette='forest'] .mash-ops-card,
+.mash-root[data-palette='forest'] .mash-story-p,
+.mash-root[data-palette='forest'] .mash-cred-grid > div,
+.mash-root[data-palette='forest'] .mash-case,
+.mash-root[data-palette='forest'] .mash-featured {
+  border-radius: 0;
+  border: 3px solid var(--paper);
+  box-shadow: 6px 6px 0 var(--cyan);
+  backdrop-filter: none;
+  background: var(--void-2);
+}
+
+.mash-root[data-palette='forest'] .mash-btn {
+  border-radius: 0;
+  border: 3px solid var(--paper);
+  box-shadow: 5px 5px 0 var(--cyan);
+}
+
+.mash-root[data-palette='forest'] .mash-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--cyan);
+}
+
+.mash-root[data-palette='forest'] .mash-marquee {
+  border-block: 3px solid var(--paper);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.mash-root[data-palette='forest'] .mash-pill {
+  border-radius: 0;
+  border: 2px solid var(--paper);
+  box-shadow: 3px 3px 0 var(--cyan);
+}
+
+/* =========================================
+   4. twilight → Retro-Kinetic (diagonal, chrome, neon)
+   ========================================= */
+.mash-root[data-palette='twilight'] {
+  --font: 'Syne', system-ui, sans-serif;
+  --body: 'Sora', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='twilight'] .mash-hero {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+.mash-root[data-palette='twilight'] .mash-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -2% 40%;
+  height: 40%;
+  background: linear-gradient(115deg, transparent, rgba(255, 45, 149, 0.18), rgba(42, 212, 255, 0.12));
+  pointer-events: none;
+  transform: skewY(-6deg);
+}
+
+.mash-root[data-palette='twilight'] .mash-hire-box,
+.mash-root[data-palette='twilight'] .mash-skill-band,
+.mash-root[data-palette='twilight'] .mash-job,
+.mash-root[data-palette='twilight'] .mash-ops-card,
+.mash-root[data-palette='twilight'] .mash-story-p,
+.mash-root[data-palette='twilight'] .mash-case,
+.mash-root[data-palette='twilight'] .mash-featured,
+.mash-root[data-palette='twilight'] .mash-cred-grid > div,
+.mash-root[data-palette='twilight'] .mash-hero-stats > div {
+  border-radius: 4px 18px 4px 18px;
+  border: 1px solid color-mix(in srgb, var(--coral) 50%, transparent);
+  transform: rotate(-0.4deg);
+  box-shadow: var(--shadow-glow-coral);
+}
+
+.mash-root[data-palette='twilight'] .mash-skill-band:nth-child(2),
+.mash-root[data-palette='twilight'] .mash-job:nth-child(2),
+.mash-root[data-palette='twilight'] .mash-case:nth-child(2n) {
+  transform: rotate(0.5deg);
+  border-radius: 18px 4px 18px 4px;
+  border-color: color-mix(in srgb, var(--cyan) 50%, transparent);
+}
+
+.mash-root[data-palette='twilight'] .mash-btn {
+  border-radius: 999px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mash-root[data-palette='twilight'] .mash-marquee {
+  transform: skewX(-8deg);
+  margin-inline: 2vw;
+}
+
+/* =========================================
+   5. mermaid → Fluid Mesh (organic curves, soft cells)
+   ========================================= */
+.mash-root[data-palette='mermaid'] {
+  --font: 'Syne', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='mermaid'] .mash-atmosphere {
+  filter: blur(2px) saturate(1.15);
+}
+
+.mash-root[data-palette='mermaid'] .mash-hire-box {
+  border-radius: 28px 12px 28px 12px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 40%, transparent);
+}
+
+.mash-root[data-palette='mermaid'] .mash-hero-stats > div,
+.mash-root[data-palette='mermaid'] .mash-skill-band,
+.mash-root[data-palette='mermaid'] .mash-job,
+.mash-root[data-palette='mermaid'] .mash-ops-card,
+.mash-root[data-palette='mermaid'] .mash-story-p,
+.mash-root[data-palette='mermaid'] .mash-cred-grid > div,
+.mash-root[data-palette='mermaid'] .mash-case,
+.mash-root[data-palette='mermaid'] .mash-featured {
+  border-radius: 2rem 1rem 2.4rem 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--cyan) 30%, transparent);
+  background:
+    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 45%),
+    var(--panel);
+}
+
+.mash-root[data-palette='mermaid'] .mash-btn {
+  border-radius: 999px;
+}
+
+.mash-root[data-palette='mermaid'] .mash-marquee {
+  border-radius: 999px;
+  margin: 0 4vw;
+  width: auto;
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.mash-root[data-palette='mermaid'] .mash-net {
+  opacity: 0.85;
+  filter: blur(0.3px);
+}
+
+/* =========================================
+   6. mineral → Swiss Grid (hairlines, modular columns)
+   ========================================= */
+.mash-root[data-palette='mineral'] {
+  --font: 'Space Grotesk', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='mineral'] .mash-atmosphere {
+  opacity: 0.55;
+}
+
+.mash-root[data-palette='mineral'] .mash-net {
+  display: none;
+}
+
+.mash-root[data-palette='mineral'] .mash-nav {
+  border-bottom: 1px solid var(--panel-border);
+  background: var(--void);
+}
+
+.mash-root[data-palette='mineral'] .mash-hero-grid {
+  border-top: 1px solid var(--paper);
+  padding-top: 1.5rem;
+}
+
+.mash-root[data-palette='mineral'] .mash-hero h1 span {
+  letter-spacing: -0.07em;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.mash-root[data-palette='mineral'] .mash-hire-box,
+.mash-root[data-palette='mineral'] .mash-hero-stats > div,
+.mash-root[data-palette='mineral'] .mash-skill-band,
+.mash-root[data-palette='mineral'] .mash-job,
+.mash-root[data-palette='mineral'] .mash-ops-card,
+.mash-root[data-palette='mineral'] .mash-story-p,
+.mash-root[data-palette='mineral'] .mash-cred-grid > div,
+.mash-root[data-palette='mineral'] .mash-case,
+.mash-root[data-palette='mineral'] .mash-featured {
+  border-radius: 0;
+  border: 1px solid var(--paper);
+  box-shadow: none;
+  background: transparent;
+}
+
+.mash-root[data-palette='mineral'] .mash-skill-bands,
+.mash-root[data-palette='mineral'] .mash-jobs,
+.mash-root[data-palette='mineral'] .mash-ops-grid,
+.mash-root[data-palette='mineral'] .mash-story-grid {
+  gap: 0;
+}
+
+.mash-root[data-palette='mineral'] .mash-skill-band,
+.mash-root[data-palette='mineral'] .mash-job,
+.mash-root[data-palette='mineral'] .mash-ops-card,
+.mash-root[data-palette='mineral'] .mash-story-p {
+  border-right: none;
+}
+
+.mash-root[data-palette='mineral'] .mash-skill-band:last-child,
+.mash-root[data-palette='mineral'] .mash-job:last-child,
+.mash-root[data-palette='mineral'] .mash-ops-card:last-child,
+.mash-root[data-palette='mineral'] .mash-story-p:last-child {
+  border-right: 1px solid var(--paper);
+}
+
+.mash-root[data-palette='mineral'] .mash-btn {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--paper);
+}
+
+.mash-root[data-palette='mineral'] .mash-marquee {
+  background: transparent;
+  color: var(--paper);
+  border-block: 1px solid var(--paper);
+  box-shadow: none;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.mash-root[data-palette='mineral'] .mash-chapter {
+  letter-spacing: 0.22em;
+}
+
+/* =========================================
+   7. restorative → Soft Minimal (air, calm, large radius)
+   ========================================= */
+.mash-root[data-palette='restorative'] {
+  --font: 'Manrope', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='restorative'] .mash-net {
+  opacity: 0.2;
+}
+
+.mash-root[data-palette='restorative'] .mash-hero {
+  min-height: 88svh;
+}
+
+.mash-root[data-palette='restorative'] .mash-hero h1 span {
+  text-transform: none;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.mash-root[data-palette='restorative'] .mash-hire-box,
+.mash-root[data-palette='restorative'] .mash-hero-stats > div,
+.mash-root[data-palette='restorative'] .mash-skill-band,
+.mash-root[data-palette='restorative'] .mash-job,
+.mash-root[data-palette='restorative'] .mash-ops-card,
+.mash-root[data-palette='restorative'] .mash-story-p,
+.mash-root[data-palette='restorative'] .mash-cred-grid > div,
+.mash-root[data-palette='restorative'] .mash-case,
+.mash-root[data-palette='restorative'] .mash-featured {
+  border-radius: 22px;
+  border: none;
+  box-shadow: 0 18px 40px rgba(47, 62, 70, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.mash-root[data-palette='restorative'] .mash-btn {
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(47, 62, 70, 0.12);
+  border: none;
+}
+
+.mash-root[data-palette='restorative'] .mash-marquee {
+  display: none;
+}
+
+.mash-root[data-palette='restorative'] .mash-story,
+.mash-root[data-palette='restorative'] .mash-skills,
+.mash-root[data-palette='restorative'] .mash-cases {
+  padding-block: clamp(3.5rem, 9vw, 6.5rem);
+}
+
+.mash-root[data-palette='restorative'] .mash-lede,
+.mash-root[data-palette='restorative'] .mash-line {
+  max-width: 42ch;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   8. mocha → Magazine (serif display, editorial columns)
+   ========================================= */
+.mash-root[data-palette='mocha'] {
+  --font: 'Playfair Display', Georgia, serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='mocha'] .mash-net {
+  display: none;
+}
+
+.mash-root[data-palette='mocha'] .mash-kicker,
+.mash-root[data-palette='mocha'] .mash-chapter,
+.mash-root[data-palette='mocha'] .mash-hire-box-meta,
+.mash-root[data-palette='mocha'] .mash-ops-src {
+  font-family: var(--mono);
+  letter-spacing: 0.16em;
+}
+
+.mash-root[data-palette='mocha'] .mash-hero h1 span {
+  text-transform: none;
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.mash-root[data-palette='mocha'] .mash-name-2 {
+  font-style: normal;
+}
+
+@media (min-width: 900px) {
+  .mash-root[data-palette='mocha'] .mash-story-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .mash-root[data-palette='mocha'] .mash-story-p:first-child {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    border-right: 1px solid color-mix(in srgb, var(--paper) 18%, transparent);
+    padding-right: 1.5rem;
+  }
+}
+
+.mash-root[data-palette='mocha'] .mash-hire-box,
+.mash-root[data-palette='mocha'] .mash-skill-band,
+.mash-root[data-palette='mocha'] .mash-job,
+.mash-root[data-palette='mocha'] .mash-ops-card,
+.mash-root[data-palette='mocha'] .mash-case,
+.mash-root[data-palette='mocha'] .mash-featured,
+.mash-root[data-palette='mocha'] .mash-cred-grid > div,
+.mash-root[data-palette='mocha'] .mash-hero-stats > div {
+  border-radius: 2px;
+  border: 1px solid color-mix(in srgb, var(--paper) 18%, transparent);
+  box-shadow: none;
+  background: rgba(255, 252, 246, 0.65);
+}
+
+.mash-root[data-palette='mocha'] .mash-featured {
+  border-left: 4px solid var(--coral);
+}
+
+.mash-root[data-palette='mocha'] .mash-marquee {
+  background: transparent;
+  color: var(--paper);
+  border-block: 1px solid color-mix(in srgb, var(--paper) 25%, transparent);
+  box-shadow: none;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+
+.mash-root[data-palette='mocha'] .mash-btn {
+  border-radius: 2px;
+  font-family: var(--mono);
+  box-shadow: none;
+}
+
+/* =========================================
+   9. grit → Organic Grain (texture, imperfect edges)
+   ========================================= */
+.mash-root[data-palette='grit'] {
+  --font: 'Syne', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='grit'] .mash-name-2 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #115e59 !important;
+  filter: none;
+  -webkit-text-stroke: 0;
+}
+
+.mash-root[data-palette='grit'] .mash-atmosphere::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.mash-root[data-palette='grit'] .mash-hire-box,
+.mash-root[data-palette='grit'] .mash-hero-stats > div,
+.mash-root[data-palette='grit'] .mash-skill-band,
+.mash-root[data-palette='grit'] .mash-job,
+.mash-root[data-palette='grit'] .mash-ops-card,
+.mash-root[data-palette='grit'] .mash-story-p,
+.mash-root[data-palette='grit'] .mash-cred-grid > div,
+.mash-root[data-palette='grit'] .mash-case,
+.mash-root[data-palette='grit'] .mash-featured {
+  border-radius: 18px 6px 20px 10px;
+  border: 2px solid color-mix(in srgb, var(--paper) 35%, transparent);
+  box-shadow: 0 14px 28px rgba(40, 54, 24, 0.1);
+  transform: rotate(-0.25deg);
+}
+
+.mash-root[data-palette='grit'] .mash-skill-band:nth-child(2n),
+.mash-root[data-palette='grit'] .mash-job:nth-child(2n),
+.mash-root[data-palette='grit'] .mash-case:nth-child(2n) {
+  border-radius: 8px 22px 8px 18px;
+  transform: rotate(0.35deg);
+}
+
+.mash-root[data-palette='grit'] .mash-btn {
+  border-radius: 12px 4px 14px 6px;
+  box-shadow: 0 8px 0 color-mix(in srgb, var(--paper) 25%, transparent);
+}
+
+.mash-root[data-palette='grit'] .mash-marquee {
+  border-radius: 0;
+  transform: rotate(-1deg);
+  margin: 0.5rem 2vw;
+  width: auto;
+}
+
+/* =========================================
+   10. mono → Stamp Brutal (thick ink borders, hard offset)
+   ========================================= */
+.mash-root[data-palette='mono'] {
+  --font: 'Archivo Black', system-ui, sans-serif;
+  --body: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.mash-root[data-palette='mono'] .mash-atmosphere {
+  opacity: 0.35;
+}
+
+.mash-root[data-palette='mono'] .mash-net {
+  display: none;
+}
+
+.mash-root[data-palette='mono'] .mash-nav {
+  background: #fff;
+  border-bottom: 4px solid #141414;
+}
+
+.mash-root[data-palette='mono'] .mash-logo {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: #141414;
+  filter: none;
+}
+
+.mash-root[data-palette='mono'] .mash-hero h1 span {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: #141414;
+  filter: none;
+  letter-spacing: -0.05em;
+}
+
+.mash-root[data-palette='mono'] .mash-name-2 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #2563eb !important;
+  filter: none;
+  -webkit-text-stroke: 0;
+}
+
+.mash-root[data-palette='mono'] .mash-story h2,
+.mash-root[data-palette='mono'] .mash-skills h2,
+.mash-root[data-palette='mono'] .mash-cases h2,
+.mash-root[data-palette='mono'] .mash-ops h2,
+.mash-root[data-palette='mono'] .mash-creds h2,
+.mash-root[data-palette='mono'] .mash-path h2 {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: #141414;
+  filter: none;
+}
+
+.mash-root[data-palette='mono'] .mash-story h2 em,
+.mash-root[data-palette='mono'] .mash-skills h2 em,
+.mash-root[data-palette='mono'] .mash-cases h2 em,
+.mash-root[data-palette='mono'] .mash-ops h2 em,
+.mash-root[data-palette='mono'] .mash-creds h2 em,
+.mash-root[data-palette='mono'] .mash-path h2 em {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: var(--coral);
+  filter: none;
+}
+
+.mash-root[data-palette='mono'] .mash-hire-box,
+.mash-root[data-palette='mono'] .mash-hero-stats > div,
+.mash-root[data-palette='mono'] .mash-skill-band,
+.mash-root[data-palette='mono'] .mash-job,
+.mash-root[data-palette='mono'] .mash-ops-card,
+.mash-root[data-palette='mono'] .mash-story-p,
+.mash-root[data-palette='mono'] .mash-cred-grid > div,
+.mash-root[data-palette='mono'] .mash-case,
+.mash-root[data-palette='mono'] .mash-featured {
+  border-radius: 0;
+  border: 4px solid #141414;
+  box-shadow: 8px 8px 0 var(--coral);
+  background: #fff;
+}
+
+.mash-root[data-palette='mono'] .mash-btn {
+  border-radius: 0;
+  border: 4px solid #141414;
+  box-shadow: 5px 5px 0 var(--coral);
+  text-transform: uppercase;
+}
+
+.mash-root[data-palette='mono'] .mash-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--coral);
+}
+
+.mash-root[data-palette='mono'] .mash-marquee {
+  background: #2563eb;
+  color: #fff;
+  border-block: 4px solid #141414;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.mash-root[data-palette='mono'] .mash-pill {
+  border-radius: 0;
+  border: 2px solid #141414;
+  box-shadow: 3px 3px 0 #141414;
+}
+
+.mash-root[data-palette='mono'] .mash-pill.coral {
+  background: var(--coral);
+  color: #fff;
+}
+
+/* Compact / split windows — keep theme character, stop edge bleed */
+@media (max-width: 900px) {
+  .mash-root[data-palette='forest'] .mash-hire-box,
+  .mash-root[data-palette='forest'] .mash-hero-stats > div,
+  .mash-root[data-palette='forest'] .mash-skill-band,
+  .mash-root[data-palette='forest'] .mash-job,
+  .mash-root[data-palette='forest'] .mash-ops-card,
+  .mash-root[data-palette='forest'] .mash-story-p,
+  .mash-root[data-palette='forest'] .mash-cred-grid > div,
+  .mash-root[data-palette='forest'] .mash-case,
+  .mash-root[data-palette='forest'] .mash-featured {
+    box-shadow: 3px 3px 0 var(--cyan);
+  }
+
+  .mash-root[data-palette='forest'] .mash-btn {
+    box-shadow: 3px 3px 0 var(--cyan);
+  }
+
+  .mash-root[data-palette='mono'] .mash-hire-box,
+  .mash-root[data-palette='mono'] .mash-hero-stats > div,
+  .mash-root[data-palette='mono'] .mash-skill-band,
+  .mash-root[data-palette='mono'] .mash-job,
+  .mash-root[data-palette='mono'] .mash-ops-card,
+  .mash-root[data-palette='mono'] .mash-story-p,
+  .mash-root[data-palette='mono'] .mash-case,
+  .mash-root[data-palette='mono'] .mash-featured,
+  .mash-root[data-palette='mono'] .mash-cred-grid > div {
+    box-shadow: 4px 4px 0 var(--coral);
+  }
+
+  .mash-root[data-palette='twilight'] .mash-hire-box,
+  .mash-root[data-palette='twilight'] .mash-skill-band,
+  .mash-root[data-palette='twilight'] .mash-job,
+  .mash-root[data-palette='twilight'] .mash-ops-card,
+  .mash-root[data-palette='twilight'] .mash-story-p,
+  .mash-root[data-palette='twilight'] .mash-case,
+  .mash-root[data-palette='twilight'] .mash-featured,
+  .mash-root[data-palette='twilight'] .mash-cred-grid > div,
+  .mash-root[data-palette='twilight'] .mash-hero-stats > div,
+  .mash-root[data-palette='grit'] .mash-hire-box,
+  .mash-root[data-palette='grit'] .mash-hero-stats > div,
+  .mash-root[data-palette='grit'] .mash-skill-band,
+  .mash-root[data-palette='grit'] .mash-job,
+  .mash-root[data-palette='grit'] .mash-ops-card,
+  .mash-root[data-palette='grit'] .mash-story-p {
+    transform: none;
+  }
+
+  .mash-root[data-palette='twilight'] .mash-marquee,
+  .mash-root[data-palette='twilight'] .mash-marquee-track {
+    transform: none;
+    margin-inline: 0;
+  }
+
+  .mash-root[data-palette='twilight'] .mash-hero {
+    clip-path: none;
+  }
+
+  .mash-root[data-palette='twilight'] .mash-hero::after {
+    inset: auto 0 -2% 20%;
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .mash-root[data-palette='forest'] .mash-hire-box,
+  .mash-root[data-palette='forest'] .mash-hero-stats > div,
+  .mash-root[data-palette='forest'] .mash-skill-band,
+  .mash-root[data-palette='forest'] .mash-job,
+  .mash-root[data-palette='forest'] .mash-ops-card,
+  .mash-root[data-palette='forest'] .mash-story-p,
+  .mash-root[data-palette='forest'] .mash-case,
+  .mash-root[data-palette='forest'] .mash-featured,
+  .mash-root[data-palette='mono'] .mash-hire-box,
+  .mash-root[data-palette='mono'] .mash-hero-stats > div,
+  .mash-root[data-palette='mono'] .mash-skill-band,
+  .mash-root[data-palette='mono'] .mash-job,
+  .mash-root[data-palette='mono'] .mash-ops-card,
+  .mash-root[data-palette='mono'] .mash-story-p,
+  .mash-root[data-palette='mono'] .mash-case,
+  .mash-root[data-palette='mono'] .mash-featured {
+    box-shadow: 2px 2px 0 currentColor;
+  }
+
+  .mash-root[data-palette='forest'] .mash-hire-box,
+  .mash-root[data-palette='forest'] .mash-btn {
+    box-shadow: 2px 2px 0 var(--cyan);
+  }
+
+  .mash-root[data-palette='mono'] .mash-hire-box,
+  .mash-root[data-palette='mono'] .mash-btn {
+    box-shadow: 2px 2px 0 var(--coral);
+  }
+}
