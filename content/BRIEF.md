@@ -4,16 +4,17 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 
 ## Person
 
-- Name: Mahmoud (“Michael”) Al Kurdi
-- Short: Michael Al Kurdi
+- Name: Michael Kurdi
+- Legal / government / transcript: Mahmoud Al Kurdi
+- Short: Michael Kurdi
 - City: Charlotte, NC (remote welcome)
 - Email: kurdi.michael.it@gmail.com
 - Phone: (704) 456-8322
 - GitHub: https://github.com/KM-it-ops
 - LinkedIn: https://www.linkedin.com/in/mahmoud-michael-al-kurdi
-- Role target: Security Operations Analyst
+- Role target: IT Support / SOC Analyst (new graduate)
 - Available: Available for full-time roles
-- Targets: SOC Analyst, Security Operations Analyst, Cybersecurity Analyst, Incident Response Analyst, Junior Detection Engineer, Security Automation
+- Targets: IT Support, SOC Analyst, Cloud Support Associate, Junior Penetration Tester
 
 ## Credentials
 
@@ -27,27 +28,27 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 1. Aviation Security Operations Crew Chief — American Airlines, Charlotte, NC, 2015–2023  
    Federally regulated operations under FAA, OSHA, IATA, and CBP. Security clearance with CBP badge endorsement. Recurrent incident-response and safety/security training. High-accountability documentation, identity validation, and access control.
 2. Courier & Logistics Specialist — USPS, Kannapolis, NC, 2024–2025  
-   Time-critical courier and logistics operations.
+   Time-critical courier and logistics operations during degree completion.
 3. Delivery Associate — Fossa Logistics LLC (Amazon DSP), Charlotte, NC, 2025–present  
-   Active role while pursuing full-time security operations.
+   High-tempo logistics ops while pursuing full-time IT Support / SOC roles.
 
-## Projects
+## Projects — coursework labs (primary)
 
-1. **AgentForge** — One spec, many agents — configuration framework for agentic AI coding assistants. Six adapters. npm `@kmitops/agentforge@0.3.1`. MIT.  
-   - GitHub: https://github.com/KM-it-ops/AgentForge  
-   - npm: https://www.npmjs.com/package/@kmitops/agentforge
-2. **ATT&CKLens Benchmark** — Defensive benchmark: can AI coding agents build secure, uncertainty-aware, MITRE ATT&CK-aligned tooling? Seven agents. Rubric of 100. MIT.  
-   - GitHub: https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
-   - Scores: Cursor 100, Claude Code 98, Hermes Nemotron 98, Codex 96, Lovable (Repaired) 76, Mistral Vibe 75, Lovable (Original) 40  
-   - Trademark: MITRE ATT&CK® is a registered trademark of The MITRE Corporation.
-3. **Vulnerability Management Mini** — Python / Flask / SQLite dashboard — CRUD, KPI cards, search, filtering, severity states. Workshop project.
-4. **Security Log Anomaly Detection** — Python / pandas / NumPy — rule-based and statistical detection for authentication and network anomaly triage. Workshop project.
+1. **Packet Tracer network lab (CYB-210)** — Ping recovery + CLI scavenger (wireless/LAN/VLAN/ASA).
+2. **Windows GPO hardening (CYB-220)** — Six hardenings with paths and registry keys.
+3. **MySQL QuantigrationUpdates (DAD-220)** — ERD → schema → analytical SQL + Docker demo.
+4. **CIS Controls + HIPAA SLA brief (CYB-260)** — CIS 5/6/14 + privacy ethics appendix (academic).
+5. **Bluetooth headset security strategy (CYB-250)** — Academic threat models; not a pen test.
+
+## Also building (secondary)
+
+1. **AgentForge** — https://github.com/KM-it-ops/AgentForge  
+2. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
 
 ## Ethos
 
-Every claim maps to a public repo, credential, or document. Defensive security only.
+Claims map to coursework writeups, credentials, or public repos. New graduate voice.
 
 ## Resume
 
-https://km-it-ops.github.io/Michael_Kurdi_Resume_2026.pdf  
-(Also served from site `docs/Michael_Kurdi_Resume_2026.pdf` after promote.)
+https://km-it-ops.github.io/Michael_Kurdi_Resume_2026.pdf

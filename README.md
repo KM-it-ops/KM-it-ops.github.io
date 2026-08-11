@@ -1,8 +1,8 @@
-# Mahmoud Al Kurdi — Portfolio
+# Michael Kurdi — Portfolio
 
-Personal portfolio for **Mahmoud ("Michael") Al Kurdi** — Security Operations Analyst track. B.S. Information Technologies (Cybersecurity), *Summa Cum Laude*, SNHU 2026 · CompTIA Security+ (SY0-701).
+New graduate **IT Support / SOC Analyst** site. B.S. IT (Cybersecurity), Summa Cum Laude, SNHU · CompTIA Security+.
 
-**Design:** Ultra Design `product-site` · Class C. Iridescent scrutiny lens (R3F), pinned lens stage, elevated horizontal work cinema. Content from [`content/BRIEF.md`](content/BRIEF.md) only.
+**Design:** Mash dossier with a fixed glass planet, sticky hire card in the hero, and a Look picker (10 color+layout skins; random on each visit). Content from [`src/content.ts`](src/content.ts) / [`content/BRIEF.md`](content/BRIEF.md).
 
 ## Live
 
@@ -12,29 +12,17 @@ Personal portfolio for **Mahmoud ("Michael") Al Kurdi** — Security Operations 
 ## Stack
 
 - Vite + React 19 + TypeScript
-- `@react-three/fiber` + `@react-three/drei` + `three`
-- Hand-rolled CSS in `src/index.css` (Sora)
+- Mash CSS (`src/designs/mash*.css`) — Syne / Figtree / JetBrains Mono (+ layout skins)
+- React Three Fiber hero lens (lazy-loaded)
 
 ## Develop and deploy
 
 ```powershell
 $env:Path = "C:\Program Files\nodejs;" + $env:Path
 npm install
-npm run dev       # http://127.0.0.1:5173
-npm run build     # emits docs/
-npm run preview   # grade the production bundle before push
+npm run dev
+npm run build
+npm run preview
 ```
 
-GitHub Pages serves **main / docs**. Ship only after `build` + `preview` QA. Push requires Boss authority.
-
-## Structure
-
-| Path | Purpose |
-| --- | --- |
-| `src/` | App — App, HeroScene, PinStage, WorkCinema, content |
-| `content/BRIEF.md` | Fact sheet (source of truth) |
-| `docs/` | Built site (Pages) |
-| `public/` | Resume PDF, favicon, robots, sitemap, 404 |
-| `DESIGN.md` | Design direction |
-
-Do not link the AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
+GitHub Pages serves **main / docs**.

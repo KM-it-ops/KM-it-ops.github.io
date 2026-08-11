@@ -7,7 +7,7 @@ import {
   type RefObject,
 } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Environment, Float } from '@react-three/drei'
+import { Float } from '@react-three/drei'
 import * as THREE from 'three'
 
 type Vec2 = { x: number; y: number }
@@ -33,17 +33,21 @@ function Lens({
   const coreMat = useMemo(
     () =>
       new THREE.MeshPhysicalMaterial({
-        color: '#ffffff',
-        metalness: 0.05,
-        roughness: 0.06,
-        transmission: 0.92,
-        thickness: 1.35,
-        ior: 1.45,
+        color: '#f4f7ff',
+        metalness: 0.2,
+        roughness: 0.12,
+        transmission: 0.28,
+        thickness: 1.1,
+        ior: 1.4,
         clearcoat: 1,
-        clearcoatRoughness: 0.08,
+        clearcoatRoughness: 0.1,
         iridescence: 1,
-        iridescenceIOR: 1.4,
+        iridescenceIOR: 1.35,
         iridescenceThicknessRange: [120, 540],
+        transparent: true,
+        opacity: 0.94,
+        emissive: new THREE.Color('#6b7cff'),
+        emissiveIntensity: 0.08,
       }),
     [],
   )
@@ -52,11 +56,13 @@ function Lens({
     () =>
       new THREE.MeshPhysicalMaterial({
         color: '#f2f2f7',
-        metalness: 0.7,
-        roughness: 0.22,
-        clearcoat: 0.8,
-        iridescence: 0.85,
+        metalness: 0.85,
+        roughness: 0.18,
+        clearcoat: 0.9,
+        iridescence: 0.9,
         iridescenceThicknessRange: [200, 700],
+        emissive: new THREE.Color('#9eb6ff'),
+        emissiveIntensity: 0.12,
       }),
     [],
   )
@@ -218,6 +224,7 @@ export function HeroScene({
           alpha: true,
           powerPreference: 'high-performance',
           toneMapping: THREE.ACESFilmicToneMapping,
+          preserveDrawingBuffer: true,
         }}
         onCreated={({ gl }) => {
           gl.setClearColor(new THREE.Color('#000000'), 0)
@@ -225,12 +232,12 @@ export function HeroScene({
         }}
         frameloop={visible ? 'always' : 'never'}
       >
-        <fog attach="fog" args={['#000000', 6, 14]} />
-        <ambientLight intensity={0.15} />
-        <directionalLight position={[5, 7, 4]} intensity={1.4} color="#ffffff" />
-        <directionalLight position={[-4, -2, -3]} intensity={0.35} color="#8eb6ff" />
+        <fog attach="fog" args={['#070b0a', 9, 18]} />
+        <ambientLight intensity={0.32} />
+        <directionalLight position={[5, 7, 4]} intensity={1.7} color="#ffffff" />
+        <directionalLight position={[-4, -2, -3]} intensity={0.55} color="#8eb6ff" />
+        <directionalLight position={[0, -3, 2]} intensity={0.4} color="#c4b5fd" />
         <Suspense fallback={null}>
-          <Environment preset="city" environmentIntensity={0.55} />
           <PointerTracker raw={raw} smooth={smooth} enabled={allowPointer && visible} />
           <Lens active={visible} phase={phase} pointer={smooth} scale={lensScale} />
         </Suspense>
