@@ -1,15 +1,8 @@
 name: Sync profile README
 
+# Manual only — do not auto-run on push (requires PROFILE_REPO_TOKEN).
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'profile-repo/**'
-      - 'PROFILE_README.md'
-      - 'assets/profile-banner.svg'
-      - '.github/workflows/sync-profile-readme.yml'
 
 jobs:
   sync:
