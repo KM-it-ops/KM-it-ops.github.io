@@ -116,9 +116,7 @@ const MASH_PALETTES: {
 function initialPalette(): MashPaletteId {
   const raw = new URLSearchParams(window.location.search).get('palette')
   const hit = MASH_PALETTES.find((p) => p.id === raw)
-  if (hit) return hit.id
-  const i = Math.floor(Math.random() * MASH_PALETTES.length)
-  return MASH_PALETTES[i]?.id ?? 'mood'
+  return hit?.id ?? 'grit'
 }
 
 function useDocumentVisible() {
@@ -622,8 +620,8 @@ export default function MashDesign() {
                 <p className="mash-looks-eyebrow">Atmosphere</p>
                 <h2>Choose a look</h2>
                 <p className="mash-looks-lede">
-                  Color and layout travel together. A random look loads on each visit —
-                  pick one to keep it.
+                  Color and layout travel together. Warm Grit loads by default —
+                  pick another look anytime.
                 </p>
               </div>
               <p className="mash-looks-active">
