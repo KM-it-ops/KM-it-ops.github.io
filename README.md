@@ -2,7 +2,7 @@
 
 New graduate **IT Support / SOC Analyst** site. B.S. IT (Cybersecurity), Summa Cum Laude, SNHU · CompTIA Security+.
 
-**Design:** Mash dossier with a fixed glass planet, sticky hire card in the hero, and a Look picker (defaults to Warm Grit; 10 color+layout skins). Content from [`src/content.ts`](src/content.ts) / [`content/BRIEF.md`](content/BRIEF.md).
+**Design:** Mash dossier with a fixed glass planet, sticky hire card in the hero, and a Look picker (defaults to Warm Grit; optional “Always use this look” pin). Content from [`src/content.ts`](src/content.ts) / [`content/BRIEF.md`](content/BRIEF.md).
 
 ## Live
 
