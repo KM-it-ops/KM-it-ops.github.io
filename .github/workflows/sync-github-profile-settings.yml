@@ -1,13 +1,8 @@
 name: Sync GitHub profile settings
 
+# Manual only — do not auto-run on push (requires user token).
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/profile-settings.json'
-      - '.github/workflows/sync-github-profile-settings.yml'
 
 jobs:
   sync:

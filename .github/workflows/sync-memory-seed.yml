@@ -1,13 +1,8 @@
 name: Sync memory seed to memory-mcp
 
+# Manual only — do not auto-run on push.
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'memory-seeds/**'
-      - '.github/workflows/sync-memory-seed.yml'
 
 jobs:
   sync:
