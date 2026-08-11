@@ -12,9 +12,9 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 - Phone: (704) 456-8322
 - GitHub: https://github.com/KM-it-ops
 - LinkedIn: https://www.linkedin.com/in/mahmoud-michael-al-kurdi
-- Role target: IT Support / SOC Analyst (new graduate)
+- Role target: AI Prompt Engineer / SOC Analyst (new graduate)
 - Available: Available for full-time roles
-- Targets: IT Support, SOC Analyst, Cloud Support Associate, Junior Penetration Tester
+- Targets: AI Prompt Engineer, SOC Analyst, Security Automation, IT Support
 
 ## Credentials
 
@@ -30,7 +30,7 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 2. Courier & Logistics Specialist — USPS, Kannapolis, NC, 2024–2025  
    Time-critical courier and logistics operations during degree completion.
 3. Delivery Associate — Fossa Logistics LLC (Amazon DSP), Charlotte, NC, 2025–present  
-   High-tempo logistics ops while pursuing full-time IT Support / SOC roles.
+   High-tempo logistics ops while pursuing full-time AI Prompt Engineer / SOC roles.
 
 ## Projects — coursework labs (primary)
 
@@ -42,8 +42,9 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 
 ## Also building (secondary)
 
-1. **AgentForge** — https://github.com/KM-it-ops/AgentForge  
-2. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
+1. **PromptRig** — https://github.com/KM-it-ops/PromptRig — PromptOps framework (modular audits, agentic permission maps, offline eval harness)
+2. **AgentForge** — https://github.com/KM-it-ops/AgentForge  
+3. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
 
 ## Ethos
 

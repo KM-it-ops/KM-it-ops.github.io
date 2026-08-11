@@ -11,25 +11,25 @@ export const PERSON = {
   phoneTel: '+17044568322',
   github: 'https://github.com/KM-it-ops',
   linkedin: 'https://www.linkedin.com/in/mahmoud-michael-al-kurdi',
-  role: 'IT Support / SOC Analyst',
+  role: 'AI Prompt Engineer / SOC Analyst',
   available: 'Available for full-time roles',
   targets: [
-    'IT Support',
+    'AI Prompt Engineer',
     'SOC Analyst',
-    'Cloud Support Associate',
-    'Junior Penetration Tester',
+    'Security Automation',
+    'IT Support',
   ],
 } as const
 
 export const THROUGHLINE = {
-  title: 'Regulated ops → cyber degree → inspectable labs',
+  title: 'Regulated ops → cyber degree → inspectable PromptOps',
   body: [
     'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — security clearance, CBP badge, identity validation, access control, and incident documentation in a federally regulated environment.',
     'I finished a B.S. in Information Technologies with a cybersecurity concentration at SNHU (Summa Cum Laude, 3.96 GPA), earned CompTIA Security+, and rebuilt my strongest coursework into case files a hiring manager can actually read.',
-    'I am targeting IT Support and Tier-1 SOC roles. I do not invent SIEM production tenure. Packet Tracer, GPO labs, SQL, and control briefs are the hands-on proof. Side AI tooling exists — it does not lead.',
+    'I build PromptRig — a PromptOps framework for modular, testable, safe prompt systems with an offline eval harness. Coursework labs remain the cyber hands-on proof. I do not invent enterprise SIEM or SAST/DAST tenure.',
   ],
   seeking:
-    'Tier-1 SOC or IT Support where documentation discipline, access-control habits, and retest-before-escalate troubleshooting matter.',
+    'AI Prompt Engineer or Tier-1 SOC / security automation roles where eval rigor, missing-context discipline, and operator documentation matter.',
 } as const
 
 export const CREDENTIALS = {
@@ -294,6 +294,11 @@ export type SideProject = {
 }
 
 export const SIDE_PROJECTS: SideProject[] = [
+  {
+    name: 'PromptRig',
+    line: 'PromptOps framework — modular audits, agent permission maps, offline eval harness.',
+    href: 'https://github.com/KM-it-ops/PromptRig',
+  },
   {
     name: 'AgentForge',
     line: 'Config framework for agentic coding assistants — secondary to coursework proof.',

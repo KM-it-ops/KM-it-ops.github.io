@@ -4,7 +4,7 @@ Complete these steps in the LinkedIn UI. Assets are in [`../assets/`](../assets/
 
 ## 1. Headline
 
-Copy from [`HEADLINE.md`](HEADLINE.md) — use the SOC-focused option.
+Copy from [`HEADLINE.md`](HEADLINE.md) — use the dual-track PromptRig × cyber option.
 
 ## 2. About
 
@@ -34,32 +34,32 @@ LinkedIn → **Profile → Edit photo → Upload**.
 Tips:
 
 - Head and shoulders, dark/neutral background
-- No filters; match the professional tone of the Masked Signal site
+- No filters; match the professional tone of the portfolio site
 
 ## 5. Featured section
 
-Add these three links:
+Add these three links (order matters — PromptRig first):
 
 | Title | URL |
 | --- | --- |
-| Threat Intelligence Atlas (Portfolio) | https://km-it-ops.github.io/ |
+| PromptRig — PromptOps framework | https://github.com/KM-it-ops/PromptRig |
+| Portfolio (km-it-ops.github.io) | https://km-it-ops.github.io/ |
 | Resume PDF (2026) | https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf |
-| AgentForge ATT&CKLens Benchmark | https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark |
 
 ## 6. Open to Work
 
 - Enable **Open to work** (recruiter-visible)
-- Job titles: SOC Analyst, Cybersecurity Analyst, Security Operations Analyst, Incident Response Analyst, Detection Engineer, Security Automation Engineer
+- Job titles: AI Prompt Engineer, Prompt Engineer, SOC Analyst, Cybersecurity Analyst, Security Automation Engineer, Detection Engineer
 - Locations: Charlotte, NC + Remote
 - Start date: Immediately or within 1 month
 
 ## 7. Skills — pin top 5
 
-1. MITRE ATT&CK
-2. Detection Engineering
-3. Python
-4. Incident Response
-5. Security Operations
+1. Prompt Engineering
+2. Python
+3. MITRE ATT&CK
+4. Detection Engineering
+5. Incident Response
 
 ## 8. Experience — American Airlines
 
@@ -72,18 +72,18 @@ Ensure the AA role emphasizes:
 
 ## 9. Posts
 
-Publish weekly from [`POSTS.md`](POSTS.md) — start with Post 1 (ATT&CKLens launch).
+Publish from [`POSTS.md`](POSTS.md) — start with the PromptRig launch post when ready.
 
 ## 10. Connections
 
 Send 5–10 personalized connection requests per week to:
 
-- SOC managers and detection engineers in Charlotte / remote-friendly companies
+- Prompt engineering / AI platform leads and SOC managers in Charlotte / remote-friendly companies
 - SNHU alumni in cybersecurity
 - Maintainers of repos you've contributed to
 
 Connection note template:
 
 ```
-Hi [Name] — I'm a Security+ grad building public SOC/detection proof (AgentForge, log detection, ATT&CK benchmarks). Would value connecting. Portfolio: km-it-ops.github.io
+Hi [Name] — Security+ cyber grad shipping public PromptOps proof (PromptRig) plus SOC coursework case files. Would value connecting. Portfolio: km-it-ops.github.io
 ```

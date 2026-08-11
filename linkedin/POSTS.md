@@ -4,7 +4,34 @@ Publish **1 per week**. Add portfolio or GitHub link in first comment if the pos
 
 ---
 
-## Post 1 — Portfolio + ATT&CKLens launch
+## Post 1 — PromptRig launch (recommended next)
+
+**Title hook:** I built a PromptOps framework so prompts stop failing quietly.
+
+Most prompt systems die the same way:
+
+- Missing context gets invented instead of labeled
+- Agent tools run without permission maps or stop conditions
+- Nobody can regression-test a rewrite
+- The “good” prompt lives in someone’s chat history
+
+PromptRig treats prompts like production infrastructure:
+
+→ Clarify → compile → offline eval → self-heal
+→ Modular audits, agent permission maps, YAML rubrics, JSONL datasets
+→ Stdlib CLI — validate the harness without API keys
+→ Defensive defaults for cyber×AI and sensitive-data workflows
+
+Repo: https://github.com/KM-it-ops/PromptRig
+Portfolio: https://km-it-ops.github.io/
+
+Open to AI Prompt Engineer, SOC Analyst, and security automation roles — Charlotte NC / remote.
+
+#promptengineering #promptops #cybersecurity #aiengineering #opensource
+
+---
+
+## Post 2 — Portfolio + ATT&CKLens
 
 **Title hook:** I built a benchmark that scores AI coding agents on defensive security — not vibes.
 
@@ -18,99 +45,60 @@ Most AI agent demos look impressive until you ask:
 So I built the AgentForge ATT&CKLens Benchmark:
 
 → One spec, safety rules, acceptance tests
-→ 7 agent artifacts compared with a rubric
+→ Agent artifacts compared with a rubric
 → Scorecards, raw outputs, logs, and a final report
 → Focus on "No Clear Mapping" discipline and analyst follow-up questions
 
-This is the kind of work I want to do full-time: detection engineering, SOC workflows, and security automation with proof you can audit.
+This pairs with PromptRig: PromptOps for the prompt layer, ATT&CKLens for defensive agent evaluation.
 
-Portfolio (case files + evidence matrix): https://km-it-ops.github.io/
-Benchmark repo: https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark
-
-Open to SOC Analyst, Cybersecurity Analyst, and Junior Detection Engineering roles — Charlotte NC / remote.
+Portfolio: https://km-it-ops.github.io/
+Benchmark: https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark
 
 #cybersecurity #socanalyst #detectionengineering #mitreattack #opensource
 
 ---
 
-## Post 2 — Aviation security → SOC pivot
+## Post 3 — Aviation security → cyber × PromptOps pivot
 
-**Title hook:** 8 years in aviation security taught me SOC skills before I knew the job title.
+**Title hook:** 8 years in aviation security taught me operator discipline before I knew PromptOps.
 
-Before I earned Security+ and my cybersecurity degree, I spent 8 years in aviation security operations at American Airlines:
+Before Security+ and my cybersecurity degree, I spent 8 years in aviation security operations at American Airlines:
 
 → Federally regulated environment (FAA, OSHA, IATA, CBP)
 → Security clearance and badge-controlled access
 → Recurrent incident-response and safety/security training
 → Documentation accuracy under time pressure
-→ Coordinating with management during inspections and incidents
 
-SOC work is different tooling — but the muscle memory transfers:
+That muscle memory transfers:
 
-Access control. Identity validation. Escalation notes. Procedure under pressure. Evidence you can defend later.
+Label missing context. Write stop conditions. Escalate with evidence. Keep the audit trail.
 
-I'm now building public proof on GitHub: log anomaly detection, phishing ML, vulnerability workflows, and AI security benchmarks.
+Public proof now: PromptRig (PromptOps + offline evals), coursework case files, and AI security benchmarks.
 
-If you're hiring for a junior SOC or cybersecurity analyst who already understands operational discipline, I'd welcome a conversation.
+If you're hiring for AI Prompt Engineer or junior SOC where systems thinking beats buzzwords, I'd welcome a conversation.
 
 Portfolio: https://km-it-ops.github.io/
+PromptRig: https://github.com/KM-it-ops/PromptRig
 
-#cybersecurity #careerchange #soc #securityoperations
-
----
-
-## Post 3 — Phishing classifier proof
-
-**Title hook:** 99.68% F1 on phishing detection — here's what the project actually proves.
-
-I built a phishing email classifier to practice the full ML pipeline security teams care about:
-
-→ Text feature extraction
-→ Random Forest classifier in Python/scikit-learn
-→ Evaluation with precision/recall/F1 — not just accuracy theater
-→ Reproducible repo structure a reviewer can run locally
-
-F1: 0.9968 on the evaluation setup documented in the repo.
-
-What I'd improve next: adversarial phrasing tests, header/feature enrichment, and model monitoring hooks for production-style drift.
-
-Repo: https://github.com/KM-it-ops/phishing-email-classifier
-
-More case files on my portfolio: https://km-it-ops.github.io/
-
-#machinelearning #phishing #cybersecurity #python
+#cybersecurity #promptengineering #careerchange #soc
 
 ---
 
-## Post 4 — Open to work / evidence packet
+## Post 4 — Honest gaps, inspectable proof
 
-**Title hook:** Open to work — here's my evidence packet in one place.
+**Title hook:** I don't invent enterprise SIEM tenure. Here's what you can actually audit.
 
-I'm targeting:
+New grads get punished for honesty and rewarded for resume padding. I'm choosing the first path.
 
-• SOC Analyst
-• Cybersecurity Analyst
-• Security Operations Analyst
-• Incident Response Analyst
-• Junior Detection Engineering
-• Security Automation
+What I will not claim: years of commercial SAST/DAST or production SIEM ownership I don't have.
 
-Credentials: CompTIA Security+ ce · B.S. IT (Cybersecurity), SNHU Summa Cum Laude (3.96)
+What you can open today:
 
-Flagship proof:
+→ PromptRig — modular prompt audits, agent permission maps, offline eval CLI
+→ Packet Tracer / GPO / SQL / CIS labs rebuilt as case files
+→ ATT&CKLens agent benchmark scorecards
+→ Security+ · SNHU Summa · 3.96 GPA · 8 years regulated aviation ops
 
-1. ATT&CKLens Benchmark — AI agents scored on defensive-security work
-2. AgentForge — agent config + verification framework
-3. Log anomaly detection — SOC-style triage patterns
-4. Phishing classifier — 99.68% F1 ML pipeline
-5. Vuln management dashboard — operational workflow UI
+If your bar is "show me the system," start here: https://km-it-ops.github.io/
 
-Everything is linked from my portfolio with case-file structure (Problem / Method / Evidence / Repo):
-
-https://km-it-ops.github.io/
-
-PDF resume: https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf
-
-Charlotte, NC · open to remote · DMs open.
-
-#opentowork #cybersecurity #hiring #socanalyst
+#cybersecurity #jobsearch #promptengineering #transparency
