@@ -113,10 +113,35 @@ const MASH_PALETTES: {
   },
 ]
 
+const LOOK_PREF_KEY = 'mash-look-pref'
+const LOOK_PIN_KEY = 'mash-look-pin'
+
+function isPaletteId(value: string | null | undefined): value is MashPaletteId {
+  return Boolean(value && MASH_PALETTES.some((p) => p.id === value))
+}
+
+function readPinnedPalette(): MashPaletteId | null {
+  try {
+    if (window.localStorage.getItem(LOOK_PIN_KEY) !== '1') return null
+    const id = window.localStorage.getItem(LOOK_PREF_KEY)
+    return isPaletteId(id) ? id : null
+  } catch {
+    return null
+  }
+}
+
 function initialPalette(): MashPaletteId {
   const raw = new URLSearchParams(window.location.search).get('palette')
-  const hit = MASH_PALETTES.find((p) => p.id === raw)
-  return hit?.id ?? 'grit'
+  if (isPaletteId(raw)) return raw
+  return readPinnedPalette() ?? 'grit'
+}
+
+function initialPinPreferred(): boolean {
+  try {
+    return window.localStorage.getItem(LOOK_PIN_KEY) === '1' && Boolean(readPinnedPalette())
+  } catch {
+    return false
+  }
 }
 
 function useDocumentVisible() {
@@ -174,6 +199,7 @@ export default function MashDesign() {
   const featured = CASE_FILES.find((c) => c.featured) ?? CASE_FILES[0]
   const rest = CASE_FILES.filter((c) => c.id !== featured.id)
   const [palette, setPalette] = useState<MashPaletteId>(initialPalette)
+  const [pinPreferred, setPinPreferred] = useState(initialPinPreferred)
   const [looksOpen, setLooksOpen] = useState(false)
   const looksRef = useRef<HTMLDivElement>(null)
   const active = useMemo(
@@ -195,6 +221,30 @@ export default function MashDesign() {
       theme.setAttribute('content', active.theme === 'light' ? '#f0f0eb' : '#070b0a')
     }
   }, [palette, active.theme])
+
+  const persistPin = (enabled: boolean, id: MashPaletteId) => {
+    try {
+      if (enabled) {
+        window.localStorage.setItem(LOOK_PIN_KEY, '1')
+        window.localStorage.setItem(LOOK_PREF_KEY, id)
+      } else {
+        window.localStorage.removeItem(LOOK_PIN_KEY)
+        window.localStorage.removeItem(LOOK_PREF_KEY)
+      }
+    } catch {
+      /* private mode / blocked storage — ignore */
+    }
+  }
+
+  const choosePalette = (id: MashPaletteId) => {
+    setPalette(id)
+    if (pinPreferred) persistPin(true, id)
+  }
+
+  const onPinChange = (checked: boolean) => {
+    setPinPreferred(checked)
+    persistPin(checked, palette)
+  }
 
   useEffect(() => {
     if (!looksOpen) return
@@ -620,15 +670,25 @@ export default function MashDesign() {
                 <p className="mash-looks-eyebrow">Atmosphere</p>
                 <h2>Choose a look</h2>
                 <p className="mash-looks-lede">
-                  Color and layout travel together. Warm Grit loads by default —
-                  pick another look anytime.
+                  Color and layout travel together. Warm Grit loads by default.
+                  Check “Always use this look” to keep your pick on return visits.
                 </p>
               </div>
-              <p className="mash-looks-active">
-                Now showing
-                <strong>{active.label}</strong>
-                <em>{active.layout}</em>
-              </p>
+              <div className="mash-looks-active-block">
+                <p className="mash-looks-active">
+                  Now showing
+                  <strong>{active.label}</strong>
+                  <em>{active.layout}</em>
+                </p>
+                <label className="mash-looks-pin">
+                  <input
+                    type="checkbox"
+                    checked={pinPreferred}
+                    onChange={(e) => onPinChange(e.target.checked)}
+                  />
+                  <span>Always use this look</span>
+                </label>
+              </div>
             </div>
             <div className="mash-looks-grid">
               {MASH_PALETTES.map((p) => (
@@ -637,10 +697,7 @@ export default function MashDesign() {
                   type="button"
                   className="mash-look-card"
                   aria-pressed={palette === p.id}
-                  onClick={() => {
-                    setPalette(p.id)
-                    setLooksOpen(false)
-                  }}
+                  onClick={() => choosePalette(p.id)}
                 >
                   <span className="mash-look-card-preview" aria-hidden>
                     {p.chips.map((c) => (
