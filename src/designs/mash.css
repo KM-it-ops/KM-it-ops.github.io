@@ -306,8 +306,17 @@
   color: var(--mute);
 }
 
-.mash-nav a:hover {
-  color: var(--cyan);
+/* WCAG 2.5.8. The primary nav links measured 16px tall; the row has 15px side
+   gaps, so vertical growth is free and no two hit areas can collide. */
+.mash-nav nav a {
+  padding: 0.25rem 0;
+}
+
+/* Ungated :hover leaves a tapped control stuck in its hover state on touch. */
+@media (hover: hover) {
+  .mash-nav a:hover {
+    color: var(--cyan);
+  }
 }
 
 .mash-nav-hire {
@@ -334,9 +343,11 @@
   white-space: nowrap;
 }
 
-.mash-nav-hire a:hover {
-  filter: brightness(1.06);
-  color: var(--ink-btn) !important;
+@media (hover: hover) {
+  .mash-nav-hire a:hover {
+    filter: brightness(1.06);
+    color: var(--ink-btn) !important;
+  }
 }
 
 .mash-hire-box {
@@ -410,10 +421,17 @@
   line-height: 1.4;
   overflow-wrap: anywhere;
   word-break: break-word;
+  /* WCAG 2.5.8. These measured 17px tall at 375 with a 6px gap — a 23px pitch,
+     so no pseudo-element could reach 24 without the hit areas overlapping, and
+     the spacing exception fails for the same reason. Real padding is the only
+     honest fix; it lands them at 25.5 (mobile) and 30 (desktop). */
+  padding: 0.25rem 0;
 }
 
-.mash-hire-box-list a:hover {
-  color: var(--cyan) !important;
+@media (hover: hover) {
+  .mash-hire-box-list a:hover {
+    color: var(--cyan) !important;
+  }
 }
 
 .mash-hire-box-legal {
@@ -447,10 +465,12 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
-.mash-hire-box-actions a:hover,
-.mash-hire-box-actions button:hover {
-  box-shadow: var(--shadow-glow-cyan), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-  filter: brightness(1.06);
+@media (hover: hover) {
+  .mash-hire-box-actions a:hover,
+  .mash-hire-box-actions button:hover {
+    box-shadow: var(--shadow-glow-cyan), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    filter: brightness(1.06);
+  }
 }
 
 .mash-foot {
@@ -657,10 +677,12 @@
   box-sizing: border-box;
 }
 
-.mash-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lift), 0 0 32px rgba(124, 108, 240, 0.4);
-  filter: brightness(1.05);
+@media (hover: hover) {
+  .mash-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift), 0 0 32px rgba(124, 108, 240, 0.4);
+    filter: brightness(1.05);
+  }
 }
 
 .mash-btn.ghost {

@@ -189,7 +189,12 @@
   --paper: #1a222c;
   --mute: #5c6774;
   --coral: #0369a1;
-  --cyan: #0ea5e9;
+  /* --cyan is text, not just decoration: .mash-kicker, .mash-chapter, .mash-ethos,
+     the case-file h4 labels and the operating li all take colour from it. At
+     #0ea5e9 that measured 2.44 against this palette's #eef1f4 — 35 elements
+     under the 4.5 floor, the only palette of the ten that failed. Lightness
+     only, same ~199deg hue; measures 4.69. */
+  --cyan: #0371aa;
   --gold: #334155;
   --copper: #475569;
   --pearl: #dde3ea;
