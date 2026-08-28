@@ -85,6 +85,8 @@
 }
 
 .mash-root[data-palette='clubroom'] .mash-hero h1 span {
+  /* The only palette that overrides the name's size, so it needs the same
+     column-relative treatment; see the @supports block in mash.css. */
   font-size: clamp(2.6rem, 14vw, 9.5rem);
   letter-spacing: -0.08em;
   line-height: 0.82;
@@ -93,6 +95,12 @@
   -webkit-background-clip: unset;
   background-clip: unset;
   color: var(--paper);
+}
+
+@supports (container-type: inline-size) {
+  .mash-root[data-palette='clubroom'] .mash-hero h1 span {
+    font-size: clamp(2.6rem, 13cqi, 9.5rem);
+  }
 }
 
 .mash-root[data-palette='clubroom'] .mash-name-2 {
