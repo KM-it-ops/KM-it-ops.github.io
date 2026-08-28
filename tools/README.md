@@ -51,6 +51,11 @@ assertion that failed. Everything else in the JSON is evidence.
 |---|---|
 | `contrastFails` | Composited fg/bg under 4.5 (or 3.0 for large text) |
 | `contrastUnmeasured` | Text over a gradient/image the probe cannot resolve — reported, never scored |
+| `gradientTextFails` | `background-clip: text` glyphs whose **worst gradient stop** is under the floor |
+| `gradientTextUnmeasured` | Gradient text with stacked background layers — reported, never scored |
+| `hiddenTextAfterPass` | Text still under an `opacity: 0` ancestor after a full scroll — a reveal that never fired |
+| `layoutSettled` | False means the page was still moving when measured; scored as a failure |
+| `fontsStatus` / `imagesPending` | Evidence that the settle preconditions actually held |
 | `hitAreaFails` | Interactive target under 24x24 (WCAG 2.5.8) |
 | `hitAreaInlineExempt` | Under 24x24 but inline in a sentence, which 2.5.8 exempts |
 | `heroNameFails` | A name word wrapped, or overflowed its column |
@@ -85,11 +90,90 @@ The rule those share: **a check that cannot fail is worse than no check**, and a
 number nobody has mutation-tested is a rumour. When adding an assertion, break
 the fix on purpose and confirm the gate names it.
 
+## Settle before you measure
+
+Two preconditions run before any assertion, and both exist because the gate got
+this wrong in a way that produced a clean `PASS` over a real defect:
+
+1. **The DOM must be populated.** Vite's cold dep-optimization blanks the page.
+2. **Fonts, images and layout must have stopped moving.** The primary nav links
+   are 25px tall in the fallback face and 23px in Figtree. The probe used to
+   evaluate before the swap, so it scored a hit area no visitor ever sees — and
+   the padding rule it was passing had been calibrated against the fallback too.
+   Two errors, one root cause, neither visible in the code or on screen.
+
+The general rule, and the one to apply to any new assertion: **a measurement
+taken before the page settles is a rumour.** `layoutSettled`, `fontsStatus` and
+`imagesPending` are reported so you can see the preconditions held.
+
+## Motion gate — `tools/checks/motion.js`
+
+`audit.js` proves the page is *correct*. `motion.js` proves it is *smooth*, and
+runs through the same driver:
+
+```powershell
+$env:SITE_URL = "http://127.0.0.1:5173/?palette=grit"
+node tools/cdp-eval.mjs 1440 900 1 tools/checks/motion.js
+```
+
+It scrolls the page top to bottom one frame at a time and records frame
+durations, long tasks and layout shift. That is a **stress test, not a 60fps
+certificate** — it scrolls every frame with no idle, which is harsher than any
+real reader.
+
+**Machine load dominates these numbers.** Both conditions are recorded, because
+the first version of this table was taken with builds and back-to-back gate runs
+in flight and written down as the site's performance — the same error the font
+race was, one layer up. Measured at 1440x900, DPR 1, over repeated runs:
+
+| Condition | Config | p50 | p95 | jank | long tasks |
+|---|---|---|---|---|---|
+| **Quiet** | reduced motion (floor) | 16.6 | 16.8–16.9 | 0 | 0 |
+| **Quiet** | **full motion as shipped** | **16.6–17.0** | **18.0–30.9** | **0** | **0** |
+| Under load | reduced motion | 16.6 | 17.4 | 0 | 0 |
+| Under load | full motion as shipped | 21.0–23.8 | 36.5–43.0 | 1–4 | 1–2 |
+
+Idle, the motion layer is **free at the median** — both configs sit on the 16.6ms
+vsync frame and the cost only appears in the p95 tail. Under CPU contention the
+static page still holds 16.6 while the motion page degrades to 21–24 with real
+hitching. **The motion layer has no headroom, and contention is the permanent
+state of a mid-range phone.** That is the honest summary.
+
+Two attributions measured under load did **not** reproduce on a quiet machine, so
+do not trust them: that the lens glass costs ~2.3ms and owns every long task, and
+that simplifying the text gradients improved frame time. The second was A/B
+tested directly — reverting it changed nothing.
+
+Thresholds tolerate a **contended** machine rather than policing the idle number,
+so the gate does not flake whenever a build is running. A healthy quiet run should
+look like p50 ~16.6; p50 of 23 with nothing else running is a real regression even
+though it passes. `worst` ranged 29–162ms across identical runs — reported, never
+gated.
+
+Mutation-tested: injecting 30ms of synchronous work per scroll event moves p50
+from 23.5 to 34.9 and fails by name as `frameBudgetMedian`.
+
 ## Known-good baseline
 
-At the time this landed, all ten palettes at 320 / 375 / 1440 return
-`"PASS": []`, with contrast minimums from 4.68 (`restorative`) to 7.72
-(`clubroom`). The three side-project links measure 18px tall and appear under
+All ten palettes at 320 / 375 / 1440 return `"PASS": []` on every assertion, with
+contrast minimums from 4.68 (`restorative`) to 7.72 (`clubroom`),
+**gradient-text** minimums from 4.25 (`restorative`) to 13.52 (`clubroom`), and
+`textElementsChecked` at 199 desktop / 193 mobile. Treat that coverage count as a
+tracked number: motion work degrades it silently, which is what
+`hiddenTextAfterPass` now catches.
+
+**Gradient text was fixed, not grandfathered.** When `gradientTextContrast`
+first ran it failed on five palettes with worst stops of 1.00–2.41 — the second
+hero name word, the "Hire me" heading and all three credential stats, confirmed
+by screenshot as near-white on near-white. The cause was six selectors painting
+text with `--metal-coral` / `--metal-cyan` / `--metal-gold`, which are
+**decorative** fills written to sit on dark panels. Text now uses
+`--metal-*-text`, defined per `[data-theme]` from tokens already verified as text
+colours on that background, so an eleventh palette inherits the safe version.
+A previous session fixed `--cyan` on `mineral` for exactly this reason and could
+only reach the solid colours, because gradients had no assertion until now.
+
+The three side-project links measure 18px tall and appear under
 `hitAreaInlineExempt`; they are inline in a sentence and conformant. Do not
 "fix" them by forcing 24px — that breaks the text rhythm for no gain.
 

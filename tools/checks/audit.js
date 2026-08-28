@@ -21,6 +21,47 @@
     return JSON.stringify(out, null, 1)
   }
 
+  // Second precondition: the webfont must have landed. Font metrics move every
+  // box this probe measures. The primary nav links are 25px tall in the fallback
+  // face and 23px in Figtree, so a run that evaluated before the swap scored a
+  // hit area no visitor ever sees — and that is not hypothetical: this gate
+  // reported "PASS": [] over a 23px target for exactly that reason, and the
+  // padding "fix" underneath it had been calibrated against the fallback too.
+  // Same rule as the DOM check above: a measurement taken at the wrong moment is
+  // a rumour, not a pass.
+  try {
+    if (document.fonts && document.fonts.ready) await document.fonts.ready
+  } catch { /* no Font Loading API — fall through and report what we can */ }
+  out.fontsStatus = document.fonts ? document.fonts.status : 'unavailable'
+
+  // Images move boxes for the same reason fonts do. An undecoded image reports
+  // its intrinsic or zero size, so anything measured around it is measured
+  // against a layout that will not exist a moment later.
+  try {
+    await Promise.all(
+      [...document.images]
+        .filter((i) => !i.complete)
+        .map((i) => (i.decode ? i.decode().catch(() => {}) : Promise.resolve())),
+    )
+  } catch { /* a broken image must not take the probe down */ }
+  out.imagesPending = [...document.images].filter((i) => !i.complete).length
+
+  // Finally, wait for layout itself to stop moving. Fonts and images are the two
+  // known causes; this catches the rest — late CSS, a mounting component, a
+  // container query resolving. Sample the document height until it holds still,
+  // then measure. Everything above this line is "settle before you measure",
+  // which is the rule the webfont race taught this gate.
+  let quiet = 0
+  let lastH = -1
+  for (let i = 0; i < 40 && quiet < 3; i++) {
+    const h = document.documentElement.scrollHeight
+    quiet = h === lastH ? quiet + 1 : 0
+    lastH = h
+    await sleep(80)
+  }
+  out.layoutSettled = quiet >= 3
+  await sleep(150)
+
   // ---------------------------------------------------------------
   // Colour math. Alpha is composited, not discarded — discarding it is
   // exactly the bug that let ultra-design-lab's gate score every rgba()
@@ -83,6 +124,33 @@
     return { bg, img, imgOn: imgOn ? String(imgOn).slice(0, 40) : null }
   }
 
+  // ---------------------------------------------------------------
+  // Gradient-clipped text.
+  //
+  // `background-clip: text` with a transparent `color` paints the glyphs from
+  // the background-image, so getComputedStyle().color is rgba(0,0,0,0) and the
+  // contrast pass below can only ever report "unmeasured". On this site that
+  // covered the hero name, every h2 and every em — the largest, most prominent
+  // type was also the only type nobody had verified.
+  //
+  // Score it from the gradient's own colour stops: composite each stop over the
+  // backdrop *behind* the element — its own background-image is the paint, not
+  // the backdrop — and keep the worst. That is a conservative bound, because the
+  // rendered glyphs are never worse than their worst stop.
+  //
+  // Stacked background layers are reported, not scored. Layers composite
+  // positionally, and scoring one layer's stops as if the others were not there
+  // would invent a number — the same class of mistake as discarding alpha.
+  // ---------------------------------------------------------------
+  const isGradientText = (cs) =>
+    (cs.webkitBackgroundClip === 'text' || cs.backgroundClip === 'text') &&
+    cs.backgroundImage && cs.backgroundImage !== 'none'
+
+  const gradientStops = (bgImage) =>
+    (bgImage.match(/rgba?\([^)]*\)|color\(\s*srgb[^)]*\)/gi) || []).map(parse)
+
+  const gradientLayerCount = (bgImage) => (bgImage.match(/-gradient\(/g) || []).length
+
   const label = (el) => {
     const cls = String(el.className || '').trim().split(/\s+/).filter(Boolean).slice(0, 2).join('.')
     return el.tagName.toLowerCase() + (cls ? '.' + cls : '')
@@ -109,26 +177,68 @@
   const samples = textEls.map((el) => {
     const cs = getComputedStyle(el)
     const fg = parse(cs.color)
-    const { bg, img, imgOn } = effBg(el)
-    const composited = over(fg, bg)
     const px = parseFloat(cs.fontSize)
     const w = parseFloat(cs.fontWeight) || 400
     const large = px >= 24 || (px >= 18.66 && w >= 700)
     const need = large ? 3 : 4.5
+    const base = {
+      sel: label(el), px: +px.toFixed(1), weight: w, need,
+      text: el.textContent.trim().slice(0, 32),
+    }
+
+    if (isGradientText(cs) && fg[3] === 0) {
+      const layers = gradientLayerCount(cs.backgroundImage)
+      const backdrop = effBg(el.parentElement || el)
+      const stops = gradientStops(cs.backgroundImage).filter((c) => c[3] > 0)
+      if (layers !== 1 || !stops.length || backdrop.img) {
+        return {
+          ...base, gradientText: true, alpha: 0, ratio: 0, ok: false, unmeasured: true,
+          bgFrom: layers !== 1
+            ? `${layers} stacked background layers`
+            : (!stops.length ? 'no parsable colour stops' : backdrop.imgOn),
+        }
+      }
+      let worst = 99
+      let worstStop = null
+      for (const s of stops) {
+        const r = ratioOf(over(s, backdrop.bg), backdrop.bg)
+        if (r < worst) { worst = r; worstStop = s }
+      }
+      return {
+        ...base, gradientText: true, alpha: 1, ratio: worst, ok: worst >= need,
+        unmeasured: false, stopCount: stops.length,
+        worstStop: worstStop ? `rgb(${worstStop.slice(0, 3).map(Math.round).join(',')})` : null,
+      }
+    }
+
+    const { bg, img, imgOn } = effBg(el)
+    const composited = over(fg, bg)
     const ratio = ratioOf(composited, bg)
     return {
-      sel: label(el), px: +px.toFixed(1), weight: w, alpha: fg[3],
-      ratio, need, ok: ratio >= need, unmeasured: img, bgFrom: imgOn,
-      text: el.textContent.trim().slice(0, 32),
+      ...base, gradientText: false, alpha: fg[3],
+      ratio, ok: ratio >= need, unmeasured: img, bgFrom: imgOn,
     }
   })
 
   out.textElementsChecked = samples.length
-  out.contrastFails = samples.filter((s) => !s.ok && !s.unmeasured)
+
+  const plain = samples.filter((s) => !s.gradientText)
+  const grad = samples.filter((s) => s.gradientText)
+
+  out.contrastFails = plain.filter((s) => !s.ok && !s.unmeasured)
     .map((s) => `${s.sel} ${s.px}px a=${s.alpha} = ${s.ratio} (need ${s.need}) "${s.text}"`)
-  out.contrastUnmeasured = [...new Set(samples.filter((s) => s.unmeasured && !s.ok)
+  out.contrastUnmeasured = [...new Set(plain.filter((s) => s.unmeasured && !s.ok)
     .map((s) => `${s.sel} = ${s.ratio} over solid stops (need ${s.need}) — real backdrop is ${s.bgFrom}`))]
-  out.contrastMin = samples.filter((s) => !s.unmeasured).reduce((m, s) => Math.min(m, s.ratio), 99)
+  // Kept comparable to the documented baseline: gradient text is scored on its
+  // own axis below so this number still means what it meant before.
+  out.contrastMin = plain.filter((s) => !s.unmeasured).reduce((m, s) => Math.min(m, s.ratio), 99)
+
+  out.gradientTextChecked = grad.length
+  out.gradientTextFails = grad.filter((s) => !s.ok && !s.unmeasured)
+    .map((s) => `${s.sel} ${s.px}px worst stop ${s.worstStop} of ${s.stopCount} = ${s.ratio} (need ${s.need}) "${s.text}"`)
+  out.gradientTextUnmeasured = [...new Set(grad.filter((s) => s.unmeasured)
+    .map((s) => `${s.sel} — ${s.bgFrom}`))]
+  out.gradientTextMin = grad.filter((s) => !s.unmeasured).reduce((m, s) => Math.min(m, s.ratio), 99)
 
   // ---------------------------------------------------------------
   // 2. Hit areas — WCAG 2.5.8 wants 24x24 CSS px. Pseudo-element
@@ -197,6 +307,29 @@
   await sleep(400)
   out.scrollWidthAfterPass = document.documentElement.scrollWidth
   out.reflowOverflowAfterPass = out.scrollWidthAfterPass > out.innerWidth + 1
+
+  // Every scroll reveal must actually have fired.
+  //
+  // This is the assertion that makes coverage loss loud. `visible()` above skips
+  // an element at `opacity: 0`, so a reveal that never runs does not fail
+  // anything — it just quietly removes its content from the contrast and hit-area
+  // samples. The gate would report a smaller, cleaner-looking page and call it a
+  // pass. After a full scroll pass there is no legitimate reason for text to
+  // still be sitting under an opacity-0 ancestor.
+  const opacityZeroAncestor = (el) => {
+    let n = el
+    while (n && n.nodeType === 1) {
+      if (getComputedStyle(n).opacity === '0') return n
+      n = n.parentElement
+    }
+    return null
+  }
+  out.hiddenTextAfterPass = textEls
+    .map((el) => ({ el, by: opacityZeroAncestor(el) }))
+    .filter((x) => x.by)
+    .slice(0, 10)
+    .map((x) => `${label(x.el)} hidden by ${label(x.by)} "${x.el.textContent.trim().slice(0, 24)}"`)
+
   window.scrollTo({ top: 0, behavior: 'instant' })
 
   // ---------------------------------------------------------------
@@ -303,6 +436,11 @@
   if (out.heroNameFails.length) out.PASS.push('heroName')
   if (out.unknownColorSyntax.length) out.PASS.push('unknownColorSyntax')
   if (out.contrastFails.length) out.PASS.push('contrast')
+  if (out.gradientTextFails.length) out.PASS.push('gradientTextContrast')
+  // A reveal that never fired shrinks every sample above it.
+  if (out.hiddenTextAfterPass.length) out.PASS.push('hiddenTextAfterPass')
+  // Measuring a layout that is still moving is the webfont race in general form.
+  if (!out.layoutSettled) out.PASS.push('layoutNeverSettled')
   if (out.hitAreaFails.length) out.PASS.push('hitArea')
   if (out.reflowOverflow || out.reflowOverflowAfterPass) out.PASS.push('reflow')
   if (out.focusableInAriaHidden.length) out.PASS.push('focusableInAriaHidden')
