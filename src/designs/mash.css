@@ -622,8 +622,29 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  overflow-wrap: anywhere;
+  /* A name must never break mid-word. This was overflow-wrap: anywhere, which
+     let MICHAEL split across two lines rather than overflow. */
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 24px rgba(184, 197, 192, 0.18));
+}
+
+/* Size the name to its own column instead of the viewport. Below 1100 the hero
+   is one column and 12vw tracks it well enough, but from 1100 the grid splits
+   1.35fr / 0.85fr and the copy column stops growing with vw while the font kept
+   going — MICHAEL measures 7.42x its font-size, so at the 124.8px ceiling it
+   wanted 926px inside a 604-812px column and broke mid-word across every common
+   desktop width. 13cqi keeps it on one line at every container size, and leaves
+   the mobile rendering effectively unchanged. */
+@supports (container-type: inline-size) {
+  .mash-hero-copy {
+    container-type: inline-size;
+  }
+
+  .mash-hero h1 span {
+    font-size: clamp(2.45rem, 13cqi, 7.8rem);
+  }
 }
 
 .mash-name-2 {
