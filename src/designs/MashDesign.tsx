@@ -1,5 +1,13 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
-import { useReducedMotion } from 'motion/react'
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
+import { gsap, startSmoothScroll, useReducedMotionPref } from '../motion'
 import {
   CASE_FILES,
   CREDENTIALS,
@@ -194,8 +202,9 @@ function MashNet({ reduced }: { reduced: boolean }) {
 
 export default function MashDesign() {
   const { toast, copy } = useCopyToast()
-  const reduced = Boolean(useReducedMotion())
+  const reduced = useReducedMotionPref()
   const pageVisible = useDocumentVisible()
+  const rootRef = useRef<HTMLDivElement>(null)
   const featured = CASE_FILES.find((c) => c.featured) ?? CASE_FILES[0]
   const rest = CASE_FILES.filter((c) => c.id !== featured.id)
   const [palette, setPalette] = useState<MashPaletteId>(initialPalette)
@@ -210,6 +219,60 @@ export default function MashDesign() {
   useEffect(() => {
     document.title = `${PERSON.name} — SOC / IT Support`
   }, [])
+
+  useEffect(() => {
+    if (reduced) return
+    return startSmoothScroll()
+  }, [reduced])
+
+  /* The hero intro, and the page's one scrubbed sequence.
+   *
+   * Opacity goes on the h1, never on its two spans. The gate measures
+   * `.mash-hero h1 span` for name wrapping and skips `opacity: 0` elements
+   * elsewhere, so the spans carry transform only — every box it measures stays
+   * exactly where it was. Transient fades on hero copy are safe in a way a
+   * resting hidden state is not: this timeline always runs to completion, so
+   * nothing is left invisible for the probe to skip.
+   *
+   * Nav, message and CTAs stay clickable throughout — a fade does not block
+   * pointer events, so nothing here gates usability on the animation finishing.
+   */
+  useLayoutEffect(() => {
+    const root = rootRef.current
+    if (!root || reduced) return
+    const ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          // clearProps so the intro leaves the hero in its plain layout state
+          // rather than under a residual inline transform. Hygiene, not a fix:
+          // the hit-area failure this was first blamed for turned out to be a
+          // webfont race (see mash.css, .mash-nav nav a).
+          defaults: { ease: 'power3.out', duration: 0.62, clearProps: 'all' },
+        })
+        .from('.mash-nav', { opacity: 0, y: -14, duration: 0.42 }, 0)
+        .from('.mash-kicker', { opacity: 0, y: 16 }, 0.06)
+        .from('.mash-hero h1', { opacity: 0, duration: 0.5 }, 0.1)
+        .from('.mash-hero h1 span', { y: 26, stagger: 0.09, duration: 0.8 }, 0.1)
+        .from('.mash-line', { opacity: 0, y: 18 }, 0.38)
+        .from('.mash-cta', { opacity: 0, y: 18 }, 0.46)
+        .from('.mash-hero-rail', { opacity: 0, y: 22 }, 0.52)
+
+      /* The instrument withdraws as the evidence takes over. The canvas is
+       * fixed and radially masked, so scaling it cannot widen the document. */
+      gsap.to('.mash-planet', {
+        scale: 0.78,
+        opacity: 0.3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.mash-hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.5,
+        },
+      })
+    }, root)
+    return () => ctx.revert()
+  }, [reduced])
 
   useEffect(() => {
     const url = new URL(window.location.href)
@@ -265,6 +328,7 @@ export default function MashDesign() {
 
   return (
     <div
+      ref={rootRef}
       className="mash-root"
       data-palette={palette}
       data-theme={active.theme}

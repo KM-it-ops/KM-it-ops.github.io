@@ -118,7 +118,12 @@ function Lens({
       ringC.current.rotation.z += delta * 0.11
     }
 
-    coreMat.iridescenceThicknessRange = [120 + phase * 200, 540 + phase * 360]
+    // Mutate in place. Assigning a fresh array here allocated one every frame,
+    // for every frame the page was scrolled — exactly the per-frame allocation
+    // the canvas rules warn about, and it showed up as GC hitching in the
+    // motion gate.
+    coreMat.iridescenceThicknessRange[0] = 120 + phase * 200
+    coreMat.iridescenceThicknessRange[1] = 540 + phase * 360
     if (light.current) {
       light.current.intensity = 1.25 + Math.sin(t * 2) * 0.18 + phase * 0.7
     }
@@ -127,18 +132,22 @@ function Lens({
   return (
     <group ref={group}>
       <Float speed={1.15} rotationIntensity={0.12} floatIntensity={0.32}>
+        {/* 96x96 was 9,216 quads on a sphere that renders a few hundred pixels
+            wide behind a mask. 64x48 is a third of that and indistinguishable at
+            this size — and the sphere is transmissive, so it is drawn more than
+            once per frame. */}
         <mesh ref={core} material={coreMat}>
-          <sphereGeometry args={[1.05, 96, 96]} />
+          <sphereGeometry args={[1.05, 64, 48]} />
         </mesh>
       </Float>
       <mesh ref={ringA} rotation={[Math.PI / 2.2, 0.15, 0]} material={ringMat}>
-        <torusGeometry args={[1.55, 0.012, 16, 180]} />
+        <torusGeometry args={[1.55, 0.012, 12, 128]} />
       </mesh>
       <mesh ref={ringB} rotation={[0.55, 0.8, 0.2]} material={ringMat}>
-        <torusGeometry args={[1.55, 0.008, 12, 160]} />
+        <torusGeometry args={[1.55, 0.008, 10, 120]} />
       </mesh>
       <mesh ref={ringC} rotation={[1.1, -0.4, 0.5]} material={ringMat}>
-        <torusGeometry args={[1.55, 0.005, 12, 160]} />
+        <torusGeometry args={[1.55, 0.005, 10, 120]} />
       </mesh>
       <pointLight
         ref={light}
@@ -217,14 +226,19 @@ export function HeroScene({
   return (
     <div className={className} aria-hidden>
       <Canvas
-        dpr={[1, 1.75]}
+        // 1.5 rather than 1.75: this canvas sits behind a radial mask at partial
+        // opacity, so the top of that range bought resolution nobody can see and
+        // cost fill rate on every frame of every scroll.
+        dpr={[1, 1.5]}
         camera={{ position: [0, 0.2, cameraZ], fov: 36 }}
         gl={{
           antialias: true,
           alpha: true,
           powerPreference: 'high-performance',
           toneMapping: THREE.ACESFilmicToneMapping,
-          preserveDrawingBuffer: true,
+          // preserveDrawingBuffer was on and nothing read the buffer. It keeps
+          // the drawing buffer alive between frames and blocks the driver's
+          // normal swap optimisation — a permanent cost for an unused feature.
         }}
         onCreated={({ gl }) => {
           gl.setClearColor(new THREE.Color('#000000'), 0)
