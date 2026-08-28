@@ -94,6 +94,85 @@
   color: inherit;
 }
 
+/* Text-safe metal gradients.
+ *
+ * --metal-coral / --metal-cyan / --metal-gold are DECORATIVE fills. Every
+ * palette starts them near-white, because they were written to sit on dark
+ * panels and buttons. Five selectors were also using them as `background-clip:
+ * text` paint, which on a light palette renders near-white glyphs on a
+ * near-white page: the second hero name word, the "Hire me" heading and all
+ * three credential stats measured 1.00-1.08 against their own backdrop on
+ * mineral, mocha, mono and restorative. Confirmed by eye, not just by number.
+ *
+ * It survived this long because it was unmeasurable. A previous session fixed
+ * --cyan on mineral for exactly this reason and could only reach the solid
+ * colours; gradient text had no assertion until `gradientTextContrast`.
+ *
+ * So: text gets its own variables. The default is the decorative gradient, which
+ * keeps every currently-passing palette pixel-identical, and the light-theme
+ * block below overrides them with stops built from tokens that are already
+ * verified as text colours on that background. Scoped by [data-theme], not by
+ * palette, so an eleventh palette inherits the safe version automatically.
+ */
+.mash-root {
+  --metal-coral-text: var(--metal-coral);
+  --metal-cyan-text: var(--metal-cyan);
+  --metal-gold-text: var(--metal-gold);
+}
+
+.mash-root[data-theme='light'] {
+  /* --paper is this palette's body-text colour, so it is contrast-verified by
+     definition. Mixing the accent toward it keeps the metallic hue shift while
+     pulling every stop down to a legible tone. */
+  --metal-coral-text: linear-gradient(
+    135deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--coral) 55%, var(--paper)) 50%,
+    var(--paper) 100%
+  );
+  --metal-cyan-text: linear-gradient(
+    135deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--cyan) 55%, var(--paper)) 50%,
+    var(--paper) 100%
+  );
+  --metal-gold-text: linear-gradient(
+    135deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--copper) 55%, var(--paper)) 50%,
+    var(--paper) 100%
+  );
+}
+
+/* The same rule mirrored. On a dark palette the decorative gradients fail from
+ * the other end: their mid stops are deep saturated tones written to read
+ * against a light panel. `mood` rendered the hero's second name word with a
+ * #6d28d9 middle, measuring 2.41 on its own background.
+ *
+ * The accent is kept at 70% here rather than 55%, because on a dark palette the
+ * accents are already light and the mix only needs to lift the mid stop off the
+ * floor — so this keeps the vivid accent and drops only the illegible part. */
+.mash-root[data-theme='dark'] {
+  --metal-coral-text: linear-gradient(
+    135deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--coral) 70%, var(--paper)) 50%,
+    var(--paper) 100%
+  );
+  --metal-cyan-text: linear-gradient(
+    135deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--cyan) 70%, var(--paper)) 50%,
+    var(--paper) 100%
+  );
+  --metal-gold-text: linear-gradient(
+    135deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--gold) 70%, var(--paper)) 50%,
+    var(--paper) 100%
+  );
+}
+
 .mash-atmosphere {
   position: fixed;
   inset: -25%;
@@ -306,10 +385,20 @@
   color: var(--mute);
 }
 
-/* WCAG 2.5.8. The primary nav links measured 16px tall; the row has 15px side
-   gaps, so vertical growth is free and no two hit areas can collide. */
+/* WCAG 2.5.8. The row has 15px side gaps, so vertical growth is free and no two
+   hit areas can collide.
+
+   The padding alone was calibrated against the wrong metrics: it was measured
+   while the fallback font was still in use, where the line box is 16px and
+   16 + 8 clears 24 exactly. Figtree renders the same row at 15px, so the real
+   height was 23px and the gate only ever passed because it measured before the
+   webfont finished loading. Pin the floor to the requirement instead of
+   counting pixels against whichever font happened to win that race. */
 .mash-nav nav a {
   padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  min-height: 24px;
 }
 
 /* Ungated :hover leaves a tapped control stuck in its hover state on touch. */
@@ -387,7 +476,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  background: var(--metal-coral);
+  background: var(--metal-coral-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -648,7 +737,7 @@
 }
 
 .mash-name-2 {
-  background: var(--metal-coral) !important;
+  background: var(--metal-coral-text) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   color: transparent !important;
@@ -737,7 +826,7 @@
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   letter-spacing: -0.04em;
   font-weight: 800;
-  background: var(--metal-gold);
+  background: var(--metal-gold-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -746,13 +835,13 @@
 }
 
 .mash-stat.cyan {
-  background: var(--metal-cyan);
+  background: var(--metal-cyan-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 .mash-stat.coral {
-  background: var(--metal-coral);
+  background: var(--metal-coral-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -849,7 +938,7 @@
   font-style: italic;
   font-weight: 650;
   line-height: 1.15;
-  background: var(--metal-coral);
+  background: var(--metal-coral-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
