@@ -29,3 +29,26 @@ body {
   outline: 2px solid #7cf0c1;
   outline-offset: 3px;
 }
+
+/* Lenis. Only these four rules are required by the engine; the smooth-scroll
+   override matters because Lenis drives the real scroll position itself and the
+   CSS `scroll-behavior: smooth` above would fight it. In-page anchors are
+   handled in src/motion.ts so focus still moves the way native navigation does.
+   Under reduced motion Lenis never starts, no `lenis` class is added, and the
+   native smooth-scroll rule above stands. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
