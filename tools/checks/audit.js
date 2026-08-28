@@ -238,11 +238,68 @@
   out.heroNameFails = out.heroName.filter((n) => n.lines > 1 || !n.fits)
     .map((n) => `"${n.word}" ${n.lines} line(s), ${n.overflowPx > 0 ? `overflows column by ${n.overflowPx}px` : 'fits'}`)
 
+  // ---------------------------------------------------------------
+  // 6. Chart encoding fidelity. A bar whose rendered size does not match
+  //    the value it claims is the worst class of chart defect: it looks
+  //    fine and it lies. Caught for real on the Jarvis console, where
+  //    three columns of 25/16/18 rendered at near-identical heights
+  //    because their percentage heights resolved inside a flex box that
+  //    also held the labels.
+  //
+  //    Opt-in contract, so this is not tied to any one page's classes:
+  //      data-encode-group="<name>"   on each mark, grouping one chart
+  //      data-encode-value="<number>" the value that mark claims
+  //      data-encode="width|height"   which dimension carries it
+  //    The largest value in a group defines full scale; every other mark
+  //    is checked proportionally against it.
+  // ---------------------------------------------------------------
+  const marks = [...document.querySelectorAll('[data-encode-group][data-encode-value]')]
+  const groups = {}
+  for (const el of marks) {
+    const g = el.getAttribute('data-encode-group')
+    ;(groups[g] = groups[g] || []).push(el)
+  }
+  out.chartGroups = Object.keys(groups).length
+  out.chartMarks = marks.length
+  out.chartEncodingFails = []
+  for (const [name, els] of Object.entries(groups)) {
+    const rows = els.map((el) => {
+      const r = el.getBoundingClientRect()
+      const dim = (el.getAttribute('data-encode') || 'width').toLowerCase()
+      return { el, value: parseFloat(el.getAttribute('data-encode-value')),
+               px: dim === 'height' ? r.height : r.width, dim,
+               label: el.getAttribute('data-encode-label') || '' }
+    }).filter((r) => isFinite(r.value))
+    if (rows.length < 2) continue          // a single mark encodes nothing to compare
+    const maxV = Math.max(...rows.map((r) => r.value))
+    const maxP = Math.max(...rows.map((r) => r.px))
+    if (!(maxV > 0) || !(maxP > 0)) {
+      out.chartEncodingFails.push(`${name}: group has no positive scale`)
+      continue
+    }
+    for (const r of rows) {
+      const expected = (r.value / maxV) * maxP
+      // Tolerance: 4% of full scale, or 2px, whichever is larger — covers
+      // sub-pixel rounding and a min-height floor on a near-zero bar.
+      const tol = Math.max(maxP * 0.04, 2)
+      if (Math.abs(r.px - expected) > tol) {
+        out.chartEncodingFails.push(
+          `${name}${r.label ? ' / ' + r.label : ''}: value ${r.value} rendered ` +
+          `${r.px.toFixed(1)}px ${r.dim}, expected ~${expected.toFixed(1)}px`)
+      }
+    }
+  }
+
   // A colour syntax this probe cannot parse must surface, not silently score 0.
   out.unknownColorSyntax = [...new Set(unknownColor)]
 
   out.PASS = []
-  if (!out.heroName.length) out.PASS.push('heroNameNotFound')
+  // No charts on a page is a legitimate state, unlike an empty DOM — it adds
+  // nothing to PASS. But a page that HAS marks and gets them wrong must fail.
+  if (out.chartEncodingFails.length) out.PASS.push('chartEncoding')
+  // Only a missing hero on a page that HAS the hero is a defect. This gate now
+  // runs against other pages too, where absence just means "different page".
+  if (copy && !out.heroName.length) out.PASS.push('heroNameNotFound')
   if (out.heroNameFails.length) out.PASS.push('heroName')
   if (out.unknownColorSyntax.length) out.PASS.push('unknownColorSyntax')
   if (out.contrastFails.length) out.PASS.push('contrast')
