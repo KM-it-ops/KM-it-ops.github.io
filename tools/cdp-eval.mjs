@@ -19,6 +19,14 @@ if(process.argv[6]==='reduced') await send('Emulation.setEmulatedMedia',{feature
 await send('Page.navigate',{url:URL})
 for(let i=0;i<60&&!events.includes('Page.loadEventFired');i++) await sleep(200)
 await sleep(6000)
-const r = await send('Runtime.evaluate',{expression:EXPR, returnByValue:true, awaitPromise:true})
-console.log(r.result.value ?? JSON.stringify(r))
-ws.close(); process.exit(0)
+let r
+try {
+  r = await send('Runtime.evaluate',{expression:EXPR, returnByValue:true, awaitPromise:true})
+  console.log(r.result.value ?? JSON.stringify(r))
+} finally {
+  // Close the tab this run opened. /json/new leaks one target per invocation,
+  // which is invisible while a window is open and adds up fast over a sweep.
+  try { await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`) } catch {}
+  ws.close()
+}
+process.exit(0)
