@@ -47,12 +47,12 @@ status: open-to-work
 
 | Project | Hiring signal | Link |
 | --- | --- | --- |
+| **PromptRig** | Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; built-in profiles for Claude Fable 5.1, GPT-5.6, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, Kimi K3; offline eval harness; Cursor skill pack | [repo](https://github.com/KM-it-ops/PromptRig) |
 | **Packet Tracer Network Lab** | CYB-210 troubleshooting + config scavenger | Portfolio site (coursework) · publish pending |
 | **Windows GPO Hardening** | CYB-220 endpoint hardening checklist | Portfolio site (coursework) · publish pending |
 | **MySQL QuantigrationUpdates** | DAD-220 ERD → SQL + Docker demo | Portfolio site (coursework) · publish pending |
 | **CIS / HIPAA SLA Brief** | CYB-260 CIS 5/6/14 + ethics appendix | Portfolio site (coursework) · publish pending |
 | **Bluetooth Security Strategy** | CYB-250 academic threat models (not a pen test) | Portfolio site (coursework) · publish pending |
-| **PromptRig** (secondary) | PromptOps framework — audits, agent permission maps, offline eval harness | [repo](https://github.com/KM-it-ops/PromptRig) |
 | **AgentForge** (secondary) | Multi-adapter agent config framework | [repo](https://github.com/KM-it-ops/AgentForge) |
 | **ATT&CKLens Benchmark** (secondary) | Defensive agent benchmark | [repo](https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark) |
 
@@ -61,6 +61,7 @@ status: open-to-work
 ## Why hire me (60-second scan)
 
 - New graduate with **Security+** and **Summa** cyber degree — filter-pass credentials.
+- **PromptRig** — public flagship: model-specific prompt compilation, token discipline, offline evals.
 - Coursework labs you can read: network troubleshooting, GPO hardening, SQL, control briefs.
 - **8 years** regulated aviation security ops — access control, incident docs, escalation discipline.
 - Honest about exposure vs hands-on — no invented SIEM production tenure.
@@ -70,6 +71,7 @@ status: open-to-work
 
 ## Currently building
 
+- **PromptRig v1.3** — frontier model profiles (Fable 5.1, GPT-5.6, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, Kimi K3) + Cursor skill pack
 - Public publish of coursework portfolio (awaiting authority)
 - TryHackMe SOC L1 / Jr PenTester path (gap closes — not claimed proficiency)
 - Expanding **AgentForge** as secondary tooling proof

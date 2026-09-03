@@ -32,7 +32,11 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 3. Delivery Associate — Fossa Logistics LLC (Amazon DSP), Charlotte, NC, 2025–present  
    High-tempo logistics ops while pursuing full-time AI Prompt Engineer / SOC roles.
 
-## Projects — coursework labs (primary)
+## Flagship project
+
+1. **PromptRig** — https://github.com/KM-it-ops/PromptRig — PromptOps meta-optimizer (framework v1.3): clarify → compile → self-heal with built-in profiles for Claude Fable 5.1, GPT-5.6, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, Kimi K3; offline eval harness; Cursor skill pack
+
+## Coursework labs (primary cyber proof)
 
 1. **Packet Tracer network lab (CYB-210)** — Ping recovery + CLI scavenger (wireless/LAN/VLAN/ASA).
 2. **Windows GPO hardening (CYB-220)** — Six hardenings with paths and registry keys.
@@ -42,9 +46,8 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 
 ## Also building (secondary)
 
-1. **PromptRig** — https://github.com/KM-it-ops/PromptRig — PromptOps framework (modular audits, agentic permission maps, offline eval harness)
-2. **AgentForge** — https://github.com/KM-it-ops/AgentForge  
-3. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
+1. **AgentForge** — https://github.com/KM-it-ops/AgentForge  
+2. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
 
 ## Ethos
 

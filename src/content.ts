@@ -26,7 +26,7 @@ export const THROUGHLINE = {
   body: [
     'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — security clearance, CBP badge, identity validation, access control, and incident documentation in a federally regulated environment.',
     'I finished a B.S. in Information Technologies with a cybersecurity concentration at SNHU (Summa Cum Laude, 3.96 GPA), earned CompTIA Security+, and rebuilt my strongest coursework into case files a hiring manager can actually read.',
-    'I build PromptRig — a PromptOps framework for modular, testable, safe prompt systems with an offline eval harness. Coursework labs remain the cyber hands-on proof. I do not invent enterprise SIEM or SAST/DAST tenure.',
+    'I build **PromptRig** — my flagship PromptOps framework (v1.3): model-specific clarify → compile → self-heal with built-in profiles for September 2026 frontier models, token discipline, loop engineering, and an offline eval harness. Coursework labs remain the cyber hands-on proof. I do not invent enterprise SIEM or SAST/DAST tenure.',
   ],
   seeking:
     'AI Prompt Engineer or Tier-1 SOC / security automation roles where eval rigor, missing-context discipline, and operator documentation matter.',
@@ -296,7 +296,7 @@ export type SideProject = {
 export const SIDE_PROJECTS: SideProject[] = [
   {
     name: 'PromptRig',
-    line: 'PromptOps framework — modular audits, agent permission maps, offline eval harness.',
+    line: 'Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; frontier profiles (Fable 5.1, GPT-5.6, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, Kimi K3); offline eval harness.',
     href: 'https://github.com/KM-it-ops/PromptRig',
   },
   {

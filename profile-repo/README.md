@@ -47,6 +47,7 @@ status: open-to-work
 
 | Project | Hiring signal | Link |
 | --- | --- | --- |
+| **PromptRig** | Flagship PromptOps v1.3 — clarify → compile → self-heal with Sept 2026 frontier model profiles; offline eval harness; Cursor skill | [repo](https://github.com/KM-it-ops/PromptRig) |
 | **AgentForge ATT&CKLens Benchmark** | 7 agents compared on defensive-security work; rubric scoring, prompt-injection resistance, reproducible reports | [repo](https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark) |
 | **AgentForge** | Multi-adapter agent config framework; verification, smoke tests, CI, documentation | [repo](https://github.com/KM-it-ops/AgentForge) |
 | **Shared-Brain MCP** | MCP server + LLM-Wiki; bearer auth, lint-on-write, round-trip verified across agents | [repo](https://github.com/KM-it-ops/memory-mcp) |
@@ -68,6 +69,7 @@ status: open-to-work
 
 ## Currently building
 
+- **PromptRig** — public flagship PromptOps framework with model-specific compile loop and offline evals
 - Expanding **AgentForge** adapters, verification, and release readiness docs
 - **OSINT dashboard** — analyst-grade aggregation and visualization ([`osint-dashboard`](https://github.com/KM-it-ops/osint-dashboard))
 - MITRE ATT&CK-mapped detection content and cross-framework **IR playbooks**
