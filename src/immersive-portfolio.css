@@ -573,6 +573,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  position: relative;
+  z-index: 6;
+  pointer-events: auto;
 }
 .im-moment-links a {
   font-family: var(--im-display);
@@ -584,9 +587,21 @@
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  position: relative;
+  z-index: 7;
+  pointer-events: auto;
+  cursor: pointer;
 }
 .im-moment-links a:hover {
   color: var(--im-cyan);
+}
+/* OFG lives under taller cine cards in layout — keep its hit target above siblings */
+.im-reveal-ofg {
+  position: relative;
+  z-index: 30;
+}
+.im-ofg-open {
+  padding: 0.35rem 0.15rem;
 }
 .im-moment-glow {
   position: absolute;
@@ -1019,8 +1034,9 @@
 }
 
 .im-montage {
-  perspective: 1400px;
-  transform-style: preserve-3d;
+  /* Flat stacking — preserve-3d + translateZ let taller cards steal OFG clicks */
+  perspective: none;
+  transform-style: flat;
 }
 .im-moment-cine {
   transform-origin: center center;
@@ -1043,28 +1059,39 @@
 .im-moment-cine:hover .im-moment-depth {
   opacity: 1;
 }
+/* Empty card chrome must not intercept clicks meant for OFG underneath */
+.im-moment-lead.im-moment-cine,
+.im-moment-2.im-moment-cine {
+  pointer-events: none;
+  z-index: 1;
+}
+.im-moment-lead.im-moment-cine a,
+.im-moment-2.im-moment-cine a {
+  pointer-events: auto;
+}
 .im-moment-lead.im-moment-cine {
-  z-index: 3;
-  transform: translateZ(40px) scale(1.02);
+  transform: scale(1.02);
 }
 .im-moment-2.im-moment-cine {
-  z-index: 2;
-  transform: translateZ(12px) translateX(4%) scale(0.98);
-  margin-top: -0.5rem;
+  transform: translateX(2%) scale(0.98);
+  margin-top: 0;
 }
 .im-moment-side.im-moment-cine {
-  z-index: 1;
-  transform: translateZ(-20px) scale(0.94);
-  filter: saturate(0.9);
+  z-index: 20;
+  pointer-events: auto;
+  transform: none;
+  filter: none;
 }
 .im-moment-cine:hover {
-  transform: translateZ(56px) scale(1.03);
+  transform: translateY(-6px) scale(1.02);
   filter: none;
   box-shadow: 0 24px 80px rgba(40, 80, 180, 0.22);
-  z-index: 5;
+  z-index: 25;
+  pointer-events: auto;
 }
 .im-moment-side.im-moment-cine:hover {
-  transform: translateZ(30px) scale(1.01);
+  transform: translateY(-4px) scale(1.01);
+  z-index: 30;
 }
 
 .im[data-beat='work'] .im-montage .im-moment-head {
