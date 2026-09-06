@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="KM seal insignia">
+  <rect width="240" height="240" fill="#1c1917"/>
+  <!-- outer rings -->
+  <circle cx="120" cy="120" r="108" fill="none" stroke="#c45d2c" stroke-width="3"/>
+  <circle cx="120" cy="120" r="100" fill="none" stroke="#f5f0e8" stroke-width="1.5" stroke-opacity="0.55"/>
+  <circle cx="120" cy="120" r="88" fill="#141210" stroke="#3f3a36" stroke-width="2"/>
+  <!-- dashed seal ring -->
+  <circle cx="120" cy="120" r="78" fill="none" stroke="#c45d2c" stroke-width="1.25" stroke-dasharray="3 5" stroke-opacity="0.9"/>
+  <!-- KM interlocking bold -->
+  <g fill="#f5f0e8" transform="translate(120 118)">
+    <!-- K -->
+    <path d="M-52 -36 h14 v26 l28 -26 h18 l-30 28 32 32 h-18 l-28 -28 v28 h-14 z"/>
+    <!-- M shared stem overlap -->
+    <path d="M-6 -36 h16 l18 40 18 -40 h16 v72 h-14 v-42 l-16 36 h-8 l-16 -36 v42 h-14 z"/>
+  </g>
+  <!-- terracotta tick / wax -->
+  <circle cx="120" cy="186" r="7" fill="#c45d2c"/>
+  <text x="120" y="52" text-anchor="middle" fill="#a8a29e" font-family="Georgia, 'Times New Roman', serif" font-size="11" letter-spacing="3">KURDI · MARK</text>
+  <text x="120" y="208" text-anchor="middle" fill="#a8a29e" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">MK-2026</text>
+</svg>

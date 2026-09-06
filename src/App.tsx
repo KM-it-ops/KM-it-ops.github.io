@@ -1,5 +1,5 @@
-import MashDesign from './designs/MashDesign'
+import ImmersivePortfolio from './ImmersivePortfolio'
 
 export default function App() {
-  return <MashDesign />
+  return <ImmersivePortfolio />
 }

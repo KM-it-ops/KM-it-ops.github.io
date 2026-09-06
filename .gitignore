@@ -1,3 +1,7 @@
 .cursor/
 node_modules/
 tsconfig.tsbuildinfo
+
+screenshots/
+inspiration/
+logo-preview/

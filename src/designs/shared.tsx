@@ -56,13 +56,14 @@ export function Reveal({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el,
-        { opacity: 0, y: 28 },
+        { opacity: 0, y: 28, filter: 'blur(8px)' },
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
+          filter: 'blur(0px)',
+          duration: 0.52,
           delay,
-          ease: 'power3.out',
+          ease: 'power4.out',
           // Hygiene: leave no inline transform or opacity behind once the reveal
           // has played, so every element the gate measures is in its plain
           // layout state. Verified — a full-page pass reports no residual inline
@@ -75,7 +76,7 @@ export function Reveal({
           // and adding clearProps did not change that result. It is kept because
           // it is correct, not because it fixed anything measured.
           clearProps: 'all',
-          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
         },
       )
     }, el)

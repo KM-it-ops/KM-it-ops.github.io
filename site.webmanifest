@@ -1,10 +1,17 @@
 {
-  "name": "KM://OPS — Mahmoud (\"Michael\") Al Kurdi — Insert Coin",
-  "short_name": "KM://OPS",
-  "description": "SOC analyst & detection engineer portfolio — retro arcade cabinet, INSERT COIN.",
+  "name": "Michael Kurdi — Night Dossier",
+  "short_name": "KM Dossier",
+  "description": "Tier-1 SOC / Jr Detection / Security Automation — Night Dossier portfolio.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#05071c",
-  "theme_color": "#05071c",
-  "icons": []
+  "background_color": "#1c1917",
+  "theme_color": "#1c1917",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
