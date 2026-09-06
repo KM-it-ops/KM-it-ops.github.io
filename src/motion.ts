@@ -86,7 +86,8 @@ export function startSmoothScroll(): () => void {
 
     e.preventDefault()
     lenis.scrollTo(target, {
-      offset: -12,
+      // Clear fixed pill nav (~5.25rem) — avoids overshoot flash into unpainted gaps
+      offset: -88,
       onComplete: () => {
         // Keep the ?palette= query — a bare "#id" href would resolve it away.
         const url = new URL(window.location.href)
