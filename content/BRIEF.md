@@ -1,6 +1,7 @@
 # Portfolio BRIEF — content source of truth
 
-Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
+Facts only. Do not invent claims. Do not invent SIEM / SAST / DAST tenure.
+Do not link AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
 
 ## Person
 
@@ -12,9 +13,9 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 - Phone: (704) 456-8322
 - GitHub: https://github.com/KM-it-ops
 - LinkedIn: https://www.linkedin.com/in/mahmoud-michael-al-kurdi
-- Role target: AI Prompt Engineer / SOC Analyst (new graduate)
+- Headline: Tier-1 SOC / Jr Detection / Security Automation
 - Available: Available for full-time roles
-- Targets: AI Prompt Engineer, SOC Analyst, Security Automation, IT Support
+- Targets: Tier-1 SOC, Jr Detection, Security Automation, IT Support
 
 ## Credentials
 
@@ -23,20 +24,25 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 - Completed Dec 2025 · Conferred Jan 1, 2026
 - Summa Cum Laude · 3.96 GPA · Alpha Sigma Lambda (Sigma Psi)
 
-## Experience
+## Experience (transferables only — no fake SIEM)
 
 1. Aviation Security Operations Crew Chief — American Airlines, Charlotte, NC, 2015–2023  
    Federally regulated operations under FAA, OSHA, IATA, and CBP. Security clearance with CBP badge endorsement. Recurrent incident-response and safety/security training. High-accountability documentation, identity validation, and access control.
 2. Courier & Logistics Specialist — USPS, Kannapolis, NC, 2024–2025  
    Time-critical courier and logistics operations during degree completion.
 3. Delivery Associate — Fossa Logistics LLC (Amazon DSP), Charlotte, NC, 2025–present  
-   High-tempo logistics ops while pursuing full-time AI Prompt Engineer / SOC roles.
+   High-tempo logistics ops while pursuing full-time Tier-1 SOC / Jr Detection / security automation roles.
 
-## Flagship project
+## Featured projects
 
-1. **PromptRig** — https://github.com/KM-it-ops/PromptRig — PromptOps meta-optimizer (framework v1.3): clarify → compile → self-heal with built-in profiles for Claude Fable 5.1, GPT-5.6, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, Kimi K3; offline eval harness; Cursor skill pack
+1. **PromptRig** (favorite) — https://github.com/KM-it-ops/PromptRig  
+   PromptOps meta-optimizer (framework v1.3): clarify → compile → self-heal; model profiles; offline eval harness; Cursor skill pack.
+2. **AgentForge** — https://github.com/KM-it-ops/AgentForge · live: https://agentforgestudio-alpha.vercel.app  
+   Config framework for agentic coding assistants.
+3. **OFG client dairy site** — https://ofg-sites.vercel.app/  
+   Client-facing web build for a dairy business.
 
-## Coursework labs (primary cyber proof)
+## Coursework labs (cyber hands-on proof)
 
 1. **Packet Tracer network lab (CYB-210)** — Ping recovery + CLI scavenger (wireless/LAN/VLAN/ASA).
 2. **Windows GPO hardening (CYB-220)** — Six hardenings with paths and registry keys.
@@ -46,13 +52,12 @@ Facts only. Do not invent claims. Do not link AgentForge Pages demo (`…/AgentF
 
 ## Also building (secondary)
 
-1. **AgentForge** — https://github.com/KM-it-ops/AgentForge  
-2. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark  
+1. **ATT&CKLens Benchmark** — https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark
 
 ## Ethos
 
-Claims map to coursework writeups, credentials, or public repos. New graduate voice.
+Claims map to coursework writeups, credentials, or public repos. Hands-on vs exposure is labeled. New graduate voice. Transferables from regulated ops — never invented enterprise SIEM tenure.
 
 ## Resume
 
-https://km-it-ops.github.io/Michael_Kurdi_Resume_2026.pdf
+/Michael_Kurdi_Resume_SOC_onepager.pdf (public/)

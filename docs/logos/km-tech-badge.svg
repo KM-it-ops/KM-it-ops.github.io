@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="KM geometric tech badge">
+  <rect width="240" height="240" fill="#1c1917"/>
+  <!-- octagonal / cut-corner badge -->
+  <path d="M70 28 H170 L212 70 V170 L170 212 H70 L28 170 V70 Z" fill="#141210" stroke="#9aabcf" stroke-width="2.5"/>
+  <path d="M78 40 H162 L200 78 V162 L162 200 H78 L40 162 V78 Z" fill="none" stroke="#3f3a36" stroke-width="1.5"/>
+  <!-- corner ticks -->
+  <path d="M88 48 h24 M152 48 h-24 M88 192 h24 M152 192 h-24 M48 88 v24 M48 152 v-24 M192 88 v24 M192 152 v-24" stroke="#c45d2c" stroke-width="2" stroke-linecap="square"/>
+  <!-- geometric KM — no serif, modular bars -->
+  <g fill="#f5f0e8" transform="translate(120 120)">
+    <!-- K as bars -->
+    <rect x="-48" y="-34" width="12" height="68" rx="1"/>
+    <polygon points="-30,-2 -6,-34 10,-34 -14,-2 12,34 -4,34"/>
+    <!-- M as modular peaks -->
+    <rect x="8" y="-34" width="11" height="68" rx="1"/>
+    <polygon points="19,-34 36,-4 53,-34 66,-34 66,34 54,34 54,-6 36,22 18,-6 18,34 8,34"/>
+  </g>
+  <rect x="96" y="178" width="48" height="3" fill="#c45d2c"/>
+  <text x="120" y="204" text-anchor="middle" fill="#9aabcf" font-family="ui-monospace, monospace" font-size="10" letter-spacing="3">KM</text>
+</svg>
