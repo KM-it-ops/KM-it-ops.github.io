@@ -235,7 +235,7 @@ export default function ImmersivePortfolio() {
           <div className="im-poster-filament" />
           <div className="im-poster-filament im-poster-filament-2" />
         </div>
-        <p className="im-poster-caption">SCENE · REDUCED MOTION · V2.9.4</p>
+        <p className="im-poster-caption">SCENE · REDUCED MOTION · V2.9.5</p>
       </div>
 
       <div className="im-grain" aria-hidden="true" />
@@ -531,7 +531,7 @@ export default function ImmersivePortfolio() {
 
       <footer className="im-footer">
         <p>
-          © {new Date().getFullYear()} {PERSON.name.toUpperCase()} · V2.9.1 CEILING+PERF ·
+          © {new Date().getFullYear()} {PERSON.name.toUpperCase()} · V2.9.5 SHIP ·
           ACTIVETHEORY × REACTBITS
         </p>
       </footer>

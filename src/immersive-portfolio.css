@@ -198,6 +198,13 @@
   background: radial-gradient(ellipse 70% 60% at 50% 40%, transparent 35%, rgba(3, 4, 10, 0.78) 100%);
 }
 
+.im-hero,
+.im-montage,
+.im-chapter,
+.im-contact {
+  scroll-margin-top: 5.25rem;
+}
+
 .im-main {
   position: relative;
   z-index: 2;
@@ -914,16 +921,39 @@
     grid-template-columns: 1fr;
     gap: 0.2rem;
   }
+  /* Wrap pill so RESUME stays on-screen at ~375px */
   .im-pill-nav {
-    width: calc(100% - 1.5rem);
-    justify-content: space-between;
+    width: calc(100% - 1rem);
+    max-width: calc(100vw - 1rem);
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+    column-gap: 0.15rem;
+    border-radius: 1.35rem;
+    padding: 0.35rem 0.4rem;
   }
   .im-pill-nav a {
-    font-size: 0.95rem;
-    padding: 0.55rem 0.55rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    padding: 0.45rem 0.42rem;
+    min-height: 40px;
+  }
+  .im-pill-cta {
+    padding: 0.45rem 0.75rem !important;
+    letter-spacing: 0.08em !important;
+  }
+  .im-mark-nav {
+    width: 1.65rem;
+    height: 1.65rem;
   }
   .im-main {
     padding: 0 1.15rem 4.5rem;
+  }
+  .im-hero,
+  .im-montage,
+  .im-chapter,
+  .im-contact {
+    scroll-margin-top: 5.5rem;
   }
 }
 
