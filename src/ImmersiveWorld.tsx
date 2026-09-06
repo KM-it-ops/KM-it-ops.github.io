@@ -1196,6 +1196,10 @@ export function ImmersiveWorld({
             }}
             camera={{ position: [0, 0, 6.2], fov: 48, near: 0.1, far: 90 }}
             style={{ position: 'fixed', inset: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}
+            onCreated={({ gl }) => {
+              gl.domElement.style.setProperty('pointer-events', 'none', 'important')
+              gl.domElement.setAttribute('aria-hidden', 'true')
+            }}
             frameloop={visible ? 'always' : 'never'}
           >
             <AdaptiveController onLevelHint={setLevel} />

@@ -325,7 +325,7 @@ export default function ImmersivePortfolio() {
           </header>
 
           {FEATURED_PROJECTS.map((p, i) => (
-            <Reveal key={p.id} delay={0.06 * i}>
+            <Reveal key={p.id} delay={0.06 * i} className={p.id === 'ofg' ? 'im-reveal-ofg' : undefined}>
               <article
                 className={`im-moment im-moment-${i + 1} im-moment-cine${p.favorite ? ' im-moment-lead' : ''}${p.id === 'ofg' ? ' im-moment-side' : ''}`}
                 style={{ ['--moment-i' as string]: String(i) }}
@@ -340,7 +340,13 @@ export default function ImmersivePortfolio() {
                 <p className="im-moment-line">{p.line}</p>
                 <div className="im-moment-links">
                   {p.id === 'ofg' ? (
-                    <a href={p.live ?? p.href} target="_blank" rel="noreferrer">
+                    <a
+                      className="im-ofg-open"
+                      href={p.live ?? p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-ofg-open="1"
+                    >
                       Open site →
                     </a>
                   ) : (
