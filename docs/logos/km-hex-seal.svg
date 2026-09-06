@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="KM mark">
+  <rect width="240" height="240" fill="#1c1917"/>
+  <path d="M120 20 L204 68.5 V171.5 L120 220 L36 171.5 V68.5 Z" fill="#141210" stroke="#c45d2c" stroke-width="5.5"/>
+  <g fill="#f5f0e8">
+    <path d="M56 72h20v42L116 72h23L90 120.5 140 168h-24L76 124.5V168H56z"/>
+    <path d="M126 72h21l22 57 22-57h21v98h-20v-46l-20 46h-16l-20-46v46h-20z"/>
+  </g>
+  <path d="M76 120.5 H126" stroke="#c45d2c" stroke-width="5" stroke-linecap="square"/>
+</svg>

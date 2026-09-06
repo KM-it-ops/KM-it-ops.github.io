@@ -1,4 +1,4 @@
-/** BRIEF facts only — see ../content/BRIEF.md + MASTER_CAREER_CONTEXT */
+/** BRIEF facts only — see ../content/BRIEF.md */
 
 export const PERSON = {
   name: 'Michael Kurdi',
@@ -11,26 +11,42 @@ export const PERSON = {
   phoneTel: '+17044568322',
   github: 'https://github.com/KM-it-ops',
   linkedin: 'https://www.linkedin.com/in/mahmoud-michael-al-kurdi',
-  role: 'AI Prompt Engineer / SOC Analyst',
+  role: 'Tier-1 SOC / Jr Detection / Security Automation',
   available: 'Available for full-time roles',
   targets: [
-    'AI Prompt Engineer',
-    'SOC Analyst',
+    'Tier-1 SOC',
+    'Jr Detection',
     'Security Automation',
     'IT Support',
   ],
 } as const
 
 export const THROUGHLINE = {
-  title: 'Regulated ops → cyber degree → inspectable PromptOps',
+  title: 'Regulated ops → cyber degree → inspectable security craft',
   body: [
     'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — security clearance, CBP badge, identity validation, access control, and incident documentation in a federally regulated environment.',
     'I finished a B.S. in Information Technologies with a cybersecurity concentration at SNHU (Summa Cum Laude, 3.96 GPA), earned CompTIA Security+, and rebuilt my strongest coursework into case files a hiring manager can actually read.',
-    'I build **PromptRig** — my flagship PromptOps framework (v1.3): model-specific clarify → compile → self-heal with built-in profiles for September 2026 frontier models, token discipline, loop engineering, and an offline eval harness. Coursework labs remain the cyber hands-on proof. I do not invent enterprise SIEM or SAST/DAST tenure.',
+    'I build **PromptRig** and **AgentForge** as inspectable automation proof, plus shipped client web work. Coursework labs remain the cyber hands-on proof. I do not invent enterprise SIEM or SAST/DAST tenure.',
   ],
   seeking:
-    'AI Prompt Engineer or Tier-1 SOC / security automation roles where eval rigor, missing-context discipline, and operator documentation matter.',
+    'Tier-1 SOC, Jr Detection, or security automation roles where triage, documentation under pressure, and automation that does not invent signals matter.',
 } as const
+
+/** Hire brief bullets — distinct from hero lede (no duplicate paragraph) */
+export const HIRE_BRIEF = [
+  {
+    label: 'Want',
+    text: 'Tier-1 SOC, Jr Detection, or security automation — triage and ticket quality first.',
+  },
+  {
+    label: 'Bring',
+    text: 'Regulated-ops documentation habits, Security+, Summa 3.96, and public automation builds a reviewer can open.',
+  },
+  {
+    label: 'Won\'t fake',
+    text: 'Enterprise SIEM tenure or production detection ownership I have not earned.',
+  },
+] as const
 
 export const CREDENTIALS = {
   secPlus: 'CompTIA Security+ ce (SY0-701)',
@@ -92,7 +108,7 @@ export const SKILL_BANDS: SkillBand[] = [
     items: [
       {
         name: 'SIEM vocabulary',
-        proof: 'Splunk/Sentinel concepts from recommendations — not production tenure',
+        proof: 'Splunk/Sentinel concepts from study — not production tenure',
       },
       {
         name: 'Intro Python',
@@ -287,6 +303,43 @@ export const LABS = CASE_FILES.map((c) => ({
   bestFor: c.bestFor,
 }))
 
+export type FeaturedProject = {
+  id: string
+  name: string
+  tag: string
+  line: string
+  href: string
+  live?: string
+  favorite?: boolean
+}
+
+export const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+    id: 'promptrig',
+    name: 'PromptRig',
+    tag: 'Detection / automation',
+    line: 'Offline eval harness for prompt pipelines — clarify → compile → self-heal. Proof I can instrument checks, catch missing context, and keep automation from inventing signals.',
+    href: 'https://github.com/KM-it-ops/PromptRig',
+    favorite: true,
+  },
+  {
+    id: 'agentforge',
+    name: 'AgentForge',
+    tag: 'Detection / automation',
+    line: 'Inspectable agent-config studio — structured setups a reviewer can audit, not a black-box assistant.',
+    href: 'https://github.com/KM-it-ops/AgentForge',
+    live: 'https://agentforgestudio-alpha.vercel.app',
+  },
+  {
+    id: 'ofg',
+    name: 'OFG Dairy Site',
+    tag: 'Shipped client delivery',
+    line: 'Client dairy site shipped live on Vercel — smaller proof of delivery, not a SOC claim.',
+    href: 'https://ofg-sites.vercel.app/',
+  },
+]
+
+/** Kept for older design previews */
 export type SideProject = {
   name: string
   line: string
@@ -296,22 +349,22 @@ export type SideProject = {
 export const SIDE_PROJECTS: SideProject[] = [
   {
     name: 'PromptRig',
-    line: 'Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; frontier profiles (Fable 5.1, GPT-5.6, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, Kimi K3); offline eval harness.',
+    line: 'Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; offline eval harness.',
     href: 'https://github.com/KM-it-ops/PromptRig',
   },
   {
     name: 'AgentForge',
-    line: 'Config framework for agentic coding assistants — secondary to coursework proof.',
+    line: 'Config framework for agentic coding assistants.',
     href: 'https://github.com/KM-it-ops/AgentForge',
   },
   {
-    name: 'ATT&CKLens Benchmark',
-    line: 'Defensive MITRE ATT&CK-aligned agent benchmark — secondary.',
-    href: 'https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark',
+    name: 'OFG Dairy Site',
+    line: 'Client-facing dairy business site.',
+    href: 'https://ofg-sites.vercel.app/',
   },
 ]
 
-export const RESUME_PDF = '/Michael_Kurdi_Resume_2026.pdf'
+export const RESUME_PDF = '/Michael_Kurdi_Resume_SOC_onepager.pdf'
 
 export const ETHOS =
-  'Every claim maps to a coursework writeup, credential, or public repo. Hands-on vs exposure is labeled.'
+  'Every claim maps to a coursework writeup, credential, or public repo. Hands-on vs exposure is labeled. No invented SIEM tenure.'

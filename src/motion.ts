@@ -56,8 +56,8 @@ export function startSmoothScroll(): () => void {
 
   const lenis = new Lenis({
     autoRaf: false,
-    // Close to native. This is a CV, not a showreel — the reader is scanning.
-    lerp: 0.12,
+    // Cinematic scored rhythm — immersive craft scroll (v2.9).
+    lerp: 0.075,
     wheelMultiplier: 1,
     touchMultiplier: 1,
   })
