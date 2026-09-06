@@ -383,7 +383,7 @@ export default function DaylightDossier() {
                 <div>
                   <dt>Résumé</dt>
                   <dd>
-                    <a href={RESUME_PDF}>Michael_Kurdi_Resume_SOC_onepager.pdf</a>
+                    <a href={RESUME_PDF}>Michael Kurdi CV</a>
                   </dd>
                 </div>
               </dl>

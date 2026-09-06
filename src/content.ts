@@ -22,29 +22,29 @@ export const PERSON = {
 } as const
 
 export const THROUGHLINE = {
-  title: 'Regulated ops → cyber degree → inspectable security craft',
+  title: 'From regulated ops to cybersecurity',
   body: [
-    'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — security clearance, CBP badge, identity validation, access control, and incident documentation in a federally regulated environment.',
-    'I finished a B.S. in Information Technologies with a cybersecurity concentration at SNHU (Summa Cum Laude, 3.96 GPA), earned CompTIA Security+, and rebuilt my strongest coursework into case files a hiring manager can actually read.',
-    'I build **PromptRig** and **AgentForge** as inspectable automation proof, plus shipped client web work. Coursework labs remain the cyber hands-on proof. I do not invent enterprise SIEM or SAST/DAST tenure.',
+    'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — security clearance, CBP badge, identity checks, access control, and clear incident notes in a federally regulated environment.',
+    'I finished a B.S. in Information Technologies (cybersecurity) at SNHU, Summa Cum Laude with a 3.96 GPA, earned CompTIA Security+, and turned my strongest coursework into writeups a hiring manager can actually read.',
+    'I build PromptRig and AgentForge so reviewers can inspect how the automation works, and I have shipped client web work. Lab projects are labeled as coursework. I do not claim enterprise SIEM or SAST/DAST tenure I have not earned.',
   ],
   seeking:
-    'Tier-1 SOC, Jr Detection, or security automation roles where triage, documentation under pressure, and automation that does not invent signals matter.',
+    'Looking for Tier-1 SOC, junior detection, or security automation roles where careful triage, solid documentation, and honest tooling matter.',
 } as const
 
 /** Hire brief bullets — distinct from hero lede (no duplicate paragraph) */
 export const HIRE_BRIEF = [
   {
-    label: 'Want',
-    text: 'Tier-1 SOC, Jr Detection, or security automation — triage and ticket quality first.',
+    label: 'Looking for',
+    text: 'Tier-1 SOC, junior detection, or security automation — triage and clear tickets first.',
   },
   {
-    label: 'Bring',
-    text: 'Regulated-ops documentation habits, Security+, Summa 3.96, and public automation builds a reviewer can open.',
+    label: 'I bring',
+    text: 'Habits from regulated ops, Security+, a 3.96 Summa finish, and public automation you can open and review.',
   },
   {
-    label: 'Won\'t fake',
-    text: 'Enterprise SIEM tenure or production detection ownership I have not earned.',
+    label: 'I won\'t invent',
+    text: 'Enterprise SIEM years or production detection ownership I have not done.',
   },
 ] as const
 
@@ -318,7 +318,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'promptrig',
     name: 'PromptRig',
     tag: 'Detection / automation',
-    line: 'Offline eval harness for prompt pipelines — clarify → compile → self-heal. Proof I can instrument checks, catch missing context, and keep automation from inventing signals.',
+    line: 'An offline eval harness for prompt pipelines (clarify, compile, self-heal). Shows I can add checks, catch missing context, and keep automation from inventing signals.',
     href: 'https://github.com/KM-it-ops/PromptRig',
     favorite: true,
   },
@@ -326,7 +326,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'agentforge',
     name: 'AgentForge',
     tag: 'Detection / automation',
-    line: 'Inspectable agent-config studio — structured setups a reviewer can audit, not a black-box assistant.',
+    line: 'An agent-config studio with structured setups a reviewer can audit — not a black-box chatbot.',
     href: 'https://github.com/KM-it-ops/AgentForge',
     live: 'https://agentforgestudio-alpha.vercel.app',
   },
@@ -334,8 +334,9 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'ofg',
     name: 'OFG Dairy Site',
     tag: 'Shipped client delivery',
-    line: 'Client dairy site shipped live on Vercel — smaller proof of delivery, not a SOC claim.',
+    line: 'A client dairy business site I shipped live — proof I can deliver for a real customer (not a SOC claim).',
     href: 'https://ofg-sites.vercel.app/',
+    live: 'https://ofg-sites.vercel.app/',
   },
 ]
 
@@ -366,5 +367,7 @@ export const SIDE_PROJECTS: SideProject[] = [
 
 export const RESUME_PDF = '/Michael_Kurdi_Resume_SOC_onepager.pdf'
 
+export const RESUME_LABEL = 'Michael Kurdi CV'
+
 export const ETHOS =
-  'Every claim maps to a coursework writeup, credential, or public repo. Hands-on vs exposure is labeled. No invented SIEM tenure.'
+  'Every claim maps to coursework, a credential, or a public repo. Hands-on vs exposure is labeled. No invented SIEM tenure.'
