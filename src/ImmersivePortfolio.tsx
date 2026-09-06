@@ -14,6 +14,7 @@ import {
   OPERATING,
   PERSON,
   RESUME_PDF,
+  RESUME_LABEL,
   SKILL_BANDS,
 } from './content'
 import { Reveal, Toast, useCopyToast } from './designs/shared'
@@ -80,7 +81,7 @@ function PillNav({ velocity }: { velocity: number }) {
       <a href="#path">PATH</a>
       <a href="#contact">CONTACT</a>
       <MagneticCTA className="im-pill-cta im-pill-magnetic" href={RESUME_PDF} target="_blank" rel="noreferrer">
-        RESUME
+        {RESUME_LABEL}
       </MagneticCTA>
     </nav>
   )
@@ -235,7 +236,7 @@ export default function ImmersivePortfolio() {
           <div className="im-poster-filament" />
           <div className="im-poster-filament im-poster-filament-2" />
         </div>
-        <p className="im-poster-caption">SCENE · REDUCED MOTION · V2.9.5</p>
+        <p className="im-poster-caption">Reduced motion</p>
       </div>
 
       <div className="im-grain" aria-hidden="true" />
@@ -252,21 +253,21 @@ export default function ImmersivePortfolio() {
       <main className="im-main">
         <section className="im-hero" aria-labelledby="im-name">
           <p className="im-atm-label">
-            <GlitchAccent>FILE MK-2026</GlitchAccent>
+            <GlitchAccent>{PERSON.city}</GlitchAccent>
             <span className="im-atm-sep" />
-            <span>{PERSON.city.toUpperCase()} / REMOTE</span>
+            <span>Remote</span>
             <span className="im-atm-sep" />
-            <span className="im-live">{PERSON.available.toUpperCase()}</span>
+            <span className="im-live">{PERSON.available}</span>
           </p>
 
-          <p className="im-atm-kicker">TIER-1 SOC · JR DETECTION · SECURITY AUTOMATION</p>
+          <p className="im-atm-kicker">Tier-1 SOC · Junior detection · Security automation</p>
           <ScrambleHero id="im-name" className="im-name" text="KURDI" />
           <TextPressure className="im-name-sub" text="MICHAEL" as="p" />
-          <p className="im-legal">LEGAL / TRANSCRIPT · {PERSON.legal.toUpperCase()}</p>
+          <p className="im-legal">Legal name · {PERSON.legal}</p>
 
           <div className="im-hero-actions">
             <MagneticCTA className="im-btn im-btn-primary" href={RESUME_PDF} target="_blank" rel="noreferrer">
-              DOWNLOAD RÉSUMÉ
+              {RESUME_LABEL}
             </MagneticCTA>
             <a className="im-text-link" href="#contact">
               CONTACT
@@ -296,7 +297,7 @@ export default function ImmersivePortfolio() {
           </div>
 
           <aside className="im-hire-hud im-beam-card" aria-label="Hire brief">
-            <span className="im-hud-label">HIRE BRIEF</span>
+            <span className="im-hud-label">At a glance</span>
             <ul>
               {HIRE_BRIEF.map((b) => (
                 <li key={b.label}>
@@ -308,7 +309,7 @@ export default function ImmersivePortfolio() {
           </aside>
 
           <div className="im-scroll-hint" aria-hidden="true">
-            <span>SCROLL TO TRAVEL</span>
+            <span>Scroll</span>
             <span className="im-scroll-line" />
           </div>
         </section>
@@ -317,10 +318,10 @@ export default function ImmersivePortfolio() {
         <section className="im-montage" id="work" aria-labelledby="work-h">
           <header className="im-moment-head">
             <span className="im-atm-label">
-              <GlitchAccent>02 · SELECTED WORK</GlitchAccent>
+              <GlitchAccent>Selected work</GlitchAccent>
             </span>
-            <SectionTitle id="work-h" line1="AUTOMATION" line2="PROOF" />
-            <p className="im-moment-deck">Inspectable builds first. Client delivery third.</p>
+            <SectionTitle id="work-h" line1="BUILDS" line2="YOU CAN OPEN" />
+            <p className="im-moment-deck">Public automation first. Client delivery included.</p>
           </header>
 
           {FEATURED_PROJECTS.map((p, i) => (
@@ -330,24 +331,30 @@ export default function ImmersivePortfolio() {
                 style={{ ['--moment-i' as string]: String(i) }}
               >
                 <div className="im-moment-meta">
-                  <span className="im-atm-label">
-                    CF-{String(i + 1).padStart(2, '0')} · {p.tag.toUpperCase()}
-                  </span>
-                  {p.favorite ? <span className="im-fav">LEAD</span> : null}
+                  <span className="im-atm-label">{p.tag}</span>
+                  {p.favorite ? <span className="im-fav">Featured</span> : null}
                 </div>
                 <h3 className="im-moment-title">
                   <TextPressure text={p.name.toUpperCase()} as="span" />
                 </h3>
                 <p className="im-moment-line">{p.line}</p>
                 <div className="im-moment-links">
-                  <a href={p.href} target="_blank" rel="noreferrer">
-                    {p.id === 'ofg' ? 'OPEN SITE →' : 'GITHUB →'}
-                  </a>
-                  {p.live ? (
-                    <a href={p.live} target="_blank" rel="noreferrer">
-                      LIVE DEMO →
+                  {p.id === 'ofg' ? (
+                    <a href={p.live ?? p.href} target="_blank" rel="noreferrer">
+                      Open site →
                     </a>
-                  ) : null}
+                  ) : (
+                    <>
+                      <a href={p.href} target="_blank" rel="noreferrer">
+                        GitHub →
+                      </a>
+                      {p.live ? (
+                        <a href={p.live} target="_blank" rel="noreferrer">
+                          Live demo →
+                        </a>
+                      ) : null}
+                    </>
+                  )}
                 </div>
                 <div className="im-moment-glow" aria-hidden="true" />
                 <div className="im-moment-depth" aria-hidden="true" />
@@ -359,10 +366,10 @@ export default function ImmersivePortfolio() {
         <section className="im-chapter" id="labs" aria-labelledby="labs-h">
           <header className="im-moment-head">
             <span className="im-atm-label">
-              <GlitchAccent>03 · CASE FILES</GlitchAccent>
+              <GlitchAccent>Coursework</GlitchAccent>
             </span>
-            <SectionTitle id="labs-h" line1="COURSEWORK" line2="EVIDENCE" />
-            <p className="im-moment-deck">Cyber hands-on — labeled, not inflated.</p>
+            <SectionTitle id="labs-h" line1="LABS" line2="AND WRITEUPS" />
+            <p className="im-moment-deck">Hands-on school work — labeled honestly, not padded.</p>
           </header>
 
           <div className="im-filmstrip">
@@ -516,9 +523,9 @@ export default function ImmersivePortfolio() {
                 </dd>
               </div>
               <div>
-                <dt>RÉSUMÉ</dt>
+                <dt>CV</dt>
                 <dd>
-                  <a href={RESUME_PDF} target="_blank" rel="noreferrer">Michael_Kurdi_Resume_SOC_onepager.pdf</a>
+                  <a href={RESUME_PDF} target="_blank" rel="noreferrer">{RESUME_LABEL}</a>
                 </dd>
               </div>
             </dl>
@@ -530,10 +537,7 @@ export default function ImmersivePortfolio() {
       </main>
 
       <footer className="im-footer">
-        <p>
-          © {new Date().getFullYear()} {PERSON.name.toUpperCase()} · V2.9.5 SHIP ·
-          ACTIVETHEORY × REACTBITS
-        </p>
+        <p>© {new Date().getFullYear()} {PERSON.name}</p>
       </footer>
 
       <Toast message={toast} />
