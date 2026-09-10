@@ -2,16 +2,16 @@
 
 Copy one of these into **Profile → Edit → Headline**.
 
-## Recommended (dual-track — PromptRig × cyber)
+## Recommended (hire-now lane)
 
 ```
-AI Prompt Engineer · Cybersecurity Grad | PromptRig PromptOps · Security+ | Charlotte NC / Remote
+Junior Security Analyst | Security+ · SNHU Summa | Detection, VM, IT Risk | Charlotte NC / Remote
 ```
 
-## Alternative (SOC-led with PromptOps differentiator)
+## Alternative (ops + regulated transfer)
 
 ```
-SOC Analyst · Security+ | PromptOps & AI Security (PromptRig) · Detection · Python | Charlotte NC
+Security Operations · IT Risk | Security+ · Aviation Security Ops | Python detection labs | Charlotte NC
 ```
 
 ## Character count
