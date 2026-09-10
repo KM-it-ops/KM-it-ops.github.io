@@ -17,6 +17,10 @@
     <meta name="twitter:title" content="Michael Kurdi — Junior Security Analyst / Security Operations / IT Risk" />
     <meta name="twitter:description" content="Security+, Summa Cum Laude. Junior security analyst. Charlotte, NC / remote." />
     <title>Michael Kurdi — Junior Security Analyst / Security Operations / IT Risk</title>
+    <style>
+      a[href*="agentforgestudio"],
+      a[href*="agentforgestudio-alpha.vercel.app"] { display: none !important; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Syne:wght@600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -51,18 +55,18 @@
             if (href.indexOf('Michael_Kurdi_Resume') !== -1 || href.indexOf('Resume_SOC_onepager') !== -1) {
               node.setAttribute('href', '/resume.html');
             }
-            if (href.indexOf('agentforgestudio') !== -1) {
-              node.remove();
-              return;
-            }
           }
           const kids = node.childNodes;
           for (let i = 0; i < kids.length; i++) walk(kids[i]);
         }
-        function run() { walk(document.body); }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
-        else run();
-        new MutationObserver(run).observe(document.documentElement, { childList: true, subtree: true });
+        function killDemo() {
+          document.querySelectorAll('a[href*="agentforgestudio"], a[href*="agentforgestudio-alpha.vercel.app"]').forEach(function (a) { a.remove(); });
+          if (document.body) walk(document.body);
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', killDemo);
+        else killDemo();
+        new MutationObserver(killDemo).observe(document.documentElement, { childList: true, subtree: true });
+        setInterval(killDemo, 400);
       })();
     </script>
     <link rel="modulepreload" crossorigin href="/assets/three-CWxgYWhG.js">
