@@ -13,9 +13,9 @@ Do not link AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
 - Phone: (704) 456-8322
 - GitHub: https://github.com/KM-it-ops
 - LinkedIn: https://www.linkedin.com/in/mahmoud-michael-al-kurdi
-- Headline: Tier-1 SOC / Jr Detection / Security Automation
+- Headline: Junior Security Analyst / Security Operations / IT Risk
 - Available: Available for full-time roles
-- Targets: Tier-1 SOC, Jr Detection, Security Automation, IT Support
+- Targets: Junior Security Analyst, Security Operations, Vulnerability Management, IT Risk
 
 ## Credentials
 
@@ -27,20 +27,22 @@ Do not link AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
 ## Experience (transferables only — no fake SIEM)
 
 1. Aviation Security Operations Crew Chief — American Airlines, Charlotte, NC, 2015–2023  
-   Federally regulated operations under FAA, OSHA, IATA, and CBP. Security clearance with CBP badge endorsement. Recurrent incident-response and safety/security training. High-accountability documentation, identity validation, and access control.
+   Federally regulated operations under FAA, OSHA, IATA, and CBP. CBP badge endorsement in a federally regulated aviation environment. Recurrent incident-response and safety/security training. High-accountability documentation, identity validation, and access control.
 2. Courier & Logistics Specialist — USPS, Kannapolis, NC, 2024–2025  
    Time-critical courier and logistics operations during degree completion.
 3. Delivery Associate — Fossa Logistics LLC (Amazon DSP), Charlotte, NC, 2025–present  
-   High-tempo logistics ops while pursuing full-time Tier-1 SOC / Jr Detection / security automation roles.
+   High-tempo logistics ops while finishing the degree and targeting junior security analyst roles.
 
 ## Featured projects
 
-1. **PromptRig** (favorite) — https://github.com/KM-it-ops/PromptRig  
-   PromptOps meta-optimizer (framework v1.3): clarify → compile → self-heal; model profiles; offline eval harness; Cursor skill pack.
-2. **AgentForge** — https://github.com/KM-it-ops/AgentForge · live: https://agentforgestudio-alpha.vercel.app  
-   Config framework for agentic coding assistants.
-3. **OFG client dairy site** — https://ofg-sites.vercel.app/  
-   Client-facing web build for a dairy business.
+1. **Log anomaly detection** (favorite) — https://github.com/KM-it-ops/security-log-anomaly-detection  
+   Rule-plus-statistics detector for brute force, port scans, off-hours file access, and privilege-escalation patterns.
+2. **Phishing email classifier** — https://github.com/KM-it-ops/phishing-email-classifier  
+   URL, PII, and typosquat features plus TF-IDF into a Random Forest.
+3. **VulnTrack dashboard** — https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program  
+   Flask/SQLite tracker with severity KPIs, status workflow, and a small REST API.
+4. **PromptRig** (engineering proof) — https://github.com/KM-it-ops/PromptRig  
+   Offline eval harness for prompt pipelines. Not a substitute for operations tenure.
 
 ## Coursework labs (cyber hands-on proof)
 
@@ -60,4 +62,4 @@ Claims map to coursework writeups, credentials, or public repos. Hands-on vs exp
 
 ## Resume
 
-/Michael_Kurdi_Resume_SOC_onepager.pdf (public/)
+/resume.html (print-friendly). Word original lives with the hire-plan artifacts.
