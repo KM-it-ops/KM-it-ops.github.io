@@ -51,6 +51,10 @@
             if (href.indexOf('Michael_Kurdi_Resume') !== -1 || href.indexOf('Resume_SOC_onepager') !== -1) {
               node.setAttribute('href', '/resume.html');
             }
+            if (href.indexOf('agentforgestudio') !== -1) {
+              node.remove();
+              return;
+            }
           }
           const kids = node.childNodes;
           for (let i = 0; i < kids.length; i++) walk(kids[i]);
