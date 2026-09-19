@@ -11,7 +11,7 @@ Security+ certified cybersecurity graduate (SNHU, Summa Cum Laude, 3.96 GPA) tar
 What hiring managers can inspect today:
 
 → PromptRig — PromptOps framework for designing, auditing, and evaluating prompt systems: clarify → compile → offline evals → self-heal. Stdlib CLI, JSONL datasets, YAML rubrics, agent permission maps and stop conditions. No API keys required to validate the harness.
-   https://github.com/KM-it-ops/PromptRig
+   https://github.com/KM-it-ops/Proofhouse
 
 → AgentForge ATT&CKLens Benchmark — reproducible comparison of AI coding agents on defensive-security work: MITRE ATT&CK mapping discipline, prompt-injection resistance, evidence citation, uncertainty handling
 

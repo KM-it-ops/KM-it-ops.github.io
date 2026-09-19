@@ -22,7 +22,7 @@ PromptRig treats prompts like production infrastructure:
 → Stdlib CLI — validate the harness without API keys
 → Defensive defaults for cyber×AI and sensitive-data workflows
 
-Repo: https://github.com/KM-it-ops/PromptRig
+Repo: https://github.com/KM-it-ops/Proofhouse
 Portfolio: https://km-it-ops.github.io/
 
 Open to AI Prompt Engineer, SOC Analyst, and security automation roles — Charlotte NC / remote.
@@ -78,7 +78,7 @@ Public proof now: PromptRig (PromptOps + offline evals), coursework case files, 
 If you're hiring for AI Prompt Engineer or junior SOC where systems thinking beats buzzwords, I'd welcome a conversation.
 
 Portfolio: https://km-it-ops.github.io/
-PromptRig: https://github.com/KM-it-ops/PromptRig
+PromptRig: https://github.com/KM-it-ops/Proofhouse
 
 #cybersecurity #promptengineering #careerchange #soc
 

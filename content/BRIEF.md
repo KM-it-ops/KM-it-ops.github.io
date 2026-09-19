@@ -41,7 +41,7 @@ Do not link AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
    URL, PII, and typosquat features plus TF-IDF into a Random Forest.
 3. **VulnTrack dashboard** — https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program  
    Flask/SQLite tracker with severity KPIs, status workflow, and a small REST API.
-4. **PromptRig** (engineering proof) — https://github.com/KM-it-ops/PromptRig  
+4. **Proofhouse** (engineering proof) — https://github.com/KM-it-ops/Proofhouse  
    Offline eval harness for prompt pipelines. Not a substitute for operations tenure.
 
 ## Coursework labs (cyber hands-on proof)
