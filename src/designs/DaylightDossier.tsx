@@ -274,7 +274,7 @@ export default function DaylightDossier() {
                 'Threat modeling',
                 'Cloud BCDR',
                 'SIEM vocabulary',
-                'PromptRig',
+                'Proofhouse',
                 'AgentForge',
                 'Security+',
                 'Summa 3.96',

@@ -26,7 +26,7 @@ export const THROUGHLINE = {
   body: [
     'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — CBP-badged identity checks, access control, and incident notes in a federally regulated environment.',
     'I finished a B.S. in Information Technologies (Cybersecurity concentration) at SNHU, Summa Cum Laude with a 3.96 GPA, earned CompTIA Security+, and shipped public Python projects in detection, phishing classification, and vulnerability tracking.',
-    'PromptRig and AgentForge show engineering discipline. Coursework labs are labeled as labs. I do not claim enterprise SIEM or SAST/DAST tenure I have not earned.',
+    'Proofhouse and AgentForge show engineering discipline. Coursework labs are labeled as labs. I do not claim enterprise SIEM or SAST/DAST tenure I have not earned.',
   ],
   seeking:
     'Looking for junior security analyst, security operations, vulnerability management, and IT risk roles in Charlotte and remote.',
@@ -296,11 +296,11 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     href: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program',
   },
   {
-    id: 'promptrig',
-    name: 'PromptRig',
+    id: 'proofhouse',
+    name: 'Proofhouse',
     tag: 'Engineering / PromptOps',
     line: 'Offline eval harness for prompt pipelines (clarify, compile, self-heal). Engineering proof — not a substitute for operations tenure.',
-    href: 'https://github.com/KM-it-ops/PromptRig',
+    href: 'https://github.com/KM-it-ops/Proofhouse',
   },
 ]
 
@@ -311,7 +311,7 @@ export type SideProject = {
 }
 
 export const SIDE_PROJECTS: SideProject[] = [
-  { name: 'PromptRig', line: 'Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; offline eval harness.', href: 'https://github.com/KM-it-ops/PromptRig' },
+  { name: 'Proofhouse', line: 'Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; offline eval harness.', href: 'https://github.com/KM-it-ops/Proofhouse' },
   { name: 'AgentForge', line: 'Config framework for agentic coding assistants.', href: 'https://github.com/KM-it-ops/AgentForge' },
   { name: 'OFG Dairy Site', line: 'Client-facing dairy business site.', href: 'https://ofg-sites.vercel.app/' },
 ]

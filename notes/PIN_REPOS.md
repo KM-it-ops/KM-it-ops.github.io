@@ -10,7 +10,7 @@ GitHub has **no API** to pin repos. This is the one profile step that must be do
 
 | # | Repository |
 |---|------------|
-| 1 | `PromptRig` |
+| 1 | `Proofhouse` |
 | 2 | `AgentForge-ATT-CKLens-Benchmark` |
 | 3 | `AgentForge` |
 | 3 | `memory-mcp` |
