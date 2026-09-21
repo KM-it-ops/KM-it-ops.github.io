@@ -1,4 +1,4 @@
-/** BRIEF facts only — see ../content/BRIEF.md */
+/** BRIEF facts only. See ../content/BRIEF.md */
 
 export const PERSON = {
   name: 'Michael Kurdi',
@@ -22,28 +22,28 @@ export const PERSON = {
 } as const
 
 export const THROUGHLINE = {
-  title: 'From regulated ops to security analysis',
+  title: 'From aviation security ops to security analysis',
   body: [
-    'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines — CBP-badged identity checks, access control, and incident notes in a federally regulated environment.',
-    'I finished a B.S. in Information Technologies (Cybersecurity concentration) at SNHU, Summa Cum Laude with a 3.96 GPA, earned CompTIA Security+, and shipped public Python projects in detection, phishing classification, and vulnerability tracking.',
-    'Proofhouse and AgentForge show engineering discipline. Coursework labs are labeled as labs. I do not claim enterprise SIEM or SAST/DAST tenure I have not earned.',
+    'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines. The job was CBP-badged identity checks, access control, and incident notes in a federally regulated environment, where a sloppy write-up had real consequences.',
+    'After that, while working logistics jobs, I finished a B.S. in Information Technologies with a Cybersecurity concentration at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+. I also shipped three public Python projects: a log anomaly detector, a phishing classifier, and a vulnerability tracker.',
+    'Proofhouse and AgentForge are side projects that show I can design and ship software. My coursework labs are labeled as labs. Where I only have classroom exposure to a tool, I say so rather than dress it up as experience.',
   ],
   seeking:
-    'Looking for junior security analyst, security operations, vulnerability management, and IT risk roles in Charlotte and remote.',
+    'Looking for a junior security analyst, security operations, vulnerability management, or IT risk role in Charlotte or remote.',
 } as const
 
 export const HIRE_BRIEF = [
   {
-    label: 'Looking for',
-    text: 'Junior security analyst, security operations, VM, or IT risk — triage and document first.',
+    label: 'What I want',
+    text: 'A junior security analyst, security operations, VM, or IT risk seat where I triage, document, and learn the stack from the inside.',
   },
   {
-    label: 'I bring',
-    text: 'Regulated-ops habits, Security+, a 3.96 Summa finish, and public detection / VM projects you can run.',
+    label: 'What I bring',
+    text: 'Eight years of regulated-ops habits, Security+, a 3.96 Summa finish, and public detection and VM projects you can clone and run.',
   },
   {
-    label: 'I won\'t invent',
-    text: 'Enterprise SIEM years or production detection ownership I have not done.',
+    label: 'What I won\'t claim',
+    text: 'Enterprise SIEM tenure or production detection ownership I have not done yet.',
   },
 ] as const
 
@@ -51,7 +51,7 @@ export const CREDENTIALS = {
   secPlus: 'CompTIA Security+ ce (SY0-701)',
   secPlusDates: 'Issued Jan 7, 2025 · Valid through Jan 7, 2028',
   degree:
-    'B.S. Information Technologies — Cybersecurity concentration, Southern New Hampshire University',
+    'B.S. Information Technologies, Cybersecurity concentration, Southern New Hampshire University',
   degreeDates: 'Completed Dec 2025 · Conferred Jan 1, 2026',
   honors: 'Summa Cum Laude · 3.96 GPA · Alpha Sigma Lambda (Sigma Psi)',
   gpa: '3.96',
@@ -67,25 +67,25 @@ export const SKILL_BANDS: SkillBand[] = [
   {
     tier: 'Hands-on lab',
     items: [
-      { name: 'Network troubleshooting', proof: 'Packet Tracer ping loss → retest; WLAN/DHCP/VLAN scavenger' },
-      { name: 'Windows GPO hardening', proof: 'Six settings in GNS3 with policy paths + registry keys' },
-      { name: 'MySQL / SQL', proof: 'ERD → schema, synthetic load, analytical queries + Docker demo' },
+      { name: 'Network troubleshooting', proof: 'Packet Tracer ping loss, retest, and a WLAN/DHCP/VLAN config scavenger' },
+      { name: 'Windows GPO hardening', proof: 'Six settings applied in GNS3, each with its policy path and registry key' },
+      { name: 'MySQL / SQL', proof: 'ERD to schema, synthetic load, analytical queries, and a Docker demo' },
     ],
   },
   {
     tier: 'Academic writing',
     items: [
-      { name: 'Incident analysis (CIA / NIST)', proof: 'Payroll integrity brief → least privilege + defense in depth' },
-      { name: 'IAM / CIS Controls', proof: 'CIS 5/6/14 + HIPAA-aligned SLA stakeholder brief' },
-      { name: 'Threat modeling', proof: 'Comparative attacker models; Bluetooth CVE framing (academic)' },
-      { name: 'Cloud BCDR planning', proof: 'Academic ops plan with RTO/RPO, DR drills, vendor tiers' },
+      { name: 'Incident analysis (CIA / NIST)', proof: 'Payroll integrity brief arguing for least privilege and defense in depth' },
+      { name: 'IAM / CIS Controls', proof: 'CIS 5/6/14 mapped to a HIPAA-aligned SLA for stakeholders' },
+      { name: 'Threat modeling', proof: 'Comparative attacker models and a Bluetooth CVE case (academic)' },
+      { name: 'Cloud BCDR planning', proof: 'Academic ops plan with RTO/RPO targets, DR drills, and vendor tiers' },
     ],
   },
   {
     tier: 'Exposure',
     items: [
-      { name: 'SIEM vocabulary', proof: 'Splunk/Sentinel concepts from study — not production tenure' },
-      { name: 'Python security tooling', proof: 'Log anomaly detector, phishing classifier, Flask vuln tracker — public repos' },
+      { name: 'SIEM vocabulary', proof: 'Splunk and Sentinel concepts from study, not production tenure' },
+      { name: 'Python security tooling', proof: 'Log anomaly detector, phishing classifier, and Flask vuln tracker, all public' },
     ],
   },
 ]
@@ -94,22 +94,22 @@ export const OPERATING = [
   {
     title: 'Retest before you close',
     source: 'CYB-210 Packet Tracer',
-    body: 'First ping looked flaky. I repeated the test, compared pairs, and documented both the anomaly and the recovery — the same habit a junior analyst needs before closing a ticket.',
+    body: 'The first ping dropped a packet. Instead of calling it a pass or a fail, I repeated the test, compared host pairs, and wrote up both the anomaly and the recovery. That is the same habit a junior analyst needs before closing a ticket.',
   },
   {
     title: 'Map intent to the real control',
     source: 'CYB-220 GPO lab',
-    body: 'Hardening outcomes arrived without click-paths. I used the Microsoft policy reference to find User vs Machine locations and registry backing keys, then proved each change.',
+    body: 'The lab gave me hardening outcomes with no click-paths. I used the Microsoft policy reference to find the User versus Machine locations and the registry keys behind each setting, then verified every change in the guest.',
   },
   {
     title: 'Name the broken property first',
     source: 'CYB-200 incident brief',
-    body: 'On a payroll abuse scenario I argued integrity was the CIA hit, then picked least privilege and defense in depth — not a random tool shopping list.',
+    body: 'On a payroll abuse scenario I argued that integrity was the CIA property under attack, then chose least privilege and defense in depth as the controls. Not a shopping list of tools.',
   },
   {
     title: 'Brief stakeholders without watering down controls',
     source: 'CYB-260 CIS / HIPAA',
-    body: 'CIS 5/6/14 tied to SLA language, plus an ethics appendix that refused “anonymized is fine” as a shortcut.',
+    body: 'I tied CIS Controls 5, 6, and 14 to SLA language a business reader could sign, and added an ethics appendix that refused "anonymized is fine" as a shortcut.',
   },
 ] as const
 
@@ -120,11 +120,11 @@ export const EXPERIENCE = [
     loc: 'Charlotte, NC',
     dates: '2015–2023',
     detail:
-      'Federally regulated operations under FAA, OSHA, IATA, and CBP. CBP badge endorsement in a federally regulated aviation environment. Recurrent incident-response and safety/security training. High-accountability documentation, identity validation, and access control.',
+      'Federally regulated operations under FAA, OSHA, IATA, and CBP, with a CBP badge endorsement. Recurrent incident-response and safety/security training. Daily identity validation, access control, and documentation that had to hold up to inspection.',
     transfer: [
       'Ticket-quality documentation under inspection pressure',
       'Identity validation and access control habits',
-      'Escalation culture — clear facts, timed response',
+      'Escalation with clear facts and a timed response',
     ],
   },
   {
@@ -132,7 +132,7 @@ export const EXPERIENCE = [
     org: 'USPS',
     loc: 'Kannapolis, NC',
     dates: '2024–2025',
-    detail: 'Time-critical courier and logistics operations during degree completion.',
+    detail: 'Time-critical courier and logistics work while finishing the degree.',
     transfer: ['Hard time windows', 'Exception handling'],
   },
   {
@@ -141,7 +141,7 @@ export const EXPERIENCE = [
     loc: 'Charlotte, NC',
     dates: '2025–present',
     detail:
-      'High-tempo logistics — route prioritization, customer exceptions, hard time windows — while finishing the degree and security portfolio.',
+      'High-tempo logistics with route prioritization, customer exceptions, and hard time windows, alongside finishing the degree and the security portfolio.',
     transfer: ['Prioritization under pressure', 'Customer-facing problem solving'],
   },
 ] as const
@@ -167,21 +167,21 @@ export const CASE_FILES: CaseFile[] = [
     bestFor: 'Security analyst',
     featured: true,
     problem:
-      'Validate marketing/advertising LAN reachability in Packet Tracer when the first ping from PC1_Marketing to PC3_Marketing showed a lost packet — then inventory a live lab topology from the CLI.',
+      'Validate marketing and advertising LAN reachability in Packet Tracer after the first ping from PC1_Marketing to PC3_Marketing dropped a packet, then inventory a live lab topology from the CLI.',
     method: [
-      'Refused to treat a single flaky ping as final',
-      'Retested and compared required host pairs (including printer / advertising checks)',
-      'Documented wireless DHCP, guest WLAN limits, static LAN IPs, admin-down ports, VLAN 35/65/99, and ASA adjacency',
+      'Did not treat a single flaky ping as the final answer',
+      'Retested and compared the required host pairs, including the printer and advertising checks',
+      'Documented wireless DHCP, guest WLAN limits, static LAN IPs, admin-down ports, VLANs 35/65/99, and ASA adjacency',
     ],
     evidence: [
-      'troubleshooting.md — failure + recovery',
-      'scavenger-findings.md — addressing tables',
-      'topology.md — mermaid lab map',
+      'troubleshooting.md: failure and recovery',
+      'scavenger-findings.md: addressing tables',
+      'topology.md: mermaid lab map',
     ],
     result:
-      'Retest succeeded with all packets received. Writeup shows anomaly and recovery — not only a clean pass.',
+      'The retest succeeded with all packets received. The write-up shows the anomaly and the recovery, not just a clean pass.',
     hireSignal:
-      'Same muscle as junior analyst: retest, compare, document before you escalate or close.',
+      'Retest, compare, and document before you escalate or close. Same muscle a junior analyst uses every shift.',
   },
   {
     id: 'cyb-220',
@@ -189,20 +189,20 @@ export const CASE_FILES: CaseFile[] = [
     name: 'Windows GPO hardening in GNS3',
     bestFor: 'Security analyst',
     problem:
-      'Apply six endpoint restrictions on a GNS3 Windows guest with outcomes specified — not click-by-click instructions.',
+      'Apply six endpoint restrictions on a GNS3 Windows guest from outcome descriptions alone, with no click-by-click instructions.',
     method: [
-      'Mapped each outcome to User vs Machine policy paths via Microsoft policy reference',
-      'Applied Control Panel hide, Task Manager disable, Recycle Bin icon removal, delete-notification off, HTTP printing off, IE menu bar on',
-      'Recorded registry backing keys and verified UI/behavior in-lab',
+      'Mapped each outcome to its User or Machine policy path using the Microsoft policy reference',
+      'Applied Control Panel hide, Task Manager disable, Recycle Bin icon removal, delete-notification off, HTTP printing off, and IE menu bar on',
+      'Recorded the registry key behind each setting and verified the behavior in the guest',
     ],
     evidence: [
-      'gpo-checklist.md — setting → path → registry → effect',
+      'gpo-checklist.md: setting, path, registry key, observed effect',
       'All six hardenings documented',
     ],
     result:
-      'Complete checklist proving hardening intent can be translated into concrete GPO/registry controls.',
+      'A complete checklist showing that a hardening requirement can be turned into concrete GPO and registry controls.',
     hireSignal:
-      'Desktop support / baseline hardening skill — not a claim of enterprise GPMC fleet ownership.',
+      'Desktop support and baseline hardening skill. Not a claim of managing GPMC across an enterprise fleet.',
   },
   {
     id: 'dad-220',
@@ -210,16 +210,16 @@ export const CASE_FILES: CaseFile[] = [
     name: 'MySQL QuantigrationUpdates',
     bestFor: 'Systems / data',
     problem:
-      'Stand up QuantigrationUpdates from an ERD — Customers, Orders, RMA — load data cleanly, and produce analytical SQL under lab constraints.',
+      'Stand up the QuantigrationUpdates database from an ERD (Customers, Orders, RMA), load data cleanly, and write analytical SQL under lab constraints.',
     method: [
-      'DDL from ERD with supporting Regions data',
-      'LOAD DATA patterns with explicit terminators (synthetic demo seed in portfolio)',
-      'Geographic counts, RMA updates, returns-style queries',
-      'Docker Compose MySQL 8 one-command local demo',
+      'Wrote DDL from the ERD, with supporting Regions data',
+      'Used LOAD DATA with explicit terminators (the portfolio ships a synthetic seed)',
+      'Wrote geographic counts, RMA updates, and returns-style queries',
+      'Added a Docker Compose MySQL 8 setup so the demo starts with one command',
     ],
     evidence: ['schema.md', 'sql/ run order', 'docker-compose.yml', 'MIT LICENSE'],
-    result: 'Working schema + documented queries a reviewer can re-run locally.',
-    hireSignal: 'Data-model → DDL → load → analysis discipline for support engineering and cloud-adjacent roles.',
+    result: 'A working schema and documented queries a reviewer can re-run locally.',
+    hireSignal: 'Data model to DDL to load to analysis, the discipline support engineering and cloud-adjacent roles expect.',
   },
   {
     id: 'cyb-260',
@@ -227,15 +227,15 @@ export const CASE_FILES: CaseFile[] = [
     name: 'CIS Controls + HIPAA-aligned SLA brief',
     bestFor: 'IT risk / GRC',
     problem:
-      'Fit-vantage needed Helios Health Insurance SLA confidence while a data-sharing partnership raised privacy ethics flags.',
+      'Fit-vantage needed confidence in its Helios Health Insurance SLA while a data-sharing partnership raised privacy and ethics questions.',
     method: [
-      'Scoped CIS Controls 5, 6, and 14 to IAM, least privilege, MFA, time-bound elevation, automated joiner/mover/leaver',
-      'Proposed measurable phishing simulations and LMS-tracked awareness',
-      'Mapped CCPA/GDPR/HIPAA fair information practices; pushed explicit opt-in / BAA-style safeguards',
+      'Scoped CIS Controls 5, 6, and 14 to IAM, least privilege, MFA, time-bound elevation, and automated joiner/mover/leaver',
+      'Proposed measurable phishing simulations and LMS-tracked awareness training',
+      'Mapped CCPA, GDPR, and HIPAA fair information practices, and pushed for explicit opt-in and BAA-style safeguards',
     ],
-    evidence: ['case-study.md — control → implementation → SLA table', 'Privacy / ethics appendix'],
-    result: 'Board-ready academic brief tying technical controls to SLA language without pretending ethics are optional.',
-    hireSignal: 'Identity/access and compliance conversation skills for analyst and GRC interviews.',
+    evidence: ['case-study.md: control, implementation, SLA table', 'Privacy and ethics appendix'],
+    result: 'A board-ready academic brief that ties technical controls to SLA language without treating ethics as optional.',
+    hireSignal: 'The identity, access, and compliance conversation you have in analyst and GRC interviews.',
   },
   {
     id: 'cyb-250',
@@ -243,15 +243,15 @@ export const CASE_FILES: CaseFile[] = [
     name: 'Bluetooth headset security strategy',
     bestFor: 'Threat modeling',
     problem:
-      'Mid-sized manufacturer Bluetooth headset system needed a defensive strategy against MitM and malware risk — academic case, not a client engagement.',
+      'A mid-sized manufacturer needed a defensive strategy for its Bluetooth headset system against MitM and malware risk. Academic case, not a client engagement.',
     method: [
-      'Built comparative threat models (Sony/OPM/Target; banking MitM; Bluetooth CVE-2018-5383 framing)',
-      'Combined awareness training, VPN-encrypted paths (IPSec/SSL; AES/RSA discussion), and EDR monitoring',
-      'Mapped impacts to CIA objectives',
+      'Built comparative threat models (Sony, OPM, Target; banking MitM; Bluetooth CVE-2018-5383)',
+      'Combined awareness training, VPN-encrypted paths (IPSec/SSL with an AES/RSA discussion), and EDR monitoring',
+      'Mapped each impact to a CIA objective',
     ],
-    evidence: ['case-study.md — architecture + threat tables + strategy', 'Explicit “not a pen test” banner'],
-    result: 'Coherent defensive strategy document with adversarial framing and honest scope limits.',
-    hireSignal: 'Threat-modeling muscle for analyst interviews — without claiming live exploit portfolio.',
+    evidence: ['case-study.md: architecture, threat tables, strategy', 'Explicit "not a pen test" banner'],
+    result: 'A coherent defensive strategy with adversarial framing and honest scope limits.',
+    hireSignal: 'Threat-modeling practice for analyst interviews, without pretending to a live exploit portfolio.',
   },
 ]
 
@@ -277,7 +277,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'logdetect',
     name: 'Log anomaly detection',
     tag: 'Security operations',
-    line: 'Rule-plus-statistics detector for brute force, port scans, off-hours file access, and privilege-escalation patterns — with severity-ranked JSON alerts.',
+    line: 'A rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Writes severity-ranked JSON alerts you can hand to anything downstream.',
     href: 'https://github.com/KM-it-ops/security-log-anomaly-detection',
     favorite: true,
   },
@@ -285,21 +285,21 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'phishing',
     name: 'Phishing email classifier',
     tag: 'Detection',
-    line: 'URL, PII, and typosquat features plus TF-IDF into a Random Forest — train/test split and cross-validation in a public repo.',
+    line: 'Pulls URL, PII, and typosquat features out of email text, adds TF-IDF, and trains a Random Forest. The train/test split and cross-validation are in the repo, not just the headline number.',
     href: 'https://github.com/KM-it-ops/phishing-email-classifier',
   },
   {
     id: 'vulntrack',
     name: 'VulnTrack dashboard',
     tag: 'Vulnerability management',
-    line: 'Flask/SQLite tracker with severity KPIs, status workflow, and a small REST API — the ticket pattern VM teams use.',
+    line: 'A Flask and SQLite tracker with severity KPIs, a status workflow, and a small REST API. The ticket pattern VM teams live in, at a size one person can read end to end.',
     href: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program',
   },
   {
     id: 'proofhouse',
     name: 'Proofhouse',
     tag: 'Engineering / PromptOps',
-    line: 'Proofhouse 0.2.1 ships two local CLIs: proofhouse-compiler (offline compiler) and proofhouse (eval harness). Certified path is offline/no-key; no benchmark claims; Cursor skill included; not a hosted product or substitute for operations tenure.',
+    line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
     href: 'https://github.com/KM-it-ops/Proofhouse',
   },
 ]
@@ -311,11 +311,11 @@ export type SideProject = {
 }
 
 export const SIDE_PROJECTS: SideProject[] = [
-  { name: 'AgentForge', line: 'Config framework for agentic coding assistants.', href: 'https://github.com/KM-it-ops/AgentForge' },
-  { name: 'OFG Dairy Site', line: 'Client-facing dairy business site.', href: 'https://ofg-sites.vercel.app/' },
+  { name: 'AgentForge', line: 'Config framework for agentic coding assistants, with adapters for several hosts.', href: 'https://github.com/KM-it-ops/AgentForge' },
+  { name: 'OFG Dairy Site', line: 'A small client-facing site for a dairy business.', href: 'https://ofg-sites.vercel.app/' },
 ]
 
 export const RESUME_PDF = '/resume.html'
 export const RESUME_LABEL = 'Resume PDF'
 export const ETHOS =
-  'Every claim maps to coursework, a credential, or a public repo. Hands-on vs exposure is labeled. No invented SIEM tenure.'
+  'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently. Nothing here is padded.'

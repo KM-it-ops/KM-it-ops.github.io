@@ -15,55 +15,27 @@
   <img src="https://img.shields.io/badge/status-open%20to%20work-6ddf9f?style=flat-square&labelColor=04060a" alt="Open to work">
 </p>
 
-<p align="left">
-  <a href="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=22&duration=3000&pause=1000&color=7CF0C1&center=false&vCenter=true&width=900&lines=junior+security+analyst+%C2%B7+Security%2B+%C2%B7+SNHU+Summa;detection+labs+%C2%B7+aviation+security+ops+transfer">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=22&duration=3000&pause=1000&color=7CF0C1&center=false&vCenter=true&width=900&lines=junior+security+analyst+%C2%B7+Security%2B+%C2%B7+SNHU+Summa;detection+labs+%C2%B7+aviation+security+ops+transfer" alt="Typing tagline">
-  </a>
-</p>
+I'm Michael. I'm a new security graduate in Charlotte, NC, looking for a junior security analyst role. Security operations, vulnerability management, and IT risk are the lanes I'm aiming at, and remote works fine.
 
-**New graduate targeting junior security analyst, security operations, vulnerability management, and IT risk roles.** Public detection and VM repos plus regulated aviation security ops transfer — not years of invented SIEM tenure.
+Before this I spent eight years at American Airlines as an Aviation Security Operations Crew Chief: CBP-badged identity checks, access control, and incident write-ups in a federally regulated environment. Along the way I finished a B.S. in Information Technologies (Cybersecurity concentration) at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+ ce.
 
-Eight years in federally regulated aviation security operations (American Airlines) with clearance-backed access control, incident response training, and documentation discipline. **Security+ ce** · **B.S. IT (Cybersecurity), SNHU** · Summa Cum Laude · GPA 3.96.
+The repos below are the part you can actually check. Clone them, run them, read the code.
 
-```yaml
-name: Michael Kurdi
-legal_name: Mahmoud Al Kurdi
-role: Junior Security Analyst | Security Operations | IT Risk
-location: Charlotte, NC / Remote
-credential: CompTIA Security+ ce (SY0-701)
-education: B.S. Information Technologies — Cybersecurity, SNHU (Summa, 3.96)
-focus:
-  - Junior security analyst and operations workflows
-  - Log detection, phishing classification, vuln tracking
-  - Access control and compliance writing
-  - Honest early-career positioning
-proof_style: public repos, coursework case studies, credentials
-status: open-to-work
-```
+## Projects
 
----
-
-## Evidence at a glance
-
-| Project | Hiring signal | Link |
+| Project | What it is | Repo |
 | --- | --- | --- |
-| **Log anomaly detection** | Rule + statistics detector: brute force, port scans, off-hours file access, privilege-escalation patterns | [repo](https://github.com/KM-it-ops/security-log-anomaly-detection) |
-| **Phishing email classifier** | URL / PII / typosquat features + TF-IDF Random Forest | [repo](https://github.com/KM-it-ops/phishing-email-classifier) |
-| **VulnTrack** | Flask/SQLite vuln workflow with severity KPIs and status states | [repo](https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program) |
-| **Proofhouse 0.2.1** (engineering proof) | Two local CLIs: `proofhouse-compiler` (offline compiler) and `proofhouse` (eval harness). Certified path is offline/no-key; no benchmark claims; Cursor skill included; not a hosted product. | [repo](https://github.com/KM-it-ops/Proofhouse) |
-| **AgentForge** (secondary) | Multi-adapter agent config framework | [repo](https://github.com/KM-it-ops/AgentForge) |
+| **Log anomaly detection** | A rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Writes severity-ranked JSON alerts you can feed into anything downstream. | [security-log-anomaly-detection](https://github.com/KM-it-ops/security-log-anomaly-detection) |
+| **Phishing email classifier** | Pulls URL, PII, and typosquat features out of email text, adds TF-IDF, and trains a Random Forest. Train/test split and cross-validation are in the repo, not just the headline number. | [phishing-email-classifier](https://github.com/KM-it-ops/phishing-email-classifier) |
+| **VulnTrack** | A Flask and SQLite vulnerability tracker with severity KPIs, a status workflow, and a small REST API. It's the ticket pattern VM teams live in, at a size one person can read end to end. | [Vulnerability-Management-Mini-Program](https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program) |
+| **Proofhouse** | A local prompt toolkit I wrote in Python, currently 0.2.1. Two command-line tools: `proofhouse-compiler` turns requirements into a model-specific prompt offline, and `proofhouse` runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. There's a Cursor skill for the conversational flow. It's a local tool, not a hosted service, and I don't make benchmark claims for it. | [Proofhouse](https://github.com/KM-it-ops/Proofhouse) |
+| **AgentForge** | A config framework for agentic coding assistants, with adapters for several hosts. Side project. | [AgentForge](https://github.com/KM-it-ops/AgentForge) |
 
----
+## A few things worth knowing
 
-## Why hire me (60-second scan)
-
-- New graduate with **Security+** and **Summa** IT / cybersecurity degree — filter-pass credentials.
-- Public detection and VM repos a reviewer can clone: logs, phishing, VulnTrack.
-- **8 years** regulated aviation security ops — access control, incident docs, escalation discipline.
-- Honest about exposure vs hands-on — no invented SIEM production tenure.
-- Proofhouse / AgentForge are engineering proof; they do not replace the analyst headline.
-
----
+- The three security repos are the headline. Proofhouse and AgentForge show I can design, build, and ship software, but I'm applying as an analyst, not a prompt engineer.
+- Where I only have classroom exposure to something (SIEM platforms, for example), I say so. The coursework labs on my portfolio are labeled as labs.
+- Eight years of regulated operations taught me to document under inspection, verify identity before granting access, and escalate with facts and a timestamp. Those habits transfer directly to a SOC queue.
 
 ## Connect
 
