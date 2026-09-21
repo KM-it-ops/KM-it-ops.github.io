@@ -42,7 +42,8 @@ Do not link AgentForge Pages demo (`…/AgentForge/docs/demo/` is 404).
 3. **VulnTrack dashboard** — https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program  
    Flask/SQLite tracker with severity KPIs, status workflow, and a small REST API.
 4. **Proofhouse** (engineering proof) — https://github.com/KM-it-ops/Proofhouse  
-   Offline eval harness for prompt pipelines. Not a substitute for operations tenure.
+   Proofhouse 0.2.1 ships two local CLIs: `proofhouse-compiler` (offline compiler) and `proofhouse` (eval harness).
+   Certified path is offline and no-key; there are no benchmark claims. Includes a Cursor skill and a five-minute no-key showcase; it is not a hosted product or substitute for operations tenure.
 
 ## Coursework labs (cyber hands-on proof)
 

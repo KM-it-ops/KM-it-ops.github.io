@@ -299,7 +299,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'proofhouse',
     name: 'Proofhouse',
     tag: 'Engineering / PromptOps',
-    line: 'Offline eval harness for prompt pipelines (clarify, compile, self-heal). Engineering proof — not a substitute for operations tenure.',
+    line: 'Proofhouse 0.2.1 ships two local CLIs: proofhouse-compiler (offline compiler) and proofhouse (eval harness). Certified path is offline/no-key; no benchmark claims; Cursor skill included; not a hosted product or substitute for operations tenure.',
     href: 'https://github.com/KM-it-ops/Proofhouse',
   },
 ]
@@ -311,7 +311,6 @@ export type SideProject = {
 }
 
 export const SIDE_PROJECTS: SideProject[] = [
-  { name: 'Proofhouse', line: 'Flagship PromptOps framework v1.3 — model-specific clarify → compile → self-heal; offline eval harness.', href: 'https://github.com/KM-it-ops/Proofhouse' },
   { name: 'AgentForge', line: 'Config framework for agentic coding assistants.', href: 'https://github.com/KM-it-ops/AgentForge' },
   { name: 'OFG Dairy Site', line: 'Client-facing dairy business site.', href: 'https://ofg-sites.vercel.app/' },
 ]
