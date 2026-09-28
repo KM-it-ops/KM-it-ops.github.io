@@ -92,7 +92,7 @@ export default function NoirSpotlight() {
           <a className="noir-cta-tertiary hide-sm" href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
             LinkedIn
           </a>
-          <a className="noir-cta-tertiary" href={PERSON.github} rel="noopener noreferrer" target="_blank">
+          <a className="noir-cta-tertiary hide-sm" href={PERSON.github} rel="noopener noreferrer" target="_blank">
             GitHub
           </a>
         </div>
