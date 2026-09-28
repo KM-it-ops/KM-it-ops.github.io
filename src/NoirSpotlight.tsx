@@ -21,7 +21,7 @@ import {
 import { OrbSeal } from './noir/OrbSeal'
 import './noir/noir-spotlight.css'
 
-const SCROLL_THRESHOLD = 120
+const SCROLL_THRESHOLD = 420
 
 function useCopyToast() {
   const [toast, setToast] = useState<string | null>(null)
@@ -51,7 +51,8 @@ export default function NoirSpotlight() {
       const navH = navRef.current?.offsetHeight ?? 56
       if (wrap) {
         const rect = wrap.getBoundingClientRect()
-        setCollapsed(rect.bottom < navH + 20 || y > SCROLL_THRESHOLD)
+        // Collapse only when Orb has cleared the sticky nav with room — not on light scroll
+        setCollapsed(rect.bottom < navH + 80)
       } else {
         setCollapsed(y > SCROLL_THRESHOLD)
       }
