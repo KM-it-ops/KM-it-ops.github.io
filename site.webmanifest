@@ -1,11 +1,11 @@
 {
-  "name": "Michael Kurdi — Night Dossier",
-  "short_name": "KM Dossier",
-  "description": "Tier-1 SOC / Jr Detection / Security Automation — Night Dossier portfolio.",
+  "name": "Michael Kurdi — Junior Security Analyst",
+  "short_name": "Michael Kurdi",
+  "description": "Junior Security Analyst | Security Operations · IT Risk | Security+ · SNHU Summa | Charlotte NC / Remote",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#1c1917",
-  "theme_color": "#1c1917",
+  "background_color": "#05060c",
+  "theme_color": "#05060c",
   "icons": [
     {
       "src": "/favicon.svg",

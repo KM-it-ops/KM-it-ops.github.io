@@ -305,17 +305,35 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
 ]
 
 export type SideProject = {
+  id: string
   name: string
+  tag: string
   line: string
   href: string
+  live?: string
+  openLabel?: string
 }
 
 export const SIDE_PROJECTS: SideProject[] = [
-  { name: 'AgentForge', line: 'Config framework for agentic coding assistants, with adapters for several hosts.', href: 'https://github.com/KM-it-ops/AgentForge' },
-  { name: 'OFG Dairy Site', line: 'A small client-facing site for a dairy business.', href: 'https://ofg-sites.vercel.app/' },
+  {
+    id: 'agentforge',
+    name: 'AgentForge',
+    tag: 'Side project',
+    line: 'Config framework for agentic coding assistants, with adapters for several hosts.',
+    href: 'https://github.com/KM-it-ops/AgentForge',
+  },
+  {
+    id: 'ofg',
+    name: 'OFG Dairy Site',
+    tag: 'Client delivery',
+    line: 'A small client-facing site for a dairy business.',
+    href: 'https://ofg-sites.vercel.app/',
+    live: 'https://ofg-sites.vercel.app/',
+    openLabel: 'Open site →',
+  },
 ]
 
 export const RESUME_PDF = '/resume.html'
-export const RESUME_LABEL = 'Resume PDF'
+export const RESUME_LABEL = 'Resume'
 export const ETHOS =
   'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently. Nothing here is padded.'

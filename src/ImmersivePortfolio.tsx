@@ -15,6 +15,7 @@ import {
   PERSON,
   RESUME_PDF,
   RESUME_LABEL,
+  SIDE_PROJECTS,
   SKILL_BANDS,
 } from './content'
 import { Reveal, Toast, useCopyToast } from './designs/shared'
@@ -260,7 +261,7 @@ export default function ImmersivePortfolio() {
             <span className="im-live">{PERSON.available}</span>
           </p>
 
-          <p className="im-atm-kicker">Tier-1 SOC · Junior detection · Security automation</p>
+          <p className="im-atm-kicker">{PERSON.role}</p>
           <ScrambleHero id="im-name" className="im-name" text="KURDI" />
           <TextPressure className="im-name-sub" text="MICHAEL" as="p" />
           <p className="im-legal">Legal name · {PERSON.legal}</p>
@@ -269,8 +270,11 @@ export default function ImmersivePortfolio() {
             <MagneticCTA className="im-btn im-btn-primary" href={RESUME_PDF} target="_blank" rel="noreferrer">
               {RESUME_LABEL}
             </MagneticCTA>
-            <a className="im-text-link" href="#contact">
-              CONTACT
+            <a className="im-text-link" href={`mailto:${PERSON.email}`}>
+              EMAIL
+            </a>
+            <a className="im-text-link" href={PERSON.linkedin} target="_blank" rel="noreferrer">
+              LINKEDIN
             </a>
             <a className="im-text-link" href={PERSON.github} target="_blank" rel="noreferrer">
               GITHUB
@@ -321,52 +325,90 @@ export default function ImmersivePortfolio() {
               <GlitchAccent>Selected work</GlitchAccent>
             </span>
             <SectionTitle id="work-h" line1="BUILDS" line2="YOU CAN OPEN" />
-            <p className="im-moment-deck">Public automation first. Client delivery included.</p>
+            <p className="im-moment-deck">
+              Detection, phishing classifier, vuln workflow — then tooling.
+            </p>
           </header>
 
-          {FEATURED_PROJECTS.map((p, i) => (
-            <Reveal key={p.id} delay={0.06 * i} className={p.id === 'ofg' ? 'im-reveal-ofg' : undefined}>
-              <article
-                className={`im-moment im-moment-${i + 1} im-moment-cine${p.favorite ? ' im-moment-lead' : ''}${p.id === 'ofg' ? ' im-moment-side' : ''}`}
-                style={{ ['--moment-i' as string]: String(i) }}
-              >
-                <div className="im-moment-meta">
-                  <span className="im-atm-label">{p.tag}</span>
-                  {p.favorite ? <span className="im-fav">Featured</span> : null}
-                </div>
-                <h3 className="im-moment-title">
-                  <TextPressure text={p.name.toUpperCase()} as="span" />
-                </h3>
-                <p className="im-moment-line">{p.line}</p>
-                <div className="im-moment-links">
-                  {p.id === 'ofg' ? (
-                    <a
-                      className="im-ofg-open"
-                      href={p.live ?? p.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-ofg-open="1"
-                    >
-                      Open site →
+          {FEATURED_PROJECTS.map((p, i) => {
+            const liveOk =
+              Boolean(p.live) &&
+              !/agentforgestudio/i.test(p.live ?? '')
+            return (
+              <Reveal key={p.id} delay={0.06 * i}>
+                <article
+                  className={`im-moment im-moment-${i + 1} im-moment-cine${p.favorite ? ' im-moment-lead' : ''}`}
+                  style={{ ['--moment-i' as string]: String(i) }}
+                >
+                  <div className="im-moment-meta">
+                    <span className="im-atm-label">{p.tag}</span>
+                    {p.favorite ? <span className="im-fav">Featured</span> : null}
+                  </div>
+                  <h3 className="im-moment-title">
+                    <TextPressure text={p.name.toUpperCase()} as="span" />
+                  </h3>
+                  <p className="im-moment-line">{p.line}</p>
+                  <div className="im-moment-links">
+                    <a href={p.href} target="_blank" rel="noreferrer">
+                      GitHub →
                     </a>
-                  ) : (
-                    <>
-                      <a href={p.href} target="_blank" rel="noreferrer">
-                        GitHub →
+                    {liveOk ? (
+                      <a href={p.live} target="_blank" rel="noreferrer">
+                        Live demo →
                       </a>
-                      {p.live ? (
-                        <a href={p.live} target="_blank" rel="noreferrer">
-                          Live demo →
+                    ) : null}
+                  </div>
+                  <div className="im-moment-glow" aria-hidden="true" />
+                  <div className="im-moment-depth" aria-hidden="true" />
+                </article>
+              </Reveal>
+            )
+          })}
+
+          <div className="im-side-shipping" aria-labelledby="side-h">
+            <header className="im-side-head">
+              <span className="im-atm-label">
+                <GlitchAccent>Also shipping</GlitchAccent>
+              </span>
+              <h3 id="side-h" className="im-side-title">
+                Side builds
+              </h3>
+            </header>
+            <div className="im-side-grid">
+              {SIDE_PROJECTS.map((p) => {
+                const isLive =
+                  Boolean(p.live) &&
+                  !/agentforgestudio/i.test(p.live ?? '')
+                const openHref = isLive ? (p.live as string) : p.href
+                const openLabel = p.openLabel ?? (isLive ? 'Open site →' : 'GitHub →')
+                return (
+                  <article key={p.id} className="im-side-card im-beam-card">
+                    <div className="im-moment-meta">
+                      <span className="im-atm-label">{p.tag}</span>
+                    </div>
+                    <h4 className="im-side-name">{p.name}</h4>
+                    <p className="im-moment-line">{p.line}</p>
+                    <div className="im-moment-links im-side-links">
+                      {isLive ? (
+                        <a
+                          className="im-side-open"
+                          href={openHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {openLabel}
                         </a>
-                      ) : null}
-                    </>
-                  )}
-                </div>
-                <div className="im-moment-glow" aria-hidden="true" />
-                <div className="im-moment-depth" aria-hidden="true" />
-              </article>
-            </Reveal>
-          ))}
+                      ) : (
+                        <a href={p.href} target="_blank" rel="noreferrer">
+                          GitHub →
+                        </a>
+                      )}
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
         </section>
 
         <section className="im-chapter" id="labs" aria-labelledby="labs-h">
@@ -431,7 +473,7 @@ export default function ImmersivePortfolio() {
               'THREAT MODELING',
               'CLOUD BCDR',
               'SIEM VOCAB',
-              'PROMPTRIG',
+              'PROOFHOUSE',
               'AGENTFORGE',
               'SECURITY+',
               'SUMMA 3.96',
@@ -529,7 +571,7 @@ export default function ImmersivePortfolio() {
                 </dd>
               </div>
               <div>
-                <dt>CV</dt>
+                <dt>RESUME</dt>
                 <dd>
                   <a href={RESUME_PDF} target="_blank" rel="noreferrer">{RESUME_LABEL}</a>
                 </dd>
