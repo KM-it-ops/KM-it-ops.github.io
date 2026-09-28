@@ -93,14 +93,16 @@
 
 .noir-nav-brand {
   font-family: var(--noir-mono);
-  font-size: var(--noir-label);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--noir-muted);
+  font-size: var(--noir-ui-min);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--noir-ink);
   white-space: nowrap;
   flex: 0 0 auto;
+  font-weight: 600;
 }
-.noir-nav-brand span { color: var(--noir-gold); }
+.noir-nav-brand .brand-short { display: none; }
+.noir-nav-brand .brand-full { display: inline; }
 
 .noir-nav-primary {
   display: flex;
@@ -156,6 +158,43 @@
   outline: none;
 }
 
+.noir-nav-ctas a.noir-cta-primary {
+  color: var(--noir-bg);
+  background: var(--noir-gold);
+  border-color: var(--noir-gold);
+  font-weight: 700;
+}
+.noir-nav-ctas a.noir-cta-primary:hover,
+.noir-nav-ctas a.noir-cta-primary:focus-visible {
+  background: transparent;
+  color: var(--noir-gold);
+  border-color: var(--noir-gold);
+}
+
+.noir-nav-ctas a.noir-cta-secondary,
+.noir-hero-ctas a.noir-cta-secondary {
+  /* Email — ghost, readable */
+  color: var(--noir-ink);
+  border-color: var(--noir-gold-dim);
+  background: transparent;
+}
+.noir-nav-ctas a.noir-cta-tertiary,
+.noir-hero-ctas a.noir-cta-tertiary {
+  /* LinkedIn / GitHub — quieter ghost */
+  color: var(--noir-muted);
+  border-color: rgba(212, 175, 55, 0.18);
+  background: transparent;
+  font-weight: 400;
+}
+.noir-nav-ctas a.noir-cta-tertiary:hover,
+.noir-nav-ctas a.noir-cta-tertiary:focus-visible,
+.noir-hero-ctas a.noir-cta-tertiary:hover,
+.noir-hero-ctas a.noir-cta-tertiary:focus-visible {
+  color: var(--noir-gold);
+  border-color: var(--noir-gold-dim);
+  background: rgba(212, 175, 55, 0.05);
+}
+
 @media (max-width: 720px) {
   .noir-nav {
     flex-wrap: wrap;
@@ -164,7 +203,9 @@
     padding: 0.45rem 0.75rem;
     gap: 0.4rem 0.65rem;
   }
-  .noir-nav-brand { font-size: 12px; }
+  .noir-nav-brand { font-size: 13px; }
+  .noir-nav-brand .brand-full { display: none; }
+  .noir-nav-brand .brand-short { display: inline; }
   .noir-nav-primary {
     width: 100%;
     margin-left: 0;
@@ -185,7 +226,7 @@
 /* ——— Hero ——— */
 .noir-hero {
   position: relative;
-  padding: 2.5rem 0 2rem;
+  padding: 1.75rem 0 1.5rem;
   text-align: center;
   isolation: isolate;
   overflow: visible;
@@ -212,9 +253,9 @@
 
 .noir-hero-asset {
   position: relative;
-  width: min(280px, 58vw);
-  height: min(280px, 58vw);
-  margin: 0 auto 1.5rem;
+  width: min(200px, 42vw);
+  height: min(200px, 42vw);
+  margin: 0 auto 1.15rem;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
   transform-origin: center top;
   will-change: transform, opacity;
@@ -254,7 +295,7 @@
 
 .noir-name {
   font-family: var(--noir-serif);
-  font-size: clamp(2.8rem, 11vw, 6.5rem);
+  font-size: clamp(2.4rem, 9vw, 5.25rem);
   font-weight: 400;
   font-style: italic;
   line-height: 0.95;
@@ -283,15 +324,15 @@
 
 .noir-role {
   font-family: var(--noir-mono);
-  font-size: clamp(13px, 2.2vw, 15px);
+  font-size: clamp(15px, 2.6vw, 18px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--noir-muted);
+  color: var(--noir-ink);
   max-width: 44rem;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 0.85rem;
   line-height: 1.7;
 }
-.noir-role strong { color: var(--noir-ink); font-weight: 600; }
+.noir-role strong { color: var(--noir-ink); font-weight: 700; }
 
 .noir-hairline {
   width: min(180px, 40%);
@@ -305,7 +346,7 @@
   font-size: var(--noir-body);
   color: var(--noir-muted);
   max-width: 36rem;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.15rem;
   font-family: var(--noir-serif);
   font-style: italic;
   line-height: 1.6;
@@ -338,6 +379,50 @@
   color: var(--noir-gold);
   outline: none;
 }
+
+.noir-hero-ctas a.noir-cta-primary {
+  color: var(--noir-bg);
+  background: var(--noir-gold);
+  border-color: var(--noir-gold);
+  font-weight: 700;
+}
+.noir-hero-ctas a.noir-cta-primary:hover,
+.noir-hero-ctas a.noir-cta-primary:focus-visible {
+  background: transparent;
+  color: var(--noir-gold);
+  border-color: var(--noir-gold);
+}
+
+/* Proof AF strip — under role, above seek/CTAs */
+.noir-proof-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.75rem;
+  max-width: 40rem;
+  margin: 0 auto 1.15rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(212, 175, 55, 0.06);
+  font-family: var(--noir-mono);
+  font-size: var(--noir-ui-min);
+  line-height: 1.45;
+  color: var(--noir-muted);
+}
+.noir-proof-strip .proof-label {
+  color: var(--noir-gold);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: var(--noir-label);
+}
+.noir-proof-strip a {
+  color: var(--noir-gold);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.noir-proof-strip a:hover { color: var(--noir-ice); }
 
 .noir-cred-row {
   display: flex;
@@ -848,5 +933,14 @@
   .noir-name,
   .noir-hero-spotlight {
     transition: none !important;
+  }
+
+  .noir.nav-collapsed .noir-hero-asset {
+    transform: scale(0.12) translateY(-40px);
+    opacity: 0;
+  }
+  .noir.nav-collapsed .noir-nav-asset {
+    opacity: 1;
+    transform: scale(1);
   }
 }

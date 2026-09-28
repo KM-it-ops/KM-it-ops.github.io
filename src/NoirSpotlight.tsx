@@ -74,7 +74,8 @@ export default function NoirSpotlight() {
           <OrbSeal idPrefix="nav-orb" />
         </div>
         <div className="noir-nav-brand">
-          MK <span>/</span> Portfolio
+          <span className="brand-full">Mahmoud Al Kurdi</span>
+          <span className="brand-short">M. Al Kurdi</span>
         </div>
         <div className="noir-nav-primary">
           <a href="#work">Work</a>
@@ -83,14 +84,14 @@ export default function NoirSpotlight() {
           <a href="#contact">Contact</a>
         </div>
         <div className="noir-nav-ctas">
-          <a href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
+          <a className="noir-cta-primary" href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
             {RESUME_LABEL}
           </a>
-          <a href={`mailto:${PERSON.email}`}>Email</a>
-          <a className="hide-sm" href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
+          <a className="noir-cta-secondary" href={`mailto:${PERSON.email}`}>Email</a>
+          <a className="noir-cta-tertiary hide-sm" href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
             LinkedIn
           </a>
-          <a href={PERSON.github} rel="noopener noreferrer" target="_blank">
+          <a className="noir-cta-tertiary" href={PERSON.github} rel="noopener noreferrer" target="_blank">
             GitHub
           </a>
         </div>
@@ -116,16 +117,27 @@ export default function NoirSpotlight() {
             {' · '}Security+ · SNHU Summa
             {' · '}Charlotte NC / Remote
           </p>
+          <p className="noir-proof-strip">
+            <span className="proof-label">Proof</span>
+            <span>Log anomaly detection — cloneable detector</span>
+            <a
+              href="https://github.com/KM-it-ops/security-log-anomaly-detection"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View repo →
+            </a>
+          </p>
           <p className="noir-seek">{THROUGHLINE.seeking}</p>
           <div className="noir-hero-ctas">
-            <a href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
+            <a className="noir-cta-primary" href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
               {RESUME_LABEL}
             </a>
-            <a href={`mailto:${PERSON.email}`}>Email</a>
-            <a href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
+            <a className="noir-cta-secondary" href={`mailto:${PERSON.email}`}>Email</a>
+            <a className="noir-cta-tertiary" href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
               LinkedIn
             </a>
-            <a href={PERSON.github} rel="noopener noreferrer" target="_blank">
+            <a className="noir-cta-tertiary" href={PERSON.github} rel="noopener noreferrer" target="_blank">
               GitHub
             </a>
           </div>
@@ -140,20 +152,6 @@ export default function NoirSpotlight() {
               <strong>8 yrs</strong> · AA ops · not SIEM
             </li>
           </ul>
-        </section>
-
-        <div className="noir-strip" id="glance">
-          At a glance
-        </div>
-        <section className="noir-section" aria-label="Hire brief">
-          <div className="noir-hire">
-            {HIRE_BRIEF.map((b) => (
-              <article key={b.label}>
-                <h3>{b.label}</h3>
-                <p>{b.text}</p>
-              </article>
-            ))}
-          </div>
         </section>
 
         <div className="noir-strip" id="work">
@@ -183,7 +181,7 @@ export default function NoirSpotlight() {
                     <p>{p.line}</p>
                     <div>
                       <a className="noir-btn" href={p.href} rel="noopener noreferrer" target="_blank">
-                        View on GitHub
+                        {p.favorite ? 'Clone this detector →' : 'View on GitHub'}
                       </a>
                       {liveOk ? (
                         <a
@@ -231,6 +229,20 @@ export default function NoirSpotlight() {
                 </article>
               )
             })}
+          </div>
+        </section>
+
+        <div className="noir-strip" id="glance">
+          At a glance
+        </div>
+        <section className="noir-section" aria-label="Hire brief">
+          <div className="noir-hire">
+            {HIRE_BRIEF.map((b) => (
+              <article key={b.label}>
+                <h3>{b.label}</h3>
+                <p>{b.text}</p>
+              </article>
+            ))}
           </div>
         </section>
 
