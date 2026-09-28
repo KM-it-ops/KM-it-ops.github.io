@@ -112,7 +112,7 @@ export default function NoirSpotlight() {
             {' · '}Security+ · SNHU Summa
             {' · '}Charlotte NC / Remote
           </p>
-          <p className="noir-proof-strip">
+          <p className="noir-proof-strip" id="proof">
             <span className="proof-label">Proof</span>
             <span>Log anomaly detection — cloneable detector</span>
             <a
@@ -123,7 +123,6 @@ export default function NoirSpotlight() {
               View repo →
             </a>
           </p>
-          <p className="noir-seek">{THROUGHLINE.seeking}</p>
           <div className="noir-hero-ctas">
             <a className="noir-cta-primary" href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
               {RESUME_LABEL}
@@ -136,6 +135,7 @@ export default function NoirSpotlight() {
               GitHub
             </a>
           </div>
+          <p className="noir-seek">{THROUGHLINE.seeking}</p>
           <ul className="noir-cred-row" aria-label="Credentials">
             <li>
               <strong>Sec+</strong> · SY0-701

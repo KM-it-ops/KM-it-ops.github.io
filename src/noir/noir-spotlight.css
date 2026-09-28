@@ -158,17 +158,19 @@
   outline: none;
 }
 
-.noir-nav-ctas a.noir-cta-primary {
-  color: var(--noir-bg);
-  background: var(--noir-gold);
-  border-color: var(--noir-gold);
+.noir.noir-root .noir-nav-ctas a.noir-cta-primary,
+.noir .noir-nav-ctas a.noir-cta-primary {
+  color: #050505 !important;
+  background: #d4af37 !important;
+  border-color: #d4af37 !important;
   font-weight: 700;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4);
 }
-.noir-nav-ctas a.noir-cta-primary:hover,
-.noir-nav-ctas a.noir-cta-primary:focus-visible {
-  background: transparent;
-  color: var(--noir-gold);
-  border-color: var(--noir-gold);
+.noir .noir-nav-ctas a.noir-cta-primary:hover,
+.noir .noir-nav-ctas a.noir-cta-primary:focus-visible {
+  background: #e0c15a !important;
+  color: #050505 !important;
+  border-color: #e0c15a !important;
 }
 
 .noir-nav-ctas a.noir-cta-secondary,
@@ -380,35 +382,36 @@
   outline: none;
 }
 
-.noir-hero-ctas a.noir-cta-primary {
-  color: var(--noir-bg);
-  background: var(--noir-gold);
-  border-color: var(--noir-gold);
+.noir .noir-hero-ctas a.noir-cta-primary {
+  color: #050505 !important;
+  background: #d4af37 !important;
+  border-color: #d4af37 !important;
   font-weight: 700;
+  padding: 0.65rem 1.15rem;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.35);
 }
-.noir-hero-ctas a.noir-cta-primary:hover,
-.noir-hero-ctas a.noir-cta-primary:focus-visible {
-  background: transparent;
-  color: var(--noir-gold);
-  border-color: var(--noir-gold);
+.noir .noir-hero-ctas a.noir-cta-primary:hover,
+.noir .noir-hero-ctas a.noir-cta-primary:focus-visible {
+  background: #e0c15a !important;
+  color: #050505 !important;
+  border-color: #e0c15a !important;
 }
 
-/* Proof AF strip — under role, above seek/CTAs */
 .noir-proof-strip {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem 0.75rem;
-  max-width: 40rem;
-  margin: 0 auto 1.15rem;
-  padding: 0.55rem 0.85rem;
-  border: 1px solid rgba(212, 175, 55, 0.28);
-  background: rgba(212, 175, 55, 0.06);
+  gap: 0.4rem 0.85rem;
+  max-width: 42rem;
+  margin: 0 auto 1.25rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.12);
   font-family: var(--noir-mono);
-  font-size: var(--noir-ui-min);
+  font-size: max(15px, var(--noir-ui-min));
   line-height: 1.45;
-  color: var(--noir-muted);
+  color: var(--noir-ink);
 }
 .noir-proof-strip .proof-label {
   color: var(--noir-gold);
