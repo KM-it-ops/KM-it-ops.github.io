@@ -277,7 +277,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'logdetect',
     name: 'Log anomaly detection',
     tag: 'Security operations',
-    line: 'A rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Writes severity-ranked JSON alerts you can hand to anything downstream.',
+    line: 'A rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Writes severity-ranked JSON alerts you can hand to anything downstream. Clone it and run it.',
     href: 'https://github.com/KM-it-ops/security-log-anomaly-detection',
     favorite: true,
   },
@@ -295,6 +295,19 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     line: 'A Flask and SQLite tracker with severity KPIs, a status workflow, and a small REST API. The ticket pattern VM teams live in, at a size one person can read end to end.',
     href: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program',
   },
+]
+
+export type SideProject = {
+  id: string
+  name: string
+  tag: string
+  line: string
+  href: string
+  live?: string
+  openLabel?: string
+}
+
+export const SIDE_PROJECTS: SideProject[] = [
   {
     id: 'proofhouse',
     name: 'Proofhouse',
@@ -302,20 +315,25 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
     href: 'https://github.com/KM-it-ops/Proofhouse',
   },
-]
-
-export type SideProject = {
-  name: string
-  line: string
-  href: string
-}
-
-export const SIDE_PROJECTS: SideProject[] = [
-  { name: 'AgentForge', line: 'Config framework for agentic coding assistants, with adapters for several hosts.', href: 'https://github.com/KM-it-ops/AgentForge' },
-  { name: 'OFG Dairy Site', line: 'A small client-facing site for a dairy business.', href: 'https://ofg-sites.vercel.app/' },
+  {
+    id: 'agentforge',
+    name: 'AgentForge',
+    tag: 'Side project',
+    line: 'Config framework for agentic coding assistants, with adapters for several hosts.',
+    href: 'https://github.com/KM-it-ops/AgentForge',
+  },
+  {
+    id: 'ofg',
+    name: 'OFG Dairy Site',
+    tag: 'Client delivery',
+    line: 'A small client-facing site for a dairy business.',
+    href: 'https://ofg-sites.vercel.app/',
+    live: 'https://ofg-sites.vercel.app/',
+    openLabel: 'Open site →',
+  },
 ]
 
 export const RESUME_PDF = '/resume.html'
-export const RESUME_LABEL = 'Resume PDF'
+export const RESUME_LABEL = 'Resume'
 export const ETHOS =
   'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently. Nothing here is padded.'

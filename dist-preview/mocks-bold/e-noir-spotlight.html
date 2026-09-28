@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michael Kurdi — Noir Spotlight (E)</title>
+  <meta name="description" content="Static visual mock E: Noir Spotlight. Cinematic dark portfolio direction." />
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0c0c0c;
+      --ink: #f4efe6;
+      --muted: #9a9388;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.35);
+      --ice: #9ec9e8;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--ice); }
+
+    /* subtle film grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    .mock-banner {
+      position: relative;
+      z-index: 2;
+      border-bottom: 1px solid var(--gold-dim);
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      justify-content: space-between;
+      letter-spacing: 0.04em;
+    }
+    .mock-banner strong { color: var(--gold); font-weight: 600; }
+    .mock-banner a { color: var(--muted); font-size: 13px; }
+    .mock-banner a:hover { color: var(--ink); }
+
+    .shell {
+      width: min(1180px, 100% - 2rem);
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header.site {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0 0.5rem;
+    }
+    .brand {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .brand span { color: var(--gold); }
+    nav.ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    nav.ctas a {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--gold-dim);
+      padding: 0.55rem 0.85rem;
+      min-height: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    nav.ctas a:hover,
+    nav.ctas a:focus-visible {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold);
+      outline: none;
+    }
+
+    /* Cinematic hero with spotlight */
+    .hero {
+      position: relative;
+      padding: 3.5rem 0 3rem;
+      text-align: center;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      transform: translateX(-50%);
+      width: min(720px, 120vw);
+      height: min(520px, 85vw);
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 240, 200, 0.22) 0%,
+        rgba(212, 175, 55, 0.08) 28%,
+        rgba(5, 5, 5, 0) 68%
+      );
+      z-index: -1;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 72px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      opacity: 0.7;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1.5rem;
+    }
+    h1.name {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 12vw, 7.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+      text-shadow: 0 0 80px rgba(212, 175, 55, 0.25);
+    }
+    .role-line {
+      font-family: var(--mono);
+      font-size: clamp(13px, 2.2vw, 15px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      max-width: 42rem;
+      margin: 0 auto 1.75rem;
+      line-height: 1.7;
+    }
+    .role-line strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .hairline {
+      width: min(180px, 40%);
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 1.5rem;
+      opacity: 0.7;
+    }
+    .seek {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 36rem;
+      margin: 0 auto;
+      font-family: var(--serif);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .strip-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.5rem 0 1.25rem;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .strip-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    /* Film stills horizontal strip */
+    .film-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding-bottom: 2.5rem;
+    }
+    @media (min-width: 780px) {
+      .film-strip {
+        grid-template-columns: 1.25fr 1fr;
+        gap: 1.25rem;
+      }
+    }
+    .still {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      min-height: 260px;
+      padding: 1.5rem 1.35rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .still:hover,
+    .still:focus-within {
+      border-color: var(--gold);
+    }
+    .still::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.35) 45%, rgba(5, 5, 5, 0.15) 100%),
+        radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.12), transparent 55%);
+      z-index: 0;
+    }
+    .still.lead::before {
+      background:
+        linear-gradient(to top, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.25) 50%, transparent 100%),
+        radial-gradient(ellipse at 70% 30%, rgba(158, 201, 232, 0.15), transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(212, 175, 55, 0.1), transparent 45%);
+    }
+    .still .frame {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      right: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      z-index: 1;
+    }
+    .still .frame .reel { color: var(--gold); }
+    .still-body { position: relative; z-index: 1; }
+    .still h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.85rem, 4vw, 2.65rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.05;
+      margin: 0 0 0.65rem;
+      letter-spacing: -0.01em;
+    }
+    .still p {
+      margin: 0 0 1.1rem;
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 38ch;
+    }
+    .still a.btn {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 0.65rem 1rem;
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+    .still a.btn:hover,
+    .still a.btn:focus-visible {
+      background: transparent;
+      color: var(--gold);
+      outline: none;
+    }
+
+    .side-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-dim);
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 640px) {
+      .side-row { grid-template-columns: 1fr 1fr; }
+    }
+    .side-item {
+      background: var(--bg);
+      padding: 1.35rem 1.25rem;
+    }
+    .side-item .meta {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ice);
+      margin: 0 0 0.5rem;
+    }
+    .side-item h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      font-weight: 400;
+      margin: 0 0 0.45rem;
+      font-style: italic;
+    }
+    .side-item p {
+      margin: 0 0 0.85rem;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .side-item a {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 0.15rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--gold-dim);
+      padding: 1.5rem 0 2.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--gold); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      body::before { opacity: 0.03; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-banner">
+    <span><strong>MOCK E</strong> · Noir Spotlight · static HTML only</span>
+    <a href="index.html">← All bold mocks</a>
+  </div>
+
+  <div class="shell">
+    <header class="site">
+      <div class="brand">Michael Kurdi <span>/</span> Portfolio</div>
+      <nav class="ctas" aria-label="Contact">
+        <a href="https://km-it-ops.github.io/resume.html" rel="noopener">Resume</a>
+        <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="name">
+      <p class="eyebrow">Scene 01 · Available</p>
+      <h1 class="name" id="name">Michael Kurdi</h1>
+      <div class="hairline" aria-hidden="true"></div>
+      <p class="role-line">
+        <strong>Junior Security Analyst</strong>
+        · Security Operations · IT Risk
+        · Security+ · SNHU Summa
+        · Charlotte NC / Remote
+      </p>
+      <p class="seek">Eight years of regulated aviation security ops. Public detection work you can clone. Looking for the junior analyst seat.</p>
+    </section>
+
+    <div class="strip-label" id="work">Featured stills</div>
+    <section class="film-strip" aria-label="Featured projects">
+      <article class="still lead">
+        <div class="frame"><span class="reel">01 · Lead</span><span>Detection</span></div>
+        <div class="still-body">
+          <h3>Log anomaly detection</h3>
+          <p>Rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Severity-ranked JSON alerts.</p>
+          <a class="btn" href="https://github.com/KM-it-ops/security-log-anomaly-detection" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+      <article class="still">
+        <div class="frame"><span class="reel">02</span><span>Engineering</span></div>
+        <div class="still-body">
+          <h3>Proofhouse</h3>
+          <p>Local prompt toolkit — offline compile and eval CLIs. Certified path needs no API key. Engineering proof, not ops tenure.</p>
+          <a class="btn" href="https://github.com/KM-it-ops/Proofhouse" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="strip-label">Side reels</div>
+    <section class="side-row" aria-label="Side projects">
+      <article class="side-item">
+        <p class="meta">GitHub only</p>
+        <h3>AgentForge</h3>
+        <p>Config framework for agentic coding assistants.</p>
+        <a href="https://github.com/KM-it-ops/AgentForge" rel="noopener">GitHub →</a>
+      </article>
+      <article class="side-item">
+        <p class="meta">Client</p>
+        <h3>OFG</h3>
+        <p>Client-facing site for a dairy business.</p>
+        <a href="https://ofg-sites.vercel.app/" rel="noopener">Live site →</a>
+      </article>
+    </section>
+
+    <footer>
+      <span>Michael Kurdi · Junior Security Analyst</span>
+      <span><a href="index.html">Mocks hub</a> · Direction E</span>
+    </footer>
+  </div>
+</body>
+</html>
