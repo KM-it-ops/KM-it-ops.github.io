@@ -282,6 +282,13 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     favorite: true,
   },
   {
+    id: 'proofhouse',
+    name: 'Proofhouse',
+    tag: 'Engineering / PromptOps',
+    line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
+    href: 'https://github.com/KM-it-ops/Proofhouse',
+  },
+  {
     id: 'phishing',
     name: 'Phishing email classifier',
     tag: 'Detection',
@@ -294,13 +301,6 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     tag: 'Vulnerability management',
     line: 'A Flask and SQLite tracker with severity KPIs, a status workflow, and a small REST API. The ticket pattern VM teams live in, at a size one person can read end to end.',
     href: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program',
-  },
-  {
-    id: 'proofhouse',
-    name: 'Proofhouse',
-    tag: 'Engineering / PromptOps',
-    line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
-    href: 'https://github.com/KM-it-ops/Proofhouse',
   },
 ]
 
