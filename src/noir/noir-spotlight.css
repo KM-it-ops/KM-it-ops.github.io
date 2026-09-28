@@ -655,7 +655,7 @@
   gap: 0.4rem 0.65rem;
   margin-bottom: 0.55rem;
   font-family: var(--noir-mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -683,7 +683,7 @@
 .noir-lab .mini {
   display: block;
   font-family: var(--noir-mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--noir-gold);
@@ -722,7 +722,7 @@
 }
 .noir-op-list li .meta {
   font-family: var(--noir-mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--noir-gold);
@@ -862,7 +862,7 @@
 }
 .noir-copy {
   font-family: var(--noir-mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--noir-muted);
