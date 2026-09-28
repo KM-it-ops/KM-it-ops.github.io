@@ -100,11 +100,6 @@ export default function NoirSpotlight() {
       <div className="noir-shell">
         <section className="noir-hero" aria-labelledby="noir-name" id="hero">
           <div className="noir-hero-spotlight" aria-hidden="true" />
-          <div className="noir-hero-asset" id="hero-asset-wrap" ref={heroAssetRef}>
-            <div className="stage">
-              <OrbSeal idPrefix="hero-orb" />
-            </div>
-          </div>
           <p className="noir-eyebrow">{PERSON.available}</p>
           <h1 className="noir-name" id="noir-name">
             {PERSON.legal}
@@ -152,6 +147,11 @@ export default function NoirSpotlight() {
               <strong>8 yrs</strong> · AA ops · not SIEM
             </li>
           </ul>
+          <div className="noir-hero-asset" id="hero-asset-wrap" ref={heroAssetRef}>
+            <div className="stage">
+              <OrbSeal idPrefix="hero-orb" />
+            </div>
+          </div>
         </section>
 
         <div className="noir-strip" id="work">
