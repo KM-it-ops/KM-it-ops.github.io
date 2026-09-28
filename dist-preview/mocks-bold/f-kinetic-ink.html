@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michael Kurdi — Kinetic Ink (F)</title>
+  <meta name="description" content="Static visual mock F: Kinetic Ink. Ink/paper motion portfolio direction." />
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --ink: #f2f0ea;
+      --muted: #8b93a8;
+      --accent: #ff3b1f; /* vermillion */
+      --band: #141a2e;
+      --paper: #e8e4d9;
+      --display: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+      --body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .mock-banner {
+      position: relative;
+      z-index: 5;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      justify-content: space-between;
+    }
+    .mock-banner a { color: #fff; text-decoration: underline; }
+
+    /* Diagonal accent band behind hero */
+    .stage {
+      position: relative;
+      padding: 1.5rem 1.15rem 2.5rem;
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      top: -8%;
+      left: -20%;
+      width: 140%;
+      height: 58%;
+      background: linear-gradient(105deg, transparent 0%, var(--band) 18%, var(--band) 62%, transparent 100%);
+      transform: skewY(-6deg);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .stage > * { position: relative; z-index: 1; }
+
+    .nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .mark {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .mark b { color: var(--accent); font-weight: 700; }
+    .cta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .cta-pills a {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 2px solid rgba(255, 59, 31, 0.45);
+      padding: 0.55rem 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .cta-pills a:hover,
+    .cta-pills a:focus-visible {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      outline: none;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: end;
+      max-width: 1180px;
+      margin-inline: auto;
+    }
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1.55fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.85rem;
+      font-weight: 700;
+    }
+    h1.name {
+      font-family: var(--display);
+      font-size: clamp(3.6rem, 14vw, 8.5rem);
+      font-weight: 800;
+      font-style: italic;
+      line-height: 0.88;
+      letter-spacing: -0.045em;
+      margin: 0 0 1rem;
+      max-width: 10ch;
+    }
+    h1.name .ink-stroke {
+      display: inline-block;
+      background: linear-gradient(transparent 62%, rgba(255, 59, 31, 0.55) 62%, rgba(255, 59, 31, 0.55) 88%, transparent 88%);
+    }
+    .headline {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 500;
+      line-height: 1.45;
+      margin: 0 0 0.75rem;
+      max-width: 28ch;
+      color: var(--paper);
+    }
+    .meta-line {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .hero-aside {
+      background: var(--paper);
+      color: #12141c;
+      padding: 1.5rem 1.35rem;
+      transform: rotate(-2deg) skewX(-2deg);
+      box-shadow: 8px 12px 0 rgba(255, 59, 31, 0.35);
+      max-width: 360px;
+      margin-left: auto;
+    }
+    .hero-aside h2 {
+      font-family: var(--display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-style: italic;
+      margin: 0 0 0.65rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-aside p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+    .hero-aside .stamp {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 0.35rem 0.55rem;
+      transform: rotate(3deg);
+    }
+
+    /* Projects with big numbers + skew rhythm */
+    .work {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.15rem 3rem;
+    }
+    .work-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      border-top: 2px solid rgba(255, 59, 31, 0.35);
+      padding-top: 1.25rem;
+    }
+    .work-head h2 {
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      font-style: italic;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+    .work-head span {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .cases {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+    .case {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem 1.25rem;
+      background: var(--band);
+      padding: 1.35rem 1.25rem;
+      border-left: 5px solid var(--accent);
+      transform: skewY(-1.5deg);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .case:nth-child(even) {
+      transform: skewY(1.5deg);
+      border-left-color: var(--paper);
+    }
+    .case:hover {
+      transform: skewY(0deg) translateX(6px);
+      border-left-color: var(--accent);
+    }
+    .case .num {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      font-style: italic;
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+      color: var(--accent);
+      transform: skewY(1.5deg); /* counter partial parent skew for readability */
+    }
+    .case:nth-child(even) .num {
+      color: var(--paper);
+      transform: skewY(-1.5deg);
+    }
+    .case-body { transform: skewY(1.5deg); }
+    .case:nth-child(even) .case-body { transform: skewY(-1.5deg); }
+    .case .tag {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+      font-weight: 700;
+    }
+    .case:nth-child(even) .tag { color: var(--paper); }
+    .case h3 {
+      font-family: var(--display);
+      font-size: clamp(1.55rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      font-style: italic;
+      letter-spacing: -0.025em;
+      margin: 0 0 0.5rem;
+      line-height: 1.05;
+    }
+    .case p {
+      margin: 0 0 1rem;
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 48ch;
+    }
+    .case a.go {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.65rem 1rem;
+      display: inline-flex;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .case a.go:hover,
+    .case a.go:focus-visible {
+      background: var(--paper);
+      color: #12141c;
+      outline: none;
+    }
+
+    .side {
+      max-width: 1180px;
+      margin: 0 auto 3rem;
+      padding: 0 1.15rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 700px) {
+      .side { grid-template-columns: 1fr 1fr; }
+    }
+    .side-card {
+      border: 2px solid rgba(242, 240, 234, 0.15);
+      padding: 1.25rem;
+      transform: rotate(0.5deg);
+    }
+    .side-card:nth-child(2) { transform: rotate(-0.5deg); }
+    .side-card .k {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.4rem;
+      font-weight: 700;
+    }
+    .side-card h3 {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      font-weight: 800;
+      font-style: italic;
+      margin: 0 0 0.45rem;
+      letter-spacing: -0.02em;
+    }
+    .side-card p { margin: 0 0 0.85rem; color: var(--muted); font-size: 17px; }
+    .side-card a {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.1rem;
+    }
+    .side-card a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1.5rem 1.15rem 2.75rem;
+      border-top: 2px solid rgba(255, 59, 31, 0.35);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    /* Reduced motion: kill skew / rotation / translate */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .stage::before { transform: none; }
+      .hero-aside {
+        transform: none;
+        box-shadow: 4px 4px 0 rgba(255, 59, 31, 0.35);
+      }
+      .hero-aside .stamp { transform: none; }
+      .case,
+      .case:nth-child(even),
+      .case:hover,
+      .case .num,
+      .case:nth-child(even) .num,
+      .case-body,
+      .case:nth-child(even) .case-body,
+      .side-card,
+      .side-card:nth-child(2) {
+        transform: none !important;
+      }
+      .cta-pills a:hover,
+      .cta-pills a:focus-visible { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-banner">
+    <span><strong>MOCK F</strong> · Kinetic Ink · static HTML only</span>
+    <a href="index.html">← All bold mocks</a>
+  </div>
+
+  <div class="stage">
+    <div class="nav-row">
+      <div class="mark">MK <b>/</b> Studio case</div>
+      <nav class="cta-pills" aria-label="Contact">
+        <a href="https://km-it-ops.github.io/resume.html" rel="noopener">Resume</a>
+        <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Open to work · 2026</p>
+        <h1 class="name"><span class="ink-stroke">Michael</span><br />Kurdi</h1>
+        <p class="headline">Junior Security Analyst · Security Operations · IT Risk</p>
+        <p class="meta-line">Security+ · SNHU Summa · Charlotte NC / Remote</p>
+      </div>
+      <aside class="hero-aside" aria-label="Pitch">
+        <h2>Evidence over polish.</h2>
+        <p>Public detection repos you can clone. Regulated-ops habits from eight years in aviation security. No enterprise SIEM tenure claimed.</p>
+        <span class="stamp">Hire signal</span>
+      </aside>
+    </div>
+  </div>
+
+  <section class="work" id="work" aria-labelledby="work-title">
+    <div class="work-head">
+      <h2 id="work-title">Selected work</h2>
+      <span>Featured · 02</span>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <div class="num" aria-hidden="true">01</div>
+        <div class="case-body">
+          <p class="tag">Lead · Detection</p>
+          <h3>Log anomaly detection</h3>
+          <p>Rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Severity-ranked JSON alerts.</p>
+          <a class="go" href="https://github.com/KM-it-ops/security-log-anomaly-detection" rel="noopener">Open GitHub →</a>
+        </div>
+      </article>
+      <article class="case">
+        <div class="num" aria-hidden="true">02</div>
+        <div class="case-body">
+          <p class="tag">Engineering</p>
+          <h3>Proofhouse</h3>
+          <p>Local prompt toolkit in Python — offline compile and eval CLIs. Certified path needs no API key. Side engineering, labeled as such.</p>
+          <a class="go" href="https://github.com/KM-it-ops/Proofhouse" rel="noopener">Open GitHub →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="side" aria-label="Side projects">
+    <article class="side-card">
+      <p class="k">GitHub only</p>
+      <h3>AgentForge</h3>
+      <p>Config framework for agentic coding assistants.</p>
+      <a href="https://github.com/KM-it-ops/AgentForge" rel="noopener">GitHub →</a>
+    </article>
+    <article class="side-card">
+      <p class="k">Client</p>
+      <h3>OFG</h3>
+      <p>Client-facing dairy business site.</p>
+      <a href="https://ofg-sites.vercel.app/" rel="noopener">Live site →</a>
+    </article>
+  </section>
+
+  <footer>
+    <span>Michael Kurdi · Junior Security Analyst</span>
+    <span><a href="index.html">Mocks hub</a> · Direction F</span>
+  </footer>
+</body>
+</html>

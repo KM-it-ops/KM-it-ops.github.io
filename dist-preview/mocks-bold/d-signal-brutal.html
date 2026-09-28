@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michael Kurdi — Signal Brutal (D)</title>
+  <meta name="description" content="Static visual mock D: Signal Brutal. Brutalist / Swiss SOC portfolio direction." />
+  <style>
+    :root {
+      --bg: #000000;
+      --ink: #ffffff;
+      --accent: #c8ff00; /* electric lime */
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+      --sans: "Arial Black", Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif;
+      --body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .mock-banner {
+      border-bottom: 4px solid var(--ink);
+      background: var(--accent);
+      color: #000;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mock-banner a { color: #000; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Nav strip */
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      border-bottom: 4px solid var(--ink);
+    }
+    .topbar .mark {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.85rem 1rem;
+      border-right: 4px solid var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+      font-weight: 700;
+    }
+    .topbar nav {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .topbar nav a {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.1rem;
+      border-right: 4px solid var(--ink);
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .topbar nav a:hover,
+    .topbar nav a:focus-visible {
+      background: var(--accent);
+      color: #000;
+      outline: none;
+    }
+
+    /* Hero — name nearly full width */
+    .hero {
+      position: relative;
+      padding: 1.25rem 1rem 0;
+      border-bottom: 4px solid var(--ink);
+      overflow: hidden;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-meta .live {
+      background: var(--accent);
+      color: #000;
+      padding: 0.2rem 0.45rem;
+      font-weight: 800;
+    }
+    h1.name {
+      font-family: var(--sans);
+      font-size: clamp(3.4rem, 18vw, 11.5rem);
+      font-weight: 900;
+      line-height: 0.82;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+      margin: 0;
+      width: 100%;
+      word-break: break-word;
+    }
+    h1.name span.overlap {
+      display: block;
+      color: var(--accent);
+      margin-top: -0.12em;
+      margin-left: 8vw;
+      position: relative;
+      z-index: 1;
+    }
+    .slash-rule {
+      height: 12px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--accent) 0 10px,
+        #000 10px 20px
+      );
+      border-top: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
+      margin-top: 0.75rem;
+    }
+    .headline-block {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-bottom: 4px solid var(--ink);
+    }
+    @media (min-width: 800px) {
+      .headline-block { grid-template-columns: 1.4fr 1fr; }
+    }
+    .headline-block .left {
+      padding: 1.25rem 1rem 1.5rem;
+      border-bottom: 4px solid var(--ink);
+    }
+    @media (min-width: 800px) {
+      .headline-block .left { border-bottom: none; border-right: 4px solid var(--ink); }
+    }
+    .headline-block h2 {
+      font-family: var(--sans);
+      font-size: clamp(1.35rem, 3.2vw, 2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin: 0 0 0.85rem;
+    }
+    .headline-block h2 em {
+      font-style: normal;
+      background: var(--accent);
+      color: #000;
+      padding: 0 0.2em;
+    }
+    .headline-block p {
+      margin: 0;
+      font-size: 17px;
+      max-width: 36ch;
+      color: #e8e8e8;
+    }
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+    }
+    .cta-stack a {
+      font-family: var(--sans);
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      padding: 1rem 1.1rem;
+      border-bottom: 4px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 3.25rem;
+    }
+    .cta-stack a:last-child { border-bottom: none; }
+    .cta-stack a:hover,
+    .cta-stack a:focus-visible {
+      background: var(--accent);
+      color: #000;
+      outline: none;
+    }
+    .cta-stack a .arr { font-size: 1.2em; }
+
+    /* Projects as posters */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--bg);
+      padding: 0.55rem 1rem;
+      font-weight: 800;
+      border-bottom: 4px solid var(--ink);
+    }
+    .posters {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) {
+      .posters { grid-template-columns: 1.35fr 1fr; }
+    }
+    .poster {
+      border-bottom: 4px solid var(--ink);
+      padding: 1.5rem 1rem 1.75rem;
+      position: relative;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    @media (min-width: 900px) {
+      .poster { border-right: 4px solid var(--ink); min-height: 420px; }
+      .poster:last-child { border-right: none; }
+    }
+    .poster.lead {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .poster.lead .tag {
+      background: var(--accent);
+      color: #000;
+    }
+    .poster.alt {
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .poster.alt::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -8%;
+      width: 55%;
+      height: 70%;
+      background: var(--accent);
+      mix-blend-mode: difference;
+      transform: rotate(-12deg);
+      pointer-events: none;
+      opacity: 0.95;
+    }
+    .poster .tag {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0.3rem 0.5rem;
+      background: var(--bg);
+      color: var(--accent);
+      width: fit-content;
+      position: relative;
+      z-index: 1;
+    }
+    .poster h3 {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 5.5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
+      margin: 1rem 0 0.75rem;
+      position: relative;
+      z-index: 1;
+      max-width: 12ch;
+    }
+    .poster p {
+      margin: 0 0 1.25rem;
+      font-size: 17px;
+      max-width: 34ch;
+      position: relative;
+      z-index: 1;
+    }
+    .poster .go {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 4px solid currentColor;
+      padding: 0.65rem 0.9rem;
+      width: fit-content;
+      position: relative;
+      z-index: 1;
+    }
+    .poster.lead .go:hover,
+    .poster.lead .go:focus-visible {
+      background: var(--accent);
+      color: #000;
+      border-color: #000;
+      outline: none;
+    }
+    .poster.alt .go:hover,
+    .poster.alt .go:focus-visible {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .side-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-bottom: 4px solid var(--ink);
+    }
+    @media (min-width: 700px) {
+      .side-strip { grid-template-columns: 1fr 1fr; }
+    }
+    .side-card {
+      padding: 1.25rem 1rem;
+      border-bottom: 4px solid var(--ink);
+    }
+    @media (min-width: 700px) {
+      .side-card { border-bottom: none; border-right: 4px solid var(--ink); }
+      .side-card:last-child { border-right: none; }
+    }
+    .side-card .k {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.4rem;
+      font-weight: 800;
+    }
+    .side-card h3 {
+      font-family: var(--sans);
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      line-height: 1;
+    }
+    .side-card p { margin: 0 0 0.85rem; font-size: 17px; color: #d0d0d0; }
+    .side-card a {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.15rem;
+    }
+    .side-card a:hover { background: var(--accent); color: #000; border-color: #000; }
+
+    footer {
+      padding: 1.5rem 1rem 2.5rem;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+      border-top: 12px solid var(--accent);
+    }
+    footer a { text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: var(--accent); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-banner">
+    <span><strong>MOCK D</strong> · Signal Brutal · static HTML only</span>
+    <a href="index.html">← All bold mocks</a>
+  </div>
+
+  <div class="topbar">
+    <div class="mark">MK · SOC</div>
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#resume">Resume</a>
+      <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-meta">
+      <span>Charlotte NC / Remote</span>
+      <span class="live">OPEN TO WORK</span>
+    </div>
+    <h1 class="name">Michael<span class="overlap">Kurdi</span></h1>
+    <div class="slash-rule" aria-hidden="true"></div>
+  </header>
+
+  <div class="headline-block">
+    <div class="left">
+      <h2>Junior Security Analyst<br /><em>Security Operations · IT Risk</em></h2>
+      <p>Security+ · SNHU Summa · Charlotte NC / Remote. Regulated-ops habits meeting public detection work you can clone.</p>
+    </div>
+    <div class="cta-stack" id="contact">
+      <a id="resume" href="https://km-it-ops.github.io/resume.html" rel="noopener">Resume <span class="arr" aria-hidden="true">→</span></a>
+      <a href="mailto:kurdi.michael.it@gmail.com">Email <span class="arr" aria-hidden="true">→</span></a>
+      <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">→</span></a>
+      <a href="https://github.com/KM-it-ops" rel="noopener">GitHub <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <div class="section-label" id="work">Featured — clone these</div>
+  <section class="posters" aria-label="Featured projects">
+    <article class="poster lead">
+      <div>
+        <span class="tag">01 · Lead</span>
+        <h3>Log anomaly detection</h3>
+        <p>Rule-based + statistical detector for brute force, port scans, off-hours access, privilege escalation. Severity-ranked JSON alerts.</p>
+      </div>
+      <a class="go" href="https://github.com/KM-it-ops/security-log-anomaly-detection" rel="noopener">Open on GitHub →</a>
+    </article>
+    <article class="poster alt">
+      <div>
+        <span class="tag">02 · Engineering</span>
+        <h3>Proofhouse</h3>
+        <p>Local prompt toolkit. Offline compile + eval CLIs. No API key required on the certified path. Not a stand-in for ops tenure.</p>
+      </div>
+      <a class="go" href="https://github.com/KM-it-ops/Proofhouse" rel="noopener">Open on GitHub →</a>
+    </article>
+  </section>
+
+  <div class="section-label">Side</div>
+  <section class="side-strip" aria-label="Side projects">
+    <article class="side-card">
+      <p class="k">GitHub only</p>
+      <h3>AgentForge</h3>
+      <p>Config framework for agentic coding assistants.</p>
+      <a href="https://github.com/KM-it-ops/AgentForge" rel="noopener">GitHub →</a>
+    </article>
+    <article class="side-card">
+      <p class="k">Client</p>
+      <h3>OFG</h3>
+      <p>Small client-facing dairy business site.</p>
+      <a href="https://ofg-sites.vercel.app/" rel="noopener">Live site →</a>
+    </article>
+  </section>
+
+  <footer>
+    <span>Michael Kurdi · Junior Security Analyst</span>
+    <span><a href="index.html">Mocks hub</a> · Direction D</span>
+  </footer>
+</body>
+</html>

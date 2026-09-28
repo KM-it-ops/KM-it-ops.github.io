@@ -1,37 +1,49 @@
-# DESIGN — Casefile Monument
+# DESIGN — Noir Spotlight + Orb Seal
 
-**Lane:** product-site craft · **evolved** past iridescent-lens cinema (Boss rejected as agency/bland)  
-**Live:** https://km-it-ops.github.io/  
-**Content SoT:** [`content/BRIEF.md`](content/BRIEF.md)
+**Lane:** hire-first personal site · Junior Security Analyst / SecOps / IT Risk  
+**Live (draft branch):** PR #12 · preview `npx vite preview --port 4176`  
+**Content SoT:** [`content/BRIEF.md`](content/BRIEF.md) · [`src/content.ts`](src/content.ts)
 
 ## Direction
 
-Paper-led personal site. Signature beat: **CYB-210 Packet Tracer topology SVG** that draws itself — his coursework as the spectacle, not a purchased 3D lens. Labs as a vertical casefile list with plain English. One void band for contact only.
+Dark cinematic shell with gold accents and italic/serif display. Signature asset: **Orb Seal** (CSS/SVG only — no R3F). Hero Orb is large, then snaps into the sticky nav on scroll. `prefers-reduced-motion` = snap (no half-morph transitions).
 
-## Dials
+## Hierarchy (above the fold)
 
-`DESIGN_VARIANCE` 7 · `MOTION_INTENSITY` 6 · `VISUAL_DENSITY` 4 · Class A (Vite+React, no R3F)
+1. Available eyebrow  
+2. **Mahmoud Al Kurdi** + muted `(Michael Kurdi)`  
+3. **Junior Security Analyst** role (ink, strong 700) — wins the eye over name size  
+4. **Proof strip** — log anomaly detection, cloneable, View repo →  
+5. Seeking line + CTAs (Resume gold-fill primary; Email secondary ghost; LinkedIn/GitHub tertiary)  
+6. Cred chips including **8 yrs AA · not SIEM**  
+
+Hire glance (want / bring / won’t) sits **below the fold**, after selected work.
+
+## Featured order
+
+Log anomaly (lead) → phishing → VulnTrack. Proofhouse lives under Also shipping (SIDE_PROJECTS).
 
 ## Tokens
 
 ```css
---paper: #e9ebe8;
---ink: #14171c;
---accent: #0f6e56;
---accent-2: #c45d2c; /* scarce */
---font: "Syne";
---mono: "IBM Plex Mono";
+--noir-bg: #050505;
+--noir-ink: #f4efe6;
+--noir-muted: #9a9388;
+--noir-gold: #d4af37;
+--noir-serif: "Playfair Display";
+--noir-mono: "JetBrains Mono";
+--noir-sans: "Figtree";
+--noir-body: 17px; /* readable floor */
+--noir-ui-min: 15px;
 ```
 
-## Spine
+## Nav / SEO
 
-1. Hero — topology SVG atmosphere + name + one line + CTAs  
-2. Facts — GPA / Sec+ / 2015 monument strip  
-3. Labs — five coursework casefiles  
-4. Path — experience  
-5. Contact — void band  
+- Brand: **Mahmoud Al Kurdi** (xs: **M. Al Kurdi**) — not MK / Portfolio  
+- Title / OG / Twitter / JSON-LD Person: Mahmoud-primary, Michael as alternateName / paren  
 
 ## Deploy
 
 - Vite `base: '/'`, `build.outDir: 'docs'`
-- Gate: `npm run build` → `npm run preview` before push
+- Gate: `npm run build` → `npx vite preview --port 4176` before push  
+- **Do not merge to `main` / GitHub Pages until signed off**

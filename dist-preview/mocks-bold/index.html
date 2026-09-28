@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bold portfolio mocks — Michael Kurdi</title>
+  <meta name="description" content="Hub for bold static HTML portfolio directions D / E / E+ / F." />
+  <style>
+    :root {
+      --bg: #08090c;
+      --ink: #f2f4f8;
+      --muted: #8b93a8;
+      --d: #c8ff00;
+      --e: #d4af37;
+      --f: #ff3b1f;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(920px, 100% - 2rem); margin: 0 auto; padding: 2rem 0 3.5rem; }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+    }
+    .lede {
+      color: var(--muted);
+      max-width: 48ch;
+      margin: 0 0 2rem;
+      font-size: 17px;
+    }
+    .note {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid #1e2633;
+      padding: 0.85rem 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .note strong { color: var(--ink); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      display: block;
+      text-decoration: none;
+      border: 2px solid #1e2633;
+      padding: 1.35rem 1.25rem;
+      transition: border-color 0.15s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover,
+    .card:focus-visible {
+      outline: none;
+      transform: translateY(-2px);
+    }
+    .card.d { border-color: rgba(200, 255, 0, 0.35); }
+    .card.d:hover, .card.d:focus-visible { border-color: var(--d); background: rgba(200, 255, 0, 0.04); }
+    .card.e { border-color: rgba(212, 175, 55, 0.35); }
+    .card.e:hover, .card.e:focus-visible { border-color: var(--e); background: rgba(212, 175, 55, 0.04); }
+    .card.eplus { border-color: rgba(212, 175, 55, 0.55); background: rgba(212, 175, 55, 0.03); }
+    .card.eplus:hover, .card.eplus:focus-visible { border-color: #f0d878; background: rgba(212, 175, 55, 0.08); }
+    .card.f { border-color: rgba(255, 59, 31, 0.35); }
+    .card.f:hover, .card.f:focus-visible { border-color: var(--f); background: rgba(255, 59, 31, 0.04); }
+    .card .dir {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 0.5rem;
+      font-weight: 700;
+    }
+    .card.d .dir { color: var(--d); }
+    .card.e .dir { color: var(--e); }
+    .card.eplus .dir { color: #f0d878; }
+    .card.f .dir { color: var(--f); }
+    .card h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 52ch;
+    }
+    .card .open {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .card.d .open { color: var(--d); }
+    .card.e .open { color: var(--e); }
+    .card.eplus .open { color: #f0d878; }
+    .card.f .open { color: var(--f); }
+    footer {
+      margin-top: 2.5rem;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .card:hover, .card:focus-visible { transform: none; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Michael Kurdi · visual direction lab</p>
+    <h1>Bold mocks — round 2</h1>
+    <p class="lede">A/B/C were rejected as too bland. These push scale, contrast, and drama — plus an E+ asset picker. Static HTML only — not the React app. Port 4181.</p>
+    <div class="note">
+      <strong>Content locked:</strong> Junior Security Analyst | Security Operations · IT Risk | Security+ · SNHU Summa | Charlotte NC / Remote · CTAs Resume / Email / LinkedIn / GitHub · Featured Log anomaly + Proofhouse · Side AgentForge + OFG
+    </div>
+    <div class="grid">
+      <a class="card eplus" href="e-noir-assets.html">
+        <p class="dir">Direction E+ · Assets</p>
+        <h2>E+ Assets</h2>
+        <p>Noir Spotlight with sticky morphing nav + 10 cinematic hero asset concepts (KM monogram, prism, orb, seal, blade, halo, bust, cube, aperture, helix). Pick one — it collapses into the top bar on scroll.</p>
+        <span class="open">Open asset picker →</span>
+      </a>
+      <a class="card d" href="d-signal-brutal.html">
+        <p class="dir">Direction D</p>
+        <h2>Signal Brutal</h2>
+        <p>Brutalist / Swiss × SOC. Huge display type, hard black/white, electric lime accent, poster-scale cards. Zero softness.</p>
+        <span class="open">Open mock →</span>
+      </a>
+      <a class="card e" href="e-noir-spotlight.html">
+        <p class="dir">Direction E</p>
+        <h2>Noir Spotlight</h2>
+        <p>Cinematic black, hard spotlight behind the name, thin gold hairlines, serif display, film-still project panels.</p>
+        <span class="open">Open mock →</span>
+      </a>
+      <a class="card f" href="f-kinetic-ink.html">
+        <p class="dir">Direction F</p>
+        <h2>Kinetic Ink</h2>
+        <p>Deep indigo + vermillion. Oversized italic type, diagonal band, skewed case blocks with big 01/02 numbers. Flat CSS only.</p>
+        <span class="open">Open mock →</span>
+      </a>
+    </div>
+    <footer>mocks-bold · do not push to Pages · serve on 127.0.0.1:4181</footer>
+  </div>
+</body>
+</html>
