@@ -1,5 +1,5 @@
-import ImmersivePortfolio from './ImmersivePortfolio'
+import NoirSpotlight from './NoirSpotlight'
 
 export default function App() {
-  return <ImmersivePortfolio />
+  return <NoirSpotlight />
 }

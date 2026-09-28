@@ -1,4 +1,3 @@
-/* Global reset — design systems live in designs/*.css */
 *,
 *::before,
 *::after {
@@ -7,8 +6,6 @@
 
 html {
   scroll-behavior: smooth;
-  background: #05060c;
-  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -19,43 +16,22 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
-  font-size: 1.125rem;
-  line-height: 1.55;
-  background: #05060c;
-  color: #eef2ff;
-  -webkit-font-smoothing: antialiased;
+  background: #050505;
+  color: #f4efe6;
 }
 
 #root {
   min-height: 100vh;
-  background: #05060c;
 }
 
-:focus-visible {
-  outline: 2px solid #c45d2c;
-  outline-offset: 3px;
-}
-
-/* Lenis. Only these four rules are required by the engine; the smooth-scroll
-   override matters because Lenis drives the real scroll position itself and the
-   CSS `scroll-behavior: smooth` above would fight it. In-page anchors are
-   handled in src/motion.ts so focus still moves the way native navigation does.
-   Under reduced motion Lenis never starts, no `lenis` class is added, and the
-   native smooth-scroll rule above stands. */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahmoud Al Kurdi (Michael Kurdi) — Noir Assets (E+)</title>
+  <meta name="description" content="Mock E+: Noir Spotlight with 11 hero asset concepts (incl. Orb Seal). Sticky nav morphs selected asset on scroll." />
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0c0c0c;
+      --ink: #f4efe6;
+      --muted: #9a9388;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.35);
+      --gold-soft: rgba(212, 175, 55, 0.12);
+      --ice: #9ec9e8;
+      --nav-h: 3.5rem;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--ice); }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 200;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    .mock-banner {
+      position: relative;
+      z-index: 60;
+      border-bottom: 1px solid var(--gold-dim);
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      padding: 0.55rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      justify-content: space-between;
+      letter-spacing: 0.04em;
+      background: #050505;
+    }
+    .mock-banner strong { color: var(--gold); font-weight: 600; }
+    .mock-banner a { color: var(--muted); font-size: 13px; }
+    .mock-banner a:hover { color: var(--ink); }
+
+    /* ——— Sticky locked nav ——— */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem 1rem;
+      padding: 0 1rem;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    }
+    .nav-asset {
+      flex: 0 0 auto;
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--gold-dim);
+      background: #080808;
+      opacity: 0;
+      transform: scale(0.4);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .nav-asset svg,
+    .nav-asset .asset-inner {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    body.nav-collapsed .nav-asset {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-primary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem 0.85rem;
+      margin-left: 0.5rem;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .nav-primary a {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 0.35rem 0;
+      min-height: 2rem;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-primary a:hover,
+    .nav-primary a:focus-visible {
+      color: var(--gold);
+      outline: none;
+    }
+    .nav-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-left: auto;
+      flex: 0 1 auto;
+      justify-content: flex-end;
+    }
+    .nav-ctas a {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--gold-dim);
+      padding: 0.35rem 0.55rem;
+      min-height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .nav-ctas a:hover,
+    .nav-ctas a:focus-visible {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold);
+      outline: none;
+    }
+    @media (max-width: 720px) {
+      .sticky-nav { flex-wrap: wrap; height: auto; min-height: var(--nav-h); padding: 0.45rem 0.75rem; gap: 0.4rem 0.65rem; }
+      .nav-brand { font-size: 12px; }
+      .nav-primary { width: 100%; margin-left: 0; order: 3; gap: 0.5rem 0.85rem; }
+      .nav-ctas a { font-size: 13px; padding: 0.3rem 0.45rem; }
+      .nav-ctas .hide-sm { display: none; }
+    }
+
+    .shell {
+      width: min(1100px, 100% - 2rem);
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ——— Hero with morphing asset ——— */
+    .hero {
+      position: relative;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      isolation: isolate;
+      overflow: visible;
+    }
+    .hero-spotlight {
+      position: absolute;
+      left: 50%;
+      top: 8%;
+      transform: translateX(-50%);
+      width: min(720px, 130vw);
+      height: min(520px, 95vw);
+      background: radial-gradient(
+        ellipse at center 40%,
+        rgba(255, 240, 200, 0.16) 0%,
+        rgba(212, 175, 55, 0.06) 28%,
+        rgba(5, 5, 5, 0) 70%
+      );
+      z-index: -1;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    body.nav-collapsed .hero-spotlight { opacity: 0.35; }
+
+    .hero-asset-wrap {
+      position: relative;
+      width: min(280px, 58vw);
+      height: min(280px, 58vw);
+      margin: 0 auto 1.5rem;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                  opacity 0.4s ease;
+      transform-origin: center top;
+      will-change: transform, opacity;
+    }
+    .hero-asset-wrap .stage {
+      width: 100%;
+      height: 100%;
+      /* Floating asset — no bordered square / panel behind hero art */
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+      position: relative;
+    }
+    .hero-asset-wrap .stage svg,
+    .hero-asset-wrap .stage .asset-inner {
+      width: 100%;
+      height: 100%;
+      display: block;
+      /* Soft float; atmosphere comes from .hero-spotlight, not a card */
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45))
+              drop-shadow(0 0 36px rgba(212, 175, 55, 0.12));
+    }
+    /* Strip SVG canvas fill so the square black plate disappears in hero */
+    .hero-asset-wrap .stage svg > rect:first-of-type {
+      fill: none;
+    }
+    body.nav-collapsed .hero-asset-wrap {
+      transform: scale(0.12) translateY(-40px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1rem;
+    }
+    h1.name {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 11vw, 6.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 0 0 1rem;
+      color: var(--ink);
+      text-shadow: 0 0 80px rgba(212, 175, 55, 0.25);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    h1.name .name-aka {
+      display: block;
+      margin-top: 0.45rem;
+      font-family: var(--sans);
+      font-style: normal;
+      font-weight: 400;
+      font-size: max(15px, 0.22em);
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-shadow: none;
+    }
+    body.nav-collapsed h1.name {
+      opacity: 0.55;
+      transform: scale(0.92);
+    }
+    .role-line {
+      font-family: var(--mono);
+      font-size: clamp(13px, 2.2vw, 15px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      max-width: 42rem;
+      margin: 0 auto 1.25rem;
+      line-height: 1.7;
+    }
+    .role-line strong { color: var(--ink); font-weight: 600; }
+    .hairline {
+      width: min(180px, 40%);
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 1.25rem;
+      opacity: 0.7;
+    }
+    .seek {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 36rem;
+      margin: 0 auto 1.5rem;
+      font-family: var(--serif);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    .hero-ctas a {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--gold-dim);
+      padding: 0.55rem 0.85rem;
+      min-height: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .hero-ctas a:hover,
+    .hero-ctas a:focus-visible {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold);
+      outline: none;
+    }
+    .active-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ice);
+      margin: 1rem 0 0;
+    }
+    .active-label strong { color: var(--gold); font-weight: 600; }
+
+    .strip-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0 1.25rem;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .strip-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    /* ——— Asset picker grid ——— */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+    @media (min-width: 560px) {
+      .asset-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .asset-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (min-width: 1100px) {
+      .asset-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+
+    .asset-card {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      font: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .asset-card:hover,
+    .asset-card:focus-visible {
+      border-color: var(--gold);
+      outline: none;
+    }
+    .asset-card[aria-checked="true"] {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold), 0 0 28px rgba(212, 175, 55, 0.15);
+    }
+    .asset-card .preview {
+      aspect-ratio: 1;
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(212, 175, 55, 0.1), transparent 60%),
+        #080808;
+      position: relative;
+      overflow: hidden;
+    }
+    .asset-card .preview svg,
+    .asset-card .preview .asset-inner {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .asset-card .meta {
+      padding: 0.75rem 0.85rem 0.95rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    .asset-card .num {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.25rem;
+    }
+    .asset-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 0.35rem;
+      line-height: 1.2;
+    }
+    .asset-card .vibe {
+      margin: 0 0 0.75rem;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .asset-card .select-btn {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.45rem 0.7rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .asset-card[aria-checked="true"] .select-btn {
+      background: transparent;
+      color: var(--gold);
+    }
+    .asset-card .select-btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* ——— Work strip ——— */
+    .film-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding-bottom: 2.5rem;
+    }
+    @media (min-width: 780px) {
+      .film-strip { grid-template-columns: 1.25fr 1fr; gap: 1.25rem; }
+    }
+    .still {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      min-height: 240px;
+      padding: 1.5rem 1.35rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .still::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.35) 45%, rgba(5, 5, 5, 0.15) 100%),
+        radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.12), transparent 55%);
+      z-index: 0;
+    }
+    .still.lead::before {
+      background:
+        linear-gradient(to top, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.25) 50%, transparent 100%),
+        radial-gradient(ellipse at 70% 30%, rgba(158, 201, 232, 0.15), transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(212, 175, 55, 0.1), transparent 45%);
+    }
+    .still .frame {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      right: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      z-index: 1;
+    }
+    .still .frame .reel { color: var(--gold); }
+    .still-body { position: relative; z-index: 1; }
+    .still h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.05;
+      margin: 0 0 0.65rem;
+    }
+    .still p {
+      margin: 0 0 1.1rem;
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 38ch;
+    }
+    .still a.btn {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 0.65rem 1rem;
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid var(--gold);
+    }
+    .still a.btn:hover,
+    .still a.btn:focus-visible {
+      background: transparent;
+      color: var(--gold);
+      outline: none;
+    }
+
+    .path-block {
+      border: 1px solid var(--gold-dim);
+      padding: 1.5rem 1.25rem;
+      margin-bottom: 2rem;
+      background: var(--panel);
+    }
+    .path-block h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 0.75rem;
+    }
+    .path-block p { margin: 0; color: var(--muted); font-size: 17px; max-width: 52ch; }
+
+    .contact-block {
+      border-top: 1px solid var(--gold-dim);
+      padding: 2rem 0 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-block h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 0.75rem;
+    }
+    .contact-block p { margin: 0 0 1rem; color: var(--muted); }
+    .contact-block .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .contact-block .links a {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-dim);
+      padding: 0.55rem 0.85rem;
+      color: var(--ink);
+    }
+    .contact-block .links a:hover { border-color: var(--gold); color: var(--gold); }
+
+    footer {
+      border-top: 1px solid var(--gold-dim);
+      padding: 1.5rem 0 2.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--gold); }
+
+    /* Hidden SVG library — cloned into stages */
+    #asset-defs { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      body::before { opacity: 0.03; }
+      .hero-asset-wrap,
+      .nav-asset,
+      h1.name,
+      .hero-spotlight {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-banner">
+    <span><strong>MOCK E+</strong> · Noir Assets · sticky morph nav · static HTML</span>
+    <a href="index.html">← All bold mocks</a>
+  </div>
+
+  <!-- Sticky locked top menu -->
+  <nav class="sticky-nav" aria-label="Primary">
+    <div class="nav-asset" id="nav-asset" aria-hidden="true" title="Selected hero asset"></div>
+    <div class="nav-brand">MK <span>/</span> Portfolio</div>
+    <div class="nav-primary">
+      <a href="#work">Work</a>
+      <a href="#path">Path</a>
+      <a href="#assets">Assets</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-ctas">
+      <a href="https://km-it-ops.github.io/resume.html" rel="noopener">Resume</a>
+      <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+      <a class="hide-sm" href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- SVG asset library -->
+  <div id="asset-defs" aria-hidden="true">
+    <!-- 01 KM Monogram Spotlight -->
+    <svg id="svg-01" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g01cone" cx="50%" cy="18%" r="55%">
+          <stop offset="0%" stop-color="#fff0c8" stop-opacity="0.55"/>
+          <stop offset="35%" stop-color="#d4af37" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="g01gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f0d878"/>
+          <stop offset="50%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#8a7020"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <ellipse cx="100" cy="36" rx="48" ry="10" fill="#fff0c8" opacity="0.35"/>
+      <path d="M60 20 L100 200 L140 20" fill="url(#g01cone)" opacity="0.9"/>
+      <text x="100" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-style="italic" font-weight="400" fill="url(#g01gold)" filter="drop-shadow(0 0 12px rgba(212,175,55,0.5))">KM</text>
+      <ellipse cx="100" cy="175" rx="36" ry="6" fill="#d4af37" opacity="0.15"/>
+    </svg>
+
+    <!-- 02 Obsidian Prism -->
+    <svg id="svg-02" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g02a" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1a1a1c"/>
+          <stop offset="40%" stop-color="#0a0a0b"/>
+          <stop offset="100%" stop-color="#050505"/>
+        </linearGradient>
+        <linearGradient id="g02rim" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f0d878"/>
+          <stop offset="100%" stop-color="#d4af37" stop-opacity="0.2"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <polygon points="100,28 168,85 140,172 60,172 32,85" fill="url(#g02a)" stroke="url(#g02rim)" stroke-width="1.5"/>
+      <polygon points="100,28 168,85 100,110" fill="#121214" stroke="#d4af37" stroke-width="0.6" opacity="0.9"/>
+      <polygon points="100,28 32,85 100,110" fill="#0e0e10" stroke="#d4af37" stroke-width="0.5" opacity="0.7"/>
+      <line x1="100" y1="110" x2="100" y2="172" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/>
+      <line x1="100" y1="110" x2="168" y2="85" stroke="#f0d878" stroke-width="1" opacity="0.7"/>
+      <circle cx="118" cy="70" r="3" fill="#f0d878" opacity="0.8"/>
+    </svg>
+
+    <!-- 03 Signal Orb -->
+    <svg id="svg-03" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g03orb" cx="38%" cy="32%" r="60%">
+          <stop offset="0%" stop-color="#2a2a2e"/>
+          <stop offset="45%" stop-color="#121214"/>
+          <stop offset="100%" stop-color="#050505"/>
+        </radialGradient>
+        <linearGradient id="g03eq" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
+          <stop offset="20%" stop-color="#d4af37" stop-opacity="0.9"/>
+          <stop offset="80%" stop-color="#f0d878" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <circle cx="100" cy="100" r="62" fill="url(#g03orb)" stroke="#1a1a1c" stroke-width="1"/>
+      <ellipse cx="100" cy="100" rx="62" ry="14" fill="none" stroke="url(#g03eq)" stroke-width="1.5"/>
+      <path d="M38 88 Q100 72 162 88" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.35"/>
+      <circle cx="78" cy="72" r="10" fill="#fff" opacity="0.06"/>
+      <circle cx="155" cy="95" r="2" fill="#f0d878" opacity="0.9"/>
+    </svg>
+
+    <!-- 04 Seal Ring -->
+    <svg id="svg-04" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g04ring" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f0d878"/>
+          <stop offset="50%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#8a7020"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <circle cx="100" cy="100" r="68" fill="none" stroke="url(#g04ring)" stroke-width="3"/>
+      <circle cx="100" cy="100" r="58" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.55"/>
+      <circle cx="100" cy="100" r="48" fill="#0a0a0a" stroke="#d4af37" stroke-width="1.2"/>
+      <text x="100" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-style="italic" fill="#d4af37">KM</text>
+      <g fill="none" stroke="#d4af37" stroke-width="0.7" opacity="0.6">
+        <path d="M100 52 L106 62 L100 58 L94 62 Z"/>
+        <path d="M100 148 L106 138 L100 142 L94 138 Z"/>
+        <path d="M52 100 L62 94 L58 100 L62 106 Z"/>
+        <path d="M148 100 L138 94 L142 100 L138 106 Z"/>
+      </g>
+      <circle cx="100" cy="100" r="72" fill="none" stroke="#d4af37" stroke-width="0.4" stroke-dasharray="2 4" opacity="0.4"/>
+    </svg>
+
+    <!-- 05 Blade Shard -->
+    <svg id="svg-05" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g05blade" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#c8c4bc"/>
+          <stop offset="30%" stop-color="#3a3a3c"/>
+          <stop offset="70%" stop-color="#121214"/>
+          <stop offset="100%" stop-color="#d4af37" stop-opacity="0.4"/>
+        </linearGradient>
+        <linearGradient id="g05edge" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f0d878"/>
+          <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <polygon points="128,22 148,48 78,178 52,168 118,38" fill="url(#g05blade)" stroke="url(#g05edge)" stroke-width="1.2"/>
+      <polyline points="122,36 85,155" fill="none" stroke="#f0d878" stroke-width="0.7" opacity="0.55"/>
+      <polygon points="128,22 148,48 138,42" fill="#e8e4dc" opacity="0.35"/>
+      <line x1="60" y1="160" x2="90" y2="172" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+    </svg>
+
+    <!-- 06 Halo Disc -->
+    <svg id="svg-06" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g06glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#d4af37" stop-opacity="0.45"/>
+          <stop offset="50%" stop-color="#d4af37" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="g06disc" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#c9a227"/>
+          <stop offset="40%" stop-color="#8a7020"/>
+          <stop offset="70%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#5c4a14"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <ellipse cx="100" cy="100" rx="90" ry="90" fill="url(#g06glow)"/>
+      <ellipse cx="100" cy="100" rx="52" ry="52" fill="url(#g06disc)" stroke="#f0d878" stroke-width="1.5"/>
+      <ellipse cx="100" cy="100" rx="38" ry="38" fill="none" stroke="#050505" stroke-width="2" opacity="0.4"/>
+      <ellipse cx="88" cy="88" rx="18" ry="10" fill="#fff0c8" opacity="0.2"/>
+      <circle cx="100" cy="100" r="6" fill="#050505" opacity="0.5"/>
+    </svg>
+
+    <!-- 07 Wireframe Bust -->
+    <svg id="svg-07" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="200" fill="#080808"/>
+      <g fill="none" stroke="#d4af37" stroke-width="0.9" opacity="0.85">
+        <!-- helmet/head silhouette wireframe — abstract, no face -->
+        <ellipse cx="100" cy="78" rx="42" ry="48"/>
+        <path d="M58 78 Q58 40 100 32 Q142 40 142 78"/>
+        <path d="M62 95 Q100 110 138 95"/>
+        <path d="M70 60 Q100 52 130 60"/>
+        <line x1="100" y1="32" x2="100" y2="126"/>
+        <path d="M72 120 Q100 138 128 120"/>
+        <path d="M78 126 L70 165 L130 165 L122 126"/>
+        <line x1="85" y1="145" x2="115" y2="145"/>
+        <path d="M58 78 L48 100 L62 120"/>
+        <path d="M142 78 L152 100 L138 120"/>
+        <polyline points="48,100 100,88 152,100" opacity="0.5"/>
+      </g>
+      <circle cx="100" cy="55" r="2" fill="#f0d878"/>
+    </svg>
+
+    <!-- 08 Glyph Cube -->
+    <svg id="svg-08" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g08top" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2a2a2e"/>
+          <stop offset="100%" stop-color="#121214"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <!-- isometric cube -->
+      <polygon points="100,40 160,70 100,100 40,70" fill="url(#g08top)" stroke="#d4af37" stroke-width="1.2"/>
+      <polygon points="40,70 100,100 100,160 40,130" fill="#0c0c0e" stroke="#d4af37" stroke-width="1"/>
+      <polygon points="100,100 160,70 160,130 100,160" fill="#161618" stroke="#d4af37" stroke-width="1"/>
+      <!-- glyphs -->
+      <text x="100" y="78" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4af37" opacity="0.8">⬡</text>
+      <text x="70" y="125" text-anchor="middle" font-family="monospace" font-size="11" fill="#9ec9e8" opacity="0.7">⌀</text>
+      <text x="130" y="125" text-anchor="middle" font-family="monospace" font-size="11" fill="#d4af37" opacity="0.7">⌘</text>
+      <line x1="100" y1="40" x2="100" y2="100" stroke="#f0d878" stroke-width="0.5" opacity="0.4"/>
+    </svg>
+
+    <!-- 09 Lens Aperture -->
+    <svg id="svg-09" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="200" fill="#080808"/>
+      <circle cx="100" cy="100" r="72" fill="none" stroke="#d4af37" stroke-width="2"/>
+      <circle cx="100" cy="100" r="58" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/>
+      <!-- iris blades -->
+      <g fill="#0a0a0a" stroke="#d4af37" stroke-width="0.9">
+        <path d="M100 42 L130 58 L118 85 L100 78 Z"/>
+        <path d="M148 70 L158 100 L132 108 L128 85 Z"/>
+        <path d="M148 130 L130 158 L108 132 L118 115 Z"/>
+        <path d="M100 158 L70 142 L82 115 L100 122 Z"/>
+        <path d="M52 130 L42 100 L68 92 L72 115 Z"/>
+        <path d="M52 70 L70 42 L92 68 L82 85 Z"/>
+      </g>
+      <circle cx="100" cy="100" r="22" fill="#050505" stroke="#f0d878" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="10" fill="#0c0c0c" stroke="#d4af37" stroke-width="0.6"/>
+      <circle cx="100" cy="100" r="3" fill="#d4af37" opacity="0.7"/>
+    </svg>
+
+    <!-- 10 Ribbon Helix -->
+    <svg id="svg-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g10r" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f0d878"/>
+          <stop offset="40%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#5c4a14"/>
+        </linearGradient>
+        <radialGradient id="g10spot" cx="50%" cy="20%" r="55%">
+          <stop offset="0%" stop-color="#fff0c8" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <ellipse cx="100" cy="40" rx="50" ry="30" fill="url(#g10spot)"/>
+      <!-- möbius / twisted ribbon -->
+      <path d="M70 40 C110 50, 130 70, 120 95 C110 120, 70 130, 80 155 C90 175, 130 170, 140 150"
+            fill="none" stroke="url(#g10r)" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+      <path d="M70 40 C110 50, 130 70, 120 95 C110 120, 70 130, 80 155 C90 175, 130 170, 140 150"
+            fill="none" stroke="url(#g10r)" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M75 55 C105 62, 118 78, 112 98"
+            fill="none" stroke="#fff0c8" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+      <ellipse cx="100" cy="175" rx="28" ry="5" fill="#d4af37" opacity="0.12"/>
+    </svg>
+
+    <!-- 11 Orb Seal — Seal Ring nested inside Signal Orb -->
+    <svg id="svg-11" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g11orb" cx="36%" cy="28%" r="64%">
+          <stop offset="0%" stop-color="#3e3e44"/>
+          <stop offset="28%" stop-color="#1c1c20"/>
+          <stop offset="62%" stop-color="#0c0c0e"/>
+          <stop offset="100%" stop-color="#030303"/>
+        </radialGradient>
+        <radialGradient id="g11glass" cx="40%" cy="34%" r="48%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+          <stop offset="35%" stop-color="#9ec9e8" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g11core" cx="48%" cy="46%" r="55%">
+          <stop offset="0%" stop-color="#1a1610" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#050505" stop-opacity="0.2"/>
+        </radialGradient>
+        <linearGradient id="g11eq" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
+          <stop offset="12%" stop-color="#d4af37" stop-opacity="0.75"/>
+          <stop offset="50%" stop-color="#f0d878" stop-opacity="1"/>
+          <stop offset="88%" stop-color="#d4af37" stop-opacity="0.75"/>
+          <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="g11seal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f0d878"/>
+          <stop offset="45%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#8a7020"/>
+        </linearGradient>
+        <clipPath id="g11clip">
+          <circle cx="100" cy="100" r="56"/>
+        </clipPath>
+      </defs>
+      <rect width="200" height="200" fill="#080808"/>
+      <!-- soft outer halo -->
+      <circle cx="100" cy="100" r="74" fill="#d4af37" opacity="0.05"/>
+      <!-- sphere body (matte / glass black) -->
+      <circle cx="100" cy="100" r="66" fill="url(#g11orb)" stroke="#1a1a1e" stroke-width="1.2"/>
+      <!-- glass refraction tint -->
+      <circle cx="100" cy="100" r="66" fill="url(#g11glass)"/>
+      <!-- interior depth well behind seal -->
+      <circle cx="100" cy="100" r="48" fill="url(#g11core)"/>
+      <!-- nested engraved seal / crest (inside orb) -->
+      <g clip-path="url(#g11clip)">
+        <!-- outer seal ring -->
+        <circle cx="100" cy="100" r="40" fill="none" stroke="url(#g11seal)" stroke-width="2.4"/>
+        <circle cx="100" cy="100" r="34" fill="none" stroke="#d4af37" stroke-width="0.7" opacity="0.5"/>
+        <!-- face of seal -->
+        <circle cx="100" cy="100" r="28" fill="#0a0a0a" stroke="#d4af37" stroke-width="1.15"/>
+        <!-- crescent engraving (exotic crest mark) -->
+        <path d="M86 72 A30 30 0 0 1 114 72" fill="none" stroke="#f0d878" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+        <path d="M84 74 A28 28 0 0 1 112 74" fill="none" stroke="#d4af37" stroke-width="0.55" opacity="0.35"/>
+        <path d="M88 128 A26 26 0 0 0 112 128" fill="none" stroke="#d4af37" stroke-width="0.9" opacity="0.45"/>
+        <!-- dashed micro-ring -->
+        <circle cx="100" cy="100" r="43" fill="none" stroke="#d4af37" stroke-width="0.35" stroke-dasharray="1.5 3" opacity="0.4"/>
+        <!-- KM monogram -->
+        <text x="100" y="108" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-style="italic" font-weight="400" fill="url(#g11seal)">KM</text>
+        <!-- cardinal engraved ticks -->
+        <g fill="none" stroke="#d4af37" stroke-width="0.65" opacity="0.6">
+          <path d="M100 60 L104 68 L100 65 L96 68 Z"/>
+          <path d="M100 140 L104 132 L100 135 L96 132 Z"/>
+          <path d="M60 100 L68 96 L65 100 L68 104 Z"/>
+          <path d="M140 100 L132 96 L135 100 L132 104 Z"/>
+        </g>
+      </g>
+      <!-- gold equator / rim light -->
+      <ellipse cx="100" cy="100" rx="66" ry="17" fill="none" stroke="url(#g11eq)" stroke-width="1.7"/>
+      <path d="M34 90 Q100 74 166 90" fill="none" stroke="#d4af37" stroke-width="0.55" opacity="0.28"/>
+      <!-- sphere rim catch -->
+      <circle cx="100" cy="100" r="66" fill="none" stroke="#f0d878" stroke-width="0.45" opacity="0.22"/>
+      <!-- specular highlight (glass front) -->
+      <ellipse cx="76" cy="68" rx="16" ry="10" fill="#ffffff" opacity="0.13"/>
+      <ellipse cx="72" cy="64" rx="6" ry="4" fill="#ffffff" opacity="0.25"/>
+      <!-- right-edge gold rim spark -->
+      <path d="M152 76 Q164 100 152 124" fill="none" stroke="#f0d878" stroke-width="1.1" opacity="0.4"/>
+      <circle cx="162" cy="98" r="2.4" fill="#f0d878" opacity="0.92"/>
+      <!-- faint lower contact shadow -->
+      <ellipse cx="100" cy="168" rx="34" ry="5" fill="#d4af37" opacity="0.08"/>
+    </svg>
+
+  </div>
+
+  <div class="shell">
+    <section class="hero" aria-labelledby="name" id="hero">
+      <div class="hero-spotlight" aria-hidden="true"></div>
+      <div class="hero-asset-wrap" id="hero-asset-wrap">
+        <div class="stage" id="hero-stage"></div>
+      </div>
+      <p class="eyebrow">Scene 01 · Asset lab · Available</p>
+      <h1 class="name" id="name">Mahmoud Al Kurdi<span class="name-aka">(Michael Kurdi)</span></h1>
+      <div class="hairline" aria-hidden="true"></div>
+      <p class="role-line">
+        <strong>Junior Security Analyst</strong>
+        · Security Operations · IT Risk
+        · Security+ · SNHU Summa
+        · Charlotte NC / Remote
+      </p>
+      <p class="seek">Eight years of regulated aviation security ops. Public detection work you can clone. Looking for the junior analyst seat.</p>
+      <div class="hero-ctas">
+        <a href="https://km-it-ops.github.io/resume.html" rel="noopener">Resume</a>
+        <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+      </div>
+      <p class="active-label">Hero asset · <strong id="active-name">11 · Orb Seal</strong></p>
+    </section>
+
+    <div class="strip-label" id="assets">Hero asset previews</div>
+    <p style="margin:-0.5rem 0 1.25rem;color:var(--muted);font-size:15px;font-family:var(--mono);letter-spacing:0.04em;">
+      Select one — it fills the hero above and collapses into the sticky nav on scroll.
+    </p>
+
+    <div class="asset-grid" role="radiogroup" aria-label="Hero asset concepts" id="asset-grid">
+      <!-- cards injected / static below -->
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="01" data-name="KM Monogram Spotlight">
+        <div class="preview" data-mount="01"></div>
+        <div class="meta">
+          <p class="num">01</p>
+          <h3>KM Monogram Spotlight</h3>
+          <p class="vibe">KM glyph floating in a hard gold spotlight cone.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="02" data-name="Obsidian Prism">
+        <div class="preview" data-mount="02"></div>
+        <div class="meta">
+          <p class="num">02</p>
+          <h3>Obsidian Prism</h3>
+          <p class="vibe">Dark crystalline shard with gold rim light.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="03" data-name="Signal Orb">
+        <div class="preview" data-mount="03"></div>
+        <div class="meta">
+          <p class="num">03</p>
+          <h3>Signal Orb</h3>
+          <p class="vibe">Matte black sphere, thin gold equator / rim.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="04" data-name="Seal Ring">
+        <div class="preview" data-mount="04"></div>
+        <div class="meta">
+          <p class="num">04</p>
+          <h3>Seal Ring</h3>
+          <p class="vibe">Circular engraved seal / crest with KM.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="05" data-name="Blade Shard">
+        <div class="preview" data-mount="05"></div>
+        <div class="meta">
+          <p class="num">05</p>
+          <h3>Blade Shard</h3>
+          <p class="vibe">Thin angular metallic shard — tasteful noir edge.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="06" data-name="Halo Disc">
+        <div class="preview" data-mount="06"></div>
+        <div class="meta">
+          <p class="num">06</p>
+          <h3>Halo Disc</h3>
+          <p class="vibe">Flat bronze/gold disc with soft volumetric glow.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="07" data-name="Wireframe Bust">
+        <div class="preview" data-mount="07"></div>
+        <div class="meta">
+          <p class="num">07</p>
+          <h3>Wireframe Bust</h3>
+          <p class="vibe">Abstract wireframe helmet silhouette — no face.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="08" data-name="Glyph Cube">
+        <div class="preview" data-mount="08"></div>
+        <div class="meta">
+          <p class="num">08</p>
+          <h3>Glyph Cube</h3>
+          <p class="vibe">Wire/solid cube with security glyph faces.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="09" data-name="Lens Aperture">
+        <div class="preview" data-mount="09"></div>
+        <div class="meta">
+          <p class="num">09</p>
+          <h3>Lens Aperture</h3>
+          <p class="vibe">Camera/iris aperture rings in gold on black.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="false" data-asset="10" data-name="Ribbon Helix">
+        <div class="preview" data-mount="10"></div>
+        <div class="meta">
+          <p class="num">10</p>
+          <h3>Ribbon Helix</h3>
+          <p class="vibe">Elegant twisted ribbon / möbius under spotlight.</p>
+          <span class="select-btn">Select</span>
+        </div>
+      </button>
+      <button type="button" class="asset-card" role="radio" aria-checked="true" data-asset="11" data-name="Orb Seal">
+        <div class="preview" data-mount="11"></div>
+        <div class="meta">
+          <p class="num">11</p>
+          <h3>Orb Seal</h3>
+          <p class="vibe">Engraved KM seal nested inside a glass / matte black orb with gold rim.</p>
+          <span class="select-btn">Selected</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="strip-label" id="work">Selected work</div>
+    <section class="film-strip" aria-label="Featured projects">
+      <article class="still lead">
+        <div class="frame"><span class="reel">01 · Lead</span><span>Detection</span></div>
+        <div class="still-body">
+          <h3>Log anomaly detection</h3>
+          <p>Rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Severity-ranked JSON alerts.</p>
+          <a class="btn" href="https://github.com/KM-it-ops/security-log-anomaly-detection" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+      <article class="still">
+        <div class="frame"><span class="reel">02</span><span>Engineering</span></div>
+        <div class="still-body">
+          <h3>Proofhouse</h3>
+          <p>Local prompt toolkit — offline compile and eval CLIs. Certified path needs no API key. Engineering proof, not ops tenure.</p>
+          <a class="btn" href="https://github.com/KM-it-ops/Proofhouse" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="strip-label" id="path">Path</div>
+    <div class="path-block">
+      <h2>Security ops → junior analyst</h2>
+      <p>Regulated aviation security operations, Security+, SNHU summa cum laude. Building public detection tooling while targeting SOC / IT risk seats in Charlotte or remote.</p>
+    </div>
+
+    <section class="contact-block" id="contact">
+      <h2>Contact</h2>
+      <p>Open to junior security analyst and security operations roles.</p>
+      <div class="links">
+        <a href="https://km-it-ops.github.io/resume.html" rel="noopener">Resume</a>
+        <a href="mailto:kurdi.michael.it@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/KM-it-ops" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Mahmoud Al Kurdi (Michael Kurdi) · Junior Security Analyst</span>
+      <span><a href="index.html">Mocks hub</a> · Direction E+</span>
+    </footer>
+  </div>
+
+  <script>
+(function () {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var heroStage = document.getElementById("hero-stage");
+  var navAsset = document.getElementById("nav-asset");
+  var activeName = document.getElementById("active-name");
+  var heroWrap = document.getElementById("hero-asset-wrap");
+  var cards = document.querySelectorAll(".asset-card");
+  var currentId = "11";
+
+  function cloneSvg(id) {
+    var src = document.getElementById("svg-" + id);
+    if (!src) return null;
+    var clone = src.cloneNode(true);
+    clone.removeAttribute("id");
+    // Remap gradient/filter ids so multiple instances don't collide
+    var uid = "a" + id + "-" + Math.random().toString(36).slice(2, 7);
+    clone.querySelectorAll("[id]").forEach(function (el) {
+      var old = el.id;
+      var neu = uid + "-" + old;
+      el.id = neu;
+      clone.querySelectorAll("[fill],[stroke],[filter]").forEach(function (n) {
+        ["fill", "stroke", "filter"].forEach(function (attr) {
+          var v = n.getAttribute(attr);
+          if (v && v.indexOf("url(#" + old + ")") !== -1) {
+            n.setAttribute(attr, "url(#" + neu + ")");
+          }
+        });
+      });
+    });
+    return clone;
+  }
+
+  function mountPreviews() {
+    document.querySelectorAll("[data-mount]").forEach(function (el) {
+      var id = el.getAttribute("data-mount");
+      var svg = cloneSvg(id);
+      if (svg) {
+        el.innerHTML = "";
+        el.appendChild(svg);
+      }
+    });
+  }
+
+  function setAsset(id, name) {
+    currentId = id;
+    var heroSvg = cloneSvg(id);
+    var navSvg = cloneSvg(id);
+    if (heroSvg) {
+      heroStage.innerHTML = "";
+      heroStage.appendChild(heroSvg);
+    }
+    if (navSvg) {
+      navAsset.innerHTML = "";
+      navAsset.appendChild(navSvg);
+    }
+    activeName.textContent = id + " · " + name;
+    cards.forEach(function (card) {
+      var on = card.getAttribute("data-asset") === id;
+      card.setAttribute("aria-checked", on ? "true" : "false");
+      var btn = card.querySelector(".select-btn");
+      if (btn) btn.textContent = on ? "Selected" : "Select";
+    });
+  }
+
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      setAsset(card.getAttribute("data-asset"), card.getAttribute("data-name"));
+    });
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setAsset(card.getAttribute("data-asset"), card.getAttribute("data-name"));
+      }
+    });
+  });
+
+  // Scroll: collapse hero asset into sticky nav
+  var threshold = 120;
+  function updateCollapse() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    // Use hero wrap bottom relative to viewport as trigger when available
+    if (heroWrap) {
+      var rect = heroWrap.getBoundingClientRect();
+      var navH = document.querySelector(".sticky-nav").offsetHeight || 56;
+      if (rect.bottom < navH + 20 || y > threshold) {
+        document.body.classList.add("nav-collapsed");
+      } else {
+        document.body.classList.remove("nav-collapsed");
+      }
+    } else {
+      document.body.classList.toggle("nav-collapsed", y > threshold);
+    }
+  }
+
+  if (reduceMotion) {
+    // Snap instantly — transitions already killed by CSS
+    window.addEventListener("scroll", updateCollapse, { passive: true });
+  } else {
+    window.addEventListener("scroll", updateCollapse, { passive: true });
+  }
+  window.addEventListener("resize", updateCollapse, { passive: true });
+
+  mountPreviews();
+  setAsset("11", "Orb Seal");
+  updateCollapse();
+})();
+  </script>
+</body>
+</html>
