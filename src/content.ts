@@ -277,16 +277,9 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'logdetect',
     name: 'Log anomaly detection',
     tag: 'Security operations',
-    line: 'A rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Writes severity-ranked JSON alerts you can hand to anything downstream.',
+    line: 'A rule-based and statistical detector for brute force, port scans, off-hours file access, and privilege escalation. Writes severity-ranked JSON alerts you can hand to anything downstream. Clone it and run it.',
     href: 'https://github.com/KM-it-ops/security-log-anomaly-detection',
     favorite: true,
-  },
-  {
-    id: 'proofhouse',
-    name: 'Proofhouse',
-    tag: 'Engineering / PromptOps',
-    line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
-    href: 'https://github.com/KM-it-ops/Proofhouse',
   },
   {
     id: 'phishing',
@@ -315,6 +308,13 @@ export type SideProject = {
 }
 
 export const SIDE_PROJECTS: SideProject[] = [
+  {
+    id: 'proofhouse',
+    name: 'Proofhouse',
+    tag: 'Engineering / PromptOps',
+    line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
+    href: 'https://github.com/KM-it-ops/Proofhouse',
+  },
   {
     id: 'agentforge',
     name: 'AgentForge',
