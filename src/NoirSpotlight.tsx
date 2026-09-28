@@ -162,7 +162,7 @@ export default function NoirSpotlight() {
             Selected work
           </h2>
           <p className="noir-deck">
-            Detection lead first, then engineering proof — repos you can clone and run.
+            Detection lead first, then phishing and vuln workflow — repos you can clone and run.
           </p>
           <div className="noir-film">
             {FEATURED_PROJECTS.map((p, i) => {
