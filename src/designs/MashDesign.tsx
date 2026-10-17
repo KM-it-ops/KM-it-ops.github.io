@@ -364,7 +364,7 @@ export default function MashDesign() {
           </a>
         </nav>
         <div className="mash-nav-hire">
-          <a href={`mailto:${PERSON.email}`}>Email</a>
+          <a href={PERSON.contactUrl}>Message</a>
           <a href={RESUME_PDF} target="_blank" rel="noreferrer">
             Resume
           </a>
@@ -399,10 +399,7 @@ export default function MashDesign() {
                 </p>
                 <ul className="mash-hire-box-list">
                   <li>
-                    <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
-                  </li>
-                  <li>
-                    <a href={`tel:${PERSON.phoneTel}`}>{PERSON.phone}</a>
+                    <a href={PERSON.contactUrl}>Contact form</a>
                   </li>
                   <li>
                     <a href={PERSON.github} target="_blank" rel="noreferrer">
@@ -420,8 +417,8 @@ export default function MashDesign() {
                   <a href={RESUME_PDF} target="_blank" rel="noreferrer">
                     Resume PDF
                   </a>
-                  <button type="button" onClick={() => void copy(PERSON.email, 'email')}>
-                    Copy email
+                  <button type="button" onClick={() => void copy(PERSON.contactUrl, 'contact link')}>
+                    Copy contact link
                   </button>
                 </div>
               </aside>

@@ -339,26 +339,13 @@ export default function DaylightDossier() {
             <div className="dd-contact-card dd-panel-frost">
               <dl className="dd-contact-dl">
                 <div>
-                  <dt>Email</dt>
+                  <dt>Contact</dt>
                   <dd>
-                    <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
+                    <a href={PERSON.contactUrl}>Contact form</a>
                     <button
                       type="button"
                       className="dd-copy"
-                      onClick={() => copy(PERSON.email, 'email')}
-                    >
-                      Copy
-                    </button>
-                  </dd>
-                </div>
-                <div>
-                  <dt>Phone</dt>
-                  <dd>
-                    <a href={`tel:${PERSON.phoneTel}`}>{PERSON.phone}</a>
-                    <button
-                      type="button"
-                      className="dd-copy"
-                      onClick={() => copy(PERSON.phone, 'phone')}
+                      onClick={() => copy(PERSON.contactUrl, 'contact link')}
                     >
                       Copy
                     </button>

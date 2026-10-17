@@ -13,8 +13,7 @@ Two standing rules:
 - Legal, government, and transcript name: Mahmoud Al Kurdi
 - Short: Michael Kurdi
 - City: Charlotte, NC (remote welcome)
-- Email: kurdi.michael.it@gmail.com
-- Phone: (704) 456-8322
+- Contact: https://km-it-ops.github.io/#contact (Web3Forms form; no public email or phone)
 - GitHub: https://github.com/KM-it-ops
 - LinkedIn: https://www.linkedin.com/in/mahmoud-michael-al-kurdi
 - Headline: Junior Security Analyst / Security Operations / IT Risk

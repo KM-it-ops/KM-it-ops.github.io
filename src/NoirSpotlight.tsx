@@ -18,28 +18,13 @@ import {
   SKILL_BANDS,
   THROUGHLINE,
 } from './content'
+import { ContactForm } from './noir/ContactForm'
 import { OrbSeal } from './noir/OrbSeal'
 import './noir/noir-spotlight.css'
 
 const SCROLL_THRESHOLD = 420
 
-function useCopyToast() {
-  const [toast, setToast] = useState<string | null>(null)
-  const copy = async (value: string, label: string) => {
-    try {
-      await navigator.clipboard.writeText(value)
-      setToast(`Copied ${label}`)
-      window.setTimeout(() => setToast(null), 1600)
-    } catch {
-      setToast('Copy failed')
-      window.setTimeout(() => setToast(null), 1600)
-    }
-  }
-  return { toast, copy }
-}
-
 export default function NoirSpotlight() {
-  const { toast, copy } = useCopyToast()
   const [collapsed, setCollapsed] = useState(false)
   const heroAssetRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLElement>(null)
@@ -88,7 +73,7 @@ export default function NoirSpotlight() {
           <a className="noir-cta-primary" href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
             {RESUME_LABEL}
           </a>
-          <a className="noir-cta-secondary" href={`mailto:${PERSON.email}`}>Email</a>
+          <a className="noir-cta-secondary" href="#contact">Message</a>
           <a className="noir-cta-tertiary hide-sm" href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
             LinkedIn
           </a>
@@ -128,7 +113,7 @@ export default function NoirSpotlight() {
             <a className="noir-cta-primary" href={RESUME_PDF} rel="noopener noreferrer" target="_blank">
               {RESUME_LABEL}
             </a>
-            <a className="noir-cta-secondary" href={`mailto:${PERSON.email}`}>Email</a>
+            <a className="noir-cta-secondary" href="#contact">Message</a>
             <a className="noir-cta-tertiary" href={PERSON.linkedin} rel="noopener noreferrer" target="_blank">
               LinkedIn
             </a>
@@ -354,25 +339,8 @@ export default function NoirSpotlight() {
         <section className="noir-contact" id="contact" aria-labelledby="contact-h">
           <h2 id="contact-h">Contact</h2>
           <p>{ETHOS}</p>
+          <ContactForm />
           <dl className="noir-contact-dl">
-            <div>
-              <dt>Email</dt>
-              <dd>
-                <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
-              </dd>
-              <button type="button" className="noir-copy" onClick={() => copy(PERSON.email, 'email')}>
-                Copy
-              </button>
-            </div>
-            <div>
-              <dt>Phone</dt>
-              <dd>
-                <a href={`tel:${PERSON.phoneTel}`}>{PERSON.phone}</a>
-              </dd>
-              <button type="button" className="noir-copy" onClick={() => copy(PERSON.phone, 'phone')}>
-                Copy
-              </button>
-            </div>
             <div>
               <dt>GitHub</dt>
               <dd>
@@ -413,12 +381,6 @@ export default function NoirSpotlight() {
           <span>Noir Spotlight · {new Date().getFullYear()}</span>
         </footer>
       </div>
-
-      {toast ? (
-        <div className="noir-toast" role="status" aria-live="polite">
-          {toast}
-        </div>
-      ) : null}
     </div>
   )
 }

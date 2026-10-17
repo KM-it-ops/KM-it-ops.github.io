@@ -270,8 +270,8 @@ export default function ImmersivePortfolio() {
             <MagneticCTA className="im-btn im-btn-primary" href={RESUME_PDF} target="_blank" rel="noreferrer">
               {RESUME_LABEL}
             </MagneticCTA>
-            <a className="im-text-link" href={`mailto:${PERSON.email}`}>
-              EMAIL
+            <a className="im-text-link" href={PERSON.contactUrl}>
+              MESSAGE
             </a>
             <a className="im-text-link" href={PERSON.linkedin} target="_blank" rel="noreferrer">
               LINKEDIN
@@ -537,19 +537,10 @@ export default function ImmersivePortfolio() {
           <div className="im-glass im-contact-card im-beam-card">
             <dl className="im-contact-dl">
               <div>
-                <dt>EMAIL</dt>
+                <dt>CONTACT</dt>
                 <dd>
-                  <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
-                  <button type="button" className="im-copy" onClick={() => copy(PERSON.email, 'email')}>
-                    COPY
-                  </button>
-                </dd>
-              </div>
-              <div>
-                <dt>PHONE</dt>
-                <dd>
-                  <a href={`tel:${PERSON.phoneTel}`}>{PERSON.phone}</a>
-                  <button type="button" className="im-copy" onClick={() => copy(PERSON.phone, 'phone')}>
+                  <a href={PERSON.contactUrl}>Contact form</a>
+                  <button type="button" className="im-copy" onClick={() => copy(PERSON.contactUrl, 'contact link')}>
                     COPY
                   </button>
                 </dd>

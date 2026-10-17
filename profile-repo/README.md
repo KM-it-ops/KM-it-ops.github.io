@@ -42,4 +42,4 @@ The repos below are the part you can actually check. Clone them, run them, read 
 - **Portfolio:** [km-it-ops.github.io](https://km-it-ops.github.io/)
 - **Resume:** [km-it-ops.github.io/resume.html](https://km-it-ops.github.io/resume.html)
 - **LinkedIn:** [mahmoud-michael-al-kurdi](https://www.linkedin.com/in/mahmoud-michael-al-kurdi/)
-- **Email:** [kurdi.michael.it@gmail.com](mailto:kurdi.michael.it@gmail.com)
+- **Contact:** [contact form](https://km-it-ops.github.io/#contact)

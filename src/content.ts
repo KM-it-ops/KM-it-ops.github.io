@@ -6,9 +6,7 @@ export const PERSON = {
   legal: 'Mahmoud Al Kurdi',
   city: 'Charlotte, NC',
   remote: true,
-  email: 'kurdi.michael.it@gmail.com',
-  phone: '(704) 456-8322',
-  phoneTel: '+17044568322',
+  contactUrl: 'https://km-it-ops.github.io/#contact',
   github: 'https://github.com/KM-it-ops',
   linkedin: 'https://www.linkedin.com/in/mahmoud-michael-al-kurdi',
   role: 'Junior Security Analyst / Security Operations / IT Risk',
@@ -19,6 +17,12 @@ export const PERSON = {
     'Vulnerability Management',
     'IT Risk',
   ],
+} as const
+
+/** Web3Forms: the access key is public by design; it only lets the form send to the inbox it was issued for. */
+export const CONTACT_FORM = {
+  endpoint: 'https://api.web3forms.com/submit',
+  accessKey: '06d60e58-b6b0-4bf6-a234-c2ce1bdb6d3d',
 } as const
 
 export const THROUGHLINE = {
