@@ -1,7 +1,7 @@
 /** BRIEF facts only. See ../content/BRIEF.md */
 
 export const PERSON = {
-  name: 'Michael Kurdi',
+  name: 'Mahmoud Al Kurdi',
   short: 'Michael Kurdi',
   legal: 'Mahmoud Al Kurdi',
   city: 'Charlotte, NC',
@@ -9,12 +9,14 @@ export const PERSON = {
   contactUrl: 'https://km-it-ops.github.io/#contact',
   github: 'https://github.com/KM-it-ops',
   linkedin: 'https://www.linkedin.com/in/mahmoud-michael-al-kurdi',
-  role: 'Junior Security Analyst / Security Operations / IT Risk',
+  role: 'Junior Security Analyst / Security Operations / Vulnerability Management',
   available: 'Available for full-time roles',
   targets: [
     'Junior Security Analyst',
     'Security Operations',
     'Vulnerability Management',
+    'Incident Response',
+    'Security Automation',
     'IT Risk',
   ],
 } as const
@@ -29,8 +31,8 @@ export const THROUGHLINE = {
   title: 'From aviation security ops to security analysis',
   body: [
     'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines. The job was CBP-badged identity checks, access control, and incident notes in a federally regulated environment, where a sloppy write-up had real consequences.',
-    'After that, while working logistics jobs, I finished a B.S. in Information Technologies with a Cybersecurity concentration at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+. I also shipped three public Python projects: a log anomaly detector, a phishing classifier, and a vulnerability tracker.',
-    'Proofhouse and AgentForge are side projects that show I can design and ship software. My coursework labs are labeled as labs. Where I only have classroom exposure to a tool, I say so rather than dress it up as experience.',
+    'After that, while working logistics jobs, I finished a B.S. in Information Technologies with a Cybersecurity concentration at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+. I have published security projects you can clone: a log anomaly detector, a phishing classifier, a vulnerability tracker, a benchmark for MITRE ATT&CK mapping (ATT&CK is a public catalog of attacker techniques), and SniffOutPro, a local vulnerability-assessment app.',
+    'Proofhouse is my main engineering side project. It shows I can design, test, and ship software. My coursework labs are labeled as labs. Where I only have classroom exposure to a tool, I say so rather than dress it up as experience.',
   ],
   seeking:
     'Looking for a junior security analyst, security operations, vulnerability management, or IT risk role in Charlotte or remote.',
@@ -90,6 +92,7 @@ export const SKILL_BANDS: SkillBand[] = [
     items: [
       { name: 'SIEM vocabulary', proof: 'Splunk and Sentinel concepts from study, not production tenure' },
       { name: 'Python security tooling', proof: 'Log anomaly detector, phishing classifier, and Flask vuln tracker, all public' },
+      { name: 'Vulnerability scanning', proof: 'Nmap-based authorized scans in SniffOutPro (my own machine or a built-in lab sample), not enterprise scanner tenure' },
     ],
   },
 ]
@@ -299,6 +302,20 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     line: 'A Flask and SQLite tracker with severity KPIs, a status workflow, and a small REST API. The ticket pattern VM teams live in, at a size one person can read end to end.',
     href: 'https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program',
   },
+  {
+    id: 'sniffoutpro',
+    name: 'SniffOutPro',
+    tag: 'Vulnerability assessment',
+    line: 'Authorized vulnerability assessment on your own computer. A desktop app runs a local scan with no account: a built-in lab sample for a safe test, or Nmap against a target you are allowed to scan. It never exploits a target. Automated tests must cover at least 80% of the scan engine\'s branches before code merges. Work in progress: no signed installer or hosted service yet.',
+    href: 'https://github.com/KM-it-ops/Sniffoutpro',
+  },
+  {
+    id: 'attcklens',
+    name: 'ATT&CKLens benchmark',
+    tag: 'Detection / MITRE ATT&CK',
+    line: 'A defensive benchmark that scores how well AI agents map evidence to MITRE ATT&CK techniques: citing evidence, saying "no clear mapping" when that is the honest answer, suggesting detections, and ignoring hidden instructions planted in the input (prompt injection). Seven agents scored against one rubric, with raw outputs and a final report in the repo.',
+    href: 'https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark',
+  },
 ]
 
 export type SideProject = {
@@ -315,16 +332,30 @@ export const SIDE_PROJECTS: SideProject[] = [
   {
     id: 'proofhouse',
     name: 'Proofhouse',
-    tag: 'Engineering / PromptOps',
-    line: 'A local prompt toolkit I wrote in Python, currently 0.2.1. Two CLIs: proofhouse-compiler turns requirements into a model-specific prompt offline, and proofhouse runs evals against JSONL cases and YAML rubrics. The certified path never touches the network and needs no API key. Ships a Cursor skill. Not a hosted product, no benchmark claims, and not a stand-in for operations experience.',
+    tag: 'Engineering',
+    line: 'A local command-line tool I build in Python, published on PyPI (0.10.x). You describe what you want and pick any AI model, including models on your own machine. Proofhouse builds it (a prompt, a tool, a small site or app), runs it, has a model score it, revises it, and keeps every version with its cost. Paid calls are refused if they would go over your spending limit, and an offline demo runs with no API key. A local tool, not a hosted service. Model scores are advice, not proof, and I make no benchmark claims.',
     href: 'https://github.com/KM-it-ops/Proofhouse',
   },
   {
     id: 'agentforge',
     name: 'AgentForge',
-    tag: 'Side project',
-    line: 'Config framework for agentic coding assistants, with adapters for several hosts.',
+    tag: 'Archived',
+    line: 'Earlier project: one settings file for AI coding assistants that generates the matching config for several tools. Archived; its ideas moved into Proofhouse.',
     href: 'https://github.com/KM-it-ops/AgentForge',
+  },
+  {
+    id: 'ir-playbooks',
+    name: 'Incident response playbooks',
+    tag: 'Incident response / docs',
+    line: 'A playbook library mapped to ISO/IEC 27035 and NIST SP 800-61 (the standard incident-handling guides). Written reference material, not a record of incidents I handled.',
+    href: 'https://github.com/KM-it-ops/incident-response-playbooks',
+  },
+  {
+    id: 'cdp',
+    name: 'Cyber defense playbook',
+    tag: 'Threat intel / docs',
+    line: 'A defense-in-depth reference covering CISA threat-intel sharing (AIS), YARA malware-matching rules, and MITRE ATT&CK mapping. Study and reference work.',
+    href: 'https://github.com/KM-it-ops/cyber-defense-playbook',
   },
   {
     id: 'ofg',

@@ -89,7 +89,7 @@ export default function NoirSpotlight() {
           <p className="noir-eyebrow">{PERSON.available}</p>
           <h1 className="noir-name" id="noir-name">
             {PERSON.legal}
-            <span className="aka">({PERSON.name})</span>
+            <span className="aka">({PERSON.short})</span>
           </h1>
           <div className="noir-hairline" aria-hidden="true" />
           <p className="noir-role">
@@ -376,7 +376,7 @@ export default function NoirSpotlight() {
 
         <footer className="noir-footer">
           <span>
-            {PERSON.legal} ({PERSON.name}) · Junior Security Analyst
+            {PERSON.legal} ({PERSON.short}) · Junior Security Analyst
           </span>
           <span>Noir Spotlight · {new Date().getFullYear()}</span>
         </footer>
