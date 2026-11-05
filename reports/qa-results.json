@@ -1296,7 +1296,7 @@
    "none"
   ],
   "bytes": {
-   "index.html": 45018,
+   "index.html": 45508,
    "index-BTd88mss.js": 497,
    "index-CxlulRjw.js": 464,
    "index-Bp1Ao5GK.js": 7938,
@@ -1304,7 +1304,7 @@
    "index-DkPYyMu3.js": 14996,
    "index-NHqhacaJ.js": 3892
   },
-  "bytesTotalExFonts": 103098,
+  "bytesTotalExFonts": 103588,
   "fontBytes": {
    "unbounded.woff2": 66556,
    "robotomono.woff2": 37288,
