@@ -15,8 +15,10 @@ export function enhance(): void {
   /* ---------- paper (theme) toggle ---------- */
   const paper = $('#paper');
   const saved = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
+  const themeMetas = $$('meta[name="theme-color"]');
   function applyTheme(t: string, save: boolean) {
     d.setAttribute('data-theme', t);
+    themeMetas.forEach((m: any) => m.setAttribute('content', t === 'light' ? '#E4DECD' : '#071B33'));
     paper.setAttribute('aria-pressed', String(t === 'light'));
     if (save) { try { localStorage.setItem(KEY, t); } catch {} }
   }
@@ -51,6 +53,12 @@ export function enhance(): void {
     }, { rootMargin: '-40% 0px -55% 0px' });
     sheets.forEach((s: any) => cur.observe(s));
   }
+
+  /* ---------- sheet index: move focus to the target sheet (a11y) ---------- */
+  navLinks.concat($$('.mark, .skip')).forEach((a: any) => a.addEventListener('click', () => {
+    const t = document.getElementById((a.getAttribute('href') || '').slice(1));
+    if (t) requestAnimationFrame(() => t.focus({ preventScroll: true }));
+  }));
 
   /* ---------- deep grid parallax (scroll, rAF, transform only) ---------- */
   const deep = $('.deep');

@@ -24,6 +24,9 @@ const SHEETS = [
 const TOTAL = '05'
 const where = `${PERSON.city}${PERSON.remote ? ' · Remote' : ''}`
 const fullName = `${PERSON.name} (${PERSON.short})`
+/** Same-page / relative forms of content.ts URLs (data untouched): works on any sub-path preview. */
+const MESSAGE_HREF = /#contact$/.test(PERSON.contactUrl) ? '#contact' : PERSON.contactUrl
+const RESUME_HREF = RESUME_PDF.startsWith('/') ? `.${RESUME_PDF}` : RESUME_PDF
 
 function Chrome() {
   const six = [1, 2, 3, 4, 5, 6].map((n) => <i key={n}>{n}</i>)
@@ -42,7 +45,7 @@ function Chrome() {
 
 function SheetFrame(props: { no: string; name: string; labelledBy: string; children: ReactNode }) {
   return (
-    <section className="sheet" id={`sheet-${props.no}`} aria-labelledby={props.labelledBy} data-sheet={props.no}>
+    <section className="sheet" tabIndex={-1} id={`sheet-${props.no}`} aria-labelledby={props.labelledBy} data-sheet={props.no}>
       <Chrome />
       <p className="sheet-tag"><span>Sheet {props.no} / {TOTAL}</span><span>{props.name}</span></p>
       {props.children}
@@ -50,11 +53,11 @@ function SheetFrame(props: { no: string; name: string; labelledBy: string; child
   )
 }
 
-function Cta() {
+function Cta({ message = true }: { message?: boolean }) {
   return (
     <div className="cta">
-      <a className="btn btn-pri" href={RESUME_PDF}>{RESUME_LABEL}</a>
-      <a className="btn" href={PERSON.contactUrl}>Message</a>
+      <a className="btn btn-pri" href={RESUME_HREF}>{RESUME_LABEL}</a>
+      {message ? <a className="btn" href={MESSAGE_HREF}>Message</a> : null}
       <a className="btn" href={PERSON.github}>GitHub</a>
       <a className="btn" href={PERSON.linkedin}>LinkedIn</a>
     </div>
@@ -125,7 +128,7 @@ function Cover() {
 function NodeItem({ n }: { n: Node }) {
   return (
     <li className="ni" id={`n-${n.id}`} data-id={n.id} data-kind={n.kind} data-level={n.level} data-l={n.l} data-to={n.to.join(' ')} data-href={n.href}>
-      <span className="nn">{n.name}</span>
+      <span className="nn">{n.name}</span>{' '}
       {n.level ? <span className="lvl" data-l={n.l}>{n.level}</span> : null}
       <p className="note">{n.note}</p>
       {n.kind === 'Skill' ? (
@@ -323,7 +326,7 @@ function Path() {
       <div className="contact rv" id="contact">
         <h3>Contact</h3>
         <p>{THROUGHLINE.seeking}</p>
-        <Cta />
+        <Cta message={false} />
         <form className="bp-form" action={CONTACT_FORM.endpoint} method="POST" aria-describedby="bp-form-status">
           <input type="hidden" name="access_key" value={CONTACT_FORM.accessKey} />
           <input type="hidden" name="subject" value="New message from km-it-ops.github.io" />

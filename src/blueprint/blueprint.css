@@ -432,3 +432,4 @@ input[type=range]{width:100%;min-height:44px;accent-color:var(--amber);backgroun
 .foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan);font:600 1rem var(--f-body)}
 @media (min-width:720px){.bp-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
 main{overflow-x:clip}
+.sheet:focus{outline:none}
