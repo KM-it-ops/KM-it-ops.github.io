@@ -1,5 +1,16 @@
 /** BRIEF facts only. See ../content/BRIEF.md */
 
+/*
+ * Blueprint Schematic view (src/blueprint/): presentation-only labels that are NOT content claims.
+ * Sheet names/numbers (Cover, General arrangement, Schematic, Exploded assembly, Details + labs,
+ * Path + contact, Sheet 0N / 05), zone letters (1–6, A–D), "Title block",
+ * "Revision block · career milestones", "Drawn by", "Explode view", "Open all parts",
+ * "Detail callout", "Connects to (n)", "Scale 1:1 · not to be scaled", "Start here · public repo",
+ * "Experience, to scale", "General notes · how I work", "Lab schedule", "Pinned",
+ * "Skills → evidence → lanes", "Projects, exploded", "Coursework labs" (lane), and the merged lane
+ * "Vulnerability management / assessment". All other copy on the page comes from this file.
+ */
+
 export const PERSON = {
   name: 'Mahmoud Al Kurdi',
   short: 'Michael Kurdi',
@@ -368,7 +379,7 @@ export const SIDE_PROJECTS: SideProject[] = [
   },
 ]
 
-export const RESUME_PDF = '/resume.html'
-export const RESUME_LABEL = 'Resume'
+export const RESUME_PDF = '/Mahmoud_Al_Kurdi_Resume.pdf'
+export const RESUME_LABEL = 'Resume PDF'
 export const ETHOS =
   'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently. Nothing here is padded.'

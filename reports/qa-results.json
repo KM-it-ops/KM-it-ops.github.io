@@ -1,0 +1,1314 @@
+{
+ "matrix": {
+  "360-dark-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "360-dark-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "360-light-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "360-light-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "390-dark-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "390-dark-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "390-light-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "390-light-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "768-dark-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "768-dark-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "768-light-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "768-light-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1280-dark-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1280-dark-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1280-light-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1280-light-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1920-dark-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1920-dark-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "dark",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1920-light-no-preference": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "sheetsInBeforeScroll": 1,
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  },
+  "1920-light-reduce": {
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   },
+   "theme": "light",
+   "rvHiddenAtLoad": 0,
+   "sheetsInAtLoad": 5,
+   "animatingDuringScroll": 0,
+   "parallaxTransform": "",
+   "sheetsInAfterScroll": 5,
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "externalRequests": [],
+   "errors": []
+  }
+ },
+ "interaction": {
+  "1280-no-preference": {
+   "enterPins": true,
+   "panelTitle": "Python security tooling",
+   "litNodes": [
+    "Python security tooling",
+    "Log anomaly detection",
+    "Phishing email classifier",
+    "VulnTrack dashboard",
+    "Security operations",
+    "Detection",
+    "Vulnerability management / assessment"
+   ],
+   "wiresOn": 6,
+   "panelLinks": [
+    "https://github.com/KM-it-ops/security-log-anomaly-detection",
+    "https://github.com/KM-it-ops/phishing-email-classifier",
+    "https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program"
+   ],
+   "panelVisibleInViewport": true,
+   "escClears": true,
+   "arrowDown": "b-s-gpo",
+   "arrowRight": "b-e-logdetect",
+   "arrowRight2": "b-l-secops",
+   "tapLanePins": true,
+   "laneLit": [
+    "Python security tooling",
+    "Vulnerability scanning",
+    "VulnTrack dashboard",
+    "SniffOutPro",
+    "Vulnerability management / assessment"
+   ],
+   "chipNavigates": "VulnTrack dashboard",
+   "clearBtn": true,
+   "partsArrow": "p-phishing",
+   "partsEnterOpens": true,
+   "plateMarked": 1,
+   "plateClickOpens": true,
+   "rangeEx": "1.00",
+   "dragChangesRange": 75,
+   "openAll": true,
+   "toggleLight": [
+    "light",
+    "true",
+    "light"
+   ],
+   "persistAfterReload": "light"
+  },
+  "1280-reduce": {
+   "enterPins": true,
+   "panelTitle": "Python security tooling",
+   "litNodes": [
+    "Python security tooling",
+    "Log anomaly detection",
+    "Phishing email classifier",
+    "VulnTrack dashboard",
+    "Security operations",
+    "Detection",
+    "Vulnerability management / assessment"
+   ],
+   "wiresOn": 6,
+   "panelLinks": [
+    "https://github.com/KM-it-ops/security-log-anomaly-detection",
+    "https://github.com/KM-it-ops/phishing-email-classifier",
+    "https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program"
+   ],
+   "panelVisibleInViewport": true,
+   "escClears": true,
+   "arrowDown": "b-s-gpo",
+   "arrowRight": "b-e-logdetect",
+   "arrowRight2": "b-l-secops",
+   "tapLanePins": true,
+   "laneLit": [
+    "Python security tooling",
+    "Vulnerability scanning",
+    "VulnTrack dashboard",
+    "SniffOutPro",
+    "Vulnerability management / assessment"
+   ],
+   "chipNavigates": "VulnTrack dashboard",
+   "clearBtn": true,
+   "partsArrow": "p-phishing",
+   "partsEnterOpens": true,
+   "plateMarked": 1,
+   "plateClickOpens": true,
+   "rangeEx": "1.00",
+   "dragChangesRange": 75,
+   "openAll": true,
+   "toggleLight": [
+    "light",
+    "true",
+    "light"
+   ],
+   "persistAfterReload": "light"
+  },
+  "390-no-preference": {
+   "enterPins": true,
+   "panelTitle": "Python security tooling",
+   "litNodes": [
+    "Python security tooling",
+    "Log anomaly detection",
+    "Phishing email classifier",
+    "VulnTrack dashboard",
+    "Security operations",
+    "Detection",
+    "Vulnerability management / assessment"
+   ],
+   "wiresOn": 6,
+   "panelLinks": [
+    "https://github.com/KM-it-ops/security-log-anomaly-detection",
+    "https://github.com/KM-it-ops/phishing-email-classifier",
+    "https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program"
+   ],
+   "panelVisibleInViewport": true,
+   "escClears": true,
+   "arrowDown": "b-s-gpo",
+   "arrowRight": "b-e-logdetect",
+   "arrowRight2": "b-l-secops",
+   "tapLanePins": true,
+   "laneLit": [
+    "Python security tooling",
+    "Vulnerability scanning",
+    "VulnTrack dashboard",
+    "SniffOutPro",
+    "Vulnerability management / assessment"
+   ],
+   "chipNavigates": "VulnTrack dashboard",
+   "clearBtn": true,
+   "partsArrow": "p-phishing",
+   "partsEnterOpens": true,
+   "plateMarked": 1,
+   "plateClickOpens": true,
+   "rangeEx": "1.00",
+   "openAll": true,
+   "toggleLight": [
+    "light",
+    "true",
+    "light"
+   ],
+   "persistAfterReload": "light"
+  },
+  "390-reduce": {
+   "enterPins": true,
+   "panelTitle": "Python security tooling",
+   "litNodes": [
+    "Python security tooling",
+    "Log anomaly detection",
+    "Phishing email classifier",
+    "VulnTrack dashboard",
+    "Security operations",
+    "Detection",
+    "Vulnerability management / assessment"
+   ],
+   "wiresOn": 6,
+   "panelLinks": [
+    "https://github.com/KM-it-ops/security-log-anomaly-detection",
+    "https://github.com/KM-it-ops/phishing-email-classifier",
+    "https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program"
+   ],
+   "panelVisibleInViewport": true,
+   "escClears": true,
+   "arrowDown": "b-s-gpo",
+   "arrowRight": "b-e-logdetect",
+   "arrowRight2": "b-l-secops",
+   "tapLanePins": true,
+   "laneLit": [
+    "Python security tooling",
+    "Vulnerability scanning",
+    "VulnTrack dashboard",
+    "SniffOutPro",
+    "Vulnerability management / assessment"
+   ],
+   "chipNavigates": "VulnTrack dashboard",
+   "clearBtn": true,
+   "partsArrow": "p-phishing",
+   "partsEnterOpens": true,
+   "plateMarked": 1,
+   "plateClickOpens": true,
+   "rangeEx": "1.00",
+   "openAll": true,
+   "toggleLight": [
+    "light",
+    "true",
+    "light"
+   ],
+   "persistAfterReload": "light"
+  }
+ },
+ "nojs": {
+  "360-dark": {
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "notesVisible": 31,
+   "toggleHidden": true,
+   "bodyBg": "rgb(7, 27, 51)",
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   }
+  },
+  "360-light": {
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "notesVisible": 31,
+   "toggleHidden": true,
+   "bodyBg": "rgb(228, 222, 205)",
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   }
+  },
+  "1280-dark": {
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 7.91,
+   "minContrastGrid": 5.61,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "notesVisible": 31,
+   "toggleHidden": true,
+   "bodyBg": "rgb(7, 27, 51)",
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   }
+  },
+  "1280-light": {
+   "overflow": 0,
+   "minBody": 16,
+   "minUI": 15,
+   "minLabel": 13,
+   "sizeFails": [],
+   "displayAsBody": [],
+   "lowContrast": [],
+   "minContrast": 5.33,
+   "minContrastGrid": 5.14,
+   "dimmedText": [],
+   "smallTargets": [],
+   "h1": "Mahmoud Al Kurdi (Michael Kurdi)",
+   "role": "Junior Security Analyst / Security Operations / Vulnerability Management",
+   "missingLinks": [],
+   "parts": 10,
+   "agentforgeArchived": true,
+   "rvHidden": 0,
+   "renderedFamilies": [
+    "Roboto Mono",
+    "Red Hat Text",
+    "Unbounded"
+   ],
+   "fontsReady": [
+    "Unbounded",
+    "Red Hat Text",
+    "Roboto Mono"
+   ],
+   "notesVisible": 31,
+   "toggleHidden": true,
+   "bodyBg": "rgb(228, 222, 205)",
+   "fold": {
+    "h1": true,
+    "role": true,
+    "resume": true,
+    "proof": true
+   }
+  }
+ },
+ "axe": {
+  "1280-dark-js": {
+   "violations": [],
+   "passes": 52,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "1280-dark-nojs": {
+   "violations": [],
+   "passes": 53,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "1280-light-js": {
+   "violations": [],
+   "passes": 52,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "1280-light-nojs": {
+   "violations": [],
+   "passes": 53,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "390-dark-js": {
+   "violations": [],
+   "passes": 53,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "390-dark-nojs": {
+   "violations": [],
+   "passes": 53,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "390-light-js": {
+   "violations": [],
+   "passes": 53,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "390-light-nojs": {
+   "violations": [],
+   "passes": 53,
+   "incomplete": [
+    "color-contrast"
+   ]
+  }
+ },
+ "misc": {
+  "livePRMChange": {
+   "before[motionOk,sheetsIn]": [
+    true,
+    1
+   ],
+   "after": [
+    false,
+    5
+   ]
+  },
+  "focusRing": [
+   "mark",
+   "solid",
+   "3px",
+   "rgb(168, 67, 0)"
+  ],
+  "tabOrderFirst40": [
+   "A Skip to content",
+   "A MK",
+   "A 01Cover",
+   "A 02Schematic",
+   "A 03Assembly",
+   "A 04Details",
+   "A 05Path",
+   "BUTTON#paper Light paperLight",
+   "A Resume",
+   "A Message",
+   "A GitHub",
+   "A LinkedIn",
+   "A Start here \u00b7 public repoLog an",
+   "BUTTON#b-s-net Network troubleshootingHands-o",
+   "BUTTON#b-e-logdetect Log anomaly detection",
+   "BUTTON#b-l-secops Security operations",
+   "BUTTON Log anomaly detectionPublic re",
+   "A Open Log anomaly detection rep",
+   "INPUT#explode ",
+   "BUTTON#parts-all Open all parts",
+   "SUMMARY P-01Log anomaly detectionSecur",
+   "SUMMARY P-02Phishing email classifierD",
+   "SUMMARY P-03VulnTrack dashboardVulnera",
+   "SUMMARY P-04SniffOutProVulnerability a",
+   "SUMMARY P-05ATT&CKLens benchmarkDetect",
+   "SUMMARY P-06ProofhouseEngineering",
+   "SUMMARY P-07Incident response playbook",
+   "SUMMARY P-08Cyber defense playbookThre",
+   "SUMMARY P-09OFG Dairy SiteClient deliv",
+   "SUMMARY P-10AgentForgeArchived",
+   "DIV CourseLabBest forCYB-210Packet",
+   "A Packet Tracer network lab + co",
+   "A All lab write-ups on the live ",
+   "A Resume",
+   "A GitHub",
+   "A LinkedIn",
+   "INPUT ",
+   "INPUT ",
+   "TEXTAREA ",
+   "BUTTON Send message"
+  ],
+  "printHidesChrome": [
+   "none",
+   "none",
+   "none"
+  ],
+  "bytes": {
+   "index.html": 45508,
+   "index-BTd88mss.js": 497,
+   "index-CxlulRjw.js": 464,
+   "index-Bp1Ao5GK.js": 7938,
+   "index-Dl-FjUUt.css": 30293,
+   "index-DkPYyMu3.js": 14996,
+   "index-NHqhacaJ.js": 3892
+  },
+  "bytesTotalExFonts": 103588,
+  "fontBytes": {
+   "unbounded.woff2": 66556,
+   "robotomono.woff2": 37288,
+   "redhattext.woff2": 30140
+  }
+ }
+}
