@@ -1283,12 +1283,12 @@
    "A Packet Tracer network lab + co",
    "A All lab write-ups on the live ",
    "A Resume",
-   "A Message",
    "A GitHub",
    "A LinkedIn",
    "INPUT ",
    "INPUT ",
-   "TEXTAREA "
+   "TEXTAREA ",
+   "BUTTON Send message"
   ],
   "printHidesChrome": [
    "none",
@@ -1296,15 +1296,15 @@
    "none"
   ],
   "bytes": {
-   "index.html": 44888,
-   "index-D_K8Vx46.css": 30267,
+   "index.html": 45018,
    "index-BTd88mss.js": 497,
    "index-CxlulRjw.js": 464,
    "index-Bp1Ao5GK.js": 7938,
-   "index-BPOj3B25.js": 14686,
+   "index-Dl-FjUUt.css": 30293,
+   "index-DkPYyMu3.js": 14996,
    "index-NHqhacaJ.js": 3892
   },
-  "bytesTotalExFonts": 102632,
+  "bytesTotalExFonts": 103098,
   "fontBytes": {
    "unbounded.woff2": 66556,
    "robotomono.woff2": 37288,
