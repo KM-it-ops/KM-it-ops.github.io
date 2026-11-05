@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050505" />
+    <meta name="theme-color" content="#071B33" />
     <title>Mahmoud Al Kurdi (Michael Kurdi) — Junior Security Analyst | Security+ · Detection, VM, IT Risk | Charlotte / Remote</title>
     <meta
       name="description"
@@ -76,38 +76,18 @@
         ]
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Syne:wght@600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      /* Theme before first paint: saved choice wins, else prefers-color-scheme. No JS = CSS media query fallback. */
+      (function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('kmBlueprintPaper');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}
+      if(!d.getAttribute('data-theme'))d.setAttribute('data-theme',matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('motion-ok');})();
+    </script>
+    <link rel="preload" href="/fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/redhattext.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body style="margin:0;background:#050505">
+  <body>
     <div id="root"></div>
-    <noscript>
-      <div style="max-width:34rem;margin:0 auto;padding:2.5rem 1.25rem;font-family:system-ui,sans-serif;line-height:1.6;color:#f5f0e8;background:#1c1917">
-        <h1 style="font-size:1.5rem;margin:0 0 .35rem">Mahmoud Al Kurdi <span style="color:#9a9388;font-weight:400">(Michael Kurdi)</span></h1>
-        <p style="margin:0 0 1.25rem;color:#a8a29e">
-          Junior Security Analyst · Security Operations · IT Risk · Charlotte, NC · Remote
-          <br />CompTIA Security+ (SY0-701) · B.S. IT, Cybersecurity concentration, Summa Cum Laude, 3.96 GPA
-        </p>
-        <p style="margin:0 0 1.25rem">
-          This page needs JavaScript for the full dossier. The essentials:
-        </p>
-        <ul style="margin:0 0 1.25rem;padding-left:1.1rem">
-          <li>Message me through the contact form on this page (needs JavaScript) or on LinkedIn</li>
-          <li><a href="/resume.html" style="color:#9aabcf">Resume</a></li>
-          <li><a href="https://github.com/KM-it-ops" style="color:#9aabcf">github.com/KM-it-ops</a></li>
-          <li><a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi" style="color:#9aabcf">LinkedIn</a></li>
-          <li><a href="https://github.com/KM-it-ops/security-log-anomaly-detection" style="color:#9aabcf">Log anomaly detection</a></li>
-          <li><a href="https://github.com/KM-it-ops/phishing-email-classifier" style="color:#9aabcf">Phishing classifier</a></li>
-          <li><a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program" style="color:#9aabcf">VulnTrack</a></li>
-          <li><a href="https://github.com/KM-it-ops/Proofhouse" style="color:#9aabcf">Proofhouse</a></li>
-          <li><a href="https://github.com/KM-it-ops/AgentForge" style="color:#9aabcf">AgentForge</a></li>
-        </ul>
-      </div>
-    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
