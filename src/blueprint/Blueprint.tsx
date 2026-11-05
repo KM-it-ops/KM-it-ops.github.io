@@ -56,7 +56,7 @@ function SheetFrame(props: { no: string; name: string; labelledBy: string; child
 function Cta({ message = true }: { message?: boolean }) {
   return (
     <div className="cta">
-      <a className="btn btn-pri" href={RESUME_HREF}>{RESUME_LABEL}</a>
+      <a className="btn btn-pri" href={RESUME_HREF} download="Mahmoud_Al_Kurdi_Resume.pdf">{RESUME_LABEL}</a>
       {message ? <a className="btn" href={MESSAGE_HREF}>Message</a> : null}
       <a className="btn" href={PERSON.github}>GitHub</a>
       <a className="btn" href={PERSON.linkedin}>LinkedIn</a>

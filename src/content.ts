@@ -379,7 +379,7 @@ export const SIDE_PROJECTS: SideProject[] = [
   },
 ]
 
-export const RESUME_PDF = '/resume.html'
-export const RESUME_LABEL = 'Resume'
+export const RESUME_PDF = '/Mahmoud_Al_Kurdi_Resume.pdf'
+export const RESUME_LABEL = 'Resume PDF'
 export const ETHOS =
   'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently. Nothing here is padded.'
