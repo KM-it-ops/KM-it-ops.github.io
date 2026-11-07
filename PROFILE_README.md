@@ -1,10 +1,10 @@
 <!-- Banner: Masked Signal profile header -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KM-it-ops/KM-it-ops/main/assets/profile-banner.svg">
-  <img src="https://raw.githubusercontent.com/KM-it-ops/KM-it-ops/main/assets/profile-banner.svg" alt="Masked Signal — evidence-led defensive security by Mahmoud Al Kurdi (Michael Kurdi)" width="100%">
+  <img src="https://raw.githubusercontent.com/KM-it-ops/KM-it-ops/main/assets/profile-banner.svg" alt="Masked Signal: evidence-led defensive security by Michael Kurdi" width="100%">
 </picture>
 
-<h1 align="left">Mahmoud Al Kurdi (Michael Kurdi)</h1>
+<h1 align="left">Michael Kurdi</h1>
 
 <p align="left">
   <a href="https://km-it-ops.github.io/"><img src="https://img.shields.io/badge/Portfolio-live-7cf0c1?style=flat-square&logo=github&labelColor=04060a" alt="Portfolio"></a>
@@ -15,7 +15,7 @@
   <img src="https://img.shields.io/badge/status-open%20to%20work-6ddf9f?style=flat-square&labelColor=04060a" alt="Open to work">
 </p>
 
-I'm Mahmoud Al Kurdi (most people call me Michael), a new security graduate in Charlotte, NC, looking for a SOC (security operations center) / security operations, cyber or incident response analyst, or vulnerability management role. Remote works fine.
+I'm Michael Kurdi, a new security graduate in Charlotte, NC, looking for a SOC (security operations center) / security operations, cyber or incident response analyst, or vulnerability management role. Remote works fine.
 
 Before this I spent eight years at American Airlines as an Aviation Security Operations Crew Chief: CBP-badged identity checks, access control, and incident write-ups in a federally regulated environment. Along the way I finished a B.S. in Information Technologies (Cybersecurity concentration) at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+ ce.
 
@@ -43,6 +43,6 @@ The repos below are the part you can actually check. Clone them, run them, read 
 ## Connect
 
 - **Portfolio:** [km-it-ops.github.io](https://km-it-ops.github.io/)
-- **Resume:** [km-it-ops.github.io/resume.html](https://km-it-ops.github.io/resume.html) · [PDF](https://km-it-ops.github.io/Mahmoud_Al_Kurdi_Resume.pdf)
+- **Resume:** [km-it-ops.github.io/resume.html](https://km-it-ops.github.io/resume.html) · [PDF](https://km-it-ops.github.io/Michael_Kurdi_Resume_2026.pdf)
 - **LinkedIn:** [mahmoud-michael-al-kurdi](https://www.linkedin.com/in/mahmoud-michael-al-kurdi/)
 - **Contact:** [contact form](https://km-it-ops.github.io/#contact)

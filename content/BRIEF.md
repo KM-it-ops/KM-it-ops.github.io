@@ -10,8 +10,6 @@ Two standing rules:
 ## Person
 
 - Name: Michael Kurdi
-- Legal, government, and transcript name: Mahmoud Al Kurdi
-- Short: Michael Kurdi
 - City: Charlotte, NC (remote welcome)
 - Contact: https://km-it-ops.github.io/#contact (Web3Forms form; no public email or phone)
 - GitHub: https://github.com/KM-it-ops

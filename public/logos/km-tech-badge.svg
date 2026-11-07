@@ -5,7 +5,7 @@
   <path d="M78 40 H162 L200 78 V162 L162 200 H78 L40 162 V78 Z" fill="none" stroke="#3f3a36" stroke-width="1.5"/>
   <!-- corner ticks -->
   <path d="M88 48 h24 M152 48 h-24 M88 192 h24 M152 192 h-24 M48 88 v24 M48 152 v-24 M192 88 v24 M192 152 v-24" stroke="#c45d2c" stroke-width="2" stroke-linecap="square"/>
-  <!-- geometric KM — no serif, modular bars -->
+  <!-- geometric KM - no serif, modular bars -->
   <g fill="#f5f0e8" transform="translate(120 120)">
     <!-- K as bars -->
     <rect x="-48" y="-34" width="12" height="68" rx="1"/>

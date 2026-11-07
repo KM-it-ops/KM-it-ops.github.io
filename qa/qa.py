@@ -44,7 +44,7 @@ METRICS = r"""() => {
  }
  const h=document.querySelector('h1'); out.h1=h.textContent.replace(/\s+/g,' ').trim();
  out.role=document.querySelector('.role').textContent.trim();
- const need=[new URL('resume.html',location.href).href,new URL('Mahmoud_Al_Kurdi_Resume.pdf',location.href).href,new URL('#contact',location.href).href,'https://github.com/KM-it-ops','https://www.linkedin.com/in/mahmoud-michael-al-kurdi','https://github.com/KM-it-ops/security-log-anomaly-detection','https://km-it-ops.github.io/#labs','https://ofg-sites.vercel.app/','https://github.com/KM-it-ops/AgentForge'];
+ const need=[new URL('resume.html',location.href).href,new URL('Michael_Kurdi_Resume_2026.pdf',location.href).href,new URL('#contact',location.href).href,'https://github.com/KM-it-ops','https://www.linkedin.com/in/mahmoud-michael-al-kurdi','https://github.com/KM-it-ops/security-log-anomaly-detection','https://km-it-ops.github.io/#labs','https://ofg-sites.vercel.app/','https://github.com/KM-it-ops/AgentForge'];
  const hrefs=[...document.querySelectorAll('a')].map(a=>a.href); out.missingLinks=need.filter(u=>!hrefs.includes(u));
  out.parts=document.querySelectorAll('#parts .part').length;
  out.agentforgeArchived=/Archived/.test(document.querySelector('#p-agentforge').textContent);
@@ -212,7 +212,7 @@ def main():
         if r['missingLinks']: fails.append(f'{k} links {r["missingLinks"]}')
         if r['externalRequests']: fails.append(f'{k} ext {r["externalRequests"][:2]}')
         if r['errors']: fails.append(f'{k} errors {r["errors"]}')
-        if r['h1'] != 'Mahmoud Al Kurdi (Michael Kurdi)': fails.append(f'{k} h1 {r["h1"]}')
+        if r['h1'] != 'Michael Kurdi': fails.append(f'{k} h1 {r["h1"]}')
         if r['role'] != 'Junior Security Analyst / Security Operations / Vulnerability Management': fails.append(f'{k} role {r["role"]}')
         if r['rvHidden']: fails.append(f'{k} rvHidden {r["rvHidden"]}')
         if r['sheetsInAfterScroll'] != 5: fails.append(f'{k} reveal')

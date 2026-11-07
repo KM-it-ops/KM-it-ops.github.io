@@ -12,9 +12,7 @@
  */
 
 export const PERSON = {
-  name: 'Mahmoud Al Kurdi',
-  short: 'Michael Kurdi',
-  legal: 'Mahmoud Al Kurdi',
+  name: 'Michael Kurdi',
   city: 'Charlotte, NC',
   remote: true,
   contactUrl: 'https://km-it-ops.github.io/#contact',

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mahmoud Al Kurdi (Michael Kurdi) — Resume</title>
-  <meta name="description" content="Browser-readable resume for Mahmoud Al Kurdi (Michael Kurdi). Download the PDF when you want a file." />
+  <title>Michael Kurdi, Resume</title>
+  <meta name="description" content="Browser-readable resume for Michael Kurdi. Download the PDF when you want a file." />
   <link rel="canonical" href="https://km-it-ops.github.io/resume.html" />
   <link rel="icon" href="./favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -54,6 +54,7 @@
       background: #f3f4f6; border-radius: .4rem; padding: .75rem 1rem; margin: 0 0 1rem;
     }
     @media print {
+      .job { break-inside: avoid; }
       body { margin: .4in auto; }
       .actions { display: none; }
     }
@@ -61,57 +62,17 @@
 </head>
 <body>
   <main id="main">
-    <h1>Mahmoud Al Kurdi (Michael Kurdi)</h1>
-    <p class="sub">Junior Security Analyst · Security Operations · Vulnerability Management</p>
-    <p class="meta">Charlotte, NC · <a href="./#contact">Contact form</a> · <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi">https://www.linkedin.com/in/mahmoud-michael-al-kurdi</a> · <a href="https://github.com/KM-it-ops">https://github.com/KM-it-ops</a> · <a href="./">Portfolio</a></p>
+    <h1>Michael Kurdi</h1>
+    <p class="sub">Junior Security Analyst | Security Operations | IT Risk</p>
+    <p class="meta">Charlotte, NC (US citizen; remote, hybrid or onsite) · <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a> · <a href="https://www.linkedin.com/in/mahmoud-michael-al-kurdi">LinkedIn</a> · <a href="https://github.com/KM-it-ops">GitHub</a> · <a href="https://km-it-ops.github.io/">Portfolio</a></p>
     <p class="note">This page is the browser-readable resume. Use <strong>Download PDF</strong> only when you want a file. Nothing downloads automatically.</p>
     <p class="actions">
-      <a class="primary" href="./Mahmoud_Al_Kurdi_Resume.pdf" download="Mahmoud_Al_Kurdi_Resume.pdf">Download PDF</a>
-      <a href="./Mahmoud_Al_Kurdi_Resume.pdf">Open PDF</a>
+      <a class="primary" href="./Michael_Kurdi_Resume_2026.pdf" download="Michael_Kurdi_Resume_2026.pdf">Download PDF</a>
+      <a href="./Michael_Kurdi_Resume_2026.pdf">Open PDF</a>
       <a href="./">Back to portfolio</a>
     </p>
 
-    <h2>Summary</h2>
-    <p>B.S. Information Technologies (Cybersecurity concentration), Summa Cum Laude, 3.96 GPA, and CompTIA Security+ (SY0-701). Eight years in federally regulated aviation security operations — identity validation, access control, and incident documentation — plus public projects in log anomaly detection, phishing classification, vulnerability tracking, local vulnerability assessment (SniffOutPro), and MITRE ATT&amp;CK mapping. Targeting junior security analyst, security operations, vulnerability management, incident response, and IT risk roles in Charlotte and remote.</p>
-
-    <h2>Skills</h2>
-    <p><strong>Security operations:</strong> log review, rule-based detection, alert triage, incident documentation, MITRE ATT&amp;CK mapping, IAM / least privilege, vulnerability tracking</p>
-    <p><strong>Risk &amp; governance:</strong> NIST CSF, CIS Controls, HIPAA-aligned control briefs, Responsible AI coursework</p>
-    <p><strong>Systems:</strong> Windows hardening / Group Policy, TCP/IP, VLANs, Linux fundamentals, cloud concepts</p>
-    <p><strong>Automation:</strong> Python, pandas, scikit-learn, Flask, SQL / SQLite, Git, GitHub Actions</p>
-    <p><strong>Labs / projects only:</strong> Packet Tracer, GNS3, Docker, REST APIs — no claimed production SIEM tenure</p>
-
-    <h2>Selected projects</h2>
-    <h3>Security Log Anomaly Detection</h3>
-    <p class="muted">Python · <a href="https://github.com/KM-it-ops/security-log-anomaly-detection">https://github.com/KM-it-ops/security-log-anomaly-detection</a></p>
-    <ul><li>Rule-plus-statistics detector for brute force, port scans, off-hours sensitive-file access, unknown IPs, and privilege-escalation patterns.</li><li>Baseline-profiled auth failures and event volume; flagged spikes with z-score &gt; 2.5 and wrote severity-ranked JSON alerts.</li></ul>
-    <h3>Phishing Email Classifier</h3>
-    <p class="muted">Python / scikit-learn · <a href="https://github.com/KM-it-ops/phishing-email-classifier">https://github.com/KM-it-ops/phishing-email-classifier</a></p>
-    <ul><li>URL, PII, and typosquat features plus TF-IDF into a 207-dimension vector; Random Forest with 80/20 split and 5-fold cross-validation.</li></ul>
-    <h3>VulnTrack — Vulnerability Workflow Dashboard</h3>
-    <p class="muted">Flask / SQLite · <a href="https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program">https://github.com/KM-it-ops/Vulnerability-Management-Mini-Program</a></p>
-    <ul><li>CRUD tracker with severity KPIs, status workflow, search-filter, and a small REST API.</li></ul>
-    <h3>SniffOutPro — Local Vulnerability Assessment App</h3>
-    <p class="muted">TypeScript / Tauri / Nmap · <a href="https://github.com/KM-it-ops/Sniffoutpro">https://github.com/KM-it-ops/Sniffoutpro</a></p>
-    <ul><li>Desktop app for authorized vulnerability assessment of your own computer: local scan with no account, using a safe lab sample or Nmap against permitted targets. Never exploits a target. Work in progress.</li><li>Automated tests must cover at least 80% of scan-engine branches before code merges.</li></ul>
-    <h3>ATT&amp;CKLens Benchmark</h3>
-    <p class="muted">Python / MITRE ATT&amp;CK · <a href="https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark">https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark</a></p>
-    <ul><li>Scores AI agents on mapping evidence to ATT&amp;CK techniques, citing evidence, admitting “no clear mapping,” suggesting detections, and resisting prompt injection; seven agents scored on one rubric.</li></ul>
-    <p class="muted">Engineering side project: <a href="https://github.com/KM-it-ops/Proofhouse">https://github.com/KM-it-ops/Proofhouse</a> — a local Python command-line tool on PyPI that builds, tests, scores, and versions AI-generated work with a spending limit on paid calls. Not a substitute for operations tenure.</p>
-
-    <h2>Experience</h2>
-    <div class="row"><h3>Aviation Security Operations Crew Chief</h3><span>2015 – 2023</span></div>
-    <p class="muted">American Airlines · Charlotte, NC</p>
-    <ul><li>Operated in a federally regulated aviation environment with CBP badge endorsement; enforced identity validation and access control for international flight operations.</li><li>Documented incidents, inspections, and exceptions under FAA / OSHA / IATA workflows; completed recurrent safety and security training.</li><li>Held teammates to high-accountability procedures — the same discipline banks and healthcare security teams expect in ticket notes.</li></ul>
-    <div class="row"><h3>Delivery Associate · Courier and Logistics Specialist</h3><span>2024 – 2026</span></div>
-    <p class="muted">Fossa Logistics (Amazon DSP) · USPS · Charlotte / Kannapolis, NC</p>
-    <ul><li>Completed the degree and security portfolio while running time-critical routes; kept documentation and exception handling tight under hard deadlines.</li></ul>
-
-    <h2>Education &amp; certifications</h2>
-    <div class="row"><h3>B.S. Information Technologies — Cybersecurity concentration</h3><span>Conferred Jan 1, 2026</span></div>
-    <p>Southern New Hampshire University · Summa Cum Laude · GPA 3.96 · Alpha Sigma Lambda · repeated President’s List</p>
-    <p>Cyber coursework: Foundations, Networking, Network Security, Cyber Defense, Legal/Human Factors, Systems Security, Risk Management. AI electives: Responsible AI, AI in Practice.</p>
-    <p><strong>CompTIA Security+ ce (SY0-701)</strong> · Issued Jan 7, 2025 · Valid through Jan 7, 2028</p>
+    <h2>SUMMARY</h2><p>Cybersecurity graduate (B.S. Information Technologies, Cybersecurity concentration, summa cum laude, 3.96 GPA) with CompTIA Security+. Eight years in a federally regulated aviation operation, validating identity, controlling access, documenting to inspection standards and escalating with clear facts. Public projects in log anomaly detection and phishing email classification.</p><h2>SKILLS</h2><p><strong>Hands-on (labs):</strong> Network troubleshooting (Packet Tracer), Windows GPO hardening (GNS3), MySQL and SQL</p><p><strong>Coursework:</strong> Incident analysis (CIA, NIST), IAM and CIS Controls, threat modeling, cloud business continuity and disaster recovery planning</p><p><strong>Familiar with:</strong> SIEM concepts and vocabulary, Python security tooling, vulnerability scanning (exposure, not production ownership)</p><p><strong>Regulated work:</strong> FAA, OSHA, IATA and CBP requirements; identity validation; access control; inspection-ready documentation; escalation with clear facts</p><h2>PROJECTS AND COURSEWORK</h2><div class='job'><div class='row'><h3>Security projects</h3><span>Public repositories</span></div><p class='muted'>github.com/KM-it-ops</p><ul><li>Log anomaly detection: rule-based and statistical detection of brute force, port scans, off-hours file access and privilege escalation.</li><li>Phishing email classifier.</li><li>VulnTrack, a vulnerability dashboard.</li><li>SniffOutPro, a local vulnerability-assessment app.</li><li>ATT&amp;CKLens benchmark.</li><li>Incident response playbooks and a cyber defense playbook.</li></ul></div><div class='job'><h3>Proofhouse</h3><p class='muted'>Personal project, github.com/KM-it-ops/Proofhouse</p><ul><li>Directed the AI-assisted development of Proofhouse, a prompt-optimizing tool for non-expert users.</li><li>Works across multiple AI providers and models (14 providers), and researches and adds a new one when a user asks for it.</li><li>Used by non-expert users to get translations in the right dialect and image-generator results that fit Middle Eastern culture.</li><li>Decided each design choice and tested every part as it was built.</li></ul></div><div class='job'><div class='row'><h3>Coursework labs</h3><span>Coursework</span></div><p class='muted'>Southern New Hampshire University</p><ul><li>CYB-220: Windows GPO hardening in GNS3 with six endpoint restrictions.</li><li>CYB-210: when the first ping in a Packet Tracer lab dropped a packet, retested, compared host pairs and wrote up the failure and the recovery (VLANs, DHCP, ASA adjacency).</li><li>CYB-260: CIS Controls plus HIPAA-aligned service-level brief.</li><li>DAD-220: MySQL database built from an ERD.</li></ul></div><h2>EXPERIENCE</h2><div class='job'><div class='row'><h3>Delivery Associate</h3><span>Jun 2025 to Aug 2026</span></div><p class='muted'>Fossa Logistics LLC (delivery service provider for Amazon)</p><ul><li>Delivered Amazon packages in a high-tempo operation with route prioritization, customer exceptions and hard time windows.</li><li>Informal peer troubleshooting for 7 drivers: walked one through the electric van&#x27;s troubleshooting reset by phone, fixed another&#x27;s intermittent signal loss by resetting the phone&#x27;s cellular connection, and found what was draining a third phone&#x27;s battery.</li><li>Spent 2.5 hours working with another driver to free a stuck electric delivery van from a muddy slope, then split the load and finished my route plus half of hers: on-time delivery, no customer incident.</li></ul></div><div class='job'><div class='row'><h3>Rural Carrier Associate</h3><span>Jun 2024 to Jun 2025</span></div><p class='muted'>USPS, Kannapolis, NC</p><ul><li>Learned 8 of the office&#x27;s 15 routes (only one was required) and, on many days, delivered multiple routes start to finish.</li><li>Handled mail, certified documentation, priority packages and sensitive materials on time-critical routes.</li><li>Used handheld devices for navigation, inventory management, time management and delivery completion.</li></ul></div><div class='job'><div class='row'><h3>Ramp Agent, then Crew Chief (Aviation Security Operations)</h3><span>Mar 2015 to Nov 2023</span></div><p class='muted'>American Airlines, Charlotte, NC</p><ul><li>Crew Chief for 6 years (2017 to 2023): led a team of 3 to 9 agents on a rotating crew; size varied with aircraft type, departing station and cargo.</li><li>Cleared by U.S. Customs and Border Protection to handle live inbound and outbound international flights, and cleared for international and high-profile arrivals.</li><li>Handled up to 5 flights per 8-hour shift (3.5 on average), including weekly charter flights for a professional football team in season. Asked to stay and work later inbound arrivals because of my international-flight certifications.</li><li>Caught security and dangerous-goods discrepancies on international flights.</li><li>Used a handheld device to clear security checks, plan weight-and-balance trip sheets, handle dangerous-goods clearances and warnings to flight crew, track luggage in transit, and contact ATC, the FAA or local law enforcement when policy required.</li><li>Worked under FAA, OSHA, IATA and CBP requirements with recurrent incident-response and safety and security training: daily identity validation, access control, and documentation that had to hold up to inspection.</li><li>Earned D1 certification (2017): crew chief and weight-and-balance clearance, FAA-compliant. Lapsed on leaving American Airlines.</li></ul></div><h2>EDUCATION AND CERTIFICATIONS</h2><p>Southern New Hampshire University, B.S. Information Technologies, Cybersecurity concentration. Completed Dec 2025, conferred Jan 2026. Summa Cum Laude, 3.96 GPA. Alpha Sigma Lambda honor society. Studied at night, through audio lessons while working, and on days off.</p><p><strong>CompTIA Security+ ce (SY0-701), issued Jan 2025, valid through Jan 2028</strong></p>
   </main>
 </body>
 </html>

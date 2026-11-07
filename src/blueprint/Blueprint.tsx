@@ -23,7 +23,7 @@ const SHEETS = [
 ] as const
 const TOTAL = '05'
 const where = `${PERSON.city}${PERSON.remote ? ' · Remote' : ''}`
-const fullName = `${PERSON.name} (${PERSON.short})`
+const fullName = PERSON.name
 /** Same-page / relative forms of content.ts URLs (data untouched): works on any sub-path preview. */
 const MESSAGE_HREF = /#contact$/.test(PERSON.contactUrl) ? '#contact' : PERSON.contactUrl
 const RESUME_HREF = RESUME_PDF.startsWith('/') ? `.${RESUME_PDF}` : RESUME_PDF
@@ -75,8 +75,7 @@ function Cover() {
         <div className="ident rv">
           <p className="kicker"><span className="lbl">{PERSON.available}</span><span className="lbl">{where}</span></p>
           <h1 id="h-name">
-            <span className="n1">{nameParts[0]} <span className="nw">{nameParts.slice(1).join(' ')}</span></span>{' '}
-            <span className="n2">({PERSON.short})</span>
+            <span className="n1">{nameParts[0]} <span className="nw">{nameParts.slice(1).join(' ')}</span></span>
           </h1>
           <div className="dim dim-h" aria-hidden="true"><span className="dim-line" /><span className="dim-lbl">{THROUGHLINE.title}</span></div>
           <p className="role">{PERSON.role}</p>
