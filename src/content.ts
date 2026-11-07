@@ -157,7 +157,7 @@ export const EXPERIENCE = [
     title: 'Delivery Associate',
     org: 'Fossa Logistics LLC (Amazon DSP)',
     loc: 'Charlotte, NC',
-    dates: '2025–present',
+    dates: '2025–2026',
     detail:
       'High-tempo logistics with route prioritization, customer exceptions, and hard time windows, alongside finishing the degree and the security portfolio.',
     transfer: ['Prioritization under pressure', 'Customer-facing problem solving'],
