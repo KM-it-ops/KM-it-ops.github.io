@@ -17,7 +17,7 @@ export const PERSON = {
   remote: true,
   contactUrl: 'https://km-it-ops.github.io/#contact',
   github: 'https://github.com/KM-it-ops',
-  linkedin: 'https://www.linkedin.com/in/mahmoud-michael-al-kurdi',
+  linkedin: 'https://www.linkedin.com/in/michael-kurdi',
   role: 'Junior Security Analyst / Security Operations / Vulnerability Management',
   available: 'Available for full-time roles',
   targets: [
