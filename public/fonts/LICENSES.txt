@@ -1,14 +1,14 @@
-FONT LICENSES — km-it-ops.github.io
+FONT LICENSES - km-it-ops.github.io
 
 All three self-hosted font families are licensed under the SIL Open Font License, Version 1.1.
 Files were subset to Latin + punctuation/arrows and compressed to WOFF2 (fontTools pyftsubset).
 Per-font OFL texts (verbatim from github.com/google/fonts): OFL-unbounded.txt, OFL-redhattext.txt, OFL-robotomono.txt
 
-unbounded.woff2  — Unbounded (variable, wght 200–900)
+unbounded.woff2  - Unbounded (variable, wght 200–900)
 Copyright 2022 The Unbounded Project Authors (https://github.com/googlefonts/unbounded)
-redhattext.woff2 — Red Hat Text (variable, wght 300–700)
+redhattext.woff2 - Red Hat Text (variable, wght 300–700)
 Copyright 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)
-robotomono.woff2 — Roboto Mono (variable, wght 100–700)
+robotomono.woff2 - Roboto Mono (variable, wght 100–700)
 Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)
 
 ================================================================

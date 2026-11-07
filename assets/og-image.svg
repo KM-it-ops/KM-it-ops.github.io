@@ -45,8 +45,8 @@
   </g>
 
   <!-- name -->
-  <text x="110" y="290" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="86" letter-spacing="-2" fill="#f5f7fb">Mahmoud "Michael"</text>
-  <text x="110" y="390" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="96" letter-spacing="-3" fill="url(#accent)">Al Kurdi</text>
+  <text x="110" y="290" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="86" letter-spacing="-2" fill="#f5f7fb">Michael</text>
+  <text x="110" y="390" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="96" letter-spacing="-3" fill="url(#accent)">Kurdi</text>
 
   <!-- tagline -->
   <text x="110" y="455" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" fill="#8d93a8">

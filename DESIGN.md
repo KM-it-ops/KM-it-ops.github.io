@@ -11,7 +11,7 @@ Dark cinematic shell with gold accents and italic/serif display. Signature asset
 ## Hierarchy (above the fold)
 
 1. Available eyebrow  
-2. **Mahmoud Al Kurdi** + muted `(Michael Kurdi)`  
+2. **Michael Kurdi**  
 3. **Junior Security Analyst** role (ink, strong 700) — wins the eye over name size  
 4. **Proof strip** — log anomaly detection, cloneable, View repo →  
 5. Seeking line + CTAs (Resume gold-fill primary; Email secondary ghost; LinkedIn/GitHub tertiary)  
@@ -39,8 +39,8 @@ Log anomaly (lead) → phishing → VulnTrack. Proofhouse lives under Also shipp
 
 ## Nav / SEO
 
-- Brand: **Mahmoud Al Kurdi** (xs: **M. Al Kurdi**) — not MK / Portfolio  
-- Title / OG / Twitter / JSON-LD Person: Mahmoud-primary, Michael as alternateName / paren  
+- Brand: **Michael Kurdi** (xs: **M. Kurdi**), not MK / Portfolio  
+- Title / OG / Twitter / JSON-LD Person: Michael Kurdi, no alternate name  
 
 ## Deploy
 
