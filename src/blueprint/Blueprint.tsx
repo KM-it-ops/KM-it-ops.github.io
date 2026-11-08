@@ -27,6 +27,9 @@ const fullName = PERSON.name
 /** Same-page / relative forms of content.ts URLs (data untouched): works on any sub-path preview. */
 const MESSAGE_HREF = /#contact$/.test(PERSON.contactUrl) ? '#contact' : PERSON.contactUrl
 const RESUME_HREF = RESUME_PDF.startsWith('/') ? `.${RESUME_PDF}` : RESUME_PDF
+/** Web copy of the headshot (480x600, EXIF stripped). Relative like RESUME_HREF so sub-path previews work. */
+const PORTRAIT_SRC = './img/portrait.jpg'
+const PORTRAIT_ALT = `${PERSON.name}, security analyst, in a navy suit`
 
 function Chrome() {
   const six = [1, 2, 3, 4, 5, 6].map((n) => <i key={n}>{n}</i>)
@@ -91,8 +94,18 @@ function Cover() {
         <aside className="titleblock rv" aria-labelledby="tb-h">
           <h2 className="tb-h" id="tb-h"><span className="lbl">Title block</span></h2>
           <div className="stamp" aria-hidden="true"><span>CompTIA</span><b>Security+ ce</b><span>SY0-701</span></div>
+          <div className="tb-top">
+            <figure className="tb-photo">
+              <span className="tb-frame">
+                <img src={PORTRAIT_SRC} width={480} height={600} alt={PORTRAIT_ALT} loading="eager" decoding="async" fetchPriority="high" />
+              </span>
+              <figcaption className="lbl">MK / {PERSON.city}</figcaption>
+            </figure>
+            <dl className="tb tb-drawn">
+              <div className="tb-row"><dt className="lbl">Drawn by</dt><dd>{fullName}</dd></div>
+            </dl>
+          </div>
           <dl className="tb">
-            <div className="tb-row"><dt className="lbl">Drawn by</dt><dd>{fullName}</dd></div>
             <div className="tb-row"><dt className="lbl">Credential</dt><dd>{CREDENTIALS.secPlus}<span className="sub">{CREDENTIALS.secPlusDates}</span></dd></div>
             <div className="tb-row"><dt className="lbl">Degree</dt><dd>{CREDENTIALS.degree}<span className="sub">{CREDENTIALS.degreeDates}</span><span className="sub">{CREDENTIALS.honors}</span></dd></div>
             <div className="tb-row"><dt className="lbl">Background</dt><dd>{aa.title}, {aa.org}<span className="sub">{aa.dates} · {aa.loc}</span></dd></div>
