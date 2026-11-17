@@ -26,6 +26,6 @@ Honest gap: I do not invent enterprise SIEM or commercial SAST/DAST tenure. What
 How I work: specs, acceptance tests, scorecards, and README evidence.
 
 GitHub: https://github.com/KM-it-ops
-Resume: https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf
+Resume: https://km-it-ops.github.io/Mahmoud_Al_Kurdi_Resume.pdf
 
 Open to connect with prompt engineering leads, SOC managers, detection engineers, and security hiring managers.

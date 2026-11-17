@@ -166,7 +166,7 @@ h1{font-family:var(--f-disp);font-weight:700;letter-spacing:-.02em;line-height:1
 .tb-frame::after{content:"";position:absolute;inset:1.5px;border:1px dashed var(--wire);pointer-events:none}
 .tb-frame img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .tb-photo figcaption{white-space:nowrap}
-@media (max-width:480px){.tb-photo figcaption{font-size:10px;letter-spacing:.02em}}
+@media (max-width:480px){.tb-photo figcaption{font-size:.8125rem;letter-spacing:.02em;white-space:normal}}
 .tb.tb-drawn{grid-template-columns:minmax(0,1fr);align-content:end}
 .tb-drawn .tb-row{grid-template-columns:minmax(0,1fr);border-bottom:0}
 .tb-drawn .tb-row dt{border-right:0;padding-bottom:2px}

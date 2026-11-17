@@ -44,7 +44,7 @@ Add these three links (order matters — PromptRig first):
 | --- | --- |
 | PromptRig — PromptOps framework | https://github.com/KM-it-ops/Proofhouse |
 | Portfolio (km-it-ops.github.io) | https://km-it-ops.github.io/ |
-| Resume PDF (2026) | https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf |
+| Resume PDF (2026) | https://km-it-ops.github.io/Mahmoud_Al_Kurdi_Resume.pdf |
 
 ## 6. Open to Work
 

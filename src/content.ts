@@ -11,13 +11,20 @@
  * "Vulnerability management / assessment". All other copy on the page comes from this file.
  */
 
+/** Public profile URLs. LinkedIn lives in one constant so a future slug change is a one-line edit. */
+export const LINKS = {
+  github: 'https://github.com/KM-it-ops',
+  linkedin: 'https://www.linkedin.com/in/mahmoud-al-kurdi-it/',
+  site: 'https://km-it-ops.github.io/',
+} as const
+
 export const PERSON = {
-  name: 'Michael Kurdi',
+  name: 'Mahmoud Al Kurdi',
   city: 'Charlotte, NC',
   remote: true,
   contactUrl: 'https://km-it-ops.github.io/#contact',
-  github: 'https://github.com/KM-it-ops',
-  linkedin: 'https://www.linkedin.com/in/michael-kurdi',
+  github: LINKS.github,
+  linkedin: LINKS.linkedin,
   role: 'Junior Security Analyst / Security Operations / Vulnerability Management',
   available: 'Available for full-time roles',
   targets: [
