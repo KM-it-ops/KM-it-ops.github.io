@@ -27,7 +27,7 @@ Upload: [`../assets/profile-portrait.png`](../assets/profile-portrait.png)
 | Title | URL |
 | --- | --- |
 | Threat Intelligence Atlas | https://km-it-ops.github.io/ |
-| Resume PDF (2026) | https://km-it-ops.github.io/assets/Michael_Kurdi_Resume_2026.pdf |
+| Resume PDF (2026) | https://km-it-ops.github.io/Mahmoud_Al_Kurdi_Resume.pdf |
 | ATT&CKLens Benchmark | https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark |
 
 ## Open to Work

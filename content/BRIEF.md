@@ -9,11 +9,11 @@ Two standing rules:
 
 ## Person
 
-- Name: Michael Kurdi
+- Name: Mahmoud Al Kurdi
 - City: Charlotte, NC (remote welcome)
 - Contact: https://km-it-ops.github.io/#contact (Web3Forms form; no public email or phone)
 - GitHub: https://github.com/KM-it-ops
-- LinkedIn: https://www.linkedin.com/in/michael-kurdi
+- LinkedIn: https://www.linkedin.com/in/mahmoud-al-kurdi-it/
 - Headline: Junior Security Analyst / Security Operations / IT Risk
 - Available: Available for full-time roles
 - Targets: Junior Security Analyst, Security Operations, Vulnerability Management, IT Risk

@@ -1,4 +1,4 @@
-# Michael Kurdi Portfolio
+# Mahmoud Al Kurdi Portfolio
 
 New graduate **Junior Security Analyst / Security Operations / IT Risk** site. B.S. Information Technologies (Cybersecurity concentration), Summa Cum Laude, SNHU · CompTIA Security+.
 

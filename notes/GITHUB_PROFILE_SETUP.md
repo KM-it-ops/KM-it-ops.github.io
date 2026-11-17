@@ -37,7 +37,7 @@ Charlotte NC · Remote · km-it-ops.github.io
 ## Display name
 
 ```
-Michael Kurdi
+Mahmoud Al Kurdi
 ```
 
 ## Pinned repositories (in this order)
