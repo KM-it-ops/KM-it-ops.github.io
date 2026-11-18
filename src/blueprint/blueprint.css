@@ -118,6 +118,8 @@ main{max-width:var(--wrap);margin:0 auto;padding:clamp(14px,2.5vw,36px) var(--gu
 @media (max-width:640px){.zl,.zr{display:none}.reg{display:none}.sheet{padding-top:58px}.sheet-tag{top:22px}}
 
 .sheet-head{max-width:68ch;margin-bottom:clamp(22px,3vw,36px)}
+/* Measure: 34em at 17px is about 75 characters per line (ch overstates Red Hat Text width) */
+.sheet-head p,.pbody>p,#parts li p,.through p,.det-2 p,.tl p,.notes p{max-width:34em}
 .sheet-head h2,.contact h3{font:600 clamp(1.5rem,1rem + 1.9vw,2.5rem)/1.12 var(--f-disp);letter-spacing:-.01em;margin-bottom:.6rem;text-wrap:balance}
 .lede{color:var(--muted);max-width:66ch}
 .hint{color:var(--muted);font-size:1rem;margin-top:.7rem}
@@ -299,7 +301,7 @@ html:not(.app) #schem-hint{display:none}
 .part-arch details{border-style:dashed}
 .part-arch .pno{border-style:dashed}
 .part.hl details{border-color:var(--wire-on)}
-.pbody{padding:2px 14px 16px;display:grid;gap:10px;max-width:72ch}
+.pbody{padding:2px 14px 16px;display:grid;gap:10px;max-width:36em}
 .plink{font-weight:700;justify-self:start;min-height:44px;display:inline-flex;align-items:center}
 
 .asm-stage{position:relative;height:calc(170px + 9 * var(--gap,22px));min-height:300px;touch-action:pan-y;cursor:ns-resize;user-select:none;-webkit-user-select:none;
