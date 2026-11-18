@@ -8,60 +8,124 @@
   <link rel="canonical" href="https://km-it-ops.github.io/resume.html" />
   <link rel="icon" href="./favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#E4DECD" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071B33" />
+  <link rel="preload" href="./fonts/redhattext.woff2" as="font" type="font/woff2" crossorigin />
+  <script>
+    /* Same paper as the portfolio: saved choice (kmBlueprintPaper) wins, else the OS setting. No JS = CSS media query fallback. */
+    (function(){var d=document.documentElement;try{var t=localStorage.getItem('kmBlueprintPaper');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();
+  </script>
   <style>
-    :root { color-scheme: light; }
-    * { box-sizing: border-box; }
-    body {
-      font: 1.125rem/1.55 Georgia, "Times New Roman", serif;
-      color: #1f2937;
-      max-width: 44rem;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-      background: #fff;
+    /* MAK Blueprint system (tokens mirror src/blueprint/blueprint.css). Fonts: OFL 1.1, self-hosted. */
+    @font-face{font-family:"Unbounded";src:url("./fonts/unbounded.woff2") format("woff2");font-weight:200 900;font-display:swap}
+    @font-face{font-family:"Red Hat Text";src:url("./fonts/redhattext.woff2") format("woff2");font-weight:300 700;font-display:swap}
+    @font-face{font-family:"Roboto Mono";src:url("./fonts/robotomono.woff2") format("woff2");font-weight:100 700;font-display:swap}
+    :root{
+      --f-disp:"Unbounded","Arial Black",system-ui,sans-serif;
+      --f-body:"Red Hat Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --f-mono:"Roboto Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+      color-scheme:dark;
+      --page:#071B33;--sheet:#0B2747;--panel:#0E3157;--line:#7CC4F5;--wire:rgba(124,196,245,.30);
+      --text:#EEF5FF;--muted:#B4CBE6;--cyan:#7FD8FF;--amber:#FFC56B;
+      --cta-bg:#FFC56B;--cta-fg:#071B33;--focus:#FFC56B;--g:rgba(124,196,245,.07);
     }
-    h1 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.85rem); color: #1b365d; margin: 0; text-align: center; line-height: 1.25; }
-    .sub { text-align: center; color: #1b365d; font-style: italic; margin: .35rem 0 .2rem; font-size: 1.05rem; }
-    .meta { text-align: center; color: #374151; font-size: 0.9375rem; margin: 0 0 1rem; line-height: 1.5; }
+    [data-theme="light"]{color-scheme:light;
+      --page:#E4DECD;--sheet:#FBF7EC;--panel:#F2ECDC;--line:#2B66A8;--wire:rgba(43,102,168,.32);
+      --text:#0D2138;--muted:#33506F;--cyan:#0A4F99;--amber:#8A4500;
+      --cta-bg:#0D3A6E;--cta-fg:#FFFFFF;--focus:#A84300;--g:rgba(43,102,168,.06);
+    }
+    @media (prefers-color-scheme: light){
+      :root:not([data-theme]){color-scheme:light;
+        --page:#E4DECD;--sheet:#FBF7EC;--panel:#F2ECDC;--line:#2B66A8;--wire:rgba(43,102,168,.32);
+        --text:#0D2138;--muted:#33506F;--cyan:#0A4F99;--amber:#8A4500;
+        --cta-bg:#0D3A6E;--cta-fg:#FFFFFF;--focus:#A84300;--g:rgba(43,102,168,.06);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; padding: clamp(10px, 2.6vw, 40px);
+      background: var(--page); color: var(--text);
+      font: 400 1.125rem/1.6 var(--f-body);
+      background-image: linear-gradient(var(--g) 1px, transparent 1px), linear-gradient(90deg, var(--g) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    main {
+      position: relative; max-width: 46rem; margin: 0 auto;
+      padding: clamp(28px, 5vw, 56px) clamp(18px, 5vw, 48px) clamp(32px, 5vw, 56px);
+      background: var(--sheet); border: 1.5px solid var(--line); outline: 1px solid var(--wire); outline-offset: -10px;
+    }
+    main > * { max-width: 40rem; margin-left: auto; margin-right: auto; }
+    .mark {
+      display: grid; place-items: center; width: max-content; min-width: 48px; height: 48px; padding: 0 8px;
+      margin: 0 auto .9rem; position: relative; border: 1.5px solid var(--line); color: var(--text);
+      font: 700 1rem var(--f-disp); letter-spacing: -.03em;
+    }
+    .mark::after { content: ""; position: absolute; inset: 4px; border: 1px dashed var(--wire); }
+    .mark::before { content: ""; position: absolute; left: 8px; right: 8px; bottom: -6px; height: 2px; background: var(--amber); }
+    h1 { font: 700 clamp(1.625rem, 1.2rem + 1.4vw, 2.125rem)/1.15 var(--f-disp); letter-spacing: -.01em; margin: 0 auto; text-align: center; text-wrap: balance; }
+    .sub { text-align: center; color: var(--text); font: 500 1.125rem/1.45 var(--f-body); margin: .5rem auto .35rem; }
+    .meta { text-align: center; color: var(--muted); font-size: 1rem; margin: 0 auto 1.1rem; line-height: 1.55; overflow-wrap: anywhere; }
     .actions {
       display: flex; flex-wrap: wrap; gap: .65rem; justify-content: center;
-      margin: 0 0 1.35rem;
+      margin: 0 auto 1.5rem;
     }
     .actions a {
       display: inline-flex; align-items: center; justify-content: center;
-      min-height: 44px; min-width: 44px; padding: .55rem 1rem;
-      border: 1.5px solid #1b365d; border-radius: .4rem;
-      text-decoration: none; font: 600 0.9375rem/1.2 system-ui, sans-serif;
-      color: #1b365d; background: #fff;
+      min-height: 44px; min-width: 44px; padding: .55rem 1.1rem;
+      border: 1.5px solid var(--line); border-radius: 0;
+      text-decoration: none; font: 600 1rem/1.2 var(--f-body);
+      color: var(--text); background: transparent;
     }
-    .actions a.primary { background: #1b365d; color: #fff; }
-    .actions a:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
-    a { color: #1b365d; }
-    a:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    .actions a.primary { background: var(--cta-bg); border-color: var(--cta-bg); color: var(--cta-fg); }
+    .actions a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    a { color: var(--cyan); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
     h2 {
-      font: 700 0.8125rem/1.3 system-ui, sans-serif;
-      letter-spacing: .08em; text-transform: uppercase;
-      color: #1b365d; border-bottom: 1.5px solid #1b365d;
-      margin: 1.25rem 0 .45rem; padding-bottom: .15rem;
+      font: 600 1rem/1.3 var(--f-disp);
+      letter-spacing: .04em; text-transform: uppercase;
+      color: var(--text); border-bottom: 1.5px solid var(--line);
+      margin: 1.75rem auto .6rem; padding-bottom: .3rem; position: relative;
     }
-    h3 { font-size: 1.05rem; margin: .7rem 0 0; color: #1b365d; }
-    .row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
-    .muted { color: #4b5563; font-style: italic; font-size: 0.95rem; word-break: break-word; }
-    ul { margin: .3rem 0 .5rem; padding-left: 1.2rem; }
-    li { margin: .2rem 0; }
-    p { margin: .3rem 0; }
+    h2::before { content: ""; position: absolute; left: 0; bottom: -1.5px; width: 2.5rem; height: 3px; background: var(--amber); }
+    h3 { font: 600 1.0625rem/1.35 var(--f-disp); margin: .9rem 0 0; color: var(--text); }
+    .row { display: flex; justify-content: space-between; gap: .25rem 1rem; flex-wrap: wrap; align-items: baseline; }
+    .row > span { font: 500 .9375rem/1.4 var(--f-mono); color: var(--muted); }
+    .muted { color: var(--muted); font-size: 1rem; word-break: break-word; }
+    ul { margin: .35rem 0 .6rem; padding-left: 1.2rem; }
+    li { margin: .25rem 0; }
+    li::marker { color: var(--line); }
+    p { margin: .35rem auto; }
+    strong { font-weight: 700; }
     .note {
-      font: 0.9375rem/1.45 system-ui, sans-serif; color: #374151;
-      background: #f3f4f6; border-radius: .4rem; padding: .75rem 1rem; margin: 0 0 1rem;
+      font: 1rem/1.5 var(--f-body); color: var(--text);
+      background: var(--panel); border: 1px solid var(--wire); border-left: 4px solid var(--amber);
+      padding: .75rem 1rem; margin: 0 auto 1rem;
     }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
     @media print {
+      :root, [data-theme] { color-scheme: light; --page:#fff; --sheet:#fff; --panel:#fff; --line:#1a3d6b; --wire:#9fb3cc; --text:#000; --muted:#222; --cyan:#0a3a75; --amber:#7a3a00; --g:transparent; }
+      @page { margin: .5in; }
+      body { padding: 0; background: #fff; font-size: 11pt; line-height: 1.45; }
+      main { max-width: none; padding: 0; border: 0; outline: 0; }
+      main > * { max-width: none; }
+      .mark { height: 36px; min-width: 36px; font-size: 12pt; margin-bottom: .5rem; }
+      h1 { font-size: 20pt; }
+      .sub { font-size: 12pt; }
+      .meta, .muted, .row > span { font-size: 10pt; }
+      h2 { font-size: 10.5pt; margin-top: 1rem; }
+      h3 { font-size: 11pt; }
       .job { break-inside: avoid; }
-      body { margin: .4in auto; }
-      .actions { display: none; }
+      h2, h3 { break-after: avoid; }
+      .actions, .note { display: none; }
+      a { color: #000; }
     }
   </style>
 </head>
 <body>
   <main id="main">
+    <span class="mark" aria-hidden="true">MAK</span>
     <h1>Mahmoud Al Kurdi</h1>
     <p class="sub">Junior Security Analyst | Security Operations | IT Risk</p>
     <p class="meta">Charlotte, NC (US citizen; remote, hybrid or onsite) · <a href="mailto:kurdi.michael.it@gmail.com">kurdi.michael.it@gmail.com</a> · <a href="https://www.linkedin.com/in/mahmoud-al-kurdi-it/">LinkedIn</a> · <a href="https://github.com/KM-it-ops">GitHub</a> · <a href="https://km-it-ops.github.io/">Portfolio</a></p>
