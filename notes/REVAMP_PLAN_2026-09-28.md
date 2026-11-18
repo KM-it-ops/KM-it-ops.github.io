@@ -39,7 +39,7 @@
 
 | Surface | Lock to |
 |--------|---------|
-| `<title>` / OG title | `Michael Kurdi — Junior Security Analyst \| Security+ · Detection, VM, IT Risk \| Charlotte / Remote` (or LinkedIn’s final headline #1 once they land) |
+| `<title>` / OG title | `Mahmoud Al Kurdi — Junior Security Analyst \| Security+ · Detection, VM, IT Risk \| Charlotte / Remote` (or LinkedIn’s final headline #1 once they land) |
 | Meta description | Security+, Summa 3.96, log anomaly / phishing / vuln workflow repos, aviation regulated-ops transfer, open to Tier-1 SOC / Jr Detection / security automation |
 | Project tags | SOC triage · Detection · Vuln workflow · PromptOps (Proofhouse) · Client delivery (OFG) |
 | Soft CTA | Portfolio hub + GitHub KM-it-ops + Resume |
@@ -93,7 +93,7 @@ Factual pass against **live** `https://km-it-ops.github.io/` and **origin/main**
 ### Live SEO snapshot
 | Item | Finding |
 |------|---------|
-| Title | `Michael Kurdi — Junior Security Analyst / Security Operations / IT Risk` |
+| Title | `Mahmoud Al Kurdi — Junior Security Analyst / Security Operations / IT Risk` |
 | Meta description | Present (Security+, Summa, detection/vuln/case files) |
 | OG | type/title/description/url present; **`og:image=/favicon.svg`** (relative, not share-card sized) |
 | Twitter | `summary` card; title/description; **no `twitter:image`** |

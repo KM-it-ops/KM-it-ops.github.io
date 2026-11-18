@@ -39,7 +39,7 @@ Log anomaly (lead) → phishing → VulnTrack. Proofhouse lives under Also shipp
 
 ## Nav / SEO
 
-- Brand: **Mahmoud Al Kurdi** (xs: **M. Kurdi**), not MK / Portfolio  
+- Brand: **Mahmoud Al Kurdi** (xs: **M. Al Kurdi**), mark: **MAK**  
 - Title / OG / Twitter / JSON-LD Person: Mahmoud Al Kurdi, no alternate name  
 
 ## Deploy
