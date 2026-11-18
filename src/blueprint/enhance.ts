@@ -195,6 +195,7 @@ export function enhance(): void {
     if (focusNode && pinned) { rove(N.get(pinned).btn); N.get(pinned).btn.focus(); }
   }
   function clear() { pinned = null; N.forEach((n: any) => n.btn.setAttribute('aria-pressed', 'false')); pClear.disabled = true; paint(null); }
+  renderPanel(null); // idle state on load: collapses the sticky panel on phones until a node is picked
   function rove(btn: any) { colLists.forEach((l: any) => { if (l.includes(btn)) l.forEach((b: any) => b.tabIndex = b === btn ? 0 : -1); }); }
   // Preview on keyboard focus and real mouse hover only. Touch/pen taps go straight to pin on click,
   // so the panel never resizes under a finger between touchstart and click.

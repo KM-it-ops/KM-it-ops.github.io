@@ -184,7 +184,7 @@ function Schematic() {
           {col('col-lane', 'col-lane', 'Lanes (project tags)', LANE_NODES)}
           <svg className="wires" aria-hidden="true" focusable="false" />
         </div>
-        <aside className="panel" id="schem-panel" aria-labelledby="panel-title" hidden>
+        <aside className="panel idle" id="schem-panel" aria-labelledby="panel-title" hidden>
           <div className="panel-in">
             <p className="lbl panel-kind" id="panel-kind">Detail callout</p>
             <h3 className="panel-title" id="panel-title" tabIndex={-1}>Select a node</h3>
