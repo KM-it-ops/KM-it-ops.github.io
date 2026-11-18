@@ -99,7 +99,7 @@ function Cover() {
               <span className="tb-frame">
                 <img src={PORTRAIT_SRC} width={480} height={600} alt={PORTRAIT_ALT} loading="eager" decoding="async" fetchPriority="high" />
               </span>
-              <figcaption className="lbl">MK / {PERSON.city}</figcaption>
+              <figcaption className="lbl">MAK / {PERSON.city}</figcaption>
             </figure>
             <dl className="tb tb-drawn">
               <div className="tb-row"><dt className="lbl">Drawn by</dt><dd>{fullName}</dd></div>
@@ -364,7 +364,7 @@ export default function Blueprint() {
       <div className="deep" aria-hidden="true" />
       <header className="bar">
         <div className="bar-in">
-          <a className="mark" href="#sheet-01" aria-label={`MK, ${PERSON.name}, back to cover sheet`}><span aria-hidden="true">MK</span></a>
+          <a className="mark" href="#sheet-01" aria-label={`MAK, ${PERSON.name}, back to cover sheet`}><span aria-hidden="true">MAK</span></a>
           <nav className="index-nav" aria-label="Sheet index">
             <ol>
               {SHEETS.map(([no, nm], i) => (

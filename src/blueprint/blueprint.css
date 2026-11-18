@@ -65,8 +65,8 @@ img,svg{max-width:100%}
 /* ---------- header / sheet index ---------- */
 .bar{position:sticky;top:0;z-index:20;background:var(--page);background:color-mix(in srgb,var(--page) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--wire)}
 .bar-in{max-width:var(--wrap);margin:0 auto;padding:6px var(--gut);display:flex;align-items:center;gap:8px}
-.mark{flex:none;display:grid;place-items:center;width:44px;height:44px;border:1.5px solid var(--line);color:var(--text);text-decoration:none;
-  font:700 .9375rem var(--f-disp);letter-spacing:.02em;position:relative}
+.mark{flex:none;display:grid;place-items:center;min-width:44px;width:auto;height:44px;padding:0 6px;border:1.5px solid var(--line);color:var(--text);text-decoration:none;
+  font:700 .9375rem var(--f-disp);letter-spacing:-.03em;position:relative}
 .mark::after{content:"";position:absolute;inset:4px;border:1px dashed var(--wire)}
 .index-nav{flex:1;min-width:0}
 .index-nav ol{list-style:none;margin:0;padding:0;display:flex;gap:2px;justify-content:center}

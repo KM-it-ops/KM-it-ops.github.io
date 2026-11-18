@@ -2,9 +2,11 @@
   <rect width="64" height="64" fill="#071B33"/>
   <rect x="4" y="4" width="56" height="56" fill="#0B2747" stroke="#7CC4F5" stroke-width="2"/>
   <rect x="8.5" y="8.5" width="47" height="47" fill="none" stroke="#7CC4F5" stroke-width="1" stroke-dasharray="3 2"/>
-  <g fill="none" stroke="#EEF5FF" stroke-width="4.6" stroke-linejoin="miter" stroke-linecap="square">
-    <path d="M14 44V20l8 13 8-13v24"/>
-    <path d="M37 20v24M50 20 39 32l11 12"/>
+  <g fill="none" stroke="#EEF5FF" stroke-width="3.2" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M11 46V18l7 16 7-16v28"/>
+    <path d="M28 46L35 18L42 46"/>
+    <path d="M30.6 36h8.8"/>
+    <path d="M45 18v28M55 18 47.2 32 55 46"/>
   </g>
-  <path d="M14 50h36" stroke="#FFC56B" stroke-width="2"/>
+  <path d="M12 50h40" stroke="#FFC56B" stroke-width="2"/>
 </svg>
