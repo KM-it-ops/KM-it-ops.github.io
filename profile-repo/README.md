@@ -1,18 +1,18 @@
-<!-- Banner: Masked Signal profile header -->
+<!-- Banner: MAK blueprint profile header (text outlined; name and role repeated as real text below) -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KM-it-ops/KM-it-ops/main/assets/profile-banner.svg">
-  <img src="https://raw.githubusercontent.com/KM-it-ops/KM-it-ops/main/assets/profile-banner.svg" alt="Masked Signal: evidence-led defensive security by Mahmoud Al Kurdi" width="100%">
+  <img src="https://raw.githubusercontent.com/KM-it-ops/KM-it-ops/main/assets/profile-banner.svg" alt="Mahmoud Al Kurdi: Junior Security Analyst · Security Operations · IT Risk. km-it-ops.github.io" width="100%">
 </picture>
 
 <h1 align="left">Mahmoud Al Kurdi</h1>
 
 <p align="left">
-  <a href="https://km-it-ops.github.io/"><img src="https://img.shields.io/badge/Portfolio-live-7cf0c1?style=flat-square&logo=github&labelColor=04060a" alt="Portfolio"></a>
-  <a href="https://km-it-ops.github.io/resume.html"><img src="https://img.shields.io/badge/Resume-HTML-ff5e6e?style=flat-square&labelColor=04060a" alt="Resume"></a>
-  <img src="https://img.shields.io/badge/CompTIA-Security%2B%20ce-7cf0c1?style=flat-square&labelColor=04060a" alt="Security+ ce">
-  <img src="https://img.shields.io/badge/SNHU-Summa%203.96%20GPA-6fb3ff?style=flat-square&labelColor=04060a" alt="SNHU Summa Cum Laude">
-  <img src="https://img.shields.io/badge/Charlotte%2C%20NC%20%2F%20Remote-8a93a8?style=flat-square&labelColor=04060a" alt="Location">
-  <img src="https://img.shields.io/badge/status-open%20to%20work-6ddf9f?style=flat-square&labelColor=04060a" alt="Open to work">
+  <a href="https://km-it-ops.github.io/"><img src="https://img.shields.io/badge/Portfolio-live-7CC4F5?style=flat-square&logo=github&labelColor=071B33" alt="Portfolio"></a>
+  <a href="https://km-it-ops.github.io/resume.html"><img src="https://img.shields.io/badge/Resume-HTML-FFC56B?style=flat-square&labelColor=071B33" alt="Resume"></a>
+  <img src="https://img.shields.io/badge/CompTIA-Security%2B%20ce-7CC4F5?style=flat-square&labelColor=071B33" alt="Security+ ce">
+  <img src="https://img.shields.io/badge/SNHU-Summa%203.96%20GPA-7CC4F5?style=flat-square&labelColor=071B33" alt="SNHU Summa Cum Laude">
+  <img src="https://img.shields.io/badge/Charlotte%2C%20NC%20%2F%20Remote-7CC4F5?style=flat-square&labelColor=071B33" alt="Location">
+  <img src="https://img.shields.io/badge/status-open%20to%20work-FFC56B?style=flat-square&labelColor=071B33" alt="Open to work">
 </p>
 
 I'm Mahmoud Al Kurdi, a new security graduate in Charlotte, NC, looking for a SOC (security operations center) / security operations, cyber or incident response analyst, or vulnerability management role. Remote works fine.
