@@ -1,13 +1,13 @@
 # Visual redesign directions — 2026-09-28
 
-**Trigger:** Michael previewed the hire-content draft on :4175 — same visual system (3D-heavy ImmersiveWorld). He wants a **new visual system**: clean, polished, sharp, with a little oomph. Wrong vibe for hire as-is.
+**Trigger:** Mahmoud previewed the hire-content draft on :4175 — same visual system (3D-heavy ImmersiveWorld). He wants a **new visual system**: clean, polished, sharp, with a little oomph. Wrong vibe for hire as-is.
 
 **Locks (unchanged):**
 - Headline A for `<title>` / OG
 - Featured: log anomaly → Proofhouse eng → phishing → VulnTrack
 - Side: AgentForge GitHub-only; OFG live OK
 - Comfortable readable UI + `prefers-reduced-motion` nonnegotiable
-- **No merge / live Pages** until Michael approves a draft
+- **No merge / live Pages** until Mahmoud approves a draft
 
 **Branch for the build (after pick):** `revamp/visual-system-2026-09`  
 Forked from `revamp/professional-hire-2026-09` (`40209d6`) so content/SEO stays; ImmersiveWorld / R3F shell is replaced, not polished.
@@ -50,4 +50,4 @@ Flat geometric system: SOC-adjacent without cosplay. Modular tiles + subtle sign
 
 ## Decision needed
 
-Michael / CoS pick **A, B, or C** (or hybrid: e.g. “A layout + B accent”). Heavy build starts only after that pick.
+Mahmoud / CoS pick **A, B, or C** (or hybrid: e.g. “A layout + B accent”). Heavy build starts only after that pick.

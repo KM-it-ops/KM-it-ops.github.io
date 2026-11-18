@@ -1,6 +1,6 @@
 # Portfolio revamp plan — 2026-09-28
 
-**Status:** draft for Michael / CoS approval before mk preview or Pages push  
+**Status:** draft for Mahmoud / CoS approval before mk preview or Pages push  
 **Live:** https://km-it-ops.github.io/  
 **Repo:** KM-it-ops/KM-it-ops.github.io @ main `995211e`  
 **Constraints:** comfortable readable UI + `prefers-reduced-motion` nonnegotiable; no live Pages until mk Windows preview approved; no SIEM/EDR tenure claims.
@@ -76,7 +76,7 @@ Reduced-motion: existing poster path stays; Lenis off on coarse/reduced.
 4. Strip hire-patch from build pipeline / docs.
 5. Readable + reduced-motion pass (375 / 768 / 1280).
 6. **mk preview package:** zip + PowerShell `npm ci` / `npm run build` / `npx vite preview` notes; serve locally; **kill servers after**.
-7. Ping CoS + Michael with preview path; **wait for explicit approve** before Pages/`main` push.
+7. Ping CoS + Mahmoud with preview path; **wait for explicit approve** before Pages/`main` push.
 
 ## 6. Decisions locked (CoS 2026-09-28)
 
@@ -84,7 +84,7 @@ Reduced-motion: existing poster path stays; Lenis off on coarse/reduced.
 2. **Proofhouse** = featured engineering / PromptOps (PromptRig name retired on site).
 3. **OFG + AgentForge** = side projects only; **no AgentForge demo/live link** until fixed.
 4. Immersive WebGL kept as progressive enhancement; reduced-motion poster remains nonnegotiable.
-5. No live Pages until Michael approves mk preview.
+5. No live Pages until Mahmoud approves mk preview.
 
 ## 7. Executor audit close-out (2026-09-28 ~09:06 ET) — PASS
 
