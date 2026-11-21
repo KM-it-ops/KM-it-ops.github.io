@@ -268,6 +268,9 @@ h1{font-family:var(--f-disp);font-weight:700;letter-spacing:-.02em;line-height:1
 @media (max-width:1100px){.schem{grid-template-columns:1fr}.panel{position:sticky;top:auto;bottom:8px;z-index:3;max-height:40vh;overflow:auto;box-shadow:0 -8px 30px -12px var(--shadow)}
   .panel.idle .panel-body,.panel.idle #schem-clear{display:none}.panel.idle .panel-in{padding:10px 14px;gap:2px}.panel.idle .panel-title{font-size:1rem}
   .panel.idle .panel-title::after{content:" · tap any node";font:500 .9375rem var(--f-body);color:var(--muted)}}
+/* Idle panel must not cover the schematic on phones (Checker ≤56px). Hide it until a node is picked. */
+.panel[hidden]{display:none!important}
+@media (max-width:1100px){.panel.idle{display:none!important}}
 @media (max-width:700px){
   .schem-cols{grid-template-columns:1fr;gap:34px}
   .app .nodes{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}

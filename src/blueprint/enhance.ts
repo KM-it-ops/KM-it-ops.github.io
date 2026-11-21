@@ -156,6 +156,7 @@ export function enhance(): void {
   function renderPanel(id: string | null) {
     pBody.textContent = '';
     panel.classList.toggle('idle', !id);
+    panel.toggleAttribute('hidden', !id && window.matchMedia('(max-width: 1100px)').matches);
     if (!id) {
       pKind.textContent = 'Detail callout'; pTitle.textContent = 'Select a node';
       const p = document.createElement('p'); p.textContent = 'Pick a skill to see the public evidence behind it, or pick a project to see which skills and lane it belongs to.'; pBody.append(p);
