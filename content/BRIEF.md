@@ -29,11 +29,11 @@ Two standing rules:
 
 Transferable habits only. Nothing here is security analyst tenure and the site does not describe it that way.
 
-1. Aviation Security Operations Crew Chief, American Airlines, Charlotte, NC, 2015–2023.
+1. Ramp Agent (Mar 2015 to 2017), then Crew Chief, Fleet Service Agent (2017 to Nov 2023), American Airlines, Charlotte, NC, Mar 2015–Nov 2023.
    Federally regulated operations under FAA, OSHA, IATA, and CBP, with a CBP badge endorsement. Recurrent incident-response and safety/security training. Daily identity validation, access control, and documentation that had to hold up to inspection.
-2. Courier & Logistics Specialist, USPS, Kannapolis, NC, 2024–2025.
+2. Rural Carrier Associate, USPS, Kannapolis, NC, Jun 2024–Jun 2025.
    Time-critical courier and logistics work while finishing the degree.
-3. Delivery Associate, Fossa Logistics LLC (Amazon DSP), Charlotte, NC, 2025–present.
+3. Delivery Associate, Fossa Logistics LLC (Amazon DSP), Charlotte, NC, Jun 2025–Aug 2026.
    High-tempo logistics work while finishing the degree and building the security portfolio.
 
 ## Featured projects
