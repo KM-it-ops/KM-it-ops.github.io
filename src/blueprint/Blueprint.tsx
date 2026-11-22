@@ -289,7 +289,7 @@ function Details() {
   )
 }
 
-/* Year axis 2015 → present (2026). Positions are presentation geometry. */
+/* Year axis 2015 → 2026 (no current job; Fossa ended Aug 2026). Positions are presentation geometry. */
 const Y0 = 2015
 const Y1 = 2026
 const pos = (y: number) => ((y - Y0) / (Y1 - Y0)).toFixed(3)
@@ -313,7 +313,7 @@ function Path() {
         <div className="tl-axis" aria-hidden="true">
           <div className="tl-ticks">
             {[2015, 2017, 2019, 2021, 2023].map((y) => <span key={y} style={{ ['--x' as string]: pos(y) }}>{y}</span>)}
-            <span style={{ ['--x' as string]: '1' }}>present</span>
+            <span style={{ ['--x' as string]: '1' }}>2026</span>
           </div>
           <div className="tl-bars">
             {EXPERIENCE.map((e, i) => {

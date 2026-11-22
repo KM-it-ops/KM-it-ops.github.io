@@ -105,7 +105,7 @@ export const SKILL_BANDS: SkillBand[] = [
   {
     tier: 'Exposure',
     items: [
-      { name: 'SIEM (coursework)', proof: 'Splunk and Microsoft Sentinel concepts from coursework, not production tenure' },
+      { name: 'SIEM (coursework)', proof: 'SIEM concepts and vocabulary from coursework, not production tenure' },
       { name: 'Python security tooling', proof: 'Log anomaly detector, phishing classifier, and Flask vuln tracker, all public' },
       { name: 'Vulnerability scanning', proof: 'Nmap-based authorized scans in SniffOutPro (my own machine or a built-in lab sample), not enterprise scanner tenure' },
     ],
