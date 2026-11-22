@@ -25,7 +25,7 @@ export const PERSON = {
   contactUrl: 'https://km-it-ops.github.io/#contact',
   github: LINKS.github,
   linkedin: LINKS.linkedin,
-  role: 'Junior Security Analyst / Security Operations / Vulnerability Management',
+  role: 'Junior Security Analyst | Security Operations | IT Risk',
   available: 'Available for full-time roles',
   targets: [
     'Junior Security Analyst',
@@ -44,9 +44,9 @@ export const CONTACT_FORM = {
 } as const
 
 export const THROUGHLINE = {
-  title: 'From aviation security ops to security analysis',
+  title: 'Ramp Agent, then Crew Chief, Fleet Service Agent',
   body: [
-    'I spent eight years as an Aviation Security Operations Crew Chief at American Airlines. The job was CBP-badged identity checks, access control, and incident notes in a federally regulated environment, where a sloppy write-up had real consequences.',
+    'I spent eight years at American Airlines as a Ramp Agent, then Crew Chief, Fleet Service Agent. The job was CBP-badged identity checks, access control, and incident notes in a federally regulated environment, where a sloppy write-up had real consequences.',
     'After that, while working logistics jobs, I finished a B.S. in Information Technologies with a Cybersecurity concentration at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+. I have published security projects you can clone: a log anomaly detector, a phishing classifier, a vulnerability tracker, a benchmark for MITRE ATT&CK mapping (ATT&CK is a public catalog of attacker techniques), and SniffOutPro, a local vulnerability-assessment app.',
     'Proofhouse is my main engineering side project. It shows I can design, test, and ship software. My coursework labs are labeled as labs. Where I only have classroom exposure to a tool, I say so rather than dress it up as experience.',
   ],
@@ -138,7 +138,7 @@ export const OPERATING = [
 
 export const EXPERIENCE = [
   {
-    title: 'Aviation Security Operations Crew Chief',
+    title: 'Ramp Agent, then Crew Chief, Fleet Service Agent',
     org: 'American Airlines',
     loc: 'Charlotte, NC',
     dates: '2015–2023',
@@ -322,7 +322,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'sniffoutpro',
     name: 'SniffOutPro',
     tag: 'Vulnerability assessment',
-    line: 'Authorized vulnerability assessment on your own computer. A desktop app runs a local scan with no account: a built-in lab sample for a safe test, or Nmap against a target you are allowed to scan. It never exploits a target. Automated tests must cover at least 80% of the scan engine\'s branches before code merges. Work in progress: no signed installer or hosted service yet.',
+    line: 'Authorized vulnerability assessment on your own computer. A desktop app runs a local scan with no account: a built-in lab sample for a safe test, or Nmap against a target you are allowed to scan. It never exploits a target. Automated tests reach 70% branch coverage (measured). Work in progress: no signed installer or hosted service yet.',
     href: 'https://github.com/KM-it-ops/Sniffoutpro',
   },
   {

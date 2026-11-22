@@ -119,7 +119,7 @@ main{max-width:var(--wrap);margin:0 auto;padding:clamp(14px,2.5vw,36px) var(--gu
 
 .sheet-head{max-width:68ch;margin-bottom:clamp(22px,3vw,36px)}
 /* Measure: 34em at 17px is about 75 characters per line (ch overstates Red Hat Text width) */
-.sheet-head p,.pbody>p,#parts li p,.through p,.det-2 p,.tl p,.notes p{max-width:34em}
+.sheet-head p,.pbody>p,#parts li p,.through p,.det-2 p,.tl p,.notes p,.seek{max-width:34em}
 .sheet-head h2,.contact h3{font:600 clamp(1.5rem,1rem + 1.9vw,2.5rem)/1.12 var(--f-disp);letter-spacing:-.01em;margin-bottom:.6rem;text-wrap:balance}
 .lede{color:var(--muted);max-width:66ch}
 .hint{color:var(--muted);font-size:1rem;margin-top:.7rem}
@@ -152,13 +152,13 @@ h1{font-family:var(--f-disp);font-weight:700;letter-spacing:-.02em;line-height:1
 .dim::before{left:1px;border-right:7px solid var(--line);border-left:0}
 .dim::after{right:1px;border-left:7px solid var(--line);border-right:0}
 .dim-lbl{position:absolute;left:50%;top:13px;transform:translateX(-50%);white-space:nowrap;font:500 .8125rem/1.2 var(--f-mono);color:var(--muted);letter-spacing:.04em;background:var(--sheet);padding:0 6px}
-.role{font:500 clamp(1.0625rem,.95rem + .5vw,1.375rem)/1.45 var(--f-body);max-width:34ch}
+.role{font:500 clamp(1.0625rem,.95rem + .5vw,1.375rem)/1.45 var(--f-body);max-width:42ch;text-wrap:balance}
 .proof{display:grid;gap:4px;padding:14px 16px;border:1.5px solid var(--line);border-left:5px solid var(--amber);background:var(--panel);text-decoration:none;color:var(--text);max-width:620px;transition:transform var(--t-fast) var(--ease-out)}
 .proof:hover{transform:translateX(3px)}
 .proof .lbl{color:var(--amber)}
 .proof-name{font:700 1.125rem var(--f-body);color:var(--cyan)}
 .proof-line{font-size:1rem;color:var(--text)}
-.seek{color:var(--muted);max-width:60ch}
+.seek{color:var(--muted);max-width:34em}
 
 .titleblock{position:relative;border:1.5px solid var(--line);background:var(--sheet)}
 .tb-h{padding:8px 14px;border-bottom:1.5px solid var(--line);background:var(--panel)}

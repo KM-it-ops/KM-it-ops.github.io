@@ -217,7 +217,7 @@ def main():
         if r['externalRequests']: fails.append(f'{k} ext {r["externalRequests"][:2]}')
         if r['errors']: fails.append(f'{k} errors {r["errors"]}')
         if r['h1'] != 'Mahmoud Al Kurdi': fails.append(f'{k} h1 {r["h1"]}')
-        if r['role'] != 'Junior Security Analyst / Security Operations / Vulnerability Management': fails.append(f'{k} role {r["role"]}')
+        if r['role'] != 'Junior Security Analyst | Security Operations | IT Risk': fails.append(f'{k} role {r["role"]}')
         if r['rvHidden']: fails.append(f'{k} rvHidden {r["rvHidden"]}')
         if r['sheetsInAfterScroll'] != 5: fails.append(f'{k} reveal')
         if 'reduce' in k and (r['rvHiddenAtLoad'] or r['animatingDuringScroll'] or r['sheetsInAtLoad'] != 5 or r['parallaxTransform']): fails.append(f'{k} PRM {r["rvHiddenAtLoad"], r["animatingDuringScroll"], r["sheetsInAtLoad"], r["parallaxTransform"]}')
