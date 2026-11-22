@@ -1,19 +1,19 @@
 # Mahmoud Al Kurdi Portfolio
 
-New graduate **Junior Security Analyst / Security Operations / IT Risk** site. B.S. Information Technologies (Cybersecurity concentration), Summa Cum Laude, SNHU · CompTIA Security+.
+Portfolio for a **Junior Security Analyst | Security Operations | IT Risk** job search. B.S. in Information Technologies, Cybersecurity concentration, summa cum laude, SNHU · CompTIA Security+.
 
-**Design:** Mash dossier with a fixed glass planet, sticky hire card in the hero, and a Look picker (defaults to Warm Grit; optional “Always use this look” pin). Content from [`src/content.ts`](src/content.ts) / [`content/BRIEF.md`](content/BRIEF.md).
+**Design:** A blueprint drawing set with five sheets (Cover, Schematic, Assembly, Details, Path) on light or dark paper. The HTML is prerendered, `src/blueprint/enhance.ts` adds interaction after load, and `prefers-reduced-motion` is honoured. Copy lives in [`src/content.ts`](src/content.ts) and [`content/BRIEF.md`](content/BRIEF.md).
 
 ## Live
 
 - Site: <https://km-it-ops.github.io/>
-- Resume: [`resume.html`](https://km-it-ops.github.io/resume.html) (print to PDF)
+- Resume: [`resume.html`](https://km-it-ops.github.io/resume.html) · [PDF](https://km-it-ops.github.io/Mahmoud_Al_Kurdi_Resume.pdf)
 
 ## Stack
 
-- Vite + React 19 + TypeScript
-- Mash CSS (`src/designs/mash*.css`) — Syne / Figtree / JetBrains Mono (+ layout skins)
-- React Three Fiber hero lens (lazy-loaded)
+- Vite + React 19 + TypeScript, prerendered by `scripts/prerender.mjs`
+- Blueprint CSS with self-hosted Unbounded, Red Hat Text and Roboto Mono fonts
+- Playwright + axe QA (`qa/qa.py`): 5 viewports × 2 themes × reduced motion, plus a no-JS pass
 
 ## Develop and deploy
 
@@ -25,4 +25,4 @@ npm run build
 npm run preview
 ```
 
-GitHub Pages serves **main / docs**.
+`npm run build` writes the site to `docs/`. Commit the rebuilt `docs/`. On push to **main**, `.github/workflows/pages.yml` does a static deploy of that prebuilt `docs/` folder; it doesn't run a build.

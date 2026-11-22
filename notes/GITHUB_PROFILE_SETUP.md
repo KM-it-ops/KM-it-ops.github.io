@@ -29,7 +29,7 @@ Or copy manually from [`profile-repo/`](../profile-repo/).
 GitHub → **Settings → Profile → Bio** — paste:
 
 ```
-Security+ · SOC / Detection Engineering · MITRE ATT&CK
+Security+ · SNHU Summa · SOC / SecOps / VM
 Building inspectable defensive security: AgentForge, log detection, vuln workflows
 Charlotte NC · Remote · km-it-ops.github.io
 ```
@@ -57,7 +57,7 @@ Use the same image as the portfolio: `assets/profile-portrait.png`
 
 ## Social preview
 
-The profile README banner (`assets/profile-banner.svg`) renders at the top of your GitHub profile. OG/social cards for the portfolio site use `assets/og-image.svg`.
+The profile README banner (`assets/profile-banner.svg`) renders at the top of your GitHub profile. OG/social cards for the portfolio site use `public/og-card-blueprint.png` (source: `scripts/og/og-card-blueprint.html`).
 
 ## Per-repo README standard
 

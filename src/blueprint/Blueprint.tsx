@@ -29,7 +29,7 @@ const MESSAGE_HREF = /#contact$/.test(PERSON.contactUrl) ? '#contact' : PERSON.c
 const RESUME_HREF = RESUME_PDF.startsWith('/') ? `.${RESUME_PDF}` : RESUME_PDF
 /** Web copy of the headshot (480x600, EXIF stripped). Relative like RESUME_HREF so sub-path previews work. */
 const PORTRAIT_SRC = './img/portrait.jpg'
-const PORTRAIT_ALT = `${PERSON.name}, security analyst, in a navy suit`
+const PORTRAIT_ALT = `${PERSON.name} in a navy suit`
 
 function Chrome() {
   const six = [1, 2, 3, 4, 5, 6].map((n) => <i key={n}>{n}</i>)
@@ -184,7 +184,7 @@ function Schematic() {
           {col('col-lane', 'col-lane', 'Lanes (project tags)', LANE_NODES)}
           <svg className="wires" aria-hidden="true" focusable="false" />
         </div>
-        <aside className="panel" id="schem-panel" aria-labelledby="panel-title" hidden>
+        <aside className="panel idle" id="schem-panel" aria-labelledby="panel-title" hidden>
           <div className="panel-in">
             <p className="lbl panel-kind" id="panel-kind">Detail callout</p>
             <h3 className="panel-title" id="panel-title" tabIndex={-1}>Select a node</h3>
@@ -289,13 +289,15 @@ function Details() {
   )
 }
 
-/* Year axis 2015 → present (2026). Positions are presentation geometry. */
+/* Year axis 2015 → 2026 (no current job; Fossa ended Aug 2026). Positions are presentation geometry. */
 const Y0 = 2015
 const Y1 = 2026
 const pos = (y: number) => ((y - Y0) / (Y1 - Y0)).toFixed(3)
+// Dates may carry months ("Mar 2015–Nov 2023"); the timeline only needs the year.
+const year = (s: string) => Number((s.match(/\d{4}/) ?? ['NaN'])[0])
 const span = (dates: string) => {
   const [a, b] = dates.split('–')
-  return [pos(+a), b === 'present' ? '1' : pos(+b)]
+  return [pos(year(a)), /present/i.test(b) ? '1' : pos(year(b))]
 }
 
 function Path() {
@@ -311,7 +313,7 @@ function Path() {
         <div className="tl-axis" aria-hidden="true">
           <div className="tl-ticks">
             {[2015, 2017, 2019, 2021, 2023].map((y) => <span key={y} style={{ ['--x' as string]: pos(y) }}>{y}</span>)}
-            <span style={{ ['--x' as string]: '1' }}>present</span>
+            <span style={{ ['--x' as string]: '1' }}>2026</span>
           </div>
           <div className="tl-bars">
             {EXPERIENCE.map((e, i) => {

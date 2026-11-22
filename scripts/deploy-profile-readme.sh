@@ -21,10 +21,11 @@ fi
 cp "$ROOT/profile-repo/README.md" "$TARGET/README.md"
 mkdir -p "$TARGET/assets"
 cp "$ROOT/profile-repo/assets/profile-banner.svg" "$TARGET/assets/profile-banner.svg"
+cp "$ROOT/profile-repo/assets/profile-banner.png" "$TARGET/assets/profile-banner.png"
 
 echo "Copied profile README and banner to $TARGET"
 echo "Next:"
 echo "  cd $TARGET"
-echo "  git add README.md assets/profile-banner.svg"
-echo "  git commit -m 'Refresh profile README for Masked Signal brand'"
+echo "  git add README.md assets/profile-banner.svg assets/profile-banner.png"
+echo "  git commit -m 'Refresh profile README for the MAK blueprint brand'"
 echo "  git push origin main"
