@@ -29,7 +29,7 @@ Or copy manually from [`profile-repo/`](../profile-repo/).
 GitHub → **Settings → Profile → Bio** — paste:
 
 ```
-Security+ · SOC / Detection Engineering · MITRE ATT&CK
+Security+ · SNHU Summa · SOC / SecOps / VM
 Building inspectable defensive security: AgentForge, log detection, vuln workflows
 Charlotte NC · Remote · km-it-ops.github.io
 ```

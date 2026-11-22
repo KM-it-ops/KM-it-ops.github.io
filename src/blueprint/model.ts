@@ -82,7 +82,7 @@ const SKILL_EDGES: Record<string, string[]> = {
   'IAM / CIS Controls': ['e-cyb260'],
   'Threat modeling': ['e-cyb250'],
   'Cloud BCDR planning': [],
-  'SIEM vocabulary': [],
+  'SIEM (coursework)': [],
   'Python security tooling': ['e-logdetect', 'e-phishing', 'e-vulntrack'],
   'Vulnerability scanning': ['e-sniffoutpro'],
 }
@@ -95,7 +95,7 @@ const SKILL_IDS: Record<string, string> = {
   'IAM / CIS Controls': 's-iam',
   'Threat modeling': 's-tm',
   'Cloud BCDR planning': 's-bcdr',
-  'SIEM vocabulary': 's-siem',
+  'SIEM (coursework)': 's-siem',
   'Python security tooling': 's-py',
   'Vulnerability scanning': 's-vs',
 }

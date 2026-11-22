@@ -29,7 +29,7 @@ const MESSAGE_HREF = /#contact$/.test(PERSON.contactUrl) ? '#contact' : PERSON.c
 const RESUME_HREF = RESUME_PDF.startsWith('/') ? `.${RESUME_PDF}` : RESUME_PDF
 /** Web copy of the headshot (480x600, EXIF stripped). Relative like RESUME_HREF so sub-path previews work. */
 const PORTRAIT_SRC = './img/portrait.jpg'
-const PORTRAIT_ALT = `${PERSON.name}, security analyst, in a navy suit`
+const PORTRAIT_ALT = `${PERSON.name} in a navy suit`
 
 function Chrome() {
   const six = [1, 2, 3, 4, 5, 6].map((n) => <i key={n}>{n}</i>)
@@ -293,9 +293,11 @@ function Details() {
 const Y0 = 2015
 const Y1 = 2026
 const pos = (y: number) => ((y - Y0) / (Y1 - Y0)).toFixed(3)
+// Dates may carry months ("Mar 2015–Nov 2023"); the timeline only needs the year.
+const year = (s: string) => Number((s.match(/\d{4}/) ?? ['NaN'])[0])
 const span = (dates: string) => {
   const [a, b] = dates.split('–')
-  return [pos(+a), b === 'present' ? '1' : pos(+b)]
+  return [pos(year(a)), /present/i.test(b) ? '1' : pos(year(b))]
 }
 
 function Path() {

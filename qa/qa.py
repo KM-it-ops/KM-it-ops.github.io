@@ -202,9 +202,12 @@ def main():
     (HERE.parent / 'reports' / 'qa-results.json').parent.mkdir(exist_ok=True); (HERE.parent / 'reports' / 'qa-results.json').write_text(json.dumps(res, indent=1))
     # summary
     fails = []
-    for rel in ['Mahmoud_Al_Kurdi_Resume.pdf', 'Michael_Kurdi_Resume_2026.pdf', 'assets/Michael_Kurdi_Resume_2026.pdf']:
-        if not (root / rel).is_file():
-            fails.append(f'missing resume PDF docs/{rel}')
+    if not (root / 'Mahmoud_Al_Kurdi_Resume.pdf').is_file():
+        fails.append('missing resume PDF docs/Mahmoud_Al_Kurdi_Resume.pdf')
+    # The old-name PDF was deleted on Boss's instruction (Nov 17, 2026); it must stay gone.
+    for rel in ['Michael_Kurdi_Resume_2026.pdf', 'assets/Michael_Kurdi_Resume_2026.pdf']:
+        if (root / rel).exists():
+            fails.append(f'legacy old-name PDF still present: docs/{rel}')
 
     for k, r in res['matrix'].items():
         if r['overflow'] > 0: fails.append(f'{k} overflow {r["overflow"]}')

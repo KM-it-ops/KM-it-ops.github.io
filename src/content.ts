@@ -32,8 +32,7 @@ export const PERSON = {
     'Security Operations',
     'Vulnerability Management',
     'Incident Response',
-    'Security Automation',
-    'IT Risk',
+    'IT Risk / GRC',
   ],
 } as const
 
@@ -46,18 +45,18 @@ export const CONTACT_FORM = {
 export const THROUGHLINE = {
   title: 'Ramp Agent, then Crew Chief, Fleet Service Agent',
   body: [
-    'I spent eight years at American Airlines as a Ramp Agent, then Crew Chief, Fleet Service Agent. The job was CBP-badged identity checks, access control, and incident notes in a federally regulated environment, where a sloppy write-up had real consequences.',
-    'After that, while working logistics jobs, I finished a B.S. in Information Technologies with a Cybersecurity concentration at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+. I have published security projects you can clone: a log anomaly detector, a phishing classifier, a vulnerability tracker, a benchmark for MITRE ATT&CK mapping (ATT&CK is a public catalog of attacker techniques), and SniffOutPro, a local vulnerability-assessment app.',
+    'I spent eight years at American Airlines (Mar 2015 to Nov 2023) in federally regulated aviation operations: Ramp Agent first (2015 to 2017), then Crew Chief, Fleet Service Agent for six years (2017 to 2023). It was an operations role, not a security role. The work ran on CBP-badged identity checks, access control, and documentation that had to hold up to inspection, where a sloppy write-up had real consequences.',
+    'After that, while working logistics jobs, I finished a B.S. in Information Technologies, Cybersecurity concentration, at SNHU, Summa Cum Laude with a 3.96 GPA, and earned CompTIA Security+. I have published security projects you can clone: a log anomaly detector, a phishing classifier, a vulnerability tracker, a benchmark for MITRE ATT&CK mapping (ATT&CK is a public catalog of attacker techniques), and SniffOutPro, a local vulnerability-assessment app.',
     'Proofhouse is my main engineering side project. It shows I can design, test, and ship software. My coursework labs are labeled as labs. Where I only have classroom exposure to a tool, I say so rather than dress it up as experience.',
   ],
   seeking:
-    'Looking for a junior security analyst, security operations, vulnerability management, or IT risk role in Charlotte or remote.',
+    'Looking for a full-time Tier-1 SOC or junior security analyst role, or a security operations, vulnerability management, or IT risk / GRC seat, in Charlotte or remote.',
 } as const
 
 export const HIRE_BRIEF = [
   {
     label: 'What I want',
-    text: 'A junior security analyst, security operations, VM, or IT risk seat where I triage, document, and learn the stack from the inside.',
+    text: 'A Tier-1 SOC or junior security analyst seat (or VM / IT risk) where I triage alerts, document, and learn the stack from the inside.',
   },
   {
     label: 'What I bring',
@@ -73,7 +72,7 @@ export const CREDENTIALS = {
   secPlus: 'CompTIA Security+ ce (SY0-701)',
   secPlusDates: 'Issued Jan 7, 2025 · Valid through Jan 7, 2028',
   degree:
-    'B.S. Information Technologies, Cybersecurity concentration, Southern New Hampshire University',
+    'B.S. in Information Technologies, Cybersecurity concentration, Southern New Hampshire University',
   degreeDates: 'Completed Dec 2025 · Conferred Jan 1, 2026',
   honors: 'Summa Cum Laude · 3.96 GPA · Alpha Sigma Lambda (Sigma Psi)',
   gpa: '3.96',
@@ -106,7 +105,7 @@ export const SKILL_BANDS: SkillBand[] = [
   {
     tier: 'Exposure',
     items: [
-      { name: 'SIEM vocabulary', proof: 'Splunk and Sentinel concepts from study, not production tenure' },
+      { name: 'SIEM (coursework)', proof: 'Splunk and Microsoft Sentinel concepts from coursework, not production tenure' },
       { name: 'Python security tooling', proof: 'Log anomaly detector, phishing classifier, and Flask vuln tracker, all public' },
       { name: 'Vulnerability scanning', proof: 'Nmap-based authorized scans in SniffOutPro (my own machine or a built-in lab sample), not enterprise scanner tenure' },
     ],
@@ -141,9 +140,9 @@ export const EXPERIENCE = [
     title: 'Ramp Agent, then Crew Chief, Fleet Service Agent',
     org: 'American Airlines',
     loc: 'Charlotte, NC',
-    dates: '2015–2023',
+    dates: 'Mar 2015–Nov 2023',
     detail:
-      'Federally regulated operations under FAA, OSHA, IATA, and CBP, with a CBP badge endorsement. Recurrent incident-response and safety/security training. Daily identity validation, access control, and documentation that had to hold up to inspection.',
+      'Ramp Agent from Mar 2015 to 2017, then Crew Chief, Fleet Service Agent from 2017 to Nov 2023, leading a team of 3 to 9 agents and handling up to 5 flights per 8-hour shift (3.5 on average). Cleared by U.S. Customs and Border Protection to handle live inbound and outbound international flights. Caught security and dangerous-goods discrepancies on international flights. Worked under FAA, OSHA, IATA, and CBP requirements with recurrent incident-response and safety and security training: daily identity validation, access control, and documentation that had to hold up to inspection.',
     transfer: [
       'Ticket-quality documentation under inspection pressure',
       'Identity validation and access control habits',
@@ -151,18 +150,18 @@ export const EXPERIENCE = [
     ],
   },
   {
-    title: 'Courier & Logistics Specialist',
+    title: 'Rural Carrier Associate',
     org: 'USPS',
     loc: 'Kannapolis, NC',
-    dates: '2024–2025',
-    detail: 'Time-critical courier and logistics work while finishing the degree.',
+    dates: 'Jun 2024–Jun 2025',
+    detail: 'Learned 8 of the office\'s 15 routes (only one was required) and handled certified mail, priority packages, and sensitive materials on time-critical routes while finishing the degree.',
     transfer: ['Hard time windows', 'Exception handling'],
   },
   {
     title: 'Delivery Associate',
     org: 'Fossa Logistics LLC (Amazon DSP)',
     loc: 'Charlotte, NC',
-    dates: '2025–2026',
+    dates: 'Jun 2025–Aug 2026',
     detail:
       'High-tempo logistics with route prioritization, customer exceptions, and hard time windows, alongside finishing the degree and the security portfolio.',
     transfer: ['Prioritization under pressure', 'Customer-facing problem solving'],
@@ -329,7 +328,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: 'attcklens',
     name: 'ATT&CKLens benchmark',
     tag: 'Detection / MITRE ATT&CK',
-    line: 'A defensive benchmark that scores how well AI agents map evidence to MITRE ATT&CK techniques: citing evidence, saying "no clear mapping" when that is the honest answer, suggesting detections, and ignoring hidden instructions planted in the input (prompt injection). Seven agents scored against one rubric, with raw outputs and a final report in the repo.',
+    line: 'A defensive benchmark that scores how well AI agents map evidence to MITRE ATT&CK techniques: citing evidence, saying "no clear mapping" when that is the honest answer, suggesting detections, and ignoring hidden instructions planted in the input (prompt injection). Agents are scored against one rubric, with raw outputs and a final report in the repo.',
     href: 'https://github.com/KM-it-ops/AgentForge-ATT-CKLens-Benchmark',
   },
 ]
@@ -387,4 +386,4 @@ export const SIDE_PROJECTS: SideProject[] = [
 export const RESUME_PDF = '/resume.html'
 export const RESUME_LABEL = 'Resume'
 export const ETHOS =
-  'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently. Nothing here is padded.'
+  'Every claim on this page maps to a course write-up, a credential, or a public repo. Hands-on work and classroom exposure are labeled differently.'
