@@ -154,7 +154,7 @@ export const EXPERIENCE = [
     org: 'USPS',
     loc: 'Kannapolis, NC',
     dates: 'Jun 2024–Jun 2025',
-    detail: 'Learned 8 of the office\'s 15 routes (only one was required) and handled certified mail, priority packages, and sensitive materials on time-critical routes while finishing the degree.',
+    detail: 'Learned 8 of the office\'s 15 routes (only one was required) and handled certified mail, priority packages, and sensitive materials on time-critical routes while pursuing the degree.',
     transfer: ['Hard time windows', 'Exception handling'],
   },
   {
